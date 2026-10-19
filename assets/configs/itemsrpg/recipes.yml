@@ -1,0 +1,37 @@
+##########################################################
+#   ItemsRPG - Recetas personalizadas
+#
+#   Este archivo es generado y editado automáticamente por
+#   el editor in-game (/rpg recipelist). No es necesario
+#   editarlo a mano, pero puedes hacerlo si sabes lo que haces.
+#
+#   Cada receta soporta:
+#     - shapeless: true/false (si el orden de los ingredientes importa)
+#     - grid: 9 slots (0-8, orden de lectura fila por fila de una
+#       grilla 3x3), cada uno con:
+#         type: MATERIAL | RPG_ITEM
+#         value: nombre del Material vanilla, o ID del item RPG
+#     - result: type (MATERIAL | RPG_ITEM), value (nombre/ID) y amount
+#
+#   Ejemplo:
+#
+#   recipes:
+#     espada_de_fuego:
+#       shapeless: false
+#       grid:
+#         1:
+#           type: RPG_ITEM
+#           value: fire_shard
+#         4:
+#           type: MATERIAL
+#           value: STICK
+#         7:
+#           type: MATERIAL
+#           value: STICK
+#       result:
+#         type: RPG_ITEM
+#         value: espada_de_fuego
+#         amount: 1
+##########################################################
+
+recipes: {}

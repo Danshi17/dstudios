@@ -1,0 +1,37 @@
+id: player_languages
+
+title: '<dark_gray>Player Language</dark_gray>'
+rows: 4
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,27-35'
+
+  english:
+    slot: 12
+    material: PAPER
+    name: '<green>English</green>'
+    lore:
+      - '<gray>Current: <white>%player_language%</white></gray>'
+      - ''
+      - '<yellow>Click to select.</yellow>'
+    action: SET_LANGUAGE:EN
+
+  spanish:
+    slot: 14
+    material: PAPER
+    name: '<yellow>Español</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_language%</white></gray>'
+      - ''
+      - '<yellow>Click to select.</yellow>'
+    action: SET_LANGUAGE:ES
+
+  back:
+    slot: 31
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:player_settings

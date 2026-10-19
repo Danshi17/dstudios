@@ -1,0 +1,470 @@
+
+config-version: 1
+Persistent_Mode: true
+Rainbow_Update_Interval: 10
+Flashing_Update_Interval: 6
+Open_Glow_Menu: true
+Flash_Rainbow: false
+Notify_Updates: true
+Auto_Tag: true
+
+Messages:
+  No_Permission: "<red>¡No tienes permiso para realizar esto!"
+  Reload_Message: "<blue>¡Configuración recargada correctamente!"
+  Enable_Glow: "<green>¡Brillo activado correctamente!"
+  Disable_Glow: "<red>¡Brillo desactivado correctamente!"
+  Enable_Flashing: "<green>¡Modo intermitente activado!"
+  Disable_Flashing: "<red>¡Modo intermitente desactivado!"
+  Enable_Rainbow: "<green>¡Modo arcoíris activado!"
+  Disable_Rainbow: "<red>¡Modo arcoíris desactivado!"
+  Disable_Usage: "<red>Uso incorrecto. Usa /glow disable <jugador>."
+  Disable_Glow_Others: "<red>¡Brillo de %player_name% desactivado!"
+  Disable_Glow_Everyone: "<red>¡Brillo de todos desactivado!"
+  Not_Glowing: "<red>¡No estás brillando actualmente!"
+  Not_Valid_Color: "<red>¡Color de brillo no válido!"
+  Color_Command_Usage: "<red>Uso incorrecto. Usa /glow color <color>."
+  Color_Set_Command_Usage: "<red>Uso incorrecto. Usa /glow set <jugador> <color>."
+  Unknown_Target: "<red>¡El jugador %player_name% no está en línea!"
+  Target_Not_Glowing: "<red>¡El objetivo no está brillando!"
+  Invalid_Sub_Command: "<red>Subcomando desconocido \"%sub_command%\"."
+  Color_Already_Selected: "<red>¡Ya tienes ese color seleccionado!"
+  Flashing_With_Rainbow: "<red>¡Rainbow y Flashing combinados está desactivado!"
+  Disabled_World_Message: "<red>¡El brillo está desactivado en este mundo!"
+  Glow_Status_False: "<red>¡Sin brillo! ❌"
+  Glow_Status_True: "<green>¡Brillando! ✔</green>"
+  Glow_Status_None: "NONE"
+  Message_Not_Found: "Mensaje no encontrado en el enum de mensajes."
+
+Disabled_Worlds:
+  - "Example"
+  - "DisabledGlowWorld"
+
+Inventory:
+  Title: "<dark_red>¡Selecciona un color de brillo!"
+  Items:
+    Black:
+      Slot: 10
+      Color: "BLACK"
+      Material: "hdb-89767"
+      Name: "<color:#454545>Negro</color>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Un aura oscura y elegante</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Blue:
+      Slot: 11
+      Color: "DARK_BLUE"
+      Material: "hdb-106740"
+      Name: "<dark_blue>Azul Oscuro</dark_blue>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Green:
+      Slot: 12
+      Color: "DARK_GREEN"
+      Material: "hdb-106739"
+      Name: "<dark_green>Verde Oscuro</dark_green>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Aqua:
+      Slot: 13
+      Color: "DARK_AQUA"
+      Material: "hdb-106741"
+      Name: "<dark_aqua>Aqua Oscuro</dark_aqua>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Red:
+      Slot: 14
+      Color: "DARK_RED"
+      Material: "hdb-106742"
+      Name: "<dark_red>Rojo Oscuro</dark_red>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Purple:
+      Slot: 15
+      Color: "DARK_PURPLE"
+      Material: "hdb-106743"
+      Name: "<dark_purple>Morado</dark_purple>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Gold:
+      Slot: 16
+      Color: "GOLD"
+      Material: "hdb-106744"
+      Name: "<gold>Dorado</gold>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Gray:
+      Slot: 19
+      Color: "GRAY"
+      Material: "hdb-106745"
+      Name: "<color:#bdbdbd>Gris</color>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Dark_Gray:
+      Slot: 20
+      Color: "DARK_GRAY"
+      Material: "hdb-106746"
+      Name: "<color:#919191>Gris Oscuro</color>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Blue:
+      Slot: 21
+      Color: "BLUE"
+      Material: "hdb-106747"
+      Name: "<blue>Azul</blue>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Green:
+      Slot: 22
+      Color: "GREEN"
+      Material: "hdb-106748"
+      Name: "<green>Verde</green>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Aqua:
+      Slot: 23
+      Color: "AQUA"
+      Material: "hdb-106749"
+      Name: "<aqua>Aqua</aqua>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Red:
+      Slot: 24
+      Color: "RED"
+      Material: "hdb-106750"
+      Name: "<red>Rojo</red>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Light_Purple:
+      Slot: 25
+      Color: "LIGHT_PURPLE"
+      Material: "hdb-106751"
+      Name: "<light_purple>Rosa</light_purple>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    Yellow:
+      Slot: 28
+      Color: "YELLOW"
+      Material: "hdb-93709"
+      Name: "<yellow>Amarillo</yellow>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    White:
+      Slot: 29
+      Color: "WHITE"
+      Material: "hdb-72869"
+      Name: "<white>Blanco</white>"
+      Lore:
+        - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+        - ""
+        - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+        - "  <gray>▪ Muestra un aura de color</gray>"
+        - "    <gray>que rodea a todo tu personaje.</gray>"
+        - ""
+        - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+        - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+        - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+        - ""
+        - "<gray>» ¡Las auras resaltarán toda</gray>"
+        - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+        - ""
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+        - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+    # Lore genérico de respaldo: se usa SOLO si un color de arriba no
+    # define su propio "Lore". Podés dejarlo como está o borrarlo si
+    # preferís que todos los colores dependan de su Lore individual.
+    Color_Lore:
+      - "<dark_gray>» Cosméticos variados (❤)</dark_gray>"
+      - ""
+      - "<color:#44d6ff><bold>» DESCRIPCIÓN</bold></color>"
+      - "  <gray>▪ Muestra un aura de color</gray>"
+      - "    <gray>que rodea a todo tu personaje.</gray>"
+      - ""
+      - "<color:#44d6ff><bold>» INFORMACIÓN</bold></color>"
+      - "  <gray>▪ Estado:</gray> <green>¡Desbloqueado!</green>"
+      - "  <gray>▪ Color:</gray> <white>[</white>%color_name%<white>]</white>"
+      - ""
+      - "<gray>» ¡Las auras resaltarán toda</gray>"
+      - "<gray>  la silueta de tu personaje!</gray> <green>(✔)</green>"
+      - ""
+      - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Izquierdo para</gray> <green>Activar</green><gray>.</gray>"
+      - "<color:#44d6ff>[<white>!</white>]</color> <gray>Click Derecho para</gray> <red>Desactivar</red><gray>.</gray>"
+
+  Filler:
+    Enabled: true
+    Material: "GRAY_STAINED_GLASS_PANE"
+    Name: "<rainbow>¡Haz clic en un color!</rainbow>"
+  Status:
+    Slot: 41
+    Name: "<color:#6effa3>Tu estado de brillo:</color>"
+    Lore:
+      Selected:
+        - "<white>Tienes seleccionado %mode% <white>brillo."
+        - "<gray>¡Haz clic para desactivar!"
+      Click:
+        - "<white>¡Selecciona un color de brillo!"
+  Rainbow:
+    Slot: 39
+    Name: "<rainbow>¡Modo Arcoíris!</rainbow>"
+    Lore:
+      - "<#9e8fff>¡Haz clic para activar el modo arcoíris!</#9e8fff>"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTI0OTMyYmI5NDlkMGM2NTcxN2IxMjFjOGNkOWEyMWI2OWU4NmMwZjdlMzQyMWFlOWI4YzY0ZDhiOTkwZWI2MCJ9fX0"
+  Flashing:
+    Slot: 40
+    Name: "<gradient:#d6d6d6:#b6b6b6:#9f9f9f:#ececec>¡Modo Intermitente!</gradient>"
+    Lore:
+      - "<#9e8fff>¡Haz clic para activar el modo intermitente!</#9e8fff>"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFjNTgxYThiNTk3NjkyYjViOTRkM2I4YmViOWM1MmY1Njk5OWQ2MmY3Mzk1NjY4ZmFjNTdhYzk1MmZlNGRjNCJ9fX0="
+  Close:
+    Slot: 44
+    Material: "hdb-11610"
+    Name: "<red>Cerrar Menú</red>"
+    Lore:
+      - "<gray>¡Haz clic para cerrar el menú!</gray>"
+
+
+Sounds:
+  Enabled: true
+
+  Volume: 1.0
+  Pitch: 1.0
+
+  Enable_Color: "ENTITY_BAT_TAKEOFF"
+  Disable_Color: "BLOCK_NOTE_BLOCK_BASS"
+  Enable_Rainbow: "ENTITY_PLAYER_LEVELUP"
+  Disable_Rainbow: "BLOCK_NOTE_BLOCK_BASS"
+  Enable_Flashing: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  Disable_Flashing: "BLOCK_NOTE_BLOCK_BASS"
+  Close: "UI_BUTTON_CLICK"
+  No_Permission: "ENTITY_VILLAGER_NO"
+
+
+COMMAND_MANAGER:
+  USAGE:
+    HEADER: "<color:#9042f5> <bold>NewGlow</bold> <gray>‣ <white><required> [optional]"
+    MESSAGE: "<red>¡Uso de comando inválido!"
+    PREFIX: "<red> "

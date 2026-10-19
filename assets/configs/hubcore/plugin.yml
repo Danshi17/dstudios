@@ -1,0 +1,94 @@
+name: HubCore
+version: '1.0-SNAPSHOT'
+main: me.danshi.hubCore.HubCore
+api-version: '1.13'
+authors: [Danshi]
+softdepend: [PlaceholderAPI, LuckPerms, HeadDatabase, Vault]
+
+commands:
+  hub:
+    description: Teleport to spawn
+    permission: hubcore.command.hub
+  lobbyadmin:
+    description: Admin commands
+    permission: hubcore.admin
+  setplate:
+    description: Set a launch plate
+    permission: hubcore.admin.setplate
+  hubreload:
+    description: Reload HubCore
+    permission: hubcore.admin.reload
+  fly:
+    description: Activar o desactivar el vuelo
+    permission: hubcore.fly
+  mod:
+    description: Comandos de moderación (gamemode, time, weather)
+    aliases: [moderacion, gm]
+
+permissions:
+  hubcore.fly:
+    description: Permite usar el comando /fly
+    default: op
+  hubcore.gamemode.bypass:
+    description: Evita que se cambie el gamemode al entrar al servidor
+    default: op
+  hubcore.mod:
+    description: Permite usar comandos de moderación
+    default: op
+  hubcore.mod.gamemode:
+    description: Permite cambiar el modo de juego
+    default: op
+  hubcore.mod.time:
+    description: Permite cambiar la hora
+    default: op
+  hubcore.mod.weather:
+    description: Permite cambiar el clima
+    default: op
+  hubcore.admin:
+    description: Full admin access
+    default: op
+  hubcore.admin.reload:
+    description: Reload plugin
+    default: op
+  hubcore.admin.setplate:
+    description: Set launch plates
+    default: op
+  hubcore.admin.build:
+    description: Build in protected world
+    default: op
+  hubcore.command.hub:
+    description: Use /hub
+    default: true
+  hubcore.tablist:
+    description: See tablist
+    default: true
+  hubcore.scoreboard:
+    description: See scoreboard
+    default: true
+  hubcore.chat.color:
+    description: Use chat colors
+    default: false
+  hubcore.chat.color.buy:
+    description: Buy chat colors
+    default: true
+  hubcore.tag.use:
+    description: Use tags
+    default: false
+  hubcore.tag.buy:
+    description: Buy tags
+    default: true
+  hubcore.menu.open:
+    description: Open menus
+    default: true
+  hubcore.cosmetics.chatcolor:
+    description: Use chat color cosmetic
+    default: false
+  hubcore.cosmetics.tag:
+    description: Use tag cosmetic
+    default: false
+  hubcore.enderbutt:
+    description: Use enderbutt
+    default: true
+  hubcore.visibility.visible:
+    description: Visible para jugadores en modo Solo Rangos
+    default: op

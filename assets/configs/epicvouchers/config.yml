@@ -1,0 +1,6 @@
+debug: false
+permissions:
+  menu-edit: "epicvouchers.admin"
+exploits:
+  prevent-offhand: true
+  interaction-cooldown-ms: 350

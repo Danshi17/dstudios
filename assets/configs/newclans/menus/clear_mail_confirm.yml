@@ -1,0 +1,25 @@
+id: clear_mail_confirm
+
+title: '<dark_gray>Clear Clan Mail</dark_gray>'
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,18-26'
+
+  confirm:
+    slot: 11
+    material: LIME_WOOL
+    name: '<green>Clear Mail</green>'
+    lore:
+      - '<red>This removes every stored clan mail.</red>'
+    action: CLEAR_MAIL
+
+  cancel:
+    slot: 15
+    material: RED_WOOL
+    name: '<red>Cancel</red>'
+    action: OPEN:clan_mail

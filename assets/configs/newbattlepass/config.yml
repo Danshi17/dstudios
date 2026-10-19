@@ -1,0 +1,598 @@
+# =========================================
+# PrisonBattlePass - config.yml
+# =========================================
+
+# Idioma por defecto (EN / ES)
+default-lang: ES
+
+# Temporada actual
+season:
+  name: "Temporada 1"
+  start: "2026-06-29"
+  end: "2026-09-01"
+  bonus-xp-per-1000-blocks: 1
+
+max-level: 50
+xp-per-level: 100
+
+weeks:
+  total: 6
+  days-per-week: 7
+
+rubycoins:
+  enabled: true
+  economy-id: "rubys"
+
+# Notificacion general por defecto cuando se completa cualquier quest
+quest-complete-defaults:
+  title: "&a&l¡QUEST COMPLETADA!"
+  subtitle: "&7%quest% &7(+&e%xp% XP&7)"
+  actionbar: "&a&l✔ &7Completaste: &e%quest% &7(+&e%xp% XP&7)"
+  sound: "ENTITY_PLAYER_LEVELUP"
+  sound-volume: 1.0
+  sound-pitch: 1.2
+
+gui:
+  main:
+    size: 54
+    title-free: "&6&lBattle Pass"
+    title-rewards: "&6&lBattle Pass &8(Rewards)"
+    title-quests: "&6&lBattle Pass &8(Quests)"
+    info-item:
+      slot: 22
+      material: "ANVIL"
+      name: "&6&lPremium Battle Pass"
+      lore:
+        - "&7| &fLevel: &e%level%"
+        - "&7| &fXp: &e%xp%&7/&e%xp_needed%"
+        - "&7| &fSemana actual: &e%week%"
+    quests-item:
+      slot: 11
+      material: "ENCHANTED_BOOK"
+      name: "&e&lQuests"
+      lore:
+        - "&7Complete weekly and daily quests"
+        - "&7to progress through the &6Battle Pass&7."
+        - ""
+        - "&e<< Click to view the quests >>"
+    rewards-item:
+      slot: 15
+      material: "CHEST_MINECART"
+      name: "&e&lRewards"
+      lore:
+        - "&7By completing quests you can claim"
+        - "&7many different &6OP rewards&7."
+        - ""
+        - "&e<< Click to view the rewards >>"
+    bonus-xp-item:
+      slot: 20
+      material: "EMERALD"
+      name: "&a&lBonus XP"
+      lore:
+        - "&7Every &e1000 blocks &7you break, you gain"
+        - "&a1 XP &7to boost your Battle Pass!"
+    what-item:
+      slot: 24
+      material: "BOOK"
+      name: "&c&lWhat is the Battle Pass?"
+      lore:
+        - ""
+        - "&7Level up your &cBattle Pass &7by"
+        - "&7gaining &axp &7from completing quests"
+        - ""
+        - "&7You can purchase the &dpremium pass"
+        - "&7for an enhanced experience in &f/store"
+    back-item:
+      material: "ARROW"
+      name: "&cVolver"
+      lore:
+        - "&7Click para volver al menu anterior."
+    filler:
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+
+  rewards:
+    size: 54              # Tamaño del menú de recompensas
+    title: "&6&lBattle Pass &8(Rewards - Pg %page%/%max_pages%)"
+
+    columns: 7
+
+    start-slot-premium: 10
+    start-slot-indicator: 19
+    start-slot-free: 28
+
+    previous-page-item:
+      material: "ARROW"
+      slot: 47
+      name: "&a&l« Página Anterior (%prev_page%/%max_pages%)"
+      lore:
+        - "&7Click para ir a la página anterior."
+    next-page-item:
+      material: "ARROW"
+      slot: 51
+      name: "&a&lPágina Siguiente (%next_page%/%max_pages%) »"
+      lore:
+        - "&7Click para ir a la página siguiente."
+    back-item:
+      material: "ARROW"
+      slot: 49
+      name: "&cVolver"
+      lore:
+        - "&7Click para volver al menú anterior."
+
+    indicator:
+      unlocked:
+        material: "LIME_STAINED_GLASS_PANE"
+        name: "&a&lLevel %level%"
+        lore:
+          - ""
+          - "&fInformation"
+          - "&7| Status: &aUnlocked"
+      locked:
+        material: "RED_STAINED_GLASS_PANE"
+        name: "&c&lLevel %level%"
+        lore:
+          - ""
+          - "&cInformation"
+          - "&7| Status: &cLocked"
+
+    locked-item:
+      material: "BARRIER"
+      name: "&c&lBloqueado (Nivel %level%)"
+      lore:
+        - "&7Completa quests para desbloquear."
+    claimed-item:
+      material: "GREEN_STAINED_GLASS_PANE"
+      name: "&a&lYa reclamado"
+      lore: []
+
+  quests:
+    size: 54              # Tamaño del menú de lista de semanas
+    week-slots: [10, 11, 12, 13, 14, 15, 16]
+    daily-slot: 4
+    week-item:
+      material: "WRITABLE_BOOK"
+      name: "&e&lWeek %week%"
+      lore-unlocked:
+        - "&7Every week &anew quests &7are released."
+        - ""
+        - "&eInformation"
+        - "&7| &fCompleted Quests: &e%completed%&7/&e%total%"
+        - ""
+        - "&e<< Click to view the quests >>"
+      lore-locked:
+        - "&7Every week &anew quests &7are released."
+        - ""
+        - "&eInformation"
+        - "&7| &cReleases in: &f%time_left%"
+    daily-item:
+      material: "CLOCK"
+      name: "&e&lDaily Quests"
+      lore:
+        - "&7Every 24 hours &anew quests &7are released"
+        - "&7for you to gain some extra xp."
+        - ""
+        - "&eInformation"
+        - "&7| &fNew Quests in: &e%time_left%"
+    back-item:
+      slot: 49
+      material: "ARROW"
+      name: "&cVolver"
+      lore:
+        - "&7Click para volver al menú principal."
+
+  week-quests:
+    size: 54              # Tamaño del menú de misiones de una semana
+    quest-slots: [19, 20, 21, 22, 23, 24, 25]
+    back-item:
+      slot: 49
+      material: "ARROW"
+      name: "&cVolver a semanas"
+      lore:
+        - "&7Click para volver a la lista de semanas."
+
+  daily-quests:
+    size: 54              # Tamaño del menú de misiones diarias
+    quest-slots: [19, 20, 21, 22, 23, 24, 25]
+    back-item:
+      slot: 49
+      material: "ARROW"
+      name: "&cVolver a menú principal"
+      lore:
+        - "&7Click para volver al Battle Pass."
+
+levels:
+  1:
+    free:
+      item:
+        material: "GOLD_INGOT"
+        name: "&eLevel 1 &7(Free)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &aFree Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &f5x Gold Ingot"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "give %player% gold_ingot 5"
+    premium:
+      item:
+        material: "DIAMOND"
+        name: "&bLevel 1 &7(Premium)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &dPremium Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &b1x Diamond"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "give %player% diamond 1"
+
+  2:
+    free:
+      item:
+        material: "IRON_INGOT"
+        name: "&7Level 2 &7(Free)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &aFree Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &f10x Iron Ingot"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "give %player% iron_ingot 10"
+    premium:
+      item:
+        material: "EMERALD"
+        name: "&aLevel 2 &7(Premium)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &dPremium Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &a2x Emerald"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "give %player% emerald 2"
+
+  3:
+    free:
+      item:
+        material: "EXPERIENCE_BOTTLE"
+        name: "&6Level 3 &7(Free)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &aFree Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &f500 RubyCoins"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "rubys give %player% 500"
+    premium:
+      item:
+        material: "NETHER_STAR"
+        name: "&dLevel 3 &7(Premium)"
+        lore:
+          - "&aInformation"
+          - "&7| Type: &dPremium Reward"
+          - ""
+          - "&aRewards"
+          - "&7| &d1000 RubyCoins"
+          - "&7| &f1x Nether Star"
+          - ""
+          - "&e<< Click to claim the reward >>"
+      commands:
+        - "rubys give %player% 1000"
+        - "give %player% nether_star 1"
+
+# Misiones semanales
+# Tipos soportados: BLOCKS_MINED, HOURS_PLAYED, JUMPS, EAT, KILL_PLAYERS, BOMBS_USED, DRILLS_USED, PICKAXE_LEVEL, REBIRTHS, LEVEL_UP_ANY
+weekly-quests:
+  week-1:
+    quest-1:
+      type: BLOCKS_MINED
+      name: "&b&lMiner I Quest"
+      description:
+        - "» To complete this quest, you must"
+        - "» destroy 250K blocks"
+      xp: 100
+      goal: 250000
+      item:
+        material: "DIAMOND_PICKAXE"
+      complete-title: "&b&l¡MINERO!"
+      complete-subtitle: "&7Completaste &bMiner I Quest"
+      complete-actionbar: "&b&l⛏ &7+100 XP &7Battle Pass"
+      complete-sound: "BLOCK_ANVIL_USE"
+      sound-volume: 1.0
+      sound-pitch: 1.5
+    quest-2:
+      type: KILL_PLAYERS
+      name: "&c&lPvP I Quest"
+      description:
+        - "» Mata 10 jugadores"
+      xp: 80
+      goal: 10
+      item:
+        material: "IRON_SWORD"
+      complete-title: "&c&l¡GUERRERO!"
+      complete-subtitle: "&7Completaste &cPvP I Quest"
+      complete-actionbar: "&c&l⚔ &7+80 XP &7Battle Pass"
+      complete-sound: "ENTITY_PLAYER_ATTACK_CRIT"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    quest-3:
+      type: HOURS_PLAYED
+      name: "&e&lLoyal I Quest"
+      description:
+        - "» Juega 5 horas"
+      xp: 60
+      goal: 5
+      item:
+        material: "CLOCK"
+      complete-title: "&e&l¡LEAL!"
+      complete-subtitle: "&7Completaste &eLoyal I Quest"
+      complete-actionbar: "&e&l⏰ &7+60 XP &7Battle Pass"
+      complete-sound: "BLOCK_NOTE_BLOCK_BELL"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    quest-4:
+      type: JUMPS
+      name: "&a&lJumper I Quest"
+      description:
+        - "» Salta 500 veces"
+      xp: 40
+      goal: 500
+      item:
+        material: "FEATHER"
+      complete-title: "&a&l¡SALTARIN!"
+      complete-subtitle: "&7Completaste &aJumper I Quest"
+      complete-actionbar: "&a&l⬆ &7+40 XP &7Battle Pass"
+      complete-sound: "ENTITY_BAT_TAKEOFF"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+    quest-5:
+      type: EAT
+      name: "&6&lFoodie I Quest"
+      description:
+        - "» Come cualquier alimento 20 veces"
+      xp: 30
+      goal: 20
+      item:
+        material: "COOKED_BEEF"
+      complete-title: "&6&l¡GOURMET!"
+      complete-subtitle: "&7Completaste &6Foodie I Quest"
+      complete-actionbar: "&6&l🍖 &7+30 XP &7Battle Pass"
+      complete-sound: "ENTITY_PLAYER_BURP"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    # NUEVA MISIÓN: usar bombas
+    quest-6:
+      type: BOMBS_USED
+      name: "&4&lBombardero I"
+      description:
+        - "» Usa 3 bombas"
+      xp: 45
+      goal: 3
+      item:
+        material: "TNT"
+      complete-title: "&4&l¡EXPLOSIVO!"
+      complete-subtitle: "&7Completaste &4Bombardero I"
+      complete-actionbar: "&4&l💣 &7+45 XP &7Battle Pass"
+      complete-sound: "ENTITY_GENERIC_EXPLODE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    # NUEVA MISIÓN: nivel de pico
+    quest-7:
+      type: PICKAXE_LEVEL
+      name: "&b&lPico Experto I"
+      description:
+        - "» Alcanza nivel 10 de pico"
+      xp: 70
+      goal: 10
+      item:
+        material: "DIAMOND_PICKAXE"
+      complete-title: "&b&l¡MAESTRO DEL PICO!"
+      complete-subtitle: "&7Completaste &bPico Experto I"
+      complete-actionbar: "&b&l⛏ &7+70 XP &7Battle Pass"
+      complete-sound: "BLOCK_ANVIL_USE"
+      sound-volume: 1.0
+      sound-pitch: 1.5
+
+  week-2:
+    quest-1:
+      type: BLOCKS_MINED
+      name: "&b&lMiner II Quest"
+      description:
+        - "» To complete this quest, you must"
+        - "» destroy 500K blocks"
+      xp: 150
+      goal: 500000
+      item:
+        material: "DIAMOND_PICKAXE"
+      complete-title: "&b&l¡MINERO!"
+      complete-subtitle: "&7Completaste &bMiner II Quest"
+      complete-actionbar: "&b&l⛏ &7+150 XP &7Battle Pass"
+      complete-sound: "BLOCK_ANVIL_USE"
+      sound-volume: 1.0
+      sound-pitch: 1.5
+    quest-2:
+      type: KILL_PLAYERS
+      name: "&c&lPvP II Quest"
+      description:
+        - "» Mata 25 jugadores"
+      xp: 120
+      goal: 25
+      item:
+        material: "IRON_SWORD"
+      complete-title: "&c&l¡GUERRERO!"
+      complete-subtitle: "&7Completaste &cPvP II Quest"
+      complete-actionbar: "&c&l⚔ &7+120 XP &7Battle Pass"
+      complete-sound: "ENTITY_PLAYER_ATTACK_CRIT"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    quest-3:
+      type: HOURS_PLAYED
+      name: "&e&lLoyal II Quest"
+      description:
+        - "» Juega 10 horas"
+      xp: 100
+      goal: 10
+      item:
+        material: "CLOCK"
+      complete-title: "&e&l¡LEAL!"
+      complete-subtitle: "&7Completaste &eLoyal II Quest"
+      complete-actionbar: "&e&l⏰ &7+100 XP &7Battle Pass"
+      complete-sound: "BLOCK_NOTE_BLOCK_BELL"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    quest-4:
+      type: JUMPS
+      name: "&a&lJumper II Quest"
+      description:
+        - "» Salta 1000 veces"
+      xp: 60
+      goal: 1000
+      item:
+        material: "FEATHER"
+      complete-title: "&a&l¡SALTARIN!"
+      complete-subtitle: "&7Completaste &aJumper II Quest"
+      complete-actionbar: "&a&l⬆ &7+60 XP &7Battle Pass"
+      complete-sound: "ENTITY_BAT_TAKEOFF"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+    quest-5:
+      type: EAT
+      name: "&6&lFoodie II Quest"
+      description:
+        - "» Come cualquier alimento 50 veces"
+      xp: 50
+      goal: 50
+      item:
+        material: "COOKED_BEEF"
+      complete-title: "&6&l¡GOURMET!"
+      complete-subtitle: "&7Completaste &6Foodie II Quest"
+      complete-actionbar: "&6&l🍖 &7+50 XP &7Battle Pass"
+      complete-sound: "ENTITY_PLAYER_BURP"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    # NUEVA MISIÓN: usar drills
+    quest-6:
+      type: DRILLS_USED
+      name: "&e&lPerforador II"
+      description:
+        - "» Usa 2 drills"
+      xp: 60
+      goal: 2
+      item:
+        material: "IRON_BLOCK"
+      complete-title: "&e&l¡PERFORADOR!"
+      complete-subtitle: "&7Completaste &ePerforador II"
+      complete-actionbar: "&e&l🔩 &7+60 XP &7Battle Pass"
+      complete-sound: "BLOCK_ANVIL_LAND"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    # NUEVA MISIÓN: renacimientos
+    quest-7:
+      type: REBIRTHS
+      name: "&d&lRenacido II"
+      description:
+        - "» Realiza 1 renacimiento"
+      xp: 120
+      goal: 1
+      item:
+        material: "NETHER_STAR"
+      complete-title: "&d&l¡FÉNIX!"
+      complete-subtitle: "&7Completaste &dRenacido II"
+      complete-actionbar: "&d&l⭐ &7+120 XP &7Battle Pass"
+      complete-sound: "ENTITY_ENDER_DRAGON_GROWL"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+# Misiones diarias
+daily-quests:
+  quest-1:
+    type: BLOCKS_MINED
+    name: "&b&lDaily Miner"
+    description:
+      - "» Mina 10,000 bloques hoy"
+    xp: 20
+    goal: 10000
+    item:
+      material: "STONE"
+    complete-title: "&b&l¡MINERO DIARIO!"
+    complete-subtitle: "&7Completaste &bDaily Miner"
+    complete-actionbar: "&b&l⛏ &7+20 XP &7Battle Pass"
+    complete-sound: "BLOCK_ANVIL_USE"
+    sound-volume: 1.0
+    sound-pitch: 1.5
+  quest-2:
+    type: JUMPS
+    name: "&a&lDaily Jumper"
+    description:
+      - "» Salta 100 veces hoy"
+    xp: 10
+    goal: 100
+    item:
+      material: "FEATHER"
+    complete-title: "&a&l¡SALTARIN DIARIO!"
+    complete-subtitle: "&7Completaste &aDaily Jumper"
+    complete-actionbar: "&a&l⬆ &7+10 XP &7Battle Pass"
+    complete-sound: "ENTITY_BAT_TAKEOFF"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+  quest-3:
+    type: EAT
+    name: "&6&lDaily Foodie"
+    description:
+      - "» Come 5 veces hoy"
+    xp: 10
+    goal: 5
+    item:
+      material: "APPLE"
+    complete-title: "&6&l¡GOURMET DIARIO!"
+    complete-subtitle: "&7Completaste &6Daily Foodie"
+    complete-actionbar: "&6&l🍖 &7+10 XP &7Battle Pass"
+    complete-sound: "ENTITY_PLAYER_BURP"
+    sound-volume: 1.0
+    sound-pitch: 1.0
+  # NUEVA DIARIA: usar bomba
+  quest-4:
+    type: BOMBS_USED
+    name: "&4&lBombardero Diario"
+    description:
+      - "» Usa 1 bomba hoy"
+    xp: 15
+    goal: 1
+    item:
+      material: "TNT"
+    complete-title: "&4&l¡BOOM DIARIO!"
+    complete-subtitle: "&7Completaste &4Bombardero Diario"
+    complete-actionbar: "&4&l💣 &7+15 XP &7Battle Pass"
+    complete-sound: "ENTITY_GENERIC_EXPLODE"
+    sound-volume: 1.0
+    sound-pitch: 1.0
+  # NUEVA DIARIA: subir niveles (cualquier tipo)
+  quest-5:
+    type: LEVEL_UP_ANY
+    name: "&e&lProgreso Diario"
+    description:
+      - "» Sube 3 niveles de cualquier cosa"
+    xp: 12
+    goal: 3
+    item:
+      material: "EXPERIENCE_BOTTLE"
+    complete-title: "&e&l¡CRECIENDO!"
+    complete-subtitle: "&7Completaste &eProgreso Diario"
+    complete-actionbar: "&e&l⬆ &7+12 XP &7Battle Pass"
+    complete-sound: "ENTITY_PLAYER_LEVELUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2

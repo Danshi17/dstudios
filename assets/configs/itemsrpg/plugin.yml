@@ -1,0 +1,31 @@
+name: ItemsRPG
+version: '${version}'
+
+main: me.danshi.itemsRPG.ItemsRPG
+api-version: '1.13'
+load: STARTUP
+depend:
+  - packetevents
+softdepend:
+  - HeadDatabase
+  - PlaceholderAPI
+  - WorldGuard
+  - WorldEdit
+  - ShopGUIPlus
+
+commands:
+  rpg:
+    description: Comando principal de ItemsRPG
+    usage: /rpg <subcomando>
+    permission: itemsrpg.use
+
+permissions:
+  itemsrpg.use:
+    description: Permite usar el comando principal /rpg (administración del plugin)
+    default: op
+  itemsrpg.autosmelt:
+    description: Permite usar la función de auto-smelt de las herramientas
+    default: op
+  itemsrpg.autosell:
+    description: Permite usar la función de auto-sell de las herramientas
+    default: op

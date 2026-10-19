@@ -1,0 +1,6 @@
+id: anvil_clandesc
+
+title: '<dark_gray>Clan Description</dark_gray>'
+material: WRITABLE_BOOK
+initial-text: ''
+back-menu: clan_settings

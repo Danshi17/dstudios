@@ -1,0 +1,6 @@
+id: anvil_clanrivaladd
+
+title: '<dark_gray>Add Rival</dark_gray>'
+material: IRON_SWORD
+initial-text: 'ClanTag'
+back-menu: rival

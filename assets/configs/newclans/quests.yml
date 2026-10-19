@@ -1,0 +1,44 @@
+quests:
+  daily-blocks:
+    name: '<green>Miner</green>'
+    material: DIAMOND_PICKAXE
+    type: BREAK_BLOCK
+    target: 250
+    daily: true
+    rewards:
+      clan-points: 25
+      bank: 100
+      commands: []
+
+  daily-mobs:
+    name: '<red>Hunter</red>'
+    material: IRON_SWORD
+    type: KILL_ENTITY
+    target: 50
+    daily: true
+    rewards:
+      clan-points: 30
+      bank: 150
+      commands: []
+
+  daily-pvp:
+    name: '<gold>Warrior</gold>'
+    material: DIAMOND_SWORD
+    type: KILL_PLAYER
+    target: 5
+    daily: true
+    rewards:
+      clan-points: 50
+      bank: 250
+      commands: []
+
+  fisher:
+    name: '<aqua>Fisher</aqua>'
+    material: FISHING_ROD
+    type: FISH
+    target: 30
+    daily: true
+    rewards:
+      clan-points: 20
+      bank: 100
+      commands: []

@@ -1,0 +1,24 @@
+
+config-version: 2
+
+targets:
+  - material: DIAMOND_SWORD
+    enchantment: SHARPNESS
+    min-level: 6
+  - material: NETHERITE_SWORD
+    enchantment: SHARPNESS
+    min-level: 6
+
+scan:
+  online-inventory: true
+  online-armor: true
+  online-offhand: true
+  online-enderchest: true
+  offline-inventory: true
+  offline-enderchest: true
+  playervaults: true
+
+playervaults:
+  folder: "PlayerVaults/vaults"
+
+broadcast-removals: true

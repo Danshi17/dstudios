@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文档 — dStudios Plugins</title>
+<meta name="description" content="安装指南、挂钩、命令、权限和每个插件的每个 .yml 文件：可供查看、复制或下载。">
+<meta property="og:title" content="文档 — dStudios Plugins">
+<meta property="og:description" content="安装指南、挂钩、命令、权限和每个插件的每个 .yml 文件：可供查看、复制或下载。">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="page-docs">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">跳至内容</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../index.html">
+      <img class="logo-img" src="../../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="../index.html#plugins">插件</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link active" href="../documentation/index.html">文档</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="语言" aria-label="语言"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇨🇳 ZH</span></button><div class="lang-drop"><a class="lang-opt" href="../../documentacion/index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt" href="../../en/documentation/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../../fr/documentation/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt active" href="../../zh/documentation/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt" href="../../ko/documentation/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../../ru/documentation/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="切换主题" aria-label="切换主题">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero small docs-hero">
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">官方文档</p>
+    <h1>完整的文档 <span class="hl">NewSeries</span> </h1>
+    <p class="hero-sub">安装指南、挂钩、命令、权限和每个插件的每个 .yml 文件：可供查看、复制或下载。</p>
+  </div>
+</section>
+
+<section class="section" id="guia">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>如何安装任何插件</h2>
+      <ol class="install-steps">
+        <li>下载插件 <code>.jar</code> 并将其放入服务器或代理 <code>plugins/</code> 文件夹中。</li>
+        <li>从需求列表中安装您需要的任何依赖项。</li>
+        <li>重新启动服务器（或运行 <code>/reload recognize</code>）以便插件启动。</li>
+        <li>通过其 config.yml 和数据文件配置插件。</li>
+        <li>使用插件的重新加载命令应用更改而无需重新启动。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plugins-docs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>已记录的插件</h2>
+      <p>选择一个插件以查看其完整文档：安装、挂钩、命令、权限和配置文件。</p>
+    </div>
+    <div class="searchbar docs-searchbar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="docsSearch" placeholder="搜索插件..." aria-label="搜索插件..." autocomplete="off">
+    </div>
+    <div class="docs-list" id="docsGrid">
+<a class="doc-item reveal" href="../documentation/afkzone/index.html" data-search="afkzone 带有自动奖励和游戏内编辑器的 afk 区域。 afkzone 公用事业">
+  <img class="doc-icon" src="../../assets/icons/afkzone.png" alt="AfkZone" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AfkZone<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">带有自动奖励和游戏内编辑器的 AFK 区域。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">7 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/antiop/index.html" data-search="antiop 保护您的服务器免受未经授权的操作和排名的影响。 antiop 适度">
+  <img class="doc-icon" src="../../assets/icons/antiop.png" alt="AntiOP" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiOP<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 适度</span></span>
+    <span class="doc-tagline">保护您的服务器免受未经授权的操作和排名的影响。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">3 命令</span><span class="doc-chip">5 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/antipendejos/index.html" data-search="antipendejos 阻止违禁物品并自动清除库存和金库。 antipendejos 适度">
+  <img class="doc-icon" src="../../assets/icons/antipendejos.png" alt="AntiPendejos" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiPendejos<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 适度</span></span>
+    <span class="doc-tagline">阻止违禁物品并自动清除库存和金库。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">6 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/blockrewards/index.html" data-search="blockrewards 打破障碍、升级并获得史诗般的奖励。 blockrewards 进展">
+  <img class="doc-icon" src="../../assets/icons/blockrewards.png" alt="BlockRewards" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">BlockRewards<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">打破障碍、升级并获得史诗般的奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">4 命令</span><span class="doc-chip">5 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/ecevents/index.html" data-search="ecevents 挖矿活动和幸运区块奖励丰厚。 ecevents 小游戏">
+  <img class="doc-icon" src="../../assets/icons/ecevents.png" alt="ECEvents" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ECEvents<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">挖矿活动和幸运区块奖励丰厚。</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">8 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/epicvouchers/index.html" data-search="epicvouchers 带有命令、声音和 gui 的自定义凭证。 epicvouchers 经济">
+  <img class="doc-icon" src="../../assets/icons/epicvouchers.png" alt="EpicVouchers" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EpicVouchers<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 经济</span></span>
+    <span class="doc-tagline">带有命令、声音和 GUI 的自定义凭证。</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">1 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/evenmorefish/index.html" data-search="evenmorefish 使用完全定制的鱼进行钓鱼比赛。 evenmorefish 小游戏">
+  <img class="doc-icon smooth" src="../../assets/icons/emf.png" alt="EvenMoreFish" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EvenMoreFish<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">使用完全定制的鱼进行钓鱼比赛。</span>
+    <span class="doc-chips"><span class="doc-chip">46 .yml</span><span class="doc-chip">8 命令</span><span class="doc-chip">17 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/extraregions/index.html" data-search="extraregions 高级 worldguard 旗帜：命令、效果等等。 extraregions 世界">
+  <img class="doc-icon" src="../../assets/icons/extraregions.png" alt="ExtraRegions" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ExtraRegions<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> 世界</span></span>
+    <span class="doc-tagline">高级 WorldGuard 旗帜：命令、效果等等。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">2 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/hubcore/index.html" data-search="hubcore 终极大堂核心：菜单、快捷栏等。 hubcore 公用事业">
+  <img class="doc-icon" src="../../assets/icons/hubcore.png" alt="HubCore" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">HubCore<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">终极大堂核心：菜单、快捷栏等。</span>
+    <span class="doc-chips"><span class="doc-chip">10 .yml</span><span class="doc-chip">15 命令</span><span class="doc-chip">22 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/itemsrpg/index.html" data-search="itemsrpg 带有配方、效果和插件的自定义 rpg 物品。 itemsrpg 角色扮演游戏">
+  <img class="doc-icon" src="../../assets/icons/itemsrpg.png" alt="ItemsRPG" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ItemsRPG<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 角色扮演游戏</span></span>
+    <span class="doc-tagline">带有配方、效果和插件的自定义 RPG 物品。</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">13 命令</span><span class="doc-chip">3 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/lootboxes/index.html" data-search="lootboxes 打开箱子，里面有史诗般的动画和稀有奖励。 lootboxes 经济">
+  <img class="doc-icon" src="../../assets/icons/lootboxes.png" alt="Lootboxes" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Lootboxes<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 经济</span></span>
+    <span class="doc-tagline">打开箱子，里面有史诗般的动画和稀有奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">9 命令</span><span class="doc-chip">3 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/nchat/index.html" data-search="nchat 终极聊天：颜色、标签、私信和审核。 nchat 聊天">
+  <img class="doc-icon" src="../../assets/icons/nchat.png" alt="nChat" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nChat<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> 聊天</span></span>
+    <span class="doc-tagline">终极聊天：颜色、标签、私信和审核。</span>
+    <span class="doc-chips"><span class="doc-chip">11 .yml</span><span class="doc-chip">17 命令</span><span class="doc-chip">93 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcasino/index.html" data-search="newcasino coinflip、老虎机和 17 个投注迷你游戏。 newcasino 小游戏">
+  <img class="doc-icon" src="../../assets/icons/newcasino.png" alt="NewCasino" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCasino<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">Coinflip、老虎机和 17 个投注迷你游戏。</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">16 命令</span><span class="doc-chip">6 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newchatcolor/index.html" data-search="newchatcolor 使用十六进制、渐变等自定义您的聊天颜色。 newchatcolor 聊天">
+  <img class="doc-icon" src="../../assets/icons/newchatcolor.png" alt="NewChatColor" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewChatColor<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> 聊天</span></span>
+    <span class="doc-tagline">使用十六进制、渐变等自定义您的聊天颜色。</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">5 命令</span><span class="doc-chip">10 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newclans/index.html" data-search="newclans 建立你的部落，结成联盟并统治队伍。 newclans 社会的">
+  <img class="doc-icon" src="../../assets/icons/newclans.png" alt="NewClans" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewClans<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 社会的</span></span>
+    <span class="doc-tagline">建立你的部落，结成联盟并统治队伍。</span>
+    <span class="doc-chips"><span class="doc-chip">57 .yml</span><span class="doc-chip">15 命令</span><span class="doc-chip">24 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcomblog/index.html" data-search="newcombatlog pvp 战斗系统，包含标签、赏金和奖励。 newcomblog 角色扮演游戏">
+  <img class="doc-icon" src="../../assets/icons/newcombatlog.png" alt="NewCombatlog" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCombatlog<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 角色扮演游戏</span></span>
+    <span class="doc-tagline">PvP 战斗系统，包含标签、赏金和奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 命令</span><span class="doc-chip">5 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcosmetics/index.html" data-search="newcosmetics 适合您服务器的终极化妆品套件。 newcosmetics 化妆品">
+  <img class="doc-icon" src="../../assets/icons/newcosmetics.png" alt="NewCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 化妆品</span></span>
+    <span class="doc-tagline">适合您服务器的终极化妆品套件。</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 命令</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newdtc/index.html" data-search="newdtc 摧毁核心：有奖励的 pvp 活动。 newdtc 小游戏">
+  <img class="doc-icon" src="../../assets/icons/newdtc.png" alt="NewDTC" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewDTC<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">摧毁核心：有奖励的 PvP 活动。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 命令</span><span class="doc-chip">12 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newfriends/index.html" data-search="newfriends 通过私人消息传递跨网络好友。 newfriends 社会的">
+  <img class="doc-icon" src="../../assets/icons/newfriends.png" alt="NewFriends" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewFriends<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 社会的</span></span>
+    <span class="doc-tagline">通过私人消息传递跨网络好友。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">8 命令</span><span class="doc-chip">9 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newglow/index.html" data-search="newglow 具有彩虹和闪烁模式的发光光环。 newglow 化妆品">
+  <img class="doc-icon" src="../../assets/icons/newglow.png" alt="NewGlow" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewGlow<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 化妆品</span></span>
+    <span class="doc-tagline">具有彩虹和闪烁模式的发光光环。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">5 命令</span><span class="doc-chip">27 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newheads/index.html" data-search="newheads 带有文本和交互的浮动头像来装饰您的服务器。 newheads 化妆品">
+  <img class="doc-icon" src="../../assets/icons/newheads.png" alt="NewHeads" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewHeads<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 化妆品</span></span>
+    <span class="doc-tagline">带有文本和交互的浮动头像来装饰您的服务器。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newjobs/index.html" data-search="newjobs 13 个具有 xp、任务和合同的职业。 newjobs 进展">
+  <img class="doc-icon" src="../../assets/icons/newjobs.png" alt="NewJobs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewJobs<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">13 个具有 XP、任务和合同的职业。</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">4 命令</span><span class="doc-chip">4 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newkb/index.html" data-search="newkb 将击退和攻击速度调整至完美。 newkb 公用事业">
+  <img class="doc-icon" src="../../assets/icons/newkb.png" alt="NewKB" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewKB<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">将击退和攻击速度调整至完美。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newlogin/index.html" data-search="newlogin 登录、注册并为您的网络进行高级身份验证。 newlogin 公用事业">
+  <img class="doc-icon" src="../../assets/icons/newlogin.png" alt="NewLogin" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewLogin<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">登录、注册并为您的网络进行高级身份验证。</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">12 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newnpcs/index.html" data-search="newnpcs 支持 3d 模型的自定义 npc。 newnpcs 公用事业">
+  <img class="doc-icon" src="../../assets/icons/newnpcs.png" alt="newNPCS" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newNPCS<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">支持 3D 模型的自定义 NPC。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 命令</span><span class="doc-chip">24 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newpets/index.html" data-search="newpets 宠物有等级、特性和蛋。 newpets 进展">
+  <img class="doc-icon" src="../../assets/icons/newpets.png" alt="NewPets" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPets<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">宠物有等级、特性和蛋。</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">7 命令</span><span class="doc-chip">3 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newpinatas/index.html" data-search="newpinatas 粉碎社区皮纳塔并分享奖励。 newpinatas 小游戏">
+  <img class="doc-icon" src="../../assets/icons/newpinatas.png" alt="NewPinatas" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPinatas<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">粉碎社区皮纳塔并分享奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 命令</span><span class="doc-chip">3 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newrankup/index.html" data-search="newrankup 通过要求、声望和重生来提升排名。 newrankup 进展">
+  <img class="doc-icon" src="../../assets/icons/newrankup.png" alt="NewRankup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewRankup<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">通过要求、声望和重生来提升排名。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">5 命令</span><span class="doc-chip">5 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newreports/index.html" data-search="newreports 玩家通过 discord webhook 警报进行报告。 newreports 适度">
+  <img class="doc-icon" src="../../assets/icons/newreports.png" alt="NewReports" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewReports<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 适度</span></span>
+    <span class="doc-tagline">玩家通过 Discord Webhook 警报进行报告。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 命令</span><span class="doc-chip">4 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newresources/index.html" data-search="newresources 通过资源包定制物品、方块和家具。 newresources 世界">
+  <img class="doc-icon" src="../../assets/icons/newresources.png" alt="newResources" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newResources<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> 世界</span></span>
+    <span class="doc-tagline">通过资源包定制物品、方块和家具。</span>
+    <span class="doc-chips"><span class="doc-chip">12 .yml</span><span class="doc-chip">9 命令</span><span class="doc-chip">7 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newskills/index.html" data-search="newskills mcmmo 风格的技能：升级并解锁能力。 newskills 角色扮演游戏">
+  <img class="doc-icon" src="../../assets/icons/newskills.png" alt="NewSkills" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSkills<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 角色扮演游戏</span></span>
+    <span class="doc-tagline">mcMMO 风格的技能：升级并解锁能力。</span>
+    <span class="doc-chips"><span class="doc-chip">28 .yml</span><span class="doc-chip">56 命令</span><span class="doc-chip">602 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newstreams/index.html" data-search="newstreams 通过安全链接验证来宣布您的流。 newstreams 社会的">
+  <img class="doc-icon" src="../../assets/icons/newstreams.png" alt="NewStreams" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewStreams<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 社会的</span></span>
+    <span class="doc-tagline">通过安全链接验证来宣布您的流。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newvaults/index.html" data-search="newvaults 具有权限、gui 和多数据库的玩家库。 newvaults 公用事业">
+  <img class="doc-icon" src="../../assets/icons/newvaults.png" alt="NewVaults" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewVaults<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">具有权限、GUI 和多数据库的玩家库。</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">7 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/nkoths/index.html" data-search="nkoths 带有捕捉、全息图和奖励的定制 koth。 nkoths 小游戏">
+  <img class="doc-icon" src="../../assets/icons/nkoths.png" alt="nKoths" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nKoths<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">带有捕捉、全息图和奖励的定制 KOTH。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 命令</span><span class="doc-chip">4 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newplaytime/index.html" data-search="nplaytime 通过游戏升级：游戏时间的奖励。 newplaytime 进展">
+  <img class="doc-icon" src="../../assets/icons/newplaytime.png" alt="nPlaytime" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nPlaytime<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">通过游戏升级：游戏时间的奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">2 命令</span><span class="doc-chip">1 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/staffmode/index.html" data-search="nstaffmode 带有审核工具的完整员工模式。 staffmode 适度">
+  <img class="doc-icon" src="../../assets/icons/staffmode.png" alt="nStaffMode" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nStaffMode<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 适度</span></span>
+    <span class="doc-tagline">带有审核工具的完整员工模式。</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">7 命令</span><span class="doc-chip">28 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/playervs/index.html" data-search="playervs 在回合、竞技场和观众中进行 1v1 决斗。 playervs 小游戏">
+  <img class="doc-icon" src="../../assets/icons/playervs.png" alt="Playervs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Playervs<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 小游戏</span></span>
+    <span class="doc-tagline">在回合、竞技场和观众中进行 1v1 决斗。</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">9 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newbattlepass/index.html" data-search="prisonbattlepass 升级、完成任务并领取 op 奖励。 newbattlepass 进展">
+  <img class="doc-icon" src="../../assets/icons/newbattlepass.png" alt="PrisonBattlePass" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">PrisonBattlePass<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 进展</span></span>
+    <span class="doc-tagline">升级、完成任务并领取 OP 奖励。</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">5 命令</span><span class="doc-chip">2 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/procosmetics/index.html" data-search="procosmetics 超过 15 种化妆品类别，让您的服务器熠熠生辉。 procosmetics 化妆品">
+  <img class="doc-icon" src="../../assets/icons/procosmetics.png" alt="ProCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ProCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 化妆品</span></span>
+    <span class="doc-tagline">超过 15 种化妆品类别，让您的服务器熠熠生辉。</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 命令</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/spawnsystem/index.html" data-search="spawnsystem 生成、家园、游戏模式、时间和飞行都在一个插件中。 spawnsystem 公用事业">
+  <img class="doc-icon" src="../../assets/icons/spawnsystem.png" alt="SpawnSystem" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">SpawnSystem<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">生成、家园、游戏模式、时间和飞行都在一个插件中。</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">14 命令</span><span class="doc-chip">14 权限</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newautopickup/index.html" data-search="newautopickup 自动拾取物品（正在进行中）。 newautopickup 公用事业">
+  <img class="doc-icon" src="../../assets/icons/newautopickup.png" alt="NewAutopickup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewAutopickup<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 公用事业</span></span>
+    <span class="doc-tagline">自动拾取物品（正在进行中）。</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newsellchests/index.html" data-search="newsellchests 正在进行中的工作：自动出售宝箱插件。 newsellchests 经济">
+  <img class="doc-icon" src="../../assets/icons/newsellchests.png" alt="NewSellchests" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSellchests<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 经济</span></span>
+    <span class="doc-tagline">正在进行中的工作：自动出售宝箱插件。</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a>
+    </div>
+    <div class="empty" id="docsEmpty" hidden>
+      <span class="empty-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <h3>没有结果</h3>
+      <p>没有符合您搜索条件的插件。尝试另一个词或类别。</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>从插件源代码自动生成的文档。</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="../documentation/index.html">文档</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. 版权所有。 <span class="dot">·</span> 由 GitHub 页面提供支持</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+id: anvil_claninvite
+
+title: '<dark_gray>Invite Member</dark_gray>'
+material: PLAYER_HEAD
+initial-text: 'PlayerName'
+back-menu: members

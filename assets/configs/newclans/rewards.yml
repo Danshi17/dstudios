@@ -1,0 +1,24 @@
+rewards:
+  level-1:
+    level: 1
+    name: '<green>Starter Reward</green>'
+    material: CHEST
+    one-per-player: true
+    commands:
+      - 'give %player% bread 16'
+
+  level-2:
+    level: 2
+    name: '<aqua>Level 2 Reward</aqua>'
+    material: IRON_INGOT
+    one-per-player: true
+    commands:
+      - 'give %player% iron_ingot 8'
+
+  level-3:
+    level: 3
+    name: '<light_purple>Level 3 Reward</light_purple>'
+    material: DIAMOND
+    one-per-player: true
+    commands:
+      - 'give %player% diamond 2'

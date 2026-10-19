@@ -1,0 +1,102 @@
+items:
+  teleporter:
+    enabled: true
+    material: "COMPASS"
+    slot: 0
+    name: "&bTeletransportador &7(Click derecho)"
+    lore:
+      - "&fApuntar y click derecho para"
+      - "&fteletransportarte."
+    action: "TELEPORTER"
+    permission: "nstaffmode.use.teleporter"
+
+  inspector:
+    enabled: true
+    material: "BOOK"
+    slot: 1
+    name: "&aInfo del Jugador &7(Golpear o Click Derecho)"
+    lore:
+      - "&fGolpea o haz click derecho a"
+      - "&fun jugador para ver su información."
+    action: "INSPECTOR"
+    permission: "nstaffmode.use.inspector"
+
+  invsee:
+    enabled: true
+    material: "CHEST"
+    slot: 2
+    name: "&6Ver Inventario &7(Golpear o Click Derecho)"
+    lore:
+      - "&fGolpea o haz click derecho a"
+      - "&fun jugador para abrir su inventario."
+    action: "INVSEE"
+    permission: "nstaffmode.use.invsee"
+
+  vanish-toggle:
+    enabled: true
+    slot: 3
+    action: "VANISH_TOGGLE"
+    permission: "nstaffmode.use.vanish"
+    on-state:
+      material: "LIME_DYE"
+      name: "&aVanish &7(Activado)"
+      lore: ["&fEres invisible para los", "&fjugadores normales.", "&7(Click para desactivar)"]
+    off-state:
+      material: "GRAY_DYE"
+      name: "&cVanish &7(Desactivado)"
+      lore: ["&fEres visible para todos", "&flos jugadores.", "&7(Click para activar)"]
+
+  freezer:
+    enabled: true
+    material: "ICE"
+    slot: 4
+    name: "&3Congelador &7(Golpear o Click Derecho)"
+    lore:
+      - "&fGolpea o haz click derecho a"
+      - "&fun jugador para congelarlo o descongelarlo."
+    action: "FREEZER"
+    permission: "nstaffmode.use.freezer"
+
+  random-teleport:
+    enabled: true
+    material: "ENDER_PEARL"
+    slot: 5
+    name: "&dTP Aleatorio &7(Click)"
+    lore:
+      - "&fHaz click para ir a la"
+      - "&fubicación de un jugador al azar."
+    action: "RANDOM_TP"
+    permission: "nstaffmode.use.randomtp"
+
+  mine-detector:
+    enabled: true
+    material: "DIAMOND_PICKAXE"
+    slot: 6
+    name: "&9Detector de Minas &7(Click)"
+    lore:
+      - "&fHaz click para ver una lista"
+      - "&fde jugadores en las minas."
+    action: "MINE_DETECTOR"
+    permission: "nstaffmode.use.minedetector"
+
+  cps-checker:
+    enabled: true
+    material: "STICK"
+    slot: 7
+    name: "&cRevisar CPS &7(Golpear o Click Derecho)"
+    lore:
+      - "&fGolpea o haz click derecho a un"
+      - "&fjugador para iniciar una prueba de 15s."
+    action: "CPS_CHECKER"
+    permission: "nstaffmode.use.cpschecker"
+
+  banner:
+    enabled: true
+    material: "GOLDEN_AXE"
+    slot: 8
+    name: "&cBannear Jugador &7(Golpear o Click Derecho)"
+    lore:
+      - "&fGolpea o haz click derecho a"
+      - "&fun jugador para banearlo permanentemente."
+    action: "BANNER"
+    permission: "nstaffmode.use.banner"

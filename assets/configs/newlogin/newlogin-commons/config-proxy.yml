@@ -1,0 +1,56 @@
+language: es
+debug: false
+
+logging:
+  startup-banner: true
+  log-kicks: true
+  log-disconnects: true
+
+support:
+  discord: "https://discord.gg/MxTWb5m9xZ"
+
+license:
+  key: ""
+
+link:
+  secret: ""
+  max-skew-seconds: 60
+
+premium:
+  premium-only-servers:
+    - "premium-server-1"
+  allow-disable-premium: false
+  ask-for-premium-confirmation: true
+  premium-command-delay: 60000
+  uuid-mode: PREMIUM
+  allowed-name-pattern: "[a-zA-Z0-9_]{3,16}"
+  check-first-time:
+    enabled: false
+    check-method: HYBRID
+    on-api-error: CONNECTION
+
+bedrock:
+  enabled: false
+  prefix: "."
+
+admin:
+  unregister-kick-delay-ms: 1500
+  unregister-removes-premium: true
+  unregister-servers: []
+
+routing:
+  auth-servers:
+    - "auth"
+  lobby-server: "lobby"
+  require-auth-for-other-servers: true
+  send-to-lobby-after-auth: true
+  filter-commands-on-auth-servers: true
+  filter-chat-on-auth-servers: false
+  allowed-commands:
+    - "/l"
+    - "/login"
+    - "/reg"
+    - "/register"
+
+performance:
+  async-threads: 4

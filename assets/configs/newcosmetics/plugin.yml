@@ -1,0 +1,47 @@
+name: NewCosmetics
+version: '@VERSION@'
+author: FilleDev
+main: github.dstudio.NewCosmetics
+load: POSTWORLD
+depend: [ NoteBlockAPI ]
+softdepend: [ CMI, Essentials, MVdWPlaceholderAPI, Multiverse-Core, PremiumVanish, PlaceholderAPI, PlayerPoints, PlotSquared, SuperVanish, Vault, WorldEdit, WorldGuard ]
+api-version: '1.18'
+commands:
+  newcosmetics:
+    description: NewCosmetics Command
+    usage: /newcosmetics
+    permission: newcosmetics.command
+    aliases:
+      - "nc"
+      - "newc"
+  cosmetics:
+    description: Opens the cosmetics menu.
+    usage: /cosmetics
+    permission: newcosmetics.command.cosmetics
+  equip:
+    description: Equips a cosmetic.
+    usage: /equip
+    permission: newcosmetics.command.equip
+  unequip:
+    description: Unequips a cosmetic.
+    usage: /unequip <type>
+    permission: newcosmetics.command.unequip
+  unequipall:
+    description: Unequips your cosmetics.
+    usage: /unequipall
+    permission: newcosmetics.command.unequipall
+  toggleselfview:
+    description: Toggles the self view
+    usage: /toggleselfview <type>
+    permission: newcosmetics.command.toggleselfview
+
+
+
+
+
+
+
+
+
+
+

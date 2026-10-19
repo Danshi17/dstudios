@@ -1,0 +1,50 @@
+prefix: "<gradient:#00FFA0:#00BFFF>[EpicVouchers]</gradient> "
+no-permission: "<red>No tienes permisos para ejecutar esta accion."
+voucher-given: "<green>Has entregado <yellow>%amount%x %voucher% <green>a <yellow>%player%."
+voucher-received: "<green>Has recibido <yellow>%amount%x %voucher%."
+invalid-player: "<red>El jugador especificado no se encuentra en linea."
+invalid-voucher: "<red>El voucher especificado no existe."
+only-players: "<red>Este comando solo puede ser ejecutado por jugadores."
+config-reloaded: "<green>La configuracion ha sido recargada con exito."
+
+
+create-empty-hand: "<red>Debes sostener un item en tu mano principal para crear el voucher."
+create-chat-prompt: |-
+  <yellow>
+  <green>Escribe la ID que deseas asignarle al nuevo voucher en el chat.
+  <gray>Se utilizara el item de tu mano como diseño base.
+  <gray>Escribe <red>'cancelar'</red> para volver al panel.
+  <yellow>
+sample-received: "<green>Has recibido una muestra de: %voucher%"
+clone-empty-hand: "<red>Debes sostener un item en la mano principal para reemplazar el diseño."
+design-updated: "<green>¡El diseño del voucher ha sido actualizado!"
+voucher-received-editor: "<green>Has recibido 1x %voucher%"
+edit-commands-prompt: |-
+  <yellow>
+  <green>Escribe el comando que deseas AGREGAR al voucher (ej: <gold>eco give %player% 50</gold>).
+  <gray>O escribe <red>'clear'</red> para borrar todos los comandos.
+  <gray>Escribe <red>'cancelar'</red> para volver al menu.
+  <yellow>
+edit-sound-prompt: |-
+  <yellow>
+  <green>Escribe el sonido en formato <gold>SONIDO:volumen:pitch</gold> (ej: <aqua>ENTITY_PLAYER_LEVELUP:1.0:1.0</aqua>).
+  <gray>Escribe <red>'cancelar'</red> para volver al menu.
+  <yellow>
+edit-particle-prompt: |-
+  <yellow>
+  <green>Escribe las particulas en formato <gold>PARTICULA:cantidad</gold> (ej: <aqua>VILLAGER_HAPPY:15</aqua>).
+  <gray>Escribe <red>'cancelar'</red> para volver al menu.
+  <yellow>
+
+edit-lore-prompt: |-
+  <yellow>==================================================
+  <green>Escribe la linea de LORE que deseas AGREGAR al voucher.
+  <gray>Se admiten codigos MiniMessage y legacy.
+  <gray>Escribe <red>'clear'</red> para vaciar todo el lore.
+  <gray>Escribe <red>'cancelar'</red> para volver al menu.
+  <yellow>==================================================
+edit-title-prompt: "<yellow>Escribe el titulo que se mostrara en pantalla al canjear el voucher (o 'cancelar')."
+edit-subtitle-prompt: "<yellow>Escribe el subtitulo que se mostrara en pantalla al canjear el voucher (o 'cancelar')."
+edit-actionbar-prompt: "<yellow>Escribe el texto de la actionbar al canjear el voucher (o 'cancelar')."
+voucher-deleted: "<red>El voucher %id% ha sido eliminado."
+command-deleted: "<red>Se ha eliminado el comando: <white>/%command%"

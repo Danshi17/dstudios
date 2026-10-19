@@ -1,0 +1,11 @@
+tools:
+  example_pickaxe:
+    enabled: false
+    material: DIAMOND_PICKAXE
+    custom-model-data: auto
+    name: "&#66D9FF&lExample Pickaxe"
+    texture: "tools/example_pickaxe.png"
+    unbreakable: false
+    enchants:
+      DIG_SPEED: 5
+      DURABILITY: 3

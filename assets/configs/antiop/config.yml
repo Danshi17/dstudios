@@ -1,0 +1,26 @@
+storage:
+  type: YAML
+  mysql:
+    host: localhost
+    port: 3306
+    database: antiop
+    username: root
+    password: ""
+    useSSL: false
+    table-prefix: "antiop_"
+
+check:
+  vanilla-op: true
+  watched-ranks:
+    - admin
+    - owner
+    - moderator
+  check-on-prelogin: true
+  recheck-online-players: true
+  recheck-interval-seconds: 300
+
+ban:
+  broadcast: true
+
+op-whitelist:
+  - Danshi_

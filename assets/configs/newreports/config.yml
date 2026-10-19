@@ -1,0 +1,70 @@
+
+settings:
+  cooldown-seconds: 60
+  prevent-self-report: true
+  staff-permission: "newreports.staff"
+  use-permission: "newreports.use"
+  bypass-cooldown-permission: "newreports.bypass.cooldown"
+
+messages:
+  no-permission: "&cNo tienes permisos para ejecutar este comando."
+  usage: "&c&lUSO: &e/report <jugador> <razón>"
+  cannot-report-self: "&cNo puedes reportarte a ti mismo."
+  player-not-found: "&cEl jugador &e{player} &cno está conectado en la red."
+  cooldown: "&cDebes esperar &e{time} segundos &cantes de volver a enviar un reporte."
+  report-sent: "<gradient:#2ecc71:#27ae60><b>¡Tu reporte ha sido enviado con éxito a los miembros del Staff!</b></gradient>"
+  reload-success: "<gradient:#2ecc71:#27ae60><b>¡Configuración de NewReports recargada correctamente!</b></gradient>"
+
+staff-announcement:
+  lines:
+    - "&8&m--------------------------------------------------"
+    - "<gradient:#ff416c:#ff4b2b><b>⚡ NUEVO REPORTE RECIBIDO ⚡</b></gradient>"
+    - ""
+    - " &eReportado: &f{reported} &7(En: &b{server}&7)"
+    - " &eReportado por: &f{reporter}"
+    - " &eRazón: &f{reason}"
+    - ""
+    - " {server_button}"
+    - "&8&m--------------------------------------------------"
+
+  button:
+    text: "<gradient:#00c6ff:#0072ff><b>[⚡ CLICK AQUÍ PARA IR AL SERVIDOR]</b></gradient>"
+    hover: "&eClick para conectarte a &b{server} &eautomáticamente"
+    command: "/server {server}"
+
+# Configuración de Discord Webhook
+discord:
+  enabled: true
+  webhook-url: "TU_WEBHOOK_URL_AQUI"
+
+  # Contenido fuera del embed (ej: @here o dejar vacío "")
+  content: ""
+
+  embed:
+    # Color del borde en formato decimal (Ej: 16724530 = #FF3032 rojo/naranja)
+    color: 16724530
+    title: "🚨 Nuevo Reporte Recibido"
+    description: "Se ha registrado un nuevo reporte dentro de la red."
+
+    # https://mc-heads.net/avatar/{reported}/128
+    # https://minotar.net/avatar/{reported}/128
+    thumbnail-url: "https://mc-heads.net/avatar/{reported}/128"
+
+    fields:
+      - name: "👤 Jugador Reportado"
+        value: "```{reported}```"
+        inline: true
+      - name: "👮 Reportado por"
+        value: "```{reporter}```"
+        inline: true
+      - name: "🌐 Servidor"
+        value: "```{server}```"
+        inline: true
+      - name: "📄 Razón"
+        value: "```{reason}```"
+        inline: false
+
+    footer:
+      text: "NewReports System • {server}"
+      icon-url: ""
+    timestamp: true

@@ -1,0 +1,108 @@
+
+# (ej: "es_mx" -> langs/es_mx.yml, "en_en" -> langs/en_en.yml).
+language: "es_mx"
+
+storage:
+  # Opciones: YAML, H2, SQLITE, MYSQL, MONGODB
+  type: "YAML"
+
+  sql:
+    host: "localhost"
+    port: 3306
+    database: "newvaults"
+    username: "root"
+    password: ""
+    table-prefix: "newvaults_"
+    parameters: "useSSL=false&autoReconnect=true&characterEncoding=utf8"
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout-ms: 30000
+
+  file:
+    h2-file: "database/vaults"
+    sqlite-file: "database/vaults.db"
+
+  mongodb:
+    connection-uri: "mongodb://localhost:27017"
+    database: "newvaults"
+    collection: "vaults"
+
+autosave-minutes: 5
+
+vault-rows: 3
+
+hard-cap-vaults: 1000
+
+show-locked-vaults: true
+
+gui-cooldown-milliseconds: 150
+
+#   - "SEPARATE"  -> cada número de vault requiere su propio
+#                    permiso exacto. Ej: si solo tiene
+#                    "newvaults.vault.5", SOLO desbloquea el
+#                    vault 5 (no el 1, 2, 3 o 4).
+#   - "CUMULATIVE" -> el número más alto que tenga como permiso
+#                    literal desbloquea ESE Y TODOS los siguientes
+#
+#
+permission-mode: "SEPARATE"
+
+vault-permission-format: "newvaults.vault.%vault%"
+
+vault-range-format: "newvaults.vaults.%min%-%max%"
+
+rows-permission-format: "newvaults.rows.%rows%"
+
+sounds:
+  open: "BLOCK_CHEST_OPEN"
+  locked: "ENTITY_VILLAGER_NO"
+  close: "BLOCK_CHEST_CLOSE"
+  selector-open: "BLOCK_CHEST_OPEN"
+  next-page: "UI_BUTTON_CLICK"
+  previous-page: "UI_BUTTON_CLICK"
+  selector-close: "BLOCK_CHEST_CLOSE"
+
+selector:
+  rows: 6
+  layout:
+    - "fffffffff"
+    - "ffoooooff"
+    - "ffoooooff"
+    - "fffffffff"
+    - "fffffffff"
+    - "fffffffff"
+
+  fill:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+
+  close-item:
+    slot: 49
+    material: "BARRIER"
+
+  pagination:
+    max-preview-locked: 10
+
+  previous-page-item:
+    slot: 45
+    material: "ARROW"
+
+  next-page-item:
+    slot: 53
+    material: "ARROW"
+
+  unlocked-item:
+    material: "CHEST"
+    hdb: ""
+    base64: ""
+    glow: false
+    amount: 1
+
+  locked-item:
+    material: "ENDER_CHEST"
+    hdb: ""
+    base64: ""
+    glow: true
+    amount: 1

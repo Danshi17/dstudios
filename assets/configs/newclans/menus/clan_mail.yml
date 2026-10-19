@@ -1,0 +1,55 @@
+id: clan_mail
+title: '<dark_gray>Clan Mail <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 6
+page-size: 28
+open-sound: UI_BUTTON_CLICK
+
+dynamic:
+  type: MAIL
+  slots: '10-16,19-25,28-34,37-43'
+  material: PAPER
+  name: '<yellow>Mail from %mail_sender%</yellow>'
+  lore:
+    - '<gray>Date: <white>%mail_date%</white></gray>'
+    - '<gray>Read: <white>%mail_read%</white></gray>'
+    - ''
+    - '<white>%mail_message%</white>'
+    - ''
+    - '<green>Left-click: mark as read</green>'
+    - '<red>Right-click: delete</red>'
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+  clear:
+    slot: 46
+    material: LAVA_BUCKET
+    name: '<red>Clear Mail</red>'
+    lore:
+      - '<gray>Remove every stored clan mail.</gray>'
+    action: OPEN:clear_mail_confirm
+
+  send:
+    slot: 47
+    material: WRITABLE_BOOK
+    name: '<green>Send Mail</green>'
+    lore:
+      - '<gray>Use <white>/clan mail send <clan> <message></white></gray>'
+    action: CLOSE
+  previous:
+    slot: 48
+    material: ARROW
+    name: '<yellow>Previous Page</yellow>'
+    action: PAGE_PREVIOUS
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home
+  next:
+    slot: 50
+    material: ARROW
+    name: '<yellow>Next Page</yellow>'
+    action: PAGE_NEXT

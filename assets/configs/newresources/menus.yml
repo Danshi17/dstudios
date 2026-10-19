@@ -1,0 +1,45 @@
+menus:
+  example:
+    title: "<effect:sunset_glow>newResources Menu</effect>"
+    size: 27
+    open-command: "nassets"
+    items:
+      clock:
+        slot: 11
+        asset: "gold_clock"
+        name: "<effect:beach_bash>Cooldown</effect>"
+        lore:
+          - "&7Uses a custom GUI texture."
+        actions:
+          - "[message] &aClock clicked."
+      money:
+        slot: 13
+        asset: "gold_dollar"
+        name: "<effect:tropical_twist>Money</effect>"
+        actions:
+          - "[player] balance"
+      close:
+        slot: 15
+        material: BARRIER
+        name: "&cClose"
+        actions:
+          - "[close]"
+
+  decorado:
+    title: "&8Menu decorado"
+    size: 54
+    open-command: "decorado"
+    background:
+      texture: "gui/menu_bg.png"
+      ascent: 13
+      offset-x: 0
+    fill:
+      asset: "menu_blank"
+      name: " "
+    items:
+      close:
+        slot: 49
+        material: BARRIER
+        name: "&cCerrar"
+        actions:
+          - "[close]"

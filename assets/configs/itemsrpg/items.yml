@@ -1,0 +1,1081 @@
+#                   ItemsRPG - items.yml
+# Configuración de todos los items del plugin.
+#
+# TIPOS DE ITEMS:
+#   CONSUMABLE          - Se consume al usarse (1 uso)
+#   INFINITE_CONSUMABLE - No se consume, tiene cooldown
+#   VANILLA_COOLDOWN    - Item vanilla con cooldown personalizado
+#   DECORATIVE          - Solo decorativo/tradeo, sin acciones
+#   RPG_CUSTOM          - Solo para items builtin (SpiderWebItem, etc.)
+#
+# FORMATOS DE COLOR SOPORTADOS:
+#   Legacy:      &a, &b, &l, &r, &6Texto, etc.
+#   Hexadecimal: &#RRGGBB o {#RRGGBB}
+#   MiniMessage: <red>, <bold>, <gradient:#ff0000:#0000ff>texto</gradient>
+#   Adventure:   <rainbow>texto</rainbow>
+#
+# MATERIALES:
+#   Normal: DIAMOND_SWORD, BLAZE_ROD, etc. (XMaterial)
+#   HDB:    hdb-7129 (requiere HeadDatabase instalado)
+#
+# EFECTOS DE POCIÓN: "NOMBRE:duracion_seg:nivel"
+#   Ejemplo: "REGENERATION:10:2" = Regeneración 10s nivel 2
+#
+# SONIDOS: "NOMBRE_SONIDO:volumen:pitch"
+#   Ejemplo: "ENTITY_PLAYER_BURP:1.0:1.0"
+#
+# PARTÍCULAS: "NOMBRE_PARTICULA:cantidad"
+#   Ejemplo: "HEART:10"
+#
+# PROPIEDADES COMUNES:
+#   enabled: true/false           - Habilita/deshabilita el item
+#   material: MATERIAL            - Material del item
+#   name: "Nombre"                - Nombre con colores
+#   lore: []                      - Lista de descripciones
+#   amount: 1                     - Cantidad por defecto
+#   glowing: false                - Brillo de encantamiento
+#   hide-flags: false             - Oculta atributos/enchants
+#   unbreakable: false            - Hace el item irrompible
+#   custom-model-data: -1         - Modelo personalizado
+#   enchantments: {}              - Encantamientos del item
+#   potion-effects: []            - Efectos de poción en el item
+#   messages: []                  - Mensajes al usar
+#   effects: []                   - Efectos de poción al usar
+#   sounds: []                    - Sonidos al usar
+#   particles: []                 - Partículas al usar
+#   cooldown: 0                   - Cooldown en segundos
+# ============================================================
+
+items:
+
+
+  # EJEMPLOS CONSUMABLE (Se consume al usarse)
+
+
+  spider_web:
+    type: CONSUMABLE
+    enabled: true
+    material: "COBWEB"
+    name: "<gradient:#cccccc:#888888><bold>Trampa de Telaraña</bold></gradient>"
+    lore:
+      - "&7Atrapa entidades en una jaula"
+      - "&7de telarañas de 3x3"
+      - ""
+      - "&8▸ &7Rango: &e5 bloques"
+      - "&8▸ &7Duración: &e5 segundos"
+      - "&8▸ Cooldown: &e20 segundos"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    cooldown: 20
+    radius: 1
+    duration: 5
+    range: 5.0
+    messages:
+      - "&c¡%target% ha sido atrapado en una jaula de telarañas!"
+    sounds:
+      - "BLOCK_WOOL_PLACE:1.0:0.7"
+    particles:
+      - "CLOUD:20"
+
+  healing_potion:
+    type: CONSUMABLE
+    enabled: true
+    material: "POTION"
+    name: "&#FF6B6B✦ Poción de Curación ✦"
+    lore:
+      - "&7Restaura tu vitalidad al instante"
+      - ""
+      - "&8▸ &7Efecto: &aRegeneración II &7(10s)"
+      - "&8▸ &7Efecto: &aAbsorción I &7(15s)"
+      - ""
+      - "&8⚠ &cSe consume al usar"
+      - "&8   &7Solo tiene &cun uso"
+    amount: 1
+    glowing: false
+    hide-flags: true
+    unbreakable: false
+    potion-effects:
+      - "REGENERATION:10:2"
+      - "ABSORPTION:15:1"
+    messages:
+      - "&#FF6B6B¡Has usado la Poción de Curación!"
+      - "&aTe sientes revitalizado"
+    effects:
+      - "REGENERATION:10:2"
+      - "ABSORPTION:15:1"
+    sounds:
+      - "ENTITY_PLAYER_BURP:1.0:1.0"
+      - "ENTITY_EXPERIENCE_ORB_PICKUP:0.5:1.5"
+    particles:
+      - "HEART:10"
+      - "SPELL_INSTANT:15"
+
+  mana_potion:
+    type: CONSUMABLE
+    enabled: true
+    material: "EXPERIENCE_BOTTLE"
+    name: "<gradient:#4169E1:#87CEEB>✦ Esencia de Maná</gradient>"
+    lore:
+      - "&7Restaura tu energía mágica"
+      - ""
+      - "&8▸ &7Regenera &b30% de maná"
+      - "&8▸ &7Efecto: &bVelocidad I &7(5s)"
+      - ""
+      - "&8⚠ &cSe consume al usar"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    custom-model-data: 1005
+    messages:
+      - "&#4169E1¡Tu maná se ha restaurado!"
+    effects:
+      - "SPEED:5:1"
+    sounds:
+      - "ENTITY_PLAYER_LEVELUP:0.8:1.2"
+    particles:
+      - "SPELL_MOB:20"
+      - "DRAGON_BREATH:10"
+
+
+  # EJEMPLOS INFINITE_CONSUMABLE (No se consume)
+
+
+  wind_staff:
+    type: INFINITE_CONSUMABLE
+    enabled: true
+    material: "BLAZE_ROD"
+    name: "<gradient:#87CEEB:#FFFFFF>✦ Bastón de Viento ✦</gradient>"
+    lore:
+      - "&7Lánzate hacia el cielo"
+      - "&7con el poder del viento"
+      - ""
+      - "&8▸ &7Efecto: &bSalto IV &7(3s)"
+      - "&8▸ &7Efecto: &bVelocidad II &7(3s)"
+      - ""
+      - "&8▸ &eCooldown: &715 segundos"
+      - ""
+      - "&a✔ &7Item infinito"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 1001
+    cooldown: 15
+    messages:
+      - "<gradient:#87CEEB:#FFFFFF>¡El viento te impulsa hacia arriba!</gradient>"
+    effects:
+      - "JUMP:3:4"
+      - "SPEED:3:2"
+    sounds:
+      - "ENTITY_FIREWORK_ROCKET_LAUNCH:0.8:1.5"
+      - "ENTITY_PLAYER_SWIM:0.5:1.0"
+    particles:
+      - "CLOUD:20"
+      - "SNOWBALL:15"
+      - "SPELL_MOB_AMBIENT:10"
+
+  strength_potion:
+    type: INFINITE_CONSUMABLE
+    enabled: true
+    material: "hdb-7129"
+    name: "&#FF4500⚔ Esencia de Fuerza ⚔"
+    lore:
+      - "&7Canaliza el poder de los"
+      - "&7guerreros ancestrales"
+      - ""
+      - "&8▸ &7Efecto: &cFuerza III &7(30s)"
+      - "&8▸ &7Efecto: &cResistencia I &7(15s)"
+      - ""
+      - "&8▸ &eCooldown: &745 segundos"
+      - ""
+      - "&a✔ &7Item infinito"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    cooldown: 45
+    messages:
+      - "&#FF4500¡Sientes una fuerza sobrenatural!"
+      - "&cTus músculos se tensan con poder"
+    effects:
+      - "INCREASE_DAMAGE:30:3"
+      - "DAMAGE_RESISTANCE:15:1"
+    sounds:
+      - "ENTITY_ENDER_DRAGON_GROWL:0.5:1.8"
+      - "ENTITY_PLAYER_ATTACK_STRONG:0.8:1.0"
+    particles:
+      - "FLAME:20"
+      - "LAVA:10"
+      - "REDSTONE:15"
+
+  invisibility_cloak:
+    type: INFINITE_CONSUMABLE
+    enabled: true
+    material: "LEATHER_CHESTPLATE"
+    name: "&#9370DB✦ Capa de Invisibilidad ✦"
+    lore:
+      - "&7Te vuelves completamente"
+      - "&7invisible por un tiempo"
+      - ""
+      - "&8▸ &7Efecto: &5Invisibilidad &7(15s)"
+      - "&8▸ &7Efecto: &5Velocidad I &7(15s)"
+      - ""
+      - "&8▸ &eCooldown: &760 segundos"
+      - ""
+      - "&a✔ &7Item infinito"
+    amount: 1
+    glowing: false
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 1002
+    cooldown: 60
+    messages:
+      - "&#9370DB¡Te has vuelto invisible!"
+      - "&7Nadie puede verte ahora"
+    effects:
+      - "INVISIBILITY:15:1"
+      - "SPEED:15:1"
+    sounds:
+      - "ENTITY_ILLUSIONER_MIRROR_MOVE:1.0:1.0"
+    particles:
+      - "SMOKE_LARGE:15"
+      - "PORTAL:10"
+
+  # EJEMPLOS VANILLA_COOLDOWN (Items vanilla)
+
+  golden_apple_rpg:
+    type: VANILLA_COOLDOWN
+    enabled: true
+    material: "GOLDEN_APPLE"
+    cooldown: 10
+
+  enderpearl_rpg:
+    type: VANILLA_COOLDOWN
+    enabled: true
+    material: "ENDER_PEARL"
+    cooldown: 30
+
+  enchanted_golden_apple_rpg:
+    type: VANILLA_COOLDOWN
+    enabled: true
+    material: "ENCHANTED_GOLDEN_APPLE"
+    cooldown: 120
+
+  totem_rpg:
+    type: VANILLA_COOLDOWN
+    enabled: true
+    material: "TOTEM_OF_UNDYING"
+    cooldown: 300
+
+  # EJEMPLOS DECORATIVE (Solo cosmético)
+
+  decorative_coin:
+    type: DECORATIVE
+    enabled: true
+    material: "GOLD_NUGGET"
+    name: "&#FFD700✦ Moneda de Oro ✦"
+    lore:
+      - "&7Una antigua moneda de oro"
+      - "&7de gran valor coleccionable"
+      - ""
+      - "&8▸ &7Origen: &eDesconocido"
+      - "&8▸ &7Año: &e1423"
+      - ""
+      - "&8✨ &7Item decorativo"
+      - "&8   &7Sin efectos especiales"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 2001
+
+  trophy_legendary:
+    type: DECORATIVE
+    enabled: true
+    material: "hdb-7129"
+    name: "<gradient:#FFD700:#FFA500>🏆 Trofeo Legendario 🏆</gradient>"
+    lore:
+      - "&7Un prestigioso trofeo que"
+      - "&7demuestra tu dedicación"
+      - ""
+      - "&8▸ &7Temporada: &e2024"
+      - "&8▸ &7Top: &6#1 Jugador"
+      - ""
+      - "&8✨ &7Item decorativo"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+
+  crystal_shard:
+    type: DECORATIVE
+    enabled: true
+    material: "AMETHYST_SHARD"
+    name: "&#DDA0DD✦ Fragmento de Cristal ✦"
+    lore:
+      - "&7Un brillante fragmento de"
+      - "&7cristal místico"
+      - ""
+      - "&8▸ &7Rareza: &dÉpica"
+      - "&8▸ &7Valor: &e500 monedas"
+      - ""
+      - "&8✨ &7Item decorativo"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 2003
+    enchantments:
+      DURABILITY: 1
+
+  ancient_relic:
+    type: DECORATIVE
+    enabled: true
+    material: "NETHER_STAR"
+    name: "<gradient:#FF69B4:#FFB6C1>✧ Reliquia Ancestral ✧</gradient>"
+    lore:
+      - "&7Una misteriosa reliquia de"
+      - "&7una civilización perdida"
+      - ""
+      - "&8▸ &7Autenticidad: &aVerificada"
+      - "&8▸ &7Antigüedad: &e5000+ años"
+      - ""
+      - "&8✨ &7Item decorativo"
+      - "&8   &7Coleccionable exclusivo"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 2004
+    messages:
+      - "&7Esta reliquia emite un suave resplandor..."
+      - "&7Parece muy antigua y valiosa"
+    sounds:
+      - "BLOCK_AMETHYST_BLOCK_CHIME:0.5:1.5"
+
+  # EJEMPLOS CON ENCANTAMIENTOS
+
+  sword_of_flames:
+    type: INFINITE_CONSUMABLE
+    enabled: true
+    material: "DIAMOND_SWORD"
+    name: "<gradient:#FF4500:#FFD700>⚔ Espada de las Llamas ⚔</gradient>"
+    lore:
+      - "&7Una espada forjada en el"
+      - "&7corazón de un volcán"
+      - ""
+      - "&8▸ &7Efecto: &cFuerza II &7(10s)"
+      - "&8▸ &7Efecto: &6Resistencia al fuego &7(10s)"
+      - ""
+      - "&8▸ &eCooldown: &730 segundos"
+      - ""
+      - "&a✔ &7Item infinito"
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    custom-model-data: 3001
+    cooldown: 30
+    enchantments:
+      SHARPNESS: 5
+      FIRE_ASPECT: 2
+      UNBREAKING: 3
+    messages:
+      - "<gradient:#FF4500:#FFD700>¡Las llamas te envuelven!</gradient>"
+    effects:
+      - "INCREASE_DAMAGE:10:2"
+      - "FIRE_RESISTANCE:10:1"
+    sounds:
+      - "ENTITY_BLAZE_SHOOT:0.8:1.0"
+      - "ITEM_FLINTANDSTEEL_USE:0.5:0.8"
+    particles:
+      - "FLAME:25"
+      - "LAVA:15"
+      - "SMOKE_LARGE:10"
+
+  # EJEMPLO DESHABILITADO
+
+  disabled_item_example:
+    type: CONSUMABLE
+    enabled: false
+    material: "STONE"
+    name: "&cItem Deshabilitado"
+    lore:
+      - "&7Este item está deshabilitado"
+      - "&7y no aparecerá en el juego"
+
+
+  # EJEMPLOS DE ARMAS (PISTOLAS)
+
+  pistol_basic:
+    type: RPG_CUSTOM
+    enabled: true
+    material: "WOODEN_HOE"
+    name: "&#FF5733🔫 Pistola Básica"
+    lore:
+      - "&7Un arma de fuego simple pero efectiva"
+      - ""
+      - "&8▸ &7Munición: &e%ammo%/%max_ammo%"
+      - "&8▸ &7Daño: &c%damage% ❤"
+      - "&8▸ &7Alcance: &e%range% bloques"
+      - ""
+      - "&a▶ Click izquierdo: &fRecargar"
+      - "&c▶ Click derecho: &fDisparar"
+      - ""
+      - "&8▸ &7Cooldown: &e%cooldown%s"
+    cooldown: 2
+    max-ammo: 6
+    ammo-material: "MELON_SEEDS"
+    damage: 4.0
+    range: 20.0
+    trail-particle: "CRIT"
+    hit-particle: "LAVA"
+    headshot-multiplier: 2.0
+    reload-time: 30
+    glowing: true
+    hide-flags: true
+    messages:
+      - "&a✅ ¡Arma recargada! &7(%ammo%/%max_ammo%)"
+    no-ammo-message: "&c❌ ¡Sin munición! Usa &eclick izquierdo &cpara recargar"
+    reload-message: "&6⏳ Recargando... &7(%time%s)"
+    hit-message: "&c💥 ¡Impacto! &7-%damage% ❤"
+    kill-message: "&4☠ ¡Eliminado! &7+1 kill"
+    sounds:
+      shoot: "ENTITY_FIREWORK_ROCKET_BLAST:0.8:1.5"
+      reload: "BLOCK_NOTE_BLOCK_PLING:1.0:2.0"
+      hit: "ENTITY_PLAYER_HURT:0.8:1.0"
+      headshot: "ENTITY_PLAYER_BIG_FALL:1.0:1.2"
+
+  pistol_tactical:
+    type: RPG_CUSTOM
+    enabled: true
+    material: "STONE_HOE"
+    name: "&#3498DB🔫 Pistola Táctica"
+    lore:
+      - "&7Un arma de precisión mejorada"
+      - ""
+      - "&8▸ &7Munición: &e%ammo%/%max_ammo%"
+      - "&8▸ &7Daño: &c%damage% ❤"
+      - "&8▸ &7Alcance: &e%range% bloques"
+      - ""
+      - "&a▶ Click izquierdo: &fRecargar"
+      - "&c▶ Click derecho: &fDisparar"
+      - ""
+      - "&8▸ &7Cooldown: &e%cooldown%s"
+    cooldown: 1
+    max-ammo: 12
+    ammo-material: "MELON_SEEDS"
+    damage: 5.0
+    range: 25.0
+    trail-particle: "SPELL_MOB"
+    hit-particle: "FLAME"
+    headshot-multiplier: 2.5
+    reload-time: 40
+    glowing: true
+    hide-flags: true
+    messages:
+      - "&a✅ ¡Arma recargada! &7(%ammo%/%max_ammo%)"
+    no-ammo-message: "&c❌ ¡Sin munición!"
+    reload-message: "&6⏳ Recargando... &7(%time%s)"
+    hit-message: "&c💥 ¡Impacto! &7-%damage% ❤"
+    kill-message: "&4☠ ¡Eliminado!"
+    sounds:
+      shoot: "ENTITY_FIREWORK_ROCKET_BLAST:0.6:2.0"
+      reload: "BLOCK_NOTE_BLOCK_PLING:1.0:1.8"
+      hit: "ENTITY_PLAYER_HURT:1.0:1.0"
+      headshot: "ENTITY_PLAYER_BIG_FALL:1.0:1.0"
+
+  pistol_heavy:
+    type: RPG_CUSTOM
+    enabled: true
+    material: "IRON_HOE"
+    name: "&#E74C3C🔫 Pistola Pesada"
+    lore:
+      - "&7Arma de alto calibre"
+      - "&7Mucho daño, poca cadencia"
+      - ""
+      - "&8▸ &7Munición: &e%ammo%/%max_ammo%"
+      - "&8▸ &7Daño: &c%damage% ❤"
+      - "&8▸ &7Alcance: &e%range% bloques"
+      - ""
+      - "&a▶ Click izquierdo: &fRecargar"
+      - "&c▶ Click derecho: &fDisparar"
+    cooldown: 3
+    max-ammo: 4
+    ammo-material: "PUMPKIN_SEEDS"
+    damage: 8.0
+    range: 15.0
+    trail-particle: "SMOKE_LARGE"
+    hit-particle: "EXPLOSION_LARGE"
+    headshot-multiplier: 3.0
+    reload-time: 60
+    glowing: true
+    hide-flags: true
+    messages:
+      - "&a✅ ¡Arma recargada!"
+    no-ammo-message: "&c❌ ¡Sin munición!"
+    reload-message: "&6⏳ Recargando arma pesada... &7(%time%s)"
+    hit-message: "&4💥 ¡IMPACTO CRÍTICO! &7-%damage% ❤"
+    kill-message: "&4☠ ¡Aniquilado!"
+    sounds:
+      shoot: "ENTITY_GENERIC_EXPLODE:0.6:0.5"
+      reload: "BLOCK_ANVIL_USE:0.8:1.0"
+      hit: "ENTITY_PLAYER_HURT:1.0:0.8"
+      headshot: "ENTITY_LIGHTNING_BOLT_IMPACT:0.5:2.0"
+
+  pico_bork:
+    type: TOOL
+    enabled: true
+    material: "DIAMOND_PICKAXE"
+    name: "&e⛏ &f&lPICO &4&lSUPER OP &e⛏"
+    lore:
+      - "&8· Herramientas"
+      - "&8"
+      - "&8➛ &4&lDESCRIPCIÓN:"
+      - "&8 &f¡Tienes en tus manos el pico más"
+      - " &fpoderoso del servidor! Cuídalo."
+      - ""
+      - "&8➛ &4&lENCATAMIENTOS:"
+      - "&f"
+      - "&e  Eficiencia: &elvl 20✮"
+      - "&e  Fortuna: &elvl 20✮"
+      - "&e  Irrompibilidad: &elvl 20✮"
+      - "&e  Cocinado: &elvl 20✮"
+      - "&e  Mina explosiva: &elvl 5✮"
+      - "&e  Veinminer: &elvl 5✮"
+      - "&e  Telekinesis: &elvl 5✮"
+      - "&f"
+      - "&8➛ &4&lRAREZA"
+      - "&8[&e✮✮✮✮✮&8]"
+      - ""
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    durability: -1
+    autosmelt: true
+    disable-enchanting: true
+    disable-droping: true
+    disable-crafting: true
+    enchantments:
+      DIG_SPEED: 20
+      DURABILITY: 20
+      LOOT_BONUS_BLOCKS: 20
+      EXPLOSIVE_MINING: 5
+    mining:
+      haste-level: 2
+      on-mine-effects: []
+      on-mine-sounds:
+        - "BLOCK_STONE_BREAK:0.4:1.5"
+      on-mine-particles:
+        - "CRIT:3"
+      special-blocks:
+        DIAMOND_ORE:
+          messages:
+            - "&e⛏ &f¡Encontraste &bdiamanteee&f!"
+          effects:
+            - "LUCK:5:1"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.7:1.8"
+          particles:
+            - "HEART:5"
+          extra-drops: []
+        DEEPSLATE_DIAMOND_ORE:
+          messages:
+            - "&e⛏ &f¡Diamante en deepslate!"
+          effects:
+            - "LUCK:5:1"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.7:1.8"
+          particles:
+            - "HEART:5"
+          extra-drops: []
+        ANCIENT_DEBRIS:
+          messages:
+            - "&e⛏ &6¡&lDEBRIS ANCESTRAL &6encontrado!"
+          sounds:
+            - "ENTITY_ENDER_DRAGON_GROWL:0.4:2.0"
+          particles:
+            - "FLAME:10"
+          extra-drops: []
+    combat:
+      bonus-damage: 3.0
+      on-hit-effects:
+        - "SLOW:2:1"
+      on-hit-self-effects: []
+      on-hit-sounds:
+        - "ENTITY_PLAYER_ATTACK_STRONG:1.0:0.9"
+      on-hit-particles:
+        - "CRIT:5"
+
+  # ═══════════════════════════════════════════════════════════
+  # EJEMPLOS DE AUTO-SELL (venta automática al minar)
+  #
+  # Esta opción SOLO existe en items.yml (no aparece en la GUI a
+  # propósito, para no complicar el editor visual). Se configura
+  # dentro de "mining.auto-sell" de una herramienta (type: TOOL):
+  #
+  #   mining:
+  #     auto-sell:
+  #       enabled: true              # activa/desactiva la venta automática
+  #       blocks:                    # bloques cuyos drops se venden solos
+  #         - MELON
+  #       fallback-drop: true        # si un drop no tiene precio en la shop,
+  #                                  # se dropea normal en vez de perderse
+  #       sell-multiplier: 1.0       # multiplicador extra sobre el precio de venta
+  #       message: "&a✔ &fVendiste &e%amount%x %item% &fpor &a$%price%"
+  #
+  # Requiere Vault + ShopGUI+ instalados y con precios de venta
+  # configurados para los items que se quieran vender (ej. MELON_SLICE,
+  # NETHER_WART, WHEAT, CARROT, POTATO, BEETROOT). Si no hay precio
+  # de venta o los plugins no están instalados, el bloque se dropea
+  # con normalidad (no se pierde nada).
+  # ═══════════════════════════════════════════════════════════
+
+  hacha_vendedora:
+    type: TOOL
+    enabled: true
+    material: "DIAMOND_AXE"
+    name: "&a🪓 &f&lHacha Recolectora &a🪓"
+    lore:
+      - "&8· Herramientas"
+      - "&8"
+      - "&8➛ &2&lDESCRIPCIÓN:"
+      - "&8 &fVende las sandías por ti,"
+      - " &fal instante, apenas las cosechas."
+      - ""
+      - "&8➛ &2&lRAREZA"
+      - "&8[&a✮✮✮✮✮&8]"
+      - ""
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    durability: -1
+    enchantments:
+      DIG_SPEED: 5
+      DURABILITY: 5
+    mining:
+      haste-level: 0
+      on-mine-effects: []
+      on-mine-sounds: []
+      on-mine-particles: []
+      special-blocks: {}
+      auto-sell:
+        enabled: true
+        blocks:
+          - MELON
+        fallback-drop: true
+        sell-multiplier: 1.0
+        message: "&a✔ &fVendiste &e%amount%x %item% &fpor &a$%price%"
+
+  azada_vendedora:
+    type: TOOL
+    enabled: true
+    material: "DIAMOND_HOE"
+    name: "&6🌾 &f&lAzada Recolectora &6🌾"
+    lore:
+      - "&8· Herramientas"
+      - "&8"
+      - "&8➛ &6&lDESCRIPCIÓN:"
+      - "&8 &fVende las verrugas del nether"
+      - " &fy los cultivos automáticamente."
+      - ""
+      - "&8➛ &6&lRAREZA"
+      - "&8[&e✮✮✮✮✮&8]"
+      - ""
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    durability: -1
+    enchantments:
+      DIG_SPEED: 5
+      DURABILITY: 5
+    mining:
+      haste-level: 0
+      on-mine-effects: []
+      on-mine-sounds: []
+      on-mine-particles: []
+      special-blocks: {}
+      auto-sell:
+        enabled: true
+        blocks:
+          - NETHER_WART
+          - WHEAT
+          - CARROTS
+          - POTATOES
+          - BEETROOTS
+        fallback-drop: true
+        sell-multiplier: 1.0
+        message: "&a✔ &fVendiste &e%amount%x %item% &fpor &a$%price%"
+
+  espada_de_sombras:
+    type: WEAPON
+    enabled: true
+    material: "NETHERITE_SWORD"
+    name: "<gradient:#1a1a1a:#9b59b6>⚔ Espada de las Sombras</gradient>"
+    lore:
+      - "&8Forjada en las profundidades del vacío"
+      - ""
+      - "&8➛ &4&lENCATAMIENTOS:"
+      - "&e  Afilado: &elvl 10✮"
+      - "&e  Irrompibilidad: &elvl 5✮"
+      - ""
+      - "&8➛ &4&lHABILIDAD: &7[Click Derecho]"
+      - "&8  &fGolpe de Sombra &8— &7radio 4 bloques"
+      - ""
+      - "&8➛ &4&lRAREZA"
+      - "&8[&5✮✮✮✮✮&8]"
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    enchantments:
+      SHARPNESS: 10
+      UNBREAKING: 5
+    combat:
+      bonus-damage: 8.0
+      knockback: 2
+      on-hit-effects:
+        - "WITHER:3:1"
+        - "SLOW:2:2"
+      on-hit-self-effects:
+        - "SPEED:3:1"
+      on-hit-sounds:
+        - "ENTITY_PLAYER_ATTACK_STRONG:1.0:0.7"
+      on-hit-particles:
+        - "CRIT_MAGIC:8"
+        - "SMOKE_LARGE:5"
+      on-hit-messages:
+        - "&8Las sombras golpean a &5%target%&8."
+    ability:
+      enabled: true
+      cooldown: 25
+      name: "Golpe de Sombra"
+      radius: 4.0
+      damage: 6.0
+      effects:
+        - "BLINDNESS:3:1"
+        - "SLOW:4:2"
+        - "WITHER:5:1"
+      self-effects:
+        - "SPEED:5:2"
+        - "DAMAGE_RESISTANCE:4:1"
+      sounds:
+        - "ENTITY_WITHER_SHOOT:0.8:1.5"
+        - "ENTITY_WITHER_AMBIENT:0.6:1.2"
+      particles:
+        - "SMOKE_LARGE:40"
+        - "CRIT_MAGIC:25"
+        - "PORTAL:20"
+      messages:
+        - "<gradient:#1a1a1a:#9b59b6>¡Golpe de Sombra activado!</gradient>"
+        - "&8Las sombras emanan desde &5%player%&8."
+
+  casco_de_fuego:
+    type: ARMOR
+    enabled: true
+    slot: HELMET
+    material: "NETHERITE_HELMET"
+    name: "<gradient:#FF4500:#FFD700>🔥 Casco de Fuego</gradient>"
+    lore:
+      - "&7Forjado en el núcleo de un volcán"
+      - ""
+      - "&8▸ &7Pasivo: &cResistencia al fuego"
+      - "&8▸ &7Pasivo: &cFuerza I"
+      - ""
+      - "&8▸ &7Parte del set: &6Armadura de Fuego"
+    unbreakable: true
+    durability: 407
+    glowing: false
+    hide-flags: true
+    enchantments:
+      PROTECTION: 4
+      UNBREAKING: 3
+      FIRE_PROTECTION: 4
+    passive-effects:
+      - "FIRE_RESISTANCE:3:1"
+      - "INCREASE_DAMAGE:3:1"
+    on-equip:
+      messages:
+        - "&#FF4500¡El Casco de Fuego se ajusta a tu cabeza!"
+      effects:
+        - "REGENERATION:5:2"
+      sounds:
+        - "ITEM_ARMOR_EQUIP_NETHERITE:1.0:1.0"
+      particles:
+        - "FLAME:20"
+    on-unequip:
+      messages:
+        - "&7Te quitas el Casco de Fuego."
+      effects: []
+      sounds:
+        - "ITEM_ARMOR_EQUIP_GENERIC:0.8:0.8"
+      particles:
+        - "SMOKE_NORMAL:10"
+
+  pechera_de_fuego:
+    type: ARMOR
+    enabled: true
+    slot: CHESTPLATE
+    material: "NETHERITE_CHESTPLATE"
+    name: "<gradient:#FF4500:#FFD700>🔥 Pechera de Fuego</gradient>"
+    lore:
+      - "&7Forjada en el corazón de la fragua"
+      - ""
+      - "&8▸ &7Pasivo: &cResistencia al fuego"
+      - "&8▸ &7Pasivo: &cResistencia I"
+      - ""
+      - "&8▸ &7Parte del set: &6Armadura de Fuego"
+    unbreakable: true
+    durability: 592
+    glowing: false
+    hide-flags: true
+    enchantments:
+      PROTECTION: 4
+      UNBREAKING: 3
+      FIRE_PROTECTION: 4
+    passive-effects:
+      - "FIRE_RESISTANCE:3:1"
+      - "DAMAGE_RESISTANCE:3:1"
+    on-equip:
+      messages:
+        - "&#FF4500¡La Pechera de Fuego te envuelve!"
+      effects:
+        - "ABSORPTION:8:1"
+      sounds:
+        - "ITEM_ARMOR_EQUIP_NETHERITE:1.0:0.9"
+      particles:
+        - "FLAME:15"
+        - "LAVA:5"
+    on-unequip:
+      messages:
+        - "&7Te quitas la Pechera de Fuego."
+      effects: []
+      sounds:
+        - "ITEM_ARMOR_EQUIP_GENERIC:0.8:0.7"
+      particles:
+        - "SMOKE_NORMAL:10"
+
+  pantalones_de_fuego:
+    type: ARMOR
+    enabled: true
+    slot: LEGGINGS
+    material: "NETHERITE_LEGGINGS"
+    name: "<gradient:#FF4500:#FFD700>🔥 Pantalones de Fuego</gradient>"
+    lore:
+      - "&7Forjados con hilos de magma"
+      - ""
+      - "&8▸ &7Pasivo: &cResistencia al fuego"
+      - "&8▸ &7Pasivo: &cVelocidad I"
+      - ""
+      - "&8▸ &7Parte del set: &6Armadura de Fuego"
+    unbreakable: true
+    durability: 555
+    glowing: false
+    hide-flags: true
+    enchantments:
+      PROTECTION: 4
+      UNBREAKING: 3
+      FIRE_PROTECTION: 4
+    passive-effects:
+      - "FIRE_RESISTANCE:3:1"
+      - "SPEED:3:1"
+    on-equip:
+      messages:
+        - "&#FF4500¡Los Pantalones de Fuego te dan agilidad!"
+      effects:
+        - "SPEED:5:2"
+      sounds:
+        - "ITEM_ARMOR_EQUIP_NETHERITE:1.0:1.1"
+      particles:
+        - "FLAME:10"
+        - "SNOWBALL:5"
+    on-unequip:
+      messages:
+        - "&7Te quitas los Pantalones de Fuego."
+      effects: []
+      sounds:
+        - "ITEM_ARMOR_EQUIP_GENERIC:0.8:0.8"
+      particles:
+        - "SMOKE_NORMAL:10"
+
+  botas_de_fuego:
+    type: ARMOR
+    enabled: true
+    slot: BOOTS
+    material: "NETHERITE_BOOTS"
+    name: "<gradient:#FF4500:#FFD700>🔥 Botas de Fuego</gradient>"
+    lore:
+      - "&7Calzado que desafía el suelo ardiente"
+      - ""
+      - "&8▸ &7Pasivo: &cResistencia al fuego"
+      - "&8▸ &7Pasivo: &cSalto II"
+      - ""
+      - "&8▸ &7Parte del set: &6Armadura de Fuego"
+    unbreakable: true
+    durability: 481
+    glowing: false
+    hide-flags: true
+    enchantments:
+      PROTECTION: 4
+      UNBREAKING: 3
+      FIRE_PROTECTION: 4
+      FEATHER_FALLING: 2
+    passive-effects:
+      - "FIRE_RESISTANCE:3:1"
+      - "JUMP:3:2"
+    on-equip:
+      messages:
+        - "&#FF4500¡Las Botas de Fuego te hacen más ligero!"
+      effects:
+        - "JUMP:6:2"
+      sounds:
+        - "ITEM_ARMOR_EQUIP_NETHERITE:1.0:1.2"
+      particles:
+        - "FLAME:15"
+        - "CRIT:10"
+    on-unequip:
+      messages:
+        - "&7Te quitas las Botas de Fuego."
+      effects: []
+      sounds:
+        - "ITEM_ARMOR_EQUIP_GENERIC:0.8:0.9"
+      particles:
+        - "SMOKE_NORMAL:10"
+
+
+
+#
+  pico_forja_vendedora:
+    type: TOOL
+    enabled: true
+    material: "DIAMOND_PICKAXE"
+    name: "<gradient:#FFD700:#FF4500>⛏ Pico Forja Automática ⛏</gradient>"
+    lore:
+      - "&8· Herramientas"
+      - "&8"
+      - "&8➛ &6&lDESCRIPCIÓN:"
+      - "&8 &fMina, cocina y vende en un solo paso."
+      - "&8 &fFlujo: &eMinar &8→ &6Cocinar &8→ &aVender"
+      - ""
+      - "&8➛ &6&lCARACTERÍSTICAS:"
+      - "&e  Auto-Smelt: &aACTIVADO"
+      - "&e  Auto-Sell: &aACTIVADO"
+      - "&e  Eficiencia: &elvl 20✮"
+      - "&e  Fortuna: &elvl 20✮"
+      - "&e  Irrompibilidad: &elvl 20✮"
+      - "&e  Mina explosiva: &elvl 5✮"
+      - ""
+      - "&8➛ &6&lRAREZA"
+      - "&8[&6✮✮✮✮✮&8]"
+      - ""
+    amount: 1
+    glowing: true
+    hide-flags: true
+    unbreakable: true
+    durability: -1
+    autosmelt: true
+    disable-enchanting: true
+    disable-droping: true
+    disable-crafting: true
+    enchantments:
+      DIG_SPEED: 20
+      DURABILITY: 20
+      LOOT_BONUS_BLOCKS: 20
+      EXPLOSIVE_MINING: 5
+    mining:
+      haste-level: 3
+      on-mine-effects: []
+      on-mine-sounds:
+        - "BLOCK_STONE_BREAK:0.4:1.5"
+        - "BLOCK_FIRE_AMBIENT:0.2:1.8"
+      on-mine-particles:
+        - "CRIT:3"
+        - "FLAME:2"
+      auto-sell:
+        enabled: true
+        blocks:
+          - IRON_ORE
+          - DEEPSLATE_IRON_ORE
+          - GOLD_ORE
+          - DEEPSLATE_GOLD_ORE
+          - COPPER_ORE
+          - DEEPSLATE_COPPER_ORE
+          - ANCIENT_DEBRIS
+          - COAL_ORE
+          - DEEPSLATE_COAL_ORE
+          - REDSTONE_ORE
+          - DEEPSLATE_REDSTONE_ORE
+          - LAPIS_ORE
+          - DEEPSLATE_LAPIS_ORE
+          - EMERALD_ORE
+          - DEEPSLATE_EMERALD_ORE
+          - DIAMOND_ORE
+          - DEEPSLATE_DIAMOND_ORE
+          - NETHER_QUARTZ_ORE
+
+        fallback-drop: true
+        sell-multiplier: 1.0
+        message: "&a✔ &fVendiste &e%amount%x %item% &fpor &a$%price%"
+
+      special-blocks:
+        DIAMOND_ORE:
+          messages:
+            - "&e⛏ &f¡Encontraste &bdiamante&f!"
+          effects:
+            - "LUCK:5:1"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.7:1.8"
+          particles:
+            - "HEART:5"
+          extra-drops: []
+
+        DEEPSLATE_DIAMOND_ORE:
+          messages:
+            - "&e⛏ &f¡Diamante en deepslate!"
+          effects:
+            - "LUCK:5:1"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.7:1.8"
+          particles:
+            - "HEART:5"
+          extra-drops: []
+
+        EMERALD_ORE:
+          messages:
+            - "&a⛏ &f¡Esmeralda encontrada!"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.6:1.6"
+          particles:
+            - "VILLAGER_HAPPY:5"
+          extra-drops: []
+
+        DEEPSLATE_EMERALD_ORE:
+          messages:
+            - "&a⛏ &f¡Esmeralda en deepslate!"
+          sounds:
+            - "ENTITY_PLAYER_LEVELUP:0.6:1.6"
+          particles:
+            - "VILLAGER_HAPPY:5"
+          extra-drops: []
+
+        ANCIENT_DEBRIS:
+          messages:
+            - "&6⛏ ¡&lDEBRIS ANCESTRAL &6encontrado!"
+          sounds:
+            - "ENTITY_ENDER_DRAGON_GROWL:0.4:2.0"
+          particles:
+            - "FLAME:10"
+          extra-drops: []
+    combat:
+      bonus-damage: 3.0
+      on-hit-effects:
+        - "SLOW:2:1"
+      on-hit-self-effects: []
+      on-hit-sounds:
+        - "ENTITY_PLAYER_ATTACK_STRONG:1.0:0.9"
+      on-hit-particles:
+        - "CRIT:5"

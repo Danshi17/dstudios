@@ -1,0 +1,290 @@
+# ╔══════════════════════════════════════════════════╗
+# ║              NewPets — gui.yml                   ║
+# ╚══════════════════════════════════════════════════╝
+# Todos los slots son 0-indexed en un inventario de N filas.
+# Los slots de función (nav, close, features) son fijos en la última fila.
+
+# ─── Menú Principal ──────────────────────────────────
+main-menu:
+  title: "&8» &5&lMascotas &8«"
+  rows: 6
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  # Slots donde se muestran las pets (filas 1-4 = slots 9-44 excluyendo bordes)
+  pet-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+  # Ítem bloqueado (pet no desbloqueada)
+  locked-pet:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&c&l???"
+    lore:
+      - "&cMascota bloqueada."
+      - "&7¡Consíguela para usarla!"
+  # Navegación
+  prev-page:
+    slot: 45
+    material: "ARROW"
+    name: "&c« Pág. Anterior &8({page}/{max_page})"
+    lore: []
+  next-page:
+    slot: 53
+    material: "ARROW"
+    name: "&aPág. Siguiente » &8({page}/{max_page})"
+    lore: []
+  # Botón cerrar
+  close:
+    slot: 49
+    material: "BARRIER"
+    name: "&c&lCerrar"
+    lore:
+      - "&7Haz click para cerrar."
+  # Botones de función (fila inferior)
+  btn-upgrades:
+    slot: 46
+    material: "ANVIL"
+    name: "&6Pet Upgrades"
+    lore:
+      - "&7Sube de nivel tus mascotas."
+  btn-traits:
+    slot: 47
+    material: "ENCHANTED_BOOK"
+    name: "&bPet Traits"
+    lore:
+      - "&7Agrega traits a tus mascotas."
+  btn-prices:
+    slot: 51
+    material: "GOLD_NUGGET"
+    name: "&ePet Prices"
+    lore:
+      - "&7Ver costos de upgrade y prestige."
+  btn-prestige:
+    slot: 52
+    material: "NETHER_STAR"
+    name: "&dPet Prestiges"
+    lore:
+      - "&7Consulta información de prestige."
+
+# ─── Pet Detail Menu ─────────────────────────────────
+pet-detail:
+  title: "&8» &5{pet_name} &8«"
+  rows: 4
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  pet-display-slot: 13    # slot central donde aparece el ítem de la pet
+  back:
+    slot: 27
+    material: "ARROW"
+    name: "&c← Volver"
+    lore: []
+  btn-upgrade-one:
+    slot: 20
+    material: "EXPERIENCE_BOTTLE"
+    name: "&aSubir 1 Nivel"
+    lore:
+      - "&7Costo: &e{upgrade_cost} {upgrade_currency}"
+      - ""
+      - "&eClick para subir 1 nivel."
+  btn-upgrade-max:
+    slot: 21
+    material: "NETHER_STAR"
+    name: "&6Subir al Nivel Máximo"
+    lore:
+      - "&7Costo total: &e{upgrade_total_cost} {upgrade_currency}"
+      - ""
+      - "&eClick para maximizar nivel."
+  btn-prestige:
+    slot: 22
+    material: "BEACON"
+    name: "&dPrestigiar"
+    lore:
+      - "&7Requisito: &eNivel Máximo"
+      - "&7Costo: &e{prestige_cost} {prestige_currency}"
+      - "&7Prestige actual: &d{prestige}/{max_prestige}"
+      - ""
+      - "&eClick para prestigiar."
+  btn-traits:
+    slot: 23
+    material: "ENCHANTED_BOOK"
+    name: "&bVer Traits"
+    lore:
+      - "&7Abre el menú de traits."
+  btn-place-pet:
+    slot: 24
+    material: "CHEST"
+    name: "&7Colocar Pet"
+    lore:
+      - "&7Coloca la pet en tu inventario."
+      - "&eClick para recibir el ítem."
+
+# ─── Traits Menu ─────────────────────────────────────
+traits-menu:
+  title: "&8» &bPet Traits &8«"
+  rows: 5
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  # Slot donde se coloca la pet seleccionada
+  pet-slot: 13
+  # Slot de la info de tickets
+  tickets-slot: 8
+  tickets-item:
+    material: "PLAYER_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUifX19"
+    name: "&dPet Trait Tickets: &e{tickets}"
+    lore:
+      - "&7Tickets disponibles."
+  # Slot del ítem "roll trait"
+  roll-slot: 14
+  roll-item:
+    material: "TNT"
+    name: "&aRoll Pet Trait"
+    lore:
+      - "&7Tickets: &e{tickets}"
+      - ""
+      - "&cEsta acción reemplazará"
+      - "&cel trait actual."
+      - ""
+      - "&eClick para Rollear!"
+  # Slot de pity info
+  pity-slot: 17
+  pity-item:
+    material: "DIAMOND"
+    name: "&bTrait Pity"
+    lore:
+      - "&7Después de &e{pity_legendary} &7rolls,"
+      - "&7tu próximo trait es garantizado"
+      - "&6Legendary &7o mejor."
+      - ""
+      - "&7Después de &e{pity_mythic} &7rolls,"
+      - "&7garantizado &d2+ Mythic &7o mejor."
+      - ""
+      - "&7▶ Rolls hasta Pity: &e{rolls_to_pity}"
+      - "&7▶ Rolls hasta Pity+: &e{rolls_to_pity_plus}"
+  # Slots de compra de tickets
+  buy-ticket-slots:
+    - slot: 36
+      amount: 10
+      material: "GOLD_INGOT"
+      name: "&eComprar 10 Tickets"
+      lore:
+        - "&7Precio: &e100 Tokens"
+        - "&eClick para comprar."
+      cost: 100.0
+      currency: tokens
+      give-command: ""   # vacío = solo add tickets
+    - slot: 37
+      amount: 50
+      material: "GOLD_BLOCK"
+      name: "&eComprar 50 Tickets"
+      lore:
+        - "&7Precio: &e450 Tokens"
+        - "&eClick para comprar."
+      cost: 450.0
+      currency: tokens
+      give-command: ""
+    - slot: 38
+      amount: 100
+      material: "EMERALD"
+      name: "&aComprar 100 Tickets"
+      lore:
+        - "&7Precio: &e800 Tokens"
+        - "&eClick para comprar."
+      cost: 800.0
+      currency: tokens
+      give-command: ""
+  # Slot volver
+  back:
+    slot: 40
+    material: "ARROW"
+    name: "&c← Volver"
+    lore: []
+  # Codex traits slot
+  codex-slot: 44
+  codex-item:
+    material: "BOOKSHELF"
+    name: "&aPet Traits Codex"
+    lore:
+      - "&7Ver todos los traits disponibles."
+
+# ─── Prices Menu ─────────────────────────────────────
+prices-menu:
+  title: "&8» &ePet Prices &8«"
+  rows: 6
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  pet-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+  back:
+    slot: 49
+    material: "ARROW"
+    name: "&c← Volver"
+    lore: []
+  # Pet price detail lore (se aplica al ítem de la pet en este menú)
+  price-lore:
+    - ""
+    - "&6Boosts &8(Nv. 1 → Nv. {max_level})&6:"
+    - "  &7▶ {boost_summary}"
+    - ""
+    - "&bUpgrade Information:"
+    - "  &7▶ Max Level: &e{max_level}"
+    - "  &7▶ Costo total: &e{upgrade_total_cost}"
+    - "  &7▶ Costo Nv. 1: &e{upgrade_cost_1}"
+    - "  &7▶ Costo Nv. Máx: &e{upgrade_cost_max}"
+    - "  &7▶ Moneda: &e{upgrade_currency}"
+    - ""
+    - "&dPrestige Information:"
+    - "  &7▶ Resetea a Nivel 1"
+    - "  &7▶ Boost x &a+{prestige_boost_pct}% &7por prestige"
+    - "  &7▶ Max Prestige: &d{max_prestige}"
+    - "  &7▶ Costo: &e{prestige_cost} {prestige_currency}"
+    - ""
+    - "&eClick para ver detalles."
+
+# ─── Egg Open Menu ───────────────────────────────────
+egg-open:
+  title: "&8» &fAbriendo Huevo... &8«"
+  rows: 3
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  egg-slot: 13
+  result-slot: 13
+  open-button:
+    slot: 22
+    material: "LIME_STAINED_GLASS_PANE"
+    name: "&a&lAbrir"
+    lore:
+      - "&eClick para abrir el huevo."

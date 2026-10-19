@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HubCore — Documentation · dStudios</title>
+<meta name="description" content="The ultimate lobby core: menus, hotbar and more.">
+<meta property="og:title" content="HubCore — Documentation · dStudios">
+<meta property="og:description" content="The ultimate lobby core: menus, hotbar and more.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body class="page-docs">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../../index.html">
+      <img class="logo-img" src="../../../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="../../index.html#plugins">Plugins</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link active" href="../../documentation/index.html">Documentation</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Language" aria-label="Language"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇬🇧 EN</span></button><div class="lang-drop"><a class="lang-opt" href="../../../documentacion/hubcore/index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt active" href="../../../en/documentation/hubcore/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../../../fr/documentation/hubcore/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt" href="../../../zh/documentation/hubcore/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt" href="../../../ko/documentation/hubcore/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../../../ru/documentation/hubcore/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap plugin-page docs-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../../documentation/index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6"/></svg> All documentation</a>
+    <span class="crumb-sep">/</span>
+    <span class="crumb-current">HubCore</span>
+  </nav>
+
+  <header class="plugin-hero" style="--accent:#0ea5e9;--accent-ink:#ffffff">
+    <div class="plugin-hero-top">
+      <span class="hero-ver">v1.0-SNAPSHOT</span>
+      <img class="plugin-hero-icon" src="../../../assets/icons/hubcore.png" alt="HubCore" loading="lazy">
+    </div>
+    <div class="plugin-hero-body">
+      <div class="plugin-badges">
+        <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+        <span class="chip">1.13+</span>
+        <span class="chip">Bukkit / Paper</span>
+        
+      </div>
+      <h1>HubCore</h1>
+      <p class="plugin-tagline">The ultimate lobby core: menus, hotbar and more.</p>
+      
+    </div>
+  </header>
+
+  <div class="plugin-layout">
+    <div class="plugin-content">
+      <section class="section" id="resumen">
+        <h2>Overview</h2>
+        
+        <p>HubCore is a complete lobby core: /hub spawn, main world protection, configurable hotbar, menu system with actions and a BungeeCord server navigator. It adds scoreboard, tablist, tags and chat colors, cosmetics, launch plates, EnderButt, PvP mode and rank-based join/quit messages. Modules can be toggled in-game and from config.yml.</p>
+        <ul class="feature-list"><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Spawn via /hub and world protection</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Configurable hotbar, menus and navigator</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Scoreboard and tablist</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Tags and chat colors</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Launch plates and EnderButt</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>PvP mode and /mod moderation commands</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Modules toggleable in-game</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Rank-based join and quit messages</li></ul>
+        <div class="notice"><strong>Notes:</strong> Many modules can be toggled live from /lobbyadmin.</div>
+      </section>
+
+      <section class="section" id="instalacion">
+        <h2>Step-by-step install</h2>
+        
+        <ol class="install-steps">
+          <li>Download the plugin <code>.jar</code> and drop it into your server or proxy <code>plugins/</code> folder.</li>
+          <li>Install any of the dependencies you need from the requirements list.</li>
+          <li>Restart the server (or run <code>/reload confirm</code>) so the plugin boots up.</li>
+          <li>Configure the plugin through its <code>config.yml</code> and data files.</li>
+          <li>Use the plugin's reload command to apply changes without restarting.</li>
+        </ol>
+      </section>
+
+      <section class="section" id="hooks">
+        <h2>Hooks & integrations</h2>
+        <p class="section-sub">The plugin connects automatically with these plugins when they are installed on your server.</p>
+        <div class="hooks"><div class="hook-row"><div class="hook-head"><code class="hook-name">PlaceholderAPI</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Placeholders: exposes and consumes placeholders in menus, scoreboards and messages.</p></div><div class="hook-row"><div class="hook-head"><code class="hook-name">LuckPerms</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Permissions: reads ranks and permissions from LuckPerms.</p></div><div class="hook-row"><div class="hook-head"><code class="hook-name">HeadDatabase</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Heads: lets you use custom HeadDatabase heads in menus and items.</p></div><div class="hook-row"><div class="hook-head"><code class="hook-name">Vault</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Economy: uses the Vault API to charge and pay players (works with your economy plugin).</p></div></div>
+      </section>
+
+      <section class="section" id="configuracion">
+        <h2>Configuration files</h2>
+        <p class="section-sub">Every .yml file shipped with the plugin, exactly as it comes in the source code. Click one to view, copy or download it.</p>
+        <p class="cfg-tip">Files are shown with their default values: copy or download them and edit them in your server's <code>plugins/</code> folder.</p><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">config.yml</span>
+    <span class="cfg-meta">145 lines · 2.9 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/config.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/config.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/config.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">cosmetics.yml</span>
+    <span class="cfg-meta">374 lines · 8.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/cosmetics.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/cosmetics.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/cosmetics.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">hotbar.yml</span>
+    <span class="cfg-meta">126 lines · 2.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/hotbar.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/hotbar.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/hotbar.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">menus.yml</span>
+    <span class="cfg-meta">536 lines · 14.3 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/menus.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/menus.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/menus.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">messages.yml</span>
+    <span class="cfg-meta">76 lines · 3.2 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/messages.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/messages.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/messages.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">plates.yml</span>
+    <span class="cfg-meta">23 lines · 465 B</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/plates.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/plates.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/plates.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">playerdata/tags.yml</span>
+    <span class="cfg-meta">1 lines · 2 B</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/playerdata/tags.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/playerdata/tags.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/playerdata/tags.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">plugin.yml</span>
+    <span class="cfg-meta">94 lines · 2.4 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/plugin.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/plugin.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/plugin.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">scoreboard.yml</span>
+    <span class="cfg-meta">11 lines · 209 B</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/scoreboard.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/scoreboard.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/scoreboard.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">tablist.yml</span>
+    <span class="cfg-meta">11 lines · 150 B</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/tablist.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/hubcore/tablist.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/hubcore/tablist.yml" aria-busy="true"></pre>
+  </div>
+</details>
+      </section>
+
+      <section class="section" id="comandos">
+        <h2>Commands</h2>
+        <div class="table-wrap"><table class="cmd-table"><thead><tr><th>Command</th><th>Description</th><th>Permission</th></tr></thead><tbody><tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/hub</code>
+      <button class="copy-btn" data-copy="/hub" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Teleport to spawn</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.command.hub</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin</code>
+      <button class="copy-btn" data-copy="/lobbyadmin" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Admin commands</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/setplate</code>
+      <button class="copy-btn" data-copy="/setplate" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Set a launch plate</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin.setplate</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/hubreload</code>
+      <button class="copy-btn" data-copy="/hubreload" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Reload HubCore</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin.reload</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/fly</code>
+      <button class="copy-btn" data-copy="/fly" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Activar o desactivar el vuelo</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.fly</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/mod</code>
+      <button class="copy-btn" data-copy="/mod" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/moderacion · /gm</code></div>
+  </td>
+  <td class="cmd-desc">Comandos de moderación (gamemode, time, weather)</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin setspawn</code>
+      <button class="copy-btn" data-copy="/lobbyadmin setspawn" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Sets the lobby spawn</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin build</code>
+      <button class="copy-btn" data-copy="/lobbyadmin build" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Toggles build mode</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin setworld</code>
+      <button class="copy-btn" data-copy="/lobbyadmin setworld" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Sets the protected world</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin joinpreview [modo]</code>
+      <button class="copy-btn" data-copy="/lobbyadmin joinpreview [modo]" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Previews join messages</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/lobbyadmin module &lt;on|off|toggle&gt;</code>
+      <button class="copy-btn" data-copy="/lobbyadmin module &lt;on|off|toggle&gt;" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Toggles modules</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.admin</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/mod gm &lt;modo&gt;</code>
+      <button class="copy-btn" data-copy="/mod gm &lt;modo&gt;" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Changes your gamemode</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.mod.gamemode</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/mod day</code>
+      <button class="copy-btn" data-copy="/mod day" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Sets day time</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.mod.time</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/mod night</code>
+      <button class="copy-btn" data-copy="/mod night" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Sets night time</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.mod.time</code></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/mod sun|rain|thunder</code>
+      <button class="copy-btn" data-copy="/mod sun|rain|thunder" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Changes the weather</td>
+  <td class="cmd-perm"><code class="perm-code">hubcore.mod.weather</code></td>
+</tr></tbody></table></div>
+      </section>
+
+      <section class="section" id="permisos">
+        <h2>Permissions</h2>
+        <div class="perm-tree"><div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.fly</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Permite usar el comando /fly</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.gamemode.bypass</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Evita que se cambie el gamemode al entrar al servidor</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.mod</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Permite usar comandos de moderación</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.mod.gamemode</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Permite cambiar el modo de juego</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.mod.time</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Permite cambiar la hora</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.mod.weather</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Permite cambiar el clima</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.admin</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Full admin access</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.admin.reload</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Reload plugin</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.admin.setplate</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Set launch plates</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.admin.build</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Build in protected world</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.command.hub</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>Use /hub</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.tablist</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>See tablist</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.scoreboard</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>See scoreboard</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.chat.color</code><span class="badge perm-badge perm-false">Nobody</span></div>
+  <p>Use chat colors</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.chat.color.buy</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>Buy chat colors</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.tag.use</code><span class="badge perm-badge perm-false">Nobody</span></div>
+  <p>Use tags</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.tag.buy</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>Buy tags</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.menu.open</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>Open menus</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.cosmetics.chatcolor</code><span class="badge perm-badge perm-false">Nobody</span></div>
+  <p>Use chat color cosmetic</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.cosmetics.tag</code><span class="badge perm-badge perm-false">Nobody</span></div>
+  <p>Use tag cosmetic</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.enderbutt</code><span class="badge perm-badge perm-true">Everyone</span></div>
+  <p>Use enderbutt</p>
+</div>
+<div class="perm-node" style="--depth:0">
+  <div class="perm-head"><code class="perm-code">hubcore.visibility.visible</code><span class="badge perm-badge perm-op">OP only</span></div>
+  <p>Visible para jugadores en modo Solo Rangos</p>
+</div></div>
+      </section>
+    </div>
+
+    <aside class="plugin-side">
+      <div class="side-card">
+        <h3>Tech sheet</h3>
+        <dl><div><dt>Version</dt><dd>v1.0-SNAPSHOT</dd></div><div><dt>Platform</dt><dd>Bukkit / Paper</dd></div><div><dt>Minecraft</dt><dd>1.13+</dd></div><div><dt>Category</dt><dd><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</dd></div><div><dt>Status</dt><dd>Free</dd></div><div><dt>API</dt><dd><code>1.13</code></dd></div><div><dt>Author</dt><dd>Danshi</dd></div><div><dt>Main class</dt><dd><code class="tech-main">me.danshi.hubCore.HubCore</code></dd></div><div><dt>.yml files</dt><dd>10</dd></div><div><dt>Commands</dt><dd>15</dd></div><div><dt>Permissions</dt><dd>22</dd></div></dl>
+      </div>
+      <a class="side-doc-btn" href="../../plugins/hubcore/index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg> Plugin page</a>
+      <nav class="side-nav" aria-label="Sections">
+        <a href="#resumen" data-target="resumen">Overview</a><a href="#instalacion" data-target="instalacion">Step-by-step install</a><a href="#hooks" data-target="hooks">Hooks &amp; integrations</a><a href="#configuracion" data-target="configuracion">Configuration files</a><a href="#comandos" data-target="comandos">Commands</a><a href="#permisos" data-target="permisos">Permissions</a>
+      </nav>
+    </aside>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../../../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>Documentation generated automatically from the plugins' source code.</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="../../documentation/index.html">Documentation</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. All rights reserved. <span class="dot">·</span> Powered by GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

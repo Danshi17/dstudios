@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nChat — Documentation · dStudios</title>
+<meta name="description" content="The ultimate chat: colors, tags, DMs and moderation.">
+<meta property="og:title" content="nChat — Documentation · dStudios">
+<meta property="og:description" content="The ultimate chat: colors, tags, DMs and moderation.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body class="page-docs">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../../index.html">
+      <img class="logo-img" src="../../../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="../../index.html#plugins">Plugins</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link active" href="../../documentation/index.html">Documentation</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Language" aria-label="Language"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇬🇧 EN</span></button><div class="lang-drop"><a class="lang-opt" href="../../../documentacion/nchat/index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt active" href="../../../en/documentation/nchat/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../../../fr/documentation/nchat/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt" href="../../../zh/documentation/nchat/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt" href="../../../ko/documentation/nchat/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../../../ru/documentation/nchat/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap plugin-page docs-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../../documentation/index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6"/></svg> All documentation</a>
+    <span class="crumb-sep">/</span>
+    <span class="crumb-current">nChat</span>
+  </nav>
+
+  <header class="plugin-hero" style="--accent:#a78bfa;--accent-ink:#1c2b4a">
+    <div class="plugin-hero-top">
+      <span class="hero-ver">v0.1-SNAPSHOT</span>
+      <img class="plugin-hero-icon" src="../../../assets/icons/nchat.png" alt="nChat" loading="lazy">
+    </div>
+    <div class="plugin-hero-body">
+      <div class="plugin-badges">
+        <span class="chip"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</span>
+        <span class="chip">1.13+</span>
+        <span class="chip">Bukkit / Paper</span>
+        
+      </div>
+      <h1>nChat</h1>
+      <p class="plugin-tagline">The ultimate chat: colors, tags, DMs and moderation.</p>
+      
+    </div>
+  </header>
+
+  <div class="plugin-layout">
+    <div class="plugin-content">
+      <section class="section" id="resumen">
+        <h2>Overview</h2>
+        
+        <p>A full chat suite for Paper. It provides Vault-prefix formatting, cooldowns, word filter, blocked commands and TAB, private messages with /msg, /r, msgspy and ignore lists, GUI menus for chat and nick colors (hex and gradients), custom tags, rank-based join/quit messages and chat minigames. It also includes a Discord bridge, an admin feature panel and item/inventory sharing with [item], [inv] and [enderchest].</p>
+        <ul class="feature-list"><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Chat format with Vault prefix and hover/click</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Chat and nick colors with hex and gradients</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Custom tags with per-rank limits</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Private messages, reply, msgspy and ignore</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Word filter, cooldown and blocked commands</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Chat games and Discord bridge</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Admin feature panel</li><li><span class="tick"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg></span>Share item, inventory and enderchest in chat</li></ul>
+        <div class="notice"><strong>Notes:</strong> /tags is not in plugin.yml: it is registered dynamically. Built against Paper 1.21.4.</div>
+      </section>
+
+      <section class="section" id="instalacion">
+        <h2>Step-by-step install</h2>
+        
+        <ol class="install-steps">
+          <li>Download the plugin <code>.jar</code> and drop it into your server or proxy <code>plugins/</code> folder.</li>
+          <li>Install any of the dependencies you need from the requirements list.</li>
+          <li>Restart the server (or run <code>/reload confirm</code>) so the plugin boots up.</li>
+          <li>Configure the plugin through its <code>config.yml</code> and data files.</li>
+          <li>Use the plugin's reload command to apply changes without restarting.</li>
+        </ol>
+      </section>
+
+      <section class="section" id="hooks">
+        <h2>Hooks & integrations</h2>
+        <p class="section-sub">The plugin connects automatically with these plugins when they are installed on your server.</p>
+        <div class="hooks"><div class="hook-row"><div class="hook-head"><code class="hook-name">PlaceholderAPI</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Placeholders: exposes and consumes placeholders in menus, scoreboards and messages.</p></div><div class="hook-row"><div class="hook-head"><code class="hook-name">HeadDatabase</code><span class="badge badge-opt">Optional</span></div><p class="hook-desc">Heads: lets you use custom HeadDatabase heads in menus and items.</p></div></div>
+      </section>
+
+      <section class="section" id="configuracion">
+        <h2>Configuration files</h2>
+        <p class="section-sub">Every .yml file shipped with the plugin, exactly as it comes in the source code. Click one to view, copy or download it.</p>
+        <p class="cfg-tip">Files are shown with their default values: copy or download them and edit them in your server's <code>plugins/</code> folder.</p><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">config.yml</span>
+    <span class="cfg-meta">462 lines · 20.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/config.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/config.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/config.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">adivinar.yml</span>
+    <span class="cfg-meta">208 lines · 7.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/adivinar.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/adivinar.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/adivinar.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">chatgames.yml</span>
+    <span class="cfg-meta">61 lines · 2.3 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/chatgames.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/chatgames.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/chatgames.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">commands.yml</span>
+    <span class="cfg-meta">126 lines · 6.0 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/commands.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/commands.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/commands.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">discord.yml</span>
+    <span class="cfg-meta">164 lines · 4.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/discord.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/discord.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/discord.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">gg.yml</span>
+    <span class="cfg-meta">150 lines · 5.2 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/gg.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/gg.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/gg.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">guis.yml</span>
+    <span class="cfg-meta">109 lines · 3.3 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/guis.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/guis.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/guis.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">menus.yml</span>
+    <span class="cfg-meta">338 lines · 9.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/menus.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/menus.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/menus.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">nickcolors.yml</span>
+    <span class="cfg-meta">332 lines · 8.6 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/nickcolors.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/nickcolors.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/nickcolors.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">plugin.yml</span>
+    <span class="cfg-meta">461 lines · 13.7 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/plugin.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/plugin.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/plugin.yml" aria-busy="true"></pre>
+  </div>
+</details><details class="cfg">
+  <summary>
+    <span class="cfg-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span class="cfg-name">tags.yml</span>
+    <span class="cfg-meta">705 lines · 21.1 KB</span>
+    <span class="cfg-caret" aria-hidden="true">▾</span>
+  </summary>
+  <div class="cfg-body">
+    <div class="cfg-tools">
+      <button class="btn btn-sm cfg-copy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy all</button>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/tags.yml" download><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Download</a>
+      <a class="btn btn-sm" href="../../../assets/configs/nchat/tags.yml" target="_blank" rel="noopener">Open in tab</a>
+    </div>
+    <pre class="cfg-code" data-src="../../../assets/configs/nchat/tags.yml" aria-busy="true"></pre>
+  </div>
+</details>
+      </section>
+
+      <section class="section" id="comandos">
+        <h2>Commands</h2>
+        <div class="table-wrap"><table class="cmd-table"><thead><tr><th>Command</th><th>Description</th><th>Permission</th></tr></thead><tbody><tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/nchat</code>
+      <button class="copy-btn" data-copy="/nchat" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/nc</code></div>
+  </td>
+  <td class="cmd-desc">Comando principal del plugin (Reload).</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/clearchat</code>
+      <button class="copy-btn" data-copy="/clearchat" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/cc</code></div>
+  </td>
+  <td class="cmd-desc">Borra el chat global.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/chatlock</code>
+      <button class="copy-btn" data-copy="/chatlock" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/togglechat · /lockchat</code></div>
+  </td>
+  <td class="cmd-desc">Bloquea o desbloquea el chat global.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/color</code>
+      <button class="copy-btn" data-copy="/color" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/colors · /chatcolor · /ccolor</code></div>
+  </td>
+  <td class="cmd-desc">Abre el menú de selección de colores y gradientes para el CHAT.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/nickc</code>
+      <button class="copy-btn" data-copy="/nickc" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/nickcolor · /ncolor · /nicknamecolor</code></div>
+  </td>
+  <td class="cmd-desc">Abre el menú de selección de colores para el NICK (Nombre).</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/nchatgui</code>
+      <button class="copy-btn" data-copy="/nchatgui" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Comando interno para abrir los inventarios compartidos en el chat.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/nchatpanel</code>
+      <button class="copy-btn" data-copy="/nchatpanel" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/ncp · /panel · /features</code></div>
+  </td>
+  <td class="cmd-desc">Abre el panel de administración para activar/desactivar las features del core.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/msg</code>
+      <button class="copy-btn" data-copy="/msg" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/tell · /w · /whisper · /pm</code></div>
+  </td>
+  <td class="cmd-desc">Envía un mensaje privado a un jugador.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/r</code>
+      <button class="copy-btn" data-copy="/r" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/reply</code></div>
+  </td>
+  <td class="cmd-desc">Responde al último jugador que te escribió o al que le escribiste.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/msgspy</code>
+      <button class="copy-btn" data-copy="/msgspy" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/socialspy · /spy</code></div>
+  </td>
+  <td class="cmd-desc">Activa o desactiva la vista de los mensajes privados de los jugadores.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/msgtoggle</code>
+      <button class="copy-btn" data-copy="/msgtoggle" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/dm · /togglepm · /receivepm</code></div>
+  </td>
+  <td class="cmd-desc">Activa o desactiva que te envíen mensajes privados.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/ignore</code>
+      <button class="copy-btn" data-copy="/ignore" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/block</code></div>
+  </td>
+  <td class="cmd-desc">Ignora a un jugador para no recibir sus mensajes privados.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/unignore</code>
+      <button class="copy-btn" data-copy="/unignore" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/unblock</code></div>
+  </td>
+  <td class="cmd-desc">Deja de ignorar a un jugador.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/ignorelist</code>
+      <button class="copy-btn" data-copy="/ignorelist" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/ignores · /blockedlist</code></div>
+  </td>
+  <td class="cmd-desc">Muestra tu lista de jugadores ignorados.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/adivinar</code>
+      <button class="copy-btn" data-copy="/adivinar" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Adivina el número o la palabra del evento activo.</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/chatevent</code>
+      <button class="copy-btn" data-copy="/chatevent" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    <div class="cmd-aliases">Aliases: <code>/cevent</code></div>
+  </td>
+  <td class="cmd-desc">Inicia, detiene o consulta los eventos de chat (adivinar y GG).</td>
+  <td class="cmd-perm"><span class="dash">—</span></td>
+</tr>
+<tr>
+  <td>
+    <div class="cmd-wrap">
+      <code class="cmd-code">/tags</code>
+      <button class="copy-btn" data-copy="/tags" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+    </div>
+    
+  </td>
+  <td class="cmd-desc">Opens the tags/prefixes menu (registered in code)</td>
+  <td class="cmd-perm"><code class="perm-code">nchat.tags.menu</code></td>
+</tr></tbody></table></div>
+      </section>
+
+      <section class="section" id="permisos">
+        <h2>Permissions</h2>
+        <div class="perm-compact"><div class="perm-filter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="permFilter" placeholder="Filter permissions…" autocomplete="off"></div><details class="perm-group" open><summary><code>nchat.*</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.* acceso completo a todas las funcionalidades de nchat. acceso completo a todas las funcionalidades de nchat."><code>nchat.*</code><span class="pdesc">Acceso completo a todas las funcionalidades de nChat.</span></div></div></details><details class="perm-group" open><summary><code>nchat.adivinar</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.adivinar permite participar en el evento /adivinar. permite participar en el evento /adivinar."><code>nchat.adivinar</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite participar en el evento /adivinar.</span></div></div></details><details class="perm-group" open><summary><code>nchat.admin</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.admin permiso general de administrador (bypass de todo). permiso general de administrador (bypass de todo)."><code>nchat.admin</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permiso general de administrador (Bypass de todo).</span></div></div></details><details class="perm-group" open><summary><code>nchat.bypass</code><span class="perm-childcount">6 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.bypass.* acceso a todos los bypass del plugin. acceso a todos los bypass del plugin."><code>nchat.bypass.*</code><span class="pdesc">Acceso a todos los bypass del plugin.</span></div><div class="perm-row" data-perm="nchat.bypass.commands permite usar comandos bloqueados (/plugins, etc). permite usar comandos bloqueados (/plugins, etc)."><code>nchat.bypass.commands</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite usar comandos bloqueados (/plugins, etc).</span></div><div class="perm-row" data-perm="nchat.bypass.cooldown permite hablar rápido sin esperar los segundos configurados. permite hablar rápido sin esperar los segundos configurados."><code>nchat.bypass.cooldown</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite hablar rápido sin esperar los segundos configurados.</span></div><div class="perm-row" data-perm="nchat.bypass.filter permite decir palabras prohibidas sin ser castigado. permite decir palabras prohibidas sin ser castigado."><code>nchat.bypass.filter</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite decir palabras prohibidas sin ser castigado.</span></div><div class="perm-row" data-perm="nchat.bypass.lock permite escribir cuando el chat está bloqueado. permite escribir cuando el chat está bloqueado."><code>nchat.bypass.lock</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite escribir cuando el chat está bloqueado.</span></div><div class="perm-row" data-perm="nchat.bypass.tab permite ver todos los comandos en el tab completado. permite ver todos los comandos en el tab completado."><code>nchat.bypass.tab</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite ver todos los comandos en el TAB completado.</span></div></div></details><details class="perm-group" open><summary><code>nchat.chat</code><span class="perm-childcount">5 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.chat.* acceso total al sistema de vistas compartidas en el chat. acceso total al sistema de vistas compartidas en el chat."><code>nchat.chat.*</code><span class="pdesc">Acceso total al sistema de vistas compartidas en el chat.</span></div><div class="perm-row" data-perm="nchat.chat.enderchest permite compartir el enderchest mediante [enderchest] en el chat. permite compartir el enderchest mediante [enderchest] en el chat."><code>nchat.chat.enderchest</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite compartir el enderchest mediante [enderchest] en el chat.</span></div><div class="perm-row" data-perm="nchat.chat.inv permite compartir el inventario mediante [inv] en el chat. permite compartir el inventario mediante [inv] en el chat."><code>nchat.chat.inv</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite compartir el inventario mediante [inv] en el chat.</span></div><div class="perm-row" data-perm="nchat.chat.item permite compartir el item en mano mediante [item] o [i] en el chat. permite compartir el item en mano mediante [item] o [i] en el chat."><code>nchat.chat.item</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite compartir el item en mano mediante [item] o [i] en el chat.</span></div><div class="perm-row" data-perm="nchat.chat.view permite abrir las vistas de inventario/enderchest/item compartidas en el chat. permite abrir las vistas de inventario/enderchest/item compartidas en el chat."><code>nchat.chat.view</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite abrir las vistas de inventario/enderchest/item compartidas en el chat.</span></div></div></details><details class="perm-group" open><summary><code>nchat.clearchat</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.clearchat permiso para limpiar el chat. permiso para limpiar el chat."><code>nchat.clearchat</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permiso para limpiar el chat.</span></div></div></details><details class="perm-group" open><summary><code>nchat.color</code><span class="perm-childcount">24 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.color.* acceso total a colores de chat. acceso total a colores de chat."><code>nchat.color.*</code><span class="pdesc">Acceso total a colores de CHAT.</span></div><div class="perm-row" data-perm="nchat.color.aqua acceso al color aqua en chat. acceso al color aqua en chat."><code>nchat.color.aqua</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Aqua en chat.</span></div><div class="perm-row" data-perm="nchat.color.black acceso al color negro en chat. acceso al color negro en chat."><code>nchat.color.black</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Negro en chat.</span></div><div class="perm-row" data-perm="nchat.color.blue acceso al color azul en chat. acceso al color azul en chat."><code>nchat.color.blue</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Azul en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_aqua acceso al color turquesa oscuro en chat. acceso al color turquesa oscuro en chat."><code>nchat.color.dark_aqua</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Turquesa Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_blue acceso al color azul oscuro en chat. acceso al color azul oscuro en chat."><code>nchat.color.dark_blue</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Azul Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_gray acceso al color gris oscuro en chat. acceso al color gris oscuro en chat."><code>nchat.color.dark_gray</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Gris Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_green acceso al color verde oscuro en chat. acceso al color verde oscuro en chat."><code>nchat.color.dark_green</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Verde Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_purple acceso al color morado oscuro en chat. acceso al color morado oscuro en chat."><code>nchat.color.dark_purple</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Morado Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.dark_red acceso al color rojo oscuro en chat. acceso al color rojo oscuro en chat."><code>nchat.color.dark_red</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Rojo Oscuro en chat.</span></div><div class="perm-row" data-perm="nchat.color.fire acceso al gradiente de fuego en chat. acceso al gradiente de fuego en chat."><code>nchat.color.fire</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al gradiente de Fuego en chat.</span></div><div class="perm-row" data-perm="nchat.color.gold acceso al color oro en chat. acceso al color oro en chat."><code>nchat.color.gold</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Oro en chat.</span></div><div class="perm-row" data-perm="nchat.color.gray acceso al color gris en chat. acceso al color gris en chat."><code>nchat.color.gray</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Gris en chat.</span></div><div class="perm-row" data-perm="nchat.color.green acceso al color verde en chat. acceso al color verde en chat."><code>nchat.color.green</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Verde en chat.</span></div><div class="perm-row" data-perm="nchat.color.ice acceso al gradiente de hielo en chat. acceso al gradiente de hielo en chat."><code>nchat.color.ice</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al gradiente de Hielo en chat.</span></div><div class="perm-row" data-perm="nchat.color.light_purple acceso al color rosa en chat. acceso al color rosa en chat."><code>nchat.color.light_purple</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Rosa en chat.</span></div><div class="perm-row" data-perm="nchat.color.menu permite abrir el menú con /color. permite abrir el menú con /color."><code>nchat.color.menu</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite abrir el menú con /color.</span></div><div class="perm-row" data-perm="nchat.color.nature acceso al gradiente de naturaleza en chat. acceso al gradiente de naturaleza en chat."><code>nchat.color.nature</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al gradiente de Naturaleza en chat.</span></div><div class="perm-row" data-perm="nchat.color.rainbow acceso al color arcoiris en chat. acceso al color arcoiris en chat."><code>nchat.color.rainbow</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Arcoiris en chat.</span></div><div class="perm-row" data-perm="nchat.color.red acceso al color rojo en chat. acceso al color rojo en chat."><code>nchat.color.red</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Rojo en chat.</span></div><div class="perm-row" data-perm="nchat.color.reset permite restablecer el color de chat al default. permite restablecer el color de chat al default."><code>nchat.color.reset</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite restablecer el color de chat al default.</span></div><div class="perm-row" data-perm="nchat.color.sunset acceso al gradiente de atardecer en chat. acceso al gradiente de atardecer en chat."><code>nchat.color.sunset</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al gradiente de Atardecer en chat.</span></div><div class="perm-row" data-perm="nchat.color.white acceso al color blanco en chat. acceso al color blanco en chat."><code>nchat.color.white</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Blanco en chat.</span></div><div class="perm-row" data-perm="nchat.color.yellow acceso al color amarillo en chat. acceso al color amarillo en chat."><code>nchat.color.yellow</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al color Amarillo en chat.</span></div></div></details><details class="perm-group" open><summary><code>nchat.customtag</code><span class="perm-childcount">8 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.customtag permiso base para usar el sistema de tags personalizadas. permiso base para usar el sistema de tags personalizadas."><code>nchat.customtag</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permiso base para usar el sistema de tags personalizadas.</span></div><div class="perm-row" data-perm="nchat.customtag.* acceso a todos los límites de tags personalizadas. acceso a todos los límites de tags personalizadas."><code>nchat.customtag.*</code><span class="pdesc">Acceso a todos los límites de tags personalizadas.</span></div><div class="perm-row" data-perm="nchat.customtag.elite límite de tags personalizadas - elite (25 tags). límite de tags personalizadas - elite (25 tags)."><code>nchat.customtag.elite</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - Elite (25 tags).</span></div><div class="perm-row" data-perm="nchat.customtag.epic límite de tags personalizadas - epic (40 tags). límite de tags personalizadas - epic (40 tags)."><code>nchat.customtag.epic</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - Epic (40 tags).</span></div><div class="perm-row" data-perm="nchat.customtag.legendary límite de tags personalizadas - legendary (50 tags). límite de tags personalizadas - legendary (50 tags)."><code>nchat.customtag.legendary</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - Legendary (50 tags).</span></div><div class="perm-row" data-perm="nchat.customtag.mvp límite de tags personalizadas - mvp (30 tags). límite de tags personalizadas - mvp (30 tags)."><code>nchat.customtag.mvp</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - MVP (30 tags).</span></div><div class="perm-row" data-perm="nchat.customtag.plus límite de tags personalizadas - plus (10 tags). límite de tags personalizadas - plus (10 tags)."><code>nchat.customtag.plus</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - Plus (10 tags).</span></div><div class="perm-row" data-perm="nchat.customtag.vip límite de tags personalizadas - vip (20 tags). límite de tags personalizadas - vip (20 tags)."><code>nchat.customtag.vip</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Límite de tags personalizadas - VIP (20 tags).</span></div></div></details><details class="perm-group" open><summary><code>nchat.events</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.events.manage permite iniciar, detener y consultar los eventos de chat con /chatevent. permite iniciar, detener y consultar los eventos de chat con /chatevent."><code>nchat.events.manage</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite iniciar, detener y consultar los eventos de chat con /chatevent.</span></div></div></details><details class="perm-group" open><summary><code>nchat.features</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.features.menu permite abrir el panel de administración y activar/desactivar features del core. permite abrir el panel de administración y activar/desactivar features del core."><code>nchat.features.menu</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite abrir el panel de administración y activar/desactivar features del core.</span></div></div></details><details class="perm-group" open><summary><code>nchat.join</code><span class="perm-childcount">5 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.join.* acceso a todos los mensajes de join. acceso a todos los mensajes de join."><code>nchat.join.*</code><span class="pdesc">Acceso a todos los mensajes de join.</span></div><div class="perm-row" data-perm="nchat.join.epic mensaje de join epic. mensaje de join epic."><code>nchat.join.epic</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de join Epic.</span></div><div class="perm-row" data-perm="nchat.join.legendary mensaje de join legendary. mensaje de join legendary."><code>nchat.join.legendary</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de join Legendary.</span></div><div class="perm-row" data-perm="nchat.join.mvp mensaje de join mvp. mensaje de join mvp."><code>nchat.join.mvp</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de join MVP.</span></div><div class="perm-row" data-perm="nchat.join.vip mensaje de join vip. mensaje de join vip."><code>nchat.join.vip</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de join VIP.</span></div></div></details><details class="perm-group" open><summary><code>nchat.msg</code><span class="perm-childcount">4 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.msg permite usar /msg y /r. permite usar /msg y /r."><code>nchat.msg</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite usar /msg y /r.</span></div><div class="perm-row" data-perm="nchat.msg.bypass.dm permite enviar /msg aunque el destino tenga los mensajes desactivados. permite enviar /msg aunque el destino tenga los mensajes desactivados."><code>nchat.msg.bypass.dm</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite enviar /msg aunque el destino tenga los mensajes desactivados.</span></div><div class="perm-row" data-perm="nchat.msg.bypass.ignore permite enviar /msg aunque el destino te tenga ignorado. permite enviar /msg aunque el destino te tenga ignorado."><code>nchat.msg.bypass.ignore</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite enviar /msg aunque el destino te tenga ignorado.</span></div><div class="perm-row" data-perm="nchat.msg.vanished permite enviar mensajes privados a jugadores en vanish. permite enviar mensajes privados a jugadores en vanish."><code>nchat.msg.vanished</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite enviar mensajes privados a jugadores en vanish.</span></div></div></details><details class="perm-group" open><summary><code>nchat.msgspy</code><span class="perm-childcount">2 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.msgspy permite usar /msgspy y ver los mensajes privados de otros jugadores. permite usar /msgspy y ver los mensajes privados de otros jugadores."><code>nchat.msgspy</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite usar /msgspy y ver los mensajes privados de otros jugadores.</span></div><div class="perm-row" data-perm="nchat.msgspy.exempt los mensajes privados de este jugador no aparecen en el msgspy. los mensajes privados de este jugador no aparecen en el msgspy."><code>nchat.msgspy.exempt</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Los mensajes privados de este jugador no aparecen en el msgspy.</span></div></div></details><details class="perm-group" open><summary><code>nchat.nick</code><span class="perm-childcount">24 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.nick.* acceso total a colores de nick. acceso total a colores de nick."><code>nchat.nick.*</code><span class="pdesc">Acceso total a colores de NICK.</span></div><div class="perm-row" data-perm="nchat.nick.aqua acceso al nick aqua. acceso al nick aqua."><code>nchat.nick.aqua</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Aqua.</span></div><div class="perm-row" data-perm="nchat.nick.black acceso al nick negro. acceso al nick negro."><code>nchat.nick.black</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Negro.</span></div><div class="perm-row" data-perm="nchat.nick.blue acceso al nick azul. acceso al nick azul."><code>nchat.nick.blue</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Azul.</span></div><div class="perm-row" data-perm="nchat.nick.dark_aqua acceso al nick turquesa oscuro. acceso al nick turquesa oscuro."><code>nchat.nick.dark_aqua</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Turquesa Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.dark_blue acceso al nick azul oscuro. acceso al nick azul oscuro."><code>nchat.nick.dark_blue</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Azul Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.dark_gray acceso al nick gris oscuro. acceso al nick gris oscuro."><code>nchat.nick.dark_gray</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gris Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.dark_green acceso al nick verde oscuro. acceso al nick verde oscuro."><code>nchat.nick.dark_green</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Verde Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.dark_purple acceso al nick morado oscuro. acceso al nick morado oscuro."><code>nchat.nick.dark_purple</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Morado Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.dark_red acceso al nick rojo oscuro. acceso al nick rojo oscuro."><code>nchat.nick.dark_red</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Rojo Oscuro.</span></div><div class="perm-row" data-perm="nchat.nick.fire acceso al nick gradiente fuego. acceso al nick gradiente fuego."><code>nchat.nick.fire</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gradiente Fuego.</span></div><div class="perm-row" data-perm="nchat.nick.gold acceso al nick oro. acceso al nick oro."><code>nchat.nick.gold</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Oro.</span></div><div class="perm-row" data-perm="nchat.nick.gray acceso al nick gris. acceso al nick gris."><code>nchat.nick.gray</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gris.</span></div><div class="perm-row" data-perm="nchat.nick.green acceso al nick verde. acceso al nick verde."><code>nchat.nick.green</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Verde.</span></div><div class="perm-row" data-perm="nchat.nick.ice acceso al nick gradiente hielo. acceso al nick gradiente hielo."><code>nchat.nick.ice</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gradiente Hielo.</span></div><div class="perm-row" data-perm="nchat.nick.light_purple acceso al nick rosa. acceso al nick rosa."><code>nchat.nick.light_purple</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Rosa.</span></div><div class="perm-row" data-perm="nchat.nick.menu permite abrir el menú con /nickc. permite abrir el menú con /nickc."><code>nchat.nick.menu</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite abrir el menú con /nickc.</span></div><div class="perm-row" data-perm="nchat.nick.nature acceso al nick gradiente naturaleza. acceso al nick gradiente naturaleza."><code>nchat.nick.nature</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gradiente Naturaleza.</span></div><div class="perm-row" data-perm="nchat.nick.rainbow acceso al nick arcoiris animado. acceso al nick arcoiris animado."><code>nchat.nick.rainbow</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Arcoiris Animado.</span></div><div class="perm-row" data-perm="nchat.nick.red acceso al nick rojo. acceso al nick rojo."><code>nchat.nick.red</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Rojo.</span></div><div class="perm-row" data-perm="nchat.nick.reset permite restablecer el color del nombre al default. permite restablecer el color del nombre al default."><code>nchat.nick.reset</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite restablecer el color del nombre al default.</span></div><div class="perm-row" data-perm="nchat.nick.sunset acceso al nick gradiente atardecer. acceso al nick gradiente atardecer."><code>nchat.nick.sunset</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Gradiente Atardecer.</span></div><div class="perm-row" data-perm="nchat.nick.white acceso al nick blanco. acceso al nick blanco."><code>nchat.nick.white</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Blanco.</span></div><div class="perm-row" data-perm="nchat.nick.yellow acceso al nick amarillo. acceso al nick amarillo."><code>nchat.nick.yellow</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Acceso al nick Amarillo.</span></div></div></details><details class="perm-group" open><summary><code>nchat.quit</code><span class="perm-childcount">5 permissions</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.quit.* acceso a todos los mensajes de quit. acceso a todos los mensajes de quit."><code>nchat.quit.*</code><span class="pdesc">Acceso a todos los mensajes de quit.</span></div><div class="perm-row" data-perm="nchat.quit.epic mensaje de quit epic. mensaje de quit epic."><code>nchat.quit.epic</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de quit Epic.</span></div><div class="perm-row" data-perm="nchat.quit.legendary mensaje de quit legendary. mensaje de quit legendary."><code>nchat.quit.legendary</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de quit Legendary.</span></div><div class="perm-row" data-perm="nchat.quit.mvp mensaje de quit mvp. mensaje de quit mvp."><code>nchat.quit.mvp</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de quit MVP.</span></div><div class="perm-row" data-perm="nchat.quit.vip mensaje de quit vip. mensaje de quit vip."><code>nchat.quit.vip</code><span class="badge perm-badge perm-false">Nobody</span><span class="pdesc">Mensaje de quit VIP.</span></div></div></details><details class="perm-group" open><summary><code>nchat.reload</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.reload permiso para recargar la configuración y menús. permiso para recargar la configuración y menús."><code>nchat.reload</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permiso para recargar la configuración y menús.</span></div></div></details><details class="perm-group" open><summary><code>nchat.tags</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.tags.menu permite abrir el menú de tags. permite abrir el menú de tags."><code>nchat.tags.menu</code><span class="badge perm-badge perm-true">Everyone</span><span class="pdesc">Permite abrir el menú de tags.</span></div></div></details><details class="perm-group" open><summary><code>nchat.tagsimport</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.tagsimport permite importar tags desde una carpeta de supremetags. permite importar tags desde una carpeta de supremetags."><code>nchat.tagsimport</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permite importar tags desde una carpeta de SupremeTags.</span></div></div></details><details class="perm-group" open><summary><code>nchat.toggle</code><span class="perm-childcount">1 permission</span></summary><div class="perm-rows"><div class="perm-row" data-perm="nchat.toggle permiso para bloquear/desbloquear el chat. permiso para bloquear/desbloquear el chat."><code>nchat.toggle</code><span class="badge perm-badge perm-op">OP only</span><span class="pdesc">Permiso para bloquear/desbloquear el chat.</span></div></div></details></div>
+      </section>
+    </div>
+
+    <aside class="plugin-side">
+      <div class="side-card">
+        <h3>Tech sheet</h3>
+        <dl><div><dt>Version</dt><dd>v0.1-SNAPSHOT</dd></div><div><dt>Platform</dt><dd>Bukkit / Paper</dd></div><div><dt>Minecraft</dt><dd>1.13+</dd></div><div><dt>Category</dt><dd><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</dd></div><div><dt>Status</dt><dd>Free</dd></div><div><dt>API</dt><dd><code>1.13</code></dd></div><div><dt>Author</dt><dd>Danshi_</dd></div><div><dt>Main class</dt><dd><code class="tech-main">org.dev.danshi.nChat.NChat</code></dd></div><div><dt>.yml files</dt><dd>11</dd></div><div><dt>Commands</dt><dd>17</dd></div><div><dt>Permissions</dt><dd>93</dd></div></dl>
+      </div>
+      <a class="side-doc-btn" href="../../plugins/nchat/index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg> Plugin page</a>
+      <nav class="side-nav" aria-label="Sections">
+        <a href="#resumen" data-target="resumen">Overview</a><a href="#instalacion" data-target="instalacion">Step-by-step install</a><a href="#hooks" data-target="hooks">Hooks &amp; integrations</a><a href="#configuracion" data-target="configuracion">Configuration files</a><a href="#comandos" data-target="comandos">Commands</a><a href="#permisos" data-target="permisos">Permissions</a>
+      </nav>
+    </aside>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../../../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>Documentation generated automatically from the plugins' source code.</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="../../documentation/index.html">Documentation</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. All rights reserved. <span class="dot">·</span> Powered by GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

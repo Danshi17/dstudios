@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>선적 서류 비치 — dStudios Plugins</title>
+<meta name="description" content="각 플러그인의 가이드, 후크, 명령, 권한 및 모든 .yml 파일을 설치합니다. 바로 보거나 복사하거나 다운로드할 수 있습니다.">
+<meta property="og:title" content="선적 서류 비치 — dStudios Plugins">
+<meta property="og:description" content="각 플러그인의 가이드, 후크, 명령, 권한 및 모든 .yml 파일을 설치합니다. 바로 보거나 복사하거나 다운로드할 수 있습니다.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="page-docs">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">콘텐츠로 건너뛰기</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../index.html">
+      <img class="logo-img" src="../../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="../index.html#plugins">플러그인</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link active" href="../documentation/index.html">선적 서류 비치</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="언어" aria-label="언어"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇰🇷 KO</span></button><div class="lang-drop"><a class="lang-opt" href="../../documentacion/index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt" href="../../en/documentation/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../../fr/documentation/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt" href="../../zh/documentation/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt active" href="../../ko/documentation/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../../ru/documentation/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="테마 전환" aria-label="테마 전환">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero small docs-hero">
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">공식 문서</p>
+    <h1>완전한 문서화 <span class="hl">NewSeries</span> </h1>
+    <p class="hero-sub">각 플러그인의 가이드, 후크, 명령, 권한 및 모든 .yml 파일을 설치합니다. 바로 보거나 복사하거나 다운로드할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="section" id="guia">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>플러그인을 설치하는 방법</h2>
+      <ol class="install-steps">
+        <li>플러그인 <code>.jar</code>을 다운로드하여 서버 또는 프록시 <code>plugins/</code> 폴더에 놓습니다.</li>
+        <li>요구 사항 목록에서 필요한 종속성을 설치합니다.</li>
+        <li>플러그인이 부팅되도록 서버를 다시 시작하거나 <code>/reload verify</code>를 실행하세요.</li>
+        <li><code>config.yml</code> 및 데이터 파일을 통해 플러그인을 구성합니다.</li>
+        <li>다시 시작하지 않고 변경 사항을 적용하려면 플러그인의 reload 명령을 사용하세요.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plugins-docs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>문서화된 플러그인</h2>
+      <p>설치, 후크, 명령, 권한 및 구성 파일 등 전체 문서를 보려면 플러그인을 선택하세요.</p>
+    </div>
+    <div class="searchbar docs-searchbar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="docsSearch" placeholder="플러그인 검색…" aria-label="플러그인 검색…" autocomplete="off">
+    </div>
+    <div class="docs-list" id="docsGrid">
+<a class="doc-item reveal" href="../documentation/afkzone/index.html" data-search="afkzone 자동 보상과 게임 내 편집기가 포함된 afk 영역. afkzone 공익사업">
+  <img class="doc-icon" src="../../assets/icons/afkzone.png" alt="AfkZone" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AfkZone<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">자동 보상과 게임 내 편집기가 포함된 AFK 영역.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">7 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/antiop/index.html" data-search="antiop 승인되지 않은 op 및 순위로부터 서버를 보호하세요. antiop 절도">
+  <img class="doc-icon" src="../../assets/icons/antiop.png" alt="AntiOP" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiOP<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 절도</span></span>
+    <span class="doc-tagline">승인되지 않은 OP 및 순위로부터 서버를 보호하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">3 명령</span><span class="doc-chip">5 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/antipendejos/index.html" data-search="antipendejos 금지된 항목을 차단하고 재고 및 보관소를 자동으로 제거합니다. antipendejos 절도">
+  <img class="doc-icon" src="../../assets/icons/antipendejos.png" alt="AntiPendejos" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiPendejos<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 절도</span></span>
+    <span class="doc-tagline">금지된 항목을 차단하고 재고 및 보관소를 자동으로 제거합니다.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">6 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/blockrewards/index.html" data-search="blockrewards 블록을 부수고 레벨을 올리고 엄청난 보상을 받으세요. blockrewards 진행">
+  <img class="doc-icon" src="../../assets/icons/blockrewards.png" alt="BlockRewards" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">BlockRewards<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">블록을 부수고 레벨을 올리고 엄청난 보상을 받으세요.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">4 명령</span><span class="doc-chip">5 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/ecevents/index.html" data-search="ecevents 보상이 가득한 채굴 이벤트와 행운의 블록. ecevents 미니게임">
+  <img class="doc-icon" src="../../assets/icons/ecevents.png" alt="ECEvents" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ECEvents<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">보상이 가득한 채굴 이벤트와 행운의 블록.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">8 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/epicvouchers/index.html" data-search="epicvouchers 명령, 사운드 및 gui가 포함된 맞춤형 바우처. epicvouchers 경제">
+  <img class="doc-icon" src="../../assets/icons/epicvouchers.png" alt="EpicVouchers" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EpicVouchers<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 경제</span></span>
+    <span class="doc-tagline">명령, 사운드 및 GUI가 포함된 맞춤형 바우처.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">1 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/evenmorefish/index.html" data-search="evenmorefish 완전히 맞춤화된 물고기를 이용한 낚시 대회. evenmorefish 미니게임">
+  <img class="doc-icon smooth" src="../../assets/icons/emf.png" alt="EvenMoreFish" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EvenMoreFish<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">완전히 맞춤화된 물고기를 이용한 낚시 대회.</span>
+    <span class="doc-chips"><span class="doc-chip">46 .yml</span><span class="doc-chip">8 명령</span><span class="doc-chip">17 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/extraregions/index.html" data-search="extraregions 고급 worldguard 플래그: 명령, 효과 등. extraregions 세계">
+  <img class="doc-icon" src="../../assets/icons/extraregions.png" alt="ExtraRegions" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ExtraRegions<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> 세계</span></span>
+    <span class="doc-tagline">고급 WorldGuard 플래그: 명령, 효과 등.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">2 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/hubcore/index.html" data-search="hubcore 최고의 로비 핵심: 메뉴, 핫바 등. hubcore 공익사업">
+  <img class="doc-icon" src="../../assets/icons/hubcore.png" alt="HubCore" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">HubCore<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">최고의 로비 핵심: 메뉴, 핫바 등.</span>
+    <span class="doc-chips"><span class="doc-chip">10 .yml</span><span class="doc-chip">15 명령</span><span class="doc-chip">22 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/itemsrpg/index.html" data-search="itemsrpg 레시피, 효과, 애드온이 포함된 맞춤형 rpg 아이템. itemsrpg 롤플레잉">
+  <img class="doc-icon" src="../../assets/icons/itemsrpg.png" alt="ItemsRPG" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ItemsRPG<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 롤플레잉</span></span>
+    <span class="doc-tagline">레시피, 효과, 애드온이 포함된 맞춤형 RPG 아이템.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">13 명령</span><span class="doc-chip">3 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/lootboxes/index.html" data-search="lootboxes 멋진 애니메이션과 희귀한 보상이 담긴 상자를 열어보세요. lootboxes 경제">
+  <img class="doc-icon" src="../../assets/icons/lootboxes.png" alt="Lootboxes" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Lootboxes<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 경제</span></span>
+    <span class="doc-tagline">멋진 애니메이션과 희귀한 보상이 담긴 상자를 열어보세요.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">9 명령</span><span class="doc-chip">3 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/nchat/index.html" data-search="nchat 최고의 채팅: 색상, 태그, dm 및 조정. nchat 채팅">
+  <img class="doc-icon" src="../../assets/icons/nchat.png" alt="nChat" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nChat<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> 채팅</span></span>
+    <span class="doc-tagline">최고의 채팅: 색상, 태그, DM 및 조정.</span>
+    <span class="doc-chips"><span class="doc-chip">11 .yml</span><span class="doc-chip">17 명령</span><span class="doc-chip">93 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcasino/index.html" data-search="newcasino 코인플립, 슬롯, 17가지 베팅 미니게임. newcasino 미니게임">
+  <img class="doc-icon" src="../../assets/icons/newcasino.png" alt="NewCasino" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCasino<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">코인플립, 슬롯, 17가지 베팅 미니게임.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">16 명령</span><span class="doc-chip">6 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newchatcolor/index.html" data-search="newchatcolor 16진수, 그라데이션 등으로 채팅 색상을 맞춤설정하세요. newchatcolor 채팅">
+  <img class="doc-icon" src="../../assets/icons/newchatcolor.png" alt="NewChatColor" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewChatColor<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> 채팅</span></span>
+    <span class="doc-tagline">16진수, 그라데이션 등으로 채팅 색상을 맞춤설정하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">5 명령</span><span class="doc-chip">10 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newclans/index.html" data-search="newclans 클랜을 찾고, 동맹을 맺고, 순위를 지배하세요. newclans 사회의">
+  <img class="doc-icon" src="../../assets/icons/newclans.png" alt="NewClans" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewClans<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 사회의</span></span>
+    <span class="doc-tagline">클랜을 찾고, 동맹을 맺고, 순위를 지배하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">57 .yml</span><span class="doc-chip">15 명령</span><span class="doc-chip">24 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcomblog/index.html" data-search="newcombatlog 태그, 현상금, 보상이 포함된 pvp 전투 시스템. newcomblog 롤플레잉">
+  <img class="doc-icon" src="../../assets/icons/newcombatlog.png" alt="NewCombatlog" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCombatlog<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 롤플레잉</span></span>
+    <span class="doc-tagline">태그, 현상금, 보상이 포함된 PvP 전투 시스템.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 명령</span><span class="doc-chip">5 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newcosmetics/index.html" data-search="newcosmetics 귀하의 서버를 위한 최고의 화장품 제품군입니다. newcosmetics 화장품">
+  <img class="doc-icon" src="../../assets/icons/newcosmetics.png" alt="NewCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 화장품</span></span>
+    <span class="doc-tagline">귀하의 서버를 위한 최고의 화장품 제품군입니다.</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 명령</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newdtc/index.html" data-search="newdtc destroy the core: 보상이 있는 pvp 이벤트. newdtc 미니게임">
+  <img class="doc-icon" src="../../assets/icons/newdtc.png" alt="NewDTC" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewDTC<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">Destroy The Core: 보상이 있는 PvP 이벤트.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 명령</span><span class="doc-chip">12 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newfriends/index.html" data-search="newfriends 비공개 메시징을 통해 네트워크 간 친구를 사귀세요. newfriends 사회의">
+  <img class="doc-icon" src="../../assets/icons/newfriends.png" alt="NewFriends" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewFriends<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 사회의</span></span>
+    <span class="doc-tagline">비공개 메시징을 통해 네트워크 간 친구를 사귀세요.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">8 명령</span><span class="doc-chip">9 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newglow/index.html" data-search="newglow 무지개와 깜박이는 모드로 빛나는 오라. newglow 화장품">
+  <img class="doc-icon" src="../../assets/icons/newglow.png" alt="NewGlow" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewGlow<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 화장품</span></span>
+    <span class="doc-tagline">무지개와 깜박이는 모드로 빛나는 오라.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">5 명령</span><span class="doc-chip">27 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newheads/index.html" data-search="newheads 텍스트와 상호작용이 포함된 플로팅 헤드로 서버를 장식하세요. newheads 화장품">
+  <img class="doc-icon" src="../../assets/icons/newheads.png" alt="NewHeads" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewHeads<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 화장품</span></span>
+    <span class="doc-tagline">텍스트와 상호작용이 포함된 플로팅 헤드로 서버를 장식하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newjobs/index.html" data-search="newjobs xp, 퀘스트, 계약이 포함된 13가지 직업. newjobs 진행">
+  <img class="doc-icon" src="../../assets/icons/newjobs.png" alt="NewJobs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewJobs<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">XP, 퀘스트, 계약이 포함된 13가지 직업.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">4 명령</span><span class="doc-chip">4 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newkb/index.html" data-search="newkb 넉백과 공격 속도를 완벽하게 조정하세요. newkb 공익사업">
+  <img class="doc-icon" src="../../assets/icons/newkb.png" alt="NewKB" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewKB<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">넉백과 공격 속도를 완벽하게 조정하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newlogin/index.html" data-search="newlogin 네트워크에 로그인하고 등록하고 프리미엄 인증을 받으세요. newlogin 공익사업">
+  <img class="doc-icon" src="../../assets/icons/newlogin.png" alt="NewLogin" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewLogin<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">네트워크에 로그인하고 등록하고 프리미엄 인증을 받으세요.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">12 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newnpcs/index.html" data-search="newnpcs 3d 모델을 지원하는 맞춤형 npc. newnpcs 공익사업">
+  <img class="doc-icon" src="../../assets/icons/newnpcs.png" alt="newNPCS" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newNPCS<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">3D 모델을 지원하는 맞춤형 NPC.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 명령</span><span class="doc-chip">24 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newpets/index.html" data-search="newpets 레벨, 특성, 알이 있는 애완동물입니다. newpets 진행">
+  <img class="doc-icon" src="../../assets/icons/newpets.png" alt="NewPets" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPets<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">레벨, 특성, 알이 있는 애완동물입니다.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">7 명령</span><span class="doc-chip">3 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newpinatas/index.html" data-search="newpinatas 커뮤니티 피냐타를 박살내고 보상을 공유하세요. newpinatas 미니게임">
+  <img class="doc-icon" src="../../assets/icons/newpinatas.png" alt="NewPinatas" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPinatas<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">커뮤니티 피냐타를 박살내고 보상을 공유하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 명령</span><span class="doc-chip">3 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newrankup/index.html" data-search="newrankup 요구 사항, 명성, 환생으로 순위를 높이세요. newrankup 진행">
+  <img class="doc-icon" src="../../assets/icons/newrankup.png" alt="NewRankup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewRankup<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">요구 사항, 명성, 환생으로 순위를 높이세요.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">5 명령</span><span class="doc-chip">5 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newreports/index.html" data-search="newreports discord 웹훅 경고를 통해 플레이어가 보고합니다. newreports 절도">
+  <img class="doc-icon" src="../../assets/icons/newreports.png" alt="NewReports" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewReports<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 절도</span></span>
+    <span class="doc-tagline">Discord 웹훅 경고를 통해 플레이어가 보고합니다.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 명령</span><span class="doc-chip">4 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newresources/index.html" data-search="newresources 리소스 팩을 통한 맞춤형 아이템, 블록 및 가구. newresources 세계">
+  <img class="doc-icon" src="../../assets/icons/newresources.png" alt="newResources" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newResources<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> 세계</span></span>
+    <span class="doc-tagline">리소스 팩을 통한 맞춤형 아이템, 블록 및 가구.</span>
+    <span class="doc-chips"><span class="doc-chip">12 .yml</span><span class="doc-chip">9 명령</span><span class="doc-chip">7 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newskills/index.html" data-search="newskills mcmmo 스타일 스킬: 레벨을 올리고 능력을 잠금 해제하세요. newskills 롤플레잉">
+  <img class="doc-icon" src="../../assets/icons/newskills.png" alt="NewSkills" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSkills<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> 롤플레잉</span></span>
+    <span class="doc-tagline">mcMMO 스타일 스킬: 레벨을 올리고 능력을 잠금 해제하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">28 .yml</span><span class="doc-chip">56 명령</span><span class="doc-chip">602 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newstreams/index.html" data-search="newstreams 안전한 링크 검증을 통해 스트림을 발표하세요. newstreams 사회의">
+  <img class="doc-icon" src="../../assets/icons/newstreams.png" alt="NewStreams" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewStreams<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> 사회의</span></span>
+    <span class="doc-tagline">안전한 링크 검증을 통해 스트림을 발표하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newvaults/index.html" data-search="newvaults 권한, gui 및 다중 데이터베이스를 갖춘 플레이어 볼트. newvaults 공익사업">
+  <img class="doc-icon" src="../../assets/icons/newvaults.png" alt="NewVaults" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewVaults<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">권한, GUI 및 다중 데이터베이스를 갖춘 플레이어 볼트.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">7 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/nkoths/index.html" data-search="nkoths 캡처, 홀로그램 및 보상이 포함된 맞춤형 koth입니다. nkoths 미니게임">
+  <img class="doc-icon" src="../../assets/icons/nkoths.png" alt="nKoths" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nKoths<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">캡처, 홀로그램 및 보상이 포함된 맞춤형 KOTH입니다.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 명령</span><span class="doc-chip">4 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newplaytime/index.html" data-search="nplaytime 플레이를 통해 레벨 업: 플레이 시간에 대한 보상을 받으세요. newplaytime 진행">
+  <img class="doc-icon" src="../../assets/icons/newplaytime.png" alt="nPlaytime" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nPlaytime<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">플레이를 통해 레벨 업: 플레이 시간에 대한 보상을 받으세요.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">2 명령</span><span class="doc-chip">1 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/staffmode/index.html" data-search="nstaffmode 중재 도구를 사용하여 직원 모드를 완료하세요. staffmode 절도">
+  <img class="doc-icon" src="../../assets/icons/staffmode.png" alt="nStaffMode" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nStaffMode<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> 절도</span></span>
+    <span class="doc-tagline">중재 도구를 사용하여 직원 모드를 완료하세요.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">7 명령</span><span class="doc-chip">28 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/playervs/index.html" data-search="playervs 라운드, 경기장, 관중이 참여하는 1대1 결투입니다. playervs 미니게임">
+  <img class="doc-icon" src="../../assets/icons/playervs.png" alt="Playervs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Playervs<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> 미니게임</span></span>
+    <span class="doc-tagline">라운드, 경기장, 관중이 참여하는 1대1 결투입니다.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">9 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newbattlepass/index.html" data-search="prisonbattlepass 레벨을 올리고, 퀘스트를 완료하고, op 보상을 받으세요. newbattlepass 진행">
+  <img class="doc-icon" src="../../assets/icons/newbattlepass.png" alt="PrisonBattlePass" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">PrisonBattlePass<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> 진행</span></span>
+    <span class="doc-tagline">레벨을 올리고, 퀘스트를 완료하고, OP 보상을 받으세요.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">5 명령</span><span class="doc-chip">2 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/procosmetics/index.html" data-search="procosmetics 귀하의 서버를 빛나게 해줄 15개 이상의 화장품 카테고리. procosmetics 화장품">
+  <img class="doc-icon" src="../../assets/icons/procosmetics.png" alt="ProCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ProCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> 화장품</span></span>
+    <span class="doc-tagline">귀하의 서버를 빛나게 해줄 15개 이상의 화장품 카테고리.</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 명령</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/spawnsystem/index.html" data-search="spawnsystem 단일 플러그인으로 생성, 집, 게임 모드, 시간 및 비행을 할 수 있습니다. spawnsystem 공익사업">
+  <img class="doc-icon" src="../../assets/icons/spawnsystem.png" alt="SpawnSystem" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">SpawnSystem<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">단일 플러그인으로 생성, 집, 게임 모드, 시간 및 비행을 할 수 있습니다.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">14 명령</span><span class="doc-chip">14 권한</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newautopickup/index.html" data-search="newautopickup 항목을 자동으로 픽업합니다(작업 진행 중). newautopickup 공익사업">
+  <img class="doc-icon" src="../../assets/icons/newautopickup.png" alt="NewAutopickup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewAutopickup<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> 공익사업</span></span>
+    <span class="doc-tagline">항목을 자동으로 픽업합니다(작업 진행 중).</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentation/newsellchests/index.html" data-search="newsellchests 작업 진행 중: 상자 자동 판매 플러그인. newsellchests 경제">
+  <img class="doc-icon" src="../../assets/icons/newsellchests.png" alt="NewSellchests" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSellchests<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> 경제</span></span>
+    <span class="doc-tagline">작업 진행 중: 상자 자동 판매 플러그인.</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a>
+    </div>
+    <div class="empty" id="docsEmpty" hidden>
+      <span class="empty-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <h3>결과 없음</h3>
+      <p>검색어와 일치하는 플러그인이 없습니다. 다른 단어나 카테고리를 사용해 보세요.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>플러그인의 소스 코드에서 자동으로 생성된 문서입니다.</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="../documentation/index.html">선적 서류 비치</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. 모든 권리 보유. <span class="dot">·</span> GitHub 페이지 제공</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,862 @@
+# NewSkills rewards - cada habilidad tiene premios completamente editables.
+# Las recompensas se reclaman manualmente desde /skills -> habilidad -> rewards.
+# Si settings.auto-claim = true, se entregan automáticamente al subir nivel.
+# money usa Vault; commands acepta [console], [player] y [message].
+# Variables: {player}, {uuid}, {skill}, {skill_upper}, {level}, {reward_level},
+# {prestige}, {prestige_next}, {prestige_required}, {prestige_cost}.
+# Cada rewards.<nivel> puede configurar `click-sound` para sustituir el sonido
+# de menus.rewards.levels.<estado> sin afectar al resto de recompensas.
+# Ejemplo: click-sound: { enabled: true, type: 'my_pack:ui.reward', volume: 0.8, pitch: 1.0 }
+# La recompensa se marca como reclamada ANTES de ejecutar comandos (protección contra duplicación).
+# prestige.requirement: last-reward, skill-cap o level. Los datos se guardan en rewards-data.yml.
+# Máximo de prestigios: 0 = ilimitados. prestige.commands son comandos de consola sin barra.
+# Las habilidades derivadas pueden reclamar premios de su nivel calculado, pero no prestigiar.
+
+settings:
+  enabled: true
+  auto-claim: false
+prestige:
+  enabled: true
+  # payment-mode: vault descuenta directamente; command usa withdraw-command y verifica
+  # con Vault que se descontó la cantidad configurada (no acepta comandos falsos).
+  payment-mode: vault
+  withdraw-command: 'eco take {player} {prestige_cost}'
+  requirement: last-reward
+  required-level: 100
+  # El requisito efectivo siempre será al menos el nivel 100.
+  cost: 10000
+  cost-increase: 5000
+  max: 0
+  reset-level: 0
+  require-claimed-rewards: false
+  commands: []
+messages:
+  locked: '&cDebes alcanzar el nivel &e{reward_level}&c de {skill} para reclamar el premio.'
+  claimed: '&eYa reclamaste esa recompensa.'
+  received: '&a¡Recompensa del nivel &e{reward_level}&a de {skill} recibida!'
+  no-economy: '&cSe necesita Vault con un proveedor de economía disponible.'
+  storage-error: '&cNo se pudo guardar el progreso de recompensas. Contacta a un administrador.'
+  payment-error: '&cError al procesar la recompensa o el pago. Contacta a un administrador.'
+  require-level: '&cPara hacer prestigio necesitas llegar al nivel &e{prestige_required}&c.'
+  max-prestige: '&cYa alcanzaste el límite de prestigios.'
+  claim-first: '&cReclama todas las recompensas antes de hacer prestigio.'
+  not-enough-money: '&cNo tienes suficiente dinero. Necesitas &a${prestige_cost}&c.'
+  prestiged: '&a¡Prestigio completado! Ahora tienes prestigio &b{prestige}&a en {skill}.'
+skills:
+  ACROBATICS:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Acrobatics - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Acrobatics - Nivel 10
+        icon: DIAMOND
+        money: 250
+        commands:
+        - '[console] give {player} diamond 2'
+      '25':
+        enabled: true
+        name: Acrobatics - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Acrobatics - Nivel 50
+        icon: DIAMOND
+        money: 2000
+        commands:
+        - '[console] give {player} diamond 4'
+      '75':
+        enabled: true
+        name: Acrobatics - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Acrobatics - Nivel 100
+        icon: DIAMOND
+        money: 8000
+        commands:
+        - '[console] give {player} diamond 8'
+  ALCHEMY:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Alchemy - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Alchemy - Nivel 10
+        icon: EMERALD
+        money: 250
+        commands:
+        - '[console] give {player} emerald 2'
+      '25':
+        enabled: true
+        name: Alchemy - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Alchemy - Nivel 50
+        icon: EMERALD
+        money: 2000
+        commands:
+        - '[console] give {player} emerald 4'
+      '75':
+        enabled: true
+        name: Alchemy - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Alchemy - Nivel 100
+        icon: EMERALD
+        money: 8000
+        commands:
+        - '[console] give {player} emerald 8'
+  ARCHERY:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Archery - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Archery - Nivel 10
+        icon: GOLD_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} gold_ingot 2'
+      '25':
+        enabled: true
+        name: Archery - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Archery - Nivel 50
+        icon: GOLD_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} gold_ingot 4'
+      '75':
+        enabled: true
+        name: Archery - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Archery - Nivel 100
+        icon: GOLD_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} gold_ingot 8'
+  AXES:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Axes - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Axes - Nivel 10
+        icon: IRON_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} iron_ingot 2'
+      '25':
+        enabled: true
+        name: Axes - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Axes - Nivel 50
+        icon: IRON_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} iron_ingot 4'
+      '75':
+        enabled: true
+        name: Axes - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Axes - Nivel 100
+        icon: IRON_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} iron_ingot 8'
+  CROSSBOWS:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Crossbows - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Crossbows - Nivel 10
+        icon: LAPIS_LAZULI
+        money: 250
+        commands:
+        - '[console] give {player} lapis_lazuli 2'
+      '25':
+        enabled: true
+        name: Crossbows - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Crossbows - Nivel 50
+        icon: LAPIS_LAZULI
+        money: 2000
+        commands:
+        - '[console] give {player} lapis_lazuli 4'
+      '75':
+        enabled: true
+        name: Crossbows - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Crossbows - Nivel 100
+        icon: LAPIS_LAZULI
+        money: 8000
+        commands:
+        - '[console] give {player} lapis_lazuli 8'
+  EXCAVATION:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Excavation - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Excavation - Nivel 10
+        icon: DIAMOND
+        money: 250
+        commands:
+        - '[console] give {player} diamond 2'
+      '25':
+        enabled: true
+        name: Excavation - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Excavation - Nivel 50
+        icon: DIAMOND
+        money: 2000
+        commands:
+        - '[console] give {player} diamond 4'
+      '75':
+        enabled: true
+        name: Excavation - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Excavation - Nivel 100
+        icon: DIAMOND
+        money: 8000
+        commands:
+        - '[console] give {player} diamond 8'
+  FISHING:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Fishing - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Fishing - Nivel 10
+        icon: EMERALD
+        money: 250
+        commands:
+        - '[console] give {player} emerald 2'
+      '25':
+        enabled: true
+        name: Fishing - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Fishing - Nivel 50
+        icon: EMERALD
+        money: 2000
+        commands:
+        - '[console] give {player} emerald 4'
+      '75':
+        enabled: true
+        name: Fishing - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Fishing - Nivel 100
+        icon: EMERALD
+        money: 8000
+        commands:
+        - '[console] give {player} emerald 8'
+  HERBALISM:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Herbalism - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Herbalism - Nivel 10
+        icon: GOLD_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} gold_ingot 2'
+      '25':
+        enabled: true
+        name: Herbalism - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Herbalism - Nivel 50
+        icon: GOLD_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} gold_ingot 4'
+      '75':
+        enabled: true
+        name: Herbalism - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Herbalism - Nivel 100
+        icon: GOLD_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} gold_ingot 8'
+  MACES:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Maces - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Maces - Nivel 10
+        icon: IRON_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} iron_ingot 2'
+      '25':
+        enabled: true
+        name: Maces - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Maces - Nivel 50
+        icon: IRON_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} iron_ingot 4'
+      '75':
+        enabled: true
+        name: Maces - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Maces - Nivel 100
+        icon: IRON_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} iron_ingot 8'
+  MINING:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Mining - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Mining - Nivel 10
+        icon: LAPIS_LAZULI
+        money: 250
+        commands:
+        - '[console] give {player} lapis_lazuli 2'
+      '25':
+        enabled: true
+        name: Mining - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Mining - Nivel 50
+        icon: LAPIS_LAZULI
+        money: 2000
+        commands:
+        - '[console] give {player} lapis_lazuli 4'
+      '75':
+        enabled: true
+        name: Mining - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Mining - Nivel 100
+        icon: LAPIS_LAZULI
+        money: 8000
+        commands:
+        - '[console] give {player} lapis_lazuli 8'
+  REPAIR:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Repair - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Repair - Nivel 10
+        icon: DIAMOND
+        money: 250
+        commands:
+        - '[console] give {player} diamond 2'
+      '25':
+        enabled: true
+        name: Repair - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Repair - Nivel 50
+        icon: DIAMOND
+        money: 2000
+        commands:
+        - '[console] give {player} diamond 4'
+      '75':
+        enabled: true
+        name: Repair - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Repair - Nivel 100
+        icon: DIAMOND
+        money: 8000
+        commands:
+        - '[console] give {player} diamond 8'
+  SALVAGE:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Salvage - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Salvage - Nivel 10
+        icon: EMERALD
+        money: 250
+        commands:
+        - '[console] give {player} emerald 2'
+      '25':
+        enabled: true
+        name: Salvage - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Salvage - Nivel 50
+        icon: EMERALD
+        money: 2000
+        commands:
+        - '[console] give {player} emerald 4'
+      '75':
+        enabled: true
+        name: Salvage - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Salvage - Nivel 100
+        icon: EMERALD
+        money: 8000
+        commands:
+        - '[console] give {player} emerald 8'
+  SMELTING:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Smelting - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Smelting - Nivel 10
+        icon: GOLD_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} gold_ingot 2'
+      '25':
+        enabled: true
+        name: Smelting - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Smelting - Nivel 50
+        icon: GOLD_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} gold_ingot 4'
+      '75':
+        enabled: true
+        name: Smelting - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Smelting - Nivel 100
+        icon: GOLD_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} gold_ingot 8'
+  SPEARS:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Spears - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Spears - Nivel 10
+        icon: IRON_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} iron_ingot 2'
+      '25':
+        enabled: true
+        name: Spears - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Spears - Nivel 50
+        icon: IRON_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} iron_ingot 4'
+      '75':
+        enabled: true
+        name: Spears - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Spears - Nivel 100
+        icon: IRON_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} iron_ingot 8'
+  SWORDS:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Swords - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Swords - Nivel 10
+        icon: LAPIS_LAZULI
+        money: 250
+        commands:
+        - '[console] give {player} lapis_lazuli 2'
+      '25':
+        enabled: true
+        name: Swords - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Swords - Nivel 50
+        icon: LAPIS_LAZULI
+        money: 2000
+        commands:
+        - '[console] give {player} lapis_lazuli 4'
+      '75':
+        enabled: true
+        name: Swords - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Swords - Nivel 100
+        icon: LAPIS_LAZULI
+        money: 8000
+        commands:
+        - '[console] give {player} lapis_lazuli 8'
+  TAMING:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Taming - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Taming - Nivel 10
+        icon: DIAMOND
+        money: 250
+        commands:
+        - '[console] give {player} diamond 2'
+      '25':
+        enabled: true
+        name: Taming - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Taming - Nivel 50
+        icon: DIAMOND
+        money: 2000
+        commands:
+        - '[console] give {player} diamond 4'
+      '75':
+        enabled: true
+        name: Taming - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Taming - Nivel 100
+        icon: DIAMOND
+        money: 8000
+        commands:
+        - '[console] give {player} diamond 8'
+  TRIDENTS:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Tridents - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Tridents - Nivel 10
+        icon: EMERALD
+        money: 250
+        commands:
+        - '[console] give {player} emerald 2'
+      '25':
+        enabled: true
+        name: Tridents - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Tridents - Nivel 50
+        icon: EMERALD
+        money: 2000
+        commands:
+        - '[console] give {player} emerald 4'
+      '75':
+        enabled: true
+        name: Tridents - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Tridents - Nivel 100
+        icon: EMERALD
+        money: 8000
+        commands:
+        - '[console] give {player} emerald 8'
+  UNARMED:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Unarmed - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Unarmed - Nivel 10
+        icon: GOLD_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} gold_ingot 2'
+      '25':
+        enabled: true
+        name: Unarmed - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Unarmed - Nivel 50
+        icon: GOLD_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} gold_ingot 4'
+      '75':
+        enabled: true
+        name: Unarmed - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Unarmed - Nivel 100
+        icon: GOLD_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} gold_ingot 8'
+  WOODCUTTING:
+    enabled: true
+    display-max-level: 100
+    rewards:
+      '5':
+        enabled: true
+        name: Woodcutting - Nivel 5
+        icon: GOLD_INGOT
+        money: 100
+        commands: []
+      '10':
+        enabled: true
+        name: Woodcutting - Nivel 10
+        icon: IRON_INGOT
+        money: 250
+        commands:
+        - '[console] give {player} iron_ingot 2'
+      '25':
+        enabled: true
+        name: Woodcutting - Nivel 25
+        icon: GOLD_INGOT
+        money: 800
+        commands: []
+      '50':
+        enabled: true
+        name: Woodcutting - Nivel 50
+        icon: IRON_INGOT
+        money: 2000
+        commands:
+        - '[console] give {player} iron_ingot 4'
+      '75':
+        enabled: true
+        name: Woodcutting - Nivel 75
+        icon: GOLD_INGOT
+        money: 4000
+        commands: []
+      '100':
+        enabled: true
+        name: Woodcutting - Nivel 100
+        icon: IRON_INGOT
+        money: 8000
+        commands:
+        - '[console] give {player} iron_ingot 8'

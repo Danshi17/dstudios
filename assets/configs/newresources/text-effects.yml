@@ -1,0 +1,86 @@
+# Text effects work by reserving an exact marker RGB color.
+# Write text using that color and the generated resource-pack text shader
+# transforms it client-side, similar to the effect shown in the supplied video.
+#
+# Example:
+#   <#540018>BEACH BASH
+# or inside newResources configs:
+#   <effect:beach_bash>BEACH BASH</effect>
+
+text-effects:
+  sunset_glow:
+    enabled: true
+    marker: "#540010"
+    mode: WAVE
+    speed: 1.0
+    spread: 120.0
+    colors:
+      - "#FFD45A"
+      - "#FF8A3D"
+      - "#FF6688"
+
+  tropical_twist:
+    enabled: true
+    marker: "#540014"
+    mode: WAVE
+    speed: 1.15
+    spread: 95.0
+    colors:
+      - "#FF5F7A"
+      - "#FFD64A"
+      - "#53E2D1"
+      - "#61AFFF"
+
+  beach_bash:
+    enabled: true
+    marker: "#540018"
+    mode: WAVE
+    speed: 0.9
+    spread: 110.0
+    colors:
+      - "#F7D98B"
+      - "#73D9EC"
+      - "#FF8B6A"
+      - "#F7D98B"
+
+
+  cristiangay:
+    enabled: true
+
+    name: "Cristiangay"
+
+    marker: "#540000"
+
+    target: "1.21.6-1.21.11"
+
+    operations:
+
+      - type: gradient
+        enabled: true
+
+        colors:
+          - "#D22A34"
+          - "#249E4E"
+          - "#E84844"
+          - "#12763A"
+          - "#C42030"
+          - "#40BC60"
+          - "#B01C2A"
+
+        speed: 0.55
+        scale: 1.0
+
+
+      - type: wave
+        enabled: true
+
+        speed: 0.7
+        amplitude: 1.0
+        frequency: 1.0
+
+
+      - type: shadow
+        enabled: true
+
+        colors:
+          - "#200A0E"

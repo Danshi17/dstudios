@@ -1,0 +1,608 @@
+settings:
+  execute-as: "PLAYER"
+  default-modality: ""
+  use-bungee-servers: true
+  excluded-servers:
+    - "Auth"
+    - "Lobby"
+  notify:
+    permission: "nstaffmode.ban.notify"
+    message: "&8[&c&lSanción&8] &b%player% &fsancionado por &b%staff% &8» &e%sanction% &8[&7%modality%&8] &7(&f%summary%&7)"
+
+messages:
+  no-permission: "&cNo tienes permiso para aplicar esta sanción."
+
+menus:
+  modality:
+    title: "&c&lSancionar: &f%player%"
+    size: 27
+    fill-material: "GRAY_STAINED_GLASS_PANE"
+    fill-name: " "
+    close-slot: 22
+    close-item:
+      material: "BARRIER"
+      name: "&c&lCancelar"
+      lore:
+        - "&7Cerrar sin aplicar sanción"
+
+  sanctions:
+    title: "&c&l%modality%: &f%player%"
+    size: 54
+    fill-material: "GRAY_STAINED_GLASS_PANE"
+    fill-name: " "
+    sanction-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+    info-slot: 4
+    previous-slot: 48
+    back-slot: 49
+    next-slot: 50
+    level-line: "&8» &fNivel %level%/%total%: %summary%"
+    direct-line: "&8» %summary%"
+    levels-footer: "&aHaz clic para abrir niveles."
+    direct-footer: "&4Haz clic para ejecutar."
+    no-permission-line: "&c&oNo tienes permiso para esta sanción."
+    info-item:
+      material: "PLAYER_HEAD"
+      name: "&f&l%player%"
+      lore:
+        - "&7Modalidad: &f%modality%"
+        - "&7Sanciones disponibles: &f%total%"
+        - "&7Página: &f%page%&7/&f%pages%"
+    previous-item:
+      material: "ARROW"
+      name: "&c&l« Página Anterior"
+      lore:
+        - "&7Página &f%page%&7/&f%pages%"
+        - ""
+        - "&eClic para volver"
+    next-item:
+      material: "ARROW"
+      name: "&a&lPágina Siguiente »"
+      lore:
+        - "&7Página &f%page%&7/&f%pages%"
+        - ""
+        - "&eClic para continuar"
+    back-item:
+      material: "BARRIER"
+      name: "&c&lVolver a Modalidades"
+      lore:
+        - "&7Regresa a elegir modalidad."
+    close-item:
+      material: "BARRIER"
+      name: "&c&lCerrar"
+      lore:
+        - "&7Cerrar sin aplicar sanción"
+
+  levels:
+    title: "&c&l%sanction%: &f%player%"
+    size: 27
+    fill-material: "GRAY_STAINED_GLASS_PANE"
+    fill-name: " "
+    row: 1
+    sanction-slot: 4
+    back-slot: 22
+    level-materials:
+      - "LIME_CONCRETE"
+      - "YELLOW_CONCRETE"
+      - "ORANGE_CONCRETE"
+      - "RED_CONCRETE"
+      - "PURPLE_CONCRETE"
+      - "BLACK_CONCRETE"
+    level-item:
+      name: "&6&lNivel %level%/%total%"
+      lore:
+        - "&7Sanción: %summary%"
+        - "&7Jugador: &f%player%"
+        - ""
+        - "&eHaz clic para aplicar."
+    back-item:
+      material: "BARRIER"
+      name: "&c&lVolver"
+      lore:
+        - "&7Regresa a la lista de sanciones."
+
+modalities:
+  Prison:
+    server: "Prison"
+    material: "DIAMOND_PICKAXE"
+    display: "&b&lPrison"
+    slot: 13
+    lore:
+      - "&7Sancionar a &f%player% &7en &bPrison&7."
+      - ""
+      - "&eHaz clic para continuar."
+
+sanctions:
+  spam:
+    modalities: [ALL]
+    material: "PAPER"
+    name: "&e&lSpam / Flood / Toxicidad"
+    description:
+      - "&7Faltas reiteradas en chat general."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Spam / Flood / Toxicidad [%modality%]"] }
+      2: { summary: "&eMute 1h", commands: ["litebans:tempmute %player% 1h Spam / Flood / Toxicidad [%modality%]"] }
+      3: { summary: "&cMute 2h", commands: ["litebans:tempmute %player% 2h Spam / Flood / Toxicidad [%modality%]"] }
+
+  ddos:
+    modalities: [ALL]
+    material: "TNT"
+    name: "&c&lAmenazas DDoS / Doxing"
+    description:
+      - "&7Amenazas graves o revelación de datos."
+    levels:
+      1: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Amenazas DDoS / Doxing [%modality%]"] }
+      2: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Amenazas DDoS / Doxing [%modality%]"] }
+
+  comandos:
+    modalities: [ALL]
+    material: "FEATHER"
+    name: "&b&lMal uso de comandos"
+    description:
+      - "&7Congestión o abuso de helpop, report, etc."
+    levels:
+      1: { summary: "&aWarn 15d", commands: ["litebans:tempwarn %player% 15d Mal uso de comandos [%modality%]"] }
+      2: { summary: "&cTempban 1d", commands: ["litebans:tempban %player% 1d Mal uso de comandos [%modality%]"] }
+
+  nick:
+    modalities: [ALL]
+    material: "NAME_TAG"
+    name: "&d&lNick Inapropiado"
+    description:
+      - "&7Nombres ofensivos o simulación de Staff."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Nick Inapropiado [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Nick Inapropiado [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Nick Inapropiado [%modality%]"] }
+
+  filtrar_info:
+    modalities: [ALL]
+    material: "REDSTONE"
+    name: "&4&lFiltrar Información"
+    description:
+      - "&7Filtrar datos de usuarios/staff."
+    summary: "&cBanIP Permanente"
+    commands:
+      - "litebans:banip %player% Filtrar informacion [%modality%]"
+
+  pasar_ip:
+    modalities: [ALL]
+    material: "ENDER_EYE"
+    name: "&4&lPasar IP de otro servidor"
+    description:
+      - "&7Publicidad externa de servidores activos."
+    summary: "&cBan Permanente"
+    commands:
+      - "litebans:ban %player% Pasar IP [%modality%]"
+
+  dupe:
+    modalities: [ALL]
+    material: "REDSTONE_BLOCK"
+    name: "&4&lDupe / Explotación Económica"
+    description:
+      - "&7Duplicación masiva o manipulación económica."
+    summary: "&cBan Permanente"
+    commands:
+      - "litebans:ban %player% Dupe [%modality%]"
+
+  multialts:
+    modalities: [ALL]
+    material: "WRITABLE_BOOK"
+    name: "&4&lMultiAlts Hacked"
+    description:
+      - "&7Uso de cuentas secundarias para hacks."
+    summary: "&cBanIP 30 días"
+    commands:
+      - "litebans:banip %player% 30d MultiAlts Hacked [%modality%]"
+
+  hacks_evidentes:
+    modalities: [ALL]
+    material: "NETHERITE_SWORD"
+    name: "&4&lUso de Hacks Evidentes"
+    description:
+      - "&7Reportes con video de clientes ilegales."
+    summary: "&cTempban 30 días"
+    commands:
+      - "litebans:tempban %player% 30d Uso de Hacks Evidentes [%modality%]"
+
+  cheats_ss:
+    modalities: [ALL]
+    material: "COMPASS"
+    name: "&c&lCheats Found in SS"
+    description:
+      - "&7Hacks en revisión con uso < 10 días."
+    summary: "&cTempban 30 días"
+    commands:
+      - "litebans:tempban %player% 30d Cheats Found in SS [%modality%]"
+
+  negarse_ss:
+    modalities: [ALL]
+    material: "BARRIER"
+    name: "&c&lNegarse a la SS"
+    description:
+      - "&7Desconexión, demora o insultos al congelar."
+    summary: "&cTempban 30 días"
+    commands:
+      - "litebans:tempban %player% 30d Refuse to SS [%modality%]"
+
+  cheats_ss_nouso:
+    modalities: [ALL]
+    material: "CLOCK"
+    name: "&e&lCheats Found in SS [No Uso]"
+    description:
+      - "&7Hacks encontrados con uso de 11 a 30 días."
+    summary: "&eTempban 15 días"
+    commands:
+      - "litebans:tempban %player% 15d Cheats Found in SS (No Uso) [%modality%]"
+
+  hacks_admitidos:
+    modalities: [ALL]
+    material: "WOODEN_SWORD"
+    name: "&e&lHacks Admitidos"
+    description:
+      - "&7Admitir uso de modificaciones ilegales."
+    summary: "&eTempban 15 días"
+    commands:
+      - "litebans:tempban %player% 15d Uso de Hacks Admitido [%modality%]"
+
+  griefing_prison:
+    modalities: [ALL]
+    material: "IRON_PICKAXE"
+    name: "&6&lGriefing / Robo / Estafas"
+    description:
+      - "&7Daño a propiedades, robo o estafas."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d Griefing / Robo / Estafas [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Griefing / Robo / Estafas [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Griefing / Robo / Estafas [%modality%]"] }
+
+  afk_automatizacion:
+    modalities: [ALL]
+    material: "GOLDEN_HOE"
+    name: "&6&lAutomatización / AFK Farming"
+    description:
+      - "&7AFK farming no permitido o Kill Boosting."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d Automatizacion / AFK Farming [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Automatizacion / AFK Farming [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Automatizacion / AFK Farming [%modality%]"] }
+
+  combate:
+    modalities: [ALL]
+    material: "GOLDEN_SWORD"
+    name: "&6&lConducta indebida en combate"
+    description:
+      - "&7TPA Kill, Combat Log, abuso de bug de zona."
+    levels:
+      1: { summary: "&aTempban 3d", commands: ["litebans:tempban %player% 3d Conducta indebida en combate [%modality%]"] }
+      2: { summary: "&eTempban 6d", commands: ["litebans:tempban %player% 6d Conducta indebida en combate [%modality%]"] }
+      3: { summary: "&cTempban 12d", commands: ["litebans:tempban %player% 12d Conducta indebida en combate [%modality%]"] }
+
+  lag_machine:
+    modalities: [ALL]
+    material: "OBSERVER"
+    name: "&6&lLag Machine / Granjas Abusivas"
+    description:
+      - "&7Máquinas o granjas que generan lag al servidor."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Lag Machine / Granjas Abusivas [%modality%]"] }
+      2: { summary: "&eTempban 3d", commands: ["litebans:tempban %player% 3d Lag Machine / Granjas Abusivas [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Lag Machine / Granjas Abusivas [%modality%]"] }
+
+  construccion_ofensiva:
+    modalities: [ALL]
+    material: "BRICKS"
+    name: "&6&lConstrucción Ofensiva"
+    description:
+      - "&7Estructuras con contenido ofensivo o discriminatorio."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Construccion Ofensiva [%modality%]"] }
+      2: { summary: "&eTempban 7d", commands: ["litebans:tempban %player% 7d Construccion Ofensiva [%modality%]"] }
+      3: { summary: "&cTempban 15d", commands: ["litebans:tempban %player% 15d Construccion Ofensiva [%modality%]"] }
+
+  claims:
+    modalities: [ALL]
+    material: "OAK_FENCE_GATE"
+    name: "&6&lAbuso de Claims / Protecciones"
+    description:
+      - "&7Bloquear zonas públicas o abusar de las protecciones."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Abuso de Claims [%modality%]"] }
+      2: { summary: "&eTempban 3d", commands: ["litebans:tempban %player% 3d Abuso de Claims [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Abuso de Claims [%modality%]"] }
+
+  estafa:
+    modalities: [ALL]
+    material: "EMERALD"
+    name: "&6&lEstafa a Jugadores"
+    description:
+      - "&7Engaños en trades, ventas o promesas falsas."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d Estafa a jugadores [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Estafa a jugadores [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Estafa a jugadores [%modality%]"] }
+
+  kill_boosting:
+    modalities: [ALL]
+    material: "TOTEM_OF_UNDYING"
+    name: "&6&lKill Boosting / Win Trading"
+    description:
+      - "&7Farmear kills o recompensas de PvP entre cuentas."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d Kill Boosting [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Kill Boosting [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Kill Boosting [%modality%]"] }
+
+  spawn_kill:
+    modalities: [ALL]
+    material: "BONE"
+    name: "&6&lSpawn Kill / Zona Segura"
+    description:
+      - "&7Atacar en spawn o abusar de zonas protegidas."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Spawn Kill / Abuso de zona segura [%modality%]"] }
+      2: { summary: "&eTempban 1d", commands: ["litebans:tempban %player% 1d Spawn Kill / Abuso de zona segura [%modality%]"] }
+      3: { summary: "&cTempban 3d", commands: ["litebans:tempban %player% 3d Spawn Kill / Abuso de zona segura [%modality%]"] }
+
+  teaming:
+    modalities: [ALL]
+    material: "LEAD"
+    name: "&6&lTeaming / Límite de Equipo"
+    description:
+      - "&7Exceder el límite de jugadores por equipo o alianza."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Teaming [%modality%]"] }
+      2: { summary: "&eTempban 3d", commands: ["litebans:tempban %player% 3d Teaming [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Teaming [%modality%]"] }
+
+  insultos:
+    modalities: [ALL]
+    material: "WRITTEN_BOOK"
+    name: "&e&lInsultos / Faltas de Respeto"
+    description:
+      - "&7Insultos o provocaciones hacia otros jugadores."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Insultos / Faltas de respeto [%modality%]"] }
+      2: { summary: "&eMute 30m", commands: ["litebans:tempmute %player% 30m Insultos / Faltas de respeto [%modality%]"] }
+      3: { summary: "&6Mute 3h", commands: ["litebans:tempmute %player% 3h Insultos / Faltas de respeto [%modality%]"] }
+      4: { summary: "&cMute 1d", commands: ["litebans:tempmute %player% 1d Insultos / Faltas de respeto [%modality%]"] }
+
+  insultos_staff:
+    modalities: [ALL]
+    material: "GOLDEN_HELMET"
+    name: "&e&lFaltas de Respeto al Staff"
+    description:
+      - "&7Insultos, burlas o desobediencia hacia el Staff."
+    levels:
+      1: { summary: "&eMute 1d", commands: ["litebans:tempmute %player% 1d Faltas de respeto al Staff [%modality%]"] }
+      2: { summary: "&6Mute 3d", commands: ["litebans:tempmute %player% 3d Faltas de respeto al Staff [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Faltas de respeto al Staff [%modality%]"] }
+
+  acoso:
+    modalities: [ALL]
+    material: "SPIDER_EYE"
+    name: "&e&lAcoso / Hostigamiento"
+    description:
+      - "&7Molestar o perseguir a un jugador de forma reiterada."
+    levels:
+      1: { summary: "&eMute 1d", commands: ["litebans:tempmute %player% 1d Acoso / Hostigamiento [%modality%]"] }
+      2: { summary: "&6Tempban 7d", commands: ["litebans:tempban %player% 7d Acoso / Hostigamiento [%modality%]"] }
+      3: { summary: "&cTempban 15d", commands: ["litebans:tempban %player% 15d Acoso / Hostigamiento [%modality%]"] }
+
+  discriminacion:
+    modalities: [ALL]
+    material: "BLACK_BANNER"
+    name: "&c&lDiscriminación / Odio"
+    description:
+      - "&7Racismo, homofobia, xenofobia o mensajes de odio."
+    levels:
+      1: { summary: "&eMute 3d", commands: ["litebans:tempmute %player% 3d Discriminacion / Odio [%modality%]"] }
+      2: { summary: "&6Tempban 15d", commands: ["litebans:tempban %player% 15d Discriminacion / Odio [%modality%]"] }
+      3: { summary: "&4Ban Permanente", commands: ["litebans:ban %player% Discriminacion / Odio [%modality%]"] }
+
+  amenazas:
+    modalities: [ALL]
+    material: "SKELETON_SKULL"
+    name: "&c&lAmenazas a Jugadores"
+    description:
+      - "&7Amenazas dirigidas a otros usuarios."
+    levels:
+      1: { summary: "&eMute 1d", commands: ["litebans:tempmute %player% 1d Amenazas a jugadores [%modality%]"] }
+      2: { summary: "&6Tempban 3d", commands: ["litebans:tempban %player% 3d Amenazas a jugadores [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Amenazas a jugadores [%modality%]"] }
+
+  caps:
+    modalities: [ALL]
+    material: "ANVIL"
+    name: "&e&lAbuso de Mayúsculas"
+    description:
+      - "&7Escribir reiteradamente en MAYÚSCULAS."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Abuso de mayusculas [%modality%]"] }
+      2: { summary: "&eMute 15m", commands: ["litebans:tempmute %player% 15m Abuso de mayusculas [%modality%]"] }
+
+  publicidad:
+    modalities: [ALL]
+    material: "MAP"
+    name: "&e&lPublicidad de Links / Tiendas"
+    description:
+      - "&7Links, redes o tiendas externas en el chat."
+    levels:
+      1: { summary: "&eMute 1d", commands: ["litebans:tempmute %player% 1d Publicidad [%modality%]"] }
+      2: { summary: "&6Mute 7d", commands: ["litebans:tempmute %player% 7d Publicidad [%modality%]"] }
+      3: { summary: "&cTempban 15d", commands: ["litebans:tempban %player% 15d Publicidad [%modality%]"] }
+
+  falso_reporte:
+    modalities: [ALL]
+    material: "BELL"
+    name: "&e&lFalso Reporte / Bromas al Staff"
+    description:
+      - "&7Reportes falsos o uso burlón de canales de ayuda."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Falso reporte [%modality%]"] }
+      2: { summary: "&eMute 1h", commands: ["litebans:tempmute %player% 1h Falso reporte [%modality%]"] }
+      3: { summary: "&cTempban 1d", commands: ["litebans:tempban %player% 1d Falso reporte [%modality%]"] }
+
+  skin_ofensiva:
+    modalities: [ALL]
+    material: "LEATHER_CHESTPLATE"
+    name: "&d&lSkin / Capa Ofensiva"
+    description:
+      - "&7Skins con contenido ofensivo o explícito."
+    levels:
+      1: { summary: "&eTempban 1d", commands: ["litebans:tempban %player% 1d Skin ofensiva [%modality%]"] }
+      2: { summary: "&6Tempban 7d", commands: ["litebans:tempban %player% 7d Skin ofensiva [%modality%]"] }
+      3: { summary: "&cTempban 15d", commands: ["litebans:tempban %player% 15d Skin ofensiva [%modality%]"] }
+
+  letreros:
+    modalities: [ALL]
+    material: "OAK_SIGN"
+    name: "&d&lLetreros / Libros Ofensivos"
+    description:
+      - "&7Contenido ofensivo en carteles, libros o nombres de ítems."
+    levels:
+      1: { summary: "&aWarn", commands: ["litebans:warn %player% Letreros / Libros ofensivos [%modality%]"] }
+      2: { summary: "&eTempban 3d", commands: ["litebans:tempban %player% 3d Letreros / Libros ofensivos [%modality%]"] }
+      3: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Letreros / Libros ofensivos [%modality%]"] }
+
+  suplantacion:
+    modalities: [ALL]
+    material: "PLAYER_HEAD"
+    name: "&d&lSuplantación de Staff"
+    description:
+      - "&7Hacerse pasar por un miembro del Staff."
+    levels:
+      1: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Suplantacion de Staff [%modality%]"] }
+      2: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Suplantacion de Staff [%modality%]"] }
+      3: { summary: "&4Ban Permanente", commands: ["litebans:ban %player% Suplantacion de Staff [%modality%]"] }
+
+  bugs:
+    modalities: [ALL]
+    material: "SLIME_BALL"
+    name: "&c&lAbuso de Bugs"
+    description:
+      - "&7Aprovechar errores del servidor o de plugins."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d Abuso de bugs [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Abuso de bugs [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Abuso de bugs [%modality%]"] }
+
+  crash:
+    modalities: [ALL]
+    material: "COMMAND_BLOCK"
+    name: "&4&lCrash / Lag Intencional"
+    description:
+      - "&7Intentar caer o laggear el servidor a propósito."
+    summary: "&cBan Permanente"
+    commands:
+      - "litebans:ban %player% Crash / Lag intencional [%modality%]"
+
+  autoclicker:
+    modalities: [ALL]
+    material: "STONE_BUTTON"
+    name: "&c&lAutoclicker / Macros"
+    description:
+      - "&7Uso de clicks automáticos o macros."
+    levels:
+      1: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d Autoclicker / Macros [%modality%]"] }
+      2: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d Autoclicker / Macros [%modality%]"] }
+
+  xray:
+    modalities: [ALL]
+    material: "DIAMOND_ORE"
+    name: "&c&lX-Ray / Texturas X-Ray"
+    description:
+      - "&7Uso de X-Ray o packs de texturas para ver minerales."
+    levels:
+      1: { summary: "&aTempban 7d", commands: ["litebans:tempban %player% 7d X-Ray [%modality%]"] }
+      2: { summary: "&eTempban 15d", commands: ["litebans:tempban %player% 15d X-Ray [%modality%]"] }
+      3: { summary: "&cTempban 30d", commands: ["litebans:tempban %player% 30d X-Ray [%modality%]"] }
+
+  evasion_ban:
+    modalities: [ALL]
+    material: "IRON_DOOR"
+    name: "&4&lEvasión de Ban"
+    description:
+      - "&7Entrar con otra cuenta estando baneado."
+    summary: "&cBanIP Permanente"
+    commands:
+      - "litebans:banip %player% Evasion de ban [%modality%]"
+
+  evasion_mute:
+    modalities: [ALL]
+    material: "NOTE_BLOCK"
+    name: "&c&lEvasión de Mute"
+    description:
+      - "&7Hablar con otra cuenta estando muteado."
+    levels:
+      1: { summary: "&eTempban 3d", commands: ["litebans:tempban %player% 3d Evasion de mute [%modality%]"] }
+      2: { summary: "&cTempban 7d", commands: ["litebans:tempban %player% 7d Evasion de mute [%modality%]"] }
+
+  rmt:
+    modalities: [ALL]
+    material: "GOLD_INGOT"
+    name: "&4&lVenta de Cuentas / Dinero Real"
+    description:
+      - "&7Comercio de cuentas, rangos o ítems por dinero real."
+    summary: "&cBan Permanente"
+    commands:
+      - "litebans:ban %player% Venta de cuentas / Dinero real [%modality%]"
+
+  kick:
+    modalities: [ALL]
+    material: "LEATHER_BOOTS"
+    name: "&e&lExpulsar &7(Kick)"
+    description:
+      - "&7Expulsa al jugador del servidor."
+    summary: "&eKick"
+    commands:
+      - "litebans:kick %player% Expulsado por un miembro del staff [%modality%]"
+
+  warn_manual:
+    modalities: [ALL]
+    material: "PAPER"
+    name: "&6&lAdvertir &7(Warn)"
+    description:
+      - "&7Emite una advertencia formal."
+    summary: "&aWarn"
+    commands:
+      - "litebans:warn %player% Advertencia del staff [%modality%]"
+
+  mute_manual:
+    modalities: [ALL]
+    material: "COBWEB"
+    name: "&9&lMutear &7(Mute Permanente)"
+    description:
+      - "&7Silencia al jugador en el chat de forma permanente."
+    summary: "&cMute Permanente"
+    commands:
+      - "litebans:mute %player% Muteado por un miembro del staff [%modality%]"
+
+  tempban_manual:
+    modalities: [ALL]
+    material: "IRON_SWORD"
+    name: "&c&lBan Temporal &77 días"
+    description:
+      - "&7Banea al jugador durante 7 días."
+    summary: "&cTempban 7d"
+    commands:
+      - "litebans:tempban %player% 7d Baneado temporalmente por un miembro del staff [%modality%]"
+
+  ban_permanente:
+    modalities: [ALL]
+    material: "GOLDEN_AXE"
+    name: "&4&lBan Permanente"
+    description:
+      - "&7Banea al jugador permanentemente."
+    summary: "&4Ban Permanente"
+    commands:
+      - "litebans:ban %player% Baneado permanentemente por un miembro del staff [%modality%]"
+
+  banip_permanente:
+    modalities: [ALL]
+    material: "BEDROCK"
+    name: "&4&lBan por IP"
+    description:
+      - "&7Banea la dirección IP del jugador."
+    summary: "&4BanIP Permanente"
+    commands:
+      - "litebans:banip %player% IP baneada por un miembro del staff [%modality%]"

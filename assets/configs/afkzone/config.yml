@@ -1,0 +1,50 @@
+console:
+  enabled: true
+  startup-banner: true
+  shutdown-banner: true
+
+settings:
+  reset-on-move: true
+  reward-ip-limit:
+    enabled: true
+    max-players-per-ip: 1
+
+  selection-preview:
+    enabled: true
+    particle: HAPPY_VILLAGER
+    color: "#FFAA00"
+    size: 1.0
+    step: 1.0
+    interval: 5
+    debug: false
+
+messages:
+  prefix: "<gradient:#00ffa1:#00b8ff><bold>AfkZone</bold></gradient> <dark_gray>» <reset>"
+  no_permission: "<red>No tienes permisos."
+  tool_given: "<green>Has recibido el hacha de selección."
+  pos1_set: "<green>Posición 1 establecida."
+  pos2_set: "<green>Posición 2 establecida."
+  incomplete_selection: "<red>Debes seleccionar ambas posiciones con el hacha."
+  different_worlds: "<red>Las dos posiciones deben estar en el mismo mundo."
+  invalid_zone_name: "<red>El nombre solo puede contener letras, números, guion y guion bajo."
+  zone_created: "<green>Zona <white><zone> <green>creada exitosamente."
+  zone_exists: "<red>La zona ya existe."
+  zone_not_found: "<red>No existe la zona <white><zone><red>."
+  zone_deleted: "<green>Zona <white><zone> <green>eliminada correctamente."
+  reloaded: "<green>Configuración y zonas recargadas."
+  selection_cancelled: "<yellow>Selección cancelada. Pide otra hacha con <green>/afkzone tool<yellow>."
+  selection_none: "<gray>No tenías ninguna selección activa."
+  ip_limit_reached: "<yellow>Esta IP ya tiene <white>%limit% <yellow>jugador(es) obteniendo rewards AFK. Tu contador queda pausado hasta que se libere un cupo."
+  editor_saved: "<green>Guardado: <white><path> <dark_gray>= <white><value>"
+  editor_invalid: "<red>Valor inválido: <white><reason><red>."
+
+  help:
+    - "<dark_gray><strikethrough>                                                     "
+    - "<gradient:#00ffa1:#00b8ff><bold>AfkZone Comandos</bold></gradient>"
+    - "<green>/afkzone menu <gray>- Abre el editor ingame"
+    - "<green>/afkzone edit [zona] <gray>- Abre el editor/lista de zonas"
+    - "<green>/afkzone tool <gray>- Obtén el hacha (un solo uso)"
+    - "<green>/afkzone create <nombre> <gray>- Crea una zona con la selección"
+    - "<green>/afkzone cancel <gray>- Cancela la selección actual"
+    - "<green>/afkzone reload <gray>- Recarga el plugin"
+    - "<dark_gray><strikethrough>                                                     "

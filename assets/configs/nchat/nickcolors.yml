@@ -1,0 +1,331 @@
+menus:
+  nick-colors:
+    messages:
+      no-permission: "<red>⚠ <gray>No tienes permiso para usar este color de nick."
+      success: "<green>✔ <gray>¡El color de tu nombre ha sido actualizado!"
+      reset: "<yellow>✔ <gray>El color de tu nick ha sido restablecido al valor por defecto."
+
+    title: "<gradient:#00ffcc:#0055ff><bold>Colores de Nick: %player_name% (Pág. %page%)</bold></gradient>"
+    rows: 6
+
+    filler:
+      enabled: false
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore: []
+
+    items:
+
+      #                        PÁGINA 1
+      color_black:
+        page: 1
+        slot: 0
+        material: "BLACK_WOOL"
+        name: "<black>Negro"
+        lore:
+          - "<gray>Tu nombre se verá <black>Negro</black>"
+        format: "<black>"
+        permission: "nchat.nick.black"
+
+      color_dark_blue:
+        page: 1
+        slot: 1
+        material: "BLUE_CONCRETE"
+        name: "<dark_blue>Azul Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_blue>Azul Oscuro</dark_blue>"
+        format: "<dark_blue>"
+        permission: "nchat.nick.dark_blue"
+
+      color_dark_green:
+        page: 1
+        slot: 2
+        material: "GREEN_CONCRETE"
+        name: "<dark_green>Verde Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_green>Verde Oscuro</dark_green>"
+        format: "<dark_green>"
+        permission: "nchat.nick.dark_green"
+
+      color_dark_aqua:
+        page: 1
+        slot: 3
+        material: "CYAN_CONCRETE"
+        name: "<dark_aqua>Turquesa Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_aqua>Turquesa Oscuro</dark_aqua>"
+        format: "<dark_aqua>"
+        permission: "nchat.nick.dark_aqua"
+
+      color_dark_red:
+        page: 1
+        slot: 4
+        material: "RED_NETHER_BRICK"
+        name: "<dark_red>Rojo Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_red>Rojo Oscuro</dark_red>"
+        format: "<dark_red>"
+        permission: "nchat.nick.dark_red"
+
+      color_dark_purple:
+        page: 1
+        slot: 5
+        material: "PURPLE_CONCRETE"
+        name: "<dark_purple>Morado Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_purple>Morado Oscuro</dark_purple>"
+        format: "<dark_purple>"
+        permission: "nchat.nick.dark_purple"
+
+      color_gold:
+        page: 1
+        slot: 6
+        material: "GOLD_BLOCK"
+        name: "<gold>Oro"
+        lore:
+          - "<gray>Tu nombre se verá <gold>Oro</gold>"
+        format: "<gold>"
+        permission: "nchat.nick.gold"
+
+      color_gray:
+        page: 1
+        slot: 7
+        material: "LIGHT_GRAY_WOOL"
+        name: "<gray>Gris"
+        lore:
+          - "<gray>Tu nombre se verá <gray>Gris</gray>"
+        format: "<gray>"
+        permission: "nchat.nick.gray"
+
+      color_dark_gray:
+        page: 1
+        slot: 8
+        material: "GRAY_WOOL"
+        name: "<dark_gray>Gris Oscuro"
+        lore:
+          - "<gray>Tu nombre se verá <dark_gray>Gris Oscuro</dark_gray>"
+        format: "<dark_gray>"
+        permission: "nchat.nick.dark_gray"
+
+      color_blue:
+        page: 1
+        slot: 9
+        material: "BLUE_WOOL"
+        name: "<blue>Azul"
+        lore:
+          - "<gray>Tu nombre se verá <blue>Azul</blue>"
+        format: "<blue>"
+        permission: "nchat.nick.blue"
+
+      color_green:
+        page: 1
+        slot: 10
+        material: "LIME_WOOL"
+        name: "<green>Verde"
+        lore:
+          - "<gray>Tu nombre se verá <green>Verde</green>"
+        format: "<green>"
+        permission: "nchat.nick.green"
+
+      color_aqua:
+        page: 1
+        slot: 11
+        material: "LIGHT_BLUE_WOOL"
+        name: "<aqua>Aqua"
+        lore:
+          - "<gray>Tu nombre se verá <aqua>Aqua</aqua>"
+        format: "<aqua>"
+        permission: "nchat.nick.aqua"
+
+      color_red:
+        page: 1
+        slot: 12
+        material: "RED_WOOL"
+        name: "<red>Rojo"
+        lore:
+          - "<gray>Tu nombre se verá <red>Rojo</red>"
+        format: "<red>"
+        permission: "nchat.nick.red"
+
+      color_light_purple:
+        page: 1
+        slot: 13
+        material: "MAGENTA_WOOL"
+        name: "<light_purple>Rosa"
+        lore:
+          - "<gray>Tu nombre se verá <light_purple>Rosa</light_purple>"
+        format: "<light_purple>"
+        permission: "nchat.nick.light_purple"
+
+      color_yellow:
+        page: 1
+        slot: 14
+        material: "YELLOW_WOOL"
+        name: "<yellow>Amarillo"
+        lore:
+          - "<gray>Tu nombre se verá <yellow>Amarillo</yellow>"
+        format: "<yellow>"
+        permission: "nchat.nick.yellow"
+
+      color_white:
+        page: 1
+        slot: 15
+        material: "WHITE_WOOL"
+        name: "<white>Blanco"
+        lore:
+          - "<gray>Tu nombre se verá <white>Blanco</white>"
+        format: "<white>"
+        permission: "nchat.nick.white"
+
+      player_profile:
+        page: 1
+        slot: 45
+        fixed: true
+        material: "PLAYER_HEAD"
+        name: "<green>Tu Perfil"
+        lore:
+          - "<gray>Hola, <aqua>%player_name%</aqua>"
+
+      info_item:
+        page: 1
+        slot: 46
+        fixed: true
+        material: "PAPER"
+        name: "<yellow>Información del Nick"
+        lore:
+          - "<gray>Selecciona el color para tu nombre."
+          - "<gray>Esto aparecerá en el Chat y TAB."
+
+      itemcustom1:
+        page: 1
+        slot: 47
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom2:
+        page: 1
+        slot: 48
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+
+      close_menu:
+        page: 1
+        slot: 49
+        fixed: true
+        material: "REDSTONE"
+        name: "<red>Cerrar Menú"
+        action: "CLOSE"
+
+      itemcustom3:
+        page: 1
+        slot: 50
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom4:
+        page: 1
+        slot: 51
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+
+      reset_color:
+        page: 1
+        slot: 53
+        fixed: true
+        material: "REPEATER"
+        name: "<red>Restablecer Nick"
+        lore:
+          - "<gray>Vuelve al nombre blanco original"
+        format: ""
+        permission: "nchat.nick.reset"
+        sound:
+          type: "UI_BUTTON_CLICK"
+          volume: 1.0
+          pitch: 1.0
+        # Item temporal que aparece mientras se restablece el color del nick.
+        reset-status-item:
+          material: "GUNPOWDER"
+          name: "<yellow><bold>Reiniciando tu nick...</bold>"
+          lore:
+            - "<gray>Aplicando el color por defecto..."
+          duration-ticks: 20
+
+      btn_next:
+        page: 1
+        slot: 52
+        material: "ARROW"
+        name: "<yellow>Siguiente Página ->"
+        lore:
+          - "<gray>Ver Nicks con Gradientes"
+        action: "NEXT_PAGE"
+
+      #                        PÁGINA 2
+      grad_rainbow:
+        page: 2
+        slot: 10
+        material: "NETHER_STAR"
+        name: "<rainbow>Nick Arcoiris"
+        lore:
+          - "<gray>¡Nombre con colores animados!"
+          - "<yellow>Solo para usuarios VIP"
+        format: "<rainbow>"
+        permission: "nchat.nick.rainbow"
+
+      grad_fire:
+        page: 2
+        slot: 11
+        material: "hdb-7129"
+        name: "<gradient:#ff512f:#dd2476>Nick de Fuego"
+        lore:
+          - "<gray>Efecto ardiente en tu nombre."
+        format: "<gradient:#ff512f:#dd2476>"
+        permission: "nchat.nick.fire"
+
+      grad_ice:
+        page: 2
+        slot: 12
+        material: "hdb-4196"
+        name: "<gradient:#00c6ff:#0072ff>Nick Glacial"
+        lore:
+          - "<gray>Efecto congelado en tu nombre."
+        format: "<gradient:#00c6ff:#0072ff>"
+        permission: "nchat.nick.ice"
+
+      grad_nature:
+        page: 2
+        slot: 13
+        material: "hdb-24796"
+        name: "<gradient:#11998e:#38ef7d>Nick Selvático"
+        lore:
+          - "<gray>Gradiente de naturaleza."
+        format: "<gradient:#11998e:#38ef7d>"
+        permission: "nchat.nick.nature"
+
+      grad_sunset:
+        page: 2
+        slot: 14
+        material: "CLOCK"
+        name: "<gradient:#fa709a:#fee140>Nick Atardecer"
+        lore:
+          - "<gray>Colores suaves de atardecer."
+        format: "<gradient:#fa709a:#fee140>"
+        permission: "nchat.nick.sunset"
+
+      btn_prev:
+        page: 2
+        slot: 52
+        material: "ARROW"
+        name: "<yellow><- Página Anterior"
+        lore:
+          - "<gray>Volver a colores básicos"
+        action: "PREVIOUS_PAGE"

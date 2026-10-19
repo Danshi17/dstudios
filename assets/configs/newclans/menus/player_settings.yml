@@ -1,0 +1,110 @@
+id: player_settings
+title: '<dark_gray>Player Settings</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  profile-head:
+    slot: 13
+    material: PLAYER_HEAD
+    head-owner: '%player_uuid%'
+    texture: '%member_texture%'
+    name: '<green>%player_name%</green>'
+    lore:
+      - '<gray>Role: <white>%player_role%</white></gray>'
+      - '<gray>Custom skin: <white>%player_custom_skin%</white></gray>'
+
+  invites:
+    slot: 19
+    material: PAPER
+    name: '<yellow>Receive Invites</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_receive_invites%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_PLAYER:invites
+
+  regroup:
+    slot: 20
+    material: COMPASS
+    name: '<yellow>Receive Regroup</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_receive_regroup%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_PLAYER:regroup
+
+  messages:
+    slot: 21
+    material: BOOK
+    name: '<yellow>Clan Messages</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_receive_messages%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_PLAYER:messages
+
+  damage:
+    slot: 22
+    material: IRON_SWORD
+    name: '<yellow>Damage Indicator</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_damage_indicator%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_PLAYER:damage-indicator
+
+  spy:
+    slot: 23
+    material: SPYGLASS
+    name: '<yellow>Clan Chat Spy</yellow>'
+    lore:
+      - '<gray>Current: <white>%player_chat_spy%</white></gray>'
+      - '<gray>Also requires <white>newclans.chat.spy</white>.</gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_PLAYER:chat-spy
+
+  language:
+    slot: 24
+    material: WRITABLE_BOOK
+    name: '<aqua>Language</aqua>'
+    lore:
+      - '<gray>Current: <white>%player_language%</white></gray>'
+      - ''
+      - '<yellow>Click to change.</yellow>'
+    action: OPEN:player_languages
+
+  skin:
+    slot: 25
+    material: PLAYER_HEAD
+    head-owner: '%player_uuid%'
+    texture: '%member_texture%'
+    name: '<light_purple>Custom Profile Skin</light_purple>'
+    lore:
+      - '<gray>Configured: <white>%player_custom_skin%</white></gray>'
+      - ''
+      - '<gray>Use <white>/clan skin set &lt;base64&gt;</white></gray>'
+      - '<gray>Use <white>/clan skin clear</white></gray>'
+
+  nickname:
+    slot: 28
+    material: NAME_TAG
+    name: '<aqua>Nickname</aqua>'
+    lore:
+      - '<gray>Change your clan nickname.</gray>'
+      - '<gray>Supports legacy, HEX and MiniMessage colors.</gray>'
+      - ''
+      - '<yellow>Click to edit.</yellow>'
+    action: ANVIL:anvil_changenickname
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_settings

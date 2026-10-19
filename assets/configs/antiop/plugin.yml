@@ -1,0 +1,40 @@
+name: AntiOP
+version: '${version}'
+
+main: me.danshi.antiOP.AntiOP
+api-version: '1.13'
+load: POSTWORLD
+softdepend: [LuckPerms, LiteBans]
+
+commands:
+  antiop:
+    description: Comando principal de AntiOP
+    usage: "/antiop <reload|list>"
+  darop:
+    description: Agrega un jugador a la op-whitelist
+    usage: "/darop <nick>"
+  quitarop:
+    description: Elimina un jugador de la op-whitelist
+    usage: "/quitarop <nick>"
+
+permissions:
+  antiop.*:
+    description: Acceso total a AntiOP
+    default: false
+    children:
+      antiop.reload: true
+      antiop.list: true
+      antiop.darop: true
+      antiop.quitarop: true
+  antiop.reload:
+    description: Permite recargar la configuracion de AntiOP
+    default: false
+  antiop.list:
+    description: Permite ver la op-whitelist
+    default: false
+  antiop.darop:
+    description: Permite agregar jugadores a la op-whitelist
+    default: false
+  antiop.quitarop:
+    description: Permite eliminar jugadores de la op-whitelist
+    default: false

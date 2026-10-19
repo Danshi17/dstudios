@@ -1,0 +1,15 @@
+weapons:
+  example_sword:
+    enabled: false
+    material: DIAMOND_SWORD
+    custom-model-data: auto
+    name: "&#FF5A76&lExample Sword"
+    lore:
+      - "&7Arma custom."
+    texture: "weapons/example_sword.png"
+    unbreakable: true
+    stats:
+      attack-damage: 10.0
+      attack-speed: 1.6
+    enchants:
+      DAMAGE_ALL: 5

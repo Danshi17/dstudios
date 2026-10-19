@@ -1,0 +1,23 @@
+name: Playervs
+version: '${version}'
+
+main: github.dstudio.playervs.Playervs
+api-version: '1.13'
+load: POSTWORLD
+softdepend: [packetevents, TAB]
+
+commands:
+  duel:
+    description: Enviar, aceptar o rechazar un duelo 1vs1
+    usage: /duel <jugador> <rondas> | /duel accept | /duel deny
+  duelarena:
+    description: Administrar las arenas de duelo
+    usage: /duelarena <wand|create|setspawn1|setspawn2|delete|toggle|toggleconcurrent|list>
+
+permissions:
+  playervs.duel:
+    description: Permite enviar y recibir duelos
+    default: true
+  playervs.admin:
+    description: Permite administrar las arenas de duelo
+    default: op

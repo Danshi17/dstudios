@@ -1,0 +1,40 @@
+id: clan_top
+title: '<dark_gray>Clan Top</dark_gray>'
+rows: 6
+page-size: 28
+open-sound: UI_BUTTON_CLICK
+
+dynamic:
+  type: CLANS
+  slots: '10-16,19-25,28-34,37-43'
+  material: PLAYER_HEAD
+  head-owner: '%relation_leader_uuid%'
+  name: '<green>#%top_position% %relation_clan%</green>'
+  lore:
+    - '<gray>Leader: <white>%relation_leader%</white></gray>'
+    - '<gray>Level: <white>%relation_level%</white></gray>'
+    - '<gray>Points: <white>%relation_points%</white></gray>'
+    - '<gray>Members: <white>%relation_members%</white></gray>'
+    - ''
+    - '<yellow>Click to inspect.</yellow>'
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+  previous:
+    slot: 48
+    material: ARROW
+    name: '<yellow>Previous Page</yellow>'
+    action: PAGE_PREVIOUS
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: BACK_HOME
+  next:
+    slot: 50
+    material: ARROW
+    name: '<yellow>Next Page</yellow>'
+    action: PAGE_NEXT

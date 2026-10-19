@@ -1,0 +1,77 @@
+language: es
+debug: false
+
+logging:
+  startup-banner: true
+  log-kicks: true
+
+support:
+  discord: "https://discord.gg/MxTWb5m9xZ"
+
+license:
+  key: ""
+
+proxy:
+  enabled: false
+  secret: ""
+  max-skew-seconds: 60
+  wait-ticks: 20
+
+password:
+  hash-algorithm: BCRYPT
+  bcrypt-cost: 10
+  pbkdf2-iterations: 120000
+  min-length: 6
+  max-length: 64
+  allowed-characters: "[\\x21-\\x7E]*"
+  block-common-passwords: true
+  block-username: true
+
+registration:
+  enabled: true
+  max-per-ip: 3
+  require-confirmation: true
+
+login:
+  timeout-seconds: 60
+  reminder-seconds: 10
+  persistent-display: true
+  display-interval-ticks: 20
+  max-attempts: 5
+
+session:
+  enabled: true
+  duration-minutes: 10
+  require-same-ip: true
+
+restrictions:
+  allowed-commands:
+    - "/login"
+    - "/l"
+    - "/register"
+    - "/reg"
+  blindness: true
+  teleport-to-spawn-on-join: false
+
+login-location:
+  enabled: false
+  world: "world"
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+  return-to-previous-location: true
+
+bedrock:
+  enabled: false
+  prefix: "."
+
+security:
+  lockout:
+    max-failures: 10
+    window-seconds: 300
+    duration-seconds: 600
+
+performance:
+  async-threads: 4

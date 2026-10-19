@@ -1,0 +1,4 @@
+# Settings for NewSkills Party System
+Party:
+    # Enable or disable the NewSkills party system
+    Enabled: true

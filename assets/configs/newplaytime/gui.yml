@@ -1,0 +1,145 @@
+gui:
+  title: "<gradient:#FF6B6B:#4ECDC4>Niveles de Playtime</gradient>"
+  size: 54
+
+  level_slots: [19, 28, 37, 38, 39, 30, 21, 22, 23, 32, 41, 42, 43, 34, 25]
+
+  player_head_slot: 4
+  player_head:
+    name: "<gradient:#FFD700:#FFA500>%player%</gradient>"
+    lore:
+      - ""
+      - "&7Tiempo de juego: &b%playtime%"
+      - "&7Tiempo total: &a%playtime_seconds%s"
+      - ""
+
+  fill_item:
+    enabled: true
+    mode: "filler"  # "filler" rellena todo el inventario | "slots" solo los indicados
+    slots: [0, 1, 2, 3, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 50, 51, 52, 53]
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+    amount: 1
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.0
+
+  page_previous:
+    slot: 45
+    material: "ARROW"
+    name: "&c&l« Anterior &8| &7Página %prev_page%"
+    amount: 1
+    lore:
+      - ""
+      - "&7Página actual: &e%page% &8/ &7%total_pages%"
+      - ""
+      - "&7Haz click para ir a la"
+      - "&7página anterior."
+      - ""
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.0
+
+  page_next:
+    slot: 53
+    material: "ARROW"
+    name: "&a&lSiguiente » &8| &7Página %next_page%"
+    amount: 1
+    lore:
+      - ""
+      - "&7Página actual: &e%page% &8/ &7%total_pages%"
+      - ""
+      - "&7Haz click para ir a la"
+      - "&7página siguiente."
+      - ""
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.0
+
+  decoration_items:
+    info:
+      slot: 49
+      material: "BOOK"
+      name: "&e&lInformación"
+      lore:
+        - ""
+        - "&7Juega en el servidor para"
+        - "&7desbloquear niveles y obtener"
+        - "&7recompensas increíbles!"
+        - ""
+      sound:
+        enabled: true
+        type: "ENTITY_BAT_TAKEOFF"
+        volume: 1.0
+        pitch: 1.2
+
+    close:
+      slot: 46
+      material: "BARRIER"
+      name: "&c&lCerrar"
+      amount: 1
+      sound:
+        enabled: true
+        type: "ENTITY_BAT_TAKEOFF"
+        volume: 1.0
+        pitch: 0.8
+
+  display_blocked:
+    name_prefix: "&c&l✘ &7"
+    lore:
+      - "&c¡Bloqueado!"
+    custom_model_data: 0
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.0
+
+  display_current:
+    name_prefix: "&e&l➤ &6"
+    lore:
+      - "&6¡En progreso!"
+      - ""
+      - "&7Progreso: &e%progress%%"
+      - "%progress_bar%"
+      - "&7Te falta: &b%missing_time%"
+    custom_model_data: 0
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.2
+
+  display_unlocked:
+    name_prefix: "&a&l✔ &a"
+    lore:
+      - "&a¡Disponible para reclamar!"
+    custom_model_data: 0
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 1.0
+      pitch: 1.5
+
+  display_claimed:
+    name_prefix: "&e&l★ &e"
+    lore:
+      - "&e¡Ya reclamado!"
+    custom_model_data: 0
+    sound:
+      enabled: true
+      type: "ENTITY_BAT_TAKEOFF"
+      volume: 0.5
+      pitch: 1.2
+
+  progress_bar:
+    length: 20
+    symbol: "|"
+    filled_color: "&a"
+    empty_color: "&7"

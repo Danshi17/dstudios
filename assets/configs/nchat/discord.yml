@@ -1,0 +1,164 @@
+
+settings:
+  enabled: false
+  # Token de tu Bot de Discord
+  bot-token: "********"
+
+  # ID del servidor (Guild ID)
+  guild-id: "1086912939849682974"
+
+  # Estado del Bot
+  activity:
+    # Tipos: PLAYING, WATCHING, LISTENING, COMPETING
+    type: "LISTENING"
+    text: "mc.borkland.com"
+    update-interval: 60 # Segundos para actualizar el contador
+
+  # URL para obtener las caras de los jugadores
+  avatar-url: "https://minotar.net/avatar/%uuid%/100.png"
+
+channels:
+  # Canal principal para chat y eventos
+  global: "1261051642137149581"
+
+  # Canal para logs de consola (opcional)
+  console: "1254635712658280508"
+
+  # Canal exclusivo para logros (opcional)
+  advancements: ""
+
+messages:
+
+  # --- INICIO DEL SERVIDOR ---
+  server-start:
+    enabled: true
+    channel: "global"
+    embed:
+      color: "#00FF00" # Verde
+      title: "✅ Servidor Iniciado"
+      description:
+        - "¡El servidor ya está en línea y listo para jugar!"
+        - "Esperamos que te diviertas."
+        - "**IP:** mc.borkland.com"
+      thumbnail: "https://cdn.discordapp.com/attachments/1027631060693037137/1450640603124858891/image.png?ex=694345d7&is=6941f457&hm=6c1562035fba5b8058274a3305a8e872fa8399b8ea89509620d65be93d618b07&"
+      footer: "Sistema de Notificaciones"
+      timestamp: true
+
+  # --- APAGADO DEL SERVIDOR ---
+  server-stop:
+    enabled: true
+    channel: "global"
+    embed:
+      color: "#FF0000" # Rojo
+      title: "🛑 Servidor Detenido"
+      description:
+        - "El servidor se ha cerrado correctamente."
+        - "Volveremos en breve."
+      thumbnail: "https://cdn.discordapp.com/attachments/1027631060693037137/1450640603124858891/image.png?ex=694345d7&is=6941f457&hm=6c1562035fba5b8058274a3305a8e872fa8399b8ea89509620d65be93d618b07&"
+      footer: "Borkland Network"
+      timestamp: true
+
+  # --- ENTRADA DE JUGADOR ---
+  player-join:
+    enabled: true
+    channel: "global"
+    embed:
+      color: "#00AAFF" # Azul Claro
+      author:
+        name: "%player_name% se acaba de unir al servidor"
+        icon: "%avatar_url%"
+      description:
+        - "¡Bienvenido al servidor!"
+        - "Actualmente somos **%online%** jugadores conectados."
+      thumbnail: "%avatar_url%"
+      footer: "Disfruta tu estancia"
+      timestamp: true
+
+  # --- SALIDA DE JUGADOR ---
+  player-quit:
+    enabled: true
+    channel: "global"
+    embed:
+      color: "#FFAA00" # Naranja
+      author:
+        name: "%player_name% acaba de salir del servidor"
+        icon: "%avatar_url%"
+      description:
+        - "¡Esperamos verte pronto!"
+        - "Gracias por jugar."
+      thumbnail: "%avatar_url%"
+      timestamp: true
+
+  # --- MUERTE DE JUGADOR ---
+  player-death:
+    enabled: true
+    channel: "global"
+    embed:
+      color: "#000000" # Negro
+      description:
+        - "💀 **%death_message%**"
+        - "¡Qué mala suerte!"
+      thumbnail: "%avatar_url%"
+      footer: "F en el chat"
+
+  # --- LOGROS ---
+  player-advancement:
+    enabled: true
+    channel: "advancements"
+    embed:
+      color: "#FFFF55" # Amarillo
+      title: "🏆 ¡Logro Desbloqueado!"
+      description:
+        - ""
+        - "**Jugador:** %player_name%"
+        - ""
+        - "**Logro:** %advancement_title%"
+        - ""
+        - "*%advancement_description%*"
+      thumbnail: "%avatar_url%"
+      timestamp: true
+
+chat-sync:
+
+  # MINECRAFT -> DISCORD
+  minecraft-to-discord:
+    enabled: true
+
+    # MODOS DISPONIBLES:
+    # WEBHOOK: El bot imita al jugador (nombre y cara). Requiere 'webhook-url'.
+    # EMBED: El mensaje aparece dentro de un cuadro de color enviado por el bot.
+    # PLAIN: El bot envía un mensaje de texto normal sin cuadros.
+    mode: "PLAIN"
+
+    # Obligatorio si mode: "WEBHOOK"
+    # Crea uno en Discord: Ajustes Canal -> Integraciones -> Webhooks
+    webhook-url: "URL_DE_TU_WEBHOOK_AQUI"
+
+    # Formato si mode: "PLAIN"
+    plain-format: "**%player_name%** > %message%"
+
+    # Formato si mode: "EMBED"
+    embed-format:
+      color: "#FFFFFF"
+      author:
+        name: "%player_name%"
+        icon: "%avatar_url%"
+      description:
+        - "%message%"
+      thumbnail: ""
+      footer: "Rango: %vault_group%"
+
+  # DISCORD -> MINECRAFT
+  discord-to-minecraft:
+    enabled: true
+    # Formato MiniMessage
+    format: "<#7289da>[Discord] <hover:show_text:'<gray>Click para responder'><%discord_role_color%>%discord_user%</%discord_role_color%></hover>: <white>%message%"
+    ping-sound: true
+    sound-type: "entity_experience_orb_pickup"
+
+  # CONSOLA -> DISCORD
+  console-to-discord:
+    enabled: true
+    blacklist:
+      - "issued server command"
+      - "Async Chat Thread"

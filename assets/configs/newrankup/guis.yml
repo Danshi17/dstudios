@@ -1,0 +1,333 @@
+menu-title: "<gradient:yellow:gold><bold>Rankup Menu</bold></gradient>"
+
+menu-page-format: " <dark_gray>- <white>Página %page%"
+
+menu-size: 54
+
+rankup slots:
+  - 19
+  - 28
+  - 37
+  - 38
+  - 39
+  - 30
+  - 21
+  - 22
+  - 23
+  - 32
+  - 41
+  - 42
+  - 43
+  - 34
+  - 25
+
+filler slots:
+  material: "BLACK_STAINED_GLASS_PANE"
+  slots:
+    - 2
+    - 3
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 20
+    - 24
+    - 26
+    - 27
+    - 29
+    - 31
+    - 33
+    - 35
+    - 36
+    - 40
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 19
+    - 21
+    - 22
+    - 23
+    - 25
+    - 28
+    - 30
+    - 32
+    - 34
+    - 37
+    - 38
+    - 39
+    - 41
+    - 42
+    - 43
+
+
+close-item:
+  slot: 4
+  material: "BOOK"
+  sound: "ENTITY_BAT_TAKEOFF"
+  name: "<red>Cerrar Menú"
+  lore:
+    - "<gray>Clic para salir"
+
+page-buttons:
+  previous:
+    slot: 7
+    material: "hdb:8790"
+    sound: "ITEM_BOOK_PAGE_TURN"
+    name: "<yellow>← Página Anterior"
+    lore:
+      - "<gray>Clic para volver"
+
+  next:
+    slot: 8
+    material: "hdb:8787"
+    sound: "ITEM_BOOK_PAGE_TURN"
+    name: "<yellow>Siguiente Página →"
+    lore:
+      - "<gray>Clic para ver más rangos"
+
+prestige-button:
+  slot: 0
+  material: "base64:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjlkNTczZTM1ZmQ0ZGMyYmMyYzVlMTkxMjNlZmQ5YjI5ZDVhMmYzM2M1Njk5ODcyNjhhM2JlOWJmOTBiMzFiYSJ9fX0="
+  maxed-material: "BARRIER"
+  name: "<light_purple><bold>✦ PRESTIGIAR ✦"
+  lore:
+    - ""
+    - "<gray>Prestige actual: %newrankup_prestige_display%"
+    - "<gray>Siguiente: %newrankup_next_prestige_display%"
+    - "<gray>Costo: <gold>$%newrankup_prestige_cost%"
+    - "<gray>Estado: %newrankup_prestige_status%"
+    - ""
+    - "<yellow>➤ Clic para prestigiar"
+  locked-lore:
+    - ""
+    - "<red>Debes completar todos los rangos primero."
+    - "<gray>Rango actual: %newrankup_rank%"
+    - ""
+    - "<gray>Costo del próximo prestige: <gold>$%newrankup_prestige_cost%"
+  maxed-lore:
+    - ""
+    - "<red>✖ Has alcanzado el prestige máximo."
+    - "<gray>Prestige: %newrankup_prestige_display%"
+
+
+rebirth-button:
+  slot: 1
+  material: "base64:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmNmNmQyOGZlNGNiMDZmY2VjN2Y1ZjY4MWMwNDlkMTg1MDJhOWFiMWNhZTliZTNjYjUyOGM4ZTE4ZWI5MzNhIn19fQ=="
+  maxed-material: "BARRIER"
+  name: "<dark_red><bold>☠ REBIRTH ☠"
+  lore:
+    - ""
+    - "<gray>Rebirth actual: %newrankup_rebirth_display%"
+    - "<gray>Costo: <gold>$%newrankup_rebirth_cost%"
+    - "<gray>Requiere: %newrankup_max_prestige% prestiges + rango máximo"
+    - "<gray>Estado: %newrankup_rebirth_status%"
+    - ""
+    - "<yellow>➤ Clic para renacer"
+  locked-lore:
+    - ""
+    - "<red>Debes alcanzar el prestige y rango máximo."
+    - "<gray>Prestige actual: %newrankup_prestige_display%"
+    - "<gray>Requerido: %newrankup_max_prestige%"
+  maxed-lore:
+    - ""
+    - "<red>✖ Has alcanzado el rebirth máximo."
+    - "<gray>Rebirth: %newrankup_rebirth_display%"
+
+
+player-profile-item:
+  enabled: true
+  slot: 49
+  material: "PLAYER_HEAD"
+  name: "<gradient:yellow:gold><b>Información de %player_name%</b></gradient>"
+  lore:
+    - "&7Rango actual: &a%newrankup_rank%"
+    - "&7Siguiente rango: &e%newrankup_next_rank%"
+    - "&7Progreso: &b%newrankup_percentage%%"
+    - "&7Progreso: %newrankup_progressbar%"
+    - " "
+    - "&e¡Sigue avanzando para desbloquear más!"
+
+
+confirmation-menu:
+  enabled: true
+
+  apply-to:
+    rankup: true
+    prestige: true
+    rebirth: true
+
+  rankup:
+    title: "<gradient:green:aqua><bold>Confirmar Rankup</bold></gradient>"
+    size: 27
+    reopen-main-menu-on-cancel: true
+    auto-close-ticks: 200
+    sound-open: "ENTITY_EXPERIENCE_ORB_PICKUP"
+
+    filler:
+      material: "BLACK_STAINED_GLASS_PANE"
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+
+    info-item:
+      enabled: true
+      slot: 13
+      use-action-icon: true
+      material: "NETHER_STAR"
+      name: "<yellow><bold>%rank_display%"
+      lore:
+        - ""
+        - "<gray>Rango actual: <white>%current_rank%"
+        - "<gray>Siguiente rango: <white>%rank_display%"
+        - ""
+        - "<gray>Requisitos:"
+        - "%requirement_lines%"
+        - ""
+        - "<gray>Costo: <gold>$%cost%"
+        - ""
+        - "<green>✔ Todos los requisitos completados"
+        - "<yellow>➤ Confirma para subir de rango"
+
+    confirm-item:
+      slots: [11,10]
+      material: "LIME_CONCRETE"
+      name: "<green><bold>✔ CONFIRMAR"
+      lore:
+        - ""
+        - "<gray>Confirma el rankup a <white>%rank_display%"
+        - "<yellow>➤ Clic para confirmar"
+      sound: "ENTITY_PLAYER_LEVELUP"
+
+    cancel-item:
+      slots: [15,16]
+      material: "RED_CONCRETE"
+      name: "<red><bold>✖ CANCELAR"
+      lore:
+        - ""
+        - "<gray>Clic para volver al menú de rangos"
+      sound: "UI_BUTTON_CLICK"
+
+    requirement-lines:
+      completed-prefix: "<green>✔ "
+      not-completed-prefix: "<red>✖ "
+      none: "<gray>Sin requisitos"
+      money: "<gray>Dinero: <gold>$%current% <gray>/ <gold>$%required%"
+      xp-levels: "<gray>Niveles: <aqua>%current% <gray>/ <aqua>%required%"
+      playtime-hours: "<gray>Tiempo: <white>%current%h <gray>/ <white>%required%h"
+      mobs-killed: "<gray>Mobs: <white>%current% <gray>/ <white>%required%"
+      players-killed: "<gray>Jugadores: <white>%current% <gray>/ <white>%required%"
+      items: "<gray>Ítem: <white>%item% %current% <gray>/ <white>%required%"
+
+  prestige:
+    title: "<gradient:light_purple:dark_purple><bold>Confirmar Prestige</bold></gradient>"
+    size: 27
+    reopen-main-menu-on-cancel: true
+    auto-close-ticks: 200
+    sound-open: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    filler:
+      material: "BLACK_STAINED_GLASS_PANE"
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+    info-item:
+      enabled: true
+      slot: 13
+      use-action-icon: true
+      material: "NETHER_STAR"
+      name: "<light_purple><bold>✦ PRESTIGIAR ✦"
+      lore:
+        - ""
+        - "<gray>Prestige actual: <white>%prestige_display%"
+        - "<gray>Siguiente: <white>%next_prestige_display%"
+        - ""
+        - "<gray>Requisitos:"
+        - "%requirement_lines%"
+        - ""
+        - "<gray>Costo: <gold>$%cost%"
+        - ""
+        - "<yellow>➤ Confirma para prestigiar"
+    confirm-item:
+      slots: [11]
+      material: "LIME_CONCRETE"
+      name: "<green><bold>✔ CONFIRMAR"
+      lore:
+        - ""
+        - "<gray>Confirma tu prestige a <white>%next_prestige_display%"
+        - "<yellow>➤ Clic para confirmar"
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    cancel-item:
+      slots: [15]
+      material: "RED_CONCRETE"
+      name: "<red><bold>✖ CANCELAR"
+      lore:
+        - ""
+        - "<gray>Clic para volver al menú"
+      sound: "UI_BUTTON_CLICK"
+    requirement-lines:
+      completed-prefix: "<green>✔ "
+      not-completed-prefix: "<red>✖ "
+      max-rank: "<gray>Rango máximo alcanzado"
+      money: "<gray>Dinero: <gold>$%current% <gray>/ <gold>$%required%"
+
+  rebirth:
+    title: "<gradient:red:dark_red><bold>Confirmar Rebirth</bold></gradient>"
+    size: 27
+    reopen-main-menu-on-cancel: true
+    auto-close-ticks: 200
+    sound-open: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    filler:
+      material: "BLACK_STAINED_GLASS_PANE"
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+    info-item:
+      enabled: true
+      slot: 13
+      use-action-icon: true
+      material: "DRAGON_EGG"
+      name: "<dark_red><bold>☠ REBIRTH ☠"
+      lore:
+        - ""
+        - "<gray>Rebirth actual: <white>%rebirth_display%"
+        - "<gray>Siguiente: <white>%next_rebirth_display%"
+        - ""
+        - "<gray>Requisitos:"
+        - "%requirement_lines%"
+        - ""
+        - "<gray>Costo: <gold>$%cost%"
+        - ""
+        - "<yellow>➤ Confirma para renacer"
+    confirm-item:
+      slots: [11]
+      material: "LIME_CONCRETE"
+      name: "<green><bold>✔ CONFIRMAR"
+      lore:
+        - ""
+        - "<gray>Confirma tu rebirth a <white>%next_rebirth_display%"
+        - "<yellow>➤ Clic para confirmar"
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    cancel-item:
+      slots: [15]
+      material: "RED_CONCRETE"
+      name: "<red><bold>✖ CANCELAR"
+      lore:
+        - ""
+        - "<gray>Clic para volver al menú"
+      sound: "UI_BUTTON_CLICK"
+    requirement-lines:
+      completed-prefix: "<green>✔ "
+      not-completed-prefix: "<red>✖ "
+      max-rank: "<gray>Rango máximo alcanzado"
+      prestige: "<gray>Prestige: <white>%current% <gray>/ <white>%required%"
+      money: "<gray>Dinero: <gold>$%current% <gray>/ <gold>$%required%"

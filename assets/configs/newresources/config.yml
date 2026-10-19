@@ -1,0 +1,67 @@
+namespace: "newresources"
+
+resource-pack:
+  enabled: true
+  build-on-start: true
+  build-on-reload: true
+  pack-format-override: 0
+  description: "dStudio - newResources"
+
+  compatibility:
+    enabled: true
+    min-version: "1.21.8"
+    max-version: "1.21.11"
+
+  merge-packs:
+    - "nightbreak.zip"
+    - "texturepack4.zip"
+
+  output-file: "generated/newResources.zip"
+
+  same-port:
+    enabled: true
+    scheme: "http"
+    public-host: "mc.borkland.com"
+    public-port: 0
+    path: "/newResources.zip"
+    debug: false
+
+  send-on-join: true
+  required: false
+  send-delay-ticks: 30
+  max-retries: 2
+  message-before-send: "&eDescargando el resource pack del servidor..."
+  kick-on-decline: "&cNecesitas aceptar el resource pack para jugar."
+
+assets:
+  auto-model-data-start: 10000
+  fail-on-duplicate-model-data: true
+
+placement:
+  default-anchor-material: "BARRIER"
+  snap-rotation-90: true
+  legacy-armorstand-y-offset: -1.40
+  break-mode: "SNEAK_LEFT_CLICK"
+
+model-entities:
+  follow-period-ticks: 1
+  remove-when-anchor-invalid: true
+  remove-on-disable: true
+  debug: false
+
+text-effects:
+  enabled: true
+  shader-enabled: true
+  shader-profile: "AUTO"
+  marker-tolerance: 0.012
+
+menus:
+  placeholderapi: true
+
+messages:
+  prefix: "&8[&#FFD23FnewResources&8] &r"
+  no-permission: "&cNo tienes permiso."
+  reload: "&aConfiguración y assets recargados."
+  build-start: "&eGenerando resource pack..."
+  build-done: "&aResource pack generado: &f%file% &7(SHA-1: %sha1%)"
+  unknown-asset: "&cNo existe el asset '&f%id%&c'."

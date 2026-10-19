@@ -1,0 +1,85 @@
+# Ejemplo de configuración de KOTH
+# Este archivo muestra todas las opciones disponibles para configurar un KOTH
+
+name: "<gradient:#ff0000:#ff6600>&lKOTH Ejemplo</gradient>"
+
+# Posiciones (generadas automáticamente al crear)
+pos1:
+  world: world
+  x: 100.0
+  y: 64.0
+  z: 200.0
+
+pos2:
+  world: world
+  x: 120.0
+  y: 80.0
+  z: 220.0
+
+# Tiempo de captura en segundos
+capture-time: 300
+
+# Jugadores requeridos para capturar
+# Si hay más jugadores que el requerido, la captura se detiene
+required-players: 1
+
+# Horarios de activación automática (formato 24h HH:mm)
+# Deja la lista vacía [] para solo activación manual
+schedule:
+  - "12:00"
+  - "18:00"
+  - "00:00"
+
+# Comandos de recompensa ejecutados cuando alguien captura
+# Usa %player% para el nombre del jugador
+# Puedes agregar tantos comandos como quieras
+rewards:
+  - "give %player% diamond 64"
+  - "eco give %player% 10000"
+  - "lp user %player% permission set premio.koth true"
+  - "broadcast &a%player% ha capturado el KOTH!"
+  - "title %player% title {\"text\":\"¡KOTH CAPTURADO!\",\"color\":\"gold\"}"
+  - "playsound entity.player.levelup master %player% ~ ~ ~ 1 1"
+
+# Configuración del holograma (DecentHolograms)
+hologram:
+  enabled: true
+
+  # Offset desde el centro de la región
+  offset:
+    x: 0.5
+    y: 3.0
+    z: 0.5
+
+  # Líneas del holograma
+  # Placeholders disponibles:
+  # %koth% - Nombre del KOTH
+  # %status% - Estado (Activo/Inactivo)
+  # %capturing% - Jugador capturando
+  # %progress% - Progreso en porcentaje
+  # %capture_time% - Tiempo total de captura
+  # %required_players% - Jugadores requeridos
+  # %remaining% - Tiempo restante en segundos
+  lines:
+    - "<gradient:#ff0000:#ff6600>&l%koth%</gradient>"
+    - ""
+    - "&fEstado: %status%"
+    - "&fCapturando: &e%capturing%"
+    - "&fProgreso: &6%progress%%"
+    - ""
+    - "&7Tiempo total: &e%capture_time%s"
+    - "&7Jugadores necesarios: &e%required_players%"
+
+# Configuración de WorldGuard
+worldguard:
+  # Habilitar integración con WorldGuard
+  enabled: true
+
+  # Crear sub-región si existe una región padre
+  # Si hay una región de WorldGuard donde se crea el KOTH,
+  # se creará como sub-región de esta
+  create-subregion: true
+
+  # Sufijo para el nombre de la región
+  # El nombre final será: <id_del_koth><sufijo>
+  subregion-suffix: "_koth"

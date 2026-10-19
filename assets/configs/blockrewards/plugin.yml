@@ -1,0 +1,71 @@
+name: BlockRewards
+version: '${version}'
+
+main: me.danshi.blockRewards.BlockRewards
+api-version: '1.13'
+load: POSTWORLD
+softdepend: [Vault, PlaceholderAPI, ActionBarAPI, TitleAPI]
+
+commands:
+
+  blockrewards:
+
+    aliases: [brewards, br]
+
+    description: Comando principal de BlockRewards.
+
+    usage: /blockrewards <open|reload|prestige|autoclaim|help>
+
+    permission: blockrewards.use
+
+  brewards:
+
+    aliases: [br]
+
+    description: Alias principal de BlockRewards.
+
+    usage: /brewards <open|reload|prestige|autoclaim|help>
+
+    permission: blockrewards.use
+
+  milestones:
+
+    aliases: [ms, milestone]
+
+    description: Abre directo el menu de Block Rewards.
+
+    usage: /milestones
+
+    permission: blockrewards.use
+
+permissions:
+
+  blockrewards.use:
+
+    description: Permite usar el menu de BlockRewards.
+
+    default: true
+
+  blockrewards.reload:
+
+    description: Permite recargar la configuracion.
+
+    default: op
+
+  blockrewards.prestige:
+
+    description: Permite usar el comando de prestigio.
+
+    default: true
+
+  blockrewards.autoclaim:
+
+    description: Permite alternar el auto-claim.
+
+    default: true
+
+  blockrewards.admin:
+
+    description: Acceso completo administrativo.
+
+    default: op

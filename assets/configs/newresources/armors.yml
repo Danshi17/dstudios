@@ -1,0 +1,19 @@
+armors:
+  example_helmet:
+    enabled: false
+    material: LEATHER_HELMET
+    custom-model-data: auto
+    name: "&#FFD45A&lExample Helmet"
+    texture: "armor/example_helmet.png"
+    leather-color: "#FFD45A"
+
+    # 1.21.2+: optional custom worn equipment model.
+    # On 1.18.2-1.21.1 the plugin falls back to the normal armor render/leather color.
+    equipment:
+      model: "example_gold"
+      texture: "armor/equipment/example_gold.png"
+      leggings-texture: "armor/equipment/example_gold_leggings.png"
+    stats:
+      armor: 4.0
+      toughness: 2.0
+    slot: HEAD

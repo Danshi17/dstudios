@@ -1,0 +1,6 @@
+id: anvil_clanhomecreate
+
+title: '<dark_gray>Create Clan Home</dark_gray>'
+material: ENDER_PEARL
+initial-text: 'home'
+back-menu: clan_homes

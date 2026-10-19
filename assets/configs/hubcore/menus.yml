@@ -1,0 +1,536 @@
+# ============================================================
+#  menus.yml — HubCore
+#  Configuración de menús del lobby
+# ============================================================
+#
+#  ESTRUCTURA GENERAL DE UN MENÚ:
+#  ─────────────────────────────
+#  <menu-id>:
+#    title: "Título del inventario"     # Soporta códigos de color (&a, &l...) y MiniMessage
+#    rows: 3                            # Filas del inventario (1–6)
+#    update-ticks: 0                    # Cada cuántos ticks se refresca el menú (0 = nunca)
+#                                       # Útil para placeholders en tiempo real (ej: jugadores online)
+#    auto-detect-servers: false         # (opcional) Si true, llena slots automáticamente
+#                                       # con los servidores del bungee que coincidan con server-prefix
+#    server-prefix: "lobby"             # (opcional) Prefijo para filtrar servidores en auto-detect
+#    server-material: GRASS_BLOCK       # (opcional) Material de los items auto-generados
+#    items:
+#      <clave-unica>:
+#        slot: 0                        # Posición en el inventario (puede ser número o lista de números)
+#        material: STONE                # Material del item (nombre exacto de Material de Bukkit)
+#        name: "&aEjemplo"              # Nombre del item (soporta color y MiniMessage)
+#        lore:                          # Descripción del item (lista de líneas)
+#          - "&7Línea 1"
+#          - "&7Línea 2"
+#
+#        # ── EJEMPLOS DE SLOT ──────────────────────────────
+#        # Slot único:
+#        slot: 13
+#
+#        # Múltiples slots (para fillers, bordes, etc):
+#        slot: [0,1,2,3,4,5,6,7,8]
+#
+#        # ── ACCIÓN SIMPLE (un solo tipo) ──────────────────
+#        action:
+#          type: NONE                   # Ver tipos de acción abajo
+#          value: ""
+#
+#        # ── ACCIONES MÚLTIPLES (lista, se ejecutan en orden) ──
+#        actions:
+#          - type: SOUND
+#            value: "UI_BUTTON_CLICK"
+#          - type: SERVER
+#            value: "skywars"
+#
+#  TIPOS DE ACCIÓN DISPONIBLES:
+#  ────────────────────────────
+#  NONE          → No hace nada
+#  MENU          → Abre otro menú. value: "<menu-id>"
+#  CLOSE         → Cierra el menú. value: ""
+#  SERVER        → Envía al jugador a un servidor BungeeCord. value: "<nombre-servidor>"
+#  COMMAND       → Ejecuta un comando como el jugador. value: "/comando"
+#  CONSOLE       → Ejecuta un comando desde la consola. value: "comando"
+#  TELEPORT      → Teletransporta al spawn. value: "" (usa spawn de config.yml)
+#  SOUND         → Reproduce un sonido. value: "<nombre-Sound de Bukkit>"
+#  RESET_TAG     → Quita el tag del jugador. value: ""
+#  RESET_CHATCOLOR → Quita el color de chat del jugador. value: ""
+#
+# ============================================================
+
+navigator:
+  title: "          &8Navegador"
+  rows: 3
+  update-ticks: 0
+  items:
+    # Filler - bordes y slots vacíos
+    filler_border:
+      slot: [0,1,2,3,4,5,6,7,8,9,17,18,19,20,21,22,23,24,25,26]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    filler_top_middle:
+      slot: [10,12,14,15,16]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    lobbies:
+      slot: 11
+      material: GRASS_BLOCK
+      name: "&a&lLobbies"
+      lore:
+        - "&7Elige un lobby"
+      action:
+        type: MENU
+        value: "lobbies"
+    gamemodes:
+      slot: 13
+      material: DIAMOND_SWORD
+      name: "&b&lModalidades"
+      lore:
+        - "&7Elige una modalidad"
+      action:
+        type: MENU
+        value: "gamemodes"
+    close:
+      slot: 26
+      material: BARRIER
+      name: "&c&lCerrar"
+      lore: []
+      action:
+        type: CLOSE
+        value: ""
+
+lobbies:
+  title: "&8Lobbies"
+  rows: 3
+  update-ticks: 40
+  auto-detect-servers: false
+  server-prefix: "lobby"
+  server-material: POTION
+  items:
+    filler_bottom:
+      slot: [0,1,2,3,4,5,6,7,8,9,17,18,19,20,21,22,23,24,25,26]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    # Lobby 1
+    lobby_1:
+      slot: 10
+      material: POTION
+      name: "&a&lLobby-1"
+      lore:
+        - "&7Haz clic para unirte"
+        - "&8» &aDisponible"
+      actions:
+        - type: SOUND
+          value: "UI_BUTTON_CLICK"
+        - type: SERVER
+          value: "lobby-1"
+    # Lobby 2
+    lobby_2:
+      slot: 12
+      material: POTION
+      name: "&a&lLobby-2"
+      lore:
+        - "&7Haz clic para unirte"
+        - "&8» &aDisponible"
+      actions:
+        - type: SOUND
+          value: "UI_BUTTON_CLICK"
+        - type: SERVER
+          value: "lobby-2"
+    # Lobby 3
+    lobby_3:
+      slot: 14
+      material: POTION
+      name: "&a&lLobby-3"
+      lore:
+        - "&7Haz clic para unirte"
+        - "&8» &aDisponible"
+      actions:
+        - type: SOUND
+          value: "BLOCK_ANVIL_BREAK"
+        - type: SERVER
+          value: "lobby-3"
+    lobby_4:
+      slot: 16
+      material: POTION
+      name: "&a&lLobby-4"
+      lore:
+        - "&7Haz clic para unirte"
+        - "&8» &aDisponible"
+      actions:
+        - type: SOUND
+          value: "BLOCK_ANVIL_BREAK"
+        - type: SERVER
+          value: "lobby-4"
+    back:
+      slot: 26
+      material: LEVER
+      name: "&cVolver"
+      lore: []
+      action:
+        type: MENU
+        value: "navigator"
+
+gamemodes:
+  title: "          &8Modalidades"
+  rows: 3
+  update-ticks: 0
+  items:
+    # Filler - bordes y slots vacíos
+    filler_border:
+      slot: [0,1,2,3,4,5,6,7,8,9,17,18,19,20,21,22,23,24,25,26]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    filler_center:
+      slot: [10,12,14,15,16]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    skywars:
+      slot: 11
+      material: ELYTRA
+      name: "&e&lSkyWars"
+      lore:
+        - "&7Haz clic para unirte"
+      actions:
+        - type: SOUND
+          value: "UI_BUTTON_CLICK"
+        - type: SERVER
+          value: "skywars"
+    bedwars:
+      slot: 13
+      material: RED_BED
+      name: "&c&lBedWars"
+      lore:
+        - "&7Haz clic para unirte"
+      actions:
+        - type: SOUND
+          value: "UI_BUTTON_CLICK"
+        - type: SERVER
+          value: "bedwars"
+    back:
+      slot: 26
+      material: ARROW
+      name: "&cVolver"
+      lore: []
+      action:
+        type: MENU
+        value: "navigator"
+
+# Placeholders de PAPI se pueden usar en title, name y lore
+profile:
+  title: "      &8Perfil de %player_name%"
+  rows: 4
+  update-ticks: 60
+  items:
+    # Filler - bordes y slots vacíos
+    filler_border:
+      slot: [0,1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,21,23,24,25,26,27,28,29,30,31,32,33,34,35]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    head:
+      slot: 13
+      material: PLAYER_HEAD
+      name: "&b%player_name%"
+      lore:
+        - "&7Rango: &b%luckperms_prefix%"
+      action:
+        type: NONE
+        value: ""
+    tags:
+      slot: 20
+      material: NAME_TAG
+      name: "&d&lTags"
+      lore:
+        - "&7Gestiona tus tags"
+      action:
+        type: MENU
+        value: "tags"
+    chatcolor:
+      slot: 22
+      material: INK_SAC
+      name: "&b&lColor de Chat"
+      lore:
+        - "&7Cambia tu color de chat"
+      action:
+        type: MENU
+        value: "chat-colors"
+    close:
+      slot: 35
+      material: BARRIER
+      name: "&c&lCerrar"
+      lore: []
+      action:
+        type: CLOSE
+        value: ""
+
+
+
+#  menus.yml — HubCore - Documentación más explicada por una IA XD
+#  Configuración de menús del lobby
+#
+#  ESTRUCTURA GENERAL DE UN MENÚ:
+#
+#  <menu-id>:
+#    title: "Título del inventario"     # Soporta códigos de color (&a, &l...) y MiniMessage
+#    rows: 3                            # Filas del inventario (1–6)
+#    update-ticks: 0                    # Cada cuántos ticks se refresca el menú (0 = nunca)
+#                                       # Útil para placeholders en tiempo real (ej: jugadores online)
+#    auto-detect-servers: false         # Si true, llena slots automáticamente con los servidores
+#                                       # del bungee que coincidan con server-prefix
+#    server-prefix: "lobby"             # Prefijo para filtrar servidores en auto-detect
+#    server-material: GRASS_BLOCK       # Material de los items auto-generados
+#    items:
+#      <clave-unica>:
+#        slot: 0                        # Posición (número o lista de números)
+#        material: STONE                # Material del item
+#        name: "&aEjemplo"              # Nombre (soporta color y MiniMessage)
+#        lore:                          # Descripción del item
+#          - "&7Línea 1"
+#          - "&7Línea 2"
+#
+#        # Slot único:
+#        slot: 13
+#
+#        # Múltiples slots (fillers, bordes):
+#        slot: [0,1,2,3,4,5,6,7,8]
+#
+#        # Acción simple:
+#        action:
+#          type: NONE
+#          value: ""
+#
+#        # Acciones múltiples (se ejecutan en orden):
+#        actions:
+#          - type: SOUND
+#            value: "UI_BUTTON_CLICK"
+#          - type: SERVER
+#            value: "skywars"
+#
+# TODOS LOS TIPOS DE ACCIÓN CON EJEMPLOS
+#
+# NONE
+#   No hace nada. Útil para items decorativos o fillers.
+#   Ejemplo:
+#     action:
+#       type: NONE
+#       value: ""
+#
+# MENU
+#   Abre otro menú.
+#   value: ID del menú definido en este archivo
+#   Ejemplo:
+#     action:
+#       type: MENU
+#       value: "tienda"
+#
+# CLOSE
+#   Cierra el menú actual.
+#   Ejemplo:
+#     action:
+#       type: CLOSE
+#       value: ""
+#
+# SERVER
+#   Envía al jugador a un servidor BungeeCord.
+#   value: nombre del servidor en BungeeCord
+#   Ejemplo:
+#     action:
+#       type: SERVER
+#       value: "survival-1"
+#
+# COMMAND
+#   Ejecuta un comando desde la consola.
+#   Usa %player% para el nombre del jugador.
+#   Ejemplo:
+#     action:
+#       type: COMMAND
+#       value: "give %player% diamond 1"
+#
+# PLAYER_COMMAND
+#   Ejecuta un comando como el jugador.
+#   Ejemplo:
+#     action:
+#       type: PLAYER_COMMAND
+#       value: "/spawn"
+#
+# TELEPORT
+#   Teletransporta al spawn configurado en config.yml.
+#   Ejemplo:
+#     action:
+#       type: TELEPORT
+#       value: ""
+#
+# SOUND
+#   Reproduce un sonido.
+#   Ejemplos comunes:
+#     - "UI_BUTTON_CLICK"
+#     - "ENTITY_PLAYER_LEVELUP"
+#     - "BLOCK_ANVIL_BREAK"
+#     - "ENTITY_EXPERIENCE_ORB_PICKUP"
+#   Ejemplo:
+#     action:
+#       type: SOUND
+#       value: "UI_BUTTON_CLICK"
+#
+# MESSAGE
+#   Envía un mensaje al chat del jugador.
+#   Soporta colores y PlaceholderAPI.
+#   Ejemplo:
+#     action:
+#       type: MESSAGE
+#       value: "&a¡Hola &e%player_name%&a!"
+#
+# TITLE
+#   Muestra un título en pantalla.
+#   Combinar con SUBTITLE usando actions para mostrar ambos.
+#   Ejemplo:
+#     actions:
+#       - type: TITLE
+#         value: "&6&lBIENVENIDO"
+#       - type: SUBTITLE
+#         value: "&7al servidor"
+#
+# SUBTITLE
+#   Muestra un subtítulo en pantalla.
+#   Debe usarse junto con TITLE.
+#   Ejemplo:
+#     actions:
+#       - type: TITLE
+#         value: "&6Título"
+#       - type: SUBTITLE
+#         value: "&7Subtítulo"
+#
+# ACTIONBAR
+#   Muestra un mensaje en la barra de acción (sobre la hotbar).
+#   Soporta colores y PlaceholderAPI.
+#   Ejemplo:
+#     action:
+#       type: ACTIONBAR
+#       value: "&b¡Hola %player_name%!"
+#
+# RESET_TAG
+#   Elimina el tag personalizado del jugador.
+#   Ejemplo:
+#     action:
+#       type: RESET_TAG
+#       value: ""
+#
+# RESET_CHATCOLOR
+#   Elimina el color de chat del jugador.
+#   Ejemplo:
+#     action:
+#       type: RESET_CHATCOLOR
+#       value: ""
+#
+# EJEMPLOS DE ACCIONES COMBINADAS
+#
+# Unirse a un servidor con sonido:
+#   actions:
+#     - type: SOUND
+#       value: "UI_BUTTON_CLICK"
+#     - type: SERVER
+#       value: "minijuegos"
+#
+# Título completo con sonido:
+#   actions:
+#     - type: TITLE
+#       value: "&c&lPVP ARENA"
+#     - type: SUBTITLE
+#       value: "&7Prepárate"
+#     - type: SOUND
+#       value: "ENTITY_WITHER_SPAWN"
+#
+# Recompensa diaria:
+#   actions:
+#     - type: SOUND
+#       value: "ENTITY_PLAYER_LEVELUP"
+#     - type: MESSAGE
+#       value: "&a¡Recompensa reclamada!"
+#     - type: COMMAND
+#       value: "give %player% diamond 5"
+#     - type: ACTIONBAR
+#       value: "&a+5 Diamantes"
+#     - type: CLOSE
+#       value: ""
+#
+# ITEMS COSMÉTICOS (TAGS Y COLORES DE CHAT)
+#
+# Tags:
+#   tag-value: "&6[VIP]"           # Tag que se mostrará
+#   permission: "hubcore.tag.vip"  # Permiso requerido
+#   price: 100                     # Precio (opcional)
+#   price-type: "VAULT"            # VAULT o POINTS
+#
+#   Ejemplo:
+#     tag_vip:
+#       slot: 20
+#       material: GOLD_INGOT
+#       name: "&6&lTag VIP"
+#       tag-value: "&6[VIP]"
+#       permission: "hubcore.tag.vip"
+#       price: 100
+#       actions:
+#         - type: SOUND
+#           value: "ENTITY_EXPERIENCE_ORB_PICKUP"
+#
+# Colores de chat:
+#   color-code: "&a"               # Código de color
+#   permission: "hubcore.color.green"
+#   price: 50
+#
+#   Ejemplo:
+#     color_green:
+#       slot: 22
+#       material: GREEN_DYE
+#       name: "&a&lColor Verde"
+#       color-code: "&a"
+#       permission: "hubcore.color.green"
+#       actions:
+#         - type: SOUND
+#           value: "UI_BUTTON_CLICK"
+#
+# PLACEHOLDERS SOPORTADOS (PlaceholderAPI)
+#
+# %player_name%          → Nombre del jugador
+# %player_displayname%   → Nombre mostrado
+# %player_uuid%          → UUID
+# %player_ping%          → Ping
+# %player_health%        → Salud actual
+# %player_food_level%    → Nivel de comida
+# %luckperms_prefix%     → Prefijo de rango
+# %vault_eco_balance%    → Balance económico
+# %server_online%        → Jugadores online
+# %server_tps%           → TPS del servidor
+#
+# NOTAS
+#
+# - update-ticks actualiza placeholders en tiempo real
+# - auto-detect-servers genera items automáticamente por cada servidor
+# - Los sonidos funcionan con nombres de Bukkit y XSound
+# - Los comandos COMMAND usan permisos de consola
+# - Los comandos PLAYER_COMMAND usan permisos del jugador
+# - %player% funciona en comandos y mensajes
+#

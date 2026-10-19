@@ -1,0 +1,24 @@
+name: AntiPendejos
+version: '${version}'
+
+main: github.dstudio.antiPendejos.AntiPendejos
+api-version: '1.13'
+load: POSTWORLD
+softdepend: [PlayerVaults]
+
+commands:
+  antipendejos:
+    aliases: [apnd, apitem]
+    description: Gestiona los items prohibidos y purga inventarios/vaults.
+    usage: |
+      /<command> add <MATERIAL> <ENCANTAMIENTO> <NIVEL_MINIMO>
+      /<command> remove <MATERIAL>
+      /<command> list
+      /<command> purge
+      /<command> reload
+    permission: antipendejos.admin
+
+permissions:
+  antipendejos.admin:
+    description: Permite gestionar y ejecutar AntiPendejos
+    default: op

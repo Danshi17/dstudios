@@ -1,0 +1,40 @@
+id: invites
+title: '<dark_gray>Clan Invites</dark_gray>'
+rows: 6
+page-size: 28
+open-sound: UI_BUTTON_CLICK
+
+dynamic:
+  type: INVITES
+  slots: '10-16,19-25,28-34,37-43'
+  material: PAPER
+  name: '<green>%invite_clan%</green>'
+  lore:
+    - '<gray>Expires in: <white>%invite_seconds%s</white></gray>'
+    - ''
+    - '<green>Left-click: accept</green>'
+    - '<red>Right-click: deny</red>'
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+
+  previous:
+    slot: 48
+    material: ARROW
+    name: '<yellow>Previous Page</yellow>'
+    action: PAGE_PREVIOUS
+
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:noclan_home
+
+  next:
+    slot: 50
+    material: ARROW
+    name: '<yellow>Next Page</yellow>'
+    action: PAGE_NEXT

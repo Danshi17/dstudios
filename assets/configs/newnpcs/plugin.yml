@@ -1,0 +1,68 @@
+name: newNPCS
+version: 1.0.0
+main: github.dstudio.newNPCS.NewNPCS
+api-version: '1.13'
+author: dStudio
+description: NPC system for Paper 1.18.2+ with newResources 3D model support.
+depend:
+  - newResources
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  npc:
+    aliases:
+      - newnpcs
+      - npcs
+    description: Main command for newNPCS.
+    usage: /npc help
+
+permissions:
+  newnpcs.admin:
+    default: op
+  newnpcs.command.create:
+    default: op
+  newnpcs.command.copy:
+    default: op
+  newnpcs.command.remove:
+    default: op
+  newnpcs.command.list:
+    default: op
+  newnpcs.command.info:
+    default: op
+  newnpcs.command.type:
+    default: op
+  newnpcs.command.displayname:
+    default: op
+  newnpcs.command.move:
+    default: op
+  newnpcs.command.rotate:
+    default: op
+  newnpcs.command.teleport:
+    default: op
+  newnpcs.command.look:
+    default: op
+  newnpcs.command.glowing:
+    default: op
+  newnpcs.command.collidable:
+    default: op
+  newnpcs.command.ai:
+    default: op
+  newnpcs.command.gravity:
+    default: op
+  newnpcs.command.silent:
+    default: op
+  newnpcs.command.model:
+    default: op
+  newnpcs.command.visibility:
+    default: op
+  newnpcs.command.equipment:
+    default: op
+  newnpcs.command.action:
+    default: op
+  newnpcs.command.respawn:
+    default: op
+  newnpcs.command.save:
+    default: op
+  newnpcs.command.reload:
+    default: op

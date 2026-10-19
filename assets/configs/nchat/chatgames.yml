@@ -1,0 +1,61 @@
+settings:
+  enabled: false
+  # (Ej: 300 = 5 minutos)
+  interval: 10
+  time-to-answer: 30
+  prefix: "<gradient:#00FFAA:#00AAFF><bold>ChatGames</bold></gradient> <dark_gray>»</dark_gray> "
+
+# Palabras para los juegos de 'Unscramble' y 'Type'
+word-list:
+  - "minecraft"
+  - "diamante"
+  - "borkland"
+  - "aventura"
+  - "creeper"
+  - "elytra"
+  - "netherite"
+
+rewards:
+  - "eco give %player% 100;100"   # 100% de probabilidad (Siempre se da)
+  - "xp give %player% 50;50"      # 50% de probabilidad (Mitad de las veces)
+  - "give %player% diamond 1;10"  # 10% de probabilidad (Premio raro)
+
+messages:
+  # --- JUEGO DE MATEMÁTICAS ---
+  math:
+    start:
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+      - " <yellow>⚡</yellow> <bold><gradient:red:gold>JUEGO DE MATEMÁTICAS</gradient></bold>"
+      - ""
+      - " <gray>Resuelve: <white><bold>%expression%</bold></white>"
+      - " <gray>¡El primero en escribir el resultado gana!</gray>"
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+
+  # --- JUEGO DE DESCIFRAR (UNSCRAMBLE) ---
+  unscramble:
+    start:
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+      - " <aqua>⚡</aqua> <bold><gradient:blue:aqua>DESCIFRA LA PALABRA</gradient></bold>"
+      - ""
+      - " <gray>Palabra: <white><bold>%scrambled%</bold></white>"
+      - " <gray>¡Ordena las letras rápidamente!</gray>"
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+
+  # --- JUEGO DE VELOCIDAD (TYPE) ---
+  type:
+    start:
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+      # CORREGIDO: se cambió 'line' por 'lime' para que el color funcione
+      - " <green>⚡</green> <bold><gradient:blue:aqua>VELOCIDAD</gradient></bold>"
+      - ""
+      - " <gray>Escribe: <white><bold>%word%</bold></white>"
+      - " <gray>¡Sé el más rápido en copiar la palabra!</gray>"
+      - "<gray><strikethrough>---------------------------------</strikethrough>"
+
+  # --- MENSAJES GLOBALES ---
+  winner:
+    - " <green>✔</green> <white>%player_name%</white> <gray>ganó en <yellow>%time%s</yellow>."
+    - " <gray>Respuesta: <white>%answer%</white>"
+
+  expired:
+    - "<red>⏰ ¡Nadie respondió a tiempo! La respuesta era: <white>%answer%</white>"

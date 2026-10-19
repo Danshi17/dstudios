@@ -1,0 +1,131 @@
+settings:
+  default-core: ''
+  allow-simultaneous-events: true
+  stats-save-seconds: 60
+
+worldguard:
+  enabled: true
+  flag: newdtc-core
+  default-allow: true
+
+# Compatibilidad opcional con configuraciones antiguas de rewards.
+# Si un core no tiene comandos en su archivo, también se leen estas rutas globales:
+# rewards_dtc_winner_1:
+#   - 'crate key give %winner_1% epic 3'
+# rewards_dtc_winner_2:
+#   - 'crate key give %winner_2% epic 1'
+# rewards_dtc_winner_3:
+#   - 'crate key give %winner_3% rare 4'
+
+dtc-scoreboard:
+  enabled: true
+  title: '&#ff5555&l⚔ DTC ACTIVO ⚔'
+  lines:
+    - ''
+    - '&f%core_displayname%'
+    - '&7Estado: %status%'
+    - '&7Vida: &c%health%&7/&c%max_health% &8(&f%health_percent%%&8)'
+    - '&7Tiempo: &b%time%'
+    - ''
+    - '&#ffaa00&lTOP DTC'
+    - '&e#1 &f%top_1_name% &8- &e%top_1_points%'
+    - '&e#2 &f%top_2_name% &8- &e%top_2_points%'
+    - '&e#3 &f%top_3_name% &8- &e%top_3_points%'
+    - ''
+
+wand:
+  material: BLAZE_ROD
+  name: '&c&lDTC WAND'
+  lore:
+    - '&7Click izquierdo o derecho sobre un bloque'
+    - '&7para seleccionar la ubicación del core.'
+    - ''
+    - '&fDespués usa: &c/dtc create <id> [displayname]'
+
+messages:
+  prefix: '&8[&cNewDTC&8] '
+
+  no-permission: '%prefix%&cNo tienes permiso.'
+  players-only: '%prefix%&cEste comando solo puede usarse como jugador.'
+  unknown-command: '%prefix%&cSubcomando desconocido. Usa &f/dtc help&c.'
+  reload: '%prefix%&aConfiguración y cores recargados.'
+  worldguard-deny: '%prefix%&cLa flag &fnewdtc-core &cno permite dañar este core en esta región.'
+
+  wand-given: '%prefix%&aRecibiste la wand de DTC.'
+  wand-selected: '%prefix%&aCore seleccionado en &f%world% %x% %y% %z%&a.'
+  no-wand-selection: '%prefix%&cPrimero selecciona un bloque con &f/dtc wand&c.'
+
+  usage-create: '%prefix%&eUso: &f/dtc create <id> [displayname]'
+  usage-delete: '%prefix%&eUso: &f/dtc delete <id>'
+  usage-start: '%prefix%&eUso: &f/dtc start <id>'
+  usage-stop: '%prefix%&eUso: &f/dtc stop <id>'
+  usage-info: '%prefix%&eUso: &f/dtc info <id>'
+  usage-stats: '%prefix%&eUso: &f/dtc stats <player>'
+
+  core-created: '%prefix%&aCore &f%core% &acreado.'
+  core-set: '%prefix%&aUbicación del core &f%core% &aactualizada.'
+  core-create-failed: '%prefix%&cNo se pudo crear o actualizar el core &f%core%&c.'
+  core-deleted: '%prefix%&aCore &f%core% &aeliminado.'
+  core-not-found: '%prefix%&cNo existe el core &f%core%&c.'
+  core-starting: '%prefix%&eCore &f%core% &ese prepara para iniciar en &f%seconds%s&e.'
+  core-started: '%prefix%&aCore &f%core% &ainiciado.'
+  core-start-failed: '%prefix%&cNo se pudo iniciar &f%core%&c.'
+  core-stopped: '%prefix%&aCore &f%core% &adetenido.'
+  core-stop-failed: '%prefix%&cNo se pudo detener &f%core%&c.'
+
+  list-header: '&c&lNEW DTC &8- &fCores cargados:'
+  list-entry: '&8- &f%core% &8| %status% &8| &f%health%/%max_health%'
+  stats: '%prefix%&f%player% &7tiene &c%total_damage% &7de daño total a cores.'
+
+  info-lines:
+    - ''
+    - '&c&lDTC INFO &8- &f%core%'
+    - '&7Display: &f%displayname%'
+    - '&7Estado: %status%'
+    - '&7Ubicación: &f%world% %x% %y% %z%'
+    - '&7Vida: &f%health%/%max_health%'
+    - '&7Tiempo restante: &f%time%'
+    - ''
+
+  help:
+    - ''
+    - '&c&lNewDTC &8- &fComandos'
+    - '&c/dtc wand &8- &7Obtiene la wand.'
+    - '&c/dtc create <id> [displayname] &8- &7Crea un core.'
+    - '&c/dtc setcore <id> [displayname] &8- &7Mueve o crea un core.'
+    - '&c/dtc delete <id> &8- &7Elimina un core.'
+    - '&c/dtc start <id> &8- &7Inicia un evento.'
+    - '&c/dtc stop <id> &8- &7Detiene un evento.'
+    - '&c/dtc list &8- &7Lista los cores.'
+    - '&c/dtc info <id> &8- &7Muestra información.'
+    - '&c/dtc stats [player] &8- &7Muestra daño total.'
+    - '&c/dtc top &8- &7Abre el top de cores ganados.'
+    - '&c/dtcsb [on|off] &8- &7Activa o desactiva tu scoreboard del DTC.'
+    - '&c/dtc editor [plugin|core] &8- &7Abre el editor in-game.'
+    - '&c/dtc reload &8- &7Recarga todo.'
+    - ''
+
+leaderboard:
+  title: '&c&lTop DTC'
+  rows: 6
+
+  slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+
+  head:
+    name: '&e#%position% &f%player%'
+    lore:
+      - ''
+      - '&7Cores ganados: &c%wins%'
+
+  filler:
+    enabled: true
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+
+  close-button:
+    enabled: true
+    slot: 49
+    material: BARRIER
+    name: '&c&lCerrar'
+    lore:
+      - '&7Click para cerrar el menú.'

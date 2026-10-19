@@ -1,0 +1,18 @@
+settings:
+  # Activa mensajes de debuggeo en el chat para admins (permiso: lootboxes.admin)
+  debug: false
+
+messages:
+  prefix: "<gradient:#ff5e62:#ff9966>Lootboxes</gradient> <dark_gray>» <reset>"
+
+  no-permission: "<red>No tienes permisos para usar este comando."
+  player-only: "<red>Este comando solo puede ser ejecutado por un jugador."
+  reload-success: "<green>Archivos recargados correctamente."
+  lootbox-not-found: "<red>La lootbox <yellow>%id%</yellow> no existe."
+  pouch-not-found: "<red>El pouch <yellow>%id%</yellow> no existe."
+  pouch-given: "<green>Has recibido el pouch <yellow>%pouch%</yellow> (x%amount%)."
+  lootbox-given: "<green>Has recibido la lootbox <yellow>%lootbox%</yellow> (x%amount%)."
+  reward-added: "<green>Recompensa añadida a la lootbox <yellow>%lootbox%</yellow> con %chance%% de probabilidad."
+  reward-deleted: "<green>Recompensa eliminada de la lootbox."
+
+  lootbox-win: "<gray>¡Has abierto una lootbox y recibiste: %item% <gray>(%rarity%)!"

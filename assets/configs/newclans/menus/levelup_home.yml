@@ -1,0 +1,41 @@
+id: levelup_home
+
+title: '<dark_gray>Clan Level <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  status:
+    slot: 13
+    material: EXPERIENCE_BOTTLE
+    name: '<green>Level %clan_level%</green>'
+    lore:
+      - '<gray>Maximum: <white>%clan_max_level%</white></gray>'
+      - '<gray>Points: <white>%clan_points%</white></gray>'
+      - '<gray>Next requirement: <white>%clan_next_level_points%</white></gray>'
+      - '<gray>Patent: <white>%clan_patent%</white></gray>'
+
+  upgrade:
+    slot: 21
+    material: EMERALD
+    name: '<green>Upgrade Clan</green>'
+    lore:
+      - '<gray>Attempt to advance to the next level.</gray>'
+    action: OPEN:levelup_confirm
+
+  rewards:
+    slot: 23
+    material: CHEST
+    name: '<aqua>Level Rewards</aqua>'
+    action: OPEN:levelup_rewards
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

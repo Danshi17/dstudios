@@ -1,0 +1,60 @@
+gui:
+  title: "&8&nVelocidad de Vuelo"
+  size: 27
+
+  filler:
+    enabled: true
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+
+  items:
+
+    decrease:
+      slot: 11
+      material: COAL_BLOCK
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTM1ZTRlMjZlYWZjMTFiNTJjMTE2NjhlMWQ2NjM0ZTdkMWQwZDIxYzQxMWNiMDg1ZjkzOTQyNjhlYjRjZGZiYSJ9fX0="
+      amount: 1
+      dynamic-amount: false
+      name: "&c&lDisminuir Velocidad"
+      lore:
+        - "&7Haz clic para bajar &c1 nivel&7."
+        - ""
+        - "&7Nivel actual: &e%level%&7/&e%max%"
+      action: decrease
+
+    display:
+      slot: 13
+      material: FEATHER
+      amount: 1
+      dynamic-amount: true
+      name: "&f&lVelocidad de Vuelo"
+      lore:
+        - "&7Tu nivel actual de velocidad es:"
+        - "&b%level%&7/&b%max%"
+        - ""
+        - "&7La cantidad de este item"
+        - "&7representa tu nivel actual."
+      action: none
+
+    increase:
+      slot: 15
+      material: COAL_BLOCK
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWEyZDg5MWM2YWU5ZjZiYWEwNDBkNzM2YWI4NGQ0ODM0NGJiNmI3MGQ3ZjFhMjgwZGQxMmNiYWM0ZDc3NyJ9fX0="
+      amount: 1
+      dynamic-amount: false
+      name: "&a&lAumentar Velocidad"
+      lore:
+        - "&7Haz clic para subir &a1 nivel&7."
+        - ""
+        - "&7Nivel actual: &e%level%&7/&e%max%"
+      action: increase
+
+    close:
+      slot: 26
+      material: BARRIER
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmViNTg4YjIxYTZmOThhZDFmZjRlMDg1YzU1MmRjYjA1MGVmYzljYWI0MjdmNDYwNDhmMThmYzgwMzQ3NWY3In19fQ=="
+      amount: 1
+      dynamic-amount: false
+      name: "&c&lCerrar"
+      lore: []
+      action: close

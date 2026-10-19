@@ -1,0 +1,6 @@
+title: '<dark_gray>Clan Chest <gray>•</gray> <white>Page %page%/%pages%</white></dark_gray>'
+max-pages: 6
+
+page-price:
+  base: 5000.0
+  multiplier: 1.5

@@ -1,0 +1,94 @@
+name: SpawnSystem
+version: '${version}'
+
+main: github.dstudio.spawnSystem.SpawnSystem
+api-version: '1.18'
+load: POSTWORLD
+commands:
+  spawn:
+    description: Teletransporta al jugador al spawn.
+    usage: /spawn
+  setspawn:
+    description: Establece la ubicacion del spawn.
+    usage: /setspawn
+  spawnsystem:
+    description: Comandos administrativos de SpawnSystem.
+    usage: /spawnsystem reload
+    aliases: [ss, spsys]
+  sethome:
+    description: Establece un home con el nombre dado.
+    usage: /sethome <nombre>
+  home:
+    description: Teletransporta al jugador a un home suyo.
+    usage: /home <nombre>
+  homes:
+    description: Lista los homes del jugador.
+    usage: /homes list
+  dia:
+    description: Cambia el tiempo del mundo a dia.
+    usage: /dia
+  tarde:
+    description: Cambia el tiempo del mundo a tarde.
+    usage: /tarde
+  noche:
+    description: Cambia el tiempo del mundo a noche.
+    usage: /noche
+  gm0:
+    description: Cambia tu modo de juego a Survival.
+    usage: /gm0
+  gm1:
+    description: Cambia tu modo de juego a Creative.
+    usage: /gm1
+  gm3:
+    description: Cambia tu modo de juego a Spectator.
+    usage: /gm3
+  fly:
+    description: Activa o desactiva el vuelo (survival/adventure).
+    usage: /fly
+  flyspeed:
+    description: Abre el menu para ajustar tu velocidad de vuelo.
+    usage: /flyspeed
+
+permissions:
+  spawnsystem.spawn:
+    description: Permite usar /spawn
+    default: true
+  spawnsystem.setspawn:
+    description: Permite usar /setspawn
+    default: op
+  spawnsystem.reload:
+    description: Permite recargar la configuracion
+    default: op
+  spawnsystem.sethome:
+    description: Permite usar /sethome
+    default: true
+  spawnsystem.home:
+    description: Permite usar /home
+    default: true
+  spawnsystem.homes.list:
+    description: Permite usar /homes list
+    default: true
+  spawnsystem.time.day:
+    description: Permite usar /dia
+    default: op
+  spawnsystem.time.afternoon:
+    description: Permite usar /tarde
+    default: op
+  spawnsystem.time.night:
+    description: Permite usar /noche
+    default: op
+  spawnsystem.gamemode.survival:
+    description: Permite usar /gm0
+    default: op
+  spawnsystem.gamemode.creative:
+    description: Permite usar /gm1
+    default: op
+  spawnsystem.gamemode.spectator:
+    description: Permite usar /gm3
+    default: op
+  spawnsystem.fly:
+    description: Permite usar /fly
+    default: op
+  spawnsystem.flyspeed:
+    description: Permite usar /flyspeed
+    default: op

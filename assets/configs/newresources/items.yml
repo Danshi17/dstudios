@@ -1,0 +1,11 @@
+items:
+  example_gem:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&#65E6FF&lExample Gem"
+    lore:
+      - "&7Item custom de ejemplo."
+    texture: "items/example_gem.png"
+    glow: true
+    unbreakable: false

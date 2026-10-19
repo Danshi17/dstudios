@@ -1,0 +1,20 @@
+name: PrisonBattlePass
+version: '${version}'
+
+main: me.danshi.prisonBattlePass.PrisonBattlePass
+api-version: '1.13'
+load: POSTWORLD
+softdepend: [PlaceholderAPI, HeadDatabase, X-Prison, PinnaPrison]
+commands:
+  bp:
+    description: Battle Pass main command
+    aliases: [battlepass, pass]
+    usage: /bp
+
+permissions:
+  prisonbattlepass.admin:
+    description: Access to admin commands
+    default: op
+  prisonbattlepass.use:
+    description: Use the Battle Pass
+    default: true

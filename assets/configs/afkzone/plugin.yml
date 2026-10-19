@@ -1,0 +1,21 @@
+name: AfkZone
+version: '${project.version}'
+
+main: me.danshi.afkZone.AfkZone
+api-version: '1.13'
+softdepend:
+  - WorldGuard
+  - PlaceholderAPI
+commands:
+  afkzone:
+    description: Comando principal de AfkZone
+    aliases:
+      - az
+      - afkz
+    usage: /afkzone
+    permission: afkzone.admin
+
+permissions:
+  afkzone.admin:
+    description: Permite administrar AfkZone y usar el editor ingame.
+    default: op

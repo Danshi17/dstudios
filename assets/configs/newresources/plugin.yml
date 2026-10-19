@@ -1,0 +1,34 @@
+name: newResources
+version: 1.0.0
+main: github.dstudio.newResources.NewResources
+api-version: '1.18'
+author: dStudio
+description: Resource-pack manager and custom assets framework for Paper 1.18.2+
+softdepend:
+  - ResourcePackManager
+  - PlaceholderAPI
+  - ExcellentCrates
+commands:
+  newresources:
+    aliases: [nr, nresources]
+    description: Main command for newResources.
+    usage: /newresources help
+  nreditor:
+    aliases: [nrmenu, menueditor]
+    description: In-game visual menu editor.
+    usage: /nreditor [menu|create <id>]
+permissions:
+  newresources.admin:
+    default: op
+  newresources.give:
+    default: op
+  newresources.menu:
+    default: true
+  newresources.place:
+    default: true
+  newresources.break:
+    default: true
+  newresources.pack:
+    default: op
+  newresources.editor:
+    default: op

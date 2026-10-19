@@ -1,0 +1,15 @@
+settings:
+  look-update-ticks: 2
+  visibility-update-ticks: 20
+  interaction-cooldown-ms: 500
+
+defaults:
+  type: VILLAGER
+
+models:
+  newresources-integration: true
+
+messages:
+  prefix: "&8[&#ff73e6newNPCS&8] &r"
+  no-permission: "&cNo tienes permiso."
+  reload: "&aConfiguración y NPCs recargados."

@@ -1,0 +1,208 @@
+enabled: true
+
+prefix: "<gradient:#FFAA00:#FF5555><bold>ADIVINAR</bold></gradient> <dark_gray>»</dark_gray> "
+
+# Premio: se elige un monto aleatorio entre min-amount y max-amount.
+# Placeholders: {player} {amount} {amount_formatted} {uuid}
+max-amount: 500000
+min-amount: 100
+commands:
+  - "eco give {player} {amount}"
+
+game:
+  # Segundos que dura el evento
+  duration: 60
+  # Tipos que pueden salir al azar: NUMBER, WORD
+  types:
+    - NUMBER
+    - WORD
+  # Segundos entre intentos de un mismo jugador. 0 = sin espera
+  guess-cooldown: 1.0
+  # Permiso para participar. Vacío ("") = cualquier jugador puede participar
+  # Ejemplo: "nchat.adivinar" para limitarlo a quienes tengan ese permiso
+  permission: ""
+  # Permite escribir la respuesta directo en el chat, sin usar /adivinar
+  # NUMBER: cualquier mensaje que sea solo un número cuenta como intento (se oculta del chat)
+  # WORD: solo se oculta el mensaje que acierta la palabra, lo demás se ve normal
+  # /adivinar sigue funcionando igual
+  chat-guess:
+    enabled: true
+  number:
+    min: 1
+    max: 1000
+    # Dice si el número secreto es mayor o menor
+    hints: true
+    # true: un número fuera del rango da pista de mayor/menor en vez de error
+    # false: un número fuera del rango muestra el mensaje out-of-range
+    allow-out-of-range: true
+  word:
+    # Muestra la primera letra en la pista
+    reveal-first-letter: true
+    no-clue: "Sin pista"
+    # Formato: "palabra" o "palabra;pista"
+    entries:
+      - "diamante;Mineral muy valioso"
+      - "creeper;Explota si te acercas"
+      - "netherite;Más fuerte que el diamante"
+      - "elytra;Te permite volar"
+      - "esmeralda;Moneda de los aldeanos"
+      - "espada;Arma básica"
+      - "pico;Herramienta para minar"
+      - "aldeano;Comercia contigo"
+      - "enderman;Se teletransporta"
+      - "pepita;Pequeño trozo de metal"
+
+schedule:
+  # Activa los horarios automáticos
+  enabled: true
+  # SYSTEM usa la zona del servidor. Ejemplos: America/Guatemala, America/Guayaquil
+  timezone: "SYSTEM"
+  # ALL: se lanza en todos los horarios de la lista
+  # RANDOM: cada día se eligen al azar random-count horarios de la lista
+  mode: RANDOM
+  random-count: 3
+  # Jugadores mínimos conectados para lanzar el evento
+  min-players: 1
+  # Formato 24h HH:mm
+  times:
+    - "08:00"
+    - "10:00"
+    - "12:00"
+    - "14:00"
+    - "16:00"
+    - "18:00"
+    - "20:00"
+    - "22:00"
+
+messages:
+  # Placeholders: {prefix} {time} {min} {max} {range}
+  number:
+    start:
+      - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+      - " <gold>⚡</gold> <bold><gradient:#FFAA00:#FF5555>EVENTO: ADIVINA EL NÚMERO</gradient></bold>"
+      - ""
+      - " <gray>Estoy pensando en un número entre <yellow>{min}</yellow> y <yellow>{max}</yellow>."
+      - " <gray>¡Escríbelo directo en el <white>chat</white> para intentarlo!"
+      - " <gray>Tienes <yellow>{time}s</yellow> y el premio es <green>dinero</green>."
+      - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+  # Placeholders: {prefix} {time} {hint} {clue} {length}
+  word:
+    start:
+      - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+      - " <gold>⚡</gold> <bold><gradient:#FFAA00:#FF5555>EVENTO: ADIVINA LA PALABRA</gradient></bold>"
+      - ""
+      - " <gray>Palabra: <white><bold>{hint}</bold></white> <dark_gray>(<yellow>{length}</yellow> letras)</dark_gray>"
+      - " <gray>Pista: <aqua>{clue}</aqua>"
+      - " <gray>¡Escríbela directo en el <white>chat</white> para intentarlo!"
+      - " <gray>Tienes <yellow>{time}s</yellow> y el premio es <green>dinero</green>."
+      - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  # Placeholders: {prefix} {player} {amount} {amount_formatted} {money} {answer} {time} {attempts}
+  winner:
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+    - " <green>✔</green> <white>{player}</white> <gray>adivinó <gold>{answer}</gold> en <yellow>{time}s</yellow>."
+    - " <gray>Premio: <green>{money}</green> <dark_gray>({attempts} intentos en total)</dark_gray>"
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  # Placeholders: {prefix} {answer} {attempts}
+  timeout:
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+    - " <red>⏰</red> <gray>¡Se acabó el tiempo! Nadie adivinó la respuesta."
+    - " <gray>La respuesta era: <white><bold>{answer}</bold></white> <dark_gray>({attempts} intentos)</dark_gray>"
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  stopped:
+    - "{prefix}<red>El evento fue cancelado por un administrador.</red>"
+
+  no-active: "{prefix}<red>No hay ningún evento de adivinar activo ahora mismo.</red>"
+  usage: "{prefix}<red>Escribe tu respuesta en el chat o usa /adivinar.</red>"
+  guess-cooldown: "{prefix}<red>Espera <yellow>{seconds}s</yellow> para volver a intentar.</red>"
+  invalid-number: "{prefix}<red>Este evento es de números. Escribe un número válido.</red>"
+  out-of-range: "{prefix}<red>El número debe estar entre <yellow>{min}</yellow> y <yellow>{max}</yellow>.</red>"
+  too-low: "{prefix}<yellow>{guess}</yellow> <gray>es muy <red>bajo</red>. Prueba con un número <green>mayor</green>."
+  too-high: "{prefix}<yellow>{guess}</yellow> <gray>es muy <red>alto</red>. Prueba con un número <green>menor</green>."
+  wrong: "{prefix}<yellow>{guess}</yellow> <gray>no es el número. ¡Sigue intentando!"
+  wrong-word: "{prefix}<yellow>{guess}</yellow> <gray>no es la palabra. ¡Sigue intentando!"
+
+# Efectos por etapa: start (inicio), win (alguien gana), timeout (se acaba el tiempo)
+# target: ALL (todos los jugadores) o PLAYER (solo el ganador)
+# Las partículas aparecen sobre el ganador en win y sobre cada jugador en start/timeout
+effects:
+  start:
+    target: ALL
+    title:
+      enabled: true
+      text: "<gradient:#FFAA00:#FF5555><bold>ADIVINAR</bold></gradient>"
+      fade-in: 10
+      stay: 60
+      fade-out: 20
+    subtitle:
+      enabled: true
+      text: "<gray>Escribe tu respuesta en el <white>chat</white>"
+    actionbar:
+      enabled: true
+      text: "<gold>⚡ <white>Evento Adivinar activo <gray>(<yellow>{time}s</yellow>)"
+    sound:
+      enabled: true
+      type: "entity.experience_orb.pickup"
+      volume: 1.0
+      pitch: 1.2
+    particle:
+      enabled: true
+      type: "villager_happy"
+      count: 15
+      offset: 0.6
+      height: 1.0
+      speed: 0.05
+  win:
+    target: ALL
+    title:
+      enabled: true
+      text: "<gradient:#00FF88:#00AAFF><bold>¡{player}!</bold></gradient>"
+      fade-in: 10
+      stay: 70
+      fade-out: 20
+    subtitle:
+      enabled: true
+      text: "<gray>Adivinó <gold>{answer}</gold> y ganó <green>{money}</green>"
+    actionbar:
+      enabled: true
+      text: "<green>✔ <white>{player} <gray>ganó <green>{money}"
+    sound:
+      enabled: true
+      type: "entity.player.levelup"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: true
+      type: "totem"
+      count: 60
+      offset: 0.7
+      height: 1.0
+      speed: 0.3
+  timeout:
+    target: ALL
+    title:
+      enabled: true
+      text: "<red><bold>TIEMPO AGOTADO</bold></red>"
+      fade-in: 10
+      stay: 50
+      fade-out: 20
+    subtitle:
+      enabled: true
+      text: "<gray>La respuesta era <white>{answer}</white>"
+    actionbar:
+      enabled: true
+      text: "<red>⏰ Nadie adivinó la respuesta"
+    sound:
+      enabled: true
+      type: "entity.villager.no"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: false
+      type: "smoke_normal"
+      count: 15
+      offset: 0.5
+      height: 1.0
+      speed: 0.02

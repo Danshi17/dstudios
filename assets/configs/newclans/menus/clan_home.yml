@@ -1,0 +1,196 @@
+id: clan_home
+title: '<dark_gray>Clan <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 6
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+
+  clan-info:
+    slot: 13
+    material: PLAYER_HEAD
+    head-owner: '%clan_leader_uuid%'
+    name: '<green>%clan_name%</green> <dark_gray>[</dark_gray>%clan_tag%<dark_gray>]</dark_gray>'
+    lore:
+      - '<gray>Leader: <white>%clan_leader%</white></gray>'
+      - '<gray>Patent: <white>%clan_patent%</white></gray>'
+      - '<gray>Level: <white>%clan_level%/%clan_max_level%</white></gray>'
+      - '<gray>Points: <white>%clan_points%</white></gray>'
+      - '<gray>Members: <white>%clan_members%/%clan_member_limit%</white></gray>'
+      - ''
+      - '<yellow>Click to view clan stats.</yellow>'
+    action: OPEN:clan_stats
+
+  members:
+    slot: 19
+    material: PLAYER_HEAD
+    viewer-head: true
+    name: '<green>Members</green>'
+    lore:
+      - '<gray>Online: <white>%clan_online%</white></gray>'
+      - '<gray>Total: <white>%clan_members%</white></gray>'
+      - ''
+      - '<yellow>Click to manage.</yellow>'
+    action: OPEN:members
+
+  homes:
+    slot: 20
+    material: ENDER_PEARL
+    name: '<green>Clan Homes</green>'
+    lore:
+      - '<gray>Homes: <white>%clan_homes%/%clan_home_limit%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_homes
+
+  allies:
+    slot: 21
+    material: LIME_BANNER
+    name: '<green>Allies</green>'
+    lore:
+      - '<gray>Allies: <white>%clan_allies%/%clan_ally_limit%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:ally
+
+  rivals:
+    slot: 22
+    material: RED_BANNER
+    name: '<red>Rivals</red>'
+    lore:
+      - '<gray>Rivals: <white>%clan_rivals%/%clan_rival_limit%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:rival
+
+  mail:
+    slot: 23
+    material: PAPER
+    name: '<yellow>Clan Mail</yellow>'
+    lore:
+      - '<gray>Unread: <white>%clan_mail_unread%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_mail
+
+  chest:
+    slot: 24
+    material: CHEST
+    name: '<gold>Clan Chest</gold>'
+    lore:
+      - '<gray>Pages: <white>%clan_chest_pages%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_chest
+
+  roles:
+    slot: 28
+    material: NAME_TAG
+    name: '<gold>Roles & Permissions</gold>'
+    lore:
+      - '<gray>Manage the clan hierarchy.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_roles
+
+  logger:
+    slot: 29
+    material: BOOK
+    name: '<aqua>Clan Logger</aqua>'
+    lore:
+      - '<gray>Review clan activity.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_logger
+
+  quests:
+    slot: 30
+    material: KNOWLEDGE_BOOK
+    name: '<light_purple>Clan Quests</light_purple>'
+    lore:
+      - '<gray>Complete objectives for rewards.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_quests
+
+  rewards:
+    slot: 31
+    material: ENDER_CHEST
+    name: '<aqua>Level Rewards</aqua>'
+    lore:
+      - '<gray>Claim rewards unlocked by levels.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_rewards
+
+  banner:
+    slot: 32
+    material: WHITE_BANNER
+    name: '<yellow>Clan Banner</yellow>'
+    lore:
+      - '<gray>Customize the clan banner.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:banner_home
+
+  regroup:
+    slot: 33
+    material: COMPASS
+    name: '<green>Regroup</green>'
+    lore:
+      - '<gray>Call online members to your location.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:regroup
+
+  actions:
+    slot: 38
+    material: CRAFTING_TABLE
+    name: '<gold>Clan Actions</gold>'
+    lore:
+      - '<gray>Manage level, settings and clan actions.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_actions
+
+  top:
+    slot: 39
+    material: NETHER_STAR
+    name: '<aqua>Clan Top</aqua>'
+    lore:
+      - '<gray>Browse the global ranking.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_top
+
+  profile:
+    slot: 40
+    material: WRITABLE_BOOK
+    name: '<aqua>My Profile</aqua>'
+    lore:
+      - '<gray>Role: <white>%player_role%</white></gray>'
+      - '<gray>KDR: <white>%player_kdr%</white></gray>'
+      - '<gray>Souls: <white>%player_souls%</white></gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:player_profile
+
+  settings:
+    slot: 41
+    material: COMPARATOR
+    name: '<yellow>Settings</yellow>'
+    lore:
+      - '<gray>Friendly Fire: <white>%clan_ff%</white></gray>'
+      - '<gray>Open Join: <white>%clan_open_join%</white></gray>'
+      - ''
+      - '<yellow>Click to edit.</yellow>'
+    action: OPEN:clan_settings
+
+  close:
+    slot: 49
+    material: BARRIER
+    name: '<red>Close</red>'
+    action: CLOSE

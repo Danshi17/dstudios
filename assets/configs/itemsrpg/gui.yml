@@ -1,0 +1,1164 @@
+#
+# ██╗████████╗███████╗███╗   ███╗███████╗██████╗ ██████╗  ██████╗               ██████╗ ███████╗████████╗ █████╗
+# ██║╚══██╔══╝██╔════╝████╗ ████║██╔════╝██╔══██╗██╔══██╗██╔════╝               ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗
+# ██║   ██║   █████╗  ██╔████╔██║███████╗██████╔╝██████╔╝██║  ███╗    █████╗    ██████╔╝█████╗     ██║   ███████║
+# ██║   ██║   ██╔══╝  ██║╚██╔╝██║╚════██║██╔══██╗██╔═══╝ ██║   ██║    ╚════╝    ██╔══██╗██╔══╝     ██║   ██╔══██║
+# ██║   ██║   ███████╗██║ ╚═╝ ██║███████║██║  ██║██║     ╚██████╔╝              ██████╔╝███████╗   ██║   ██║  ██║
+# ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝               ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝
+item-list-gui:
+  title: "&8[&6&lItems RPG&8] &7Página &e%page%&7/&e%total_pages%"
+  rows: 6
+  fill:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  border-slots: [0,1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53]
+  item-start-slot: 9
+  item-end-slot: 44
+  prev-page:
+    slot: 45
+    material: "texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzc4ZWY4ZDEzYWU1M2FhNDMxNDNhMWZlNzU5YjVjNjIwNDEwNDZiMTc0NmI1MGZhNDUyZGYwZDUzNGM2YTNkIn19fQ=="
+    name: "&e&l◀ Página Anterior"
+    lore:
+      - "&7Ir a la página &e%page%"
+      - ""
+      - "&aClick para retroceder"
+  next-page:
+    slot: 53
+    material: "texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI0ZTM0ZDA0ZDNhNTY1ZjYxNjY4YzcwOTMwN2MzNTE5YTRmNzA2YTY5ZjBkZTIwZDJmMDNiZGJjMTdlOTIwNSJ9fX0="
+    name: "&e&lPágina Siguiente ▶"
+    lore:
+      - "&7Ir a la página &e%page%"
+      - ""
+      - "&aClick para avanzar"
+  close-button:
+    slot: 49
+    material: "BARRIER"
+    name: "&c&lCerrar"
+
+item-edit-gui:
+  main:
+    title: "&8[&6&lEditar&8] &e%id%"
+    size: 45
+    items:
+      name:
+        slot: 10
+        material: NAME_TAG
+        name: "&e&lNombre"
+      material:
+        slot: 11
+        material: ITEM_FRAME
+        name: "&e&lMaterial"
+      amount:
+        slot: 12
+        material: CHEST
+        name: "&e&lCantidad"
+      cooldown:
+        slot: 13
+        material: CLOCK
+        name: "&e&lCooldown"
+      cmd:
+        slot: 14
+        material: TRIPWIRE_HOOK
+        name: "&e&lCustom Model Data"
+      glowing:
+        slot: 19
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lGlowing"
+      hide-flags:
+        slot: 20
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lHide Flags"
+      unbreakable:
+        slot: 21
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lUnbreakable"
+      enabled:
+        slot: 22
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lHabilitado"
+      lore:
+        slot: 24
+        material: WRITABLE_BOOK
+        name: "&e&lLore"
+      enchants:
+        slot: 25
+        material: ENCHANTED_BOOK
+        name: "&e&lEncantamientos"
+      effects:
+        slot: 26
+        material: BREWING_STAND
+        name: "&e&lEfectos de Poción"
+      messages:
+        slot: 29
+        material: BOOK
+        name: "&e&lMensajes"
+      sounds:
+        slot: 30
+        material: NOTE_BLOCK
+        name: "&e&lSonidos"
+      particles:
+        slot: 31
+        material: FIREWORK_STAR
+        name: "&e&lPartículas"
+      use-effects:
+        slot: 32
+        material: POTION
+        name: "&e&lEfectos al Usar"
+      passive-effects:
+        slot: 33
+        material: GOLDEN_APPLE
+        name: "&e&lEfectos Pasivos"
+      backlist:
+        slot: 39
+        material: ARROW
+        name: "&c&lVolver a la lista"
+      save:
+        slot: 40
+        material: EMERALD
+        name: "&a&lGuardar y Cerrar"
+      # NUEVO: Botón de configuraciones avanzadas
+      advanced:
+        slot: 41
+        material: REDSTONE
+        name: "&c&l⚙ Configuraciones Avanzadas"
+
+  lore:
+    title: "&8[&6&lLore&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: PAPER
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Línea"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  enchants:
+    title: "&8[&6&lEnchants&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: ENCHANTED_BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Encantamiento"
+        lore:
+          - "&7Abre el selector de"
+          - "&7encantamientos disponibles"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  effects:
+    title: "&8[&6&lEfectos&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+        lore:
+          - "&7Abre el selector de"
+          - "&7efectos de poción"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  messages:
+    title: "&8[&6&lMensajes&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Mensaje"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  sounds:
+    title: "&8[&6&lSonidos&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+        lore:
+          - "&7Abre el selector de sonidos"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  particles:
+    title: "&8[&6&lPartículas&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+        lore:
+          - "&7Abre el selector de partículas"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  use-effects:
+    title: "&8[&6&lEfectos al Usar&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+        lore:
+          - "&7Abre el selector de efectos"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  passive-effects:
+    title: "&8[&6&lEfectos Pasivos&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+    items:
+      entry:
+        material: GOLDEN_APPLE
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto Pasivo"
+        lore:
+          - "&7Abre el selector de efectos"
+          - "&7(Solo para armaduras)"
+          - ""
+          - "&aClick para abrir"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  materials:
+    title: "&8[&6&lMateriales&8] &e%id%"
+    size: 54
+    fill:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,41,42,43,44,46,47,50,51,52]
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+        - ""
+        - "&8Explorando materiales"
+    back-button:
+      slot: 48
+      material: PAPER
+      name: "&c&l◀ Volver al Editor"
+      lore:
+        - "&7Regresa al menú principal"
+        - ""
+        - "&aClick para volver"
+
+  enchant-list:
+    title: "&8[&6&lSelector de Enchants&8]"
+    size: 54
+    fill:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44,46,47,50,51,52]
+    page-indicator:
+      slot: 49
+      material: ENCHANTED_BOOK
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+        - ""
+        - "&8Explorando encantamientos"
+    back-button:
+      slot: 48
+      material: ARROW
+      name: "&c&l◀ Volver a Encantamientos"
+      lore:
+        - "&7Regresa al menú de encantamientos"
+        - ""
+        - "&aClick para volver"
+
+  effect-list:
+    title: "&8[&6&lSelector de Efectos&8]"
+    size: 54
+    fill:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44,46,47,50,51,52]
+    page-indicator:
+      slot: 49
+      material: POTION
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+        - ""
+        - "&8Explorando efectos"
+    back-button:
+      slot: 48
+      material: ARROW
+      name: "&c&l◀ Volver a Efectos"
+      lore:
+        - "&7Regresa al menú de efectos"
+        - ""
+        - "&aClick para volver"
+
+  sound-list:
+    title: "&8[&6&lSelector de Sonidos&8]"
+    size: 54
+    fill:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44,46,47,50,51,52]
+    page-indicator:
+      slot: 49
+      material: NOTE_BLOCK
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+        - ""
+        - "&8Explorando sonidos"
+    back-button:
+      slot: 48
+      material: ARROW
+      name: "&c&l◀ Volver a Sonidos"
+      lore:
+        - "&7Regresa al menú de sonidos"
+        - ""
+        - "&aClick para volver"
+
+  particle-list:
+    title: "&8[&6&lSelector de Partículas&8]"
+    size: 54
+    fill:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44,46,47,50,51,52]
+    page-indicator:
+      slot: 49
+      material: FIREWORK_STAR
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+      lore:
+        - "&7Total: &e%total_items% %label%"
+        - ""
+        - "&8Explorando partículas"
+    back-button:
+      slot: 48
+      material: ARROW
+      name: "&c&l◀ Volver a Partículas"
+      lore:
+        - "&7Regresa al menú de partículas"
+        - ""
+        - "&aClick para volver"
+
+  advanced:
+    title: "&8[&6&lAvanzado&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver al Editor"
+
+  combat:
+    title: "&8[&6&lCombate&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+  # Sub-listas de combate
+  hit-effects:
+    title: "&8[&6&lOn-Hit Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  hit-self-effects:
+    title: "&8[&6&lOn-Hit Self Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  hit-sounds:
+    title: "&8[&6&lOn-Hit Sounds&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  hit-particles:
+    title: "&8[&6&lOn-Hit Particles&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  hit-messages:
+    title: "&8[&6&lOn-Hit Messages&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Mensaje"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  ability:
+    title: "&8[&6&lHabilidad&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+  ability-effects:
+    title: "&8[&6&lAbility Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  ability-self-effects:
+    title: "&8[&6&lAbility Self Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  ability-sounds:
+    title: "&8[&6&lAbility Sounds&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  ability-particles:
+    title: "&8[&6&lAbility Particles&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  ability-messages:
+    title: "&8[&6&lAbility Messages&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Mensaje"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  armor-config:
+    title: "&8[&6&lArmadura&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+  offhand-config:
+    title: "&8[&6&lOffhand&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+  equip-effects:
+    title: "&8[&6&lOn-Equip Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  equip-sounds:
+    title: "&8[&6&lOn-Equip Sounds&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  equip-particles:
+    title: "&8[&6&lOn-Equip Particles&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  equip-messages:
+    title: "&8[&6&lOn-Equip Messages&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Mensaje"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  unequip-effects:
+    title: "&8[&6&lOn-Unequip Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  unequip-sounds:
+    title: "&8[&6&lOn-Unequip Sounds&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  unequip-particles:
+    title: "&8[&6&lOn-Unequip Particles&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  unequip-messages:
+    title: "&8[&6&lOn-Unequip Messages&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: BOOK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Mensaje"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  mining:
+    title: "&8[&6&lMinería&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+  mine-effects:
+    title: "&8[&6&lOn-Mine Effects&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: POTION
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Efecto"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  mine-sounds:
+    title: "&8[&6&lOn-Mine Sounds&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: NOTE_BLOCK
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Sonido"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  mine-particles:
+    title: "&8[&6&lOn-Mine Particles&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: FIREWORK_STAR
+        name: "&e%value%"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Partícula"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todo"
+
+  special-blocks:
+    title: "&8[&6&lBloques Especiales&8] &e%id%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    page-indicator:
+      slot: 49
+      material: PAPER
+      name: "&fPágina &e%page% &f/ &e%total_pages%"
+    items:
+      entry:
+        material: DIAMOND_ORE
+        name: "&e%value%"
+      back:
+        slot: 48
+        material: ARROW
+        name: "&c&lVolver"
+
+
+  gun-config:
+    title: "&8[&6&lPistola&8] &e%id%"
+    size: 45
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&c&l◀ Volver a Avanzado"
+
+
+edit-feedback:
+  click-sound:
+    enabled: true
+    name: "UI_BUTTON_CLICK"
+    volume: 1.0
+    pitch: 1.0
+  enter-edit:
+    enabled: true
+    name: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.0
+  exit-edit:
+    enabled: true
+    name: "BLOCK_ANVIL_LAND"
+    volume: 1.0
+    pitch: 0.8
+  chat-input:
+    enabled: true
+    sound:
+      enabled: true
+      name: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      volume: 1.0
+      pitch: 1.2
+    title: "&6&l✎ EDITANDO ITEM"
+    subtitle: "&7%id%"
+    actionbar: "&aEscribe el valor en el chat &7('cancelar' para salir)"
+    title-times:
+      fade-in: 10
+      fade-out: 10

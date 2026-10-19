@@ -1,0 +1,34 @@
+debug: false
+
+actionbar-interval-ticks: 40
+
+invisibility:
+  hide-equipment: true
+
+region-potion-effects:
+  ambient: true
+  show-particles: false
+  show-icon: true
+
+# Flags er-command-on-entry / er-command-on-exit and their console variants
+# intentionally execute commands configured by the server administrator.
+security:
+  allow-command-flags: true
+  audit-command-flags: false
+
+armorstand-tools:
+  # Enables the er-armorstand-command-execute flag integration.
+  command-execute-integration: true
+
+  # Keeps ArmorStandTools' normal astools.ascmd.execute permission requirement.
+  require-ast-execute-permission: true
+
+  # PLAYER commands from ArmorStandTools are passed through PlayerCommandPreprocessEvent.
+  # This is required for DeluxeMenus menus using register_command: false (the default).
+  # Keep this behavior enabled; it also preserves normal registered commands.
+  deluxe-menus-unregistered-command-compatibility: true
+
+  # ArmorStandTools also has a GLOBAL WorldGuard bypass for AS commands. This is left untouched
+  # by default. Set true only if you want er-armorstand-command-execute to be the sole bypass.
+  # Even when true, ExtraRegions changes only the in-memory value and never edits AST's config.
+  force-disable-global-worldguard-bypass: false

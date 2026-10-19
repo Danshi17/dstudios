@@ -1,0 +1,977 @@
+
+#  ALMACENAMIENTO - YML | H2 | SQLITE | MYSQL | MONGODB
+storage:
+  type: SQLITE
+  auto-save-minutes: 2
+
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "rankup"
+    username: "root"
+    password: ""
+    use-ssl: false
+    pool-size: 10
+
+  mongodb:
+    uri: "mongodb://localhost:27017"
+    database: "rankup"
+    collection: "players"
+
+  sqlite:
+    file: "database.db"
+
+  h2:
+    file: "database"
+
+placeholder-settings:
+  progressbar:
+    symbol: "│"
+    length: 15
+    completed-color: "<green>"
+    not-completed-color: "<gray>"
+
+rankup-effects:
+  enabled: true
+  title:
+    enabled: true
+    text: "<gradient:#FFD700:#FFA500><bold>¡RANKUP!</bold></gradient>"
+    subtitle: "<gray>Ahora eres <white>%rank%"
+    fade-in: 10
+    stay: 60
+    fade-out: 10
+  actionbar:
+    enabled: true
+    text: "<green>✔ Has ascendido a <white>%rank%"
+  sound:
+    enabled: true
+    name: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.0
+  particles:
+    enabled: true
+    name: "TOTEM"
+    amount: 40
+    offset-x: 0.5
+    offset-y: 1.0
+    offset-z: 0.5
+    speed: 0.1
+
+sounds:
+  rankup-success: "ENTITY_PLAYER_LEVELUP"
+  rankup-locked: "ENTITY_BAT_TAKEOFF"
+  rankup-completed: "ENTITY_ITEM_BREAK"
+
+  prestige-success: "UI_TOAST_CHALLENGE_COMPLETE"
+  prestige-locked: "ENTITY_BAT_TAKEOFF"
+  prestige-maxed: "ENTITY_ITEM_BREAK"
+
+  rebirth-success: "UI_TOAST_CHALLENGE_COMPLETE"
+  rebirth-locked: "ENTITY_BAT_TAKEOFF"
+  rebirth-maxed: "ENTITY_ITEM_BREAK"
+
+messages:
+  requirements-header: "<red>❌ Te faltan los siguientes requerimientos:"
+  requirement-list-format: "&e-> &f%requirement%"
+
+  no-money: "<red>Faltan Fondos: <gray>Requieres <green>$%cost%"
+  no-xp: "<red>Falta Experiencia: <gray>Requieres <green>%cost% Niveles"
+  no-time: "<red>Falta Tiempo: <gray>Requieres <green>%cost% horas de juego."
+  no-mobs: "<red>Faltan Mobs: <gray>Requieres matar <green>%cost% mobs."
+  no-players: "<red>Faltan Kills: <gray>Requieres matar <green>%cost% jugadores."
+  no-items-entry: "<red>Faltan Items: <gray>%amount%x %item% <dark_gray>(Tienes: %current%)"
+  no-items: "<red>Faltan Items: <gray>Revisa los ítems requeridos."
+
+  already-owned: "<red>❌ ¡Ya posees este rango!"
+  click-locked: "<red>🔒 ¡Acceso denegado! Completa el rango anterior."
+
+  prestige-disabled: "<red>❌ El sistema de prestige está desactivado."
+  prestige-need-max-rank: "<red>❌ Debes alcanzar el rango máximo antes de prestigiar."
+  prestige-max-reached: "<red>❌ Ya alcanzaste el prestige máximo."
+  no-money-prestige: "<red>❌ Faltan Fondos: <gray>Requieres <green>$%cost% <gray>para prestigiar."
+  prestige-success: "<newline><gradient:#d900ff:#7b00ff><bold> PRESTIGE! </bold></gradient> <gray>» <white>%player_name% <gray>ha alcanzado %prestige_display%<newline>"
+  maxprestige-summary: "<gradient:#d900ff:#7b00ff>✦ Has ganado <white>%amount%</white> prestige(s)! Ahora eres %prestige_display%</gradient>"
+  maxprestige-none: "<red>❌ No puedes prestigiar en este momento."
+
+  rebirth-disabled: "<red>❌ El sistema de rebirth está desactivado."
+  rebirth-requirements: "<red>❌ Debes alcanzar el prestige máximo y el rango máximo para renacer."
+  rebirth-max-reached: "<red>❌ Ya alcanzaste el rebirth máximo."
+  no-money-rebirth: "<red>❌ Faltan Fondos: <gray>Requieres <green>$%cost% <gray>para renacer."
+  rebirth-success: "<newline><gradient:#ff0000:#550000><bold> REBIRTH! </bold></gradient> <gray>» <white>%player_name% <gray>ha renacido como %rebirth_display%<newline>"
+  maxrebirth-summary: "<gradient:#ff0000:#550000>✦ Has ganado <white>%amount%</white> rebirth(s)! Ahora eres %rebirth_display%</gradient>"
+  maxrebirth-none: "<red>❌ No puedes renacer en este momento."
+
+  maxrankup-summary: "<green>✔ Has subido <white>%amount%</white> rango(s)! Ahora eres %rank_display%"
+  maxrankup-none: "<red>❌ No puedes ascender de rango en este momento."
+
+  status-completed: "<green><bold>✔ COMPLETADO"
+  status-unlocked: "<gray>(Ya desbloqueado)"
+
+  rankup-success: "<newline><gradient:#FFD700:#FFA500><bold> RANKUP! </bold></gradient> <gray>» <white>%player_name% <gray>ha ascendido a %rank%<newline>"
+
+default-rank-display: "<gray>Vagabundo"
+
+locked-item:
+  use-original-icon: false
+  material: "base64:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRhMTUwOGQ0N2VkNzNiNWM1MTVlM2I5MzkyOGI3MjhlNGJjNjI3ODU2OWE3OWIzNzIzYWI2OTcyY2UwNTM1NyJ9fX0="
+  name: "<red>🔒 %rank_display%"
+  lore:
+    - ""
+    - "<gray>Estatus: <red>Bloqueado"
+    - "<gray>Requiere completar: <yellow>%req_rank%"
+    - ""
+    - "<red>No cumples los requisitos aún."
+
+completed-item:
+  use-original-icon: false
+  material: "base64:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM3ZWVmNDQ4NWJlMGE3MjNhNmE5MDkzOWFjYTE1ZmRlZjIzOWI4YTM5MjY1YzdjODgzNTk4ZDM2YWU1In19fQ=="
+  name: "<green>✔ %rank_display%"
+  lore:
+    - ""
+    - "<gray>Estatus: <green>Completado"
+    - "<gray>Ya reclamaste y posees los"
+    - "<gray>beneficios de este rango."
+    - ""
+    - "<dark_gray>Rango superado."
+
+prestige-settings:
+  enabled: true
+  mode: "MAX"
+  max-prestige: 10
+  base-cost: 50000000
+  cost-multiplier: 3.0
+  requires-max-rank: true
+  reset-rank-on-prestige: true
+  display-format: "Prestige %prestige%"
+  no-prestige-display: "<gray>Sin Prestige"
+  colors-prestiges:
+    - "&a"
+    - "&b"
+    - "&d"
+    - "<gradient:#ff0000:#0000ff>"
+    - "#FFAA00"
+  commands:
+    - "broadcast &d&l%player% &5ha alcanzado el %prestige_display%&5!"
+  manual-prestiges:
+    "1":
+      cost: 50000000
+    "2":
+      cost: 150000000
+    "3":
+      cost: 400000000
+  title:
+    enabled: true
+    text: "<gradient:#d900ff:#7b00ff><bold>¡PRESTIGE!</bold></gradient>"
+    subtitle: "<gray>Ahora eres %prestige_display%"
+    fade-in: 10
+    stay: 70
+    fade-out: 15
+  actionbar:
+    enabled: true
+    text: "<light_purple>✦ Has prestigiado! Ahora eres %prestige_display%"
+  sound:
+    enabled: true
+    name: "ENTITY_ENDER_DRAGON_GROWL"
+    volume: 1.0
+    pitch: 1.0
+  particles:
+    enabled: true
+    name: "DRAGON_BREATH"
+    amount: 60
+    offset-x: 0.7
+    offset-y: 1.2
+    offset-z: 0.7
+    speed: 0.15
+
+rebirth-settings:
+  enabled: true
+  mode: "MAX"
+  max-rebirth: 5
+  required-prestige: -1
+  base-cost: 5000000000
+  cost-multiplier: 4.0
+  display-format: "Rebirth %rebirth%"
+  no-rebirth-display: "<gray>Sin Rebirth"
+  colors-rebirths:
+    - "&c"
+    - "&4"
+    - "<gradient:#ff0000:#550000>"
+    - "<rainbow>"
+  commands:
+    - "broadcast &4&l%player% &cha RENACIDO! Ahora es %rebirth_display%&c"
+  manual-rebirths:
+    "1":
+      cost: 5000000000
+    "2":
+      cost: 20000000000
+  title:
+    enabled: true
+    text: "<gradient:#ff0000:#550000><bold>¡REBIRTH!</bold></gradient>"
+    subtitle: "<gray>Ahora eres %rebirth_display%"
+    fade-in: 10
+    stay: 80
+    fade-out: 15
+  actionbar:
+    enabled: true
+    text: "<red>☠ Has renacido! Ahora eres %rebirth_display%"
+  sound:
+    enabled: true
+    name: "ENTITY_WITHER_SPAWN"
+    volume: 1.0
+    pitch: 1.0
+  particles:
+    enabled: true
+    name: "FLAME"
+    amount: 80
+    offset-x: 0.8
+    offset-y: 1.3
+    offset-z: 0.8
+    speed: 0.2
+
+ranks:
+  carbon:
+    display-name: "<bold><black>Carbón</black></bold>"
+    icon:
+      material: "COAL"
+      name: "<gray>Tier I: <black>Carbón"
+      lore:
+        - "<gray>Comienza tu aventura."
+        - ""
+        - "<gray>Dinero: <green>$1,000"
+        - "<gray>Mobs: <red>10 Kills"
+        - "<gray>Items: <white>64 Madera de Roble"
+        - ""
+        - "<gray>Progreso: %newrankup_progressbar% <yellow>(%newrankup_percentage% %)"
+        - "<yellow>➤ Clic para ascender"
+    requirements:
+      money: 1000
+      mobs-killed: 10
+      items:
+        req1: { material: "OAK_LOG", amount: 64 }
+    commands:
+      - "eco give %player% 500"
+      - "broadcast &8[&7Carbon&8] &f%player% ha comenzado su viaje."
+
+  hierro:
+    display-name: "<bold><gradient:#d7d7d7:#ffffff>Hierro</gradient></bold>"
+    icon:
+      material: "IRON_INGOT"
+      name: "<gray>Tier II: <white>Hierro"
+      lore:
+        - "<gray>Forjando las primeras herramientas."
+        - ""
+        - "<gray>Dinero: <green>$2,500"
+        - "<gray>Mobs: <red>25 Kills"
+        - "<gray>Niveles XP: <green>5 Lvls"
+        - ""
+        - "<gray>Progreso: %newrankup_progressbar%"
+    requirements:
+      money: 2500
+      mobs-killed: 25
+      xp-levels: 5
+    commands:
+      - "give %player% iron_pickaxe 1"
+
+  oro:
+    display-name: "<bold><gradient:#fff700:#ffcc00>Oro</gradient></bold>"
+    icon:
+      material: "GOLD_INGOT"
+      name: "<gray>Tier III: <gold>Oro"
+      lore:
+        - "<gray>La riqueza empieza a fluir."
+        - ""
+        - "<gray>Dinero: <green>$5,000"
+        - "<gray>Mobs: <red>50 Kills"
+        - "<gray>Items: <white>32 Lingotes de Hierro"
+        - ""
+        - "<gray>Progreso: %newrankup_progressbar%"
+    requirements:
+      money: 5000
+      mobs-killed: 50
+      items:
+        req1: { material: "IRON_INGOT", amount: 32 }
+    commands:
+      - "eco give %player% 1000"
+
+  lapis:
+    display-name: "<bold><gradient:#0048ff:#0091ff>Lapis</gradient></bold>"
+    icon:
+      material: "LAPIS_LAZULI"
+      name: "<gray>Tier IV: <blue>Lapis"
+      lore:
+        - "<gray>Conocimiento mágico."
+        - ""
+        - "<gray>Dinero: <green>$7,500"
+        - "<gray>Mobs: <red>75 Kills"
+        - "<gray>Niveles XP: <green>10 Lvls"
+        - ""
+        - "<gray>Progreso: %newrankup_progressbar%"
+    requirements:
+      money: 7500
+      mobs-killed: 75
+      xp-levels: 10
+    commands:
+      - "give %player% experience_bottle 32"
+
+  redstone:
+    display-name: "<bold><gradient:#ff0000:#a10000>Redstone</gradient></bold>"
+    icon:
+      material: "REDSTONE"
+      name: "<gray>Tier V: <red>Redstone"
+      lore:
+        - "<gray>Dominando la ingeniería."
+        - ""
+        - "<gray>Dinero: <green>$10,000"
+        - "<gray>Mobs: <red>100 Kills"
+        - ""
+        - "<gray>Progreso: %newrankup_progressbar%"
+    requirements:
+      money: 10000
+      mobs-killed: 100
+    commands:
+      - "give %player% piston 4"
+
+#  redstone:
+#    display-name: "<bold><gradient:#ff0000:#a10000>Redstone</gradient></bold>"
+#    icon:
+#      material: "REDSTONE"
+#      name: "<gray>Tier V: <red>Redstone"
+#      lore:
+#        - "<gray>Dominando la ingeniería."
+#        - ""
+#        - "<gray>Dinero: <green>$10,000"
+#        - "<gray>Mobs: <red>100 Kills"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 10000
+#      mobs-killed: 100
+#    commands:
+#      - "give %player% piston 4"
+
+#  esmeralda:
+#    display-name: "<bold><gradient:#00ff22:#007a10>Esmeralda</gradient></bold>"
+#    icon:
+#      material: "EMERALD"
+#      name: "<gray>Tier VI: <green>Esmeralda"
+#      lore:
+#        - "<gray>El rey del comercio."
+#        - ""
+#        - "<gray>Dinero: <green>$15,000"
+#        - "<gray>Mobs: <red>150 Kills"
+#        - "<gray>Items: <white>64 Carbón"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 15000
+#      mobs-killed: 150
+#      items:
+#        req1: { material: "COAL", amount: 64 }
+#    commands:
+#      - "eco give %player% 2500"
+
+#  diamante:
+#    display-name: "<bold><gradient:#00f7ff:#00bbff>Diamante</gradient></bold>"
+#    icon:
+#      material: "DIAMOND"
+#      name: "<gray>Tier VII: <aqua>Diamante"
+#      lore:
+#        - "<gray>Resistencia pura."
+#        - ""
+#        - "<gray>Dinero: <green>$25,000"
+#        - "<gray>Mobs: <red>200 Kills"
+#        - "<gray>XP: <green>20 Niveles"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 25000
+#      mobs-killed: 200
+#      xp-levels: 20
+#    commands:
+#      - "broadcast &b&l%player% &3ha alcanzado el rango DIAMANTE!"
+
+#  obsidiana:
+#    display-name: "<bold><gradient:#38006b:#110021>Obsidiana</gradient></bold>"
+#    icon:
+#      material: "OBSIDIAN"
+#      name: "<gray>Tier VIII: <light_purple>Obsidiana"
+#      lore:
+#        - "<gray>Listo para el infierno."
+#        - ""
+#        - "<gray>Dinero: <green>$35,000"
+#        - "<gray>Mobs: <red>300 Kills"
+#        - "<gray>Items: <white>3 Diamantes"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 35000
+#      mobs-killed: 300
+#      items:
+#        req1: { material: "DIAMOND", amount: 3 }
+#    commands:
+#      - "give %player% diamond_boots 1"
+
+#  guerrero:
+#    display-name: "<bold><gradient:#b80d00:#ff5100>Guerrero</gradient></bold>"
+#    icon:
+#      material: "IRON_SWORD"
+#      name: "<gray>Tier IX: <red>Guerrero"
+#      lore:
+#        - "<gray>Maestro de la espada."
+#        - ""
+#        - "<gray>Dinero: <green>$50,000"
+#        - "<gray>Mobs: <red>400 Kills"
+#        - "<gray>Horas: <aqua>10h Jugadas"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 50000
+#      mobs-killed: 400
+#      playtime-hours: 10
+#    commands:
+#      - "give %player% diamond_sword 1"
+
+#  infernal:
+#    display-name: "<bold><gradient:#ff7300:#ffaa00>Infernal</gradient></bold>"
+#    icon:
+#      material: "hdb-18368"
+#      name: "<gray>Tier X: <gold>Infernal"
+#      lore:
+#        - "<gray>Sobreviviente del Nether."
+#        - ""
+#        - "<gray>Dinero: <green>$75,000"
+#        - "<gray>Mobs: <red>600 Kills"
+#        - "<gray>Items: <white>16 Varitas de Blaze"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 75000
+#      mobs-killed: 600
+#      items:
+#        req1: { material: "BLAZE_ROD", amount: 16 }
+#    commands:
+#      - "eco give %player% 10000"
+
+#  espectro:
+#    display-name: "<bold><gradient:#aaaaaa:#ffffff>Espectro</gradient></bold>"
+#    icon:
+#      material: "GHAST_TEAR"
+#      name: "<gray>Tier XI: <white>Espectro"
+#      lore:
+#        - "<gray>Cazador de almas."
+#        - ""
+#        - "<gray>Dinero: <green>$100,000"
+#        - "<gray>Mobs: <red>800 Kills"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 100000
+#      mobs-killed: 800
+#    commands:
+#      - "title %player% title {\"text\":\"¡CAZADOR!\",\"color\":\"white\"}"
+
+#  wither:
+#    display-name: "<bold><gradient:#333333:#000000>Wither</gradient></bold>"
+#    icon:
+#      material: "hdb-29619"
+#      name: "<gray>Tier XII: <dark_gray>Wither"
+#      lore:
+#        - "<gray>La oscuridad te consume."
+#        - ""
+#        - "<gray>Dinero: <green>$150,000"
+#        - "<gray>Mobs: <red>1,000 Kills"
+#        - "<gray>Items: <white>3 Cabezas Wither"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 150000
+#      mobs-killed: 1000
+#      items:
+#        req1: { material: "WITHER_SKELETON_SKULL", amount: 3 }
+#    commands:
+#      - "broadcast &8[&7Wither&8] &0%player% &7es ahora parte de la oscuridad."
+
+#  ender:
+#    display-name: "<bold><gradient:#a200ff:#d000ff>Ender</gradient></bold>"
+#    icon:
+#      material: "ENDER_EYE"
+#      name: "<gray>Tier XIII: <light_purple>Ender"
+#      lore:
+#        - "<gray>La dimensión final."
+#        - ""
+#        - "<gray>Dinero: <green>$250,000"
+#        - "<gray>Mobs: <red>1,250 Kills"
+#        - "<gray>Items: <white>16 Ender Pearls"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 250000
+#      mobs-killed: 1250
+#      items:
+#        req1: { material: "ENDER_PEARL", amount: 16 }
+#    commands:
+#      - "give %player% ender_chest 1"
+
+#  shulker:
+#    display-name: "<bold><gradient:#d180ff:#fabbff>Shulker</gradient></bold>"
+#    icon:
+#      material: "SHULKER_SHELL"
+#      name: "<gray>Tier XIV: <light_purple>Shulker"
+#      lore:
+#        - "<gray>Explorador del vacío."
+#        - ""
+#        - "<gray>Dinero: <green>$400,000"
+#        - "<gray>Mobs: <red>1,500 Kills"
+#        - "<gray>XP: <green>50 Niveles"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 400000
+#      mobs-killed: 1500
+#      xp-levels: 50
+#    commands:
+#      - "give %player% shulker_box 1"
+
+#  dragon:
+#    display-name: "<bold><gradient:#cc00ff:#6a0085>Dragón</gradient></bold>"
+#    icon:
+#      material: "DRAGON_HEAD"
+#      name: "<gray>Tier XV: <dark_purple>Dragón"
+#      lore:
+#        - "<gray>Asesino de la bestia."
+#        - ""
+#        - "<gray>Dinero: <green>$600,000"
+#        - "<gray>Mobs: <red>2,000 Kills"
+#        - "<gray>Items: <white>1 Aliento de Dragón"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 600000
+#      mobs-killed: 2000
+#      items:
+#        req1: { material: "DRAGON_BREATH", amount: 1 }
+#    commands:
+#      - "give %player% elytra 1"
+#      - "broadcast &5&lDRAGON &8» &d%player% tiene Alas!"
+
+#  veterano:
+#    display-name: "<bold><gradient:#ffbb00:#d19a00>Veterano</gradient></bold>"
+#    icon:
+#      material: "GOLDEN_APPLE"
+#      name: "<gray>Tier XVI: <gold>Veterano"
+#      lore:
+#        - "<gray>Leyenda viviente."
+#        - ""
+#        - "<gray>Dinero: <green>$1,000,000"
+#        - "<gray>Mobs: <red>3,000 Kills"
+#        - "<gray>Horas: <aqua>50h"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 1000000
+#      mobs-killed: 3000
+#      playtime-hours: 50
+#    commands:
+#      - "eco give %player% 50000"
+
+#  heroe:
+#    display-name: "<bold><gradient:#00ffd5:#007eff>Héroe</gradient></bold>"
+#    icon:
+#      material: "BEACON"
+#      name: "<gray>Tier XVII: <aqua>Héroe"
+#      lore:
+#        - "<gray>Salvador del servidor."
+#        - ""
+#        - "<gray>Dinero: <green>$1,500,000"
+#        - "<gray>Mobs: <red>4,000 Kills"
+#        - "<gray>XP: <green>100 Niveles"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 1500000
+#      mobs-killed: 4000
+#      xp-levels: 100
+#    commands:
+#      - "give %player% beacon 1"
+
+#  netherite:
+#    display-name: "<bold><gradient:#3f3f3f:#6e6e6e>Netherite</gradient></bold>"
+#    icon:
+#      material: "NETHERITE_INGOT"
+#      name: "<gray>Tier XVIII: <dark_gray>Netherite"
+#      lore:
+#        - "<gray>Material indestructible."
+#        - ""
+#        - "<gray>Dinero: <green>$2,000,000"
+#        - "<gray>Mobs: <red>5,000 Kills"
+#        - "<gray>Items: <white>1 Lingote Netherite"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 2000000
+#      mobs-killed: 5000
+#      items:
+#        req1: { material: "NETHERITE_INGOT", amount: 1 }
+#    commands:
+#      - "broadcast &8[&4NETHERITE&8] &c%player% &7es indestructible."
+
+#  leyenda:
+#    display-name: "<bold><gradient:#ff00d0:#ff004c>Leyenda</gradient></bold>"
+#    icon:
+#      material: "hdb-14493"
+#      name: "<gray>Tier XIX: <light_purple>Leyenda"
+#      lore:
+#        - "<gray>Recordado por siempre."
+#        - ""
+#        - "<gray>Dinero: <green>$3,500,000"
+#        - "<gray>Mobs: <red>7,500 Kills"
+#        - "<gray>Horas: <aqua>100h"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 3500000
+#      mobs-killed: 7500
+#      playtime-hours: 100
+#    commands:
+#      - "give %player% enchanted_golden_apple 2"
+
+#  titan:
+#    display-name: "<bold><gradient:#ff2600:#ff8800>Titán</gradient></bold>"
+#    icon:
+#      material: "TOTEM_OF_UNDYING"
+#      name: "<gray>Tier XX: <red>Titán"
+#      lore:
+#        - "<gray>Gigante entre mortales."
+#        - ""
+#        - "<gray>Dinero: <green>$5,000,000"
+#        - "<gray>Mobs: <red>10,000 Kills"
+#        - "<gray>Items: <white>2 Estrellas del Nether"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 5000000
+#      mobs-killed: 10000
+#      items:
+#        req1: { material: "NETHER_STAR", amount: 2 }
+#    commands:
+#      - "broadcast &c&lTITAN &6%player% &eha despertado..."
+
+#  semidios:
+#    display-name: "<bold><gradient:#00ffff:#ffffff>SemiDios</gradient></bold>"
+#    icon:
+#      material: "hdb-7129"
+#      name: "<gray>Tier XXI: <aqua>Semi-Diós"
+#      lore:
+#        - "<gray>Casi divino."
+#        - ""
+#        - "<gray>Dinero: <green>$10,000,000"
+#        - "<gray>Mobs: <red>15,000 Kills"
+#        - "<gray>XP: <green>150 Niveles"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 10000000
+#      mobs-killed: 15000
+#      xp-levels: 150
+#    commands:
+#      - "title %player% title {\"text\":\"PODER INFINITO\",\"color\":\"aqua\"}"
+
+#  inmortal:
+#    display-name: "<bold><gradient:#ff0048:#6b001e>Inmortal</gradient></bold>"
+#    icon:
+#      material: "END_CRYSTAL"
+#      name: "<gray>Tier XXII: <red>Inmortal"
+#      lore:
+#        - "<gray>Venciste a la muerte."
+#        - ""
+#        - "<gray>Dinero: <green>$20,000,000"
+#        - "<gray>Mobs: <red>20,000 Kills"
+#        - "<gray>Items: <white>64 Bloques Diamante"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 20000000
+#      mobs-killed: 20000
+#      items:
+#        req1: { material: "DIAMOND_BLOCK", amount: 64 }
+#    commands:
+#      - "give %player% totem_of_undying 5"
+
+#  cosmico:
+#    display-name: "<bold><gradient:#4800ff:#d000ff>Cósmico</gradient></bold>"
+#    icon:
+#      material: "hdb-25790"
+#      name: "<gray>Tier XXIII: <light_purple>Cósmico"
+#      lore:
+#        - "<gray>Viajero del universo."
+#        - ""
+#        - "<gray>Dinero: <green>$35,000,000"
+#        - "<gray>Mobs: <red>30,000 Kills"
+#        - "<gray>Horas: <aqua>300h"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 35000000
+#      mobs-killed: 30000
+#      playtime-hours: 300
+#    commands:
+#      - "broadcast &d&k!!&5&l %player% ES CÓSMICO &d&k!!"
+
+#  celestial:
+#    display-name: "<bold><rainbow>Celestial</rainbow></bold>"
+#    icon:
+#      material: "ELYTRA"
+#      name: "<gray>Tier XXIV: <white>Celestial"
+#      lore:
+#        - "<gray>Guardián angelical."
+#        - ""
+#        - "<gray>Dinero: <green>$50,000,000"
+#        - "<gray>Mobs: <red>40,000 Kills"
+#        - "<gray>Items: <white>1 Huevo de Dragón"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 50000000
+#      mobs-killed: 40000
+#      items:
+#        req1: { material: "DRAGON_EGG", amount: 1 }
+#    commands:
+#      - "give %player% beacon 16"
+
+#  omnipotente:
+#    display-name: "<bold><gradient:#000000:#ff0000:#000000>OMNIPOTENTE</gradient></bold>"
+#    icon:
+#      material: "hdb-43997"
+#      name: "<gray>Tier XXV: <red>OMNIPOTENTE"
+#      lore:
+#        - "<gray>JUEGO COMPLETADO."
+#        - ""
+#        - "<gray>Dinero: <green>$100,000,000"
+#        - "<gray>Mobs: <red>50,000 Kills"
+#        - "<gray>Horas: <aqua>1,000h"
+#        - "<gray>Items: <white>1 Estrella del Nether"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 100000000
+#      mobs-killed: 50000
+#      playtime-hours: 1000
+#      items:
+#        req1: { material: "NETHER_STAR", amount: 1 }
+#    commands:
+#      - "broadcast &4&l&k!!!&r <gradient:#000000:#ff0000><bold>%player% ES OMNIPOTENTE</bold></gradient> &4&l&k!!!&r"
+#      - "give %player% netherite_block 64"
+#      - "title %player% title {\"text\":\"JUEGO COMPLETADO\",\"color\":\"dark_red\"}"
+
+#  singularidad:
+#    display-name: "<bold><gradient:#000000:#4a00e0>Singularidad</gradient></bold>"
+#    icon:
+#      material: "hdb-47671"
+#      name: "<gray>Tier XXVI: <dark_purple>Singularidad"
+#      lore:
+#        - "<gray>El punto de no retorno."
+#        - ""
+#        - "<gray>Dinero: <green>$150,000,000"
+#        - "<gray>Mobs: <red>60,000 Kills"
+#        - "<gray>Items: <white>64 Obsidiana Llorosa"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 150000000
+#      mobs-killed: 60000
+#      items:
+#        req1: { material: "CRYING_OBSIDIAN", amount: 64 }
+#    commands:
+#      - "give %player% netherite_chestplate 1"
+#      - "broadcast &5&l%player% &dha colapsado en la Singularidad."
+
+#  eterno:
+#    display-name: "<bold><gradient:#00ff88:#00ffe5>Eterno</gradient></bold>"
+#    icon:
+#      material: "CLOCK"
+#      name: "<gray>Tier XXVII: <aqua>Eterno"
+#      lore:
+#        - "<gray>El tiempo no te afecta."
+#        - ""
+#        - "<gray>Dinero: <green>$200,000,000"
+#        - "<gray>Mobs: <red>70,000 Kills"
+#        - "<gray>Horas: <aqua>1,200h"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 200000000
+#      mobs-killed: 70000
+#      playtime-hours: 1200
+#    commands:
+#      - "give %player% clock 1"
+#      - "eco give %player% 5000000"
+
+#  dimensional:
+#    display-name: "<bold><gradient:#7b00ff:#ff00ea>Dimensional</gradient></bold>"
+#    icon:
+#      material: "END_PORTAL_FRAME"
+#      name: "<gray>Tier XXVIII: <light_purple>Dimensional"
+#      lore:
+#        - "<gray>Caminante de realidades."
+#        - ""
+#        - "<gray>Dinero: <green>$300,000,000"
+#        - "<gray>Mobs: <red>80,000 Kills"
+#        - "<gray>Items: <white>12 Marcos del End"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 300000000
+#      mobs-killed: 80000
+#      items:
+#        req1: { material: "END_PORTAL_FRAME", amount: 12 }
+#    commands:
+#      - "give %player% ender_eye 64"
+
+#  mistico:
+#    display-name: "<bold><gradient:#ff0077:#ffbb00>Místico</gradient></bold>"
+#    icon:
+#      material: "ENCHANTING_TABLE"
+#      name: "<gray>Tier XXIX: <red>Místico"
+#      lore:
+#        - "<gray>Magia pura en tus venas."
+#        - ""
+#        - "<gray>Dinero: <green>$450,000,000"
+#        - "<gray>XP: <green>500 Niveles"
+#        - "<gray>Mobs: <red>90,000 Kills"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 450000000
+#      xp-levels: 500
+#      mobs-killed: 90000
+#    commands:
+#      - "give %player% experience_bottle 64"
+
+#  primordial:
+#    display-name: "<bold><gradient:#ff2f00:#7d0202>Primordial</gradient></bold>"
+#    icon:
+#      material: "MAGMA_BLOCK"
+#      name: "<gray>Tier XXX: <dark_red>Primordial"
+#      lore:
+#        - "<gray>Antes del inicio, estabas tú."
+#        - ""
+#        - "<gray>Dinero: <green>$600,000,000"
+#        - "<gray>Mobs: <red>100,000 Kills"
+#        - "<gray>Items: <white>64 Bloques de Magma"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 600000000
+#      mobs-killed: 100000
+#      items:
+#        req1: { material: "MAGMA_BLOCK", amount: 64 }
+#    commands:
+#      - "broadcast &4&l%player% &c&les una entidad PRIMORDIAL."
+
+#  arcano:
+#    display-name: "<bold><gradient:#000000:#00ffea>Arcano</gradient></bold>"
+#    icon:
+#      material: "CONDUIT"
+#      name: "<gray>Tier XXXI: <dark_aqua>Arcano"
+#      lore:
+#        - "<gray>Secretos olvidados revelados."
+#        - ""
+#        - "<gray>Dinero: <green>$800,000,000"
+#        - "<gray>Mobs: <red>120,000 Kills"
+#        - "<gray>Items: <white>1 Canalizador"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 800000000
+#      mobs-killed: 120000
+#      items:
+#        req1: { material: "CONDUIT", amount: 1 }
+#    commands:
+#      - "give %player% heart_of_the_sea 1"
+
+#  seraph:
+#    display-name: "<bold><gradient:#ffffff:#fff200>Seraph</gradient></bold>"
+#    icon:
+#      material: "hdb-22312"
+#      name: "<gray>Tier XXXII: <white>Seraph"
+#      lore:
+#        - "<gray>La luz absoluta."
+#        - ""
+#        - "<gray>Dinero: <green>$1,000,000,000"
+#        - "<gray>Mobs: <red>150,000 Kills"
+#        - "<gray>Items: <white>4 Faros Mágicos"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 1000000000
+#      mobs-killed: 150000
+#      items:
+#        req1: { material: "BEACON", amount: 4 }
+#    commands:
+#      - "weather clear"
+#      - "broadcast &e&l%player% &filumina el servidor como SERAPH."
+
+#  abisal:
+#    display-name: "<bold><gradient:#001eff:#000000>Abisal</gradient></bold>"
+#    icon:
+#      material: "SCULK_CATALYST"
+#      name: "<gray>Tier XXXIII: <dark_blue>Abisal"
+#      lore:
+#        - "<gray>El vacío te mira de vuelta."
+#        - ""
+#        - "<gray>Dinero: <green>$1,500,000,000"
+#        - "<gray>Mobs: <red>200,000 Kills"
+#        - "<gray>Items: <white>64 Catalizadores"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 1500000000
+#      mobs-killed: 200000
+#      items:
+#        req1: { material: "SCULK_CATALYST", amount: 64 }
+#    commands:
+#      - "give %player% echo_shard 8"
+
+#  zenith:
+#    display-name: "<bold><gradient:#ff00aa:#00ffee>Zenith</gradient></bold>"
+#    icon:
+#      material: "END_CRYSTAL"
+#      name: "<gray>Tier XXXIV: <light_purple>Zenith"
+#      lore:
+#        - "<gray>El pináculo de la existencia."
+#        - ""
+#        - "<gray>Dinero: <green>$2,000,000,000"
+#        - "<gray>Mobs: <red>300,000 Kills"
+#        - "<gray>XP: <green>500 Niveles"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#    requirements:
+#      money: 2000000000
+#      mobs-killed: 300000
+#      xp-levels: 500
+#    commands:
+#      - "title %player% title {\"text\":\"ZENITH ALCANZADO\",\"color\":\"light_purple\"}"
+
+#  infinito:
+#    display-name: "<bold><rainbow>Infinito</rainbow></bold>"
+#    icon:
+#      material: "BEDROCK"
+#      name: "<gray>Tier FINAL: <white>INFINITO"
+#      lore:
+#        - "<gray>Ya no queda nada más."
+#        - "<gray>Eres todo y nada a la vez."
+#        - ""
+#        - "<gray>Dinero: <green>$5,000,000,000"
+#        - "<gray>Mobs: <red>500,000 Kills"
+#        - "<gray>Horas: <aqua>2,000h"
+#        - ""
+#        - "<gray>Progreso: %newrankup_progressbar%"
+#        - "<white>ESTADO DEIDAD."
+#    requirements:
+#      money: 5000000000
+#      mobs-killed: 500000
+#      playtime-hours: 2000
+#    commands:
+#      - "broadcast &b&k!!&r <gradient:#ffffff:#000000><bold>%player% HA SUPERADO LA REALIDAD</bold></gradient> &b&k!!&r"
+#      - "gamemode creative %player%"
+#      - "title %player% title {\"text\":\"INFINITO\",\"color\":\"white\"}"

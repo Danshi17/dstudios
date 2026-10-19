@@ -1,0 +1,18 @@
+name: NewStreams
+version: '1.0-SNAPSHOT'
+main: github.dstudio.newStreams.NewStreams
+commands:
+  directo:
+    description: Anuncia tu stream en vivo
+    permission: nstreams.use
+  nstreamsreload:
+    description: Recarga la configuración del plugin
+    aliases: [nsr]
+    permission: nstreams.reload
+permissions:
+  nstreams.use:
+    description: Permite usar el comando /directo
+    default: true
+  nstreams.reload:
+    description: Permite recargar la configuración
+    default: op

@@ -1,0 +1,55 @@
+id: clan_homes
+title: '<dark_gray>Clan Homes <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 6
+page-size: 28
+open-sound: UI_BUTTON_CLICK
+
+dynamic:
+  type: HOMES
+  slots: '10-16,19-25,28-34,37-43'
+  material: ENDER_PEARL
+  name: '<green>%home_name%</green>'
+  lore:
+    - '<gray>World: <white>%home_world%</white></gray>'
+    - '<gray>Location: <white>%home_x%, %home_y%, %home_z%</white></gray>'
+    - '<gray>Password: <white>%home_protected%</white></gray>'
+    - '<gray>Public: <white>%home_public%</white></gray>'
+    - ''
+    - '<green>Left-click: teleport</green>'
+    - '<aqua>Middle-click: public/private</aqua>'
+    - '<red>Right-click: delete</red>'
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+
+  create:
+    slot: 47
+    material: LIME_DYE
+    name: '<green>Create Home</green>'
+    lore:
+      - '<gray>Input format:</gray>'
+      - '<white>name [password]</white>'
+      - ''
+      - '<yellow>Click to create.</yellow>'
+    action: ANVIL:anvil_clanhomecreate
+
+  previous:
+    slot: 48
+    material: ARROW
+    name: '<yellow>Previous Page</yellow>'
+    action: PAGE_PREVIOUS
+
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home
+
+  next:
+    slot: 50
+    material: ARROW
+    name: '<yellow>Next Page</yellow>'
+    action: PAGE_NEXT

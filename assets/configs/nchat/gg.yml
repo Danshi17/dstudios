@@ -1,0 +1,150 @@
+enabled: true
+
+prefix: "<gradient:#00FF88:#00AAFF><bold>GG</bold></gradient> <dark_gray>»</dark_gray> "
+
+# Premio: se elige un monto aleatorio entre min-amount y max-amount.
+# Placeholders: {player} {amount} {amount_formatted} {uuid}
+max-amount: 100
+min-amount: 1
+commands:
+  - "eco give {player} {amount}"
+
+game:
+  # Segundos que dura el evento
+  duration: 30
+  # Mensajes que cuentan como GG (sin importar mayúsculas)
+  accepted-messages:
+    - "gg"
+  # Mientras el evento está activo solo se puede escribir GG en el chat
+  # Los jugadores con nchat.bypass.lock o nchat.admin pueden seguir escribiendo
+  only-gg-chat: true
+  # Máximo de premiados. 0 = ilimitado. Si se llena, el evento termina antes
+  max-winners: 0
+  # Muestra el GG del jugador en el chat. Si es false se oculta
+  show-gg-in-chat: true
+
+# Formato especial de chat solo para los GG mientras dura el evento
+# Al terminar el evento el chat vuelve al formato normal de config.yml
+# Placeholders: %player_name% {message} y los de PlaceholderAPI
+chat-format:
+  enabled: true
+  format: "%vault_prefix%%player_name% <dark_gray>»</dark_gray> <gradient:#00FF88:#00AAFF><bold>{message}</bold></gradient> <gradient:#FFAA00:#FF5555>★</gradient>"
+
+messages:
+  # Placeholders: {prefix} {time} {min} {max} {min_money} {max_money} {max_winners}
+  start:
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+    - " <green>⚡</green> <bold><gradient:#00FF88:#00AAFF>EVENTO GG</gradient></bold>"
+    - ""
+    - " <gray>¡Escribe <white><bold>GG</bold></white> en el chat para ganar!"
+    - " <gray>Premio: <green>{min_money}</green> <gray>a</gray> <green>{max_money}</green>"
+    - " <gray>Tienes <yellow>{time}s</yellow>."
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  # Mensaje privado al jugador que cobra. Placeholders: {prefix} {player} {amount} {amount_formatted} {money} {position}
+  rewarded:
+    - "{prefix}<green>✔ ¡GG! Ganaste <white>{money}</white>.</green>"
+
+  # Mensaje público opcional cuando alguien cobra. Déjalo vacío con [] para no usarlo
+  rewarded-broadcast: []
+
+  # Fin por tiempo terminado. Placeholders: {prefix} {count} {total} {total_formatted} {total_money}
+  end:
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+    - " <red>⏰</red> <gray>El evento <white>GG</white> terminó."
+    - " <gray>Premiados: <yellow>{count}</yellow> <dark_gray>|</dark_gray> <gray>Total repartido: <green>{total_money}</green>"
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  end-empty:
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+    - " <red>⏰</red> <gray>El evento <white>GG</white> terminó y nadie participó."
+    - "<gray><strikethrough>-------------------------------------</strikethrough></gray>"
+
+  stopped:
+    - "{prefix}<red>El evento GG fue cancelado por un administrador.</red>"
+
+  blocked: "{prefix}<red>Durante el evento solo puedes escribir <white>GG</white> en el chat. Quedan <yellow>{time}s</yellow>.</red>"
+  already-claimed: "{prefix}<yellow>Solo puedes escribir <white>GG</white> una vez durante este evento.</yellow>"
+  full: "{prefix}<red>Ya se repartieron todos los premios de este evento.</red>"
+
+# Efectos por etapa: start (inicio), reward (cada jugador que cobra), end (tiempo terminado)
+# target: ALL (todos los jugadores) o PLAYER (solo el que cobra)
+effects:
+  start:
+    target: ALL
+    title:
+      enabled: true
+      text: "<gradient:#00FF88:#00AAFF><bold>EVENTO GG</bold></gradient>"
+      fade-in: 10
+      stay: 50
+      fade-out: 20
+    subtitle:
+      enabled: true
+      text: "<gray>Escribe <white>GG</white> en el chat"
+    actionbar:
+      enabled: true
+      text: "<green>⚡ <white>Escribe <bold>GG</bold> para ganar <gray>(<yellow>{time}s</yellow>)"
+    sound:
+      enabled: true
+      type: "block.note_block.pling"
+      volume: 1.0
+      pitch: 1.5
+    particle:
+      enabled: true
+      type: "villager_happy"
+      count: 15
+      offset: 0.6
+      height: 1.0
+      speed: 0.05
+  reward:
+    target: PLAYER
+    title:
+      enabled: true
+      text: "<gradient:#00FF88:#00AAFF><bold>¡GG!</bold></gradient>"
+      fade-in: 5
+      stay: 30
+      fade-out: 10
+    subtitle:
+      enabled: true
+      text: "<gray>Ganaste <green>{money}</green>"
+    actionbar:
+      enabled: true
+      text: "<green>✔ <white>+<green>{money}"
+    sound:
+      enabled: true
+      type: "entity.experience_orb.pickup"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: true
+      type: "villager_happy"
+      count: 25
+      offset: 0.6
+      height: 1.0
+      speed: 0.1
+  end:
+    target: ALL
+    title:
+      enabled: true
+      text: "<red><bold>EVENTO TERMINADO</bold></red>"
+      fade-in: 10
+      stay: 40
+      fade-out: 20
+    subtitle:
+      enabled: true
+      text: "<gray>Premiados: <yellow>{count}</yellow>"
+    actionbar:
+      enabled: true
+      text: "<red>⏰ El evento GG terminó"
+    sound:
+      enabled: true
+      type: "entity.villager.no"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: false
+      type: "smoke_normal"
+      count: 15
+      offset: 0.5
+      height: 1.0
+      speed: 0.02

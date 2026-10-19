@@ -1,0 +1,36 @@
+spawn:
+  world: world
+  x: 0.5
+  y: 65.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+flyspeed:
+  default-level: 1
+  speed-multiplier: 1.0
+
+messages:
+  prefix: "&8[&bSpawnSystem&8] &r"
+  spawn-teleported: "&aHas sido teletransportado al spawn."
+  spawn-not-set: "&cEl spawn aun no ha sido configurado."
+  setspawn-success: "&aSpawn establecido en tu ubicacion actual."
+  no-permission: "&cNo tienes permiso para usar este comando."
+  reload-success: "&aConfiguracion recargada correctamente."
+  only-players: "&cEste comando solo puede ser usado por jugadores."
+  sethome-usage: "&cUso: /sethome <nombre>"
+  sethome-success: "&aHome &b%home% &aguardado correctamente."
+  home-usage: "&cUso: /home <nombre>"
+  home-not-found: "&cNo tienes ningun home llamado &b%home%&c."
+  home-teleported: "&aTeletransportado al home &b%home%&a."
+  homes-empty: "&cNo tienes ningun home guardado todavia. Usa /sethome <nombre>."
+  homes-list-header: "&aTus homes:"
+  time-set-day: "&aEl tiempo del mundo ha sido cambiado a dia."
+  time-set-afternoon: "&aEl tiempo del mundo ha sido cambiado a tarde."
+  time-set-night: "&aEl tiempo del mundo ha sido cambiado a noche."
+  gamemode-set-survival: "&aTu modo de juego ahora es Survival."
+  gamemode-set-creative: "&aTu modo de juego ahora es Creative."
+  gamemode-set-spectator: "&aTu modo de juego ahora es Spectator."
+  fly-enabled: "&aVuelo activado."
+  fly-disabled: "&cVuelo desactivado."
+  fly-blocked-gamemode: "&cYa tienes vuelo disponible en tu modo de juego actual."

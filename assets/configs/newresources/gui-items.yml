@@ -1,0 +1,28 @@
+gui-items:
+  gold_clock:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&6Clock"
+    texture: "gui/gold_clock.png"
+
+  gold_dollar:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&6Money"
+    texture: "gui/gold_dollar.png"
+
+  gold_arrow_right:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&6Next"
+    texture: "gui/gold_arrow_right.png"
+
+  gold_arrow_left:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&6Back"
+    texture: "gui/gold_arrow_left.png"

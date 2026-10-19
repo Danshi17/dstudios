@@ -1,0 +1,43 @@
+mode: "virtual"
+
+drop-block-on-complete: false
+
+particles-on-complete:
+  enabled: true
+  type: "EXPLOSION_LARGE"
+  count: 5
+
+global-unlock-sound: "LEVEL_UP"
+global-unlock-sound-volume: 1.0
+global-unlock-sound-pitch: 1.2
+
+
+prestige:
+  enabled: true
+  cost: 1000000000000000
+
+  command: ""
+
+  title: "&6&l✦ PRESTIGIO &6✦"
+  subtitle: "&eHas subido a Prestigio &6{prestige}&e!"
+  actionbar: "&7Ahora vueles a farmear recompensas desde 0."
+
+  sound: "ENDERMAN_TELEPORT"
+  sound-volume: 1.0
+  sound-pitch: 1.0
+
+  particle: "MOB_SPELL"
+  particle-count: 30
+
+  message: "&6&l[!] &e{player} &7ha subido a Prestigio &6{prestige}&7! Total: &e{total_prestiges}"
+  broadcast: false
+
+  max-prestige: 100
+
+auto-claim:
+  enabled-by-default: false
+
+  cooldown-seconds: 0
+
+
+debug: false

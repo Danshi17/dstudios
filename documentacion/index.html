@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentación — dStudios Plugins</title>
+<meta name="description" content="Guías de instalación, hooks, comandos, permisos y todos los archivos .yml de cada plugin: listos para ver, copiar o descargar.">
+<meta property="og:title" content="Documentación — dStudios Plugins">
+<meta property="og:description" content="Guías de instalación, hooks, comandos, permisos y todos los archivos .yml de cada plugin: listos para ver, copiar o descargar.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="page-docs">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../index.html">
+      <img class="logo-img" src="../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="../index.html#plugins">Plugins</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link active" href="../documentacion/index.html">Documentación</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Idioma" aria-label="Idioma"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇪🇸 ES</span></button><div class="lang-drop"><a class="lang-opt active" href="../documentacion/index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt" href="../en/documentation/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../fr/documentation/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt" href="../zh/documentation/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt" href="../ko/documentation/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../ru/documentation/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero small docs-hero">
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">Documentación oficial</p>
+    <h1>Documentación completa de <span class="hl">NewSeries</span> </h1>
+    <p class="hero-sub">Guías de instalación, hooks, comandos, permisos y todos los archivos .yml de cada plugin: listos para ver, copiar o descargar.</p>
+  </div>
+</section>
+
+<section class="section" id="guia">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Cómo instalar cualquier plugin</h2>
+      <ol class="install-steps">
+        <li>Descarga el <code>.jar</code> del plugin y colócalo en la carpeta <code>plugins/</code> de tu servidor o proxy.</li>
+        <li>Instala las dependencias que uses de la lista de requisitos.</li>
+        <li>Reinicia el servidor (o ejecuta <code>/reload confirm</code>) para que el plugin arranque.</li>
+        <li>Configura el plugin desde su <code>config.yml</code> y sus archivos de datos.</li>
+        <li>Usa el comando de recarga del plugin para aplicar cambios sin reiniciar.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plugins-docs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Plugins documentados</h2>
+      <p>Elige un plugin para ver toda su documentación: instalación, hooks, comandos, permisos y archivos de configuración.</p>
+    </div>
+    <div class="searchbar docs-searchbar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="docsSearch" placeholder="Buscar plugin…" aria-label="Buscar plugin…" autocomplete="off">
+    </div>
+    <div class="docs-list" id="docsGrid">
+<a class="doc-item reveal" href="../documentacion/afkzone/index.html" data-search="afkzone zonas afk con recompensas automáticas y editor in-game. afkzone utilidad">
+  <img class="doc-icon" src="../assets/icons/afkzone.png" alt="AfkZone" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AfkZone<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Zonas AFK con recompensas automáticas y editor in-game.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">7 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/antiop/index.html" data-search="antiop protege tu servidor de ops y rangos no autorizados. antiop moderación">
+  <img class="doc-icon" src="../assets/icons/antiop.png" alt="AntiOP" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiOP<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderación</span></span>
+    <span class="doc-tagline">Protege tu servidor de OPs y rangos no autorizados.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">3 comandos</span><span class="doc-chip">5 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/antipendejos/index.html" data-search="antipendejos bloquea items prohibidos y purga inventarios y vaults automáticamente. antipendejos moderación">
+  <img class="doc-icon" src="../assets/icons/antipendejos.png" alt="AntiPendejos" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">AntiPendejos<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderación</span></span>
+    <span class="doc-tagline">Bloquea items prohibidos y purga inventarios y vaults automáticamente.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">6 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/blockrewards/index.html" data-search="blockrewards rompe bloques, sube niveles y reclama recompensas. blockrewards progresión">
+  <img class="doc-icon" src="../assets/icons/blockrewards.png" alt="BlockRewards" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">BlockRewards<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">Rompe bloques, sube niveles y reclama recompensas.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">4 comandos</span><span class="doc-chip">5 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/ecevents/index.html" data-search="ecevents eventos de minería y lucky blocks con grandes premios. ecevents minijuegos">
+  <img class="doc-icon" src="../assets/icons/ecevents.png" alt="ECEvents" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ECEvents<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Eventos de minería y lucky blocks con grandes premios.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">8 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/epicvouchers/index.html" data-search="epicvouchers vales personalizados con comandos, sonidos y menús. epicvouchers economía">
+  <img class="doc-icon" src="../assets/icons/epicvouchers.png" alt="EpicVouchers" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EpicVouchers<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economía</span></span>
+    <span class="doc-tagline">Vales personalizados con comandos, sonidos y menús.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">1 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/evenmorefish/index.html" data-search="evenmorefish competiciones de pesca con peces personalizados. evenmorefish minijuegos">
+  <img class="doc-icon smooth" src="../assets/icons/emf.png" alt="EvenMoreFish" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">EvenMoreFish<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Competiciones de pesca con peces personalizados.</span>
+    <span class="doc-chips"><span class="doc-chip">46 .yml</span><span class="doc-chip">8 comandos</span><span class="doc-chip">17 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/extraregions/index.html" data-search="extraregions flags avanzadas de worldguard: comandos, efectos y más. extraregions mundo">
+  <img class="doc-icon" src="../assets/icons/extraregions.png" alt="ExtraRegions" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ExtraRegions<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> Mundo</span></span>
+    <span class="doc-tagline">Flags avanzadas de WorldGuard: comandos, efectos y más.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">2 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/hubcore/index.html" data-search="hubcore el núcleo definitivo para tu lobby: menús, hotbar y más. hubcore utilidad">
+  <img class="doc-icon" src="../assets/icons/hubcore.png" alt="HubCore" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">HubCore<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">El núcleo definitivo para tu lobby: menús, hotbar y más.</span>
+    <span class="doc-chips"><span class="doc-chip">10 .yml</span><span class="doc-chip">15 comandos</span><span class="doc-chip">22 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/itemsrpg/index.html" data-search="itemsrpg items rpg personalizados con recetas, efectos y addons. itemsrpg rpg">
+  <img class="doc-icon" src="../assets/icons/itemsrpg.png" alt="ItemsRPG" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ItemsRPG<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span></span>
+    <span class="doc-tagline">Items RPG personalizados con recetas, efectos y addons.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">13 comandos</span><span class="doc-chip">3 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/lootboxes/index.html" data-search="lootboxes abre cajas con animaciones épicas y premios por rareza. lootboxes economía">
+  <img class="doc-icon" src="../assets/icons/lootboxes.png" alt="Lootboxes" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Lootboxes<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economía</span></span>
+    <span class="doc-tagline">Abre cajas con animaciones épicas y premios por rareza.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">9 comandos</span><span class="doc-chip">3 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/nchat/index.html" data-search="nchat el chat definitivo: colores, tags, mensajes y moderación. nchat chat">
+  <img class="doc-icon" src="../assets/icons/nchat.png" alt="nChat" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nChat<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</span></span>
+    <span class="doc-tagline">El chat definitivo: colores, tags, mensajes y moderación.</span>
+    <span class="doc-chips"><span class="doc-chip">11 .yml</span><span class="doc-chip">17 comandos</span><span class="doc-chip">93 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newcasino/index.html" data-search="newcasino coinflip, tragamonedas y 17 minijuegos de apuestas. newcasino minijuegos">
+  <img class="doc-icon" src="../assets/icons/newcasino.png" alt="NewCasino" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCasino<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Coinflip, tragamonedas y 17 minijuegos de apuestas.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">16 comandos</span><span class="doc-chip">6 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newchatcolor/index.html" data-search="newchatcolor personaliza tu color de chat con hex, gradientes y más. newchatcolor chat">
+  <img class="doc-icon" src="../assets/icons/newchatcolor.png" alt="NewChatColor" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewChatColor<span class="doc-cat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</span></span>
+    <span class="doc-tagline">Personaliza tu color de chat con hex, gradientes y más.</span>
+    <span class="doc-chips"><span class="doc-chip">5 .yml</span><span class="doc-chip">5 comandos</span><span class="doc-chip">10 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newclans/index.html" data-search="newclans funda tu clan, haz alianzas y domina el ranking. newclans social">
+  <img class="doc-icon" src="../assets/icons/newclans.png" alt="NewClans" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewClans<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span></span>
+    <span class="doc-tagline">Funda tu clan, haz alianzas y domina el ranking.</span>
+    <span class="doc-chips"><span class="doc-chip">57 .yml</span><span class="doc-chip">15 comandos</span><span class="doc-chip">24 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newcomblog/index.html" data-search="newcombatlog sistema de combate pvp con tags, bounty y recompensas. newcomblog rpg">
+  <img class="doc-icon" src="../assets/icons/newcombatlog.png" alt="NewCombatlog" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCombatlog<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span></span>
+    <span class="doc-tagline">Sistema de combate PvP con tags, bounty y recompensas.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 comandos</span><span class="doc-chip">5 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newcosmetics/index.html" data-search="newcosmetics el paquete definitivo de cosméticos para tu servidor. newcosmetics cosméticos">
+  <img class="doc-icon" src="../assets/icons/newcosmetics.png" alt="NewCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosméticos</span></span>
+    <span class="doc-tagline">El paquete definitivo de cosméticos para tu servidor.</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 comandos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newdtc/index.html" data-search="newdtc destroy the core: eventos pvp con recompensas. newdtc minijuegos">
+  <img class="doc-icon" src="../assets/icons/newdtc.png" alt="NewDTC" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewDTC<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Destroy The Core: eventos PvP con recompensas.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 comandos</span><span class="doc-chip">12 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newfriends/index.html" data-search="newfriends sistema de amigos multired con mensajes privados. newfriends social">
+  <img class="doc-icon" src="../assets/icons/newfriends.png" alt="NewFriends" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewFriends<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span></span>
+    <span class="doc-tagline">Sistema de amigos multired con mensajes privados.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">8 comandos</span><span class="doc-chip">9 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newglow/index.html" data-search="newglow auras de brillo con modos rainbow y flashing. newglow cosméticos">
+  <img class="doc-icon" src="../assets/icons/newglow.png" alt="NewGlow" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewGlow<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosméticos</span></span>
+    <span class="doc-tagline">Auras de brillo con modos rainbow y flashing.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">5 comandos</span><span class="doc-chip">27 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newheads/index.html" data-search="newheads cabezas flotantes con texto e interacción para decorar tu servidor. newheads cosméticos">
+  <img class="doc-icon" src="../assets/icons/newheads.png" alt="NewHeads" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewHeads<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosméticos</span></span>
+    <span class="doc-tagline">Cabezas flotantes con texto e interacción para decorar tu servidor.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newjobs/index.html" data-search="newjobs 13 profesiones con xp, misiones y contratos. newjobs progresión">
+  <img class="doc-icon" src="../assets/icons/newjobs.png" alt="NewJobs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewJobs<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">13 profesiones con XP, misiones y contratos.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">4 comandos</span><span class="doc-chip">4 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newkb/index.html" data-search="newkb ajusta el knockback y el ataque al milímetro. newkb utilidad">
+  <img class="doc-icon" src="../assets/icons/newkb.png" alt="NewKB" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewKB<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Ajusta el knockback y el ataque al milímetro.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">1 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newlogin/index.html" data-search="newlogin login, registro y premium para tu red. newlogin utilidad">
+  <img class="doc-icon" src="../assets/icons/newlogin.png" alt="NewLogin" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewLogin<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Login, registro y premium para tu red.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">12 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newnpcs/index.html" data-search="newnpcs npcs personalizables con modelos 3d. newnpcs utilidad">
+  <img class="doc-icon" src="../assets/icons/newnpcs.png" alt="newNPCS" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newNPCS<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">NPCs personalizables con modelos 3D.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 comandos</span><span class="doc-chip">24 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newpets/index.html" data-search="newpets mascotas con niveles, traits y huevos. newpets progresión">
+  <img class="doc-icon" src="../assets/icons/newpets.png" alt="NewPets" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPets<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">Mascotas con niveles, traits y huevos.</span>
+    <span class="doc-chips"><span class="doc-chip">7 .yml</span><span class="doc-chip">7 comandos</span><span class="doc-chip">3 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newpinatas/index.html" data-search="newpinatas golpea la piñata con tu comunidad y reparte recompensas. newpinatas minijuegos">
+  <img class="doc-icon" src="../assets/icons/newpinatas.png" alt="NewPinatas" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewPinatas<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Golpea la piñata con tu comunidad y reparte recompensas.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">6 comandos</span><span class="doc-chip">3 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newrankup/index.html" data-search="newrankup asciende de rango con requisitos, prestige y rebirth. newrankup progresión">
+  <img class="doc-icon" src="../assets/icons/newrankup.png" alt="NewRankup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewRankup<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">Asciende de rango con requisitos, prestige y rebirth.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">5 comandos</span><span class="doc-chip">5 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newreports/index.html" data-search="newreports reportes de jugadores con alertas a discord. newreports moderación">
+  <img class="doc-icon" src="../assets/icons/newreports.png" alt="NewReports" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewReports<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderación</span></span>
+    <span class="doc-tagline">Reportes de jugadores con alertas a Discord.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 comandos</span><span class="doc-chip">4 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newresources/index.html" data-search="newresources ítems, bloques y muebles custom con resource pack. newresources mundo">
+  <img class="doc-icon" src="../assets/icons/newresources.png" alt="newResources" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">newResources<span class="doc-cat"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> Mundo</span></span>
+    <span class="doc-tagline">Ítems, bloques y muebles custom con resource pack.</span>
+    <span class="doc-chips"><span class="doc-chip">12 .yml</span><span class="doc-chip">9 comandos</span><span class="doc-chip">7 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newskills/index.html" data-search="newskills habilidades estilo mcmmo: sube de nivel y desbloquea poderes. newskills rpg">
+  <img class="doc-icon" src="../assets/icons/newskills.png" alt="NewSkills" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSkills<span class="doc-cat"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span></span>
+    <span class="doc-tagline">Habilidades estilo mcMMO: sube de nivel y desbloquea poderes.</span>
+    <span class="doc-chips"><span class="doc-chip">28 .yml</span><span class="doc-chip">56 comandos</span><span class="doc-chip">602 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newstreams/index.html" data-search="newstreams anuncia tus directos con validación de enlaces. newstreams social">
+  <img class="doc-icon" src="../assets/icons/newstreams.png" alt="NewStreams" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewStreams<span class="doc-cat"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span></span>
+    <span class="doc-tagline">Anuncia tus directos con validación de enlaces.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">2 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newvaults/index.html" data-search="newvaults cofres personales con permisos, gui y multi-database. newvaults utilidad">
+  <img class="doc-icon" src="../assets/icons/newvaults.png" alt="NewVaults" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewVaults<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Cofres personales con permisos, GUI y multi-database.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">7 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/nkoths/index.html" data-search="nkoths koths personalizables con captura, hologramas y premios. nkoths minijuegos">
+  <img class="doc-icon" src="../assets/icons/nkoths.png" alt="nKoths" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nKoths<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">KOTHs personalizables con captura, hologramas y premios.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">8 comandos</span><span class="doc-chip">4 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newplaytime/index.html" data-search="nplaytime sube de nivel jugando: recompensas por tu tiempo de juego. newplaytime progresión">
+  <img class="doc-icon" src="../assets/icons/newplaytime.png" alt="nPlaytime" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nPlaytime<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">Sube de nivel jugando: recompensas por tu tiempo de juego.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">2 comandos</span><span class="doc-chip">1 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/staffmode/index.html" data-search="nstaffmode modo staff completo con herramientas de moderación. staffmode moderación">
+  <img class="doc-icon" src="../assets/icons/staffmode.png" alt="nStaffMode" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">nStaffMode<span class="doc-cat"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderación</span></span>
+    <span class="doc-tagline">Modo staff completo con herramientas de moderación.</span>
+    <span class="doc-chips"><span class="doc-chip">6 .yml</span><span class="doc-chip">7 comandos</span><span class="doc-chip">28 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/playervs/index.html" data-search="playervs duelos 1vs1 con rondas, arenas y espectadores. playervs minijuegos">
+  <img class="doc-icon" src="../assets/icons/playervs.png" alt="Playervs" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">Playervs<span class="doc-cat"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minijuegos</span></span>
+    <span class="doc-tagline">Duelos 1vs1 con rondas, arenas y espectadores.</span>
+    <span class="doc-chips"><span class="doc-chip">2 .yml</span><span class="doc-chip">9 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newbattlepass/index.html" data-search="prisonbattlepass sube de nivel, completa misiones y reclama recompensas. newbattlepass progresión">
+  <img class="doc-icon" src="../assets/icons/newbattlepass.png" alt="PrisonBattlePass" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">PrisonBattlePass<span class="doc-cat"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progresión</span></span>
+    <span class="doc-tagline">Sube de nivel, completa misiones y reclama recompensas.</span>
+    <span class="doc-chips"><span class="doc-chip">4 .yml</span><span class="doc-chip">5 comandos</span><span class="doc-chip">2 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/procosmetics/index.html" data-search="procosmetics más de 15 categorías de cosméticos para tu servidor. procosmetics cosméticos">
+  <img class="doc-icon" src="../assets/icons/procosmetics.png" alt="ProCosmetics" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">ProCosmetics<span class="doc-cat"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosméticos</span></span>
+    <span class="doc-tagline">Más de 15 categorías de cosméticos para tu servidor.</span>
+    <span class="doc-chips"><span class="doc-chip">18 .yml</span><span class="doc-chip">11 comandos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/spawnsystem/index.html" data-search="spawnsystem spawn, homes, gamemodes, tiempo y vuelo en un solo plugin. spawnsystem utilidad">
+  <img class="doc-icon" src="../assets/icons/spawnsystem.png" alt="SpawnSystem" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">SpawnSystem<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Spawn, homes, gamemodes, tiempo y vuelo en un solo plugin.</span>
+    <span class="doc-chips"><span class="doc-chip">3 .yml</span><span class="doc-chip">14 comandos</span><span class="doc-chip">14 permisos</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newautopickup/index.html" data-search="newautopickup recoge items automáticamente (pendiente de desarrollo). newautopickup utilidad">
+  <img class="doc-icon" src="../assets/icons/newautopickup.png" alt="NewAutopickup" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewAutopickup<span class="doc-cat"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utilidad</span></span>
+    <span class="doc-tagline">Recoge items automáticamente (pendiente de desarrollo).</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a><a class="doc-item reveal" href="../documentacion/newsellchests/index.html" data-search="newsellchests en desarrollo: cofres de venta automática (próximamente). newsellchests economía">
+  <img class="doc-icon" src="../assets/icons/newsellchests.png" alt="NewSellchests" loading="lazy">
+  <span class="doc-info">
+    <span class="doc-name">NewSellchests<span class="doc-cat"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economía</span></span>
+    <span class="doc-tagline">En desarrollo: cofres de venta automática (próximamente).</span>
+    <span class="doc-chips"><span class="doc-chip">1 .yml</span></span>
+  </span>
+  <span class="doc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+</a>
+    </div>
+    <div class="empty" id="docsEmpty" hidden>
+      <span class="empty-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <h3>Sin resultados</h3>
+      <p>No hay plugins que coincidan con tu búsqueda. Prueba con otra palabra o categoría.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>Documentación generada automáticamente desde el código fuente de los plugins.</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="../documentacion/index.html">Documentación</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. Todos los derechos reservados. <span class="dot">·</span> Powered by GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

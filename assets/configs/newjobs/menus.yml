@@ -1,0 +1,659 @@
+# Diseñado como NewSkills. Todos los slots, sonidos, nombres, materiales y acciones editables.
+# Format: &a, &l, &#RRGGBB, #RRGGBB, <red>, <gradient:#00f2fe:#4facfe>texto</gradient>.
+# material: PLAYER_HEAD + base64: <textura> o material: basehead-<base64>.
+# sounds: click-sound: false, "ENTITY_EXPERIENCE_ORB_PICKUP" o {enabled: true, type: 'tu_pack:ui.click', volume: 1.0, pitch: 1.0}
+# Acciones: [open] overview|detail|sources|rewards|quests|contracts|top,
+# [join], [leave], [claim], [claim-all], [claim-quest], [contract] basic, [prestige], [page] next|previous,
+# [message] texto, [player] comando, [console] comando, [back], [close], [force-close].
+# Variables: {player}, {job}, {job_display}, {level}, {xp}, {required_xp}, {progress},
+# {points}, {earned_money}, {joined_jobs}, {max_jobs}, {prestige}, {quest_current},
+# {quest_total}, {quest_action}, {contract_time}, {page}, {max_pages}, {reward_level},
+# {reward_status}, {top_uuid}, {subject}, {action}, {gain_money}, {gain_xp}.
+# ESC/E vuelve al menú anterior; [force-close] cierra definitivamente.
+
+menus-version: 2
+
+sounds:
+  click:
+    enabled: true
+    type: UI_BUTTON_CLICK
+    volume: 0.7
+    pitch: 1.2
+  success:
+    enabled: true
+    type: ENTITY_PLAYER_LEVELUP
+    volume: 0.8
+    pitch: 1.3
+  error:
+    enabled: true
+    type: ENTITY_VILLAGER_NO
+    volume: 0.7
+    pitch: 1.0
+
+menus:
+  overview:
+    title: '<gradient:#00f2fe:#4facfe><bold>NEWJOBS &8| &fTRABAJOS</bold></gradient>'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: [45, 46, 47, 48, 49, 50, 51, 52, 53]
+    job-icon:
+      name: '{job_display} &8| &fNivel &e{level}'
+      lore:
+        - ''
+        - '&f{description}'
+        - ''
+        - '&8▪ &fNivel: &#ffd65f{level}'
+        - '&8▪ &fXP: &#00f2fe{xp}&7/&#00f2fe{required_xp}'
+        - '&8▪ &fEstado: {joined_status}'
+        - ''
+        - '&#00f2fe✔ ¡Click para ver el trabajo!'
+      actions:
+        - '[open] detail'
+    items:
+      stats:
+        enabled: true
+        slot: 48
+        material: PLAYER_HEAD
+        skull-owner: '{player}'
+        name: '<gradient:#00f2fe:#4facfe><bold>PERFIL DE {player}</bold></gradient>'
+        lore:
+          - ''
+          - '&8▪ &fTrabajos activos: &b{joined_jobs}&7/&#00f2fe{max_jobs}'
+          - '&8▪ &fNivel global: &e{total_level}'
+          - ''
+          - '&#00f2fe✔ ¡Sigue progresando!'
+        actions: []
+      help:
+        enabled: true
+        slot: 49
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>GUÍA DE TRABAJOS</bold></gradient>'
+        lore:
+          - ''
+          - '&fTrabaja, gana dinero, sube de nivel,'
+          - '&fcompleta misiones y firma contratos.'
+          - ''
+          - '&#00f2fe✔ ¡Click para consultar!'
+        actions:
+          - '[message] &bÚnete a un trabajo desde su ficha y gana XP realizando actividades.'
+      top:
+        enabled: true
+        slot: 50
+        material: NETHER_STAR
+        name: '<gradient:#38ef7d:#11998e><bold>CLASIFICACIÓN</bold></gradient>'
+        lore:
+          - ''
+          - '&fConsulta los jugadores con más niveles.'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver el top!'
+        actions:
+          - '[open] top'
+      close:
+        enabled: true
+        slot: 53
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR MENÚ</bold></gradient>'
+        lore:
+          - ''
+          - '&fSalir de NewJobs'
+        actions:
+          - '[force-close]'
+
+  detail:
+    title: '&8Trabajos &8» <gradient:#00f2fe:#4facfe><bold>{job_display}</bold></gradient>'
+    size: 36
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    job-preview:
+      enabled: true
+      slot: 24
+      name: '{job_display} &8» &fNv. {level}'
+      lore:
+        - ''
+        - '&f{description}'
+        - ''
+        - '&8» &fXP: &#00f2fe{xp}&7/&#00f2fe{required_xp}'
+        - '&8» &fPrestigio: &d{prestige}'
+        - '&8» &fPuntos: &e{points}'
+        - '&8» &fIngresos: &a${earned_money}'
+    items:
+      info:
+        enabled: true
+        slot: 3
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>ESTADÍSTICAS</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel: &e{level}'
+          - '&8» &fExperiencia: &b{xp}&7/&b{required_xp}'
+          - '&8» &fProgreso: &a{progress}%'
+          - '&8» &fEstado: {joined_status}'
+      rewards:
+        enabled: true
+        slot: 5
+        material: CHEST
+        name: '<gradient:#ffd65f:#f0a51b><bold>RECOMPENSAS</bold></gradient>'
+        lore:
+          - ''
+          - '&fPremios al subir de nivel.'
+          - ''
+          - '&#00f2fe✔ ¡Click para abrir!'
+        actions:
+          - '[open] rewards'
+      sources:
+        enabled: true
+        slot: 20
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#38ef7d:#11998e><bold>FUENTES DE GANANCIA</bold></gradient>'
+        lore:
+          - ''
+          - '&fLista de actividades y pagos.'
+          - ''
+          - '&#00f2fe✔ ¡Click para abrir!'
+        actions:
+          - '[open] sources'
+      quests:
+        enabled: true
+        slot: 21
+        material: WRITABLE_BOOK
+        name: '<gradient:#38ef7d:#11998e><bold>MISIÓN DIARIA</bold></gradient>'
+        lore:
+          - ''
+          - '&fCompleta objetivos diarios y cobra.'
+          - ''
+          - '&#00f2fe✔ ¡Click para abrir!'
+        actions:
+          - '[open] quests'
+      contracts:
+        enabled: true
+        slot: 22
+        material: PAPER
+        name: '<gradient:#f2b4ff:#ad6fff><bold>CONTRATOS</bold></gradient>'
+        lore:
+          - ''
+          - '&fMejora tus ingresos por tiempo limitado.'
+          - ''
+          - '&#00f2fe✔ ¡Click para abrir!'
+        actions:
+          - '[open] contracts'
+      join:
+        enabled: true
+        slot: 23
+        material: LIME_DYE
+        name: '<gradient:#38ef7d:#11998e><bold>UNIRSE AL TRABAJO</bold></gradient>'
+        lore:
+          - ''
+          - '&fLímite de trabajos: &b{joined_jobs}&7/&#00f2fe{max_jobs}'
+        actions:
+          - '[join]'
+      leave:
+        enabled: true
+        slot: 23
+        material: RED_DYE
+        name: '<gradient:#ff4b2b:#ff416c><bold>ABANDONAR TRABAJO</bold></gradient>'
+        lore:
+          - ''
+          - '&fEl progreso se conserva aunque salgas.'
+        actions:
+          - '[leave]'
+      job-top:
+        enabled: true
+        slot: 13
+        material: PLAYER_HEAD
+        skull-owner: '{player}'
+        name: '<gradient:#00f2fe:#4facfe><bold>TOP DE {job_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&fClasificación exclusiva de este trabajo.'
+          - '&8» &fTu nivel: &e{level}'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver los mejores!'
+        actions:
+          - '[open] job-top'
+      prestige:
+        enabled: true
+        slot: 31
+        material: NETHER_STAR
+        name: '<gradient:#f2b4ff:#ad6fff><bold>PRESTIGIO {prestige}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel requerido: &e{prestige_required}'
+          - '&8» &fCosto: &e{prestige_cost} puntos'
+          - '&8» &fNuevo prestigio: &d{next_prestige}'
+          - ''
+          - '&#00f2fe✔ ¡Click para ascender!'
+        actions:
+          - '[prestige]'
+      back:
+        enabled: true
+        slot: 27
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER AL MENÚ</bold></gradient>'
+        lore:
+          - ''
+          - '&fRegresa a la lista de &btrabajos&f.'
+          - ''
+          - '&#ff4b2b✔ ¡Click para volver!'
+        actions:
+          - '[open] overview'
+      close:
+        enabled: true
+        slot: 26
+        material: BARRIER
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  sources:
+    title: '&8Fuentes de ganancia &8» &a{job_display}'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    source-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+    # AUTO: bloques reales, cultivos, huevos de mobs, objetos y iconos por actividad.
+    # Overrides opcionales: icon-overrides.KILL.ZOMBIE: ZOMBIE_HEAD
+    icon-overrides: {}
+    source-icon:
+      material: AUTO
+      name: '<gradient:#38ef7d:#11998e><bold>{subject}</bold></gradient>'
+      lore:
+        - ''
+        - '&8» &fDetalles de la fuente:'
+        - '  &8▪ &fAcción: &b{action}'
+        - '  &8▪ &fDinero: &a${gain_money}'
+        - '  &8▪ &fXP: &e{gain_xp}'
+        - '  &8▪ &fPuntos: &d{gain_points}'
+        - ''
+        - '&8▪ &7ID: {source_subject_id}'
+    items:
+      calculation:
+        enabled: true
+        slot: 3
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>PROGRESO DE {job_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel actual: &f{level}'
+          - '&8» &fXP: &f{xp}&8/&f{required_xp}'
+          - '&8» &fProgreso: &a{progress}%'
+      back:
+        enabled: true
+        slot: 45
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[open] detail'
+      main:
+        enabled: true
+        slot: 5
+        material: COMPASS
+        name: '<gradient:#00f2fe:#4facfe><bold>TODOS LOS TRABAJOS</bold></gradient>'
+        actions:
+          - '[open] overview'
+      previous:
+        enabled: true
+        slot: 52
+        material: SPECTRAL_ARROW
+        name: '&#00f2fe« Página anterior &7({page}/{max_pages})'
+        actions:
+          - '[page] previous'
+      next:
+        enabled: true
+        slot: 53
+        material: SPECTRAL_ARROW
+        name: '&#00f2fePágina siguiente » &7({page}/{max_pages})'
+        actions:
+          - '[page] next'
+      close:
+        enabled: true
+        slot: 49
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  rewards:
+    title: '&8Recompensas: &e{job_display} &8- &7Página {page}/{max_pages}'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&f'
+    level-slots: [19, 21, 22, 23, 25, 28, 30, 32, 34, 37, 38, 39, 41, 42, 43]
+    # La misma textura Base64 de levels.future se aplica a todas las casillas.
+    # Pon enabled: false para volver a cristales de colores.
+    shared-heads:
+      enabled: true
+      base64: ''
+    status:
+      future: '&cSin desbloquear'
+      completed: '&aNivel alcanzado'
+      locked: '&cRecompensa bloqueada'
+      available: '&e¡Disponible para reclamar!'
+      claimed: '&b¡Ya reclamada!'
+    levels:
+      future:
+        click-sound:
+          enabled: true
+          type: ENTITY_VILLAGER_NO
+          volume: 0.65
+          pitch: 1.15
+        material: PLAYER_HEAD
+        base64: 'eyJ...'
+        name: '&cNivel {reward_level}'
+        lore:
+          - ''
+          - '&fRecompensa futura disponible al progresar.'
+          - ''
+          - '&8» &fNivel actual: &e{level}'
+          - '&8» &fEstado: &c{reward_status}'
+      completed:
+        material: LIME_STAINED_GLASS_PANE
+        name: '&aNivel {reward_level}'
+        lore:
+          - ''
+          - '&fNivel completado con éxito.'
+          - ''
+          - '&8» &fEstado: &a{reward_status}'
+      locked:
+        click-sound:
+          enabled: true
+          type: ENTITY_VILLAGER_NO
+          volume: 0.65
+          pitch: 1.15
+        material: RED_STAINED_GLASS_PANE
+        name: '&cNivel {reward_level} &8▪ &7{reward_name}'
+        lore:
+          - ''
+          - '&fPremio bloqueado temporalmente.'
+          - ''
+          - '&8» &fRequiere nivel: &e{reward_level}'
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fDinero: &a${reward_money}'
+          - '&8» &fPuntos: &d{reward_points}'
+          - '&8» &fEstado: &c{reward_status}'
+      available:
+        material: YELLOW_STAINED_GLASS_PANE
+        glow: true
+        name: '&e¡Premio del Nivel {reward_level}!'
+        lore:
+          - ''
+          - '&f¡Has alcanzado este nivel y puedes reclamar tu premio!'
+          - ''
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fDinero: &a${reward_money}'
+          - '&8» &fPuntos: &d{reward_points}'
+          - ''
+          - '&#00f2fe✔ ¡Click para reclamar premio!'
+      claimed:
+        material: CYAN_STAINED_GLASS_PANE
+        name: '&bNivel {reward_level} &8▪ &7{reward_name}'
+        lore:
+          - ''
+          - '&fEsta recompensa ya fue entregada a tu cuenta.'
+          - ''
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fEstado: &b{reward_status}'
+    items:
+      info:
+        enabled: true
+        slot: 2
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>RECOMPENSAS DE {job_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel actual: &a{level}'
+          - '&8» &fPrestigio: &b{prestige}'
+          - '&8» &fÚltima recompensa: &e{max_reward_level}'
+      guide:
+        enabled: true
+        slot: 4
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#00f2fe:#4facfe><bold>GUÍA DE RECOMPENSAS</bold></gradient>'
+        lore:
+          - ''
+          - '&fSube de nivel para desbloquear premios.'
+          - ''
+          - '&8▪ &eAmarillo: &7Premio pendiente'
+          - '&8▪ &bCeleste: &7Ya reclamado'
+          - '&8▪ &aVerde: &7Nivel completado'
+          - '&8▪ &cRojo: &7Todavía bloqueado'
+      back:
+        enabled: true
+        slot: 0
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[open] detail'
+      previous:
+        enabled: true
+        slot: 45
+        material: ARROW
+        name: '&#00f2fe« Página anterior'
+        actions:
+          - '[page] previous'
+      claim:
+        enabled: true
+        slot: 8
+        material: CHEST
+        name: '<gradient:#38ef7d:#11998e><bold>RECLAMAR TODO</bold></gradient>'
+        lore:
+          - ''
+          - '&fReclama de forma automática todas las'
+          - '&frecompensas acumuladas de tus niveles.'
+          - ''
+          - '&#00f2fe✔ ¡Click para reclamar todo!'
+        actions:
+          - '[claim-all]'
+      prestige:
+        enabled: true
+        slot: 6
+        material: NETHER_STAR
+        name: '<gradient:#f2b4ff:#ad6fff><bold>PRESTIGIO {prestige}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel requerido: &e{prestige_required}'
+          - '&8» &fCosto: &e{prestige_cost} puntos'
+          - ''
+          - '&cReinicia nivel y experiencia por beneficios.'
+          - ''
+          - '&#00f2fe✔ ¡Click para ascender!'
+        actions:
+          - '[prestige]'
+      next:
+        enabled: true
+        slot: 53
+        material: ARROW
+        name: '&#00f2fePágina siguiente »'
+        actions:
+          - '[page] next'
+      close:
+        enabled: true
+        slot: 49
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  quests:
+    title: '&8Misión diaria &8» <gradient:#00f2fe:#4facfe><bold>{job_display}</bold></gradient>'
+    size: 36
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    quest-icon:
+      enabled: true
+      slot: 13
+      material: BOOK
+      glow: true
+      name: '<gradient:#38ef7d:#11998e><bold>MISIÓN DIARIA</bold></gradient>'
+      lore:
+        - ''
+        - '&8» &fAcción: &b{quest_action}'
+        - '&8» &fProgreso: &e{quest_current}&7/&e{quest_total}'
+        - '&8» &fEstado: {quest_status}'
+        - ''
+        - '&#00f2fe✔ ¡Click para cobrar si la completaste!'
+      actions:
+        - '[claim-quest]'
+    items:
+      back:
+        enabled: true
+        slot: 27
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[open] detail'
+      close:
+        enabled: true
+        slot: 26
+        material: BARRIER
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  contracts:
+    title: '&8Contratos &8» <gradient:#00f2fe:#4facfe><bold>{job_display}</bold></gradient>'
+    size: 36
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    contract-slots: [11, 15, 20, 24]
+    contract-icon:
+      material: PAPER
+      name: '{tier_display}'
+      lore:
+        - ''
+        - '&8» &fCoste: &e{tier_price} puntos'
+        - '&8» &fNivel requerido: &b{tier_level}'
+        - '&8» &fDuración: &d{tier_duration} minutos'
+        - '&8» &fDinero: &a×{tier_money}'
+        - '&8» &fXP: &b×{tier_xp}'
+        - ''
+        - '&8» &fContrato actual: &e{contract_time}'
+        - ''
+        - '&#00f2fe✔ ¡Click para firmar!'
+    items:
+      back:
+        enabled: true
+        slot: 27
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[open] detail'
+      close:
+        enabled: true
+        slot: 26
+        material: BARRIER
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  job-top:
+    # Clasificación individual por trabajo, abierta desde su ficha.
+    # Se muestra el nivel ACTUAL de jugadores online (sin esperar guardado).
+    title: '&8TOP » <gradient:#00f2fe:#4facfe><bold>{job_display}</bold></gradient> &7- {page}/{max_pages}'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    player-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+    player-icon:
+      material: PLAYER_HEAD
+      skull-owner-uuid: '{top_uuid}'
+      name: '<gradient:#ffd65f:#f0a51b><bold>#{rank}</bold></gradient> &f{top_player}'
+      lore:
+        - ''
+        - '&8» &fTrabajo: {job_display}'
+        - '&8» &fNivel: &e{top_level}'
+        - '&8» &fExperiencia total: &b{top_xp}'
+        - '&8» &fPosición: &6#{rank}'
+        - ''
+        - '&7Página {page}/{max_pages}'
+    items:
+      previous:
+        enabled: true
+        slot: 45
+        material: ARROW
+        name: '&#00f2fe« Página anterior'
+        lore:
+          - '&7Página &f{page}&7/&f{max_pages}'
+        actions:
+          - '[page] previous'
+      refresh:
+        enabled: true
+        slot: 48
+        material: CLOCK
+        name: '<gradient:#38ef7d:#11998e><bold>ACTUALIZAR TOP</bold></gradient>'
+        lore:
+          - ''
+          - '&fActualizar los jugadores de {job_display}.'
+          - '&7Los perfiles online se muestran al instante.'
+          - '&7Los guardados se consultan en segundo plano.'
+        actions:
+          - '[refresh-top]'
+      back:
+        enabled: true
+        slot: 49
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER A {job_display}</bold></gradient>'
+        actions:
+          - '[back]'
+      next:
+        enabled: true
+        slot: 53
+        material: ARROW
+        name: '&#00f2fePágina siguiente »'
+        lore:
+          - '&7Página &f{page}&7/&f{max_pages}'
+        actions:
+          - '[page] next'
+      close:
+        enabled: true
+        slot: 50
+        material: BARRIER
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[force-close]'
+
+  top:
+    title: '<gradient:#00f2fe:#4facfe><bold>TOP TRABAJADORES</bold></gradient>'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    player-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+    player-icon:
+      material: PLAYER_HEAD
+      skull-owner-uuid: '{top_uuid}'
+      name: '&e#{rank} &f{top_player}'
+      lore:
+        - ''
+        - '&8» &fTrabajo: {job_display}'
+        - '&8» &fNivel: &e{top_level}'
+        - '&8» &fXP total: &b{top_xp}'
+    items:
+      back:
+        enabled: true
+        slot: 49
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[back]'

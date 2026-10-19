@@ -1,0 +1,22 @@
+name: NewHeads
+version: '${version}'
+
+main: github.dstudio.newHeads.NewHeads
+api-version: '1.13'
+load: POSTWORLD
+depend:
+  - packetevents
+softdepend:
+  - HeadDatabase
+  - FancyHolograms
+  - ExcellentCrates
+commands:
+  newheads:
+    description: Manage NewHeads floating heads
+    usage: /<command> help
+    aliases: [nheads, nh]
+    permission: newheads.admin
+permissions:
+  newheads.admin:
+    description: Allows managing floating heads
+    default: op

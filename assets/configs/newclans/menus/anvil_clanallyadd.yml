@@ -1,0 +1,6 @@
+id: anvil_clanallyadd
+
+title: '<dark_gray>Add Ally</dark_gray>'
+material: SHIELD
+initial-text: 'ClanTag'
+back-menu: ally

@@ -1,0 +1,61 @@
+name: NewRankup
+version: '1.0-SNAPSHOT'
+main: me.danshi.NewRankup.NewRankup
+api-version: '1.13'
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - HeadDatabase
+  - NPrisonCore
+libraries:
+  - com.h2database:h2:2.2.224
+  - com.zaxxer:HikariCP:5.1.0
+  - mysql:mysql-connector-java:8.0.33
+  - org.mongodb:bson:4.11.1
+  - org.mongodb:mongodb-driver-core:4.11.1
+  - org.mongodb:mongodb-driver-sync:4.11.1
+  - org.slf4j:slf4j-api:2.0.9
+  - net.kyori:adventure-platform-bukkit:4.2.0
+  - net.kyori:adventure-text-minimessage:4.12.0
+commands:
+  rankup:
+    description: Abre el menú principal de ascenso de rangos.
+    usage: /rankup
+    aliases: [rangos, subirrango, ru]
+    permission: newrankup.use
+  np:
+    description: Comandos de administración del plugin (reload, help).
+    usage: /np <args>
+    aliases: [newrankup, nadmin]
+    permission: newrankup.admin
+  maxrankup:
+    description: Asciende automáticamente todos los rangos posibles.
+    usage: /maxrankup
+    aliases: [mru, rankupmax]
+    permission: newrankup.maxrankup
+  maxprestige:
+    description: Completa rangos y prestigia automáticamente lo máximo posible.
+    usage: /maxprestige
+    aliases: [mpr, prestigemax]
+    permission: newrankup.maxprestige
+  maxrebirth:
+    description: Completa prestiges y renace automáticamente lo máximo posible.
+    usage: /maxrebirth
+    aliases: [mrb, rebirthmax]
+    permission: newrankup.maxrebirth
+permissions:
+  newrankup.admin:
+    description: Permite usar /np reload para recargar la configuración.
+    default: op
+  newrankup.use:
+    description: Permite a los jugadores abrir el menú de rankup.
+    default: true
+  newrankup.maxrankup:
+    description: Permite usar /maxrankup.
+    default: true
+  newrankup.maxprestige:
+    description: Permite usar /maxprestige.
+    default: true
+  newrankup.maxrebirth:
+    description: Permite usar /maxrebirth.
+    default: true

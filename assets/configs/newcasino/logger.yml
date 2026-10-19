@@ -1,0 +1,118 @@
+settings:
+  enabled: true
+  avatar-url: "https://minotar.net/avatar/%uuid%/100.png"
+
+database:
+  enabled: true
+  retention-days: 30
+  format: "[%time%] [%event%] %message%"
+
+file:
+  enabled: true
+  folder: "logs"
+  retention-days: 30
+  format: "[%time%] [%event%] %message%"
+
+console:
+  enabled: false
+
+discord:
+  enabled: false
+  username: "NewCasino"
+  avatar-url: ""
+  webhooks:
+    coinflip: "URL_DE_TU_WEBHOOK_AQUI"
+    slots: "URL_DE_TU_WEBHOOK_AQUI"
+
+events:
+  coinflip-created:
+    enabled: true
+    channel: "coinflip"
+    file: "%player% (%uuid%) creó un coinflip de %amount% %currency%"
+    embed:
+      color: "#00AAFF"
+      author:
+        name: "%player% creó un coinflip"
+        icon: "%avatar_url%"
+      description:
+        - "**Apuesta:** %amount% %currency%"
+      thumbnail: "%avatar_url%"
+      footer: "Coinflip"
+      timestamp: true
+
+  coinflip-cancelled:
+    enabled: true
+    channel: "coinflip"
+    file: "%player% (%uuid%) canceló su coinflip de %amount% %currency%"
+    embed:
+      color: "#FFAA00"
+      author:
+        name: "%player% canceló su coinflip"
+        icon: "%avatar_url%"
+      description:
+        - "**Devuelto:** %amount% %currency%"
+      thumbnail: "%avatar_url%"
+      footer: "Coinflip"
+      timestamp: true
+
+  coinflip-completed:
+    enabled: true
+    channel: "coinflip"
+    file: "%winner% (%winner_uuid%) venció a %loser% (%loser_uuid%) | apuesta %wager% | premio %payout% | impuesto %tax% (%tax_rate%%) %currency%"
+    embed:
+      color: "#00FF00"
+      title: "🪙 Coinflip finalizado"
+      description:
+        - "**Ganador:** %winner%"
+        - "**Perdedor:** %loser%"
+        - "**Apuesta:** %wager% %currency%"
+        - "**Premio:** %payout% %currency%"
+        - "**Impuesto:** %tax% (%tax_rate%%)"
+      thumbnail: "%avatar_url%"
+      footer: "Coinflip"
+      timestamp: true
+
+  slots-win:
+    enabled: true
+    channel: "slots"
+    file: "%player% (%uuid%) ganó %payout% %currency% en slots | apuesta %bet% | x%multiplier%"
+    embed:
+      color: "#55FF55"
+      author:
+        name: "%player% ganó en slots"
+        icon: "%avatar_url%"
+      description:
+        - "**Apuesta:** %bet% %currency%"
+        - "**Premio:** %payout% %currency% (x%multiplier%)"
+      thumbnail: "%avatar_url%"
+      footer: "Slots"
+      timestamp: true
+
+  slots-jackpot:
+    enabled: true
+    channel: "slots"
+    file: "JACKPOT: %player% (%uuid%) ganó %payout% %currency% en slots | apuesta %bet% | x%multiplier%"
+    embed:
+      color: "#FFD700"
+      title: "✨ JACKPOT en slots"
+      description:
+        - "**Jugador:** %player%"
+        - "**Apuesta:** %bet% %currency%"
+        - "**Premio:** %payout% %currency% (x%multiplier%)"
+      thumbnail: "%avatar_url%"
+      footer: "Slots"
+      timestamp: true
+
+  slots-lose:
+    enabled: false
+    channel: "slots"
+    file: "%player% (%uuid%) perdió %bet% %currency% en slots"
+    embed:
+      color: "#FF5555"
+      author:
+        name: "%player% perdió en slots"
+        icon: "%avatar_url%"
+      description:
+        - "**Apuesta:** %bet% %currency%"
+      thumbnail: "%avatar_url%"
+      footer: "Slots"

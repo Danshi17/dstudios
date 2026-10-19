@@ -1,0 +1,11 @@
+enabled: true
+header:
+  - ""
+  - "&b&lYOURSERVER"
+  - ""
+footer:
+  - ""
+  - "&7Jugadores: &b%server_online%"
+  - ""
+update-ticks: 40
+show-prefix: true

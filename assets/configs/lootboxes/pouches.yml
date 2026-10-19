@@ -1,0 +1,9 @@
+pouches:
+  money_tier1:
+    display-name: "<gradient:#11998e:#38ef7d>Bolsa de Dinero T1</gradient>"
+    material: "hdb-24014"
+    min: 1000
+    max: 50000
+    commands:
+      - "eco give %player_name% <amount>"
+      - "msg %player_name% Has ganado $<amount>"

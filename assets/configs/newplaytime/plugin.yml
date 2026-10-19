@@ -1,0 +1,23 @@
+name: nPlaytime
+version: '1.0-SNAPSHOT'
+main: github.dstudio.NewPlaytime
+api-version: '1.18'
+softdepend: [PlaceholderAPI, HeadDatabase]
+libraries:
+  - com.h2database:h2:2.2.224
+  - com.zaxxer:HikariCP:5.1.0
+  - mysql:mysql-connector-java:8.0.33
+  - org.mongodb:bson:4.11.1
+  - org.mongodb:mongodb-driver-core:4.11.1
+  - org.mongodb:mongodb-driver-sync:4.11.1
+  - org.slf4j:slf4j-api:2.0.9
+commands:
+  playtime:
+    description: Abre el menú de niveles de playtime
+    usage: /playtime
+    aliases: [pt, levels, horas, juego, tiempo]
+
+permissions:
+  nplaytime.reload:
+    description: Permite recargar la configuración
+    default: op

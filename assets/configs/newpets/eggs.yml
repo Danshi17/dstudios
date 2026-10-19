@@ -1,0 +1,91 @@
+# NEWPETS - 6 huevos por rareza, con selección automática de las 31 mascotas.
+# possible-pets: [] incluye todas las mascotas de las rarezas configuradas.
+
+eggs:
+  normal_egg:
+    display-name: '&7&lHuevo Común'
+    material: EGG
+    egg-rarity: COMMON
+    lore:
+      - ''
+      - '&7Mascotas de inicio; posibilidad muy baja de Legendary'
+      - '&eRarezas: COMMON, RARE, LEGENDARY'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      COMMON: 85.0
+      RARE: 13.0
+      LEGENDARY: 2.0
+    possible-pets: []
+  rare_egg:
+    display-name: '&9&lHuevo Raro'
+    material: TURTLE_EGG
+    egg-rarity: RARE
+    lore:
+      - ''
+      - '&7Mascotas intermedias y Mythical ocasional'
+      - '&eRarezas: RARE, LEGENDARY, MYTHICAL'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      RARE: 75.0
+      LEGENDARY: 21.0
+      MYTHICAL: 4.0
+    possible-pets: []
+  legendary_egg:
+    display-name: '&6&lHuevo Legendario'
+    material: BLAZE_SPAWN_EGG
+    egg-rarity: LEGENDARY
+    lore:
+      - ''
+      - '&7Mascotas legendarias, míticas y magistrales'
+      - '&eRarezas: LEGENDARY, MYTHICAL, MASTERFUL'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      LEGENDARY: 75.0
+      MYTHICAL: 21.0
+      MASTERFUL: 4.0
+    possible-pets: []
+  mythical_egg:
+    display-name: '&d&lHuevo Mítico'
+    material: GHAST_SPAWN_EGG
+    egg-rarity: MYTHICAL
+    lore:
+      - ''
+      - '&7Posibilidad del 2% de una DIVINE'
+      - '&eRarezas: MYTHICAL, MASTERFUL, DIVINE'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      MYTHICAL: 74.0
+      MASTERFUL: 24.0
+      DIVINE: 2.0
+    possible-pets: []
+  masterful_egg:
+    display-name: '&c&lHuevo Magistral'
+    material: WITHER_SKELETON_SPAWN_EGG
+    egg-rarity: MASTERFUL
+    lore:
+      - ''
+      - '&7Mascotas OP; posibilidad del 15% de DIVINE'
+      - '&eRarezas: MASTERFUL, DIVINE'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      MASTERFUL: 85.0
+      DIVINE: 15.0
+    possible-pets: []
+  divine_egg:
+    display-name: '&b&lHuevo Divino'
+    material: DRAGON_EGG
+    egg-rarity: DIVINE
+    lore:
+      - ''
+      - '&7Garantiza una mascota DIVINE super OP'
+      - '&eRarezas: DIVINE'
+      - ''
+      - '&a▶ Click derecho para abrir'
+    rarity-weights:
+      DIVINE: 100.0
+    possible-pets: []

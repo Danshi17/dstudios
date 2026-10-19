@@ -1,0 +1,45 @@
+messages:
+  prefix: "&8[&5Pets&8] &r"
+
+  # ─── Pet general ─────────────────────────────────
+  pet-activated:      "&aActivaste tu mascota &5{pet_name}&a!"
+  pet-deactivated:    "&7Desactivaste tu mascota &5{pet_name}&7."
+  pet-level-up:       "&6✦ &a¡Tu mascota &5{pet_name} &asubió al nivel &e{level}&a! &6✦"
+  pet-max-level:      "&cTu mascota &5{pet_name} &cya está en nivel máximo &8(&e{max_level}&8)."
+  pet-prestige:       "&6✦ &d¡Prestige &e{prestige}&d para &5{pet_name}&d! &6✦"
+  pet-slot-locked:    "&cNo puedes mover una mascota activa. Desactívala primero."
+  already-active-pet: "&cYa tienes una mascota activa. Desactívala primero."
+  pet-not-found:      "&cMascota no encontrada: &e{pet_id}"
+  player-not-found:   "&cJugador no encontrado: &e{player}"
+  no-permission:      "&cNo tienes permiso para eso."
+
+  # ─── Egg ─────────────────────────────────────────
+  egg-opened:         "&a¡Obtuviste la mascota &5{pet_name} &8[{rarity}&8]&a!"
+  egg-duplicate:      "&7Ya tienes &5{pet_name}&7. ¡Puedes tenerla varias veces!"
+
+  # ─── Admin ───────────────────────────────────────
+  pet-given:    "&aMascota &5{pet_name} &adada a &e{player}&a."
+  pet-received: "&a¡Recibiste la mascota &5{pet_name}&a!"
+  egg-given:    "&aHuevo &e{egg_name} &adado a &e{player}&a."
+  xp-added:     "&aAgregado &e{amount} XP &aa &5{pet_name} &ade &e{player}&a."
+  tickets-added: "&aAgregado &e{amount} tickets &ade trait a &e{player}&a."
+  reload-done:  "&aNewPets recargado correctamente."
+  invalid-amount: "&cCantidad inválida."
+
+  # ─── Traits ──────────────────────────────────────
+  trait-rolled:          "&aObtuviste el trait &5{trait_name} &8[{rarity}&8]&a!"
+  trait-rolled-info:     "&7Nivel del trait: &e{trait_level}"
+  not-enough-tickets:    "&cNecesitas &e{cost} tickets &cpero solo tienes &e{have}."
+  no-pet-for-trait:      "&cSelecciona una pet primero."
+
+  # ─── Upgrade/Prestige ────────────────────────────
+  upgrade-success:    "&aTu mascota &5{pet_name} &asubió al nivel &e{level}&a."
+  upgrade-failed:     "&cNo se pudo subir de nivel. Verifica tu saldo."
+  prestige-failed-level: "&cTu mascota debe estar en nivel máximo para prestigiar."
+  prestige-failed-max:   "&cTu mascota ya está en el prestige máximo."
+
+  # ─── Progress bar ────────────────────────────────
+  progress-bar:
+    filled: "&a█"
+    empty:  "&8█"
+    length: 20

@@ -1,0 +1,25 @@
+id: clan_delhome_confirm
+
+title: '<dark_gray>Delete Home <gray>»</gray> %target%</dark_gray>'
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,18-26'
+
+  confirm:
+    slot: 11
+    material: LIME_WOOL
+    name: '<green>Confirm</green>'
+    lore:
+      - '<gray>Delete home <white>%target%</white>?</gray>'
+    action: 'HOME_DELETE:%target%'
+
+  cancel:
+    slot: 15
+    material: RED_WOOL
+    name: '<red>Cancel</red>'
+    action: OPEN:clan_homes

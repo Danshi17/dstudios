@@ -1,0 +1,32 @@
+# /jobs rewards <trabajo> -- GUI de premios por nivel (se reclaman una sola vez)
+settings:
+  enabled: true
+  auto-claim: false
+  level-interval: 5
+rewards:
+  default:
+    points: 100
+    money: 500.0
+    xp: 0.0
+    commands: [] # [console] give {player} diamond 1
+  milestones:
+    '10':
+      points: 350
+      money: 1000.0
+      commands: []
+    '25':
+      points: 1000
+      money: 2500.0
+      commands: []
+    '50':
+      points: 2000
+      money: 7500.0
+      commands: []
+    '100':
+      points: 5000
+      money: 20000.0
+      commands: []
+    '200':
+      points: 15000
+      money: 100000.0
+      commands: []

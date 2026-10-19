@@ -1,0 +1,17 @@
+name: NewKB
+version: '${version}'
+
+main: me.danshi.newKB.NewKB
+api-version: '1.18'
+load: POSTWORLD
+commands:
+  newkb:
+    description: Comando principal de NewKB
+    usage: /newkb <reload|set|help>
+    permission: newkb.admin
+    permission-message: "&cNo tienes permiso para usar este comando."
+
+permissions:
+  newkb.admin:
+    description: Permite administrar el plugin NewKB
+    default: op

@@ -1,0 +1,337 @@
+menus:
+  colors:
+    #   ______   ______    __        ______   .______          _______.        _______.____    ____  _______.___________. _______ .___  ___.
+    # /      | /  __  \  |  |      /  __  \  |   _  \        /       |       /       |\   \  /   / /       |           ||   ____||   \/   |
+    #|  ,----'|  |  |  | |  |     |  |  |  | |  |_)  |      |   (----`      |   (----` \   \/   / |   (----`---|  |----`|  |__   |  \  /  |
+    #|  |     |  |  |  | |  |     |  |  |  | |      /        \   \           \   \      \_    _/   \   \       |  |     |   __|  |  |\/|  |
+    #|  `----.|  `--'  | |  `----.|  `--'  | |  |\  \----.----)   |      .----)   |       |  | .----)   |      |  |     |  |____ |  |  |  |
+    # \______| \______/  |_______| \______/  | _| `._____|_______/       |_______/        |__| |_______/       |__|     |_______||__|  |__|
+    #
+
+    messages:
+      no-permission: "<red>⚠ <gray>No tienes permiso para usar este color."
+      success: "<green>✔ <gray>¡Tu color de chat ha sido actualizado!"
+      reset: "<yellow>✔ <gray>Tu color de chat ha sido restablecido al valor por defecto."
+
+    title: "<gradient:#ff0055:#0055ff><bold>Colores de %player_name% (Pág. %page%)</bold></gradient>"
+    rows: 6
+
+    filler:
+      enabled: false
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore: []
+
+    items:
+
+      #                        PÁGINA 1
+      color_black:
+        page: 1
+        slot: 0
+        material: "hdb-89767"
+        name: "<black>Negro"
+        lore:
+          - "<gray>Selecciona el color <black>Negro</black>"
+        format: "<black>"
+        permission: "nchat.color.black"
+
+      color_dark_blue:
+        page: 1
+        slot: 1
+        material: "hdb-106740"
+        name: "<dark_blue>Azul Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_blue>Azul Oscuro</dark_blue>"
+        format: "<dark_blue>"
+        permission: "nchat.color.dark_blue"
+
+      color_dark_green:
+        page: 1
+        slot: 2
+        material: "hdb-106739"
+        name: "<dark_green>Verde Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_green>Verde Oscuro</dark_green>"
+        format: "<dark_green>"
+        permission: "nchat.color.dark_green"
+
+      color_dark_aqua:
+        page: 1
+        slot: 3
+        material: "hdb-73130"
+        name: "<dark_aqua>Turquesa Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_aqua>Turquesa Oscuro</dark_aqua>"
+        format: "<dark_aqua>"
+        permission: "nchat.color.dark_aqua"
+
+      color_dark_red:
+        page: 1
+        slot: 4
+        material: "hdb-106742"
+        name: "<dark_red>Rojo Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_red>Rojo Oscuro</dark_red>"
+        format: "<dark_red>"
+        permission: "nchat.color.dark_red"
+
+      color_dark_purple:
+        page: 1
+        slot: 5
+        material: "hdb-106743"
+        name: "<dark_purple>Morado Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_purple>Morado Oscuro</dark_purple>"
+        format: "<dark_purple>"
+        permission: "nchat.color.dark_purple"
+
+      color_gold:
+        page: 1
+        slot: 6
+        material: "hdb-106744"
+        name: "<gold>Oro"
+        lore:
+          - "<gray>Selecciona el color <gold>Oro</gold>"
+        format: "<gold>"
+        permission: "nchat.color.gold"
+
+      color_gray:
+        page: 1
+        slot: 7
+        material: "hdb-106745"
+        name: "<gray>Gris"
+        lore:
+          - "<gray>Selecciona el color <gray>Gris</gray>"
+        format: "<gray>"
+        permission: "nchat.color.gray"
+
+      color_dark_gray:
+        page: 1
+        slot: 8
+        material: "hdb-106746"
+        name: "<dark_gray>Gris Oscuro"
+        lore:
+          - "<gray>Selecciona el color <dark_gray>Gris Oscuro</dark_gray>"
+        format: "<dark_gray>"
+        permission: "nchat.color.dark_gray"
+
+      color_blue:
+        page: 1
+        slot: 9
+        material: "hdb-93084"
+        name: "<blue>Azul"
+        lore:
+          - "<gray>Selecciona el color <blue>Azul</blue>"
+        format: "<blue>"
+        permission: "nchat.color.blue"
+
+      color_green:
+        page: 1
+        slot: 10
+        material: "hdb-83867"
+        name: "<green>Verde"
+        lore:
+          - "<gray>Selecciona el color <green>Verde</green>"
+        format: "<green>"
+        permission: "nchat.color.green"
+
+      color_aqua:
+        page: 1
+        slot: 11
+        material: "hdb-106749"
+        name: "<aqua>Aqua"
+        lore:
+          - "<gray>Selecciona el color <aqua>Aqua</aqua>"
+        format: "<aqua>"
+        permission: "nchat.color.aqua"
+
+      color_red:
+        page: 1
+        slot: 12
+        material: "hdb-106750"
+        name: "<red>Rojo"
+        lore:
+          - "<gray>Selecciona el color <red>Rojo</red>"
+        format: "<red>"
+        permission: "nchat.color.red"
+
+      color_light_purple:
+        page: 1
+        slot: 13
+        material: "hdb-106751"
+        name: "<light_purple>Rosa"
+        lore:
+          - "<gray>Selecciona el color <light_purple>Rosa</light_purple>"
+        format: "<light_purple>"
+        permission: "nchat.color.light_purple"
+
+      color_yellow:
+        page: 1
+        slot: 14
+        material: "hdb-106752"
+        name: "<yellow>Amarillo"
+        lore:
+          - "<gray>Selecciona el color <yellow>Amarillo</yellow>"
+        format: "<yellow>"
+        permission: "nchat.color.yellow"
+
+      color_white:
+        page: 1
+        slot: 15
+        material: "hdb-72869"
+        name: "<white>Blanco"
+        lore:
+          - "<gray>Selecciona el color <white>Blanco</white>"
+        format: "<white>"
+        permission: "nchat.color.white"
+
+      itemcustom1:
+        page: 1
+        slot: 46
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom3:
+        page: 1
+        slot: 47
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom2:
+        page: 1
+        slot: 48
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom5:
+        page: 1
+        slot: 50
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+      itemcustom6:
+        page: 1
+        slot: 51
+        fixed: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<yellow>"
+        lore:
+          - "<gray>"
+
+      close_menu2:
+        page: 1
+        slot: 49
+        fixed: true
+        material: "REDSTONE"
+        name: "<red>Cerrar Menú"
+        action: "CLOSE"
+
+      player_profile:
+        page: 1
+        slot: 45
+        fixed: true
+        material: "PLAYER_HEAD"
+        name: "<green>Tu Perfil"
+        lore:
+          - "<gray>Hola, <aqua>%player_name%</aqua>"
+
+      reset_color:
+        page: 1
+        slot: 53
+        fixed: true
+        material: "REPEATER"
+        name: "<red>Restablecer Color"
+        lore:
+          - "<gray>Vuelve al color por defecto"
+        format: ""
+        permission: "nchat.color.reset"
+        sound:
+          type: "UI_BUTTON_CLICK"
+          volume: 1.0
+          pitch: 1.0
+        # Item temporal que aparece mientras se restablece el color del chat.
+        reset-status-item:
+          material: "GUNPOWDER"
+          name: "<yellow><bold>Reiniciando tu color...</bold>"
+          lore:
+            - "<gray>Aplicando el color por defecto..."
+          duration-ticks: 20
+
+      btn_next:
+        page: 1
+        slot: 52
+        material: "ARROW"
+        name: "<yellow>Siguiente Página ->"
+        lore:
+          - "<gray>Ver Gradientes Especiales"
+        action: "NEXT_PAGE"
+
+      #                        PÁGINA 2
+
+      grad_rainbow:
+        page: 2
+        slot: 10
+        material: "NETHER_STAR"
+        name: "<rainbow>Arcoiris Animado"
+        lore:
+          - "<gray>¡Un color animado exclusivo!"
+          - "<yellow>Requiere Rango VIP"
+        format: "<rainbow>"
+        permission: "nchat.color.rainbow"
+
+      grad_fire:
+        page: 2
+        slot: 11
+        material: "hdb-7129"
+        name: "<gradient:#ff512f:#dd2476>Fuego Intenso"
+        lore:
+          - "<gray>Gradiente de fuego."
+        format: "<gradient:#ff512f:#dd2476>"
+        permission: "nchat.color.fire"
+
+      grad_ice:
+        page: 2
+        slot: 12
+        material: "hdb-4196"
+        name: "<gradient:#00c6ff:#0072ff>Hielo Polar"
+        lore:
+          - "<gray>Gradiente congelado."
+        format: "<gradient:#00c6ff:#0072ff>"
+        permission: "nchat.color.ice"
+
+      grad_nature:
+        page: 2
+        slot: 13
+        material: "hdb-24796"
+        name: "<gradient:#11998e:#38ef7d>Naturaleza Viva"
+        lore:
+          - "<gray>Gradiente natural."
+        format: "<gradient:#11998e:#38ef7d>"
+        permission: "nchat.color.nature"
+
+      grad_sunset:
+        page: 2
+        slot: 14
+        material: "CLOCK"
+        name: "<gradient:#fa709a:#fee140>Atardecer"
+        lore:
+          - "<gray>Colores del sol poniente."
+        format: "<gradient:#fa709a:#fee140>"
+        permission: "nchat.color.sunset"
+
+      btn_prev:
+        page: 2
+        slot: 52
+        material: "ARROW"
+        name: "<yellow><- Página Anterior"
+        lore:
+          - "<gray>Volver a colores básicos"
+        action: "PREVIOUS_PAGE"

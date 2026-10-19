@@ -1,0 +1,28 @@
+messages:
+  no-permission: "&cNo tienes permiso para usar este comando."
+  usage: "&eUso correcto: &f/directo <link>"
+  invalid-platform: "&cSolo se permiten links de plataformas de streaming conocidas (Twitch, YouTube, Kick, etc.)"
+  blocked-domain: "&cEste dominio está bloqueado por razones de seguridad."
+  require-https: "&cPor seguridad, solo se permiten links con HTTPS."
+  announcement-sent: "&aAnuncio enviado correctamente!"
+  reload-success: "&aConfiguración recargada exitosamente!"
+
+announcement:
+  lines:
+    - ""
+    - "&#FF5555&l⚡ &#FFAA00&lDIRECTO EN VIVO &#FF5555&l⚡"
+    - ""
+    - "&f{player} &7está haciendo un directo!"
+    - ""
+    - "&e▶ Link: &f{link_clickable}"
+    - ""
+    - "&#00FF00&l¡No te lo pierdas!"
+    - ""
+
+  link-text: "&#00AAFF&n&lCLICK AQUÍ"
+  link-hover: "&#FFFFAAClick para abrir el stream!"
+
+# Permisos:
+# nstreams.use: Permite usar /directo (jugadores)
+# nstreams.reload: Permite recargar la config
+# Nota: La consola puede usar todos los comandos

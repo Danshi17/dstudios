@@ -1,0 +1,145 @@
+
+modules:
+  tablist: false
+  scoreboard: true
+  menus: true
+  hotbar: true
+  world-protection: true
+  chat-formatter: true
+  chat-color: true
+  tags: false
+  plates: true
+  enderbutt: true
+  join-messages: true
+  quit-messages: true
+  cosmetics: false
+
+gamemode-on-join:
+  enabled: true
+  mode: "adventure" # Puedes usar: survival, creative, adventure, spectator
+
+hotbar-slot-on-join: 4
+
+join-effects:
+  enabled: true
+  actions:
+    - type: TITLE
+      value: "&b&lBIENVENIDO"
+    - type: SUBTITLE
+      value: "&7%player_name% &7al servidor"
+    - type: ACTIONBAR
+      value: "&b¡Disfruta tu estadía! &7%player_name%"
+    - type: SOUND
+      value: "ENTITY_PLAYER_LEVELUP"
+    - type: SOUND
+      value: "ENTITY_FIREWORK_ROCKET_LAUNCH"
+
+  potion:
+    enabled: true
+    type: "SPEED"
+    duration: 10
+    amplifier: 1
+    ambient: false
+    particles: true
+
+chat-format: "%prefix%%player_name% &7> %message%"
+
+chat-cooldown: 3
+chat-max-length: 256
+log-chat: true
+
+menu-click-cooldown: 10
+
+spawn:
+  world: "Tropical"
+  x: -52.63416961143478
+  y: 175.0
+  z: -106.66640861457186
+  yaw: -0.636444091796875
+  pitch: 1.3976699113845825
+
+world-protection:
+  world: "Tropical"
+  time: DAY
+  item-interaction-whitelist:
+    - CRAFTING_TABLE
+
+no-tag: "&7[Sin Tag]"
+
+economy:
+  type: VAULT
+  custom-command: ""
+  token-command: "tokens pay %player% %amount%"
+
+bungee:
+  enabled: true
+  servers:
+    - lobby1
+    - lobby2
+    - survival
+    - skywars
+
+join-messages:
+  show-vanilla-join: false
+  broadcast:
+    owner:
+      permission: "hubcore.join.owner"
+      lines:
+        - ""
+        - "&8[&c&lOWNER&8] &f%player_name% &7ha entrado al servidor."
+        - ""
+    admin:
+      permission: "hubcore.join.admin"
+      lines:
+        - ""
+        - "&8[&4&lADMIN&8] &f%player_name% &7ha entrado al servidor."
+        - ""
+    vip:
+      permission: "hubcore.join.vip"
+      lines:
+        - ""
+        - "&8[&6&lVIP&8] &f%player_name% &7ha entrado al servidor."
+        - ""
+    default:
+      permission: ""
+      lines:
+        - "&7%player_name% &7ha entrado al servidor."
+
+  welcome:
+    clear-lines: 60
+    lines:
+      - ""
+      - "         &b&lYOUR&f&lSERVER"
+      - ""
+      - "  &7Bienvenido, &b%player_name%&7."
+      - "  &7Estás en el &bLobby&7."
+      - ""
+      - "  &8● &7Usa &b/hub &7para volver al spawn."
+      - "  &8● &7Usa el &bhotbar &7para navegar."
+      - ""
+
+quit-messages:
+  show-vanilla-quit: false
+  broadcast:
+    owner:
+      permission: "hubcore.quit.owner"
+      lines:
+        - ""
+        - "&8[&c&lOWNER&8] &f%player_name% &7ha salido del servidor."
+        - ""
+    admin:
+      permission: "hubcore.quit.admin"
+      lines:
+        - ""
+        - "&8[&4&lADMIN&8] &f%player_name% &7ha salido del servidor."
+        - ""
+    vip:
+      permission: "hubcore.quit.vip"
+      lines:
+        - ""
+        - "&8[&6&lVIP&8] &f%player_name% &7ha salido del servidor."
+        - ""
+    default:
+      permission: ""
+      lines:
+        - "&7%player_name% &7ha salido del servidor."

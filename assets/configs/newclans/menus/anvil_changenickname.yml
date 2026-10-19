@@ -1,0 +1,6 @@
+id: anvil_changenickname
+
+title: '<dark_gray>Change Nickname</dark_gray>'
+material: NAME_TAG
+initial-text: ''
+back-menu: player_settings

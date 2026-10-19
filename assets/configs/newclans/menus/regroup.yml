@@ -1,0 +1,28 @@
+id: regroup
+title: '<dark_gray>Regroup <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-26'
+  send:
+    slot: 11
+    material: COMPASS
+    name: '<green>Send Regroup</green>'
+    lore:
+      - '<gray>Create a temporary teleport request</gray>'
+      - '<gray>at your current location.</gray>'
+    action: REGROUP_SEND
+  accept:
+    slot: 15
+    material: ENDER_PEARL
+    name: '<aqua>Accept Regroup</aqua>'
+    action: REGROUP_ACCEPT
+  back:
+    slot: 22
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

@@ -1,0 +1,96 @@
+# ========================================
+# NewFriends 1.0.0
+# Multi-module friends system for BungeeCord / Velocity
+# ========================================
+
+database:
+  # H2 | MYSQL | MONGODB | JSON
+  type: "H2"
+
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "friends"
+  username: "root"
+  password: ""
+  use-ssl: false
+  pool:
+    maximum-pool-size: 10
+    minimum-idle: 2
+    connection-timeout: 30000
+
+h2:
+  pool:
+    maximum-pool-size: 4
+
+mongodb:
+  connection-string: "mongodb://localhost:27017"
+  database: "nfriends"
+
+performance:
+  async-threads: 4
+
+messaging:
+  sender-format: "&8[&bMensaje &7-> &b{receiver}&8] &8» &f{message}"
+  receiver-format: "&8[&b{sender} &7-> &bMensaje&8] &8» &f{message}"
+
+request:
+  format: "&e{player} &fte ha enviado una solicitud de amistad. "
+  accept-button: "&8[&a&lACEPTAR&8]"
+  accept-hover: "&aClick para aceptar la solicitud."
+  accept-command: "/friends accept {player}"
+  deny-button: " &8[&c&lRECHAZAR&8]"
+  deny-hover: "&cClick para rechazar la solicitud."
+  deny-command: "/friends deny {player}"
+
+friends-list-format:
+  border-top: "&8&m------------------------------------"
+  header: "<bold><gradient:#00d4ff:#00ff88>Tus Amigos</gradient></bold>"
+  online:
+    format: "&a● &f{player} &7- &e{server}"
+    message-button: " &8[&e🏷️&8]"
+    message-hover: "&eClick para enviar un mensaje a {player}"
+  offline: "&c● &f{player} &7- &cDesconectado"
+  footer: ""
+  no-friends: "&7No tienes amigos agregados."
+  border-bottom: "&8&m------------------------------------"
+
+messages:
+  reload: "&aConfiguración recargada.\n&7Base de datos: &b{type}"
+  no-permission: "&cNo tienes permiso para ejecutar este comando."
+  player-not-found: "&cEse jugador no está en línea."
+  player-never-seen: "&cNo se encontró a ese jugador en la base de datos."
+  cannot-add-self: "&cNo puedes agregarte a ti mismo como amigo."
+  cannot-message-self: "&cNo puedes enviarte mensajes a ti mismo."
+  friend-request-sent: "&aHas enviado una solicitud de amistad a &e{player}&a."
+  already-friends: "&cYa eres amigo de &e{player}&c."
+  already-pending: "&cYa has enviado una solicitud a este jugador.\n&7Espera a que responda."
+  request-accepted-sender: "&e{player} &aha aceptado tu solicitud de amistad.\n&a¡Ahora son amigos!"
+  request-accepted-receiver: "&aHas aceptado la solicitud de &e{player}&a.\n&a¡Ahora son amigos!"
+  request-denied-sender: "&e{player} &cha denegado tu solicitud de amistad."
+  request-denied-receiver: "&cHas denegado la solicitud de amistad de &e{player}&c."
+  no-pending-request: "&cNo tienes una solicitud de amistad pendiente de &e{player}&c."
+  friend-removed: "&cHas eliminado a &e{player} &cde tus amigos."
+  not-friends: "&cNo eres amigo de &e{player}&c."
+  not-friends-message: "&cNo puedes enviar mensajes a &e{player} &cporque no es tu amigo."
+  no-one-to-reply-to: "&cNo tienes a nadie a quien responder."
+
+help-message:
+  - "&8&m------------------------------------"
+  - "       <bold><gradient:#ff0080:#ff8000>Ayuda de NewFriends</gradient></bold>"
+  - ""
+  - "&f/f add <jugador> &7- Enviar solicitud de amistad"
+  - "&f/f accept <jugador> &7- Aceptar solicitud"
+  - "&f/f deny <jugador> &7- Rechazar solicitud"
+  - "&f/f delete <jugador> &7- Eliminar amigo"
+  - "&f/f list &7- Ver lista de amigos"
+  - "&f/f msg <amigo> <mensaje> &7- Mensaje privado"
+  - "&f/f r <mensaje> &7- Responder mensaje"
+  - "&f/f reload &7- Recargar config &8(Admin)"
+  - "&f/f help &7- Mostrar esta ayuda"
+  - ""
+  - "&7Base de datos: &b{type}"
+  - "&8&m------------------------------------"
+
+advanced:
+  debug-mode: false

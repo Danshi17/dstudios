@@ -1,0 +1,374 @@
+chat-colors:
+  title: "        &8Colores de Chat"
+  rows: 6
+  items:
+    filler_border:
+      slot: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,28,29,31,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,50,51,52]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    black:
+      slot: 10
+      material: BLACK_DYE
+      name: "&0&lNegro"
+      color-code: "&0"
+      permission: "hubcore.cosmetics.chatcolor.black"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &0Negro"
+        - "&7Precio: &a$100"
+    dark_blue:
+      slot: 11
+      material: BLUE_DYE
+      name: "&1&lAzul Oscuro"
+      color-code: "&1"
+      permission: "hubcore.cosmetics.chatcolor.dark_blue"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &1Azul Oscuro"
+        - "&7Precio: &a$100"
+    dark_green:
+      slot: 12
+      material: GREEN_DYE
+      name: "&2&lVerde Oscuro"
+      color-code: "&2"
+      permission: "hubcore.cosmetics.chatcolor.dark_green"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &2Verde Oscuro"
+        - "&7Precio: &a$100"
+    dark_aqua:
+      slot: 13
+      material: CYAN_DYE
+      name: "&3&lAqua Oscuro"
+      color-code: "&3"
+      permission: "hubcore.cosmetics.chatcolor.dark_aqua"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &3Aqua Oscuro"
+        - "&7Precio: &a$100"
+    dark_red:
+      slot: 14
+      material: RED_DYE
+      name: "&4&lRojo Oscuro"
+      color-code: "&4"
+      permission: "hubcore.cosmetics.chatcolor.dark_red"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &4Rojo Oscuro"
+        - "&7Precio: &a$100"
+
+    dark_purple:
+      slot: 15
+      material: PURPLE_DYE
+      name: "&5&lMorado Oscuro"
+      color-code: "&5"
+      permission: "hubcore.cosmetics.chatcolor.dark_purple"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &5Morado Oscuro"
+        - "&7Precio: &a$100"
+    gold:
+      slot: 16
+      material: ORANGE_DYE
+      name: "&6&lDorado"
+      color-code: "&6"
+      permission: "hubcore.cosmetics.chatcolor.gold"
+      price: 150
+      price-type: VAULT
+      lore:
+        - "&7Color: &6Dorado"
+        - "&7Precio: &a$150"
+    gray:
+      slot: 19
+      material: LIGHT_GRAY_DYE
+      name: "&7&lGris"
+      color-code: "&7"
+      permission: "hubcore.cosmetics.chatcolor.gray"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &7Gris"
+        - "&7Precio: &a$100"
+    dark_gray:
+      slot: 20
+      material: GRAY_DYE
+      name: "&8&lGris Oscuro"
+      color-code: "&8"
+      permission: "hubcore.cosmetics.chatcolor.dark_gray"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &8Gris Oscuro"
+        - "&7Precio: &a$100"
+    blue:
+      slot: 21
+      material: LIGHT_BLUE_DYE
+      name: "&9&lAzul"
+      color-code: "&9"
+      permission: "hubcore.cosmetics.chatcolor.blue"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &9Azul"
+        - "&7Precio: &a$100"
+
+    green:
+      slot: 22
+      material: LIME_DYE
+      name: "&a&lVerde"
+      color-code: "&a"
+      permission: "hubcore.cosmetics.chatcolor.green"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &aVerde"
+        - "&7Precio: &a$100"
+    aqua:
+      slot: 23
+      material: CYAN_DYE
+      name: "&b&lAqua"
+      color-code: "&b"
+      permission: "hubcore.cosmetics.chatcolor.aqua"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &bAqua"
+        - "&7Precio: &a$100"
+    red:
+      slot: 24
+      material: RED_DYE
+      name: "&c&lRojo"
+      color-code: "&c"
+      permission: "hubcore.cosmetics.chatcolor.red"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &cRojo"
+        - "&7Precio: &a$100"
+    light_purple:
+      slot: 25
+      material: MAGENTA_DYE
+      name: "&d&lRosa"
+      color-code: "&d"
+      permission: "hubcore.cosmetics.chatcolor.light_purple"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &dRosa"
+        - "&7Precio: &a$100"
+    yellow:
+      slot: 30
+      material: YELLOW_DYE
+      name: "&e&lAmarillo"
+      color-code: "&e"
+      permission: "hubcore.cosmetics.chatcolor.yellow"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &eAmarillo"
+        - "&7Precio: &a$100"
+
+    white:
+      slot: 32
+      material: WHITE_DYE
+      name: "&f&lBlanco"
+      color-code: "&f"
+      permission: "hubcore.cosmetics.chatcolor.white"
+      price: 100
+      price-type: VAULT
+      lore:
+        - "&7Color: &fBlanco"
+        - "&7Precio: &a$100"
+
+
+    reset:
+      slot: 49
+      material: REPEATER
+      name: "&f&lRestablecer"
+      color-code: "&r"
+      lore:
+        - "&7Quita tu color y efectos"
+      action:
+        type: RESET_CHATCOLOR
+    close:
+      slot: 53
+      material: LEVER
+      name: "&c&lCerrar"
+      lore: []
+      action:
+        type: CLOSE
+        value: ""
+
+tags:
+  title: "&8&lTags"
+  rows: 5
+  items:
+    owner:
+      slot: 10
+      material: NETHER_STAR
+      name: "&4&lOWNER"
+      tag-value: "&4&lOWNER &8| &f"
+      permission: "hubcore.tag.owner"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &4OWNER"
+        - "&7Dueño del servidor"
+    admin:
+      slot: 11
+      material: DIAMOND
+      name: "&c&lADMIN"
+      tag-value: "&c&lADMIN &8| &f"
+      permission: "hubcore.tag.admin"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &cADMIN"
+        - "&7Administrador"
+    mod:
+      slot: 12
+      material: IRON_INGOT
+      name: "&a&lMOD"
+      tag-value: "&a&lMOD &8| &f"
+      permission: "hubcore.tag.mod"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &aMOD"
+        - "&7Moderador"
+    helper:
+      slot: 13
+      material: GOLD_INGOT
+      name: "&9&lHELPER"
+      tag-value: "&9&lHELPER &8| &f"
+      permission: "hubcore.tag.helper"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &9HELPER"
+        - "&7Ayudante"
+
+    vip:
+      slot: 19
+      material: GOLD_INGOT
+      name: "&6&lVIP"
+      tag-value: "&6&lVIP &8| &f"
+      permission: "hubcore.tag.vip"
+      price: 200
+      price-type: VAULT
+      lore:
+        - "&7Tag: &6VIP"
+        - "&7Precio: &a$200"
+    vip_plus:
+      slot: 20
+      material: GOLD_BLOCK
+      name: "&6&lVIP&c&l+"
+      tag-value: "&6&lVIP&c&l+ &8| &f"
+      permission: "hubcore.tag.vip_plus"
+      price: 350
+      price-type: VAULT
+      lore:
+        - "&7Tag: &6VIP&c+"
+        - "&7Precio: &a$350"
+    elite:
+      slot: 21
+      material: DIAMOND
+      name: "&b&lELITE"
+      tag-value: "&b&lELITE &8| &f"
+      permission: "hubcore.tag.elite"
+      price: 500
+      price-type: VAULT
+      lore:
+        - "&7Tag: &bELITE"
+        - "&7Precio: &a$500"
+    legend:
+      slot: 22
+      material: NETHER_STAR
+      name: "&d&lLEGEND"
+      tag-value: "&d&lLEGEND &8| &f"
+      permission: "hubcore.tag.legend"
+      price: 1000
+      price-type: VAULT
+      lore:
+        - "&7Tag: &dLEGEND"
+        - "&7Precio: &a$1000"
+
+    youtuber:
+      slot: 28
+      material: RED_DYE
+      name: "&c&lYOUTUBER"
+      tag-value: "&c&lYOUTUBER &8| &f"
+      permission: "hubcore.tag.youtuber"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &cYouTuber"
+        - "&7Creador de contenido"
+    builder:
+      slot: 29
+      material: BRICK
+      name: "&a&lBUILDER"
+      tag-value: "&a&lBUILDER &8| &f"
+      permission: "hubcore.tag.builder"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &aBUILDER"
+        - "&7Constructor del servidor"
+    partner:
+      slot: 30
+      material: HEART_OF_THE_SEA
+      name: "&d&lPARTNER"
+      tag-value: "&d&lPARTNER &8| &f"
+      permission: "hubcore.tag.partner"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &dPARTNER"
+        - "&7Partner del servidor"
+    winner:
+      slot: 31
+      material: TOTEM_OF_UNDYING
+      name: "&6&lWINNER"
+      tag-value: "&6&lWINNER &8| &f"
+      permission: "hubcore.tag.winner"
+      price: 0
+      price-type: VAULT
+      lore:
+        - "&7Tag: &6WINNER"
+        - "&7Ganador de eventos"
+    filler_border:
+      slot: [0,1,2,3,4,5,6,7,8,9,14,15,16,17,18,23,24,25,26,27,32,33,34,35,36,37,38,39,40,41,42]
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      action:
+        type: NONE
+        value: ""
+    reset:
+      slot: 43
+      material: REPEATER
+      name: "&f&lSin Tag"
+      tag-value: ""
+      lore:
+        - "&7Quita tu tag actual"
+      action:
+        type: RESET_TAG
+    close:
+      slot: 44
+      material: LEVER
+      name: "&c&lCerrar"
+      lore: []
+      action:
+        type: CLOSE
+        value: ""

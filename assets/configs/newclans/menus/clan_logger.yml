@@ -1,0 +1,46 @@
+id: clan_logger
+title: '<dark_gray>Clan Logger <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 6
+page-size: 28
+open-sound: UI_BUTTON_CLICK
+
+dynamic:
+  type: LOGS
+  slots: '10-16,19-25,28-34,37-43'
+  material: PAPER
+  name: '<yellow>%log_date%</yellow>'
+  lore:
+    - '<gray>Source: <white>%log_plugin%</white></gray>'
+    - ''
+    - '<white>%log_message%</white>'
+    - ''
+    - '<red>Right-click: delete entry</red>'
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36,44,45-53'
+  clear:
+    slot: 47
+    material: LAVA_BUCKET
+    name: '<red>Clear Logger</red>'
+    lore:
+      - '<gray>Remove every stored clan log.</gray>'
+    action: OPEN:clear_logger_confirm
+
+  previous:
+    slot: 48
+    material: ARROW
+    name: '<yellow>Previous Page</yellow>'
+    action: PAGE_PREVIOUS
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home
+  next:
+    slot: 50
+    material: ARROW
+    name: '<yellow>Next Page</yellow>'
+    action: PAGE_NEXT

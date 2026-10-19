@@ -1,0 +1,20 @@
+type: YAML
+
+table-prefix: "nl_"
+
+sqlite:
+  file: "accounts.db"
+
+h2:
+  file: "accounts-h2"
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  database: "newlogin"
+  username: "root"
+  password: ""
+  pool-size: 8
+  properties:
+    - "autoReconnect=true"
+    - "serverTimezone=UTC"

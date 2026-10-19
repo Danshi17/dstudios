@@ -1,0 +1,29 @@
+name: NewLogin
+main: github.dstudio.newLogin.NewLogin
+version: 1.0.0
+api-version: '1.13'
+folia-supported: false
+softdepend: [floodgate]
+description: Sistema de autenticacion estilo nLogin con premium estilo DynamicPremium
+commands:
+  login:
+    aliases: [l]
+    description: Iniciar sesion
+  register:
+    aliases: [reg]
+    description: Registrarse
+  changepassword:
+    aliases: [changepass, cp]
+    description: Cambiar contrasena
+  unregister:
+    description: Eliminar tu cuenta
+  logout:
+    description: Cerrar sesion
+  nlogin:
+    aliases: [newlogin]
+    description: Administracion
+permissions:
+  newlogin.admin:
+    default: op
+  newlogin.bypass.ip-limit:
+    default: false

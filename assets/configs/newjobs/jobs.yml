@@ -1,0 +1,587 @@
+# NewJobs - Todas las profesiones, iconos, actividades y ganancias editables.
+# Iconos con cabeza personalizada: icon: basehead-<base64>  (o  icon: "base64:<textura>").
+# Variables de acciones: BREAK, PLACE, KILL, FISH, CRAFT, SMELT, BREW, ENCHANT, BREED, SHEAR, EXPLORE.
+# El comodín * funciona en cada acción; materiales y tipos de entidad de Bukkit, en MAYÚSCULAS.
+
+jobs:
+  miner:
+    enabled: true
+    display-name: '&#55dafa&lMINERO'
+    description: Extrae minerales y piedras
+    icon: DIAMOND_PICKAXE
+    slot: 10
+    max-level: 200
+    daily-quest-goals:
+      BREAK: 60
+    actions:
+      BREAK:
+        STONE:
+          money: 0.25
+          xp: 0.6
+          points: 0.6
+        DEEPSLATE:
+          money: 0.35
+          xp: 0.8
+          points: 0.8
+        COBBLESTONE:
+          money: 0.1
+          xp: 0.2
+          points: 0.2
+        COAL_ORE:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        DEEPSLATE_COAL_ORE:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        COPPER_ORE:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        DEEPSLATE_COPPER_ORE:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        IRON_ORE:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        DEEPSLATE_IRON_ORE:
+          money: 5.0
+          xp: 5.0
+          points: 5.0
+        GOLD_ORE:
+          money: 6.0
+          xp: 6.0
+          points: 6.0
+        DEEPSLATE_GOLD_ORE:
+          money: 7.0
+          xp: 7.0
+          points: 7.0
+        REDSTONE_ORE:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        DEEPSLATE_REDSTONE_ORE:
+          money: 5.0
+          xp: 5.0
+          points: 5.0
+        LAPIS_ORE:
+          money: 6.0
+          xp: 6.0
+          points: 6.0
+        DEEPSLATE_LAPIS_ORE:
+          money: 7.0
+          xp: 7.0
+          points: 7.0
+        DIAMOND_ORE:
+          money: 15.0
+          xp: 12.0
+          points: 12.0
+        DEEPSLATE_DIAMOND_ORE:
+          money: 18.0
+          xp: 14.0
+          points: 14.0
+        EMERALD_ORE:
+          money: 20.0
+          xp: 15.0
+          points: 15.0
+        DEEPSLATE_EMERALD_ORE:
+          money: 24.0
+          xp: 18.0
+          points: 18.0
+        ANCIENT_DEBRIS:
+          money: 35.0
+          xp: 30.0
+          points: 30.0
+  woodcutter:
+    enabled: true
+    display-name: '&#c4986d&lLEÑADOR'
+    description: Tala árboles y consigue recursos
+    icon: DIAMOND_AXE
+    slot: 11
+    max-level: 200
+    daily-quest-goals:
+      BREAK: 50
+    actions:
+      BREAK:
+        OAK_LOG:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        BIRCH_LOG:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        SPRUCE_LOG:
+          money: 2.1
+          xp: 2.1
+          points: 2.1
+        DARK_OAK_LOG:
+          money: 2.3
+          xp: 2.2
+          points: 2.2
+        JUNGLE_LOG:
+          money: 2.2
+          xp: 2.2
+          points: 2.2
+        ACACIA_LOG:
+          money: 2.2
+          xp: 2.2
+          points: 2.2
+        CRIMSON_STEM:
+          money: 2.7
+          xp: 2.5
+          points: 2.5
+        WARPED_STEM:
+          money: 2.7
+          xp: 2.5
+          points: 2.5
+        MANGROVE_LOG:
+          money: 2.2
+          xp: 2.2
+          points: 2.2
+  farmer:
+    enabled: true
+    display-name: '&#55ed80&lGRANJERO'
+    description: Cosecha cultivos maduros y cría animales
+    icon: GOLDEN_HOE
+    slot: 12
+    max-level: 200
+    daily-quest-goals:
+      BREAK: 80
+    actions:
+      BREAK:
+        WHEAT:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        POTATOES:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        CARROTS:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        BEETROOTS:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        NETHER_WART:
+          money: 2.5
+          xp: 3.5
+          points: 3.5
+        PUMPKIN:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        MELON:
+          money: 1.7
+          xp: 2.0
+          points: 2.0
+        COCOA:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        SUGAR_CANE:
+          money: 0.7
+          xp: 0.7
+          points: 0.7
+      BREED:
+        COW:
+          money: 5.0
+          xp: 5.0
+          points: 5.0
+        SHEEP:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        PIG:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        CHICKEN:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+  fisherman:
+    enabled: true
+    display-name: '&#5bafff&lPESCADOR'
+    description: Gana al pescar tesoros y peces
+    icon: FISHING_ROD
+    slot: 13
+    max-level: 200
+    daily-quest-goals:
+      FISH: 25
+    actions:
+      FISH:
+        COD:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        SALMON:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        TROPICAL_FISH:
+          money: 6.0
+          xp: 6.0
+          points: 6.0
+        PUFFERFISH:
+          money: 6.0
+          xp: 6.0
+          points: 6.0
+        '*':
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+  hunter:
+    enabled: true
+    display-name: '&#ff5555&lCAZADOR'
+    description: Derrota criaturas y monstruos
+    icon: DIAMOND_SWORD
+    slot: 14
+    max-level: 200
+    daily-quest-goals:
+      KILL: 40
+    actions:
+      KILL:
+        ZOMBIE:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        SKELETON:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        SPIDER:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        CREEPER:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        ENDERMAN:
+          money: 9.0
+          xp: 8.0
+          points: 8.0
+        BLAZE:
+          money: 8.0
+          xp: 8.0
+          points: 8.0
+        WITHER_SKELETON:
+          money: 14.0
+          xp: 12.0
+          points: 12.0
+        PHANTOM:
+          money: 6.0
+          xp: 5.0
+          points: 5.0
+        DROWNED:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        PILLAGER:
+          money: 7.0
+          xp: 6.0
+          points: 6.0
+        RAVAGER:
+          money: 30.0
+          xp: 20.0
+          points: 20.0
+        WITHER:
+          money: 200.0
+          xp: 150.0
+          points: 150.0
+        ENDER_DRAGON:
+          money: 400.0
+          xp: 250.0
+          points: 250.0
+  builder:
+    enabled: true
+    display-name: '&#ffd45f&lCONSTRUCTOR'
+    description: Construye estructuras y casas
+    icon: BRICKS
+    slot: 15
+    max-level: 200
+    daily-quest-goals:
+      PLACE: 80
+    actions:
+      PLACE:
+        STONE_BRICKS:
+          money: 0.5
+          xp: 0.5
+          points: 0.5
+        BRICKS:
+          money: 0.7
+          xp: 0.7
+          points: 0.7
+        OAK_PLANKS:
+          money: 0.2
+          xp: 0.2
+          points: 0.2
+        SPRUCE_PLANKS:
+          money: 0.2
+          xp: 0.2
+          points: 0.2
+        POLISHED_ANDESITE:
+          money: 0.3
+          xp: 0.3
+          points: 0.3
+        GLASS:
+          money: 0.5
+          xp: 0.5
+          points: 0.5
+        COBBLESTONE:
+          money: 0.2
+          xp: 0.2
+          points: 0.2
+        QUARTZ_BLOCK:
+          money: 0.8
+          xp: 0.8
+          points: 0.8
+        '*':
+          money: 0.05
+          xp: 0.05
+          points: 0.05
+  digger:
+    enabled: true
+    display-name: '&#b6c47b&lEXCAVADOR'
+    description: Excava arena, tierra y grava
+    icon: DIAMOND_SHOVEL
+    slot: 16
+    max-level: 200
+    daily-quest-goals:
+      BREAK: 60
+    actions:
+      BREAK:
+        DIRT:
+          money: 0.5
+          xp: 0.7
+          points: 0.7
+        GRASS_BLOCK:
+          money: 0.5
+          xp: 0.7
+          points: 0.7
+        COARSE_DIRT:
+          money: 0.7
+          xp: 0.9
+          points: 0.9
+        SAND:
+          money: 0.65
+          xp: 0.8
+          points: 0.8
+        RED_SAND:
+          money: 0.8
+          xp: 1.0
+          points: 1.0
+        GRAVEL:
+          money: 0.65
+          xp: 0.8
+          points: 0.8
+        CLAY:
+          money: 1.0
+          xp: 1.0
+          points: 1.0
+        SOUL_SAND:
+          money: 1.0
+          xp: 1.0
+          points: 1.0
+        SOUL_SOIL:
+          money: 1.0
+          xp: 1.0
+          points: 1.0
+        MUD:
+          money: 0.8
+          xp: 1.0
+          points: 1.0
+  crafter:
+    enabled: true
+    display-name: '&#cda1ff&lARTESANO'
+    description: Fabrica herramientas y bloques
+    icon: CRAFTING_TABLE
+    slot: 19
+    max-level: 200
+    daily-quest-goals:
+      CRAFT: 30
+    actions:
+      CRAFT:
+        CRAFTING_TABLE:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        CHEST:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        FURNACE:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        IRON_PICKAXE:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        DIAMOND_PICKAXE:
+          money: 12.0
+          xp: 12.0
+          points: 12.0
+        IRON_SWORD:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        DIAMOND_SWORD:
+          money: 10.0
+          xp: 10.0
+          points: 10.0
+        ENCHANTING_TABLE:
+          money: 20.0
+          xp: 20.0
+          points: 20.0
+        ANVIL:
+          money: 12.0
+          xp: 12.0
+          points: 12.0
+        BEACON:
+          money: 50.0
+          xp: 30.0
+          points: 30.0
+  enchanter:
+    enabled: true
+    display-name: '&#c97bfa&lENCANTADOR'
+    description: Encanta herramientas y armaduras
+    icon: ENCHANTING_TABLE
+    slot: 20
+    max-level: 200
+    daily-quest-goals:
+      ENCHANT: 30
+    actions:
+      ENCHANT:
+        '*':
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+  brewer:
+    enabled: true
+    display-name: '&#ff93ac&lALQUIMISTA'
+    description: Prepara pociones mágicas
+    icon: BREWING_STAND
+    slot: 21
+    max-level: 200
+    daily-quest-goals:
+      BREW: 35
+    actions:
+      BREW:
+        POTION:
+          money: 3.0
+          xp: 4.0
+          points: 4.0
+        SPLASH_POTION:
+          money: 4.0
+          xp: 4.0
+          points: 4.0
+        LINGERING_POTION:
+          money: 5.0
+          xp: 5.0
+          points: 5.0
+  weaponsmith:
+    enabled: true
+    display-name: '&#ff9d54&lHERRERO'
+    description: Funde minerales en los hornos
+    icon: ANVIL
+    slot: 22
+    max-level: 200
+    daily-quest-goals:
+      SMELT: 35
+    actions:
+      SMELT:
+        IRON_INGOT:
+          money: 2.0
+          xp: 2.0
+          points: 2.0
+        GOLD_INGOT:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+        COPPER_INGOT:
+          money: 1.0
+          xp: 1.0
+          points: 1.0
+        NETHERITE_SCRAP:
+          money: 12.0
+          xp: 10.0
+          points: 10.0
+        GLASS:
+          money: 0.3
+          xp: 0.5
+          points: 0.5
+        STONE:
+          money: 0.2
+          xp: 0.3
+          points: 0.3
+        COOKED_BEEF:
+          money: 0.5
+          xp: 0.5
+          points: 0.5
+  rancher:
+    enabled: true
+    display-name: '&#77dfcf&lGANADERO'
+    description: Esquila y reproduce animales
+    icon: SHEARS
+    slot: 23
+    max-level: 200
+    daily-quest-goals:
+      SHEAR: 20
+    actions:
+      SHEAR:
+        SHEEP:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        MOOSHROOM:
+          money: 3.0
+          xp: 3.0
+          points: 3.0
+      BREED:
+        COW:
+          money: 4.0
+          xp: 5.0
+          points: 5.0
+        SHEEP:
+          money: 4.0
+          xp: 5.0
+          points: 5.0
+        PIG:
+          money: 3.0
+          xp: 4.0
+          points: 4.0
+        CHICKEN:
+          money: 2.0
+          xp: 3.0
+          points: 3.0
+        HORSE:
+          money: 10.0
+          xp: 12.0
+          points: 12.0
+        VILLAGER:
+          money: 5.0
+          xp: 5.0
+          points: 5.0
+  explorer:
+    enabled: true
+    display-name: '&#b0f1fe&lEXPLORADOR'
+    description: Descubre nuevos chunks al viajar
+    icon: COMPASS
+    slot: 24
+    max-level: 200
+    daily-quest-goals:
+      EXPLORE: 25
+    actions:
+      EXPLORE:
+        '*':
+          money: 4.0
+          xp: 4.0
+          points: 4.0

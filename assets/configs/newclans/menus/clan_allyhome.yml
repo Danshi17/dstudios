@@ -1,0 +1,33 @@
+id: clan_allyhome
+
+title: '<dark_gray>Allies <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  allies:
+    slot: 20
+    material: LIME_BANNER
+    name: '<green>Current Allies</green>'
+    lore:
+      - '<gray>Allies: <white>%clan_allies%/%clan_ally_limit%</white></gray>'
+    action: OPEN:ally
+
+  rivals:
+    slot: 24
+    material: RED_BANNER
+    name: '<red>Current Rivals</red>'
+    lore:
+      - '<gray>Rivals: <white>%clan_rivals%/%clan_rival_limit%</white></gray>'
+    action: OPEN:rival
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

@@ -1,0 +1,29 @@
+knockback:
+  horizontal: 0.1
+  vertical: 0.1
+  vertical-limit: 0.1
+  extra-horizontal: 0.1
+  extra-vertical: 0.1
+  sprint-multiplier: 0.1
+  air-friction: 0.1
+  ground-friction: 0.1
+  combo-vertical-reduction: 0.1
+  combo-window-ms: 500
+  max-combo-hits: 3
+  max-air-time-ms: 20
+attack-cooldown:
+  enabled: true
+  attack-speed: 1024.0
+messages:
+  prefix: "&8[&bNewKB&8] "
+  reload: "&aConfiguración de knockback recargada correctamente."
+  no-permission: "&cNo tienes permiso para ejecutar este comando."
+  invalid-usage: "&cUso: /newkb <reload|set|help>"
+  invalid-usage-set: "&cUso: /newkb set <parametro> <valor>"
+  invalid-value: "&cEl valor ingresado no es un número válido."
+  invalid-param: "&cParámetro inválido. Usa /newkb help para ver la lista."
+  set-success: "&aParámetro &f%param% &aactualizado a &f%value%&a."
+  help-header: "&b&lNewKB &7- Comandos disponibles:"
+  help-reload: "&f/newkb reload &7- Recarga la configuración."
+  help-set: "&f/newkb set <parametro> <valor> &7- Cambia un valor en caliente."
+  help-params: "&7Parámetros: horizontal, vertical, vertical-limit, extra-horizontal, extra-vertical, sprint-multiplier, air-friction, ground-friction"

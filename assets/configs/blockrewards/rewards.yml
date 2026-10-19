@@ -1,0 +1,305 @@
+#  BlockRewards - Definicion de recompensas por nivel
+#  Version 1.8.8  |  TODOS los materiales y nombres son
+#  compatibles con Bukkit/Spigot 1.8.x
+#
+#  Cada tier tiene 4 estados visuales:
+#    - ready      : listo para abrir (readyCount > 0)
+#    - locked     : en progreso (1..required-1)
+#    - not-found  : nunca se encontro
+#    - claimed    : ya se abrio, esperando proximo desbloqueo
+#
+tier_cobre:
+  display-name: "&6&lRecompensa de Cobre"
+  order: 1
+  material:
+    ready: "GOLD_INGOT"
+    locked: "STONE"
+    not-found: "COBBLESTONE"
+    claimed: "GOLD_NUGGET"
+  name:
+    ready: "&6&lRecompensa de Cobre &a(LISTA)"
+    locked: "&7&lRecompensa de Cobre"
+    not-found: "&8&lRecompensa de Cobre"
+    claimed: "&8&lRecompensa de Cobre &7(Reclamada)"
+  lore:
+    ready:
+      - ""
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s)!"
+      - "&7Click para abrir una."
+      - "&8&m-----------"
+    locked:
+      - ""
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando!"
+      - "&8&m-----------"
+    not-found:
+      - ""
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este nivel."
+      - "&7Minera bloques para empezar."
+      - "&8&m-----------"
+    claimed:
+      - ""
+      - "&8&m-----------"
+      - "&7Ya reclamaste este nivel."
+      - "&7Sigue minando para desbloquear"
+      - "&7el siguiente."
+      - ""
+      - "&8Click para cerrar."
+      - "&8&m-----------"
+  block:
+    material: "STONE"
+    required: 100
+  chance: 100.0
+  rewards:
+    - weight: 5
+      commands:
+        - "give {player} GOLD_INGOT 4"
+        - "tell {player} &7Has recibido &e4 lingotes de oro&7."
+      title: "&6&lRecompensa!"
+      subtitle: "&74 lingotes de oro"
+      actionbar: "&7+4 Oro"
+      sound: "ITEM_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+      particle: "HAPPY_VILLAGER"
+      particle-count: 10
+
+tier_hierro:
+  display-name: "&f&lRecompensa de Hierro"
+  order: 2
+  material:
+    ready: "IRON_INGOT"
+    locked: "COBBLESTONE"
+    not-found: "COBBLESTONE"
+    claimed: "IRON_NUGGET"
+  name:
+    ready: "&f&lRecompensa de Hierro &a(LISTA)"
+    locked: "&7&lRecompensa de Hierro"
+    not-found: "&8&lRecompensa de Hierro"
+    claimed: "&8&lRecompensa de Hierro &7(Reclamada)"
+  lore:
+    ready:
+      - ""
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s)!"
+      - "&7Click para abrir una."
+      - "&8&m-----------"
+    locked:
+      - ""
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando!"
+      - "&8&m-----------"
+    not-found:
+      - ""
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este nivel."
+      - "&7Minera bloques para empezar."
+      - "&8&m-----------"
+    claimed:
+      - ""
+      - "&8&m-----------"
+      - "&7Ya reclamaste este nivel."
+      - "&7Sigue minando para desbloquear"
+      - "&7el siguiente."
+      - ""
+      - "&8Click para cerrar."
+      - "&8&m-----------"
+  block:
+    material: "COBBLESTONE"
+    required: 250
+  chance: 25.0
+  rewards:
+    - weight: 3
+      commands:
+        - "give {player} IRON_INGOT 2"
+        - "playsound {player} ORB_PICKUP 1 1"
+      title: "&f&lHierro!"
+      subtitle: "&72 lingotes de hierro"
+      actionbar: "&7+2 Hierro"
+      sound: "ITEM_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+      particle: "HAPPY_VILLAGER"
+      particle-count: 10
+
+tier_oro:
+  display-name: "&e&lRecompensa de Oro"
+  order: 3
+  material:
+    ready: "GOLD_INGOT"
+    locked: "SANDSTONE"
+    not-found: "SANDSTONE"
+    claimed: "GOLD_NUGGET"
+  name:
+    ready: "&e&lRecompensa de Oro &a(LISTA)"
+    locked: "&7&lRecompensa de Oro"
+    not-found: "&8&lRecompensa de Oro"
+    claimed: "&8&lRecompensa de Oro &7(Reclamada)"
+  lore:
+    ready:
+      - ""
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s)!"
+      - "&7Click para abrir una."
+      - "&8&m-----------"
+    locked:
+      - ""
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando!"
+      - "&8&m-----------"
+    not-found:
+      - ""
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este nivel."
+      - "&7Minera bloques para empezar."
+      - "&8&m-----------"
+    claimed:
+      - ""
+      - "&8&m-----------"
+      - "&7Ya reclamaste este nivel."
+      - "&7Sigue minando para desbloquear"
+      - "&7el siguiente."
+      - ""
+      - "&8Click para cerrar."
+      - "&8&m-----------"
+  block:
+    material: "SANDSTONE"
+    required: 500
+  chance: 10.0
+  rewards:
+    - weight: 2
+      commands:
+        - "give {player} GOLD_INGOT 3"
+      title: "&e&lOro!"
+      subtitle: "&73 lingotes de oro"
+      actionbar: "&7+3 Oro"
+      sound: "ITEM_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+      particle: "HAPPY_VILLAGER"
+      particle-count: 15
+
+tier_diamante:
+  display-name: "&b&lRecompensa de Diamante"
+  order: 4
+  material:
+    ready: "DIAMOND"
+    locked: "COAL_ORE"
+    not-found: "COBBLESTONE"
+    claimed: "COAL"
+  name:
+    ready: "&b&lRecompensa de Diamante &a(LISTA)"
+    locked: "&7&lRecompensa de Diamante"
+    not-found: "&8&lRecompensa de Diamante"
+    claimed: "&8&lRecompensa de Diamante &7(Reclamada)"
+  lore:
+    ready:
+      - ""
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s)!"
+      - "&7Click para abrir una."
+      - "&8&m-----------"
+    locked:
+      - ""
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando!"
+      - "&8&m-----------"
+    not-found:
+      - ""
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este nivel."
+      - "&7Minera bloques para empezar."
+      - "&8&m-----------"
+    claimed:
+      - ""
+      - "&8&m-----------"
+      - "&7Ya reclamaste este nivel."
+      - "&7Sigue minando para desbloquear"
+      - "&7el siguiente."
+      - ""
+      - "&8Click para cerrar."
+      - "&8&m-----------"
+  block:
+    material: "DIAMOND_ORE"
+    required: 200
+  chance: 35.0
+  rewards:
+    - weight: 1
+      commands:
+        - "give {player} DIAMOND 1"
+      title: "&b&lDiamante!"
+      subtitle: "&71 diamante"
+      actionbar: "&7+1 Diamante"
+      sound: "LEVEL_UP"
+      sound-volume: 1.0
+      sound-pitch: 1.4
+      particle: "EXPLOSION_LARGE"
+      particle-count: 5
+
+
+tier_netherite:
+  display-name: "&4&lRecompensa de Nether"
+  order: 5
+  material:
+    ready: "NETHER_STAR"
+    locked: "NETHERRACK"
+    not-found: "NETHERRACK"
+    claimed: "REDSTONE"
+  name:
+    ready: "&4&lRecompensa de Nether &a(LISTA)"
+    locked: "&8&lRecompensa de Nether"
+    not-found: "&8&lRecompensa de Nether"
+    claimed: "&8&lRecompensa de Nether &7(Reclamada)"
+  lore:
+    ready:
+      - ""
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s)!"
+      - "&7Click para abrir una."
+      - "&8&m-----------"
+    locked:
+      - ""
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando en el Nether!"
+      - "&8&m-----------"
+    not-found:
+      - ""
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este nivel."
+      - "&7Minera bloques para empezar."
+      - "&8&m-----------"
+    claimed:
+      - ""
+      - "&8&m-----------"
+      - "&7Ya reclamaste este nivel."
+      - "&7Sigue minando para desbloquear"
+      - "&7el siguiente."
+      - ""
+      - "&8Click para cerrar."
+      - "&8&m-----------"
+  block:
+    material: "GLOWSTONE"
+    required: 50
+  chance: 8.0
+  rewards:
+    - weight: 1
+      commands:
+        - "give {player} DIAMOND 1"
+        - "give {player} GOLD_INGOT 5"
+        - "broadcast &4&l[!] &e{player} &7ha conseguido el tier NETHER!"
+      title: "&4&lNether!"
+      subtitle: "&71 diamante y 5 lingotes de oro"
+      actionbar: "&7+1 Diamante +5 Oro"
+      sound: "ENDERMAN_TELEPORT"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+      particle: "MOB_SPELL"
+      particle-count: 30
+

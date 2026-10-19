@@ -1,0 +1,47 @@
+id: noclan_home
+title: '<dark_gray>Clans</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,9,17,18,26,27,35,36-44'
+
+  create:
+    slot: 20
+    material: ANVIL
+    name: '<green>Create Clan</green>'
+    lore:
+      - '<gray>Create a clan directly from the GUI.</gray>'
+      - ''
+      - '<gray>Supports legacy, HEX and MiniMessage colors.</gray>'
+      - '<yellow>Click to create.</yellow>'
+    action: ANVIL:anvil_clancreate
+
+  clans:
+    slot: 22
+    material: NETHER_STAR
+    name: '<yellow>Clan Top</yellow>'
+    lore:
+      - '<gray>Browse existing clans.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:clan_top
+
+  invites:
+    slot: 24
+    material: PAPER
+    name: '<aqua>Invites</aqua>'
+    lore:
+      - '<gray>View pending clan invitations.</gray>'
+      - ''
+      - '<yellow>Click to open.</yellow>'
+    action: OPEN:invites
+
+  close:
+    slot: 40
+    material: BARRIER
+    name: '<red>Close</red>'
+    action: CLOSE

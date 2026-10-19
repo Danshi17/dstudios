@@ -1,0 +1,188 @@
+prefix: "<gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient> &8» &7"
+
+kick:
+  invalid-nick: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7The chosen name is not allowed.
+  generic-error: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cAn error occurred while processing your connection.
+  database-problem: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7There was a problem connecting you to the server.
+    &7Please try again later.
+    &cIf the problem persists, contact an administrator.
+  already-online: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cA player with that name is already online.
+  checking: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7You used the &a/premium&7 command.
+    &7We will verify your connection to make sure
+    &7you are using a purchased Minecraft account.
+    &7Join again and we will check it.
+  premium-disabled: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7You disabled premium authentication.
+    &7Your account will now use a password.
+  non-bedrock-player: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7You seem to be using a &bJava&7 client with a &bBedrock&7 name.
+  premium-only: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7You cannot access this server because you are not premium.
+  no-auth-server: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cNo authentication server is available.
+  timeout: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cYou ran out of time to authenticate.
+  too-many-attempts: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cToo many failed attempts.
+  locked: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cToo many attempts from your IP. Wait {seconds} seconds.
+  registration-disabled: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cRegistration is disabled on this server.
+  wrong-case: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &cYou must join with the exact name you registered: &f{name}
+  unregistered: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7Your account was deleted.
+
+general:
+  error: "{prefix}&cAn error occurred. Please try again."
+
+premium:
+  player-only: "{prefix}&cOnly players can use this."
+  no-premium: "{prefix}&cWe could not verify the identity of your account."
+  add-confirm-argument: "{prefix}&cTo avoid mistakes, confirm with &e/premium confirm&c."
+  enabled: "{prefix}&aIdentity verified, you will no longer need a password."
+  config-disabled: "{prefix}&cAn administrator disabled this command."
+  cooldown: "{prefix}&cWait {seconds} seconds before using this again."
+
+premium-admin:
+  no-permission: "{prefix}&cYou do not have permission to do this."
+  usage: |-
+    {prefix}&fAdmin commands:
+    &c/premiumadmin toggle <player> &8- &7Enable/disable premium.
+    &c/premiumadmin spoof <player> <uuid> &8- &7Pin a UUID.
+    &c/premiumadmin unspoof <player> &8- &7Remove the pinned UUID.
+    &c/premiumadmin reload &8- &7Reload the configuration.
+  reloaded: "{prefix}&aConfiguration reloaded."
+  toggled-enabled: "{prefix}&aYou enabled premium mode for {player}."
+  toggled-disabled: "{prefix}&cYou disabled premium mode for {player}."
+  spoof-specify-uuid: "{prefix}&cYou must specify a UUID."
+  spoof-invalid-uuid: "{prefix}&cThe UUID is not valid."
+  spoof-enabled: "{prefix}&a{player} will now use the UUID {uuid}."
+  spoof-disabled: "{prefix}&cThe pinned UUID of {player} was removed."
+
+routing:
+  denied-command: "{prefix}&cYou must authenticate to use this command."
+  send-lobby: "{prefix}&aSending you to the lobby."
+  premium-only: "{prefix}&cThis server is for premium players only."
+
+password:
+  too-short: "{prefix}&cThe password is too short."
+  too-long: "{prefix}&cThe password is too long."
+  invalid-characters: "{prefix}&cThe password contains characters that are not allowed."
+  same-as-username: "{prefix}&cThe password cannot be the same as your name."
+  too-common: "{prefix}&cThat password is too common."
+
+login:
+  prompt-login: "{prefix}&fUse &e/login <password> &fto log in."
+  prompt-register: "{prefix}&fUse &e/register <password> <password> &fto register."
+  usage: "{prefix}&cUsage: /login <password>"
+  success: "{prefix}&aLogged in successfully."
+  wrong-password: "{prefix}&cWrong password. Attempts left: {remaining}"
+  not-registered: "{prefix}&cYour account is not registered."
+  already-logged: "{prefix}&cYou are already logged in."
+  session-restored: "{prefix}&aSession restored automatically."
+  proxy-auth: "{prefix}&aAuthenticated automatically."
+  must-login: "{prefix}&cYou must authenticate first."
+  busy: "{prefix}&cPlease wait a moment."
+  title: "<gradient:#ff5f6d:#ffc371>Log in</gradient>"
+  subtitle: "&7/login <password>"
+  register-title: "<gradient:#ff5f6d:#ffc371>Register</gradient>"
+  register-subtitle: "&7/register <password> <password>"
+  actionbar: "&7Use &f/login <password> &7to join"
+  register-actionbar: "&7Use &f/register <password> <password> &7to sign up"
+
+register:
+  usage: "{prefix}&cUsage: /register <password> <password>"
+  usage-single: "{prefix}&cUsage: /register <password>"
+  success: "{prefix}&aYou registered successfully."
+  already-registered: "{prefix}&cYou are already registered."
+  mismatch: "{prefix}&cThe passwords do not match."
+  ip-limit: "{prefix}&cYou reached the maximum number of accounts for your IP."
+  disabled: "{prefix}&cRegistration is disabled."
+
+changepassword:
+  usage: "{prefix}&cUsage: /changepassword <current> <new>"
+  success: "{prefix}&aPassword changed successfully."
+  wrong-old: "{prefix}&cThe current password is wrong."
+  same: "{prefix}&cThe new password must be different."
+
+unregister:
+  usage: "{prefix}&cUsage: /unregister <password>"
+  success: "{prefix}&aYour account was deleted."
+  wrong: "{prefix}&cWrong password."
+
+logout:
+  success: "{prefix}&aYou logged out."
+  not-logged: "{prefix}&cYou are not logged in."
+
+nladmin:
+  no-permission: "{prefix}&cYou do not have permission to do this."
+  usage: |-
+    {prefix}&fGlobal admin commands:
+    &e/nladmin unregister <player> &8- &7Delete the account on the proxy and on the servers.
+    &e/nladmin unpremium <player> &8- &7Remove premium mode.
+  unregister-done: "{prefix}&aUnregister of &f{player}&a: proxy account &f{local}&a, premium removed &f{premium}&a, servers contacted &f{sent}&a, confirmed &f{confirmed}&a of &f{total}&a."
+  unregister-pending: "{prefix}&e{player} is still pending on {pending} server(s). It will be deleted when a player is connected there."
+  word-yes: "yes"
+  word-no: "no"
+  word-deleted: "deleted"
+  word-none: "did not exist"
+  unpremium-done: "{prefix}&a{player} is no longer premium."
+  unpremium-not-premium: "{prefix}&c{player} is not premium."
+  unpremium-kick: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7An administrator disabled your premium mode.
+    &7When you reconnect you will have to register or log in.
+  unregister-kick: |-
+    <gradient:#ff5f6d:#ffc371><bold>NewLogin</bold></gradient>
+    &7An administrator deleted your account.
+    &7When you reconnect you will have to register.
+
+admin:
+  no-permission: "{prefix}&cYou do not have permission to do this."
+  usage: |-
+    {prefix}&fAdmin commands:
+    &e/nlogin reload &8- &7Reload the configuration.
+    &e/nlogin register <player> <password> &8- &7Register an account.
+    &e/nlogin unregister <player> &8- &7Delete an account.
+    &e/nlogin changepass <player> <password> &8- &7Change a password.
+    &e/nlogin forcelogin <player> &8- &7Authenticate a player.
+    &e/nlogin info <player> &8- &7Show account data.
+    &e/nlogin setlogin &8- &7Save your position as the login point.
+  reloaded: "{prefix}&aConfiguration reloaded."
+  register-success: "{prefix}&aAccount of {player} registered."
+  already-registered: "{prefix}&c{player} is already registered."
+  unregister-success: "{prefix}&aAccount of {player} deleted."
+  not-registered: "{prefix}&c{player} is not registered."
+  changepass-success: "{prefix}&aPassword of {player} updated."
+  forcelogin-success: "{prefix}&a{player} was authenticated."
+  forcelogin-offline: "{prefix}&c{player} is not online."
+  info: |-
+    {prefix}&fAccount &e{player}
+    &7Registered: &f{registered}
+    &7Last login: &f{last-login}
+    &7Last IP: &f{last-ip}
+  setlogin-success: "{prefix}&aLogin point saved at &f{world} {x} {y} {z}&a."
+  setlogin-player-only: "{prefix}&cOnly a player can use this command."
+  setlogin-error: "{prefix}&cCould not save the location, check the console."
+  database-error: "{prefix}&cDatabase error, check the console."

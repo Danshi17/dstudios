@@ -1,0 +1,21 @@
+name: EpicVouchers
+version: '${version}'
+
+main: me.danshi.epicVouchers.EpicVouchers
+api-version: '1.13'
+load: STARTUP
+softdepend:
+  - PlaceholderAPI
+  - HeadDatabase
+
+commands:
+  vouchers:
+    description: Comando principal de EpicVouchers
+    permission: epicvouchers.admin
+    usage: /vouchers [menu | give | create | reload]
+
+
+permissions:
+  epicvouchers.admin:
+    description: Permite utilizar todos los comandos, menues interactivos y configuraciones de EpicVouchers
+    default: op

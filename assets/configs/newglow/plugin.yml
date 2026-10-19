@@ -1,0 +1,115 @@
+name: NewGlow
+version: '1.0-SNAPSHOT'
+main: github.dstudio.newGlow.NewGlow
+api-version: '1.18'
+load: POSTWORLD
+prefix: NewGlow
+
+softdepend:
+  - TAB
+  - PlaceholderAPI
+  - packetevents
+  - HeadDatabase
+
+permissions:
+  newglow.admin:
+    description: Acceso a todos los comandos y funciones de NewGlow.
+    default: op
+    children:
+      newglow.rainbow: true
+      newglow.flashing: true
+      newglow.all_colors: true
+      newglow.command.gui: true
+      newglow.command.color: true
+      newglow.command.reload: true
+      newglow.command.disable: true
+      newglow.command.disable.everyone: true
+      newglow.command.disable.others: true
+      newglow.command.set: true
+  newglow.all_colors:
+    description: Acceso a todos los colores.
+    default: "false"
+    children:
+      newglow.black: true
+      newglow.white: true
+      newglow.red: true
+      newglow.dark_red: true
+      newglow.gray: true
+      newglow.dark_gray: true
+      newglow.blue: true
+      newglow.dark_blue: true
+      newglow.aqua: true
+      newglow.dark_aqua: true
+      newglow.green: true
+      newglow.dark_green: true
+      newglow.yellow: true
+      newglow.gold: true
+      newglow.light_purple: true
+      newglow.dark_purple: true
+  newglow.aqua:
+    description: Acceso al color aqua.
+  newglow.black:
+    description: Acceso al color negro.
+  newglow.blue:
+    description: Acceso al color azul.
+  newglow.command.color:
+    description: Permite seleccionar el propio color de brillo.
+    default: "true"
+  newglow.command.disable:
+    description: Permite desactivar el propio brillo.
+    default: "true"
+  newglow.command.disable.everyone:
+    description: Permite desactivar el brillo de todos.
+    default: op
+  newglow.command.disable.others:
+    description: Permite desactivar el brillo de otros jugadores.
+    default: op
+  newglow.command.gui:
+    description: Acceso al inventario selector de color.
+    default: "false"
+  newglow.command.reload:
+    description: Permite recargar la configuración.
+    default: op
+  newglow.command.set:
+    description: Permite establecer el color de brillo de otro jugador.
+    default: "false"
+  newglow.dark_aqua:
+    description: Acceso al color dark aqua.
+  newglow.dark_blue:
+    description: Acceso al color dark blue.
+  newglow.dark_gray:
+    description: Acceso al color dark gray.
+  newglow.dark_green:
+    description: Acceso al color dark green.
+  newglow.dark_purple:
+    description: Acceso al color dark purple.
+  newglow.dark_red:
+    description: Acceso al color dark red.
+  newglow.flashing:
+    description: Acceso al modo flashing.
+    default: "false"
+  newglow.gold:
+    description: Acceso al color gold.
+  newglow.gray:
+    description: Acceso al color gray.
+  newglow.green:
+    description: Acceso al color green.
+  newglow.light_purple:
+    description: Acceso al color light_purple (pink).
+  newglow.rainbow:
+    description: Acceso al modo rainbow.
+    default: "false"
+  newglow.red:
+    description: Acceso al color red.
+  newglow.white:
+    description: Acceso al color white.
+  newglow.yellow:
+    description: Acceso al color yellow.
+
+commands:
+  glow:
+    description: Comando principal de NewGlow
+    usage: /glow
+    aliases: [newglow,auras]
+
+default-permission: "false"

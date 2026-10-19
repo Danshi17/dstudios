@@ -1,0 +1,5 @@
+name: NewLogin
+main: github.dstudio.newLogin.NewLoginBungee
+version: 1.0.0
+author: dstudio
+softDepends: [floodgate]

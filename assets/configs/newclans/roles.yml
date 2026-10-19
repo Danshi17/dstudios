@@ -1,0 +1,98 @@
+roles:
+  leader:
+    display: '<gradient:#ff5555:#ff0000><bold>Leader</bold></gradient>'
+    priority: 100
+    editable: false
+    upgradable: false
+    material: NETHER_STAR
+    permissions:
+      - '*'
+
+  captain:
+    display: '<gold><bold>Captain</bold></gold>'
+    priority: 80
+    editable: true
+    upgradable: true
+    material: GOLDEN_HELMET
+    permissions:
+      - DEFAULT
+      - INVITE
+      - KICK
+      - BAN
+      - UNBAN
+      - HOMEMANAGER
+      - ALLYMANAGER
+      - RIVALMANAGER
+      - BANNERMANAGER
+      - REGROUP
+      - FF
+      - DESC
+      - SETTINGS
+      - PROMOTE
+      - DEMOTE
+      - EDIT_MAIL
+      - SEND_MAIL
+      - READ_MAIL
+      - VIEW_LOGGER
+      - EDIT_WEBHOOK
+      - LEVEL_VIEW
+      - LEVEL_UP
+      - LEVEL_REWARDS
+      - CHEST
+      - CHEST_BUY
+      - QUEST
+      - WAR
+      - BANK_DEPOSIT
+      - BANK_WITHDRAW
+
+  moderator:
+    display: '<yellow>Moderator</yellow>'
+    priority: 60
+    editable: true
+    upgradable: true
+    material: IRON_HELMET
+    permissions:
+      - DEFAULT
+      - INVITE
+      - KICK
+      - HOMEMANAGER
+      - ALLYMANAGER
+      - RIVALMANAGER
+      - REGROUP
+      - SEND_MAIL
+      - READ_MAIL
+      - VIEW_LOGGER
+      - LEVEL_VIEW
+      - LEVEL_REWARDS
+      - CHEST
+      - QUEST
+      - BANK_DEPOSIT
+
+  trusted:
+    display: '<green>Trusted</green>'
+    priority: 40
+    editable: true
+    upgradable: true
+    material: CHAINMAIL_HELMET
+    permissions:
+      - DEFAULT
+      - READ_MAIL
+      - LEVEL_VIEW
+      - LEVEL_REWARDS
+      - CHEST
+      - QUEST
+      - BANK_DEPOSIT
+
+  member:
+    display: '<gray>Member</gray>'
+    priority: 10
+    editable: true
+    upgradable: true
+    material: LEATHER_HELMET
+    permissions:
+      - DEFAULT
+      - READ_MAIL
+      - LEVEL_VIEW
+      - CHEST
+      - QUEST
+      - BANK_DEPOSIT

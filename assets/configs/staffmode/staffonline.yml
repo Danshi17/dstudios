@@ -1,0 +1,66 @@
+
+server-name: "survival"
+
+messages:
+  other-server: "&cEse jugador está en otro servidor, no puedes teleportarte."
+  no-permission-teleport: "&cNo tienes permiso para teleportarte a staff."
+
+menu:
+  title: "&8» Staff Conectados «"
+  size: 54
+  fill-material: "GRAY_STAINED_GLASS_PANE"
+  fill-name: " "
+
+  staff-head-name: "&f%player%"
+
+  staff-head-lore:
+    - ""
+    - "&7Servidor: &b%server%"
+    - "&7Estado: &a✔ En Modo Staff"
+    - ""
+    - "&eClick &7para teleportarte"
+
+  player-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+
+  no-staff-slot: 22
+  no-staff-item:
+    material: "BARRIER"
+    name: "&cNo hay staff conectado"
+    lore:
+      - "&7No hay ningún miembro del staff"
+      - "&7conectado en este momento."
+
+  close-slot: 49
+  close-item:
+    material: "BARRIER"
+    name: "&cCerrar Menú"
+    lore:
+      - "&7Click para cerrar"

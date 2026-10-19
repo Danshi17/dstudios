@@ -1,0 +1,33 @@
+name: nKoths
+version: '2.0-RC'
+main: me.danshi.nKoths.NKoths
+api-version: '1.13'
+authors: [Danshi]
+description: Advanced KOTH plugin with full customization
+softdepend: [PlaceholderAPI, WorldGuard, DecentHolograms, FancyHolograms, HeadDatabase,UltimateClans, nPrisonutils,PinnaPrison,TAB, nStaffMode]
+
+commands:
+  nkoth:
+    description: Main KOTH command
+    aliases: [koth]
+    permission: nkoths.admin
+    usage: /<command> <create|delete|list|edit|menu|reload>
+  kothscoreboard:
+    description: Activa o desactiva el scoreboard del KOTH
+    aliases: [kothsb, ksb]
+    usage: /<command> [on|off|toggle] | global <on|off|toggle>
+
+permissions:
+  nkoths.admin:
+    description: Access to all KOTH commands
+    default: op
+  nkoths.menu:
+    description: Access to KOTH menu
+    default: op
+  nkoths.scoreboard:
+    description: Permite ocultar o mostrar el scoreboard del KOTH
+    default: op
+  nkoths.scoreboard.admin:
+    description: Permite activar o desactivar el scoreboard del KOTH globalmente
+    default: op
+

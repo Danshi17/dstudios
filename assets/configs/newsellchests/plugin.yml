@@ -1,0 +1,6 @@
+name: NewSellchests
+version: '${version}'
+
+main: me.danshi.newSellchests.NewSellchests
+api-version: '1.18'
+load: POSTWORLD

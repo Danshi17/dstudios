@@ -1,0 +1,50 @@
+name: NewChatColor
+version: '${version}'
+
+main: github.dstudio.newChatColor.NewChatColor
+api-version: '1.18'
+load: POSTWORLD
+softdepend: [PlaceholderAPI, HeadDatabase, Vault]
+
+commands:
+  colors:
+    description: Abre el menu de colores de chat / gestiona tu color.
+    usage: /colors [set|list|disable|create|delete|info|help]
+    aliases: [color, chatcolor, cc]
+  coloradmin:
+    description: Comandos administrativos de NewChatColor.
+    usage: /coloradmin <reload|setcolor|unset|delete|makepublic|makeprivate|give|info>
+    permission: newchatcolor.admin
+    aliases: [ccadmin]
+
+permissions:
+  newchatcolor.use:
+    description: Permite usar /colors
+    default: true
+  newchatcolor.create:
+    description: Permite crear colores personalizados
+    default: true
+  newchatcolor.create.free:
+    description: Crea colores personalizados sin pagar
+    default: op
+  newchatcolor.create.bypasslimit:
+    description: Ignora el limite de colores personalizados creados
+    default: op
+  newchatcolor.admin:
+    description: Acceso a /coloradmin
+    default: op
+  newchatcolor.public.edit.others:
+    description: Editar/eliminar/despublicar colores publicos de otros jugadores
+    default: op
+  createcolor.default:
+    description: Limite base de colores personalizados (rango default)
+    default: true
+  createcolor.vip:
+    description: Limite VIP de colores personalizados
+    default: false
+  createcolor.mvp:
+    description: Limite MVP de colores personalizados
+    default: false
+  createcolor.premium:
+    description: Limite Premium (usualmente ilimitado) de colores personalizados
+    default: false

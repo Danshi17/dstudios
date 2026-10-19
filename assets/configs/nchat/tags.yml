@@ -1,0 +1,704 @@
+#.___________.    ___       _______      _______.        _______.____    ____  _______.___________. _______ .___  ___.
+#|           |   /   \     /  _____|    /       |       /       |\   \  /   / /       |           ||   ____||   \/   |
+#`---|  |----`  /  ^  \   |  |  __     |   (----`      |   (----` \   \/   / |   (----`---|  |----`|  |__   |  \  /  |
+#    |  |      /  /_\  \  |  | |_ |     \   \           \   \      \_    _/   \   \       |  |     |   __|  |  |\/|  |
+#    |  |     /  _____  \ |  |__| | .----)   |      .----)   |       |  | .----)   |      |  |     |  |____ |  |  |  |
+#    |__|    /__/     \__\ \______| |_______/       |_______/        |__| |_______/       |__|     |_______||__|  |__|
+#
+
+settings:
+  enabled: true
+  default-no-tag: "&8[&7Jugador&8]"
+
+database:
+  type: SQLITE
+
+  sqlite: {}
+
+  h2: {}
+
+  mysql:
+    host: localhost
+    port: 3306
+    database: minecraft
+    username: root
+    password: "********"
+    table: nchat_tags
+    use-ssl: false
+
+  mongodb:
+    host: localhost
+    port: 27017
+    database: minecraft
+    collection: nchat_tags
+    use-auth: false
+    username: ""
+    password: ""
+    auth-database: admin
+custom-tags:
+  enabled: true
+
+  permission: "nchat.customtag"
+
+  limits:
+    - permission: "nchat.customtag.legendary"
+      max-tags: 50
+    - permission: "nchat.customtag.epic"
+      max-tags: 40
+    - permission: "nchat.customtag.mvp"
+      max-tags: 30
+    - permission: "nchat.customtag.elite"
+      max-tags: 25
+    - permission: "nchat.customtag.vip"
+      max-tags: 20
+    - permission: "nchat.customtag.plus"
+      max-tags: 10
+  default: 5
+
+  cooldown: 60
+
+  default-public: true
+
+  cost:
+    amount: 1000.0
+
+    check-command: "eco check %player% %amount%"
+
+    command: "eco take %player% %amount%"
+
+  validation:
+    min-length: 3
+    max-length: 20
+    block-special-chars: true
+    blocked-chars: "<>{}[]|"
+    word-filter: true
+    blocked-words:
+      - "admin"
+      - "owner"
+      - "mod"
+      - "staff"
+
+  messages:
+    disabled: "<red>⚠ Las tags personalizadas están deshabilitadas."
+    no-permission: "<red>⚠ No tienes permiso para crear tags personalizadas."
+
+    creation-prompt:
+      - ""
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━ CREAR TAG PERSONALIZADA ━━━━━━━━━</bold></gradient>"
+      - ""
+      - "<yellow>Escribe en el chat el formato de tu tag personalizada."
+      - "<gray>Ejemplo: <white>&b&lSTAFF → <aqua><bold>STAFF</bold></aqua>"
+      - ""
+      - "<yellow>Puedes usar:"
+      - "  <gray>• Colores legacy (&a, &b, &c, etc.)"
+      - "  <gray>• Formato (&l = negrita, &o = cursiva)"
+      - "  <gray>• MiniMessage (<gradient:red:blue>texto</gradient>)"
+      - ""
+      - "<yellow>Costo: <green>$%cost%"
+      - ""
+      - "<red>Escribe <white>cancelar</white> para salir."
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+    edit-prompt:
+      - ""
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━ EDITAR TAG PERSONALIZADA ━━━━━━━━━</bold></gradient>"
+      - ""
+      - "<yellow>Tag actual: <white>%current_tag%"
+      - ""
+      - "<yellow>Escribe el nuevo formato para tu tag:"
+      - "<gray>Ejemplo: <white>&c&lVIP</white> → <red><bold>VIP</bold></red>"
+      - ""
+      - "<red>Escribe <white>cancelar</white> para salir."
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+    created: "<green>✔ Tag personalizada creada exitosamente: %tag%"
+    edited: "<green>✔ Tag personalizada editada: %tag%"
+    deleted: "<yellow>Tag personalizada #%index% eliminada."
+    equipped: "<green>✔ Tag personalizada equipada!"
+    cancelled: "<yellow>Creación de tag cancelada."
+
+    too-short: "<red>✖ La tag debe tener al menos %min% caracteres."
+    too-long: "<red>✖ La tag no puede tener más de %max% caracteres."
+    invalid-chars: "<red>✖ La tag contiene caracteres no permitidos."
+    blocked-word: "<red>✖ La tag contiene palabras prohibidas."
+    payment-failed: "<red>✖ No tienes suficiente dinero. Costo: $%cost%"
+
+    max-tags-reached: "<red>✖ Ya tienes el máximo de tags (<gold>%count%<red>/<gold>%max%<red>). Elimina una para crear otra."
+    no-custom-tag: "<red>✖ No tienes una tag personalizada en esa posición."
+    cooldown: "<red>✖ Debes esperar %time% segundos para crear otra tag."
+
+    visibility-public: "<green>✔ Tu tag ahora es <white>pública</white>: todos pueden verla en Explorar Tags."
+    visibility-private: "<yellow>Tu tag ahora es <white>privada</white>: solo tú puedes verla."
+
+    search-prompt:
+      - ""
+      - "<gradient:#00C6FF:#0072FF><bold>━━━━━━━━━ BUSCAR EN TUS TAGS ━━━━━━━━━</bold></gradient>"
+      - ""
+      - "<yellow>Escribe en el chat el texto o número de la tag que buscas."
+      - "<gray>Escribe <white>todos</white> para quitar el filtro."
+      - "<red>Escribe <white>cancelar</white> para salir."
+      - ""
+    search-applied: "<green>✔ Mostrando tags que coinciden con: <white>%term%"
+    search-no-results: "<red>⚠ No se encontraron tags que coincidan con: <white>%term%"
+    search-cleared: "<yellow>Se quitó el filtro de búsqueda."
+    search-cancelled: "<yellow>Búsqueda cancelada."
+
+
+  menu:
+    title: "<dark_gray>Tags Customs (%count%/%max%) | Pág %page%/%pages%"
+    rows: 6
+
+    tag-slots:
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+
+    filler:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore: []
+
+    items:
+      back:
+        slot: 45
+        material: "ARROW"
+        name: "<yellow><- Volver"
+        lore:
+          - "<gray>Regresar al menú de tags."
+        action: "BACK"
+
+      close:
+        slot: 49
+        material: "NETHER_STAR"
+        name: "<red>Cerrar Menú"
+        lore:
+          - "<gray>Cerrar este menú."
+        action: "CLOSE"
+
+      search:
+        slot: 2
+        material: "SPYGLASS"
+        name: "<aqua><bold>Buscar Tag"
+        lore:
+          - "<gray>Busca entre tus tags por texto o número."
+          - ""
+          - "<gray>Búsqueda actual: <white>%search_term%"
+          - ""
+          - "<yellow>Click izquierdo: buscar"
+          - "<yellow>Click derecho: quitar filtro"
+        action: "SEARCH"
+
+      sort:
+        slot: 4
+        material: "HOPPER"
+        name: "<gold><bold>Orden: <white>%sort%"
+        lore:
+          - "<gray>Cambia el orden en que se muestran tus tags."
+          - ""
+          - "<gray>Modos: <white>Creación <gray>/ <white>A-Z"
+          - ""
+          - "<yellow>Click izquierdo: cambiar orden"
+          - "<yellow>Click derecho: restablecer"
+        action: "SORT"
+
+      create:
+        slot: 13
+        material: "WRITABLE_BOOK"
+        name: "<green><bold>+ Crear Nueva Tag"
+        lore:
+          - "<gray>Crea una tag personalizada nueva."
+          - "<gray>El límite depende de tus permisos."
+          - ""
+          - "<yellow>Click para comenzar."
+        action: "CREATE_TAG"
+
+      browse:
+        slot: 6
+        material: "ENDER_EYE"
+        name: "<gradient:#00C6FF:#0072FF><bold>Explorar Tags de Otros</bold></gradient>"
+        lore:
+          - "<gray>Mira las tags personalizadas"
+          - "<gray>creadas por otros jugadores."
+          - ""
+          - "<yellow>Click para explorar."
+        action: "BROWSE"
+
+
+    navigation:
+      next:
+        slot: 53
+        material: "ARROW"
+        name: "<green>Siguiente Página ->"
+        lore:
+          - "<gray>Ir a la página %next_page%"
+        action: "NEXT_PAGE"
+
+      previous:
+        slot: 52
+        material: "ARROW"
+        name: "<yellow><- Página Anterior"
+        lore:
+          - "<gray>Volver a la página %prev_page%"
+        action: "PREVIOUS_PAGE"
+
+      disabled:
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<dark_gray>"
+        lore: []
+
+    tag-item:
+      has-tag:
+        material: "NAME_TAG"
+        name: "<green>Tag #%index%: %tag%"
+        lore:
+          - "<gray>Tu tag personalizada."
+          - ""
+          - "<yellow>Click izquierdo: <white>equipar"
+          - "<yellow>Click derecho: <white>editar / eliminar"
+        equipped-lore:
+          - ""
+          - "<green>➜ Equipada actualmente"
+
+      empty:
+        material: "FIREWORK_STAR"
+        name: "<green>+ Crear Tag"
+        lore:
+          - "<gray>Crea una nueva tag personalizada."
+          - ""
+          - "<yellow>Costo: <green>$%cost%"
+          - ""
+          - "<yellow>Click para comenzar."
+
+      locked:
+        material: "BARRIER"
+        name: "<red>Máximo alcanzado"
+        lore:
+          - "<gray>Ya tienes el máximo de tags permitidas."
+          - "<gray>Elimina una existente para crear otra."
+
+    options-menu:
+      title: "<gradient:#FF0080:#FF8C00><bold>Opciones - Tag #%index%</bold></gradient>"
+      rows: 1
+
+      filler:
+        enabled: true
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: " "
+        lore: []
+
+      items:
+        equip:
+          slot: 1
+          material: "DIAMOND"
+          name: "<aqua>Equipar Tag"
+          lore:
+            - "<gray>Equipa esta tag como tu tag activa."
+            - ""
+            - "<yellow>Click para equipar."
+          action: "EQUIP"
+
+        edit:
+          slot: 3
+          material: "BOOK"
+          name: "<yellow>Editar Tag"
+          lore:
+            - "<gray>Modifica el contenido de esta tag."
+            - ""
+            - "<yellow>Click para editar."
+          action: "EDIT"
+
+        visibility:
+          slot: 4
+          action: "TOGGLE_VISIBILITY"
+          public:
+            material: "ENDER_EYE"
+            name: "<green>Visibilidad: <white>Pública"
+            lore:
+              - "<gray>Todos los jugadores pueden ver"
+              - "<gray>esta tag en <white>Explorar Tags<gray>."
+              - ""
+              - "<yellow>Click para hacerla privada."
+          private:
+            material: "ENDER_PEARL"
+            name: "<red>Visibilidad: <white>Privada"
+            lore:
+              - "<gray>Solo tú puedes ver esta tag."
+              - "<gray>No aparece en <white>Explorar Tags<gray>."
+              - ""
+              - "<yellow>Click para hacerla pública."
+
+        delete:
+          slot: 5
+          material: "BARRIER"
+          name: "<red>Eliminar Tag"
+          lore:
+            - "<gray>Elimina permanentemente esta tag."
+            - ""
+            - "<red>¡Esta acción no se puede deshacer!"
+            - ""
+            - "<yellow>Click para eliminar."
+          action: "DELETE"
+
+        back:
+          slot: 7
+          material: "ARROW"
+          name: "<yellow><- Volver"
+          lore:
+            - "<gray>Regresar al menú de tags personalizadas."
+          action: "BACK_TO_CUSTOM"
+
+  browse-menu:
+    title: "<gradient:#00C6FF:#0072FF><bold>Explorar Tags</bold></gradient> <dark_gray>• Pág %page%/%pages% (%total%)"
+    rows: 6
+
+    tag-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+
+    filler:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore: []
+
+    items:
+      search:
+        slot: 3
+        material: "SPYGLASS"
+        name: "<aqua><bold>Buscar"
+        lore:
+          - "<gray>Busca por texto de la tag o por jugador."
+          - ""
+          - "<gray>Búsqueda actual: <white>%search_term%"
+          - ""
+          - "<yellow>Click izquierdo: buscar"
+          - "<yellow>Click derecho: quitar filtro"
+        action: "SEARCH"
+
+      sort:
+        slot: 5
+        material: "HOPPER"
+        name: "<gold><bold>Orden: <white>%sort%"
+        lore:
+          - "<gray>Modos: <white>Jugador (A-Z) <gray>/ <white>Tag (A-Z)"
+          - ""
+          - "<yellow>Click izquierdo: cambiar orden"
+          - "<yellow>Click derecho: restablecer"
+        action: "SORT"
+
+      back:
+        slot: 45
+        material: "ARROW"
+        name: "<yellow><- Volver"
+        lore:
+          - "<gray>Volver a tus tags personalizadas."
+        action: "BACK"
+
+      close:
+        slot: 49
+        material: "OAK_DOOR"
+        name: "<red>Cerrar Menú"
+        lore:
+          - "<gray>Cerrar este menú."
+        action: "CLOSE"
+
+      no-tags:
+        enable: true
+        slot: 22
+        material: "BARRIER"
+        name: "<red>No hay tags para mostrar"
+        lore:
+          - "<gray>Nadie más ha creado tags personalizadas"
+          - "<gray>o ninguna coincide con tu búsqueda."
+
+    navigation:
+      next:
+        slot: 53
+        material: "ARROW"
+        name: "<green>Siguiente Página ->"
+        lore:
+          - "<gray>Ir a la página %next_page%"
+        action: "NEXT_PAGE"
+
+      previous:
+        slot: 52
+        material: "ARROW"
+        name: "<yellow><- Página Anterior"
+        lore:
+          - "<gray>Volver a la página %prev_page%"
+        action: "PREVIOUS_PAGE"
+
+      disabled:
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<dark_gray>"
+        lore: []
+
+    # Cada tag de otro jugador. %player% = dueño, %tag% = formato de la tag
+    tag-item:
+      material: "PLAYER_HEAD"
+      name: "<white>%tag% <dark_gray>• <gray>%player%"
+      lore:
+        - "<gray>Creada por: <white>%player%"
+        - "<gray>Vista previa: %tag%"
+        - ""
+        - "<dark_gray>Solo lectura: no puedes equipar"
+        - "<dark_gray>ni editar tags de otros jugadores."
+      self-lore:
+        - "<gray>Creada por: <green>ti"
+        - "<gray>Vista previa: %tag%"
+        - ""
+        - "<yellow>Edítala desde <white>Tus Tags <yellow>(click derecho)."
+
+    messages:
+      search-prompt:
+        - ""
+        - "<gradient:#00C6FF:#0072FF><bold>━━━━━━━━━ BUSCAR TAGS ━━━━━━━━━</bold></gradient>"
+        - ""
+        - "<yellow>Escribe el texto de la tag o el nombre del jugador."
+        - "<gray>Escribe <white>todos</white> para quitar el filtro."
+        - "<red>Escribe <white>cancelar</white> para salir."
+        - ""
+      search-applied: "<green>✔ Mostrando resultados para: <white>%term%"
+      search-cleared: "<yellow>Se quitó el filtro de búsqueda."
+      search-cancelled: "<yellow>Búsqueda cancelada."
+
+menus:
+  tags:
+    title: "<gradient:#FF0080:#FF8C00><bold>Tags</bold></gradient> <dark_gray>• Pág %page%/%pages%"
+    rows: 6
+
+    tag-slots:
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+
+    filler:
+      enabled: true
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore: []
+
+    messages:
+      no-permission: "<red>⚠ <gray>No tienes permiso para desbloquear este tag."
+      success: "<green>✔ <gray>¡Tag seleccionado: %tag%<gray>!"
+      reset: "<yellow>Has ocultado tu tag."
+      bought: "<green>✔ <gray>¡Has comprado el tag por <yellow>$%cost%<gray>!"
+      no-money: "<red>✖ <gray>No tienes suficiente dinero. Costo: <yellow>$%cost%"
+      search-prompt:
+        - ""
+        - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━ BUSCAR TAG ━━━━━━━━━</bold></gradient>"
+        - ""
+        - "<yellow>Escribe en el chat el nombre o categoría que quieres buscar."
+        - "<gray>Escribe <white>todos</white> para quitar el filtro de búsqueda."
+        - ""
+        - "<red>Escribe <white>cancelar</white> para salir."
+        - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+        - ""
+      search-cancelled: "<yellow>Búsqueda cancelada."
+      search-cleared: "<yellow>Se quitó el filtro de búsqueda."
+      search-applied: "<green>✔ Buscando: <yellow>%term%"
+      search-no-results: "<red>⚠ No se encontraron tags para <yellow>%term%"
+
+    items:
+      search:
+        slot: 2
+        material: "SPYGLASS"
+        name: "<aqua><bold>Buscar Tag"
+        lore:
+          - "<gray>Búsqueda actual: <yellow>%search_term%"
+          - ""
+          - "<yellow>Click izquierdo: <white>Buscar por nombre"
+          - "<yellow>Click derecho: <white>Quitar búsqueda"
+        action: "SEARCH"
+
+      filter:
+        slot: 4
+        material: "HOPPER"
+        name: "<gold><bold>Filtro: <white>%filter%"
+        lore:
+          - "<gray>Mostrando: <yellow>%filter%"
+          - ""
+          - "<yellow>Click izquierdo: <white>Siguiente categoría"
+          - "<yellow>Click derecho: <white>Quitar filtro"
+        action: "FILTER"
+
+      previous:
+        slot: 52
+        material: "ARROW"
+        name: "<yellow><- Página Anterior"
+        lore:
+          - "<gray>Ir a la página %prev_page%"
+        action: "PREVIOUS_PAGE"
+
+      next:
+        slot: 53
+        material: "ARROW"
+        name: "<green>Siguiente Página ->"
+        lore:
+          - "<gray>Ir a la página %next_page%"
+        action: "NEXT_PAGE"
+
+      disabled_nav:
+        material: "BLACK_STAINED_GLASS_PANE"
+        name: "<dark_gray>"
+        lore: []
+
+      reset_tag:
+        slot: 45
+        material: "REDSTONE"
+        name: "<red><bold>Quitar Tag"
+        lore:
+          - "<gray>Deja de mostrar un tag en el chat."
+        action: "RESET"
+        sound:
+          type: "UI_BUTTON_CLICK"
+          volume: 1.0
+          pitch: 1.0
+        # Item temporal que aparece al reiniciar/quitar la tag.
+        reset-status-item:
+          material: "GUNPOWDER"
+          name: "<yellow><bold>Reiniciando tu tag...</bold>"
+          lore:
+            - "<gray>Quitando el tag activo..."
+          duration-ticks: 20
+
+      custom_tags_button:
+        slot: 6
+        material: "WRITABLE_BOOK"
+        name: "<gradient:#FF0080:#FF8C00><bold>Tags Personalizadas</bold></gradient>"
+        lore:
+          - "<gray>Crea tu propia tag única."
+          - ""
+          - "<yellow>Click para abrir el menú."
+        action: "CUSTOM_TAGS"
+
+      close:
+        slot: 49
+        material: "NETHER_STAR"
+        name: "<red>Cerrar Menú"
+        lore: []
+        action: "CLOSE"
+
+    tag-item:
+      equipped-lore:
+        - ""
+        - "<green>➜ Equipado actualmente"
+
+    tags:
+      tag_member:
+        material: "NAME_TAG"
+        name: "<green>Tag Miembro"
+        lore:
+          - "<gray>Tag por defecto."
+        tag: "<gray>[Miembro] "
+        category: "General"
+
+      tag_vip:
+        material: "NETHER_STAR"
+        name: "<gradient:gold:yellow>Tag VIP"
+        lore:
+          - "<gray>Exclusivo para rangos VIP."
+          - "<yellow>Click para equipar."
+        tag: "<gradient:gold:yellow>[<bold>VIP</bold>]</gradient> "
+        permission: "nchat.tag.vip"
+        category: "VIP"
+        locked:
+          material: "BARRIER"
+          name: "<red><strikethrough>Tag VIP"
+          lore:
+            - "<gray>Requiere rango <gold>VIP</gold>"
+            - "<gray>para desbloquear."
+
+      tag_admin:
+        material: "REDSTONE_BLOCK"
+        name: "<red><bold>Tag ADMIN"
+        lore:
+          - "<gray>Tag de administración."
+        tag: "<red>[<bold>ADMIN</bold>]</red> "
+        permission: "nchat.tag.admin"
+        category: "Staff"
+        locked:
+          material: "BEDROCK"
+          name: "<red>Bloqueado (Admin)"
+
+      tag_rich:
+        material: "EMERALD"
+        name: "<green>Tag Millonario"
+        lore:
+          - "<gray>Muestra tu riqueza."
+          - "<green>Click para equipar."
+        tag: "<green>[$] "
+        permission: "nchat.tag.rich"
+        category: "Comprables"
+        cost: 5000.0
+        buy-commands:
+          - "lp user %player% permission set nchat.tag.rich true"
+          - "broadcast <green>%player% se ha comprado el tag Millonario!"
+        buyable:
+          material: "EMERALD_BLOCK"
+          name: "<green>Comprar Tag Millonario"
+          lore:
+            - "<gray>Este tag cuesta dinero."
+            - ""
+            - "<gray>Precio: <yellow>$%cost%"
+            - "<yellow>Click para comprar ahora."
+        locked:
+          material: "BARRIER"
+          name: "<red>Bloqueado"
+          lore:
+            - "<gray>Necesitas <yellow>$%cost%<gray>."
+
+      tag_verified:
+        material: "hdb-18432"
+        name: "<green>Tag Verificado"
+        lore:
+          - "<gray>Tag exclusiva de verificados."
+        tag: "<green>[✔] "
+        permission: "nchat.tag.verified"
+        category: "Especiales"
+        locked:
+          material: "GRAY_DYE"
+          name: "<gray>Bloqueado"

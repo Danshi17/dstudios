@@ -1,0 +1,126 @@
+
+commands:
+  discord:
+    enabled: false
+    permission: "" # Vacío = todos pueden usar
+    aliases: [dc, ds]
+    messages:
+      - ""
+      - "<gradient:#5865F2:#7289DA><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+      - "  <#5865F2><bold>DISCORD</bold> <dark_gray>»</dark_gray> <white>¡Únete a nuestra comunidad!</white>"
+      - ""
+      - "  <yellow>✿</yellow> <white>Enlace:</white> <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirte'><#5865F2><bold>discord.borkland.com</bold></hover></click>"
+      - "  <yellow>✿</yellow> <white>Jugadores conectados:</white> <aqua>%server_online%</aqua>"
+      - ""
+      - "<gradient:#5865F2:#7289DA><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+  tienda:
+    enabled: false
+    permission: ""
+    aliases: [shop, store, donate]
+    messages:
+      - ""
+      - "<gradient:#FFD700:#FFA500><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+      - "  <gradient:#FFD700:#FFA500><bold>⚡ TIENDA OFICIAL</bold></gradient>"
+      - ""
+      - "  <gray>Apoya el servidor y obtén beneficios exclusivos:"
+      - ""
+      - "  <yellow>➜</yellow> <white>Rangos VIP, MVP, Elite</white>"
+      - "  <yellow>➜</yellow> <white>Tags personalizadas ilimitadas</white>"
+      - "  <yellow>➜</yellow> <white>Kits exclusivos y más</white>"
+      - ""
+      - "  <click:open_url:'https://tienda.borkland.com'><hover:show_text:'<green>Click para abrir la tienda'><green><bold>► VISITAR TIENDA ◄</bold></green></hover></click>"
+      - ""
+      - "<gradient:#FFD700:#FFA500><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+  web:
+    enabled: false
+    permission: ""
+    aliases: [website, pagina]
+    messages:
+      - ""
+      - "  <white>Visita nuestra web:</white> <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para abrir'><aqua><bold>www.borkland.com</bold></aqua></hover></click>"
+      - ""
+
+  reglas:
+    enabled: false
+    permission: ""
+    aliases: [rules, normas]
+    messages:
+      - ""
+      - "<red><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></red>"
+      - ""
+      - "  <red><bold>⚠ REGLAS DEL SERVIDOR</bold></red>"
+      - ""
+      - "  <yellow>1.</yellow> <white>No hacer spam en el chat</white>"
+      - "  <yellow>2.</yellow> <white>Respetar a todos los jugadores</white>"
+      - "  <yellow>3.</yellow> <white>No usar hacks o mods prohibidos</white>"
+      - "  <yellow>4.</yellow> <white>No grief ni robo</white>"
+      - "  <yellow>5.</yellow> <white>Seguir las indicaciones del staff</white>"
+      - ""
+      - "  <gray>El incumplimiento puede resultar en ban permanente."
+      - ""
+      - "<red><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></red>"
+      - ""
+
+  votar:
+    enabled: false
+    permission: ""
+    aliases: [vote, voting]
+    messages:
+      - ""
+      - "<gradient:#00FF00:#00AA00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+      - "  <green><bold>★ VOTA POR EL SERVIDOR</bold></green>"
+      - ""
+      - "  <white>Ayúdanos a crecer votando en estas páginas:</white>"
+      - ""
+      - "  <yellow>1.</yellow> <click:open_url:'https://vote1.com'><hover:show_text:'<green>Click para votar'><aqua>vote1.com</aqua></hover></click>"
+      - "  <yellow>2.</yellow> <click:open_url:'https://vote2.com'><hover:show_text:'<green>Click para votar'><aqua>vote2.com</aqua></hover></click>"
+      - "  <yellow>3.</yellow> <click:open_url:'https://vote3.com'><hover:show_text:'<green>Click para votar'><aqua>vote3.com</aqua></hover></click>"
+      - ""
+      - "  <gold>¡Recibirás recompensas por cada voto!</gold>"
+      - ""
+      - "<gradient:#00FF00:#00AA00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+  staff:
+    enabled: false
+    permission: ""
+    aliases: [team, equipo]
+    messages:
+      - ""
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+      - "  <gradient:#FF0080:#FF8C00><bold>👥 STAFF DEL SERVIDOR</bold></gradient>"
+      - ""
+      - "  <red><bold>OWNER:</bold></red> <white>Danshi_</white>"
+      - "  <gold><bold>ADMIN:</bold></gold> <white>Admin1, Admin2</white>"
+      - "  <yellow><bold>MOD:</bold></yellow> <white>Mod1, Mod2, Mod3</white>"
+      - "  <green><bold>HELPER:</bold></green> <white>Helper1, Helper2</white>"
+      - ""
+      - "  <gray>¿Necesitas ayuda? Contacta a cualquier miembro del staff."
+      - ""
+      - "<gradient:#FF0080:#FF8C00><bold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</bold></gradient>"
+      - ""
+
+  # Ejemplo de comando con permiso
+  vip:
+    enabled: false
+    permission: "nchat.cmd.vip"
+    aliases: [premium, rango]
+    messages:
+      - ""
+      - "  <gradient:#FFD700:#FFA500><bold>★ BENEFICIOS VIP ★</bold></gradient>"
+      - ""
+      - "  <yellow>➜</yellow> <white>Tags personalizadas ilimitadas</white>"
+      - "  <yellow>➜</yellow> <white>Colores y gradientes exclusivos</white>"
+      - "  <yellow>➜</yellow> <white>Kits VIP cada 24h</white>"
+      - "  <yellow>➜</yellow> <white>Acceso a zonas VIP</white>"
+      - ""
+      - "  <click:open_url:'https://tienda.borkland.com/vip'><hover:show_text:'<green>Click para comprar'><green><bold>► COMPRAR VIP ◄</bold></green></hover></click>"
+      - ""

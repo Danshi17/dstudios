@@ -1,0 +1,29 @@
+name: NewVaults
+version: '${version}'
+
+main: github.dstudio.newVaults.NewVaults
+api-version: '1.18'
+load: POSTWORLD
+description: Plugin de vaults editables con soporte Base64 y HeadDatabase
+softdepend: [PlaceholderAPI, HeadDatabase]
+libraries:
+  - com.h2database:h2:2.2.224
+  - com.zaxxer:HikariCP:5.1.0
+  - mysql:mysql-connector-java:8.0.33
+  - org.xerial:sqlite-jdbc:3.44.1.0
+  - org.mongodb:bson:4.11.1
+  - org.mongodb:mongodb-driver-core:4.11.1
+  - org.mongodb:mongodb-driver-sync:4.11.1
+  - org.slf4j:slf4j-api:2.0.9
+commands:
+  vault:
+    description: Abre el menu de vaults
+    aliases: [vaults, pv, myvault]
+  vaultadmin:
+    description: Comandos administrativos de NewVaults
+    aliases: [vadmin]
+permissions:
+  newvaults.admin:
+    default: op
+  newvaults.vault.*:
+    default: false

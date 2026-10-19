@@ -1,0 +1,70 @@
+name: NewDTC
+version: '${version}'
+
+main: github.dstudio.newDTC.NewDTC
+api-version: '1.13'
+load: POSTWORLD
+depend:
+  - packetevents
+
+softdepend:
+  - PlaceholderAPI
+  - WorldGuard
+  - TAB
+
+
+commands:
+  dtc:
+    description: Main command for NewDTC.
+    usage: /dtc
+    aliases: [newdtc, destroythecore]
+  dtcscoreboard:
+    description: Activa o desactiva el scoreboard del DTC.
+    usage: /dtcsb [on|off|toggle|global <on|off|toggle>]
+    aliases: [dtcsb, dtcscore]
+  dtctop:
+    description: Muestra el top de cores ganados.
+    usage: /dtctop
+    aliases: [dtcleaderboard, dtclb]
+
+permissions:
+  newdtc.admin:
+    default: op
+    children:
+      newdtc.wand: true
+      newdtc.create: true
+      newdtc.delete: true
+      newdtc.start: true
+      newdtc.stop: true
+      newdtc.reload: true
+      newdtc.editor: true
+      newdtc.stats: true
+      newdtc.top: true
+      newdtc.scoreboard: true
+      newdtc.scoreboard.admin: true
+
+  newdtc.wand:
+    default: op
+  newdtc.create:
+    default: op
+  newdtc.delete:
+    default: op
+  newdtc.start:
+    default: op
+  newdtc.stop:
+    default: op
+  newdtc.reload:
+    default: op
+  newdtc.editor:
+    default: op
+  newdtc.stats:
+    default: true
+  newdtc.top:
+    description: Permite ver el top de cores ganados.
+    default: true
+  newdtc.scoreboard:
+    description: Permite activar/desactivar el scoreboard para uno mismo.
+    default: true
+  newdtc.scoreboard.admin:
+    description: Permite activar/desactivar el scoreboard globalmente.
+    default: op

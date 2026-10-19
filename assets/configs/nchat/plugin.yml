@@ -1,0 +1,461 @@
+name: nChat
+version: '0.1-SNAPSHOT'
+main: org.dev.danshi.nChat.NChat
+api-version: '1.13'
+softdepend: [PlaceholderAPI, HeadDatabase]
+authors: [Danshi_]
+description: Advanced chat plugin with visual components, hex gradients, Nick Colors and GUI support.
+
+commands:
+  nchat:
+    description: Comando principal del plugin (Reload).
+    usage: "/nchat reload | /nchat tagsimport [carpeta]"
+    aliases: [nc]
+  clearchat:
+    description: Borra el chat global.
+    usage: /clearchat
+    aliases: [cc]
+  chatlock:
+    description: Bloquea o desbloquea el chat global.
+    usage: /chatlock
+    aliases: [togglechat, lockchat]
+  color:
+    description: Abre el menú de selección de colores y gradientes para el CHAT.
+    usage: /color
+    aliases: [colors, chatcolor, ccolor]
+  nickc:
+    description: Abre el menú de selección de colores para el NICK (Nombre).
+    usage: /nickc
+    aliases: [nickcolor, ncolor, nicknamecolor]
+  nchatgui:
+    description: Comando interno para abrir los inventarios compartidos en el chat.
+    usage: /nchatgui <tipo> <id> [pagina]
+  nchatpanel:
+    description: Abre el panel de administración para activar/desactivar las features del core.
+    usage: /nchatpanel
+    aliases: [ncp, panel, features]
+  msg:
+    description: Envía un mensaje privado a un jugador.
+    usage: /msg <jugador> <mensaje>
+    aliases: [tell, w, whisper, pm]
+  r:
+    description: Responde al último jugador que te escribió o al que le escribiste.
+    usage: /r <mensaje>
+    aliases: [reply]
+  msgspy:
+    description: Activa o desactiva la vista de los mensajes privados de los jugadores.
+    usage: /msgspy
+    aliases: [socialspy, spy]
+  msgtoggle:
+    description: Activa o desactiva que te envíen mensajes privados.
+    usage: /msgtoggle
+    aliases: [dm, togglepm, receivepm]
+  ignore:
+    description: Ignora a un jugador para no recibir sus mensajes privados.
+    usage: /ignore <jugador>
+    aliases: [block]
+  unignore:
+    description: Deja de ignorar a un jugador.
+    usage: /unignore <jugador>
+    aliases: [unblock]
+  ignorelist:
+    description: Muestra tu lista de jugadores ignorados.
+    usage: /ignorelist
+    aliases: [ignores, blockedlist]
+  adivinar:
+    description: Adivina el número o la palabra del evento activo.
+    usage: /adivinar <número o palabra>
+  chatevent:
+    description: Inicia, detiene o consulta los eventos de chat (adivinar y GG).
+    usage: /chatevent <adivinar|gg> <start|stop|status> [number|word]
+    aliases: [cevent]
+
+permissions:
+
+  nchat.admin:
+    description: Permiso general de administrador (Bypass de todo).
+    default: op
+  nchat.reload:
+    description: Permiso para recargar la configuración y menús.
+    default: op
+  nchat.tagsimport:
+    description: Permite importar tags desde una carpeta de SupremeTags.
+    default: op
+  nchat.clearchat:
+    description: Permiso para limpiar el chat.
+    default: op
+  nchat.toggle:
+    description: Permiso para bloquear/desbloquear el chat.
+    default: op
+  nchat.tags.menu:
+    description: Permite abrir el menú de tags.
+    default: true
+
+  nchat.features.menu:
+    description: Permite abrir el panel de administración y activar/desactivar features del core.
+    default: op
+
+  nchat.adivinar:
+    description: Permite participar en el evento /adivinar.
+    default: true
+  nchat.events.manage:
+    description: Permite iniciar, detener y consultar los eventos de chat con /chatevent.
+    default: op
+
+  nchat.msg:
+    description: Permite usar /msg y /r.
+    default: true
+  nchat.msg.vanished:
+    description: Permite enviar mensajes privados a jugadores en vanish.
+    default: op
+  nchat.msgspy:
+    description: Permite usar /msgspy y ver los mensajes privados de otros jugadores.
+    default: op
+  nchat.msgspy.exempt:
+    description: Los mensajes privados de este jugador no aparecen en el msgspy.
+    default: false
+  nchat.msg.bypass.dm:
+    description: Permite enviar /msg aunque el destino tenga los mensajes desactivados.
+    default: op
+  nchat.msg.bypass.ignore:
+    description: Permite enviar /msg aunque el destino te tenga ignorado.
+    default: op
+
+  nchat.bypass.lock:
+    description: Permite escribir cuando el chat está bloqueado.
+    default: op
+  nchat.bypass.cooldown:
+    description: Permite hablar rápido sin esperar los segundos configurados.
+    default: op
+  nchat.bypass.filter:
+    description: Permite decir palabras prohibidas sin ser castigado.
+    default: op
+  nchat.bypass.commands:
+    description: Permite usar comandos bloqueados (/plugins, etc).
+    default: op
+  nchat.bypass.tab:
+    description: Permite ver todos los comandos en el TAB completado.
+    default: op
+
+  nchat.customtag:
+    description: Permiso base para usar el sistema de tags personalizadas.
+    default: true
+  nchat.customtag.plus:
+    description: Límite de tags personalizadas - Plus (10 tags).
+    default: false
+  nchat.customtag.vip:
+    description: Límite de tags personalizadas - VIP (20 tags).
+    default: false
+  nchat.customtag.elite:
+    description: Límite de tags personalizadas - Elite (25 tags).
+    default: false
+  nchat.customtag.mvp:
+    description: Límite de tags personalizadas - MVP (30 tags).
+    default: false
+  nchat.customtag.epic:
+    description: Límite de tags personalizadas - Epic (40 tags).
+    default: false
+  nchat.customtag.legendary:
+    description: Límite de tags personalizadas - Legendary (50 tags).
+    default: false
+
+  nchat.join.vip:
+    description: Mensaje de join VIP.
+    default: false
+  nchat.join.mvp:
+    description: Mensaje de join MVP.
+    default: false
+  nchat.join.epic:
+    description: Mensaje de join Epic.
+    default: false
+  nchat.join.legendary:
+    description: Mensaje de join Legendary.
+    default: false
+  nchat.quit.vip:
+    description: Mensaje de quit VIP.
+    default: false
+  nchat.quit.mvp:
+    description: Mensaje de quit MVP.
+    default: false
+  nchat.quit.epic:
+    description: Mensaje de quit Epic.
+    default: false
+  nchat.quit.legendary:
+    description: Mensaje de quit Legendary.
+    default: false
+
+  nchat.color.menu:
+    description: Permite abrir el menú con /color.
+    default: true
+  nchat.color.reset:
+    description: Permite restablecer el color de chat al default.
+    default: true
+  nchat.color.black:
+    description: Acceso al color Negro en chat.
+    default: op
+  nchat.color.dark_blue:
+    description: Acceso al color Azul Oscuro en chat.
+    default: op
+  nchat.color.dark_green:
+    description: Acceso al color Verde Oscuro en chat.
+    default: op
+  nchat.color.dark_aqua:
+    description: Acceso al color Turquesa Oscuro en chat.
+    default: op
+  nchat.color.dark_red:
+    description: Acceso al color Rojo Oscuro en chat.
+    default: op
+  nchat.color.dark_purple:
+    description: Acceso al color Morado Oscuro en chat.
+    default: op
+  nchat.color.gold:
+    description: Acceso al color Oro en chat.
+    default: op
+  nchat.color.gray:
+    description: Acceso al color Gris en chat.
+    default: op
+  nchat.color.dark_gray:
+    description: Acceso al color Gris Oscuro en chat.
+    default: op
+  nchat.color.blue:
+    description: Acceso al color Azul en chat.
+    default: op
+  nchat.color.green:
+    description: Acceso al color Verde en chat.
+    default: op
+  nchat.color.aqua:
+    description: Acceso al color Aqua en chat.
+    default: op
+  nchat.color.red:
+    description: Acceso al color Rojo en chat.
+    default: op
+  nchat.color.light_purple:
+    description: Acceso al color Rosa en chat.
+    default: op
+  nchat.color.yellow:
+    description: Acceso al color Amarillo en chat.
+    default: op
+  nchat.color.white:
+    description: Acceso al color Blanco en chat.
+    default: op
+  nchat.color.rainbow:
+    description: Acceso al color Arcoiris en chat.
+    default: op
+  nchat.color.fire:
+    description: Acceso al gradiente de Fuego en chat.
+    default: op
+  nchat.color.ice:
+    description: Acceso al gradiente de Hielo en chat.
+    default: op
+  nchat.color.nature:
+    description: Acceso al gradiente de Naturaleza en chat.
+    default: op
+  nchat.color.sunset:
+    description: Acceso al gradiente de Atardecer en chat.
+    default: op
+
+  nchat.nick.menu:
+    description: Permite abrir el menú con /nickc.
+    default: op
+  nchat.nick.reset:
+    description: Permite restablecer el color del nombre al default.
+    default: op
+  nchat.nick.black:
+    description: Acceso al nick Negro.
+    default: op
+  nchat.nick.dark_blue:
+    description: Acceso al nick Azul Oscuro.
+    default: op
+  nchat.nick.dark_green:
+    description: Acceso al nick Verde Oscuro.
+    default: op
+  nchat.nick.dark_aqua:
+    description: Acceso al nick Turquesa Oscuro.
+    default: op
+  nchat.nick.dark_red:
+    description: Acceso al nick Rojo Oscuro.
+    default: op
+  nchat.nick.dark_purple:
+    description: Acceso al nick Morado Oscuro.
+    default: op
+  nchat.nick.gold:
+    description: Acceso al nick Oro.
+    default: op
+  nchat.nick.gray:
+    description: Acceso al nick Gris.
+    default: op
+  nchat.nick.dark_gray:
+    description: Acceso al nick Gris Oscuro.
+    default: op
+  nchat.nick.blue:
+    description: Acceso al nick Azul.
+    default: op
+  nchat.nick.green:
+    description: Acceso al nick Verde.
+    default: op
+  nchat.nick.aqua:
+    description: Acceso al nick Aqua.
+    default: op
+  nchat.nick.red:
+    description: Acceso al nick Rojo.
+    default: op
+  nchat.nick.light_purple:
+    description: Acceso al nick Rosa.
+    default: op
+  nchat.nick.yellow:
+    description: Acceso al nick Amarillo.
+    default: op
+  nchat.nick.white:
+    description: Acceso al nick Blanco.
+    default: op
+  nchat.nick.rainbow:
+    description: Acceso al nick Arcoiris Animado.
+    default: op
+  nchat.nick.fire:
+    description: Acceso al nick Gradiente Fuego.
+    default: op
+  nchat.nick.ice:
+    description: Acceso al nick Gradiente Hielo.
+    default: op
+  nchat.nick.nature:
+    description: Acceso al nick Gradiente Naturaleza.
+    default: op
+  nchat.nick.sunset:
+    description: Acceso al nick Gradiente Atardecer.
+    default: op
+
+  nchat.chat.item:
+    description: Permite compartir el item en mano mediante [item] o [i] en el chat.
+    default: true
+  nchat.chat.inv:
+    description: Permite compartir el inventario mediante [inv] en el chat.
+    default: true
+  nchat.chat.enderchest:
+    description: Permite compartir el enderchest mediante [enderchest] en el chat.
+    default: true
+  nchat.chat.view:
+    description: Permite abrir las vistas de inventario/enderchest/item compartidas en el chat.
+    default: true
+
+  nchat.bypass.*:
+    description: Acceso a todos los bypass del plugin.
+    children:
+      nchat.bypass.lock: true
+      nchat.bypass.cooldown: true
+      nchat.bypass.filter: true
+      nchat.bypass.commands: true
+      nchat.bypass.tab: true
+
+  nchat.customtag.*:
+    description: Acceso a todos los límites de tags personalizadas.
+    children:
+      nchat.customtag: true
+      nchat.customtag.plus: true
+      nchat.customtag.vip: true
+      nchat.customtag.elite: true
+      nchat.customtag.mvp: true
+      nchat.customtag.epic: true
+      nchat.customtag.legendary: true
+
+  nchat.join.*:
+    description: Acceso a todos los mensajes de join.
+    children:
+      nchat.join.vip: true
+      nchat.join.mvp: true
+      nchat.join.epic: true
+      nchat.join.legendary: true
+
+  nchat.quit.*:
+    description: Acceso a todos los mensajes de quit.
+    children:
+      nchat.quit.vip: true
+      nchat.quit.mvp: true
+      nchat.quit.epic: true
+      nchat.quit.legendary: true
+
+  nchat.color.*:
+    description: Acceso total a colores de CHAT.
+    children:
+      nchat.color.menu: true
+      nchat.color.reset: true
+      nchat.color.black: true
+      nchat.color.dark_blue: true
+      nchat.color.dark_green: true
+      nchat.color.dark_aqua: true
+      nchat.color.dark_red: true
+      nchat.color.dark_purple: true
+      nchat.color.gold: true
+      nchat.color.gray: true
+      nchat.color.dark_gray: true
+      nchat.color.blue: true
+      nchat.color.green: true
+      nchat.color.aqua: true
+      nchat.color.red: true
+      nchat.color.light_purple: true
+      nchat.color.yellow: true
+      nchat.color.white: true
+      nchat.color.rainbow: true
+      nchat.color.fire: true
+      nchat.color.ice: true
+      nchat.color.nature: true
+      nchat.color.sunset: true
+
+  nchat.nick.*:
+    description: Acceso total a colores de NICK.
+    children:
+      nchat.nick.menu: true
+      nchat.nick.reset: true
+      nchat.nick.black: true
+      nchat.nick.dark_blue: true
+      nchat.nick.dark_green: true
+      nchat.nick.dark_aqua: true
+      nchat.nick.dark_red: true
+      nchat.nick.dark_purple: true
+      nchat.nick.gold: true
+      nchat.nick.gray: true
+      nchat.nick.dark_gray: true
+      nchat.nick.blue: true
+      nchat.nick.green: true
+      nchat.nick.aqua: true
+      nchat.nick.red: true
+      nchat.nick.light_purple: true
+      nchat.nick.yellow: true
+      nchat.nick.white: true
+      nchat.nick.rainbow: true
+      nchat.nick.fire: true
+      nchat.nick.ice: true
+      nchat.nick.nature: true
+      nchat.nick.sunset: true
+
+  nchat.chat.*:
+    description: Acceso total al sistema de vistas compartidas en el chat.
+    children:
+      nchat.chat.item: true
+      nchat.chat.inv: true
+      nchat.chat.enderchest: true
+      nchat.chat.view: true
+
+  nchat.*:
+    description: Acceso completo a todas las funcionalidades de nChat.
+    children:
+      nchat.admin: true
+      nchat.reload: true
+      nchat.tagsimport: true
+      nchat.clearchat: true
+      nchat.toggle: true
+      nchat.tags.menu: true
+      nchat.features.menu: true
+      nchat.adivinar: true
+      nchat.events.manage: true
+      nchat.msg: true
+      nchat.msg.vanished: true
+      nchat.msgspy: true
+      nchat.msg.bypass.dm: true
+      nchat.msg.bypass.ignore: true
+      nchat.bypass.*: true
+      nchat.customtag.*: true
+      nchat.join.*: true
+      nchat.quit.*: true
+      nchat.color.*: true
+      nchat.nick.*: true
+      nchat.chat.*: true

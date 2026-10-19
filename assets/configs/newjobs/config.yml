@@ -1,0 +1,158 @@
+# Almacenamiento de datos de jugadores. Las librerías (H2, HikariCP, MySQL, MongoDB) se
+# descargan automáticamente al iniciar el servidor (plugin.yml -> libraries).
+# Al cambiar de YAML a otro tipo, los players/<uuid>.yml existentes se importan solos al entrar cada jugador.
+storage:
+  type: YAML # YAML, H2, MYSQL, MONGODB
+  table-prefix: newjobs_
+  import-yaml: true
+  h2:
+    file: data/newjobs # relativo a plugins/NewJobs
+  mysql:
+    host: localhost
+    port: 3306
+    database: newjobs
+    username: root
+    password: ''
+    use-ssl: false
+    pool-size: 6
+  mongodb:
+    uri: 'mongodb://localhost:27017'
+    database: newjobs
+    collection: newjobs_players
+
+# Clasificaciones por trabajo: online (instantáneo) + jugadores guardados.
+# Las consultas SQL/Mongo/H2/YAML se ejecutan fuera del hilo principal.
+leaderboard:
+  refresh-cooldown-seconds: 30
+  max-entries-per-job: 1000 # Aumentar si necesitas más páginas por trabajo.
+
+settings:
+  language: es
+  max-active-jobs: 3
+  max-level: 200
+  require-survival: true
+  prevent-creative-rewards: true
+  track-placed-blocks: true
+  max-tracked-blocks: 250000
+  allowed-worlds: [] # lista vacía = todos
+  disabled-worlds: []
+  experience:
+    base: 100.0
+    growth: 1.5
+    job-count-penalty-percent: 2.0
+  income:
+    level-bonus-percent: 0.75
+    job-count-penalty-percent: 5.0
+    max-payout-per-event: 100000.0
+  anti-exploit:
+    block-place-interval-ms: 10000
+    break-interval-ms: 150
+    mob-kill-interval-ms: 150
+    exclude-spawner-mobs: true
+    ignore-broken-placed-blocks: true
+    ignore-farm-unripe-crops: true
+    ignore-silk-touch-ores: false
+  economy:
+    mode: VAULT  # VAULT, COMMAND, NONE
+    command: 'eco give {player} {amount}'
+    command-flush-ticks: 100
+    max-command-amount: 10000000.0
+  save-interval-seconds: 300
+  notify-level-up: true
+  actionbar: false
+  daily-quests:
+    enabled: true
+    reward-points: 150
+    reward-money: 250.0
+    reward-xp: 80.0
+  contracts:
+    enabled: true
+    max-concurrent: 1
+    tiers:
+      basic:
+        display-name: '&bContrato Básico'
+        duration-minutes: 60
+        price-points: 150
+        required-level: 5
+        income-multiplier: 1.20
+        xp-multiplier: 1.10
+      advanced:
+        display-name: '&dContrato Avanzado'
+        duration-minutes: 120
+        price-points: 600
+        required-level: 25
+        income-multiplier: 1.50
+        xp-multiplier: 1.25
+
+# BossBar temporal de EXP del trabajo. Se actualiza tras cada actividad que conceda EXP.
+# No oculta BossBars de otros plugins y solo tiene un temporizador compartido si hay jugadores activos.
+level-up-title:
+  enabled: true
+  keep-chat-message: false
+  title: '{job_display}'
+  subtitle: '&7{old_level} &8-> &a{new_level}'
+  fade-in: 10
+  stay: 50
+  fade-out: 15
+  sound:
+    name: ENTITY_PLAYER_LEVELUP
+    volume: 1.0
+    pitch: 1.2
+
+# ActionBar al subir de nivel. Todo editable: texto, símbolos y colores de la barra, duración.
+# Placeholders: {job_display}, {job}, {player}, {old_level}, {new_level}, {levels_gained},
+# {progress_bar}, {progress_percent}, {levels_to_prestige}, {prestige}, {next_prestige},
+# {prestige_required}, {prestige_status}. Formatos: &a, &#RRGGBB, <gradient:#...:#...>texto</gradient>.
+# ActionBar mientras ganas XP del trabajo (igual que la bossbar). No se muestra mientras está
+# visible la de subida de nivel. Placeholders: {job_display}, {job}, {player}, {level}, {xp},
+# {required_xp}, {remaining_xp}, {percent}, {progress_bar}, {gained_xp}, {prestige}.
+xp-actionbar:
+  enabled: true
+  duration-ticks: 40 # tras la última ganancia; se refresca cada 2 s
+  message: '{job_display} &8| &fNivel &e{level} &8• &b{xp}&7/&b{required_xp} XP &8(&a{percent}%&8) {progress_bar} &a+{gained_xp}'
+  max-level-message: '{job_display} &8| &6★ &eNIVEL MÁXIMO &a+{gained_xp} XP'
+  progress:
+    segments: 10
+    filled-symbol: '▮'
+    filled-color: '&b'
+    empty-symbol: '▮'
+    empty-color: '&8'
+
+level-up-actionbar:
+  enabled: true
+  duration-ticks: 60 # se refresca cada 2 s hasta cumplir este tiempo
+  message: '{job_display} &6&l¡NIVEL ARRIBA! &f{old_level} &7» &a{new_level} {progress_bar} {prestige_status}'
+  prestige-text: '&f{levels_to_prestige} &7niveles para el &ePrestigio {next_prestige}&7.'
+  prestige-ready-text: '&a¡Listo para el Prestigio {next_prestige}!'
+  progress:
+    mode: PRESTIGE # PRESTIGE = avance hacia el nivel máximo; LEVEL = avance dentro del nivel actual
+    segments: 10
+    filled-symbol: '▮'
+    filled-color: '&6'
+    empty-symbol: '▮'
+    empty-color: '&8'
+
+bossbar:
+  enabled: true
+  duration-seconds: 4.0 # Entre 0.5 y 30 segundos
+  title: '<gradient:#51d4ff:#b889ff><bold>{job_display}</bold></gradient> &8| &fNivel &e{level} &8• &b{xp}&7/&b{required_xp} XP &8(&a{percent}%&8) &a+{gained_xp}'
+  level-up-title: '&6★ &a¡Subiste al nivel &e{level} &aen {job_display}! &8| &b{percent}%'
+  max-level-title: '&6★ &e{job_display} &8| &aNIVEL MÁXIMO &e{level}'
+  color: BLUE  # BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+  style: SEGMENTED_6 # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+  dynamic-color: false
+  dynamic-colors:
+    low: RED       # 0 a 33.3 %
+    medium: YELLOW # 33.3 a 66.6 %
+    high: GREEN    # Más de 66.6 %
+  level-up-color: PURPLE
+  level-up-settle-ticks: 14 # La barra se llena al subir de nivel y luego baja al progreso real
+  show-at-max-level: true
+  # Sobrescribir por trabajo (IDs de jobs.yml), sin tocar el resto:
+  # jobs:
+  #   minero:
+  #     color: GREEN
+  #     style: SEGMENTED_10
+  #     duration-seconds: 6
+  #     title: '&aMinero &7• &f{percent}% &8(&e{xp}&7/&e{required_xp}&8)'
+  jobs: {}

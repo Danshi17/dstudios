@@ -1,0 +1,8 @@
+storage:
+  type: "NONE" # NONE, H2, MYSQL, MONGODB
+  host: "127.0.0.1"
+  port: 3306
+  database: "epicvouchers"
+  username: "root"
+  password: ""
+  pool-size: 10

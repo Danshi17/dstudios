@@ -1,0 +1,32 @@
+lootboxes:
+  epic_box:
+    display-name: "<gradient:#b92b27:#1565C0>Caja Épica</gradient>"
+    material: "hdb-7129"
+    animation: true
+    lore:
+      - "<gray>Coloca este bloque para abrirla."
+      - "<dark_gray>Lootbox: <yellow>epic_box"
+      - "<dark_gray>Rareza: <light_purple>Épica"
+    rewards:
+      sword_epic:
+        display-name: "<red>Espada Épica de Fuego" # Nuevo campo editable
+        chance: 10.0
+        rarity: "<gradient:#ff9966:#ff5e62>Épica</gradient>" # Soporta colores
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          v: 3120
+          type: DIAMOND_SWORD
+        commands:
+          - "msg %player_name% ¡Has ganado una espada épica!"
+      money_bonus:
+        display-name: "<green>$5,000 en Efectivo" # Nuevo campo editable
+        chance: 30.0
+        rarity: "<green>Común" # Soporta colores
+        decorative: true
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          v: 3120
+          type: EMERALD
+        commands:
+          - "eco give %player_name% 5000"
+          - "msg %player_name% ¡Has ganado $5000!"

@@ -1,0 +1,23 @@
+furniture:
+  mystic_chest:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&#D49A3A&lMystic Chest"
+    model: "furniture/mystic_chest.bbmodel"
+
+    placement:
+      anchor-material: BARRIER
+      placeable: true
+      breakable: true
+      drop-on-break: true
+      visual-offset-x: 0.0
+      visual-offset-y: 0.0
+      visual-offset-z: 0.0
+
+    # ExcellentCrates example:
+    # [console] crates openfor %player% vote -s
+    interaction:
+      cancel: true
+      commands:
+        - "[message] &6Configure your crate command in furniture.yml"

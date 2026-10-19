@@ -1,0 +1,126 @@
+enabled: true
+
+visibility:
+  rank-permission: "hubcore.visibility.visible"
+  cooldown: 4
+  sounds:
+    cooldown:
+      sound: "ENTITY_VILLAGER_NO"
+      volume: 1.0
+      pitch: 1.0
+    toggle:
+      sound: "UI_BUTTON_CLICK"
+      volume: 1.0
+      pitch: 1.0
+  states:
+    SHOW_ALL:
+      material: hdb-6258
+      name: "&a&lVisibilidad: &2Todos"
+      lore:
+        - "&7Todos los jugadores visibles."
+        - "&7Clic para cambiar."
+    HIDE_ALL:
+      material: hdb-6248
+      name: "&8&lVisibilidad: &7Ocultos"
+      lore:
+        - "&7No ves a ningún jugador."
+        - "&7Clic para cambiar."
+    SHOW_RANKS:
+      material: hdb-6243
+      name: "&6&lVisibilidad: &eSolo Rangos"
+      lore:
+        - "&7Solo ves jugadores con rango."
+        - "&7Clic para cambiar."
+
+items:
+  0:
+    material: COMPASS
+    name: "&b&lNavegador"
+    lore:
+      - "&7Haz clic para navegar"
+    action:
+      type: MENU
+      value: "navigator"
+
+  1:
+    material: LIME_DYE
+    name: "&a&lVisibilidad: &2Todos"
+    lore:
+      - "&7Todos los jugadores visibles."
+      - "&7Clic para cambiar."
+    action:
+      type: VISIBILITY
+      value: ""
+
+  4:
+    material: PLAYER_HEAD
+    name: "&b&lTu Perfil"
+    lore:
+      - "&7Haz clic para ver tu perfil"
+    action:
+      type: MENU
+      value: "profile"
+
+  6:
+    material: DIAMOND_SWORD
+    name: "&c&lModo PvP &7(Mantén)"
+    lore:
+      - "&7Mantén en mano para"
+      - "&7activar el modo PvP"
+    action:
+      type: NONE
+      value: ""
+
+  7:
+    material: ENDER_PEARL
+    name: "&5&lEnderButt"
+    lore:
+      - "&7Lanza la perla y móntate en un jugador"
+    action:
+      type: NONE
+      value: ""
+
+  8:
+    material: NETHER_STAR
+    name: "&b&lCosméticos"
+    lore:
+      - "&7Personaliza tu experiencia"
+    actions:
+      - type: SOUND
+        value: "ENTITY_PLAYER_LEVELUP"
+      - type: ACTIONBAR
+        value: "&a¡Abriendo tus cosméticos! ✨"
+      - type: MENU
+        value: "cosmetics"
+
+enderbutt:
+  enabled: true
+  sound: "ENTITY_CAT_HURT"
+  volume: 1.0
+  pitch: 1.0
+
+fight-mode:
+  enabled: true
+  slot: 6
+  hold-delay:
+    activate: 3
+    deactivate: 3
+  armor:
+    helmet:
+      material: DIAMOND_HELMET
+    chestplate:
+      material: DIAMOND_CHESTPLATE
+    leggings:
+      material: DIAMOND_LEGGINGS
+    boots:
+      material: DIAMOND_BOOTS
+  actions:
+    countdown:
+      - "[TITLE] &c&lPVP"
+      - "[ACTIONBAR] &cActivando PvP en &f%seconds% &csegundos..."
+    activated:
+      - "[SOUND] ENTITY_PLAYER_LEVELUP"
+      - "[TITLE] &c&lMODO PVP ACTIVADO"
+    deactivated:
+      - "[SOUND] ENTITY_ITEM_BREAK"
+      - "[TITLE] &a&lMODO PVP DESACTIVADO"

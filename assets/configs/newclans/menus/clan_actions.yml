@@ -1,0 +1,56 @@
+id: clan_actions
+
+title: '<dark_gray>Clan Actions <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  settings:
+    slot: 20
+    material: COMPARATOR
+    name: '<yellow>Clan Settings</yellow>'
+    lore:
+      - '<gray>Manage clan options.</gray>'
+    action: OPEN:clan_settings
+
+  roles:
+    slot: 21
+    material: NAME_TAG
+    name: '<gold>Roles & Permissions</gold>'
+    lore:
+      - '<gray>Manage the clan hierarchy.</gray>'
+    action: OPEN:clan_roles
+
+  level:
+    slot: 22
+    material: EXPERIENCE_BOTTLE
+    name: '<green>Level Up</green>'
+    lore:
+      - '<gray>Current level: <white>%clan_level%/%clan_max_level%</white></gray>'
+      - '<gray>Points: <white>%clan_points%</white></gray>'
+    action: OPEN:levelup_home
+
+  logger:
+    slot: 23
+    material: BOOK
+    name: '<aqua>Logger</aqua>'
+    action: OPEN:clan_logger
+
+  disband:
+    slot: 24
+    material: TNT
+    name: '<red>Disband Clan</red>'
+    lore:
+      - '<dark_red>This action is permanent.</dark_red>'
+    action: OPEN:disband_confirm
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

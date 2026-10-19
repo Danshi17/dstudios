@@ -1,0 +1,54 @@
+
+settings:
+  debug: false
+  prefix: "<gradient:#00c6ff:#0072ff><bold>ChatColor</bold></gradient> <dark_gray>» <gray>"
+
+economy:
+  enabled: true
+  cost-create-color: 2500.0
+  cost-overrides:
+    "createcolor.vip": 1500.0
+    "createcolor.mvp": 500.0
+    "createcolor.premium": 0.0
+
+create-limits:
+  fallback: 0
+  limits:
+    "createcolor.default": 1
+    "createcolor.vip": 3
+    "createcolor.mvp": 5
+    "createcolor.premium": -1
+
+validation:
+  name-min-length: 3
+  name-max-length: 24
+  pattern-max-length: 120
+
+messages:
+  no-permission: "%prefix%<red>No tienes permiso para hacer eso."
+  player-only: "<red>Este comando solo puede ser usado por jugadores."
+  reloaded: "%prefix%<green>La configuracion fue recargada."
+  color-selected: "%prefix%<gray>Tu chat ahora se vera con el color <white>%color%</white>."
+  color-disabled: "%prefix%<gray>Se restablecio tu color de chat por defecto."
+  economy-disabled: "%prefix%<red>La economia no esta disponible en este servidor (revisa Vault)."
+  not-enough-money: "%prefix%<red>Necesitas <white>%cost%</white> para crear un color."
+  limit-reached: "%prefix%<red>Alcanzaste tu limite de colores personalizados (<white>%limit%</white>)."
+  invalid-pattern: "%prefix%<red>Ese codigo de color no es valido. Formatos validos: legacy (&a), hex (&#RRGGBB) o MiniMessage (<gradient:#ff0000:#00ff00>)."
+  invalid-id: "%prefix%<red>No se encontro ningun color con ese identificador."
+  name-taken: "%prefix%<red>Ya tienes un color personalizado con ese nombre."
+  name-invalid-length: "%prefix%<red>El nombre debe tener entre %min% y %max% caracteres."
+  color-created: "%prefix%<green>¡Color '<white>%name%</white>' creado y seleccionado! Se cobraron <white>%cost%</white>."
+  color-deleted: "%prefix%<gray>El color '<white>%name%</white>' fue eliminado."
+  color-renamed: "%prefix%<gray>El color ahora se llama '<white>%name%</white>'."
+  pattern-changed: "%prefix%<gray>El patron del color '<white>%name%</white>' fue actualizado."
+  color-not-found: "%prefix%<red>No se encontro ese color."
+  not-your-color: "%prefix%<red>Ese color no te pertenece."
+  visibility-toggled: "%prefix%<gray>El color '<white>%name%</white>' ahora es <white>%visibility%</white>."
+  create-cancelled: "%prefix%<gray>Operacion cancelada."
+  create-ask-name: "%prefix%<gray>Escribe en el chat el <white>nombre</white> de tu color. Escribe <white>cancelar</white> para salir."
+  create-ask-pattern: "%prefix%<gray>Ahora escribe el <white>codigo de color</white> (legacy, hex o MiniMessage). Escribe <white>cancelar</white> para salir."
+  edit-ask-name: "%prefix%<gray>Escribe el <white>nuevo nombre</white> para tu color. Escribe <white>cancelar</white> para salir."
+  edit-ask-pattern: "%prefix%<gray>Escribe el <white>nuevo codigo de color</white>. Escribe <white>cancelar</white> para salir."
+  gave-slots: "%prefix%<green>Le diste <white>%amount%</white> slots extra de colores a <white>%player%</white>."
+  admin-set-color: "%prefix%<green>Le asignaste el color '<white>%name%</white>' a <white>%player%</white>."
+  admin-unset-color: "%prefix%<green>Le restableciste el color de chat a <white>%player%</white>."

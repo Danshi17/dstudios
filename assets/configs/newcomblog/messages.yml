@@ -1,0 +1,3 @@
+errors:
+  config: "&cNo se pudo cargar la configuración. Usando defaults."
+  storage: "&cNo se pudo inicializar el almacenamiento."

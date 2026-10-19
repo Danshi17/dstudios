@@ -1,0 +1,6 @@
+id: anvil_clandiscordcreatewebhook
+
+title: '<dark_gray>Discord Webhook</dark_gray>'
+material: TRIPWIRE_HOOK
+initial-text: 'https://discord.com/api/webhooks/********'
+back-menu: clan_settings

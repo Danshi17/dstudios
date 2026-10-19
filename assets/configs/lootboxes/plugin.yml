@@ -1,0 +1,32 @@
+name: Lootboxes
+version: '${version}'
+
+main: me.danshi.lootboxes.Lootboxes
+api-version: '1.18'
+load: STARTUP
+softdepend:
+  - HeadDatabase
+  - PlaceholderAPI
+  - Vault
+  - packetevents
+
+commands:
+  lootbox:
+    description: Comando principal de lootboxes
+    usage: /lootbox help
+    permission: lootboxes.use
+  pouch:
+    description: Comando principal de pouches
+    usage: /pouch help
+    permission: lootboxes.use
+
+permissions:
+  lootboxes.admin:
+    description: Acceso total al plugin
+    default: op
+  lootboxes.use:
+    description: Usar lootboxes y pouches
+    default: true
+  lootboxes.debug:
+    description: Ver mensajes de debug
+    default: op

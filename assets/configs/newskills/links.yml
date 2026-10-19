@@ -1,0 +1,10 @@
+# Enlaces oficiales de NewSkills. Deja el valor vacío para no mostrar enlaces.
+# Ejemplo: website: 'https://tu-dominio.com'
+links:
+  website: ''
+  discord: ''
+  spigot: ''
+  wiki: ''
+# Enlace para páginas de habilidades, si tienes documentación compatible.
+# Debe acabar en '/' para formar .../mining#habilidad.
+skill-wiki-base-url: ''

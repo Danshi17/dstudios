@@ -1,0 +1,7 @@
+id: anvil_clanmailsend
+
+title: '<dark_gray>Send Mail</dark_gray>'
+material: WRITABLE_BOOK
+initial-text: 'ClanTag message'
+back-menu: clan_mail
+chat-prompt: '<yellow>Type <white><clan tag> <message></white> in chat. Type <white>cancel</white> to abort.</yellow>'

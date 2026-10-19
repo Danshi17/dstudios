@@ -1,0 +1,6 @@
+id: anvil_clanmodtag
+
+title: '<dark_gray>Change Clan Tag</dark_gray>'
+material: NAME_TAG
+initial-text: ''
+back-menu: clan_settings

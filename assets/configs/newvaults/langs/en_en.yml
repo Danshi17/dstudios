@@ -1,0 +1,49 @@
+prefix: "&#55FF00&lNewVaults &7»&r "
+
+messages:
+  no-permission: "<red>You don't have permission to do this."
+  vault-locked: "<red>You don't have access to vault #%vault%."
+  player-not-found: "<red>Player %player% is not online."
+
+vault-gui:
+  title: "<yellow>Vault #%vault%"
+
+selector:
+  title: "<yellow>Vaults</yellow> <white>| MENU</white>"
+  close-item:
+    name: "<red>Close"
+    lore:
+      - "<gray>Click to close this menu"
+  previous-page-item:
+    name: "<yellow>« Previous page"
+    lore:
+      - "<gray>Click to go to the previous page"
+  next-page-item:
+    name: "<yellow>Next page »"
+    lore:
+      - "<gray>Click to go to the next page"
+  unlocked-item:
+    name: "<yellow>Private Vault</yellow> <gray>| <white>#%vault%"
+    lore:
+      - "<gray><italic>(( Click to open this vault ))"
+      - ""
+      - "<gray>Used: <white>%used%<gray>/<white>%max%"
+  locked-item:
+    name: "<yellow>Private Vault</yellow> <gray>| <white>#%vault%"
+    lore:
+      - "<red><bold>LOCKED"
+      - "<gray>You don't have access to this vault."
+
+admin:
+  usage:
+    reload: "<yellow>/vaultadmin reload"
+    open: "<yellow>/vaultadmin open <player>"
+    view: "<yellow>/vaultadmin view <player> <number>"
+    save: "<yellow>/vaultadmin save"
+  usage-open: "<red>Usage: /vaultadmin open <player>"
+  usage-view: "<red>Usage: /vaultadmin view <player> <number>"
+  reload-success: "<green>Config and language reloaded."
+  save-success: "<green>Saving all cached vaults."
+  player-not-found: "<red>Player not found."
+  invalid-number: "<red>Invalid vault number."
+  unknown-subcommand: "<red>Unknown subcommand."

@@ -1,0 +1,384 @@
+prefix: '<dark_gray>[<gradient:#57e389:#26a269><bold>NewClans</bold></gradient><dark_gray>] </dark_gray>'
+
+no-permission: '%prefix%<red>No tienes permiso.</red>'
+no-clan-permission: '%prefix%<red>Tu rol no tiene permiso para hacer eso.</red>'
+player-only: '%prefix%<red>Este comando solo puede usarlo un jugador.</red>'
+reloaded: '%prefix%<green>Configuraciones y menús recargados.</green>'
+invalid-usage: '%prefix%<red>Uso incorrecto del comando.</red>'
+invalid-number: '%prefix%<red>Debes escribir un número válido.</red>'
+
+clan-created: '%prefix%<green>Clan %clan% <green>creado correctamente.</green>'
+clan-disbanded: '%prefix%<red>El clan fue eliminado.</red>'
+already-in-clan: '%prefix%<red>Ya perteneces a un clan.</red>'
+not-in-clan: '%prefix%<red>No perteneces a un clan.</red>'
+target-not-in-clan: '%prefix%<red>Ese jugador no pertenece a un clan.</red>'
+clan-not-found: '%prefix%<red>No se encontró ese clan.</red>'
+player-not-found: '%prefix%<red>No se encontró ese jugador conectado.</red>'
+
+create-usage: '%prefix%<yellow>Uso: <white>/clan create <tag></white></yellow>'
+invalid-tag: '%prefix%<red>Ese tag es inválido, está bloqueado o ya está en uso.</red>'
+tag-usage: '%prefix%<yellow>Uso: <white>/clan tag <nuevoTag></white></yellow>'
+tag-updated: '%prefix%<green>Tag actualizado correctamente.</green>'
+description-usage: '%prefix%<yellow>Uso: <white>/clan desc <texto></white></yellow>'
+description-updated: '%prefix%<green>Descripción actualizada.</green>'
+description-invalid: '%prefix%<red>La descripción no cumple las reglas configuradas.</red>'
+nickname-usage: '%prefix%<yellow>Uso: <white>/clan nick <nickname></white></yellow>'
+nickname-updated: '%prefix%<green>Nickname actualizado.</green>'
+nickname-invalid: '%prefix%<red>Ese nickname no es válido.</red>'
+
+invite-usage: '%prefix%<yellow>Uso: <white>/clan invite <player></white></yellow>'
+invite-sent: '%prefix%<green>Invitación enviada a <white>%player%</white>.</green>'
+invite-received: '%prefix%<yellow>El clan %clan% <yellow>te invitó. Usa <white>/clan accept %clan%</white>.</yellow>'
+invite-failed: '%prefix%<red>No se pudo enviar la invitación.</red>'
+invite-expired: '%prefix%<red>La invitación ya no existe o expiró.</red>'
+joined: '%prefix%<green>Ahora perteneces al clan %clan%<green>.</green>'
+join-usage: '%prefix%<yellow>Uso: <white>/clan join <clan></white></yellow>'
+join-closed: '%prefix%<red>Ese clan no acepta ingreso público.</red>'
+join-failed: '%prefix%<red>No se pudo ingresar al clan.</red>'
+left: '%prefix%<yellow>Saliste de tu clan.</yellow>'
+leader-cannot-leave: '%prefix%<red>El líder debe transferir el liderazgo o eliminar el clan.</red>'
+
+member-usage: '%prefix%<yellow>Especifica un jugador.</yellow>'
+kicked: '%prefix%<red>Fuiste expulsado de tu clan.</red>'
+kicked-target: '%prefix%<yellow>%player% fue expulsado del clan.</yellow>'
+leader-transferred: '%prefix%<green>El liderazgo fue transferido a <white>%player%</white>.</green>'
+role-usage: '%prefix%<yellow>Uso: <white>/clan role set|promote|demote <player> [role]</white></yellow>'
+role-changed: '%prefix%<green>Rol actualizado correctamente.</green>'
+role-change-failed: '%prefix%<red>No se pudo cambiar ese rol.</red>'
+player-banned: '%prefix%<red>%player% fue baneado del clan.</red>'
+player-unbanned: '%prefix%<green>%player% fue desbaneado del clan.</green>'
+ban-failed: '%prefix%<red>No se puede banear a ese jugador.</red>'
+
+home-set-usage: '%prefix%<yellow>Uso: <white>/clan home set <n> [password]</white></yellow>'
+home-created: '%prefix%<green>Home <white>%home%</white> creado.</green>'
+home-create-failed: '%prefix%<red>No se pudo crear el home. Revisa el límite, nombre o mundo.</red>'
+home-deleted: '%prefix%<yellow>Home eliminado.</yellow>'
+home-not-found: '%prefix%<red>No existe ese home.</red>'
+home-teleport-failed: '%prefix%<red>No se pudo teletransportar. Puede requerir contraseña.</red>'
+teleporting: '%prefix%<yellow>Teletransportando en <white>%seconds%</white> segundos...</yellow>'
+teleport-cancelled: '%prefix%<red>Teletransporte cancelado por movimiento.</red>'
+
+relation-usage: '%prefix%<yellow>Uso: <white>/clan ally|rival add|accept|remove <clan></white></yellow>'
+relation-request: '%prefix%<green>Solicitud enviada al clan %clan%<green>.</green>'
+relation-accepted: '%prefix%<green>Relación actualizada con %clan%<green>.</green>'
+relation-failed: '%prefix%<red>No se pudo modificar esa relación.</red>'
+
+bank-balance: '%prefix%<yellow>Banco del clan: <white>%balance%</white></yellow>'
+bank-usage: '%prefix%<yellow>Uso: <white>/clan bank deposit|withdraw <amount></white></yellow>'
+bank-deposit: '%prefix%<green>Depositaste <white>%amount%</white>. Banco: <white>%balance%</white></green>'
+bank-withdraw: '%prefix%<green>Retiraste <white>%amount%</white>. Banco: <white>%balance%</white></green>'
+bank-operation-failed: '%prefix%<red>No se pudo completar la operación bancaria.</red>'
+economy-unavailable: '%prefix%<red>Vault o un proveedor de economía no está disponible.</red>'
+
+mail-usage: '%prefix%<yellow>Uso: <white>/clan mail send <clan> <mensaje></white></yellow>'
+mail-sent: '%prefix%<green>Correo enviado al clan.</green>'
+mail-failed: '%prefix%<red>No se pudo enviar el correo.</red>'
+mail-cleared: '%prefix%<yellow>Correos del clan eliminados.</yellow>'
+
+ff-updated: '%prefix%<yellow>Friendly Fire: <white>%state%</white></yellow>'
+chat-mode: '%prefix%<yellow>Modo de chat: <white>%mode%</white></yellow>'
+setting-usage: '%prefix%<yellow>Uso: <white>/clan settings toggle <setting></white></yellow>'
+setting-not-found: '%prefix%<red>Ese ajuste no existe.</red>'
+setting-updated: '%prefix%<green>Ajuste actualizado: <white>%state%</white>.</green>'
+
+banner-set: '%prefix%<green>Banner del clan actualizado desde tu mano.</green>'
+banner-invalid: '%prefix%<red>Debes tener un banner en la mano principal.</red>'
+banner-cleared: '%prefix%<yellow>Banner del clan eliminado.</yellow>'
+
+chest-page-bought: '%prefix%<green>Compraste una nueva página del cofre del clan.</green>'
+chest-page-failed: '%prefix%<red>No se pudo comprar otra página.</red>'
+chest-open-failed: '%prefix%<red>No puedes abrir esa página del cofre.</red>'
+chest-buy-failed: '%prefix%<red>No se pudo comprar la página del cofre.</red>'
+
+regroup-sent: '%prefix%<green>Solicitud de regroup enviada.</green>'
+regroup-received: '%prefix%<yellow>%player% solicitó regroup. Usa <white>/clan regroup accept</white>.</yellow>'
+regroup-accepted: '%prefix%<green>Regroup aceptado.</green>'
+regroup-none: '%prefix%<red>No hay un regroup disponible.</red>'
+regroup-expired: '%prefix%<red>La solicitud de regroup expiró.</red>'
+regroup-disabled: '%prefix%<red>El regroup está desactivado en los ajustes del clan.</red>'
+
+reward-claimed: '%prefix%<green>Recompensa <white>%reward%</white> reclamada.</green>'
+reward-unavailable: '%prefix%<red>Esa recompensa no está disponible.</red>'
+level-up: '%prefix%<green>El clan subió al nivel <white>%level%</white>.</green>'
+level-up-failed: '%prefix%<red>No hay suficientes puntos o ya estás en el nivel máximo.</red>'
+
+war-usage: '%prefix%<yellow>Uso: <white>/clan war challenge|accept|end <clan></white></yellow>'
+war-challenged: '%prefix%<yellow>Desafiaste al clan %clan%<yellow>.</yellow>'
+war-started: '%prefix%<red>La guerra contra %clan% <red>ha comenzado.</red>'
+war-no-request: '%prefix%<red>No existe un desafío válido de ese clan.</red>'
+war-ended: '%prefix%<yellow>La guerra terminó.</yellow>'
+war-not-active: '%prefix%<red>No existe una guerra activa con ese clan.</red>'
+
+
+skin-usage: '%prefix%<yellow>Uso: <white>/clan skin set &lt;base64&gt;</white> o <white>/clan skin clear</white>.</yellow>'
+skin-updated: '%prefix%<green>Skin personalizada del perfil actualizada.</green>'
+skin-cleared: '%prefix%<yellow>Skin personalizada eliminada; se usará tu skin normal.</yellow>'
+skin-invalid: '%prefix%<red>La textura Base64 es inválida o supera el límite configurado.</red>'
+
+webhook-usage: '%prefix%<yellow>Uso: <white>/clan webhook set &lt;https-url&gt;</white>, <white>clear</white> o <white>test</white>.</yellow>'
+webhook-updated: '%prefix%<green>Webhook del clan actualizado.</green>'
+webhook-cleared: '%prefix%<yellow>Webhook del clan eliminado.</yellow>'
+webhook-tested: '%prefix%<green>Mensaje de prueba enviado al webhook.</green>'
+webhook-invalid: '%prefix%<red>Webhook inválido, desactivado o con host no permitido.</red>'
+
+global-ff-updated: '%prefix%<yellow>Friendly Fire global: <white>%state%</white></yellow>'
+
+admin-usage: '%prefix%<yellow>Usa <white>/newclans help</white>.</yellow>'
+admin-done: '%prefix%<green>Operación administrativa completada.</green>'
+
+help:
+  - '<dark_gray><strikethrough>------------------------------------------------</strikethrough></dark_gray>'
+  - '<gradient:#57e389:#26a269><bold>NEWCLANS</bold></gradient> <gray>• comandos principales</gray>'
+  - '<green>/clan</green> <gray>- Abre el menú.</gray>'
+  - '<green>/clan create <tag></green> <gray>- Crea un clan.</gray>'
+  - '<green>/clan invite <player></green> <gray>- Invita un jugador.</gray>'
+  - '<green>/clan members</green> <gray>- Miembros y roles.</gray>'
+  - '<green>/clan home</green> <gray>- Homes del clan.</gray>'
+  - '<green>/clan ally</green> <gray>- Alianzas.</gray>'
+  - '<green>/clan rival</green> <gray>- Rivalidades.</gray>'
+  - '<green>/clan bank</green> <gray>- Banco.</gray>'
+  - '<green>/clan mail</green> <gray>- Correo.</gray>'
+  - '<green>/clan rewards</green> <gray>- Recompensas.</gray>'
+  - '<green>/clan quests</green> <gray>- Misiones.</gray>'
+  - '<green>/clan chest</green> <gray>- Cofre compartido.</gray>'
+  - '<green>/clan settings</green> <gray>- Ajustes del clan.</gray>'
+  - '<green>/clanchat</green> <gray>- Activa o desactiva el chat del clan (también /cc).</gray>'
+  - '<green>/clan language</green> <gray>- Cambia tu idioma.</gray>'
+  - '<dark_gray><strikethrough>------------------------------------------------</strikethrough></dark_gray>'
+
+tag-length: '%prefix%<red>El tag debe tener entre <white>%min%</white> y <white>%max%</white> caracteres.</red>'
+tag-chars: '%prefix%<red>El tag solo puede contener letras, números, guion y guion bajo.</red>'
+tag-blacklisted: '%prefix%<red>Ese tag está bloqueado.</red>'
+tag-color-permission: '%prefix%<red>No tienes permiso para usar colores en el tag.</red>'
+tag-decoration: '%prefix%<red>Ese tag usa un formato que no está permitido.</red>'
+description-length: '%prefix%<red>La descripción tiene una longitud inválida.</red>'
+description-chars: '%prefix%<red>La descripción contiene caracteres no permitidos.</red>'
+description-color-permission: '%prefix%<red>No tienes permiso para usar colores en la descripción.</red>'
+nickname-length: '%prefix%<red>El apodo es demasiado largo.</red>'
+nickname-chars: '%prefix%<red>El apodo contiene caracteres no permitidos.</red>'
+nickname-color-permission: '%prefix%<red>No tienes permiso para usar colores en el apodo.</red>'
+
+chat-clan-on: '%prefix%<green>Chat del clan activado.</green> <gray>Tus mensajes solo los verán los miembros de tu clan.</gray>'
+chat-clan-off: '%prefix%<yellow>Chat del clan desactivado.</yellow> <gray>Volviste al chat global.</gray>'
+chat-ally-on: '%prefix%<green>Chat de aliados activado.</green> <gray>Tus mensajes solo los verán tu clan y tus aliados.</gray>'
+chat-ally-off: '%prefix%<yellow>Chat de aliados desactivado.</yellow> <gray>Volviste al chat global.</gray>'
+chat-ally-disabled: '%prefix%<red>El chat de aliados está desactivado en los ajustes del clan.</red>'
+chat-usage: '%prefix%<yellow>Uso: <white>/clan chat [mensaje]</white></yellow>'
+allychat-usage: '%prefix%<yellow>Uso: <white>/clan allychat [mensaje]</white></yellow>'
+
+language-updated: '%prefix%<green>Idioma cambiado a <white>%language%</white>.</green>'
+language-invalid: '%prefix%<red>Idioma inválido. Disponibles: <white>%languages%</white>.</red>'
+
+menu-input-empty: '%prefix%<red>Escribe un valor en el yunque primero.</red>'
+menu-input-cancelled: '%prefix%<gray>Cancelado.</gray>'
+menu-input-retry: '%prefix%<gray>Intenta de nuevo o escribe <white>cancel</white>.</gray>'
+menu-input-timeout: '%prefix%<red>Se acabó el tiempo para escribir el valor.</red>'
+menu-input-unavailable: '%prefix%<red>No se pudo abrir el yunque.</red>'
+menu-input-confirm: '<green>Confirmar:</green>'
+menu-input-blank: '<red>Escribe un valor</red>'
+menu-tag-taken: '%prefix%<red>Ese tag de clan ya está en uso.</red>'
+menu-already-leader: '%prefix%<red>Ese jugador ya es el líder.</red>'
+menu-cannot-kick: '%prefix%<red>No puedes expulsar a ese miembro.</red>'
+menu-role-locked: '%prefix%<red>Ese rol no se puede editar.</red>'
+
+
+menus:
+  - {from: 'Home Password', to: 'Contraseña del Home'}
+  - {from: 'Accept Regroup', to: 'Aceptar Reagrupación'}
+  - {from: 'Ally Chat', to: 'Chat de Aliados'}
+  - {from: 'Clan Logger', to: 'Registro del Clan'}
+  - {from: 'Clan Tag', to: 'Tag del Clan'}
+  - {from: 'Clan Top', to: 'Top de Clanes'}
+  - {from: 'Description', to: 'Descripción'}
+  - {from: 'Invites', to: 'Invitaciones'}
+  - {from: 'Language', to: 'Idioma'}
+  - {from: 'Level Rewards', to: 'Recompensas de Nivel'}
+  - {from: 'Logger', to: 'Registro'}
+  - {from: 'Middle-click: public/private', to: 'Clic central: público/privado'}
+  - {from: 'Middle-click: transfer leader', to: 'Clic central: transferir liderazgo'}
+  - {from: 'My Profile', to: 'Mi Perfil'}
+  - {from: 'Nickname', to: 'Apodo'}
+  - {from: 'Online', to: 'En línea'}
+  - {from: 'Progress', to: 'Progreso'}
+  - {from: 'Allies', to: 'Aliados'}
+  - {from: 'Banned Members', to: 'Miembros Baneados'}
+  - {from: 'Banned Players', to: 'Jugadores Baneados'}
+  - {from: 'Change Clan Tag', to: 'Cambiar Tag del Clan'}
+  - {from: 'Change Nickname', to: 'Cambiar Apodo'}
+  - {from: 'Clan Actions', to: 'Acciones del Clan'}
+  - {from: 'Clan Banner', to: 'Banner del Clan'}
+  - {from: 'Clan Chest', to: 'Cofre del Clan'}
+  - {from: 'Clan Description', to: 'Descripción del Clan'}
+  - {from: 'Clan Homes', to: 'Homes del Clan'}
+  - {from: 'Clan Invites', to: 'Invitaciones del Clan'}
+  - {from: 'Clan Level', to: 'Nivel del Clan'}
+  - {from: 'Clan Mail', to: 'Correo del Clan'}
+  - {from: 'Clan Quests', to: 'Misiones del Clan'}
+  - {from: 'Clan Roles', to: 'Roles del Clan'}
+  - {from: 'Clan Settings', to: 'Ajustes del Clan'}
+  - {from: 'Clan Stats', to: 'Estadísticas del Clan'}
+  - {from: 'Clans', to: 'Clanes'}
+  - {from: 'Clear Clan Logger', to: 'Limpiar Registro del Clan'}
+  - {from: 'Clear Clan Mail', to: 'Limpiar Correo del Clan'}
+  - {from: 'Confirm Level Up', to: 'Confirmar Subida de Nivel'}
+  - {from: 'Create Clan Home', to: 'Crear Home del Clan'}
+  - {from: 'Create Clan', to: 'Crear Clan'}
+  - {from: 'Delete Clan Banner', to: 'Eliminar Banner del Clan'}
+  - {from: 'Delete Home', to: 'Eliminar Home'}
+  - {from: 'Delete home', to: '¿Eliminar home'}
+  - {from: 'Discord Webhook', to: 'Webhook de Discord'}
+  - {from: 'Members', to: 'Miembros'}
+  - {from: 'Permissions', to: 'Permisos'}
+  - {from: 'Player Language', to: 'Idioma del Jugador'}
+  - {from: 'Player Profile', to: 'Perfil del Jugador'}
+  - {from: 'Player Settings', to: 'Ajustes del Jugador'}
+  - {from: 'Regroup', to: 'Reagrupar'}
+  - {from: 'Rivals', to: 'Rivales'}
+  - {from: 'Confirm Disband', to: 'Confirmar Disolución'}
+  - {from: 'This action is permanent.', to: 'Esta acción es permanente.'}
+  - {from: 'Transfer Leadership', to: 'Transferir Liderazgo'}
+  - {from: 'Economy', to: 'Economía'}
+  - {from: 'Open Shared Chest', to: 'Abrir Cofre Compartido'}
+  - {from: 'Roles & Permissions', to: 'Roles y Permisos'}
+  - {from: 'Shift-right: demote', to: 'Shift + clic derecho: degradar'}
+  - {from: 'Also requires', to: 'También requiere'}
+  - {from: 'Attempt to advance to the next level.', to: 'Intenta avanzar al siguiente nivel.'}
+  - {from: 'Bank', to: 'Banco'}
+  - {from: 'Browse existing clans.', to: 'Explora los clanes existentes.'}
+  - {from: 'Browse the global ranking.', to: 'Explora el ranking global.'}
+  - {from: 'Call online members to your location.', to: 'Llama a los miembros conectados a tu ubicación.'}
+  - {from: 'Change your clan nickname.', to: 'Cambia tu apodo en el clan.'}
+  - {from: 'Chest pages', to: 'Páginas del cofre'}
+  - {from: 'Claim rewards unlocked by levels.', to: 'Reclama las recompensas desbloqueadas por nivel.'}
+  - {from: 'Claimed', to: 'Reclamada'}
+  - {from: 'Click to set or replace the webhook.', to: 'Clic para definir o reemplazar el webhook.'}
+  - {from: 'Commands can still be used to clear/test it.', to: 'Aún puedes usar comandos para limpiarlo o probarlo.'}
+  - {from: 'Complete objectives for rewards.', to: 'Completa objetivos para obtener recompensas.'}
+  - {from: 'Completed', to: 'Completada'}
+  - {from: 'Configured', to: 'Configurado'}
+  - {from: 'Create a clan directly from the GUI.', to: 'Crea un clan directamente desde el menú.'}
+  - {from: 'Create a temporary teleport request', to: 'Crea una solicitud de teletransporte temporal'}
+  - {from: 'at your current location.', to: 'en tu ubicación actual.'}
+  - {from: 'Current level', to: 'Nivel actual'}
+  - {from: 'Current Allies', to: 'Aliados Actuales'}
+  - {from: 'Current Rivals', to: 'Rivales Actuales'}
+  - {from: 'Current', to: 'Actual'}
+  - {from: 'Custom skin', to: 'Skin personalizada'}
+  - {from: 'Customize the clan banner.', to: 'Personaliza el banner del clan.'}
+  - {from: 'Date', to: 'Fecha'}
+  - {from: 'Deaths', to: 'Muertes'}
+  - {from: 'Edit the permissions of each role.', to: 'Edita los permisos de cada rol.'}
+  - {from: 'Enabled', to: 'Activado'}
+  - {from: 'Expires in', to: 'Expira en'}
+  - {from: 'Friendly Fire', to: 'Fuego Amigo'}
+  - {from: 'Hold the banner you want in your main hand.', to: 'Sostén el banner que quieres en tu mano principal.'}
+  - {from: 'Input format', to: 'Formato de entrada'}
+  - {from: 'Kills', to: 'Asesinatos'}
+  - {from: 'Last seen', to: 'Última vez visto'}
+  - {from: 'Leader', to: 'Líder'}
+  - {from: 'Level Up', to: 'Subir de Nivel'}
+  - {from: 'Level', to: 'Nivel'}
+  - {from: 'Location', to: 'Ubicación'}
+  - {from: 'Manage clan options.', to: 'Administra las opciones del clan.'}
+  - {from: 'Manage level, settings and clan actions.', to: 'Administra nivel, ajustes y acciones del clan.'}
+  - {from: 'Manage the clan hierarchy.', to: 'Administra la jerarquía del clan.'}
+  - {from: 'Maximum', to: 'Máximo'}
+  - {from: 'Next level', to: 'Siguiente nivel'}
+  - {from: 'Next requirement', to: 'Siguiente requisito'}
+  - {from: 'Open Join', to: 'Ingreso Abierto'}
+  - {from: 'Pages', to: 'Páginas'}
+  - {from: 'Password', to: 'Contraseña'}
+  - {from: 'Patent', to: 'Patente'}
+  - {from: 'Points', to: 'Puntos'}
+  - {from: 'Priority', to: 'Prioridad'}
+  - {from: 'Public Homes', to: 'Homes Públicos'}
+  - {from: 'Public', to: 'Público'}
+  - {from: 'Read', to: 'Leído'}
+  - {from: 'Remove every stored clan log.', to: 'Elimina todos los registros guardados del clan.'}
+  - {from: 'Remove every stored clan mail.', to: 'Elimina todos los correos guardados del clan.'}
+  - {from: 'Required level', to: 'Nivel requerido'}
+  - {from: 'Review clan activity.', to: 'Revisa la actividad del clan.'}
+  - {from: 'Reset Role Permissions', to: 'Restablecer Permisos del Rol'}
+  - {from: 'Role', to: 'Rol'}
+  - {from: 'Souls', to: 'Almas'}
+  - {from: 'Source', to: 'Origen'}
+  - {from: 'Supports colors and MiniMessage.', to: 'Soporta colores y MiniMessage.'}
+  - {from: 'Supports legacy, HEX and MiniMessage colors.', to: 'Soporta colores legacy, HEX y MiniMessage.'}
+  - {from: 'This action cannot be undone.', to: 'Esta acción no se puede deshacer.'}
+  - {from: 'This will transfer clan ownership.', to: 'Esto transferirá la propiedad del clan.'}
+  - {from: 'Type', to: 'Tipo'}
+  - {from: 'Unread', to: 'Sin leer'}
+  - {from: 'Uses money from the clan bank.', to: 'Usa dinero del banco del clan.'}
+  - {from: 'Use', to: 'Usa'}
+  - {from: 'Verified', to: 'Verificado'}
+  - {from: 'View pending clan invitations.', to: 'Ve las invitaciones pendientes del clan.'}
+  - {from: 'World', to: 'Mundo'}
+  - {from: 'Add Ally', to: 'Añadir Aliado'}
+  - {from: 'Add Rival', to: 'Añadir Rival'}
+  - {from: 'Ally Requests', to: 'Solicitudes de Alianza'}
+  - {from: 'Buy Chest Page', to: 'Comprar Página del Cofre'}
+  - {from: 'Clear Logger', to: 'Limpiar Registro'}
+  - {from: 'Clear Mail', to: 'Limpiar Correo'}
+  - {from: 'Clear Banner', to: 'Quitar Banner'}
+  - {from: 'Confirm Upgrade', to: 'Confirmar Mejora'}
+  - {from: 'Confirm', to: 'Confirmar'}
+  - {from: 'Create Home', to: 'Crear Home'}
+  - {from: 'Delete Banner', to: 'Eliminar Banner'}
+  - {from: 'Invite Member', to: 'Invitar Miembro'}
+  - {from: 'Left-click: accept', to: 'Clic izquierdo: aceptar'}
+  - {from: 'Left-click: mark as read', to: 'Clic izquierdo: marcar como leído'}
+  - {from: 'Left-click: teleport', to: 'Clic izquierdo: teletransportar'}
+  - {from: 'Left-click: clan stats', to: 'Clic izquierdo: estadísticas del clan'}
+  - {from: 'Left-click: profile', to: 'Clic izquierdo: perfil'}
+  - {from: 'Left-click to claim.', to: 'Clic izquierdo para reclamar.'}
+  - {from: 'Left-click to edit permissions.', to: 'Clic izquierdo para editar permisos.'}
+  - {from: 'Left-click to teleport.', to: 'Clic izquierdo para teletransportar.'}
+  - {from: 'Right-click to unban.', to: 'Clic derecho para desbanear.'}
+  - {from: 'Right-click to delete.', to: 'Clic derecho para eliminar.'}
+  - {from: 'Right-click: delete entry', to: 'Clic derecho: eliminar entrada'}
+  - {from: 'Right-click: delete', to: 'Clic derecho: eliminar'}
+  - {from: 'Right-click: deny', to: 'Clic derecho: rechazar'}
+  - {from: 'Right-click: kick', to: 'Clic derecho: expulsar'}
+  - {from: 'Right-click: remove ally', to: 'Clic derecho: quitar aliado'}
+  - {from: 'Right-click: remove rival', to: 'Clic derecho: quitar rival'}
+  - {from: 'Send Mail', to: 'Enviar Correo'}
+  - {from: 'Send Regroup', to: 'Enviar Reagrupación'}
+  - {from: 'Set From Hand', to: 'Definir desde la Mano'}
+  - {from: 'Shift-left: promote', to: 'Shift + clic izquierdo: ascender'}
+  - {from: 'Upgrade Clan', to: 'Mejorar Clan'}
+  - {from: 'Custom Profile Skin', to: 'Skin de Perfil Personalizada'}
+  - {from: 'Back', to: 'Volver'}
+  - {from: 'Cancel', to: 'Cancelar'}
+  - {from: 'Click to continue.', to: 'Clic para continuar.'}
+  - {from: 'Close', to: 'Cerrar'}
+  - {from: 'Combat', to: 'Combate'}
+  - {from: 'Disband Clan', to: 'Disolver Clan'}
+  - {from: 'Rival Chat Setting', to: 'Chat de Rivales'}
+  - {from: 'Rival Requests', to: 'Solicitudes de Rivalidad'}
+  - {from: 'This permanently deletes the clan.', to: 'Esto elimina el clan permanentemente.'}
+  - {from: 'This removes every stored clan log.', to: 'Esto elimina todos los registros guardados del clan.'}
+  - {from: 'This removes every stored clan mail.', to: 'Esto elimina todos los correos guardados del clan.'}
+  - {from: 'Click to change.', to: 'Clic para cambiar.'}
+  - {from: 'Click to claim.', to: 'Clic para reclamar.'}
+  - {from: 'Click to create.', to: 'Clic para crear.'}
+  - {from: 'Click to edit.', to: 'Clic para editar.'}
+  - {from: 'Click to inspect.', to: 'Clic para inspeccionar.'}
+  - {from: 'Click to manage.', to: 'Clic para administrar.'}
+  - {from: 'Click to open page 1.', to: 'Clic para abrir la página 1.'}
+  - {from: 'Click to open.', to: 'Clic para abrir.'}
+  - {from: 'Click to toggle.', to: 'Clic para alternar.'}
+  - {from: 'Click to select.', to: 'Clic para seleccionar.'}
+  - {from: 'Click to view clan stats.', to: 'Clic para ver las estadísticas del clan.'}
+  - {from: 'Damage Indicator', to: 'Indicador de Daño'}
+  - {from: 'Mail from', to: 'Correo de'}
+  - {from: 'Member Join/Quit Messages', to: 'Mensajes de Entrada/Salida de Miembros'}
+  - {from: 'New Leader', to: 'Nuevo Líder'}
+  - {from: 'Next Page', to: 'Página Siguiente'}
+  - {from: 'Previous Page', to: 'Página Anterior'}
+  - {from: 'Receive Clan Mail', to: 'Recibir Correo del Clan'}
+  - {from: 'Receive Invites', to: 'Recibir Invitaciones'}
+  - {from: 'Receive Regroup', to: 'Recibir Reagrupación'}
+  - {from: 'Relations', to: 'Relaciones'}
+  - {from: 'Settings', to: 'Ajustes'}
+  - {from: 'Clan Chat Spy', to: 'Espía del Chat del Clan'}
+  - {from: 'Clan Messages', to: 'Mensajes del Clan'}

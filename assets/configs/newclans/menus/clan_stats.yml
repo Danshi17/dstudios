@@ -1,0 +1,71 @@
+id: clan_stats
+title: '<dark_gray>Clan Stats <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  identity:
+    slot: 11
+    material: PLAYER_HEAD
+    head-owner: '%clan_leader_uuid%'
+    name: '<green>%clan_name%</green>'
+    lore:
+      - '<gray>Tag: %clan_tag%</gray>'
+      - '<gray>Leader: <white>%clan_leader%</white></gray>'
+      - '<gray>Verified: <white>%clan_verified%</white></gray>'
+      - '<gray>Patent: <white>%clan_patent%</white></gray>'
+
+  members:
+    slot: 13
+    material: PLAYER_HEAD
+    head-owner: '%clan_leader_uuid%'
+    name: '<yellow>Members</yellow>'
+    lore:
+      - '<gray>Members: <white>%clan_members%/%clan_member_limit%</white></gray>'
+      - '<gray>Online: <white>%clan_online%</white></gray>'
+
+  combat:
+    slot: 15
+    material: DIAMOND_SWORD
+    name: '<red>Combat</red>'
+    lore:
+      - '<gray>Kills: <white>%clan_kills%</white></gray>'
+      - '<gray>Deaths: <white>%clan_deaths%</white></gray>'
+      - '<gray>KDR: <white>%clan_kdr%</white></gray>'
+      - '<gray>Souls: <white>%clan_souls%</white></gray>'
+
+  progress:
+    slot: 29
+    material: EXPERIENCE_BOTTLE
+    name: '<aqua>Progress</aqua>'
+    lore:
+      - '<gray>Level: <white>%clan_level%/%clan_max_level%</white></gray>'
+      - '<gray>Points: <white>%clan_points%</white></gray>'
+      - '<gray>Next level: <white>%clan_next_level_points%</white></gray>'
+
+  relations:
+    slot: 31
+    material: MAP
+    name: '<yellow>Relations</yellow>'
+    lore:
+      - '<gray>Allies: <white>%clan_allies%/%clan_ally_limit%</white></gray>'
+      - '<gray>Rivals: <white>%clan_rivals%/%clan_rival_limit%</white></gray>'
+
+  economy:
+    slot: 33
+    material: GOLD_INGOT
+    name: '<gold>Economy</gold>'
+    lore:
+      - '<gray>Bank: <white>%clan_bank%</white></gray>'
+      - '<gray>Chest pages: <white>%clan_chest_pages%</white></gray>'
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: BACK_HOME

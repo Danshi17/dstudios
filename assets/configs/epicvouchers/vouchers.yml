@@ -1,0 +1,22 @@
+vouchers:
+  dinero_VIP:
+    material: "PLAYER_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkZDRmZTRhNDI5YWJkNjY1ZGZkYjNlMjFmYmJhYzI3NWE1OWU2ZTUyM2ExY2U3YjMyMWRmYjk5YWU1In19fQ=="
+    display-name: "<gold><bold>Voucher de Dinero VIP"
+    lore:
+      - "<gray>Al abrir este misterioso sobre"
+      - "<gray>recibiras <green>$1,000,000 <gray>de forma instantanea."
+      - ""
+      - "<yellow>¡Haz click derecho para canjear!"
+    glow: true
+    unbreakable: true
+    hide-attributes: true
+    enchants:
+      - "DURABILITY:3"
+    menu-confirmation: true
+    commands:
+      - "eco give %player% 1000000"
+    sound: "ENTITY_PLAYER_LEVELUP:1.0f:1.0f"
+    particle: "VILLAGER_HAPPY:15"
+    title: "<green>¡VOUCHER CANJEADO!"
+    subtitle: "<gray>Has recibido <gold>$1,000,000"
+    actionbar: "<green>+ $1,000,000 añadidos a tu cuenta."

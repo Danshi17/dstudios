@@ -1,0 +1,35 @@
+name: NewCasino
+version: '${project.version}'
+
+main: github.dstudio.newcasino.NewCasino
+api-version: '1.18'
+load: POSTWORLD
+softdepend: [Vault, PlaceholderAPI, Ecoins]
+commands:
+  newcasino:
+    aliases: [casino]
+    description: "Casino: Coinflip, Slots y 17 minijuegos configurables"
+    usage: "/newcasino"
+    permission: newcasino.use
+
+
+permissions:
+  newcasino.use:
+    description: "Allows using main NewCasino command"
+    default: true
+  newcasino.reload:
+    description: "Allows reloading NewCasino config"
+    default: op
+  newcasino.admin:
+    description: "Allows accessing admin features"
+    default: op
+  newcasino.games:
+    description: "Acceso a minijuegos"
+    default: true
+
+  newcasino.roulette3d.use:
+    description: "Jugar en las mesas de ruleta 3D"
+    default: true
+  newcasino.roulette3d.admin:
+    description: "Administrar mesas de ruleta 3D"
+    default: op

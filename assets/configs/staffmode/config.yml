@@ -1,0 +1,375 @@
+staffmode-options:
+  # (CREATIVE, SURVIVAL, ADVENTURE, SPECTATOR)
+  gamemode: "CREATIVE"
+
+  allow-flight: true
+  invincible: true
+
+  vanish: true
+
+  night-vision: true
+
+staff-mode:
+  blocked-commands:
+    - "trade"
+    - "axtrade"
+    - "comerciar"
+    - "t"
+    - "traderequest"
+    - "traderequests"
+    - "tr"
+  allowed-gui-titles:
+    - "INFERNALMC"
+    - "Survival Custom"
+    - "FullPvP"
+    - "FastFarm"
+    - "Niveles"
+
+
+title-on-enable:
+  title: "&e&lSTAFF"
+  subtitle: "&fModo &aActivado"
+  fade-in: 10
+  stay: 40
+  fade-out: 10
+
+messages:
+  no-permission: "&cNo tienes permiso para ejecutar este comando."
+  staffmode-enabled: "&aHas entrado en el modo staff."
+  staffmode-disabled: "&cHas salido del modo staff."
+  config-reloaded: "&aLa configuración de NStaffMode ha sido recargada."
+  teleported: "&aTe has teletransportado a &e%player%&a."
+  vanish-enabled: "&aAhora eres invisible para los jugadores."
+  vanish-disabled: "&cAhora eres visible para todos."
+  random-tp-success: "&aHas sido teletransportado a &e%player%&a."
+  random-tp-no-players: "&cNo se encontraron jugadores a los que teletransportarse."
+
+  command-blocked-staffmode: "&c¡No puedes usar ese comando mientras estás en Staff Mode!"
+
+  staff-item-protected: "&c¡No puedes mover items del StaffMode fuera de tu inventario!"
+
+  actionbar-vanish-on: "&e&lModo Staff &8| &aVanish: Activado"
+  actionbar-vanish-off: "&e&lModo Staff &8| &cVanish: Desactivado"
+
+  cps-wrong-usage: "&c&lUSO: &7/cps <jugador>"
+  cps-player-not-found: "&c&lERROR: &7Ese jugador no está en línea."
+  cps-test-already-running: "&c&lERROR: &7Ese jugador ya está siendo analizado."
+  cps-test-started-staff: "&e&lCPS: &7Iniciando prueba silenciosa de 15s en &f%player%&7."
+  cps-test-finished: "&e&lCPS: &7La prueba de &f%player% &7ha finalizado. &bResultado: &l%cps% clicks/s&r &7(&f%clicks% clicks&7)"
+  cps-test-interrupted: "&c&lCPS: &7La prueba de &f%player% &7ha sido interrumpida porque se ha desconectado."
+
+  player-frozen: "&b%player% &fha sido congelado por &b%staff%&f."
+  player-unfrozen: "&b%player% &fha sido descongelado por &b%staff%&f."
+
+  player-kicked: "&b%player% &fha sido expulsado por &b%staff%&f. Razón: &e%reason%"
+  player-banned: "&b%player% &fha sido baneado por &b%staff%&f. Razón: &e%reason%"
+  kick-reason: "Expulsado por un miembro del staff"
+  ban-reason: "Baneado por un miembro del staff"
+
+  menu-no-players-teleport: "&cNo hay jugadores disponibles para teleportarse."
+  menu-no-players-random: "&cNo hay jugadores disponibles para TP aleatorio."
+  menu-no-players-mines: "&cNo hay jugadores en las minas actualmente."
+  menu-player-offline: "&cEse jugador ya no está conectado."
+
+  smi-usage: "&c&lUSO: &7/smi <jugador>"
+  smi-player-not-found: "&c&lERROR: &7Ese jugador no está en línea."
+  smi-self: "&c&lERROR: &7No puedes inspeccionar tu propio inventario."
+  smi-opened: "&e&lSMI: &7Viendo el inventario de &f%player%&7."
+
+  chest-view-loot: "&cEse contenedor es del mundo y aún no ha sido abierto por ningún jugador."
+
+staffchat:
+  format: "&8[&e%Server_name%&8] &9%Staff_name% &8> %message%"
+  toggle-enabled: "&aHas activado el &fStaff Chat&a. Ahora todo lo que escribas en el chat se enviará como mensaje de staff."
+  toggle-disabled: "&cHas desactivado el &fStaff Chat&c. Tu chat ha vuelto a la normalidad."
+
+  server-leave:
+    enabled: true
+    format: "&8[&e%Server_name%&8] &c[-] &7El staff &f%Staff_name% &7ha salido de la modalidad."
+  server-join:
+    enabled: true
+    format: "&8[&e%Server_name%&8] &a[+] &7El staff &f%Staff_name% &7ha entrado a la modalidad."
+
+ownerchat:
+  format: "&8[&e%Server_name%&8] &8[&4Owner&8] &c%Staff_name% &8> %message%"
+  toggle-enabled: "&aHas activado el &fOwner Chat&a. Ahora todo lo que escribas en el chat se enviará como mensaje de owner."
+  toggle-disabled: "&cHas desactivado el &fOwner Chat&c. Tu chat ha vuelto a la normalidad."
+
+invsee:
+  read-only: true
+
+chest-view:
+  enabled: true
+  permission: "nstaffmode.use.chestview"
+  title: "&8Contenido: &f%container% &8(%x%, %y%, %z%)"
+  disabled-worlds: []
+  materials:
+    - "CHEST"
+    - "TRAPPED_CHEST"
+    - "BARREL"
+    - "*SHULKER_BOX"
+    - "HOPPER"
+    - "DROPPER"
+    - "DISPENSER"
+    - "FURNACE"
+    - "BLAST_FURNACE"
+    - "SMOKER"
+    - "BREWING_STAND"
+
+player-info-format:
+  - "&8&m----------------------------------"
+  - "&e&lInformación de &r&f%player%"
+  - ""
+  - "&bVida: &f%health%/%max_health%"
+  - "&bComida: &f%food%/%max_food%"
+  - "&bGamemode: &f%gamemode%"
+  - "&bUbicación: &f%world%, %x%, %y%, %z%"
+  - "&bPing: &f%ping% ms"
+  - "&bVolando: &f%flying%"
+  - "&8&m----------------------------------"
+
+freeze-options:
+  notification-permission: "nstaffmode.freeze.notify"
+
+  on-freeze:
+    chat-messages:
+      enabled: true
+      lines:
+        - "&8&m--------------------------------------------"
+        - "          &c&l¡HAS SIDO CONGELADO!"
+        - ""
+        - " &fNo te desconectes o serás sancionado."
+        - " &fEspera a que un miembro del Staff te atienda."
+        - "&8&m--------------------------------------------"
+    title:
+      enabled: true
+      title: "&4&l¡CONGELADO!"
+      subtitle: "&cNo te muevas o serás sancionado"
+    actionbar:
+      enabled: true
+      text: "&c&lESTÁS CONGELADO &8- &fNo te desconectes."
+    potion-effects:
+      enabled: true
+      effects:
+        - "BLINDNESS:1"
+        - "WEAKNESS:200"
+        - "SLOW:7"
+  on-unfreeze:
+    chat-message: "&a¡Has sido descongelado! Ya puedes moverte con normalidad."
+    title:
+      enabled: true
+      title: "&a&lERES LIBRE"
+      subtitle: "&fYa puedes continuar jugando"
+
+mine-detector:
+  mine-worlds:
+    - "mine"
+    - "mina"
+    - "prison"
+  messages:
+    header: "&8&m--------&r &eJugadores en Minas &8&m--------"
+    player-format: "&e- &f%player%"
+    no-players-found: "&cNo se encontraron jugadores minando actualmente."
+
+ore-alert:
+  enabled: true
+  enabled-worlds:
+    - "Survival"
+    - "Survival_nether"
+  blocks:
+    - "SPAWNER"
+    - "DIAMOND_ORE"
+    - "DEEPSLATE_DIAMOND_ORE"
+    - "ANCIENT_DEBRIS"
+  permission: "nstaffmode.orealert.notify"
+  message: "&8[&c&lAlerta&8] &f%player% &7ha minado &e%block% &7en &b%world% &7(%x%, %y%, %z%)"
+
+menus:
+  teleport:
+    title: "&8Teleport - Jugadores"
+    size: 54
+    fill-material: "BLACK_STAINED_GLASS_PANE"
+    fill-data: 15
+    fill-name: " "
+
+    player-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+
+    next-page-slot: 50
+    previous-page-slot: 48
+    close-slot: 49
+
+    next-page-item:
+      material: "ARROW"
+      data: 0
+      name: "&aSiguiente Página ➤"
+      lore:
+        - "&7Clic para ver más jugadores"
+        - "&8"
+        - "&eClic Izquierdo &7para continuar"
+
+    previous-page-item:
+      material: "ARROW"
+      data: 0
+      name: "&c➤ Página Anterior"
+      lore:
+        - "&7Clic para regresar"
+        - "&8"
+        - "&eClic Izquierdo &7para volver"
+
+    close-item:
+      material: "BARRIER"
+      data: 0
+      name: "&cCerrar Menú"
+      lore:
+        - "&7Clic para cerrar este menú"
+        - "&8"
+        - "&eClic Izquierdo &7para salir"
+
+  mine-detector:
+    title: "&8Detector de Minas"
+    size: 54
+    fill-material: "ORANGE_STAINED_GLASS_PANE"
+    fill-data: 1
+    fill-name: "&6"
+
+    player-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+
+    next-page-slot: 50
+    previous-page-slot: 48
+    close-slot: 49
+
+    next-page-item:
+      material: "LIME_DYE"
+      data: 10
+      name: "&a&lSiguiente ➤"
+      lore:
+        - "&7Más mineros adelante"
+        - "&eClic para continuar"
+
+    previous-page-item:
+      material: "RED_DYE"
+      data: 1
+      name: "&c&l➤ Volver"
+      lore:
+        - "&7Mineros anteriores"
+        - "&eClic para regresar"
+
+    close-item:
+      material: "REDSTONE_BLOCK"
+      data: 0
+      name: "&c&lCerrar"
+      lore:
+        - "&7Salir del detector"
+
+  random-tp:
+    title: "&8TP Aleatorio - Jugadores"
+    size: 45
+    fill-material: "PURPLE_STAINED_GLASS_PANE"
+    fill-data: 10
+    fill-name: "&5"
+
+    player-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+
+    next-page-slot: 41
+    previous-page-slot: 39
+    close-slot: 40
+
+    next-page-item:
+      material: "SPECTRAL_ARROW"
+      data: 0
+      name: "&d&lSiguiente ➤"
+      lore:
+        - "&7Ver más jugadores"
+        - "&fClic para continuar"
+
+    previous-page-item:
+      material: "SPECTRAL_ARROW"
+      data: 0
+      name: "&d&l➤ Anterior"
+      lore:
+        - "&7Volver"
+        - "&fClic para regresar"
+
+    close-item:
+      material: "RED_STAINED_GLASS_PANE"
+      data: 14
+      name: "&c&lSalir"
+      lore:
+        - "&7Cerrar este menú"

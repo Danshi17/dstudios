@@ -1,0 +1,323 @@
+#
+#⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⢰⡿⠋⠁⠀⠀⠈⠉⠙⠻⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⢀⣿⠇⠀⢀⣴⣶⡾⠿⠿⠿⢿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⣀⣀⣸⡿⠀⠀⢸⣿⣇⠀⠀⠀⠀⠀⠀⠙⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⣾⡟⠛⣿⡇⠀⠀⢸⣿⣿⣷⣤⣤⣤⣤⣶⣶⣿⠇⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀
+#⢀⣿⠀⢀⣿⡇⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⠿⣿⡏⠀⠀⠀⠀⢴⣶⣶⣿⣿⣿⣆
+#⢸⣿⠀⢸⣿⡇⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⣿⡇⣀⣠⣴⣾⣮⣝⠿⠿⠿⣻⡟
+#⢸⣿⠀⠘⣿⡇⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠉⠀
+#⠸⣿⠀⠀⣿⡇⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀
+#⠀⠻⣷⣶⣿⣇⠀⠀⠀⢠⣼⣿⣿⣿⣿⣿⣿⣿⣛⣛⣻⠉⠁⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⢸⣿⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⢸⣿⣀⣀⣀⣼⡿⢿⣿⣿⣿⣿⣿⡿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠙⠛⠛⠛⠋⠁⠀⠙⠻⠿⠟⠋⠑⠛⠋⠀⠀⠀⠀⠀⠀
+settings:
+  virtual-mode: true
+
+  menu:
+    title: "&8&lTus Lucky Blocks"
+    rows: 6
+    sounds:
+      open-menu: "CHEST_OPEN"
+      open-menu-volume: 1.0
+      open-menu-pitch: 1.0
+      click-ready: "ORB_PICKUP"
+      click-ready-volume: 1.0
+      click-ready-pitch: 1.2
+      click-locked: "VILLAGER_NO"
+      click-locked-volume: 1.0
+      click-locked-pitch: 1.0
+      close-menu: "CHEST_CLOSE"
+      close-menu-volume: 1.0
+      close-menu-pitch: 1.0
+      open-all: "LEVEL_UP"
+      open-all-volume: 1.0
+      open-all-pitch: 1.3
+
+    pagination:
+
+      previous-button:
+        material: "ARROW"
+        slot: 7
+        name: "&a&l<- Pagina Anterior"
+        lore:
+          - "&7Haz click para regresar a"
+          - "&7la pagina anterior."
+
+      next-button:
+        material: "ARROW"
+        slot: 8
+        name: "&a&lPagina Siguiente ->"
+        lore:
+          - "&7Haz click para avanzar a"
+          - "&7la siguiente pagina."
+
+    sort-button:
+      slot: 45
+      material: "HOPPER"
+      name-ready-first: "&e&lFiltro: Listo Primero"
+      lore-ready-first:
+        - "&7Estado actual: &aCompletados Primero"
+        - ""
+        - "&eHaz click para alternar al"
+        - "&eorden de configuracion."
+
+      name-default: "&6&lFiltro: Por Defecto"
+
+      lore-default:
+        - "&7Estado actual: &cOrden por Defecto"
+        - ""
+        - "&eHaz click para alternar al"
+        - "&efiltro de listos primero."
+
+    open-all-button:
+      slot: 4
+      material: "CHEST"
+      name: "&d&lAbrir Todo lo Disponible"
+      lore:
+        - "&7Haz click para abrir de golpe"
+        - "&7todos tus Lucky Blocks completados."
+        - ""
+        - "&eDisponibles en total: &a{total_ready}"
+
+    background:
+      material: "STAINED_GLASS_PANE:15"   # :15 = negro, :7 = gris, :11 = azul
+      name: " "
+      lore: []
+      slots:
+        - 46
+        - 47
+        - 48
+        - 49
+        - 50
+        - 51
+        - 52
+
+    item-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+
+    filter:
+
+      enabled: false
+      items:
+        - "basic"
+        - "premium"
+
+      button:
+        material: "HOPPER"
+        slot: 53
+        name-active: "&a&lFiltro: Activado"
+        name-inactive: "&7&lFiltro: Desactivado"
+
+        lore-active:
+          - "&7Filtro activo. Solo se muestran:"
+          - "&a{items}"
+          - ""
+          - "&eClick para desactivar."
+
+        lore-inactive:
+          - "&7Mostrando todos los Lucky Blocks."
+          - ""
+          - "&eClick para activar el filtro."
+
+    lore-ready:
+      - "&8&m-----------"
+      - "&aTienes &e{ready} &alisto(s) para abrir!"
+      - "&7Click para abrir uno."
+      - "&8&m-----------"
+
+    lore-locked:
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando para completarlo!"
+      - "&8&m-----------"
+
+    lore-not-found:
+      - "&8&m-----------"
+      - "&7Aun no has encontrado este Lucky Block."
+      - "&7Sigue minando para tener suerte!"
+      - "&8&m-----------"
+
+#   commands:     {player}, {amount}, {min}, {max}, {luckyblock_name}
+#   title:        {luckyblock_name}, {amount}, {min}, {max}
+#   subtitle:     {luckyblock_name}, {amount}, {min}, {max}
+#   action-bar:   {luckyblock_name}, {amount}, {min}, {max}
+
+#
+
+# {amount} = monto random entre min-amount y max-amount (probabilidad).
+
+# CURRENCY:
+#   - currency: "Vault"
+#   - currency: "RevTokens"
+#   - currency: "Gems"
+#   - currency: "Money"
+
+luckyblocks:
+  basic:
+    enabled: true
+    display-name: "&eLucky Block Basico"
+    material-incomplete: "BASE64_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgzYmRkN2ZjYzZjNDRkZjI5YzYxOWYwMWMxZDc1MjljZGYxOTYwMDE3ZTdkZGRlNmE4ODE4MzVmMGJiMmU1MiJ9fX0="
+    name-incomplete: "&7&l[&7Lucky Block &8(Basico - Incompleto)&7] &7"
+    lore-incomplete:
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&cSigue minando para activarlo!"
+      - "&8&m-----------"
+    material-complete: "BASE64_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE5ZDI4YTg2MzJmYTRkODdjYTE5OWJiYzJlODhjZjM2OGRlZGQ1NTc0NzAxN2FlMzQ4NDM1NjlmN2E2MzRjNSJ9fX0="
+    name-complete: "&e&l[&eLucky Block &7(Basico)&e]"
+    lore-complete:
+      - "&8&m-----------"
+      - "&7Click derecho para abrir."
+      - "&7&oBuena suerte!"
+      - "&8&m-----------"
+    blocks-required: 1000
+    chance: 100
+    weight: 15
+    mining-seconds-required: 60
+
+    rewards:
+      common_vault:
+        weight: 60
+        commands:
+          - "broadcast &7[&eLuckyBlock&7] &e{player} &7gano &a${amount} Vault &7(&b{min}&7-&b{max}&7)!"
+        currency-enabled: true
+        currency: "Vault"
+        min-amount: 1000
+        max-amount: 5000
+        title: "&a&l[$] &eHas ganado ${amount}"
+        subtitle: "&7Vault &7(&b{min}&7-&b{max}&7)"
+        action-bar: "&a$ + &e${amount} Vault"
+        sound: "ORB_PICKUP"
+        sound-volume: 1.0
+        sound-pitch: 1.0
+        particle: "VILLAGER_HAPPY"
+        particle-count: 15
+
+      common_tokens:
+        weight: 50
+        commands:
+          - "tokens add {player} {amount}"
+        currency-enabled: true
+        currency: "RevTokens"
+        min-amount: 100
+        max-amount: 500
+        title: "&aPremio Comun!"
+        subtitle: "&7Has ganado entre {min} y {max} RevTokens (&e{amount}&7)"
+        action-bar: "&a+ &e{amount} RevTokens"
+        sound: "ORB_PICKUP"
+        sound-volume: 1.0
+        sound-pitch: 1.0
+        particle: "SPELL_WITCH"
+        particle-count: 10
+
+      rare_gems:
+        weight: 12
+        commands:
+          - "broadcast &7[&eLuckyBlock&7] &e{player} &7abrio un Lucky Block y gano &b{amount} Gems!"
+        currency-enabled: true
+        currency: "Gems"
+        min-amount: 500
+        max-amount: 1500
+        title: "&b&lGems Raras!"
+        subtitle: "&3Entre 500 y 1500 Gems (&b{amount}&3)"
+        action-bar: "&bWow! + &3{amount} Gems"
+        sound: "LEVEL_UP"
+        sound-volume: 1.0
+        sound-pitch: 1.0
+        particle: "FIREWORKS_SPARK"
+        particle-count: 25
+
+      jackpot:
+        weight: 3
+        commands:
+          - "broadcast &6&l[JACKPOT] &e{player} &6gano el JACKPOT del Lucky Block! (&e${amount} Vault&6)"
+        currency-enabled: true
+        currency: "Vault"
+        min-amount: 5000
+        max-amount: 15000
+        title: "&6&l[JACKPOT]"
+        subtitle: "&eEntre $5K y $15K Vault! (&6${amount}&e)"
+        action-bar: "&6&lJACKPOT! &e${amount}"
+        sound: "LEVEL_UP"
+        sound-volume: 1.0
+        sound-pitch: 1.0
+        particle: "FIREWORKS_SPARK"
+        particle-count: 100
+
+  premium:
+    enabled: true
+    display-name: "&d&lLucky Block Premium"
+    material-incomplete: "BASE64_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgzYmRkN2ZjYzZjNDRkZjI5YzYxOWYwMWMxZDc1MjljZGYxOTYwMDE3ZTdkZGRlNmE4ODE4MzVmMGJiMmU1MiJ9fX0="
+    name-incomplete: "&7&l[&7Lucky Block &8(Premium - Incompleto)&7]"
+    lore-incomplete:
+      - "&8&m-----------"
+      - "&7Progreso: &e{progress}&7/&e{required}"
+      - "&dConsigue los bloques minados requeridos."
+      - "&8&m-----------"
+    material-complete: "BASE64_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE5ZDI4YTg2MzJmYTRkODdjYTE5OWJiYzJlODhjZjM2OGRlZGQ1NTc0NzAxN2FlMzQ4NDM1NjlmN2E2MzRjNSJ9fX0="
+    name-complete: "&d&l[Lucky Block &5(Premium)&d]"
+    lore-complete:
+      - "&8&m-----------"
+      - "&7Click derecho para abrir."
+      - "&5Bloque de mayor rareza."
+      - "&8&m-----------"
+    blocks-required: 5000
+    chance: 0.1
+    weight: 1
+    mining-seconds-required: 300
+    rewards:
+      premium_vault:
+        weight: 40
+        commands:
+          - "broadcast &d[Premium] &e{player} &dgano &a${amount} Vault &dde un Lucky Block Premium!"
+        currency-enabled: true
+        currency: "Vault"
+        min-amount: 10000
+        max-amount: 30000
+        title: "&d&l[$] Premio Premium!"
+        subtitle: "&7$10K - $30K Vault (&a${amount}&7)"
+        action-bar: "&d+ &a${amount} Vault"
+        sound: "LEVEL_UP"
+        sound-volume: 1.0
+        sound-pitch: 1.0
+        particle: "SPELL_WITCH"
+        particle-count: 30
+
+      mega_jackpot:
+        weight: 5
+        commands:
+          - "broadcast &5&l[MEGA JACKPOT] &d{player} &5MEGA JACKPOT del Lucky Block Premium! (&a${amount}&5)"
+        currency-enabled: true
+        currency: "Vault"
+        min-amount: 50000
+        max-amount: 200000
+        title: "&5&l[MEGA JACKPOT]"
+        subtitle: "&dEntre $50K y $200K Vault! (&5${amount}&d)"
+        action-bar: "&5&lMEGA JACKPOT! &a${amount}"
+        sound: "LEVEL_UP"
+        sound-volume: 1.0
+        sound-pitch: 0.8
+        particle: "FIREWORKS_SPARK"
+        particle-count: 200

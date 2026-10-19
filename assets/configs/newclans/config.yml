@@ -1,0 +1,123 @@
+
+config:
+  autosave-seconds: 120
+  date-format: 'dd/MM/yyyy HH:mm'
+  teleport-delay: 3
+
+  special-permissions:
+    bypass-teleport: 'newclans.bypass.teleport'
+
+language:
+  # Default language for players who have not picked one.
+  # Must match a file in plugins/NewClans/lang/ (EN, ES, or your own).
+  default: EN
+
+clan:
+  default-member-limit: 10
+
+  tag:
+    min-chars: 2
+    max-chars: 25
+    allowed-chars: '[0-9a-zA-Z_-]*'
+    color-permission: 'newclans.color.tag'
+    disabled-decoration:
+      - OBFUSCATED
+    blacklist:
+      - admin
+      - owner
+      - staff
+      - console
+
+  description:
+    min-chars: 2
+    max-chars: 80
+    allowed-chars: '.*'
+    color-permission: 'newclans.color.description'
+
+  friendly-fire:
+    default: false
+    global: false
+    block-allied-damage: true
+
+  verify:
+    always-verified: false
+
+  points:
+    player-kill: 1.0
+
+  souls:
+    per-player-kill: 1
+
+  home:
+    enabled: true
+    max-homes-default: 1
+    allowed-chars: '[0-9a-zA-Z_-]*'
+    can-toggle-view: true
+    cancel-on-move: true
+    disabled-worlds: []
+
+  relation:
+    ally-invite:
+      max-time-seconds: 60
+
+    rival-invite:
+      max-time-seconds: 60
+
+  chat:
+    enable-colors: false
+    format: '<dark_gray>[<green>Clan</green>]</dark_gray> %clan_tag% <gray>%player%</gray> <dark_gray>»</dark_gray> <white>%message%</white>'
+    ally-format: '<dark_gray>[<aqua>Ally</aqua>]</dark_gray> %clan_tag% <gray>%player%</gray> <dark_gray>»</dark_gray> <white>%message%</white>'
+    spy-tag: '<dark_gray>[SPY] </dark_gray>'
+    # Prints clan and ally chat messages to the server console.
+    log-to-console: true
+
+  mail:
+    enabled: true
+    min-chars: 1
+    max-chars: 160
+    max-storage: 70
+    time-expires-minutes: 1440
+
+  logger:
+    enabled: true
+    time-expires-minutes: 2880
+
+  regroup:
+    max-time-seconds: 60
+
+  war:
+    challenge-timeout-seconds: 60
+    win-points: 25.0
+
+
+  webhook:
+    enabled: false
+    allowed-hosts:
+      - discord.com
+      - discordapp.com
+    format: '[%clan_tag%] %message%'
+
+  inactivity:
+    # 0 disables automatic member removal.
+    member-days: 0
+
+    # 0 disables automatic clan inactivity checks.
+    clan-days: 0
+    delete-clans: false
+
+player:
+  invites:
+    time-expires-minutes: 1440
+    max-store: 9
+
+  nickname:
+    max-size: 16
+    allowed-chars: '[0-9a-zA-Z_-]*'
+    color-permission: 'newclans.color.nickname'
+
+  skin:
+    # Maximum accepted Base64 texture length for /clan skin set.
+    max-base64-length: 32768
+
+storage:
+  type: YAML

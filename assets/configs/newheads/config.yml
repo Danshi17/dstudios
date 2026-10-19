@@ -1,0 +1,68 @@
+settings:
+  renderer: AUTO
+  view-distance: 32
+  hide-margin: 8
+  visibility-check-ticks: 20
+  click-cooldown-ms: 400
+  max-click-distance: 8
+  hitbox-multiplier: 1.0
+
+text:
+  base-offset: 0.15
+  line-spacing: 0.25
+  line-width: 200
+  # DEFAULT, TRANSPARENT, "#RRGGBB" o "#AARRGGBB" (entre comillas)
+  background: "DEFAULT"
+  shadow: false
+  see-through: false
+  # LEFT, CENTER o RIGHT
+  alignment: CENTER
+
+messages:
+  prefix: "&8[&bNewHeads&8] &7"
+  no-permission: "&cNo tienes permiso para hacer esto."
+  players-only: "&cEste comando solo puede usarse dentro del juego."
+  usage: "&cUso: &f{usage}"
+  created: "&aCabeza &f{name} &acreada."
+  deleted: "&aCabeza &f{name} &aeliminada."
+  exists: "&cYa existe una cabeza con ese nombre."
+  not-found: "&cNo existe la cabeza &f{name}&c."
+  invalid-name: "&cNombre invalido. Usa letras, numeros, _ y - (maximo 32)."
+  invalid-material: "&cNo se pudo obtener la cabeza. Revisa el id o el codigo base64, o espera a que HeadDatabase termine de cargar."
+  hdb-missing: "&cHeadDatabase no esta instalado o no esta activo."
+  invalid-number: "&cNumero invalido o fuera de rango."
+  reloaded: "&aPlugin recargado. &f{count} &acabezas cargadas."
+  list-header: "&7Cabezas &8(&f{count}&8)&7:"
+  list-empty: "&7No hay cabezas creadas."
+  list-entry: "&8- &f{name} &7({world} {x} {y} {z})"
+  material-set: "&aMaterial de &f{name} &aactualizado."
+  size-set: "&aTamano de &f{name} &aactualizado a &f{value}&a."
+  rotation-set: "&aVelocidad de rotacion de &f{name} &aactualizada a &f{value}&a grados/s."
+  moved: "&aCabeza &f{name} &amovida a tu posicion."
+  command-set: "&aComando de &f{name} &adefinido."
+  command-added: "&aComando agregado a &f{name}&a."
+  command-cleared: "&aComandos de &f{name} &aeliminados."
+  info-header: "&7Informacion de &f{name}&7:"
+  info-line: "&8- &7{label}: &f{value}"
+  text-set: "&aTexto de &f{name} &aactualizado."
+  text-added: "&aLinea agregada al texto de &f{name}&a."
+  text-edited: "&aLinea &f{line} &ade &f{name} &aactualizada."
+  text-removed: "&aLinea &f{line} &ade &f{name} &aeliminada."
+  text-cleared: "&aTexto de &f{name} &aeliminado."
+  text-offset-set: "&aOffset del texto de &f{name} &aactualizado a &f{value}&a."
+  invalid-line: "&cNumero de linea invalido. Usa un numero entre 1 y {max}."
+  text-limit: "&cLimite excedido: maximo &f{lines} &clineas de &f{length} &ccaracteres."
+  holo-linked: "&aCabeza &f{name} &avinculada al holograma &f{hologram}&a."
+  holo-created: "&aHolograma &f{hologram} &acreado y vinculado a &f{name}&a. Editalo con &f/holo edit {hologram}&a."
+  holo-unlinked: "&aCabeza &f{name} &adesvinculada de su holograma."
+  holo-missing: "&cFancyHolograms no esta instalado o no esta activo."
+  holo-not-found: "&cNo existe el holograma &f{hologram}&c en FancyHolograms."
+  holo-in-use: "&cEse holograma ya esta vinculado a otra cabeza."
+  holo-npc-linked: "&cEse holograma esta vinculado a un NPC."
+  holo-exists: "&cYa existe un holograma llamado &f{hologram}&c. Usa &f/nh hologram <nombre> link {hologram}&c."
+  holo-none: "&cEsta cabeza no tiene holograma vinculado."
+  crate-linked: "&aCabeza &f{name} &avinculada a la crate &f{crate}&a. Click izquierdo: preview, click derecho: abrir."
+  crate-unlinked: "&aCabeza &f{name} &adesvinculada de su crate."
+  crate-missing: "&cExcellentCrates no esta instalado o no esta activo."
+  crate-not-found: "&cNo existe la crate &f{crate}&c en ExcellentCrates."
+  crate-none: "&cEsta cabeza no tiene crate vinculada."

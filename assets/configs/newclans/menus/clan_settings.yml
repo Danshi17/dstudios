@@ -1,0 +1,194 @@
+id: clan_settings
+title: '<dark_gray>Clan Settings <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 6
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,45-53'
+
+  friendly-fire:
+    slot: 10
+    material: IRON_SWORD
+    name: '<yellow>Friendly Fire</yellow>'
+    lore:
+      - '<gray>Current: <white>%clan_ff%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_FF
+
+  open-join:
+    slot: 11
+    material: OAK_DOOR
+    name: '<yellow>Open Join</yellow>'
+    lore:
+      - '<gray>Current: <white>%clan_open_join%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:open-join
+
+  public-homes:
+    slot: 12
+    material: ENDER_PEARL
+    name: '<yellow>Public Homes</yellow>'
+    lore:
+      - '<gray>Current: <white>%clan_public_homes%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:public-homes
+
+  member-join-quit:
+    slot: 13
+    material: BELL
+    name: '<yellow>Member Join/Quit Messages</yellow>'
+    lore:
+      - '<gray>Current: <white>%clan_join_quit%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:join-quit
+
+  receive-mail:
+    slot: 14
+    material: PAPER
+    name: '<yellow>Receive Clan Mail</yellow>'
+    lore:
+      - '<gray>Current: <white>%clan_receive_mail%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:mail
+
+  ally-requests:
+    slot: 15
+    material: LIME_BANNER
+    name: '<green>Ally Requests</green>'
+    lore:
+      - '<gray>Current: <white>%clan_ally_requests%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:ally-requests
+
+  rival-requests:
+    slot: 16
+    material: RED_BANNER
+    name: '<red>Rival Requests</red>'
+    lore:
+      - '<gray>Current: <white>%clan_rival_requests%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:rival-requests
+
+  regroup:
+    slot: 19
+    material: COMPASS
+    name: '<green>Regroup</green>'
+    lore:
+      - '<gray>Current: <white>%clan_regroup%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:regroup
+
+  ally-chat:
+    slot: 20
+    material: WRITABLE_BOOK
+    name: '<aqua>Ally Chat</aqua>'
+    lore:
+      - '<gray>Current: <white>%clan_ally_chat%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:ally-chat
+
+  rival-chat:
+    slot: 21
+    material: BOOK
+    name: '<red>Rival Chat Setting</red>'
+    lore:
+      - '<gray>Current: <white>%clan_rival_chat%</white></gray>'
+      - ''
+      - '<yellow>Click to toggle.</yellow>'
+    action: TOGGLE_CLAN:rival-chat
+
+  roles:
+    slot: 23
+    material: NAME_TAG
+    name: '<gold>Roles & Permissions</gold>'
+    lore:
+      - '<gray>Edit the permissions of each role.</gray>'
+    action: OPEN:clan_roles
+
+  banner:
+    slot: 24
+    material: WHITE_BANNER
+    name: '<yellow>Clan Banner</yellow>'
+    action: OPEN:banner_home
+
+  banned:
+    slot: 25
+    material: BARRIER
+    name: '<red>Banned Players</red>'
+    action: OPEN:clan_banned
+
+  logger:
+    slot: 28
+    material: BOOK
+    name: '<aqua>Logger</aqua>'
+    action: OPEN:clan_logger
+
+  webhook:
+    slot: 29
+    material: TRIPWIRE_HOOK
+    name: '<light_purple>Webhook</light_purple>'
+    lore:
+      - '<gray>Configured: <white>%clan_webhook_set%</white></gray>'
+      - ''
+      - '<gray>Click to set or replace the webhook.</gray>'
+      - '<gray>Commands can still be used to clear/test it.</gray>'
+      - ''
+      - '<yellow>Click to edit.</yellow>'
+    action: ANVIL:anvil_clandiscordcreatewebhook
+
+  tag:
+    slot: 30
+    material: NAME_TAG
+    name: '<aqua>Clan Tag</aqua>'
+    lore:
+      - '<gray>Current: %clan_tag%</gray>'
+      - ''
+      - '<gray>Supports legacy, HEX and MiniMessage colors.</gray>'
+      - ''
+      - '<yellow>Click to edit.</yellow>'
+    action: ANVIL:anvil_clanmodtag
+
+  description:
+    slot: 31
+    material: WRITABLE_BOOK
+    name: '<aqua>Description</aqua>'
+    lore:
+      - '<white>%clan_description%</white>'
+      - ''
+      - '<gray>Supports colors and MiniMessage.</gray>'
+      - '<yellow>Click to edit.</yellow>'
+    action: ANVIL:anvil_clandesc
+
+  player-settings:
+    slot: 32
+    material: COMPARATOR
+    name: '<green>Player Settings</green>'
+    action: OPEN:player_settings
+
+  disband:
+    slot: 34
+    material: TNT
+    name: '<red>Disband Clan</red>'
+    lore:
+      - '<gray>This action cannot be undone.</gray>'
+      - ''
+      - '<red>Click to continue.</red>'
+    action: OPEN:disband_confirm
+
+  back:
+    slot: 49
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

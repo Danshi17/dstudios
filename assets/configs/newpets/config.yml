@@ -1,0 +1,85 @@
+# ╔══════════════════════════════════════════════════╗
+# ║              NewPets — config.yml                ║
+# ╚══════════════════════════════════════════════════╝
+
+# ─── XP por actividad ────────────────────────────────
+xp:
+  block-break: 1.0
+  crop-harvest: 2.0
+  fishing: 10.0
+  player-kill: 50.0
+  time-interval: 60      # segundos entre tick de XP por tiempo
+  time-xp: 5.0
+
+# ─── Rarezas (display-name y color editables) ────────
+# color soporta &códigos, &#RRGGBB y MiniMessage
+rarities:
+  COMMON:
+    display-name: "Common"
+    color: "&7"
+  RARE:
+    display-name: "Rare"
+    color: "&9"
+  LEGENDARY:
+    display-name: "Legendary"
+    color: "&6"
+  MYTHICAL:
+    display-name: "Mythical"
+    color: "&d"
+  MASTERFUL:
+    display-name: "Masterful"
+    color: "&c"
+  DIVINE:
+    display-name: "Divine"
+    color: "&b&l"
+
+# ─── Traits / pity ───────────────────────────────────
+traits:
+  pity-legendary: 300    # rolls hasta garantía Legendary
+  pity-mythic: 1000      # rolls hasta garantía Mythical
+  # Pesos de rareza para el roll de traits (mayor = más común)
+  rarity-weights:
+    common: 60.0
+    rare: 25.0
+    legendary: 10.0
+    mythical: 4.0
+    masterful: 0.9
+    divine: 0.1
+
+# ─── Monedas ────────────────────────────────────────
+# Los boosters, upgrades, prestigios y tickets usan exclusivamente
+# monedas registradas en PinnaPrison a través de su API.
+# No se admiten Vault, X-Prison ni comandos de cobro externos.
+# Puedes utilizar un ID personalizado si está registrado en PinnaPrison.
+# Los comandos de recompensas aleatorias siguen configurables en pets.yml.
+
+# ─── Recompensas con EssentialsX ────────────────────
+# Si EssentialsX está habilitado, cambia automáticamente las recompensas
+# de tipo money give / eco give a /eco give (sin -s).
+# Sin EssentialsX, utiliza money give para la moneda de PinnaPrison.
+# Afecta SOLO recompensas y level-up-commands, NO cobros ni boosters.
+integrations:
+  essentials-money-command-auto: true
+  # Premios Money por API EssentialsX: sin mensajes de /eco give.
+  # Si Essentials no está instalado, se mantienen comandos PinnaPrison.
+  essentials-money-rewards-silent: true
+
+# ─── Recompensas MIENTRAS SE MINA ──────────────────────
+mining-rewards:
+  enabled: true
+  # PINNA = eventos de minería PinnaPrison (recomendado: evita contar doble).
+  # VANILLA = solo BlockBreakEvent de Bukkit (si tu mina no emite BlockMineEvent).
+  source: PINNA
+  # Encantamientos, bombas y taladros que rompen varios bloques cuentan.
+  count-bulk-breaks: true
+  count-autominer: false
+  # Máximo por evento masivo. O(1): no se recorre cada bloque individual.
+  max-bulk-blocks-per-event: 512
+  # Valor por defecto si una mascota no define rewards.blocks-required.
+  default-blocks-required: 25
+  # Lista vacía = cualquier mundo. Para PrisonOP, pon aquí solo tus minas.
+  allowed-worlds: []
+  # Premios acumulados por jugador/proceso (para evitar lag por muchos comandos).
+  max-claims-per-flush: 256
+  # Máximo jugadores con recompensas procesados cada 10 ticks (cola FIFO).
+  max-players-per-flush: 64

@@ -1,0 +1,31 @@
+id: banner_home
+title: '<dark_gray>Clan Banner <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+  info:
+    slot: 13
+    material: WHITE_BANNER
+    name: '<yellow>Clan Banner</yellow>'
+    lore:
+      - '<gray>Hold the banner you want in your main hand.</gray>'
+  set:
+    slot: 20
+    material: LIME_DYE
+    name: '<green>Set From Hand</green>'
+    action: BANNER_SET
+  clear:
+    slot: 24
+    material: RED_DYE
+    name: '<red>Clear Banner</red>'
+    action: OPEN:banner_delete
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

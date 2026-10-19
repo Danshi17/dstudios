@@ -1,0 +1,11 @@
+enabled: true
+title: "&b&lYOURSERVER"
+update-ticks: 20
+lines:
+  - "&7"
+  - "&fJugador: &b%player_name%"
+  - "&fRang: &b%luckperms_prefix%"
+  - "&7"
+  - "&fServidor: &bLobby"
+  - "&7"
+  - "&bwww.yourserver.net"

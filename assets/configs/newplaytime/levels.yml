@@ -1,0 +1,71 @@
+levels:
+  1:
+    seconds_required: 3600  # 1 hora
+    item:
+      material: "DIAMOND"
+      amount: 1
+      name: "<gradient:#00FFFF:#0080FF>Nivel 1 - Novato</gradient>"
+      lore:
+        - ""
+        - "&7Tiempo requerido: &b%time_required%"
+        - "&7Estado: &e%status%"
+        - ""
+        - "&6&lRecompensas:"
+        - "&e• 1000 Monedas"
+        - "&e• Kit Inicial"
+        - ""
+        - "&eClick para reclamar!"
+      custom_model_data: 0
+    current_item:
+      material: "CLOCK"
+      amount: 1
+      name: "<gradient:#FFA500:#FFD700>Nivel 1 - Novato ⏳</gradient>"
+      lore:
+        - ""
+        - "&7Tiempo requerido: &b%time_required%"
+        - "&7Estado: &e%status%"
+        - ""
+        - "&6Progreso: &e%progress%%"
+        - "%progress_bar%"
+        - "&7Te falta: &b%missing_time%"
+        - ""
+        - "&6&lRecompensas al completar:"
+        - "&e• 1000 Monedas"
+        - "&e• Kit Inicial"
+      custom_model_data: 0
+    unlocked_item:
+      material: "GOLD_INGOT"
+      amount: 1
+      name: "<gradient:#FFEA00:#FFC400>Nivel 1 - Novato ✔</gradient>"
+      lore:
+        - ""
+        - "&7Tiempo requerido: &b%time_required%"
+        - "&7Estado: &e%status%"
+        - ""
+        - "&a¡Listo para reclamar!"
+        - "&6&lRecompensas:"
+        - "&e• 1000 Monedas"
+        - "&e• Kit Inicial"
+        - ""
+        - "&eClick para reclamar!"
+      custom_model_data: 0
+    claimed_item:
+      material: "BEDROCK"
+      amount: 1
+      name: "<gradient:#00FF7F:#00AA00>Nivel 1 - Novato ★</gradient>"
+      lore:
+        - ""
+        - "&7Tiempo requerido: &b%time_required%"
+        - "&7Estado: &e%status%"
+        - ""
+        - "&a¡Ya reclamaste este nivel!"
+        - "&7Recompensas obtenidas:"
+        - "&e• 1000 Monedas"
+        - "&e• Kit Inicial"
+      custom_model_data: 0
+    rewards:
+      commands:
+        - "eco give %player% 1000"
+        - "kit starter %player%"
+        - "give %player% diamond 5"
+      claim_message: "&a¡Has reclamado el nivel 1! &eRecibiste tus recompensas."

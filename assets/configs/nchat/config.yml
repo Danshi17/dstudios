@@ -1,0 +1,462 @@
+# .__   __.   ______  __    __       ___   .___________.     ______   ______   .__   __.  _______  __    _______
+#|  \ |  |  /      ||  |  |  |     /   \  |           |    /      | /  __  \  |  \ |  | |   ____||  |  /  _____|
+#|   \|  | |  ,----'|  |__|  |    /  ^  \ `---|  |----`   |  ,----'|  |  |  | |   \|  | |  |__   |  | |  |  __
+#|  . `  | |  |     |   __   |   /  /_\  \    |  |        |  |     |  |  |  | |  . `  | |   __|  |  | |  | |_ |
+#|  |\   | |  `----.|  |  |  |  /  _____  \   |  |        |  `----.|  `--'  | |  |\   | |  |     |  | |  |__| |
+#|__| \__|  \______||__|  |__| /__/     \__\  |__|         \______| \______/  |__| \__| |__|     |__|  \______|
+#                                       version beta
+#
+settings:
+  debug: false
+
+chat:
+  enabled: true
+  # Opciones disponibles:
+  # - "NCHAT": Usa el sistema interno de colores de nChat (/nickcolor).
+  # - "ESSENTIALS": Usa el nick establecido con /nick de Essentials (soporta sus colores).
+  name-provider: "ESSENTIALS"
+
+  format: "%vault_prefix%%player_name% <dark_gray>»</dark_gray> <reset><white>%message%</white>"
+
+  cooldown:
+    enabled: true
+    seconds: 3
+
+  hover:
+    enabled: true
+    text:
+      - "<gradient:#FFFF00:#FFA500><bold>INFORMACIÓN DEL JUGADOR</bold></gradient>"
+      - "<dark_gray><strikethrough>-------------------------</strikethrough></dark_gray>"
+      - " <yellow>★</yellow> <gray>Usuario:</gray> <white>%player_name%</white>"
+      - " <yellow>★</yellow> <gray>Rango:</gray> %vault_group%"
+      - " <yellow>★</yellow> <gray>Dinero:</gray> <green>%vault_eco_balance_formatted%</green>"
+      - ""
+      - "<gray>Click para enviar mensaje privado.</gray>"
+      - "<dark_gray><strikethrough>-------------------------</strikethrough></dark_gray>"
+
+  click:
+    enabled: true
+    action: SUGGEST_COMMAND
+    value: "/msg %player_name% "
+
+protection:
+  words:
+    enabled: true
+    list:
+      - "tonto"
+      - "lag"
+      - "basura"
+      - "idiota"
+      - "servidor basura"
+
+  commands:
+    block-enabled: true
+    blocked-list:
+      - "plugins"
+      - "pl"
+      - "version"
+      - "icanhasbukkit"
+      - "about"
+      - "?"
+      - "help"
+      - "ver"
+
+  tab:
+    whitelist-enabled: true
+    whitelist-list:
+      - "spawn"
+      - "msg"
+      - "tell"
+      - "r"
+      - "home"
+      - "warp"
+      - "shop"
+      - "ah"
+      - "tpa"
+      - "tpaccept"
+      - "lobby"
+
+# Mensajes privados: /msg <jugador> <mensaje>, /r <mensaje>, /msgspy
+# Control de bandeja: /msgtoggle (on/off recibir), /ignore /unignore /ignorelist
+# Placeholders en formats: %sender%, %receiver%, %message%
+# Placeholders en messages: %target% (player-not-found, dm-*, ignored-*, ignore-*),
+#                           %count% (ignore-list-header)
+msg:
+  enabled: true
+  allow-self: false
+  apply-word-filter: true
+  hide-vanished: true
+  console-log: false
+
+  ignore:
+    block-outgoing: false
+
+  reply:
+    update-sender-target: true
+
+  click:
+    enabled: true
+    value: "/msg %sender% "
+
+  sound:
+    enabled: true
+    type: "entity.experience_orb.pickup"
+    volume: 1.0
+    pitch: 1.5
+
+  formats:
+    sent: "<dark_gray>[</dark_gray><gold>Yo</gold> <dark_gray>»</dark_gray> <yellow>%receiver%</yellow><dark_gray>]</dark_gray> <white>%message%</white>"
+    received: "<dark_gray>[</dark_gray><yellow>%sender%</yellow> <dark_gray>»</dark_gray> <gold>Yo</gold><dark_gray>]</dark_gray> <white>%message%</white>"
+    spy: "<dark_gray>[</dark_gray><red>SPY</red><dark_gray>]</dark_gray> <yellow>%sender%</yellow> <dark_gray>»</dark_gray> <yellow>%receiver%</yellow><dark_gray>:</dark_gray> <gray>%message%</gray>"
+
+  messages:
+    not-ready: "%prefix%<red>⚠ El sistema de mensajes aún no está listo, intenta de nuevo en unos segundos.</red>"
+    disabled: "%prefix%<red>⚠ Los mensajes privados están desactivados.</red>"
+    players-only: "%prefix%<red>Este comando es solo para jugadores.</red>"
+    usage-msg: "%prefix%<red>Uso: /msg <jugador> <mensaje></red>"
+    usage-reply: "%prefix%<red>Uso: /r <mensaje></red>"
+    usage-ignore: "%prefix%<red>Uso: /ignore <jugador></red>"
+    usage-unignore: "%prefix%<red>Uso: /unignore <jugador></red>"
+    player-not-found: "%prefix%<red>⚠ El jugador <yellow>%target%</yellow> no está conectado.</red>"
+    self-message: "%prefix%<red>⚠ No puedes enviarte mensajes a ti mismo.</red>"
+    no-reply-target: "%prefix%<red>⚠ No tienes a nadie a quien responder.</red>"
+    reply-target-offline: "%prefix%<red>⚠ Ese jugador ya no está conectado.</red>"
+    word-blocked: "%prefix%<red>⚠ Tu mensaje contiene palabras no permitidas.</red>"
+    spy-enabled: "%prefix%<green>✔ MsgSpy activado. Verás los mensajes privados de los jugadores.</green>"
+    spy-disabled: "%prefix%<red>✖ MsgSpy desactivado.</red>"
+    dm-disabled-by-target: "%prefix%<red>⚠ El jugador <yellow>%target%</yellow> tiene los mensajes privados desactivados.</red>"
+    dm-disabled-notice: "%prefix%<gray>Tus mensajes privados quedaron <red>DESACTIVADOS</red>. Nadie podrá escribirte hasta que uses <yellow>/msgtoggle</yellow>.</gray>"
+    dm-enabled-notice: "%prefix%<green>✔ Tus mensajes privados quedaron ACTIVADOS. Ya pueden escribirte.</green>"
+    ignored-added: "%prefix%<green>✔ Ignoraste a <yellow>%target%</yellow>. No recibirás sus mensajes.</green>"
+    ignored-removed: "%prefix%<green>✔ Dejaste de ignorar a <yellow>%target%</yellow>.</green>"
+    ignored-already: "%prefix%<red>⚠ Ya tenías a <yellow>%target%</yellow> ignorado.</red>"
+    not-ignored: "%prefix%<red>⚠ No tenías a <yellow>%target%</yellow> ignorado.</red>"
+    ignore-self: "%prefix%<red>⚠ No puedes ignorarte a ti mismo.</red>"
+    ignore-list-empty: "%prefix%<gray>No tienes a nadie ignorado.</gray>"
+    ignore-list-header: "%prefix%<dark_gray>» </dark_gray><white><bold>Tus jugadores ignorados</bold></white> <dark_gray>(%count%)</dark_gray>"
+    ignore-list-entry: "<gray> - <yellow>%target%</yellow>"
+    ignored-blocked: "%prefix%<red>⚠ <yellow>%target%</yellow> no está disponible para recibir mensajes ahora mismo.</red>"
+    ignore-outgoing-blocked: "%prefix%<red>⚠ Ignoraste a <yellow>%target%</yellow>. Usa <yellow>/unignore %target%</yellow> para poder escribirle.</red>"
+
+panel:
+  categories:
+    CHAT: "<gradient:#55FFFF:#5555FF>Chat & Protección</gradient>"
+    ALERTS: "<gradient:#FFAA00:#FF5555>Alertas Anti-Spy</gradient>"
+    JOIN_QUIT: "<gradient:#55FF55:#00AA00>Conexión (Join / Quit)</gradient>"
+    MODULES: "<gradient:#FF55FF:#AA00AA>Módulos del Core</gradient>"
+  features:
+    chat-enabled:
+      name: "Formato de Chat"
+      description:
+        - "<gray>Activa el manejador principal"
+        - "<gray>del formato de los mensajes."
+    chat-cooldown:
+      name: "Cooldown de Chat"
+      description:
+        - "<gray>Obliga a esperar X segundos"
+        - "<gray>entre mensaje y mensaje."
+    chat-hover:
+      name: "Hover de Información"
+      description:
+        - "<gray>Muestra info del jugador al"
+        - "<gray>pasar el cursor sobre su nombre."
+    chat-click:
+      name: "Click en Nombres (MSG)"
+      description:
+        - "<gray>Permite hacer click en un nombre"
+        - "<gray>para sugerir /msg <jugador>."
+    protection-words:
+      name: "Filtro de Palabras"
+      description:
+        - "<gray>Bloquea/censura las palabras"
+        - "<gray>definidas en la lista negra."
+    protection-commands:
+      name: "Bloqueo de Comandos"
+      description:
+        - "<gray>Bloquea comandos como /plugins,"
+        - "<gray>/version, /icanhasbukkit, etc."
+    protection-tab:
+      name: "Whitelist de Tab-Complete"
+      description:
+        - "<gray>Solo muestra en el TAB los"
+        - "<gray>comandos de la whitelist."
+    alert-title:
+      name: "Alerta: Título"
+      description:
+        - "<gray>Muestra un título de advertencia"
+        - "<gray>al bloquear una acción."
+    alert-actionbar:
+      name: "Alerta: Actionbar"
+      description:
+        - "<gray>Muestra un mensaje en la"
+        - "<gray>actionbar al bloquear una acción."
+    alert-sound:
+      name: "Alerta: Sonido"
+      description:
+        - "<gray>Reproduce un sonido al"
+        - "<gray>bloquear una acción."
+    alert-particle:
+      name: "Alerta: Partículas"
+      description:
+        - "<gray>Genera partículas alrededor"
+        - "<gray>del jugador al bloquear una acción."
+    alert-effect:
+      name: "Alerta: Efecto de Poción"
+      description:
+        - "<gray>Aplica un efecto (ceguera, etc)"
+        - "<gray>al bloquear una acción."
+    join-enabled:
+      name: "Mensajes de Join"
+      description:
+        - "<gray>Activa los mensajes personalizados"
+        - "<gray>al conectarse un jugador."
+    join-head:
+      name: "Cabeza en Bienvenida"
+      description:
+        - "<gray>Muestra la cabeza del jugador"
+        - "<gray>en el mensaje privado de bienvenida."
+    join-title:
+      name: "Join: Título"
+      description:
+        - "<gray>Muestra un título de bienvenida"
+        - "<gray>al conectarse."
+    join-actionbar:
+      name: "Join: Actionbar"
+      description:
+        - "<gray>Muestra un mensaje en la"
+        - "<gray>actionbar al conectarse."
+    join-sound:
+      name: "Join: Sonido"
+      description:
+        - "<gray>Reproduce un sonido"
+        - "<gray>al conectarse."
+    join-particle:
+      name: "Join: Partículas"
+      description:
+        - "<gray>Genera partículas"
+        - "<gray>al conectarse."
+    quit-enabled:
+      name: "Mensajes de Quit"
+      description:
+        - "<gray>Activa los mensajes personalizados"
+        - "<gray>al desconectarse un jugador."
+    tags-module:
+      name: "Sistema de Tags (/tags)"
+      description:
+        - "<gray>Activa el comando /tags y el"
+        - "<gray>menú de selección de prefijos."
+    customtags-module:
+      name: "Tags Personalizadas"
+      description:
+        - "<gray>Permite a los jugadores crear"
+        - "<gray>sus propias tags/prefijos."
+    msg-module:
+      name: "Mensajes Privados"
+      description:
+        - "<gray>Activa /msg, /r y /msgspy"
+        - "<gray>con formatos editables."
+    discord-module:
+      name: "Integración con Discord"
+      description:
+        - "<gray>Conecta o desconecta el bot"
+        - "<gray>de Discord al instante."
+    chatgames-module:
+      name: "ChatGames"
+      description:
+        - "<gray>Activa o detiene el minijuego"
+        - "<gray>automático de adivinanzas."
+
+# Placeholders soportados segun la clave: %type%, %storage%, %error%
+console:
+  storage-init: "✔ Sistema de almacenamiento '%type%' inicializado correctamente."
+  placeholder-found: "✔ PlaceholderAPI detectado: Expansión %nchat_tag% registrada."
+  placeholder-missing: "⚠ PlaceholderAPI no encontrado! Los placeholders no funcionarán correctamente."
+  headdb-found: "✔ HeadDatabase detectado: Soporte para cabezas activado."
+  tags-on: "✔ Módulo de Tags habilitado."
+  tags-off: "⚠ Módulo de Tags deshabilitado (usa /nchatpanel para activarlo)."
+  customtags-on: "✔ Sistema de Tags Personalizadas habilitado."
+  customtags-off: "⚠ Sistema de Tags Personalizadas deshabilitado (usa /nchatpanel para activarlo)."
+  msg-on: "✔ Sistema de Mensajes Privados habilitado."
+  msg-off: "⚠ Sistema de Mensajes Privados deshabilitado (usa /nchatpanel para activarlo)."
+  enabled: "✔ nChat habilitado con éxito. (Sistemas de Color, NickColor, Tags [%storage%], ChatGames, Discord y Comandos Personalizados activos)"
+  disabled: "✔ nChat desactivado."
+  error-tags-cmd: "⚠ Error al registrar comando /tags: %error%"
+
+alert:
+  title:
+    enabled: true
+    text: "<red><bold>⚠ ADVERTENCIA ⚠</bold></red>"
+    fade-in: 10
+    stay: 40
+    fade-out: 10
+
+  subtitle:
+    text: "<yellow>Esa acción no está permitida aquí.</yellow>"
+
+  actionbar:
+    enabled: true
+    text: "<gradient:red:dark_red>✖ ¡Acción Bloqueada! ✖</gradient>"
+
+  sound:
+    enabled: true
+    type: "BLOCK_IRON_TRAPDOOR_OPEN"
+    volume: 1.0
+    pitch: 0.8
+
+  particle:
+    enabled: true
+    type: "flame"
+    count: 20
+
+  effect:
+    enabled: true
+    type: "night_vision"
+    duration: 3
+    amplifier: 1
+
+
+messages:
+  prefix: "<dark_gray>[<gradient:#00E5FF:#0072FF>nChat</gradient><dark_gray>]</dark_gray> "
+
+  no-permission: "%prefix%<red>⚠ No tienes permisos para ejecutar este comando.</red>"
+  reload: "%prefix%<green>✔ Configuración de nChat recargada correctamente.</green>"
+  cooldown: "%prefix%<red>⚠ Hablas muy rápido. Espera <yellow>%time%s</yellow> para hablar de nuevo.</red>"
+  chat-cleared: "<newline><newline><newline><newline><newline>%prefix%<gold> 🧹 El chat ha sido limpiado por <yellow>%player_name%</yellow>.</gold><newline>"
+  chat-locked: "%prefix%<red>🔒 El chat global ha sido DESACTIVADO por <yellow>%player_name%</yellow>.</red>"
+  chat-unlocked: "%prefix%<green>🔓 El chat global ha sido ACTIVADO por <yellow>%player_name%</yellow>.</green>"
+  chat-is-locked: "%prefix%<red>⛔ El chat está desactivado. Solo administradores pueden hablar.</red>"
+
+  # Mensajes que antes estaban quemados directo en el código (ahora 100% editables)
+  usage-nchat-reload: "%prefix%<red>Uso: /nchat reload</red>"
+  players-only: "%prefix%<red>Este comando es solo para jugadores.</red>"
+  panel-not-ready: "%prefix%<red>⚠ El panel de features aún no está listo, intenta de nuevo en unos segundos.</red>"
+  gui-manual-use: "%prefix%<red>Este comando no se usa a mano. Escribe [inv], [item] o [ec] en el chat y haz click en el resultado.</red>"
+  invalid-preview: "%prefix%<red>Ese vistazo no es válido.</red>"
+  preview-not-ready: "%prefix%<red>⚠ Los vistazos del chat aún no están listos.</red>"
+  preview-unavailable: "%prefix%<red>Esta función no está disponible.</red>"
+  preview-expired: "%prefix%<red>Ese vistazo ya expiró.</red>"
+  feature-no-permission: "%prefix%<red>⚠ No tienes permisos para modificar esta feature.</red>"
+  feature-toggled: "%prefix%%icon% <white>%feature%</white><gray> ha sido %state%<gray>.</gray>"
+  config-missing-tags: "%prefix%<red>Error: Configuración 'menus.tags' no encontrada en tags.yml</red>"
+  config-missing-colors: "%prefix%<red>Error: Configuración 'menus.colors' no encontrada en menus.yml</red>"
+  config-missing-nickcolors: "%prefix%<red>Error interno: No se encontró la configuración de nicks.</red>"
+  customcommand-no-messages: "%prefix%<red>Error: El comando no tiene mensajes configurados.</red>"
+
+custom-commands:
+  no-permission: "%prefix%<red>⚠ No tienes permiso para usar este comando.</red>"
+
+join:
+  enabled: false
+
+  head-enabled: false
+
+  ranks:
+    - permission: "nchat.join.legendary"
+      broadcast-lines:
+        - "<green>[+]</green> <gradient:#FFD700:#FF8C00><bold>⛰ LEGENDARY</bold></gradient> <white>¡%player_name% se conectó!</white>"
+      private-lines:
+        - "&8&m---------------------------------------"
+        - " <b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+        - ""
+        - "  &fBienvenido de nuevo, <gradient:#FFD700:#FF8C00><bold>LEGENDARY</bold></gradient> <aqua>%player_name%</aqua>!"
+        - ""
+        - "  <yellow>✿</yellow> &fWeb: <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para ir a la web'><white>www.borkland.com</white></hover></click>"
+        - "  <yellow>✿</yellow> &fDiscord: <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirse al Discord'><blue>discord.gg/borkland</blue></hover></click>"
+        - "&8&m---------------------------------------"
+
+    - permission: "nchat.join.epic"
+      broadcast-lines:
+        - "<green>[+]</green> <gradient:#8B00FF:#FF00FF><bold>⚡ EPIC</bold></gradient> <white>¡%player_name% se conectó!</white>"
+      private-lines:
+        - "&8&m---------------------------------------"
+        - " <b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+        - ""
+        - "  &fBienvenido de nuevo, <gradient:#8B00FF:#FF00FF><bold>EPIC</bold></gradient> <aqua>%player_name%</aqua>!"
+        - ""
+        - "  <yellow>✿</yellow> &fWeb: <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para ir a la web'><white>www.borkland.com</white></hover></click>"
+        - "  <yellow>✿</yellow> &fDiscord: <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirse al Discord'><blue>discord.gg/borkland</blue></hover></click>"
+        - "&8&m---------------------------------------"
+
+    - permission: "nchat.join.mvp"
+      broadcast-lines:
+        - "<green>[+]</green> <gradient:#00BFFF:#1E90FF><bold>🏆 MVP</bold></gradient> <white>¡%player_name% se conectó!</white>"
+      private-lines:
+        - "&8&m---------------------------------------"
+        - " <b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+        - ""
+        - "  &fBienvenido de nuevo, <gradient:#00BFFF:#1E90FF><bold>MVP</bold></gradient> <aqua>%player_name%</aqua>!"
+        - ""
+        - "  <yellow>✿</yellow> &fWeb: <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para ir a la web'><white>www.borkland.com</white></hover></click>"
+        - "  <yellow>✿</yellow> &fDiscord: <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirse al Discord'><blue>discord.gg/borkland</blue></hover></click>"
+        - "&8&m---------------------------------------"
+
+    - permission: "nchat.join.vip"
+      broadcast-lines:
+        - "<green>[+]</green> <gradient:#FFD700:#FFA500><bold>★ VIP</bold></gradient> <white>¡%player_name% se conectó!</white>"
+      private-lines:
+        - "&8&m---------------------------------------"
+        - " <b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+        - ""
+        - "  &fBienvenido de nuevo, <gradient:#FFD700:#FFA500><bold>VIP</bold></gradient> <aqua>%player_name%</aqua>!"
+        - ""
+        - "  <yellow>✿</yellow> &fWeb: <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para ir a la web'><white>www.borkland.com</white></hover></click>"
+        - "  <yellow>✿</yellow> &fDiscord: <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirse al Discord'><blue>discord.gg/borkland</blue></hover></click>"
+        - "&8&m---------------------------------------"
+
+
+  default-broadcast-lines:
+    - "<green>[+]</green> <white>¡%player_name% se conectó!</white>"
+
+  default-private-lines:
+    - "&8&m---------------------------------------"
+    - " <b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+    - ""
+    - "  &fBienvenido de nuevo, <aqua>%player_name%</aqua>!"
+    - ""
+    - "  <yellow>✿</yellow> &fWeb: <click:open_url:'https://www.borkland.com'><hover:show_text:'<gray>Click para ir a la web'><white>www.borkland.com</white></hover></click>"
+    - "  <yellow>✿</yellow> &fDiscord: <click:open_url:'https://discord.gg/borkland'><hover:show_text:'<blue>Click para unirse al Discord'><blue>discord.gg/borkland</blue></hover></click>"
+    - "&8&m---------------------------------------"
+
+  visuals:
+    title:
+      enabled: false
+      text: "<b><gradient:#FFF023:#FFBA00>BORKLAND</gradient></b> <b><gradient:#E3E3E3:#D4C78D>NETWORK</gradient></b>"
+      fade-in: 10
+      stay: 60
+      fade-out: 10
+
+    subtitle:
+      text: "<gray>Disfruta de tu estancia, %player_name%</gray>"
+
+    actionbar:
+      enabled: false
+      text: "<yellow>¡Has entrado al lobby principal!</yellow>"
+
+    sound:
+      enabled: false
+      type: "BLOCK_IRON_TRAPDOOR_OPEN"
+      volume: 1.0
+      pitch: 1.0
+
+    particle:
+      enabled: false
+      type: "heart"
+      count: 10
+
+quit:
+  enabled: false
+
+  ranks:
+    - permission: "nchat.quit.legendary"
+      message: "<red>[-]</red> <gradient:#FFD700:#FF8C00><bold>⛰ LEGENDARY</bold></gradient> <white>¡%player_name% se desconectó!</white>"
+
+    - permission: "nchat.quit.epic"
+      message: "<red>[-]</red> <gradient:#8B00FF:#FF00FF><bold>⚡ EPIC</bold></gradient> <white>¡%player_name% se desconectó!</white>"
+
+    - permission: "nchat.quit.mvp"
+      message: "<red>[-]</red> <gradient:#00BFFF:#1E90FF><bold>🏆 MVP</bold></gradient> <white>¡%player_name% se desconectó!</white>"
+
+    - permission: "nchat.quit.vip"
+      message: "<red>[-]</red> <gradient:#FFD700:#FFA500><bold>★ VIP</bold></gradient> <white>¡%player_name% se desconectó!</white>"
+
+  default-message: "<red>[-]</red> <white>¡%player_name% se desconectó!</white>"

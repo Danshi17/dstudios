@@ -1,0 +1,1566 @@
+settings:
+  save-interval: 300
+
+  # (YAML, JSON)
+  storage-type: YAML
+
+  # (DECENT/DecentHolograms, FANCY, NONE)
+  hologram-provider: FANCY
+
+  contested-capture-enabled: true
+
+  particle-interval: 10
+
+  selection-preview:
+    enabled: true
+    particle: HAPPY_VILLAGER  # HAPPY_VILLAGER
+    color: "#FFAA00"
+    size: 1.0
+    step: 1.0
+    debug: false
+
+  debug: false
+
+zone-restrictions:
+  blocked-commands:
+    enabled: true
+    message: "&cNo puedes usar ese comando dentro de la zona de captura!"
+    commands:
+      - "tp"
+      - "tpa"
+      - "tpaccept"
+      - "tphere"
+      - "spawn"
+      - "warp"
+      - "home"
+      - "gamemode"
+      - "gm"
+      - "fly"
+      - "god"
+      - "vanish"
+      - "v"
+      - "heal"
+      - "feed"
+      - "enderchest"
+      - "ec"
+      - "kit"
+
+  disable-fly: true
+
+  disable-godmode: true
+
+menu-feedback:
+  click-sound:
+    enabled: true
+    name: "UI_BUTTON_CLICK"
+    volume: 1.0
+    pitch: 1.0
+
+  enter-edit:
+    enabled: true
+    name: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.0
+
+  exit-edit:
+    enabled: true
+    name: "BLOCK_ANVIL_LAND"
+    volume: 1.0
+    pitch: 0.8
+
+  chat-input:
+    enabled: true
+    sound:
+      enabled: true
+      name: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      volume: 1.0
+      pitch: 1.2
+    title: "&e&l✎ MODO CHAT"
+    subtitle: "&7Editando: &e%koth%"
+    actionbar: "&aEscribe el valor en el chat &7('cancelar' para salir)"
+    title-times:
+      fade-in: 10
+      stay: 40
+      fade-out: 10
+
+enter-zone-effects:
+  enabled: true
+  title: "&6&l%koth%"
+  subtitle: "&e¡Entraste a la zona de captura!"
+  actionbar: "&aCaptura este punto para ganar recompensas"
+  title-times:
+    fade-in: 10   # En ticks (20 ticks = 1 segundo)
+    stay: 40      # En ticks
+    fade-out: 10  # En ticks
+  sound:
+    enabled: true
+    name: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 1.0
+    pitch: 1.0
+
+leave-zone-effects:
+  enabled: true
+  title: "&c&lSALISTE"
+  subtitle: "&7Has salido de la zona de %koth%"
+  actionbar: "&c¡Regresa para continuar la captura!"
+  title-times:
+    fade-in: 10
+    stay: 40
+    fade-out: 10
+  sound:
+    enabled: true
+    name: "BLOCK_NOTE_BLOCK_BASS"
+    volume: 1.0
+    pitch: 0.5
+
+capture-effects:
+  enabled: true
+  title: "&6&lKOTH CAPTURADO"
+  subtitle: "&e%player% ha ganado el KOTH %koth%"
+  actionbar: "&a¡Felicitaciones al ganador!"
+  title-times:
+    fade-in: 10
+    stay: 60
+    fade-out: 10
+  sound:
+    enabled: true
+    name: "UI_TOAST_CHALLENGE_COMPLETE"
+    volume: 1.0
+    pitch: 1.0
+
+# Se dispara cuando el KOTH llega a su "max-active-time" sin que nadie lo capture.
+# Placeholders disponibles: %koth% %time%
+timeout-effects:
+  enabled: true
+  title: "&c&lKOTH FINALIZADO"
+  subtitle: "&e%koth% no fue capturado a tiempo"
+  actionbar: "&cEl KOTH ha finalizado sin ganador"
+  title-times:
+    fade-in: 10
+    stay: 60
+    fade-out: 10
+  sound:
+    enabled: true
+    name: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 1.0
+
+# Placeholders: %koth% %status% %capturing% %capturing_gang% %progress% %percentage%
+#               %capture_time% %required_players% %remaining% %time_formatted% %players_in_zone%
+koth-scoreboard:
+  enabled: true
+  title: "<gradient:gold:yellow><b>⚔ KOTH ACTIVO ⚔</b></gradient>"
+  lines:
+    - ""
+    - "<gray>Evento: <white>%koth%"
+    - "<gray>Estado: %status%"
+    - ""
+    - "<gray>Capturando: %capturing%"
+    - "<gray>Gang: <white>%capturing_gang%"
+    - "<gray>Progreso: <gold>%percentage%%</gold>"
+    - "<gray>Tiempo restante: <yellow>%time_formatted%</yellow>"
+    - ""
+    - "<gray>En zona: <white>%players_in_zone%"
+    - "<gray>Requeridos: <white>%required_players%"
+    - ""
+
+messages:
+  prefix: "&8[&6KOTH&8] &r"
+
+  player-enter-zone: "&a%player% &aestá capturando el KOTH &e%koth%"
+  player-leave-zone: "&a%player% &cestá dejando de capturar el KOTH &e%koth%"
+  player-captured: "&a%player% &eha capturado el KOTH &6%koth%&e!"
+
+  koth-created: "&aKOTH &6%koth% &acreado exitosamente!"
+  koth-deleted: "&cKOTH &6%koth% &celiminado!"
+  koth-started: "&eEl KOTH &6%koth% &eha iniciado!"
+  koth-ended: "&eEl KOTH &6%koth% &eha finalizado!"
+
+  no-permission: "&cNo tienes permisos para ejecutar este comando."
+  koth-not-found: "&cKOTH no encontrado!"
+  koth-already-exists: "&cEse KOTH ya existe!"
+  invalid-usage: "&cUso incorrecto! Usa: &e%usage%"
+  select-pos1: "&aClick derecho para seleccionar la posición 1!"
+  select-pos2: "&aClick derecho para seleccionar la posición 2!"
+  pos1-selected: "&aPosición 1 seleccionada: &e%location%"
+  pos2-selected: "&aPosición 2 seleccionada: &e%location%"
+  positions-selected: "&aAmbas posiciones seleccionadas! Escribe el nombre del KOTH en el yunque."
+
+  reposition-select-pos1: "&aClick derecho para seleccionar la NUEVA posición 1!"
+  reposition-select-pos2: "&aClick derecho para seleccionar la NUEVA posición 2!"
+  reposition-pos1-selected: "&aNueva posición 1 seleccionada: &e%location%"
+  reposition-pos2-selected: "&aNueva posición 2 seleccionada: &e%location%"
+  koth-repositioned: "&aEl KOTH &6%koth% &aha sido reposicionado exitosamente!"
+
+  # Placeholders: %koth% %time% %minutes% %capture_time%
+  broadcast-starting:
+    - ""
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&6&lKOTH &e%koth% &6&lINICIANDO"
+    - ""
+    - "&fEl KOTH comenzará en &e%time%"
+    - "&fCaptura: &a%capture_time% segundos"
+    - "&fRecompensa: &6¡Grandes premios!"
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+
+  broadcast-active:
+    - ""
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&6&lKOTH &e%koth% &a&lACTIVO"
+    - ""
+    - "&f¡El KOTH ha comenzado!"
+    - "&fCaptura: &a%capture_time% segundos"
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+
+  broadcast-captured:
+    - ""
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&6&lKOTH CAPTURADO"
+    - ""
+    - "&fGanador: &a%player%"
+    - "&fKOTH: &e%koth%"
+    - "&fTiempo: &6%time%"
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+
+  broadcast-timeout:
+    - ""
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&6&lKOTH &e%koth% &c&lFINALIZADO"
+    - ""
+    - "&fSe agotó el tiempo máximo del KOTH"
+    - "&f(&c%time%&f) sin que nadie lo capturara."
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+
+clans:
+  redirect-rewards-to-leader: true
+  no-clan-placeholder: "&7Sin clan"
+
+# Base de datos de estadísticas de capturas (se guarda en stats.yml).
+# Registra siempre las capturas por jugador y por clan (si UltimateClans está activo),
+# pero 'mode' decide qué se muestra en el placeholder %nkoths_kothscaptured_<posicion>%.
+koth-stats:
+  enabled: true
+  # PLAYERS = el placeholder muestra el jugador con más KOTHs capturados
+  # CLANS   = el placeholder muestra el clan (de UltimateClans) con más KOTHs capturados
+  mode: PLAYERS
+  # Placeholders disponibles: %player% %captures%
+  format-player: "&e%player% &7- &6%captures% capturas"
+  # Placeholders disponibles: %clan% %captures%
+  format-clan: "&e%clan% &7- &6%captures% capturas"
+  # Se muestra cuando no existe esa posición en el top (ej: %nkoths_kothscaptured_5% sin datos suficientes)
+  no-data-placeholder: "&7N/A"
+
+menu:
+  title: "              &8&nKOTH MENU"
+  size: 54
+
+  items:
+    filler:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+
+    koth-active:
+      material: hdb-106739
+      name: "%koth%"
+      lore:
+        - "&7Estado: &aActivo"
+        - "&7Capturando: &e%capturing%"
+        - "&7Progreso: &6%progress%%"
+        - ""
+        - "&7Tiempo de captura: &e%capture_time%s"
+        - "&7Jugadores requeridos: &e%required_players%"
+        - ""
+        - "&eClick para ver detalles"
+
+    koth-inactive:
+      material: hdb-106750
+      name: "&c&l%koth%"
+      lore:
+        - "&7Estado: &cInactivo"
+        - ""
+        - "&7Tiempo de captura: &e%capture_time%s"
+        - "&7Jugadores requeridos: &e%required_players%"
+        - "&7Próxima activación: &e%next_activation%"
+        - ""
+        - "&eClick para ver detalles"
+
+    close:
+      material: BOOK
+      name: "&c&lCerrar"
+      slot: 49
+
+edit-menu:
+  main:
+    title: "&8&lEditar KOTH: &e%koth%"
+    size: 54
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,28,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,50,51,52]
+
+      name:
+        slot: 15
+        material: NAME_TAG
+        name: "&e&lEditar Nombre"
+        lore:
+          - "&7Nombre actual: &f%koth%"
+          - ""
+          - "&aClick para cambiar el nombre"
+
+      # NUEVO: habilitar/pausar el KOTH sin borrarlo
+      toggle-enabled:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lKOTH Habilitado"
+        lore:
+          - "&7Estado: %koth_enabled_status%"
+          - "&7Si está pausado, el KOTH no se"
+          - "&7activará por horario"
+          - "&7(igual se puede iniciar manualmente)"
+          - ""
+          - "&aClick para habilitar/pausar"
+
+      required-players:
+        slot: 11
+        material: PLAYER_HEAD
+        name: "&e&lJugadores Requeridos"
+        lore:
+          - "&7Actual: &f%required_players%"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+
+      capture-time:
+        slot: 12
+        material: EXPERIENCE_BOTTLE
+        name: "&e&lTiempo de Captura"
+        lore:
+          - "&7Actual: &f%capture_time%s"
+          - ""
+          - "&aClick izquierdo: &f+30s"
+          - "&cClick derecho: &f-30s"
+          - "&eShift + izquierdo: &f+300s"
+          - "&eShift + derecho: &f-300s"
+          - "&bDrop (Q): &fEscribir valor exacto"
+
+      max-active-time:
+        slot: 13
+        material: TARGET
+        name: "&e&lTiempo Máximo Activo"
+        lore:
+          - "&7Actual: &f%max_active_time%s"
+          - "&7(0 = sin límite)"
+          - ""
+          - "&aClick izquierdo: &f+60s"
+          - "&cClick derecho: &f-60s"
+          - "&eShift + izquierdo: &f+600s"
+          - "&eShift + derecho: &f-600s"
+          - "&bDrop (Q): &fEscribir valor exacto"
+
+      toggle-active:
+        slot: 14
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lEstado del KOTH"
+        lore:
+          - "&7Actual: %active_status%"
+          - ""
+          - "&aClick para iniciar/detener"
+
+      contested:
+        slot: 16
+        material: IRON_SWORD
+        name: "&e&lCaptura Disputada"
+        lore:
+          - "&7Estado: %contested_status%"
+          - "&7Si está activado, con 2+ jugadores"
+          - "&7dentro de la zona nadie captura"
+          - ""
+          - "&aClick para cambiar"
+          - "&7(Global → Activado → Desactivado)"
+
+      warnings:
+        slot: 19
+        material: BELL
+        name: "&e&lAvisos Previos"
+        lore:
+          - "&7Estado: %warnings_status%"
+          - "&7Avisos: %warnings_list%"
+          - ""
+          - "&aClick para editar los avisos"
+
+      score:
+        slot: 22
+        material: NETHER_STAR
+        name: "&d&lSistema de Puntos"
+        lore:
+          - "&7Modo: &f%capture_mode%"
+          - "&7Objetivo: &f%target_score%"
+          - "&7Puntos/seg: &f%points_per_second%"
+          - ""
+          - "&aClick para configurar el sistema de puntos"
+
+      schedule:
+        slot: 53
+        material: CLOCK
+        name: "&e&lHorarios Programados"
+        lore:
+          - "&7Horarios configurados: &f%schedule_count%"
+          - "&7Acepta &fHH:MM &7y &fDIA HH:MM"
+          - ""
+          - "&aClick para editar horarios"
+
+      rewards:
+        slot: 20
+        material: CHEST
+        name: "&e&lRecompensas"
+        lore:
+          - "&7Recompensas configuradas: &f%rewards_count%"
+          - ""
+          - "&aClick para editar recompensas"
+
+      hologram:
+        slot: 21
+        material: END_CRYSTAL
+        name: "&e&lHolograma"
+        lore:
+          - "&7Estado: %hologram_status%"
+          - "&7Líneas: &f%hologram_lines_count%"
+          - ""
+          - "&aClick para editar el holograma"
+
+      worldguard:
+        slot: 23
+        material: SHIELD
+        name: "&e&lWorldGuard"
+        lore:
+          - "&7Estado: %worldguard_status%"
+          - ""
+          - "&aClick para editar WorldGuard"
+
+      particles:
+        slot: 24
+        material: FIREWORK_STAR
+        name: "&e&lPartículas"
+        lore:
+          - "&7Estado: %particles_status%"
+          - "&7Tipo: &f%particle_type%"
+          - "&7Intervalo: &f%particle_interval%"
+          - ""
+          - "&aClick para abrir selector de partículas"
+
+      capture-particles:
+        slot: 31
+        material: TOTEM_OF_UNDYING
+        name: "&d&lPartículas de Captura"
+        lore:
+          - "&7Estado: %capture_particles_status%"
+          - "&7Tipo: &f%capture_particle_type%"
+          - "&7Animación: &fEspiral ascendente"
+          - ""
+          - "&aClick para editar la animación de victoria"
+
+      bossbar:
+        slot: 29
+        material: DRAGON_HEAD
+        name: "&e&lBossBar"
+        lore:
+          - "&7Estado: %bossbar_status%"
+          - "&7Color: &f%bossbar_color%"
+          - ""
+          - "&aClick para editar la BossBar"
+
+      discord:
+        slot: 33
+        material: PAPER
+        name: "&9&lDiscord"
+        lore:
+          - "&7Estado: %discord_status%"
+          - "&7Webhook: %discord_webhook%"
+          - ""
+          - "&aClick para editar Discord"
+
+      capture-sound:
+        slot: 32
+        material: NOTE_BLOCK
+        name: "&e&lSonido de Captura"
+        lore:
+          - "&7Personalizado: %capture_sound_status%"
+          - "&7Sonido: &f%capture_sound_name%"
+          - ""
+          - "&aClick para editar el sonido de captura"
+
+      reposition:
+        slot: 30
+        material: BLAZE_ROD
+        name: "&6&lReposicionar KOTH"
+        lore:
+          - "&7Pos1: &f%koth_pos1%"
+          - "&7Pos2: &f%koth_pos2%"
+          - ""
+          - "&7Te da una varita para seleccionar"
+          - "&7las 2 nuevas posiciones del KOTH"
+          - ""
+          - "&cRequiere que el KOTH esté detenido"
+          - "&aClick para comenzar"
+
+      start-lightning:
+        slot: 25
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lRayo"
+        lore:
+          - "&7Estado: %start_lightning_status%"
+          - "&7Cantidad: &f%lightning_count%"
+          - "&7Dispersión: &f%lightning_spread%"
+          - "&7Al capturar: %lightning_on_capture%"
+          - "&7Al finalizar: %lightning_on_timeout%"
+          - ""
+          - "&aClick para configurar el rayo"
+
+      save:
+        slot: 49
+        material: EMERALD
+        name: "&a&lGuardar y Cerrar"
+        lore:
+          - "&7Los cambios se guardarán"
+          - "&7automáticamente"
+
+  lightning:
+    title: "&8&lRayo: &e%koth%"
+    size: 36
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,13,17,18,19,23,24,25,26,27,28,29,30,32,33,34,35]
+      toggle:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lRayo de Inicio"
+        lore:
+          - "&7Estado: %start_lightning_status%"
+          - "&7Cae un rayo visual (sin daño ni fuego)"
+          - "&7cuando el KOTH se activa"
+          - "&7Impacta a la altura del holograma,"
+          - "&7sobre el primer bloque que encuentre"
+          - ""
+          - "&aClick para activar/desactivar"
+      on-capture:
+        slot: 11
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lRayo al Capturar"
+        lore:
+          - "&7Estado: %lightning_on_capture%"
+          - "&7Cae el rayo cuando alguien gana el KOTH"
+          - ""
+          - "&aClick para activar/desactivar"
+      on-timeout:
+        slot: 12
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lRayo al Finalizar (Timeout)"
+        lore:
+          - "&7Estado: %lightning_on_timeout%"
+          - "&7Cae el rayo si el KOTH termina sin ganador"
+          - ""
+          - "&aClick para activar/desactivar"
+      count:
+        slot: 14
+        material: FIREWORK_STAR
+        name: "&e&lCantidad de Rayos"
+        lore:
+          - "&7Actual: &f%lightning_count%"
+          - "&7Máximo: 50"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&eShift + izquierdo: &f+5"
+          - "&eShift + derecho: &f-5"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      spread:
+        slot: 15
+        material: REDSTONE
+        name: "&e&lRadio de Dispersión"
+        lore:
+          - "&7Actual: &f%lightning_spread%"
+          - "&7(0 = todos en el mismo punto)"
+          - "&7Cada rayo busca su propio suelo"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      sound-toggle:
+        slot: 16
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lSonido del Rayo"
+        lore:
+          - "&7Estado: %lightning_sound_status%"
+          - "&7Sonido extra además del rayo"
+          - ""
+          - "&aClick para activar/desactivar"
+      sound-name:
+        slot: 20
+        material: NOTE_BLOCK
+        name: "&e&lSonido"
+        lore:
+          - "&7Actual: &f%lightning_sound_name%"
+          - "&7Ejemplo: ENTITY_LIGHTNING_BOLT_THUNDER,"
+          - "&7ENTITY_ENDER_DRAGON_GROWL"
+          - ""
+          - "&aClick para cambiar el sonido"
+      sound-volume:
+        slot: 21
+        material: JUKEBOX
+        name: "&e&lVolumen"
+        lore:
+          - "&7Actual: &f%lightning_sound_volume%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      sound-pitch:
+        slot: 22
+        material: REDSTONE
+        name: "&e&lTono (Pitch)"
+        lore:
+          - "&7Actual: &f%lightning_sound_pitch%"
+          - "&7Rango recomendado: 0.5 - 2.0"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      back:
+        slot: 31
+        material: ARROW
+        name: "&c&lVolver"
+
+  # NUEVO MENÚ: avisos previos (minutos + mensaje + title/subtitle/actionbar)
+  warnings:
+    title: "&8&lAvisos: &e%koth%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44,51]
+      entry:
+        material: CLOCK
+        name: "&e%value%"
+        lore:
+          - "&7Se avisa antes de que inicie el KOTH"
+          - ""
+          - "&7Click derecho para eliminar"
+      toggle:
+        slot: 45
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lAvisos Activos"
+        lore:
+          - "&7Estado: %warnings_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      add:
+        slot: 46
+        material: CLOCK
+        name: "&a&lAgregar Aviso"
+        lore:
+          - "&7Escribe los minutos antes del inicio"
+          - "&7Ejemplo: &e15&7, &e5&7, &e1"
+          - "&7También varios de golpe: &e15,5,1"
+          - ""
+          - "&aClick para agregar"
+      message:
+        slot: 47
+        material: PAPER
+        name: "&e&lMensaje del Aviso"
+        lore:
+          - "&7Líneas: &f%warning_message_count%"
+          - "&7Si está vacío se usa el mensaje global"
+          - "&7'broadcast-starting' del config.yml"
+          - "&7Placeholders: %koth%, %time%, %minutes%"
+          - ""
+          - "&aClick izquierdo: &fAgregar línea"
+          - "&cClick derecho: &fLimpiar mensaje"
+      title-text:
+        slot: 48
+        material: NAME_TAG
+        name: "&e&lTitle"
+        lore:
+          - "&7Actual: &f%warning_title%"
+          - "&7Placeholders: %koth%, %time%, %minutes%"
+          - ""
+          - "&aClick para cambiar"
+          - "&7(escribe 'ninguno' para quitarlo)"
+      subtitle:
+        slot: 49
+        material: NAME_TAG
+        name: "&e&lSubtitle"
+        lore:
+          - "&7Actual: &f%warning_subtitle%"
+          - "&7Placeholders: %koth%, %time%, %minutes%"
+          - ""
+          - "&aClick para cambiar"
+          - "&7(escribe 'ninguno' para quitarlo)"
+      actionbar:
+        slot: 50
+        material: NAME_TAG
+        name: "&e&lActionBar"
+        lore:
+          - "&7Actual: &f%warning_actionbar%"
+          - "&7Placeholders: %koth%, %time%, %minutes%"
+          - ""
+          - "&aClick para cambiar"
+          - "&7(escribe 'ninguno' para quitarla)"
+      clear:
+        slot: 52
+        material: BARRIER
+        name: "&c&lLimpiar Avisos"
+        lore:
+          - "&7Eliminar todos los minutos de aviso"
+      back:
+        slot: 53
+        material: ARROW
+        name: "&c&lVolver"
+
+  score:
+    title: "&8&lPuntos: &e%koth%"
+    size: 27
+    items:
+      filler:
+        material: GRAY_STAINED_GLASS_PANE
+        name: " "
+        slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 23, 24, 25, 26]
+      mode:
+        slot: 10
+        material: NETHER_STAR
+        name: "&e&lModo de Captura"
+        lore:
+          - "&7Actual: &f%capture_mode%"
+          - "&7CLASSIC: primero en llenar la barra"
+          - "&7SCORE: gana quien más puntos acumule"
+          - ""
+          - "&aClick izquierdo: &fSiguiente"
+          - "&cClick derecho: &fAnterior"
+      target-score:
+        slot: 12
+        material: GOLD_INGOT
+        name: "&e&lPuntaje Objetivo"
+        lore:
+          - "&7Actual: &f%target_score%"
+          - "&7(0 = sin límite, gana quien vaya líder al finalizar)"
+          - ""
+          - "&aClick izquierdo: &f+10"
+          - "&cClick derecho: &f-10"
+          - "&eShift + izquierdo: &f+100"
+          - "&eShift + derecho: &f-100"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      points-per-second:
+        slot: 14
+        material: EXPERIENCE_BOTTLE
+        name: "&e&lPuntos por Segundo"
+        lore:
+          - "&7Actual: &f%points_per_second%"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&eShift + izquierdo: &f+5"
+          - "&eShift + derecho: &f-5"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      placement-rewards:
+        slot: 16
+        material: CHEST
+        name: "&e&lRecompensas por Posición"
+        lore:
+          - "&7Configuradas: &f%placement_rewards_count%"
+          - "&7Formato: &fposición:comando"
+          - ""
+          - "&aClick para editar"
+      back:
+        slot: 22
+        material: ARROW
+        name: "&c&lVolver"
+
+  placement-rewards:
+    title: "&8&lRecompensas por Posición: &e%koth%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 44
+    items:
+      filler:
+        material: GRAY_STAINED_GLASS_PANE
+        name: " "
+        slots: [45, 46, 47, 51, 52, 53]
+      entry:
+        material: PAPER
+        name: "&e%value%"
+        lore:
+          - "&7Click derecho para eliminar"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Recompensa"
+        lore:
+          - "&7Escribe en el chat: &eposición:comando"
+          - "&7Ejemplo: &e1:eco give %player% 5000"
+          - ""
+          - "&aClick para agregar"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todas"
+        lore:
+          - "&7Eliminar todas las recompensas por posición"
+
+  schedule:
+    title: "&8&lHorarios: &e%koth%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 44
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,45,46,47,51,52,53]
+      entry:
+        material: CLOCK
+        name: "&e%value%"
+        lore:
+          - "&7Click derecho para eliminar"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Horario"
+        lore:
+          - "&7Escribe en el chat el horario"
+          - "&7Formato: &eHH:MM &7(todos los días)"
+          - "&7o &eDIA HH:MM &7para días concretos"
+          - ""
+          - "&7Ejemplos:"
+          - "&e14:30"
+          - "&eLUNES 20:00"
+          - "&eLUNES,VIERNES 20:00"
+          - "&eFINDE 18:30 &7(sábado y domingo)"
+          - "&eENTRESEMANA 18:30 &7(lunes a viernes)"
+          - ""
+          - "&aClick para agregar"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todos"
+        lore:
+          - "&7Eliminar todos los horarios"
+
+  rewards:
+    title: "&8&lRecompensas: &e%koth%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 44
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,45,46,47,51,52,53]
+      entry:
+        material: PAPER
+        name: "&e&lRecompensa #%index%"
+        lore:
+          - "&7%value%"
+          - ""
+          - "&7Click derecho para eliminar"
+      add:
+        slot: 48
+        material: LIME_DYE
+        name: "&a&lAgregar Recompensa"
+        lore:
+          - "&7Escribe en el chat el comando"
+          - "&7Ejemplo: &eeco give %player% 1000"
+          - ""
+          - "&aClick para agregar"
+      back:
+        slot: 49
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+      clear:
+        slot: 50
+        material: BARRIER
+        name: "&c&lLimpiar Todas"
+        lore:
+          - "&7Eliminar todas las recompensas"
+
+  hologram:
+    title: "&8&lHolograma: &e%koth%"
+    size: 54
+    entries-start-slot: 9
+    entries-end-slot: 35
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,50,44,45,46,47,51,52,53]
+      toggle:
+        slot: 45
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lHolograma Activo"
+        lore:
+          - "&7Estado: %hologram_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      offset-x:
+        slot: 51
+        material: REDSTONE
+        name: "&e&lOffset X"
+        lore:
+          - "&7Actual: &f%hologram_offset_x%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      offset-y:
+        slot: 52
+        material: REDSTONE
+        name: "&e&lOffset Y"
+        lore:
+          - "&7Actual: &f%hologram_offset_y%"
+          - "&7El rayo también usa esta altura"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      offset-z:
+        slot: 53
+        material: REDSTONE
+        name: "&e&lOffset Z"
+        lore:
+          - "&7Actual: &f%hologram_offset_z%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      background:
+        slot: 44
+        material: WHITE_STAINED_GLASS_PANE
+        name: "&e&lFondo del Holograma"
+        lore:
+          - "&7Actual: &f%hologram_background%"
+          - ""
+          - "&7DEFAULT, TRANSPARENT,"
+          - "&7#RRGGBB o #AARRGGBB"
+          - ""
+          - "&aClick para escribir un valor nuevo"
+      toggle-seethrough:
+        slot: 46
+        material-enabled: GLASS
+        material-disabled: GRAY_STAINED_GLASS
+        name: "&e&lVer a Través de Jugadores"
+        lore:
+          - "&7Estado: %hologram_seethrough_status%"
+          - "&7Evita que el holograma se oculte"
+          - "&7si hay jugadores enfrente"
+          - ""
+          - "&aClick para activar/desactivar"
+      add:
+        slot: 47
+        material: LIME_DYE
+        name: "&a&lAgregar Línea"
+        lore:
+          - "&7Escribe en el chat la línea"
+          - "&7Puedes usar códigos de color (&a, &c, etc.)"
+          - ""
+          - "&aClick para agregar"
+      back:
+        slot: 48
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+      clear:
+        slot: 49
+        material: BARRIER
+        name: "&c&lLimpiar Todas"
+        lore:
+          - "&7Eliminar todas las líneas"
+
+  worldguard:
+    title: "&8&lWorldGuard: &e%koth%"
+    size: 27
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,10,12,14,16,17,18,19,20,21,23,24,25,26]
+      toggle-enabled:
+        slot: 11
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lWorldGuard Activo"
+        lore:
+          - "&7Estado: %worldguard_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      toggle-subregion:
+        slot: 13
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lCrear Sub-Región"
+        lore:
+          - "&7Estado: %subregion_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      suffix:
+        slot: 15
+        material: NAME_TAG
+        name: "&e&lSufijo de Región"
+        lore:
+          - "&7Actual: &f%subregion_suffix%"
+          - ""
+          - "&aClick para cambiar"
+      back:
+        slot: 22
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+  particles:
+    title: "&8&lPartículas: &e%koth%"
+    size: 36
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,33,34,35]
+      toggle-enabled:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lPartículas Activas"
+        lore:
+          - "&7Estado: %particles_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      interval:
+        slot: 11
+        material: CLOCK
+        name: "&e&lIntervalo (ticks)"
+        lore:
+          - "&7Actual: &f%particle_interval%"
+          - "&7(0 = usar el global del config.yml)"
+          - "&720 ticks = 1 segundo"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&eShift + izquierdo: &f+5"
+          - "&eShift + derecho: &f-5"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      type:
+        slot: 12
+        material: BLAZE_POWDER
+        name: "&e&lTipo de Partícula"
+        lore:
+          - "&7Actual: &f%particle_type%"
+          - ""
+          - "&aClick para abrir el selector"
+      offset-y:
+        slot: 13
+        material: REDSTONE
+        name: "&e&lOffset Y"
+        lore:
+          - "&7Actual: &f%particle_offset_y%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      spacing:
+        slot: 14
+        material: REDSTONE
+        name: "&e&lEspaciado"
+        lore:
+          - "&7Actual: &f%particle_spacing%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      count:
+        slot: 16
+        material: FIREWORK_STAR
+        name: "&e&lCantidad"
+        lore:
+          - "&7Actual: &f%particle_count%"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&eShift + izquierdo: &f+10"
+          - "&eShift + derecho: &f-10"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      back:
+        slot: 31
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+  capture-particles:
+    title: "&8&lPartículas de Captura: &e%koth%"
+    size: 36
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,17,18,19,21,22,23,24,25,26,27,28,29,30,32,33,34,35]
+      toggle-enabled:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lPartículas de Captura Activas"
+        lore:
+          - "&7Estado: %capture_particles_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      type:
+        slot: 11
+        material: BLAZE_POWDER
+        name: "&e&lTipo de Partícula"
+        lore:
+          - "&7Actual: &f%capture_particle_type%"
+          - ""
+          - "&aClick para abrir el selector"
+      radius:
+        slot: 12
+        material: REDSTONE
+        name: "&e&lRadio de la Espiral"
+        lore:
+          - "&7Actual: &f%capture_particle_radius%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      height:
+        slot: 13
+        material: REDSTONE
+        name: "&e&lAltura de la Espiral"
+        lore:
+          - "&7Actual: &f%capture_particle_height%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&eShift + izquierdo: &f+1.0"
+          - "&eShift + derecho: &f-1.0"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      loops:
+        slot: 14
+        material: FIREWORK_STAR
+        name: "&e&lVueltas (Loops)"
+        lore:
+          - "&7Actual: &f%capture_particle_loops%"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      points:
+        slot: 15
+        material: FIREWORK_STAR
+        name: "&e&lPuntos por Vuelta"
+        lore:
+          - "&7Actual: &f%capture_particle_points%"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&eShift + izquierdo: &f+5"
+          - "&eShift + derecho: &f-5"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      interval:
+        slot: 16
+        material: CLOCK
+        name: "&e&lIntervalo (ticks)"
+        lore:
+          - "&7Actual: &f%capture_particle_interval%"
+          - "&7(20 ticks = 1 segundo)"
+          - ""
+          - "&aClick izquierdo: &f+5"
+          - "&cClick derecho: &f-5"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      repetitions:
+        slot: 20
+        material: NAUTILUS_SHELL
+        name: "&e&lRepeticiones"
+        lore:
+          - "&7Actual: &f%capture_particle_repetitions%"
+          - "&7Veces que se repite la espiral"
+          - ""
+          - "&aClick izquierdo: &f+1"
+          - "&cClick derecho: &f-1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      back:
+        slot: 31
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+  particle-list:
+    title: "&8&lSeleccionar Partícula"
+    size: 54
+    items-per-page: 28
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+      particle-item:
+        material: FIREWORK_STAR
+        name: "&e%particle%"
+        lore:
+          - "&7Partícula: &f%particle%"
+          - ""
+          - "&aClick para seleccionar"
+      page-indicator:
+        material: PAPER
+        name: "&fPágina &e%page% &f/ &e%total%"
+      next-button:
+        material: ARROW
+        name: "&e&lPágina Siguiente ▶"
+        lore:
+          - "&7Ir a la página &e%next_page%"
+      prev-button:
+        material: ARROW
+        name: "&e&l◀ Página Anterior"
+        lore:
+          - "&7Ir a la página &e%prev_page%"
+      back-button:
+        material: ARROW
+        name: "&c&lVolver"
+        lore:
+          - "&7Regresa al menú de partículas"
+
+  bossbar:
+    title: "&8&lBossBar: &e%koth%"
+    size: 27
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,11,13,15,17,18,19,20,21,23,24,25,26]
+      toggle:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lBossBar Activa"
+        lore:
+          - "&7Estado: %bossbar_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      title:
+        slot: 12
+        material: NAME_TAG
+        name: "&e&lTítulo de la BossBar"
+        lore:
+          - "&7Placeholders: %koth%, %capturing%,"
+          - "&7%progress%, %time_left%, %capture_time%"
+          - ""
+          - "&aClick para cambiar"
+      color:
+        slot: 14
+        material: RED_DYE
+        name: "&e&lColor de la BossBar"
+        lore:
+          - "&7Actual: &f%bossbar_color%"
+          - "&7PINK, BLUE, RED, GREEN,"
+          - "&7YELLOW, PURPLE, WHITE"
+          - ""
+          - "&aClick izquierdo: &fSiguiente"
+          - "&cClick derecho: &fAnterior"
+      style:
+        slot: 16
+        material: BLAZE_ROD
+        name: "&e&lEstilo de la BossBar"
+        lore:
+          - "&7Actual: &f%bossbar_style%"
+          - "&7SOLID, SEGMENTED_6, SEGMENTED_10,"
+          - "&7SEGMENTED_12, SEGMENTED_20"
+          - ""
+          - "&aClick izquierdo: &fSiguiente"
+          - "&cClick derecho: &fAnterior"
+      back:
+        slot: 22
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+  discord:
+    title: "&8&lDiscord: &e%koth%"
+    size: 27
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,11,16,17,18,19,20,21,23,24,25,26]
+      toggle:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lDiscord Activo"
+        lore:
+          - "&7Estado: %discord_status%"
+          - ""
+          - "&aClick para activar/desactivar"
+      webhook:
+        slot: 12
+        material: PAPER
+        name: "&e&lWebhook URL"
+        lore:
+          - "&7Estado: %discord_webhook%"
+          - ""
+          - "&aClick para cambiar la URL"
+      notify-start:
+        slot: 13
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lNotificar Inicio"
+        lore:
+          - "&7Estado: %discord_notify_start%"
+          - ""
+          - "&aClick para activar/desactivar"
+      notify-capture:
+        slot: 14
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lNotificar Captura"
+        lore:
+          - "&7Estado: %discord_notify_capture%"
+          - ""
+          - "&aClick para activar/desactivar"
+      notify-timeout:
+        slot: 15
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lNotificar Timeout"
+        lore:
+          - "&7Estado: %discord_notify_timeout%"
+          - ""
+          - "&aClick para activar/desactivar"
+      back:
+        slot: 22
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+  capture-sound:
+    title: "&8&lSonido de Captura: &e%koth%"
+    size: 27
+    items:
+      filler:
+        material: BLACK_STAINED_GLASS_PANE
+        name: " "
+        slots: [0,1,2,3,4,5,6,7,8,9,11,13,15,17,18,19,20,21,23,24,25,26]
+      toggle:
+        slot: 10
+        material-enabled: LIME_DYE
+        material-disabled: GRAY_DYE
+        name: "&e&lSonido Personalizado"
+        lore:
+          - "&7Estado: %capture_sound_status%"
+          - "&7Si está desactivado, se usa el sonido"
+          - "&7global de 'capture-effects' en config.yml"
+          - ""
+          - "&aClick para activar/desactivar"
+      sound:
+        slot: 12
+        material: NOTE_BLOCK
+        name: "&e&lSonido"
+        lore:
+          - "&7Actual: &f%capture_sound_name%"
+          - "&7Ejemplo: UI_TOAST_CHALLENGE_COMPLETE,"
+          - "&7ENTITY_PLAYER_LEVELUP, ENTITY_ENDER_DRAGON_GROWL"
+          - ""
+          - "&aClick para cambiar el sonido"
+      volume:
+        slot: 14
+        material: JUKEBOX
+        name: "&e&lVolumen"
+        lore:
+          - "&7Actual: &f%capture_sound_volume%"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      pitch:
+        slot: 16
+        material: REDSTONE
+        name: "&e&lTono (Pitch)"
+        lore:
+          - "&7Actual: &f%capture_sound_pitch%"
+          - "&7Rango recomendado: 0.5 - 2.0"
+          - ""
+          - "&aClick izquierdo: &f+0.1"
+          - "&cClick derecho: &f-0.1"
+          - "&bDrop (Q): &fEscribir valor exacto"
+      back:
+        slot: 22
+        material: ARROW
+        name: "&c&lVolver"
+        lore: []
+
+default-koth:
+  capture-time: 300
+  required-players: 1
+
+  # Si está en false, los KOTHs nuevos nacen pausados (no se activan por horario)
+  enabled: true
+
+  # GLOBAL = usar settings.contested-capture-enabled
+  # true / false = forzar el valor para este KOTH
+  contested-capture: GLOBAL
+
+  # Horarios: "HH:MM" para todos los días, o "DIA HH:MM" para días concretos.
+  # Días válidos: LUNES..DOMINGO (o MONDAY..SUNDAY, LUN, MON, etc.)
+  # Atajos: TODOS / DIARIO, FINDE (sáb+dom), ENTRESEMANA (lun-vie)
+  # Se pueden combinar con comas: "LUNES,VIERNES 20:00"
+  schedule:
+    - "12:00"
+    - "18:00"
+    - "00:00"
+
+  # Placeholders: %koth% %time% %minutes% %capture_time%
+  warnings:
+    enabled: true
+    minutes:
+      - 15
+      - 5
+      - 1
+    message: []
+    title: "&6&l%koth%"
+    subtitle: "&eComienza en &f%time%"
+    actionbar: "&7¡Prepárate para la batalla!"
+    title-times:
+      fade-in: 10
+      stay: 40
+      fade-out: 10
+
+  worldguard:
+    enabled: true
+    create-subregion: true
+    subregion-suffix: "_koth"
+    flags:
+      pvp: allow
+      mob-spawning: deny
+      mob-damage: deny
+      creeper-explosion: deny
+      tnt: deny
+
+  rewards:
+    - "give %player% diamond 64"
+    - "eco give %player% 10000"
+    - "lp user %player% permission set some.permission true"
+
+  hologram:
+    enabled: true
+    offset:
+      x: 0.5
+      y: 3.0
+      z: 0.5
+    # DEFAULT (usa el color por defecto de FancyHolograms), TRANSPARENT, "#RRGGBB" o "#AARRGGBB"
+    background: "DEFAULT"
+    # Evita que el holograma desaparezca cuando hay jugadores enfrente (recomendado en true)
+    see-through: true
+    lines:
+      - "%koth%"
+      - ""
+      - "&fEstado: %status%"
+      - "&fCapturando: &e%capturing%"
+      - "&fGang: %capturing_gang%"
+      - "&fProgreso: &6%percentage%%"
+      - ""
+      - "&7Tiempo: %capture_time%s"
+
+  particles:
+    enabled: true
+    type: END_ROD
+    offset-y: 1.5
+    spacing: 1.0
+    count: 1
+    interval: 0
+
+  start-lightning:
+    enabled: true
+    count: 1
+    spread: 0.0
+    on-capture: false
+    on-timeout: false
+    sound:
+      enabled: false
+      name: "ENTITY_LIGHTNING_BOLT_THUNDER"
+      volume: 1.0
+      pitch: 1.0
+
+  capture-particles:
+    enabled: true
+    type: VILLAGER_HAPPY
+    radius: 0.5
+    height: 2.0
+    loops: 3
+    points: 20
+    interval-ticks: 20
+    repetitions: 3
+
+  # Sonido de captura personalizado por KOTH. Si "enabled" está en false,
+  # se usa el sonido global definido en "capture-effects.sound" (arriba en config.yml).
+  capture-sound:
+    enabled: false
+    name: "UI_TOAST_CHALLENGE_COMPLETE"
+    volume: 1.0
+    pitch: 1.0
+
+  bossbar:
+    enabled: true
+    title: "&6&lKOTH &e%koth% &7- &e%seconds_left%s"
+    color: YELLOW
+    style: SOLID
+
+  discord:
+    enabled: false
+    webhook-url: ""
+    notify-start: true
+    notify-capture: true
+    notify-timeout: true
+
+  max-active-time: 3600
+
+  score:
+    mode: "CLASSIC"          # CLASSIC o SCORE
+    target-score: 100        # 0 = sin límite (gana el líder al agotarse max-active-time)
+    points-per-second: 1
+    placement-rewards: []    # ejemplo: ["1:eco give %player% 5000", "2:eco give %player% 2000", "3:eco give %player% 1000"]

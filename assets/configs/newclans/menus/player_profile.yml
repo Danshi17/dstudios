@@ -1,0 +1,32 @@
+id: player_profile
+title: '<dark_gray>Player Profile <gray>»</gray> %target_name%</dark_gray>'
+rows: 5
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+
+  head:
+    slot: 13
+    material: PLAYER_HEAD
+    head-owner: '%target_uuid%'
+    texture: '%member_texture%'
+    name: '<green>%target_name%</green>'
+    lore:
+      - '<gray>Clan: %clan_tag%</gray>'
+      - '<gray>Role: <white>%member_role%</white></gray>'
+      - '<gray>Nickname: <white>%member_nickname%</white></gray>'
+      - '<gray>Kills: <white>%member_kills%</white></gray>'
+      - '<gray>Deaths: <white>%member_deaths%</white></gray>'
+      - '<gray>KDR: <white>%member_kdr%</white></gray>'
+      - '<gray>Souls: <white>%member_souls%</white></gray>'
+      - '<gray>Last seen: <white>%member_last_seen%</white></gray>'
+
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: BACK_HOME

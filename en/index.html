@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dStudios — Our plugins</title>
+<meta name="description" content="Explore the full collection of dStudios plugins for Paper, Spigot, BungeeCord and Velocity: features, commands, permissions and dependencies for every project.">
+<meta property="og:title" content="dStudios — Our plugins">
+<meta property="og:description" content="Explore the full collection of dStudios plugins for Paper, Spigot, BungeeCord and Velocity: features, commands, permissions and dependencies for every project.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<script>try{var t=localStorage.getItem("ds-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="page-home">
+<div id="pageSkeleton" aria-hidden="true"><div class="sk-wrap"><div class="sk-top"><span class="sk-blk sk-logo"></span><span class="sk-blk sk-nav"></span></div><div class="sk-hero"><div class="sk-lines"><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span><span class="sk-blk sk-line"></span></div><div class="sk-tiles"><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span><span class="sk-blk sk-tile"></span></div></div><div class="sk-grid"><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span><span class="sk-blk sk-card"></span></div></div></div>
+<noscript><style>#pageSkeleton{display:none}</style></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="../assets/logo.png" alt="" width="36" height="36">
+      <span class="logo-text">dStudios<span class="logo-sub">Plugins</span></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link active" href="index.html#plugins">Plugins</a>
+      <a class="nav-link" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a><a class="nav-link" href="documentation/index.html">Documentation</a>
+      <div class="lang-menu" id="langMenu"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Language" aria-label="Language"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg><span>🇬🇧 EN</span></button><div class="lang-drop"><a class="lang-opt" href="../index.html" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></a><a class="lang-opt active" href="../en/index.html" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></a><a class="lang-opt" href="../fr/index.html" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></a><a class="lang-opt" href="../zh/index.html" hreflang="zh" lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></a><a class="lang-opt" href="../ko/index.html" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></a><a class="lang-opt" href="../ru/index.html" hreflang="ru" lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></a></div></div>
+      <button class="icon-btn theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-dark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-light"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="hero-left">
+        <p class="hero-kicker">Official plugin collection</p>
+        <h1>Our <span class="hl">plugins</span> documented in detail.</h1>
+        <div class="section-lines" aria-hidden="true"><i style="width:64px;background:#6acbff"></i><i style="width:46px;background:#47c0ff"></i><i style="width:38px;background:#04a6ff"></i><i style="width:30px;background:#0097f0"></i><i style="width:24px;background:#008ae5"></i><i style="width:18px;background:#0081df"></i><i style="width:12px;background:#0078d9"></i></div>
+        <p class="hero-sub">Explore the full collection of dStudios plugins for Paper, Spigot, BungeeCord and Velocity: features, commands, permissions and dependencies for every project.</p>
+        <div class="hero-links"><a class="hero-link hl-github" href="https://github.com/Danshi17" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a></div>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="float-grid">
+<span class="float-tile" style="--accent:#f87171"><img class="float-icon" src="../assets/icons/itemsrpg.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#e879f9"><img class="float-icon" src="../assets/icons/procosmetics.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#fb7185"><img class="float-icon" src="../assets/icons/newpets.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#84cc16"><img class="float-icon" src="../assets/icons/newskills.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#38bdf8"><img class="float-icon" src="../assets/icons/newvaults.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#3b82f6"><img class="float-icon" src="../assets/icons/newreports.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#f59e0b"><img class="float-icon" src="../assets/icons/newpinatas.png" alt="" loading="lazy"></span>
+<span class="float-tile" style="--accent:#f43f5e"><img class="float-icon" src="../assets/icons/newstreams.png" alt="" loading="lazy"></span>
+        </div>
+        <script type="application/json" id="heroPool">[{"i": "../assets/icons/afkzone.png", "a": "#22d3ee"}, {"i": "../assets/icons/antiop.png", "a": "#3b82f6"}, {"i": "../assets/icons/antipendejos.png", "a": "#ef4444"}, {"i": "../assets/icons/blockrewards.png", "a": "#c084fc"}, {"i": "../assets/icons/ecevents.png", "a": "#fb923c"}, {"i": "../assets/icons/epicvouchers.png", "a": "#fbbf24"}, {"i": "../assets/icons/emf.png", "a": "#06b6d4"}, {"i": "../assets/icons/extraregions.png", "a": "#2dd4bf"}, {"i": "../assets/icons/hubcore.png", "a": "#0ea5e9"}, {"i": "../assets/icons/itemsrpg.png", "a": "#f87171"}, {"i": "../assets/icons/lootboxes.png", "a": "#f59e0b"}, {"i": "../assets/icons/nchat.png", "a": "#a78bfa"}, {"i": "../assets/icons/newcasino.png", "a": "#fb7185"}, {"i": "../assets/icons/newchatcolor.png", "a": "#818cf8"}, {"i": "../assets/icons/newclans.png", "a": "#34d399"}, {"i": "../assets/icons/newcombatlog.png", "a": "#ef4444"}, {"i": "../assets/icons/newcosmetics.png", "a": "#f472b6"}, {"i": "../assets/icons/newdtc.png", "a": "#f97316"}, {"i": "../assets/icons/newfriends.png", "a": "#4ade80"}, {"i": "../assets/icons/newglow.png", "a": "#facc15"}, {"i": "../assets/icons/newheads.png", "a": "#a855f7"}, {"i": "../assets/icons/newjobs.png", "a": "#c084fc"}, {"i": "../assets/icons/newkb.png", "a": "#eab308"}, {"i": "../assets/icons/newlogin.png", "a": "#60a5fa"}, {"i": "../assets/icons/newnpcs.png", "a": "#2dd4bf"}, {"i": "../assets/icons/newpets.png", "a": "#fb7185"}, {"i": "../assets/icons/newpinatas.png", "a": "#f59e0b"}, {"i": "../assets/icons/newrankup.png", "a": "#a855f7"}, {"i": "../assets/icons/newreports.png", "a": "#3b82f6"}, {"i": "../assets/icons/newresources.png", "a": "#2dd4bf"}, {"i": "../assets/icons/newskills.png", "a": "#84cc16"}, {"i": "../assets/icons/newstreams.png", "a": "#f43f5e"}, {"i": "../assets/icons/newvaults.png", "a": "#38bdf8"}, {"i": "../assets/icons/nkoths.png", "a": "#fb923c"}, {"i": "../assets/icons/newplaytime.png", "a": "#22d3ee"}, {"i": "../assets/icons/staffmode.png", "a": "#60a5fa"}, {"i": "../assets/icons/playervs.png", "a": "#f97316"}, {"i": "../assets/icons/newbattlepass.png", "a": "#d946ef"}, {"i": "../assets/icons/procosmetics.png", "a": "#e879f9"}, {"i": "../assets/icons/spawnsystem.png", "a": "#14b8a6"}, {"i": "../assets/icons/newautopickup.png", "a": "#94a3b8"}, {"i": "../assets/icons/newsellchests.png", "a": "#94a3b8"}]</script>
+      </div>
+    </div>
+    <div class="stats"><div class="stat"><span class="stat-num" data-count="42">42</span><span class="stat-label">Plugins</span></div><div class="stat"><span class="stat-num" data-count="341">341</span><span class="stat-label">Commands</span></div><div class="stat"><span class="stat-num" data-count="958">958</span><span class="stat-label">Permissions</span></div><div class="stat"><span class="stat-num" data-count="10">10</span><span class="stat-label">Categories</span></div></div>
+  </div>
+</section>
+
+<section class="section plugins-section" id="plugins">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>All plugins</h2>
+      <div class="section-lines center" aria-hidden="true"><i style="width:64px;background:#6acbff"></i><i style="width:46px;background:#47c0ff"></i><i style="width:38px;background:#04a6ff"></i><i style="width:30px;background:#0097f0"></i><i style="width:24px;background:#008ae5"></i><i style="width:18px;background:#0081df"></i><i style="width:12px;background:#0078d9"></i></div>
+      <p>Filter by category or search for anything.</p>
+    </div>
+    <div class="filters" id="filters"><button class="filter-chip active" data-cat="all">All</button>
+<button class="filter-chip" data-cat="utility"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility<span class="chip-count">8</span></button>
+<button class="filter-chip" data-cat="moderation"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderation<span class="chip-count">4</span></button>
+<button class="filter-chip" data-cat="progression"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression<span class="chip-count">6</span></button>
+<button class="filter-chip" data-cat="minigames"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames<span class="chip-count">7</span></button>
+<button class="filter-chip" data-cat="economy"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economy<span class="chip-count">3</span></button>
+<button class="filter-chip" data-cat="world"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> World<span class="chip-count">2</span></button>
+<button class="filter-chip" data-cat="rpg"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG<span class="chip-count">3</span></button>
+<button class="filter-chip" data-cat="chat"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat<span class="chip-count">2</span></button>
+<button class="filter-chip" data-cat="social"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social<span class="chip-count">3</span></button>
+<button class="filter-chip" data-cat="cosmetics"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosmetics<span class="chip-count">4</span></button></div>
+    <div class="grid" id="grid">
+<div class="card reveal" style="--accent:#22d3ee;--accent-ink:#1c2b4a" data-cat="utility" data-search="afkzone afk zones with automatic rewards and an in-game editor. utility 1.18.2 – 1.21+ worldguard placeholderapi afkzone afkzone afkzone afkzone afkzone afkzone afkzone">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/afkzone.png" alt="AfkZone" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/afkzone/index.html">AfkZone</a></h3>
+    <p class="card-tagline">AFK zones with automatic rewards and an in-game editor.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18.2 – 1.21+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#3b82f6;--accent-ink:#ffffff" data-cat="moderation" data-search="antiop shield your server from unauthorized ops and ranks. moderation 1.13+ luckperms litebans antiop darop quitarop">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/antiop.png" alt="AntiOP" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/antiop/index.html">AntiOP</a></h3>
+    <p class="card-tagline">Shield your server from unauthorized OPs and ranks.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderation</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#ef4444;--accent-ink:#ffffff" data-cat="moderation" data-search="antipendejos blocks forbidden items and purges inventories and vaults automatically. moderation 1.13+ playervaults antipendejos antipendejos antipendejos antipendejos antipendejos antipendejos">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/antipendejos.png" alt="AntiPendejos" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/antipendejos/index.html">AntiPendejos</a></h3>
+    <p class="card-tagline">Blocks forbidden items and purges inventories and vaults automatically.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderation</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#c084fc;--accent-ink:#1c2b4a" data-cat="progression" data-search="blockrewards break blocks, level up and claim epic rewards. progression 1.8+ vault placeholderapi actionbarapi titleapi blockvariables blockrewards brewards milestones blockrewards">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/blockrewards.png" alt="BlockRewards" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/blockrewards/index.html">BlockRewards</a></h3>
+    <p class="card-tagline">Break blocks, level up and claim epic rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.8+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#fb923c;--accent-ink:#1c2b4a" data-cat="minigames" data-search="ecevents mining events and lucky blocks full of rewards. minigames 1.8+ vault revenchants revautosell actionbarapi titleapi ece luckyblocks ece ece ece ece ece ece">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/ecevents.png" alt="ECEvents" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/ecevents/index.html">ECEvents</a></h3>
+    <p class="card-tagline">Mining events and lucky blocks full of rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.8+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#fbbf24;--accent-ink:#1c2b4a" data-cat="economy" data-search="epicvouchers custom vouchers with commands, sounds and guis. economy 1.18.2 – 1.21+ placeholderapi headdatabase vouchers">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/epicvouchers.png" alt="EpicVouchers" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/epicvouchers/index.html">EpicVouchers</a></h3>
+    <p class="card-tagline">Custom vouchers with commands, sounds and GUIs.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economy</span>
+      <span class="chip">1.18.2 – 1.21+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#06b6d4;--accent-ink:#ffffff" data-cat="minigames" data-search="evenmorefish fishing competitions with fully custom fish. minigames 1.20.1+ (paper/folia) vault placeholderapi worldguard mcmmo essentialsx/cmi itemsadder/oraxen/nexo headdatabase playerpoints auraskills denizen ecoitems griefprevention itemsadder nexo oraxen redprotect essentials cmi sayanvanish advancedvanish emf emf emf emf emf emf emf emf">
+  <div class="card-top">
+    <img class="card-icon smooth" src="../assets/icons/emf.png" alt="EvenMoreFish" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/evenmorefish/index.html">EvenMoreFish</a></h3>
+    <p class="card-tagline">Fishing competitions with fully custom fish.</p>
+    <div class="card-meta">
+      <span class="badge badge-thirdparty">Third-party</span>
+      <span class="chip chip-ver">v2.4.7-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.20.1+ (Paper/Folia)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      <span class="card-dls"><a class="card-dl dl-github" href="https://github.com/EvenMoreFish/EvenMoreFish" target="_blank" rel="noopener" title="Download on GitHub" aria-label="Download on GitHub"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span>
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#2dd4bf;--accent-ink:#1c2b4a" data-cat="world" data-search="extraregions advanced worldguard flags: commands, effects and more. world 1.18+ worldguard worldedit placeholderapi packetevents armorstandtools extraregions extraregions">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/extraregions.png" alt="ExtraRegions" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/extraregions/index.html">ExtraRegions</a></h3>
+    <p class="card-tagline">Advanced WorldGuard flags: commands, effects and more.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.2</span>
+      <span class="chip"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> World</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#0ea5e9;--accent-ink:#ffffff" data-cat="utility" data-search="hubcore the ultimate lobby core: menus, hotbar and more. utility 1.13+ placeholderapi luckperms headdatabase vault hub lobbyadmin setplate hubreload fly mod lobbyadmin lobbyadmin lobbyadmin lobbyadmin lobbyadmin mod mod mod mod">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/hubcore.png" alt="HubCore" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/hubcore/index.html">HubCore</a></h3>
+    <p class="card-tagline">The ultimate lobby core: menus, hotbar and more.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f87171;--accent-ink:#ffffff" data-cat="rpg" data-search="itemsrpg custom rpg items with recipes, effects and addons. rpg 1.13+ headdatabase placeholderapi worldguard worldedit packetevents shopguiplus rpg rpg rpg rpg rpg rpg rpg rpg rpg rpg rpg rpg rpg">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/itemsrpg.png" alt="ItemsRPG" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/itemsrpg/index.html">ItemsRPG</a></h3>
+    <p class="card-tagline">Custom RPG items with recipes, effects and addons.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f59e0b;--accent-ink:#1c2b4a" data-cat="economy" data-search="lootboxes open crates with epic animations and rarity rewards. economy 1.18+ headdatabase placeholderapi vault packetevents lootbox pouch lootbox lootbox lootbox lootbox lootbox pouch pouch">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/lootboxes.png" alt="Lootboxes" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/lootboxes/index.html">Lootboxes</a></h3>
+    <p class="card-tagline">Open crates with epic animations and rarity rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economy</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#a78bfa;--accent-ink:#1c2b4a" data-cat="chat" data-search="nchat the ultimate chat: colors, tags, dms and moderation. chat 1.13+ placeholderapi headdatabase nchat clearchat chatlock color nickc nchatgui nchatpanel msg r msgspy msgtoggle ignore unignore ignorelist adivinar chatevent tags">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/nchat.png" alt="nChat" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/nchat/index.html">nChat</a></h3>
+    <p class="card-tagline">The ultimate chat: colors, tags, DMs and moderation.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#fb7185;--accent-ink:#ffffff" data-cat="minigames" data-search="newcasino coinflip, slots and 17 betting minigames. minigames 1.18+ vault placeholderapi ecoins newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino newcasino">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newcasino.png" alt="NewCasino" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newcasino/index.html">NewCasino</a></h3>
+    <p class="card-tagline">Coinflip, slots and 17 betting minigames.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#818cf8;--accent-ink:#ffffff" data-cat="chat" data-search="newchatcolor customize your chat color with hex, gradients &amp; more. chat 1.18+ placeholderapi headdatabase vault colors coloradmin colors colors coloradmin">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newchatcolor.png" alt="NewChatColor" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newchatcolor/index.html">NewChatColor</a></h3>
+    <p class="card-tagline">Customize your chat color with hex, gradients &amp; more.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#8b5cf6" aria-hidden="true"></span> Chat</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#34d399;--accent-ink:#ffffff" data-cat="social" data-search="newclans found your clan, forge alliances and rule the ranks. social 1.13+ vault placeholderapi clan clanchat allychat newclans clan clan clan clan clan clan clan clan clan clan clan">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newclans.png" alt="NewClans" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newclans/index.html">NewClans</a></h3>
+    <p class="card-tagline">Found your clan, forge alliances and rule the ranks.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#ef4444;--accent-ink:#ffffff" data-cat="rpg" data-search="newcombatlog pvp combat system with tags, bounties and rewards. rpg 1.13+ vault placeholderapi worldguard combatlog newcombatlog combatlog combatlog combatlog combatlog">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newcombatlog.png" alt="NewCombatlog" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newcomblog/index.html">NewCombatlog</a></h3>
+    <p class="card-tagline">PvP combat system with tags, bounties and rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f472b6;--accent-ink:#1c2b4a" data-cat="cosmetics" data-search="newcosmetics the ultimate cosmetics suite for your server. cosmetics 1.18.2+ noteblockapi vault placeholderapi playerpoints worldguard worldedit cmi essentials mvdwplaceholderapi multiverse-core premiumvanish plotsquared supervanish newcosmetics cosmetics equip unequip unequipall toggleselfview nc nc nc nc nc">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newcosmetics.png" alt="NewCosmetics" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newcosmetics/index.html">NewCosmetics</a></h3>
+    <p class="card-tagline">The ultimate cosmetics suite for your server.</p>
+    <div class="card-meta">
+      <span class="badge badge-fork">Fork</span>
+      <span class="chip chip-ver">v2.0.8-1.18.2Plus</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosmetics</span>
+      <span class="chip">1.18.2+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f97316;--accent-ink:#ffffff" data-cat="minigames" data-search="newdtc destroy the core: pvp events with rewards. minigames 1.13+ packetevents worldguard placeholderapi tab dtc dtcscoreboard dtctop dtc dtc dtc dtc dtc">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newdtc.png" alt="NewDTC" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newdtc/index.html">NewDTC</a></h3>
+    <p class="card-tagline">Destroy The Core: PvP events with rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#4ade80;--accent-ink:#1c2b4a" data-cat="social" data-search="newfriends cross-network friends with private messaging. social proxy: bungeecord / velocity redisbungee f f f f f f f f">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newfriends.png" alt="NewFriends" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newfriends/index.html">NewFriends</a></h3>
+    <p class="card-tagline">Cross-network friends with private messaging.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span>
+      <span class="chip">Proxy: BungeeCord / Velocity</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#facc15;--accent-ink:#1c2b4a" data-cat="cosmetics" data-search="newglow glow auras with rainbow and flashing modes. cosmetics 1.18+ packetevents tab placeholderapi headdatabase glow glow glow glow glow">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newglow.png" alt="NewGlow" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newglow/index.html">NewGlow</a></h3>
+    <p class="card-tagline">Glow auras with rainbow and flashing modes.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosmetics</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#a855f7;--accent-ink:#ffffff" data-cat="cosmetics" data-search="newheads floating heads with text and interaction to decorate your server. cosmetics 1.13+ packetevents headdatabase fancyholograms excellentcrates newheads">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newheads.png" alt="NewHeads" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newheads/index.html">NewHeads</a></h3>
+    <p class="card-tagline">Floating heads with text and interaction to decorate your server.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosmetics</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#c084fc;--accent-ink:#1c2b4a" data-cat="progression" data-search="newjobs 13 professions with xp, quests and contracts. progression 1.18.2+ vault placeholderapi worldguard jobs jobs jobs jobs">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newjobs.png" alt="NewJobs" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newjobs/index.html">NewJobs</a></h3>
+    <p class="card-tagline">13 professions with XP, quests and contracts.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.1.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.18.2+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#eab308;--accent-ink:#1c2b4a" data-cat="utility" data-search="newkb tune knockback and attack speed to perfection. utility 1.18+  newkb">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newkb.png" alt="NewKB" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newkb/index.html">NewKB</a></h3>
+    <p class="card-tagline">Tune knockback and attack speed to perfection.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#60a5fa;--accent-ink:#ffffff" data-cat="utility" data-search="newlogin login, register and premium auth for your network. utility 1.8 – 1.21 floodgate login register changepassword unregister logout nlogin nlogin nlogin nlogin nlogin nlogin premium">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newlogin.png" alt="NewLogin" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newlogin/index.html">NewLogin</a></h3>
+    <p class="card-tagline">Login, register and premium auth for your network.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.8 – 1.21</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#2dd4bf;--accent-ink:#1c2b4a" data-cat="utility" data-search="newnpcs custom npcs with 3d model support. utility 1.18.2+ newresources placeholderapi npc npc npc npc npc npc">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newnpcs.png" alt="newNPCS" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newnpcs/index.html">newNPCS</a></h3>
+    <p class="card-tagline">Custom NPCs with 3D model support.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18.2+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#fb7185;--accent-ink:#ffffff" data-cat="progression" data-search="newpets pets with levels, traits and eggs. progression 1.18+ pinnaprison placeholderapi headdatabase essentialsx essentials pets petsadmin petsadmin petsadmin petsadmin petsadmin petsadmin">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newpets.png" alt="NewPets" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newpets/index.html">NewPets</a></h3>
+    <p class="card-tagline">Pets with levels, traits and eggs.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f59e0b;--accent-ink:#1c2b4a" data-cat="minigames" data-search="newpinatas smash the community piñata and share the rewards. minigames 1.18+ (paper) worldguard placeholderapi votifier nuvotifier votifierplus newpinatas newpinatas newpinatas newpinatas newpinatas newpinatas">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newpinatas.png" alt="NewPinatas" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newpinatas/index.html">NewPinatas</a></h3>
+    <p class="card-tagline">Smash the community piñata and share the rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.18+ (Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#a855f7;--accent-ink:#ffffff" data-cat="progression" data-search="newrankup rank up with requirements, prestige and rebirth. progression 1.13+ (spigot/paper) vault placeholderapi headdatabase nprisoncore rankup np maxrankup maxprestige maxrebirth">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newrankup.png" alt="NewRankup" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newrankup/index.html">NewRankup</a></h3>
+    <p class="card-tagline">Rank up with requirements, prestige and rebirth.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.13+ (Spigot/Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#3b82f6;--accent-ink:#ffffff" data-cat="moderation" data-search="newreports player reports with discord webhook alerts. moderation proxy: bungeecord  report newreportsreload">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newreports.png" alt="NewReports" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newreports/index.html">NewReports</a></h3>
+    <p class="card-tagline">Player reports with Discord webhook alerts.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderation</span>
+      <span class="chip">Proxy: BungeeCord</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#2dd4bf;--accent-ink:#1c2b4a" data-cat="world" data-search="newresources custom items, blocks and furniture via resource pack. world 1.18.2+ (paper) placeholderapi excellentcrates resourcepackmanager newresources nreditor newresources newresources newresources newresources newresources newresources newresources">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newresources.png" alt="newResources" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newresources/index.html">newResources</a></h3>
+    <p class="card-tagline">Custom items, blocks and furniture via resource pack.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#14b8a6" aria-hidden="true"></span> World</span>
+      <span class="chip">1.18.2+ (Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#84cc16;--accent-ink:#1c2b4a" data-cat="rpg" data-search="newskills mcmmo-style skills: level up and unlock abilities. rpg 1.18+ (paper/folia) worldguard placeholderapi vault viaversion combattag healthbar mmoxpbar mmodebug mmoinfo xprate newskills skills mctop mcrank addxp addlevels mcability mcrefresh mccooldown mcchatspy mcgod mcstats mcremove mmoedit ptp party inspect mmoshowdb mcconvert partychat skillreset excavation herbalism mining woodcutting axes archery crossbows swords taming tridents unarmed acrobatics repair fishing smelting spears alchemy salvage maces mmopower adminchat mcpurge mcnotify mclevelupsound mcscoreboard newskillsreloadlocale xprate xprate mctop party party">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newskills.png" alt="NewSkills" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newskills/index.html">NewSkills</a></h3>
+    <p class="card-tagline">mcMMO-style skills: level up and unlock abilities.</p>
+    <div class="card-meta">
+      <span class="badge badge-fork">Fork</span>
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ef4444" aria-hidden="true"></span> RPG</span>
+      <span class="chip">1.18+ (Paper/Folia)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f43f5e;--accent-ink:#ffffff" data-cat="social" data-search="newstreams announce your streams with safe link validation. social proxy: bungeecord  directo nstreamsreload">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newstreams.png" alt="NewStreams" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newstreams/index.html">NewStreams</a></h3>
+    <p class="card-tagline">Announce your streams with safe link validation.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#22c55e" aria-hidden="true"></span> Social</span>
+      <span class="chip">Proxy: BungeeCord</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#38bdf8;--accent-ink:#ffffff" data-cat="utility" data-search="newvaults player vaults with permissions, gui and multi-database. utility 1.18+ (paper) placeholderapi headdatabase vault vaultadmin vault vaultadmin vaultadmin vaultadmin vaultadmin">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newvaults.png" alt="NewVaults" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newvaults/index.html">NewVaults</a></h3>
+    <p class="card-tagline">Player vaults with permissions, GUI and multi-database.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18+ (Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#fb923c;--accent-ink:#1c2b4a" data-cat="minigames" data-search="nkoths custom koths with capture, holograms and rewards. minigames 1.13+ placeholderapi worldguard decentholograms fancyholograms headdatabase ultimateclans tab nprisonutils pinnaprison nstaffmode nkoth kothscoreboard nkoth nkoth nkoth nkoth nkoth nkoth">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/nkoths.png" alt="nKoths" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/nkoths/index.html">nKoths</a></h3>
+    <p class="card-tagline">Custom KOTHs with capture, holograms and rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v2.0-RC</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#22d3ee;--accent-ink:#1c2b4a" data-cat="progression" data-search="nplaytime level up by playing: rewards for your playtime. progression 1.18+ (paper) placeholderapi headdatabase playtime playtime">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newplaytime.png" alt="nPlaytime" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newplaytime/index.html">nPlaytime</a></h3>
+    <p class="card-tagline">Level up by playing: rewards for your playtime.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.18+ (Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#60a5fa;--accent-ink:#ffffff" data-cat="moderation" data-search="nstaffmode complete staff mode with moderation tools. moderation 1.13+ placeholderapi bungeecord staffmode nstaffmodereload cps staffonline sc oc smi">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/staffmode.png" alt="nStaffMode" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/staffmode/index.html">nStaffMode</a></h3>
+    <p class="card-tagline">Complete staff mode with moderation tools.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1-RC</span>
+      <span class="chip"><span class="cat-dot" style="--c:#3b82f6" aria-hidden="true"></span> Moderation</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#f97316;--accent-ink:#ffffff" data-cat="minigames" data-search="playervs 1v1 duels with rounds, arenas and spectators. minigames 1.13+ packetevents tab duel duelarena duel duel duelarena duelarena duelarena duelarena duelarena">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/playervs.png" alt="Playervs" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/playervs/index.html">Playervs</a></h3>
+    <p class="card-tagline">1v1 duels with rounds, arenas and spectators.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f97316" aria-hidden="true"></span> Minigames</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#d946ef;--accent-ink:#ffffff" data-cat="progression" data-search="prisonbattlepass level up, complete quests and claim op rewards. progression 1.13+ placeholderapi headdatabase x-prison pinnaprison bp bp bp bp bp">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newbattlepass.png" alt="PrisonBattlePass" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newbattlepass/index.html">PrisonBattlePass</a></h3>
+    <p class="card-tagline">Level up, complete quests and claim OP rewards.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v0.1</span>
+      <span class="chip"><span class="cat-dot" style="--c:#84cc16" aria-hidden="true"></span> Progression</span>
+      <span class="chip">1.13+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#e879f9;--accent-ink:#1c2b4a" data-cat="cosmetics" data-search="procosmetics over 15 cosmetic categories to make your server shine. cosmetics 1.18.2+ vault playerpoints placeholderapi worldguard worldedit essentialsx cmi noteblockapi essentials mvdwplaceholderapi multiverse-core premiumvanish plotsquared supervanish procosmetics cosmetics equip unequip unequipall toggleselfview procosmetics procosmetics procosmetics procosmetics procosmetics">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/procosmetics.png" alt="ProCosmetics" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/procosmetics/index.html">ProCosmetics</a></h3>
+    <p class="card-tagline">Over 15 cosmetic categories to make your server shine.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v2.0.8-1.18.2Plus</span>
+      <span class="chip"><span class="cat-dot" style="--c:#ec4899" aria-hidden="true"></span> Cosmetics</span>
+      <span class="chip">1.18.2+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#14b8a6;--accent-ink:#ffffff" data-cat="utility" data-search="spawnsystem spawn, homes, gamemodes, time and fly in a single plugin. utility 1.18+  spawn setspawn spawnsystem sethome home homes dia tarde noche gm0 gm1 gm3 fly flyspeed">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/spawnsystem.png" alt="SpawnSystem" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/spawnsystem/index.html">SpawnSystem</a></h3>
+    <p class="card-tagline">Spawn, homes, gamemodes, time and fly in a single plugin.</p>
+    <div class="card-meta">
+      
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#94a3b8;--accent-ink:#1c2b4a" data-cat="utility" data-search="newautopickup pick up items automatically (work in progress). utility 1.18+  ">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newautopickup.png" alt="NewAutopickup" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newautopickup/index.html">NewAutopickup</a></h3>
+    <p class="card-tagline">Pick up items automatically (work in progress).</p>
+    <div class="card-meta">
+      <span class="badge badge-wip">Work in progress</span>
+      <span class="chip chip-ver">v1.0-SNAPSHOT</span>
+      <span class="chip"><span class="cat-dot" style="--c:#0ea5e9" aria-hidden="true"></span> Utility</span>
+      <span class="chip">1.18+</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+<div class="card reveal" style="--accent:#94a3b8;--accent-ink:#1c2b4a" data-cat="economy" data-search="newsellchests work in progress: automatic sell chests plugin. economy 1.18.2 (paper)  ">
+  <div class="card-top">
+    <img class="card-icon" src="../assets/icons/newsellchests.png" alt="NewSellchests" loading="lazy">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><a class="card-hit" href="plugins/newsellchests/index.html">NewSellchests</a></h3>
+    <p class="card-tagline">Work in progress: automatic sell chests plugin.</p>
+    <div class="card-meta">
+      <span class="badge badge-wip">Work in progress</span>
+      <span class="chip chip-ver">v1.0.0</span>
+      <span class="chip"><span class="cat-dot" style="--c:#f59e0b" aria-hidden="true"></span> Economy</span>
+      <span class="chip">1.18.2 (Paper)</span>
+    </div>
+    <div class="card-foot">
+      <span class="card-link">View documentation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="empty" id="empty" hidden>
+      <span class="empty-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <h3>No results</h3>
+      <p>No plugins match your search. Try another word or category.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section servers-section" id="servidores">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>Servers that trust dStudios</h2>
+      <div class="section-lines center" aria-hidden="true"><i style="width:64px;background:#6acbff"></i><i style="width:46px;background:#47c0ff"></i><i style="width:38px;background:#04a6ff"></i><i style="width:30px;background:#0097f0"></i><i style="width:24px;background:#008ae5"></i><i style="width:18px;background:#0081df"></i><i style="width:12px;background:#0078d9"></i></div>
+    </div>
+  </div>
+<div class="srv-band"><div class="srv-track" style="--srv-dur:55s"><div class="srv-tile srv-tile-icon" title="ManaCube"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon" title="MinePlex"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon" title="LemonCloud"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div><div class="srv-tile srv-tile-icon srv-more" title="ManaCube" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-manacube.png" alt="" loading="lazy"><span class="srv-name">ManaCube</span></div><div class="srv-tile srv-tile-icon srv-more" title="MinePlex" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-mineplex.png" alt="" loading="lazy"><span class="srv-name">MinePlex</span></div><div class="srv-tile srv-tile-icon srv-more" title="LemonCloud" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-lemoncloud.png" alt="" loading="lazy"><span class="srv-name">LemonCloud</span></div></div></div><div class="srv-band"><div class="srv-track srv-rev" style="--srv-dur:63s"><div class="srv-tile srv-tile-icon" title="PikaNetwork"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon" title="Vortex Network"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div><div class="srv-tile srv-tile-icon srv-more" title="PikaNetwork" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-pikanetwork.png" alt="" loading="lazy"><span class="srv-name">PikaNetwork</span></div><div class="srv-tile srv-tile-icon srv-more" title="Vortex Network" aria-hidden="true"><img class="srv-ico" src="../assets/servers/auto-vortex-network.png" alt="" loading="lazy"><span class="srv-name">Vortex Network</span></div></div></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="logo-img small" src="../assets/logo.png" alt="" width="32" height="32">
+      <div>
+        <strong>dStudios Plugins</strong>
+        <p>Documentation generated automatically from the plugins' source code.</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links"><a href="documentation/index.html">Documentation</a><span class="dot">·</span><a href="https://github.com/Danshi17" target="_blank" rel="noopener">GitHub</a></div>
+      <p>© 2026 dStudios. All rights reserved. <span class="dot">·</span> Powered by GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Top">↑</button>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

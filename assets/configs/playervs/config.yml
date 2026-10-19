@@ -1,0 +1,89 @@
+wand:
+  material: BLAZE_ROD
+  name: "&e&lSelector de Arena"
+
+duel:
+  min-rounds: 1
+  max-rounds: 15
+  invite-expiry-seconds: 30
+
+countdown:
+  seconds: 5
+  freeze: true
+  title-times:
+    fade-in: 0
+    stay: 25
+    fade-out: 5
+
+  stages:
+    "5":
+      title: "&e&l5"
+      subtitle: "&7Prepárate para el duelo..."
+      sound: "BLOCK_NOTE_BLOCK_HAT"
+    "4":
+      title: "&e&l4"
+      subtitle: "&7Prepárate para el duelo..."
+      sound: "BLOCK_NOTE_BLOCK_HAT"
+    "3":
+      title: "&6&l3"
+      subtitle: "&7Prepárate para el duelo..."
+      sound: "BLOCK_NOTE_BLOCK_HAT"
+    "2":
+      title: "&6&l2"
+      subtitle: "&7Prepárate para el duelo..."
+      sound: "BLOCK_NOTE_BLOCK_HAT"
+    "1":
+      title: "&c&l1"
+      subtitle: "&7¡Prepárate!"
+      sound: "BLOCK_NOTE_BLOCK_HAT"
+    "start":
+      title: "&a&l¡PELEA!"
+      subtitle: "&f¡Que gane el mejor!"
+      sound: "ENTITY_PLAYER_ATTACK_CRIT"
+
+messages:
+  prefix: "&8[&cPlayerVS&8] &r"
+
+  no-permission: "&cNo tienes permisos para ejecutar este comando."
+  duel-usage: "&cUso: &e/duel <jugador> <rondas>"
+
+  cannot-duel-yourself: "&c¡No puedes retarte a ti mismo!"
+  target-not-online: "&c¡Ese jugador no está conectado!"
+  already-in-duel: "&c¡Ya estás en un duelo!"
+  target-in-duel: "&c¡Ese jugador ya está en un duelo!"
+
+  invalid-rounds:
+    - "&c¡La cantidad de rondas debe estar entre &e%min% &cy &e%max%&c!"
+
+  invite-sent: "&a¡Reto enviado a &e%player% &apor &e%rounds% &arondas!"
+  invite-received:
+    - ""
+    - "&e&l¡DUELO! &f%player% &7te ha retado a &e%rounds% &7rondas."
+    - "&aEscribe &e/duel accept &apara aceptar, o &c/duel deny &apara rechazar."
+    - ""
+
+  no-pending-invite: "&c¡No tienes ningún reto pendiente!"
+  sender-offline: "&c¡El jugador que te retó ya no está conectado!"
+
+  invite-denied-self: "&c¡Has rechazado el duelo!"
+  invite-denied: "&c¡%player% ha rechazado tu duelo!"
+
+  no-arenas-available: "&c¡No hay arenas de duelo disponibles en este momento!"
+
+  round-starting:
+    - "&e&l¡Ronda %round%/%total_rounds%!"
+
+  round-won: "&a¡Ganaste la ronda %round%!"
+  round-lost: "&c¡Perdiste la ronda %round%!"
+
+  match-victory:
+    - ""
+    - "&a&l¡VICTORIA!"
+    - "&fGanaste el duelo contra &e%loser% &f(&a%winner_rounds% &f- &c%loser_rounds%&f)"
+    - ""
+
+  match-defeat:
+    - ""
+    - "&c&lDERROTA"
+    - "&fPerdiste el duelo contra &e%winner% &f(&a%winner_rounds% &f- &c%loser_rounds%&f)"
+    - ""

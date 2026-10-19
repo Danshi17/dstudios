@@ -1,0 +1,23 @@
+blocks:
+  example_crate_block:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&#D89B45&lExample Crate Block"
+
+    # Use a Minecraft model JSON or a Blockbench .bbmodel.
+    model: "blocks/example_crate.bbmodel"
+
+    placement:
+      anchor-material: BARRIER
+      placeable: true
+      breakable: true
+      drop-on-break: true
+      visual-offset-x: 0.0
+      visual-offset-y: 0.0
+      visual-offset-z: 0.0
+
+    interaction:
+      cancel: true
+      commands:
+        - "[message] &eYou clicked the custom block."

@@ -1,0 +1,41 @@
+prefix: "&8&l[&b&lBlockRewards&8&l] &r"
+
+menu-opened: "%prefix%&aAbriendo tu menu de Block Rewards..."
+no-permission: "%prefix%&cNo tienes permiso para hacer eso."
+usage: "%prefix%&cUso: &e/brewards <open|reload|prestige|autoclaim|help>&7, &e/milestones"
+reward-found: "%prefix%&aHas encontrado un nivel: &e{reward_name}"
+reward-completed: "%prefix%&a&l[!] &eRecompensa completada: &a{reward_name}"
+reward-not-completed: "%prefix%&cEste nivel aun no esta completo. Progreso: &e{progress}&7/&e{required}"
+reward-claimed: "%prefix%&aHas obtenido la recompensa de &e{reward_name}&a!"
+reward-already-claimed: "%prefix%&7Ya reclamaste este nivel. &8(&7{reward_name}&8) &7Sigue minando para desbloquear otro."
+
+inventory-full: "%prefix%&cTu inventario esta lleno. No se pudo entregar la recompensa."
+
+reload-success: "%prefix%&aConfiguracion recargada correctamente."
+reload-fail: "%prefix%&cHubo un error al recargar. Revisa la consola."
+
+autoclaim-on: "%prefix%&aAuto-claim &aactivado&7. Las recompensas se entregaran solas."
+autoclaim-off: "%prefix%&cAuto-claim &cdesactivado&7. Tienes que reclamarlas manualmente."
+
+prestige-vault-missing: "%prefix%&cEl server no tiene economia configurada. No se puede cobrar el prestigio."
+
+prestige-insufficient-funds: "%prefix%&cNo tienes suficiente dinero. Costo: &e{cost} &c- Te falta: &e{missing}"
+prestige-success: "%prefix%&6&l✦ &eHas subido a Prestigio &6{prestige}&e!"
+prestige-already: "%prefix%&cYa estas en el maximo prestigio."
+prestige-not-all-levels: "%prefix%&cNecesitas completar TODOS los niveles para prestigiar (&e{completed}&7/&e{total}&c). Te falta: &e{missing}&c."
+prestige-max-reached: "%prefix%&cYa alcanzaste el maximo de prestigio (&e{max}&c). No puedes subir mas."
+prestige-fail: "%prefix%&cNo se pudo prestigiar. Revisa la consola."
+cooldown: "%prefix%&eEspera &c{seconds}s &eantes de hacer eso de nuevo."
+players-only: "%prefix%&cEste comando solo es para jugadores."
+
+help:
+  - "&8&m-----------"
+  - "&b&lBlockRewards &7- Ayuda"
+  - "&8&m-----------"
+  - "&e/brewards open &7- Abre el menu de recompensas"
+  - "&e/milestones &7- Atajo: abre el menu directo"
+  - "&e/brewards reload &7- Recarga la configuracion"
+  - "&e/brewards prestige &7- Resetea tu progreso y sube de prestigio"
+  - "&e/brewards autoclaim &7- Activa/desactiva el auto-claim"
+  - "&e/brewards help &7- Muestra esta ayuda"
+  - "&8&m-----------"

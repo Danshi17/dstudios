@@ -1,0 +1,6 @@
+id: anvil_clancreate
+
+title: '<dark_gray>Create Clan</dark_gray>'
+material: NAME_TAG
+initial-text: 'ClanTag'
+back-menu: noclan_home

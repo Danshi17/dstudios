@@ -1,0 +1,2321 @@
+# NewSkills - Vista general de NewSkills inspirada en el inventario de la captura.
+# /skills o /mcmmo abre el menú; /skills reload recarga ESTE archivo y messages.yml.
+# Nuevas opciones se agregan automáticamente si faltan (backup antes de guardar).
+# Botón RECOMPENSAS de cada habilidad: menus.detail.items.rewards (slot 5).
+# Botón TOP de cada habilidad: menus.detail.items.leaderboard (slot 13).
+# 9 slots por fila: fila 1=0..8, fila 2=9..17, ..., fila 6=45..53.
+# Todos los materiales, títulos, slots, cabezas, sonidos, nombres, lore y acciones son editables.
+# Materiales de cabezas: material: PLAYER_HEAD + base64: 'eyJ...'
+# O directamente material: 'basehead-eyJ...'; también material: 'base64:eyJ...'
+# También skull-owner: '{player}' para usar una cabeza de jugador normal.
+# Filler e ítems: name, display_name y display-name disponibles.
+# ESC/E desde submenús abre el menú anterior. [force-close] cierra todo.
+# Formatos: &a, &l, &#FF7744, #FF7744, <red>, <gradient:#F00:#00F>...</gradient>
+# skills.<HABILIDAD>.display-name configura {skill_display} en TODOS los menús.
+# skills.<HABILIDAD>.name configura SOLO el texto del icono principal.
+# click-sound funciona en botones, skills, fillers, ability-item, source-item y rewards.levels.*.
+# click-sound: { enabled: true, type: ENTITY_EXPERIENCE_ORB_PICKUP, volume: 0.8, pitch: 1.2 }
+# O click-sound: 'minecraft:block.note_block.pling' / 'mi_pack:ui.personalizado'.
+# click-sound: false silencia solo ese item; si falta, se mantiene sounds.click global.
+# Variables: {player}, {skill}, {skill_upper}, {skill_display}, {level}, {xp},
+# {required_xp}, {remaining_xp}, {progress}, {progress_bar}, {power_level},
+# {xp_multiplier}, {skill_multiplier}, {abilities_preview}; soporta PlaceholderAPI.
+# Acciones: [open] detail, [open] overview, [open] abilities, [open] xp,
+# [page] next, [page] previous, [open] leaderboard, [leaderboard-refresh],
+# [open] rewards, [open] prestige, [claim-all], [prestige], [open] SWORDS, [close], [back], [force-close], [message] ...,
+# [player] comando, [console] comando, [skill-command], [sound] UI_BUTTON_CLICK.
+# Para esconder un item: enabled: false. Para restringir: view-permission y click-permission.
+# Además puedes poner slots: [0, 1, 2] en cualquier item de menus.*.items.
+
+menus:
+  overview:
+    title: '<gradient:#00f2fe:#4facfe><bold>PANEL DE HABILIDADES</bold></gradient>'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: [45, 46, 47, 48, 49, 50, 51, 52, 53]
+    items:
+      power:
+        enabled: true
+        slot: 48
+        material: NAME_TAG
+        name: '<gradient:#ffd65f:#f0a51b><bold>PODER TOTAL</bold></gradient>'
+        lore:
+          - ''
+          - '&fNivel acumulado de todas tus &bhabilidades&f'
+          - '&fpara dominar la modalidad al &emáximo&f.'
+          - ''
+          - '&8» &fDatos del jugador:'
+          - '  &8▪ &fUsuario: &b{player}'
+          - '  &8▪ &fNivel de poder: &#ffd65f{power_level}'
+          - ''
+          - '&#00f2fe✔ ¡Entrena tus habilidades para subir el poder!'
+        actions: []
+      help:
+        enabled: true
+        slot: 49
+        material: CLOCK
+        name: '<gradient:#00f2fe:#4facfe><bold>GUÍA DE HABILIDADES</bold></gradient>'
+        lore:
+          - ''
+          - '&fSelecciona una habilidad para revisar &bestadísticas&f,'
+          - '&frangos desbloqueados y fuentes de &eexperiencia&f.'
+          - ''
+          - '&f¡Aprende las mecánicas de cada disciplina'
+          - '&fy optimiza tu entrenamiento al instante!'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver información!'
+        actions:
+          - '[message] <gradient:#00f2fe:#4facfe>¡Haz clic en una habilidad para consultar niveles, experiencia y recompensas!</gradient>'
+      stats:
+        enabled: true
+        slot: 50
+        material: PLAYER_HEAD
+        name: '<gradient:#00f2fe:#4facfe><bold>PERFIL DE {player}</bold></gradient>'
+        lore:
+          - ''
+          - '&fConsulta el resumen global de tu &bcuenta&f'
+          - '&fy progreso individual al &emáximo&f.'
+          - ''
+          - '&8» &fEstadísticas generales:'
+          - '  &8▪ &fNivel de poder: &#ffd65f{power_level}'
+          - ''
+          - '&#00f2fe✔ ¡Click para abrir /mcstats!'
+        actions:
+          - '[player] mcstats'
+        skull-owner: '{player}'
+      close:
+        enabled: true
+        slot: 53
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR MENÚ</bold></gradient>'
+        lore:
+          - ''
+          - '&fCierra este panel y regresa a tu &ejuego&f.'
+          - ''
+          - '&#ff4b2b✔ ¡Click para cerrar!'
+        actions:
+          - '[close]'
+
+  detail:
+    title: '&8Habilidades &8» <gradient:#00f2fe:#4facfe><bold>{skill_display}</bold></gradient>'
+    size: 36
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    skill-preview:
+      enabled: true
+      slot: 24
+      actions: []
+    items:
+      back:
+        enabled: true
+        slot: 27
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER AL MENÚ</bold></gradient>'
+        lore:
+          - ''
+          - '&fRegresa a la lista general de &btodas las habilidades&f.'
+          - ''
+          - '&#ff4b2b✔ ¡Click para volver!'
+        actions:
+          - '[open] overview'
+      info:
+        enabled: true
+        slot: 3
+        material: BOOK
+        name: '<gradient:#00f2fe:#4facfe><bold>ESTADÍSTICAS Y PROGRESO</bold></gradient>'
+        lore:
+          - ''
+          - '&fRevisa el nivel actual y progreso de &b{skill_display}&f'
+          - '&fpara seguir subiendo hasta el &emáximo&f.'
+          - ''
+          - '&8» &fInformación de la habilidad:'
+          - '  &8▪ &fNivel alcanzado: &a{level}'
+          - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+          - '  &8▪ &fPorcentaje: &#00f2fe{progress}%'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver el comando original!'
+        actions:
+          - '[skill-command]'
+      abilities:
+        enabled: true
+        slot: 20
+        material: NETHER_STAR
+        name: '<gradient:#ffd65f:#f0a51b><bold>HABILIDADES ESPECIALES</bold></gradient>'
+        lore:
+          - ''
+          - '&fConsulta las técnicas pasivas y &bactivas&f'
+          - '&fdesbloqueadas para potenciarte al &emáximo&f.'
+          - ''
+          - '&f¡Conoce los requisitos de cada rango'
+          - '&fy los efectos que obtendrás en batalla!'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver las habilidades!'
+        actions:
+          - '[open] abilities'
+      xp:
+        enabled: true
+        slot: 22
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#38ef7d:#11998e><bold>CÓMO GANAR EXPERIENCIA</bold></gradient>'
+        lore:
+          - ''
+          - '&fDescubre qué actividades otorgan &bexperiencia real&f'
+          - '&fpara entrenar esta disciplina al &emáximo&f.'
+          - ''
+          - '&f¡Aprende las mejores técnicas para subir'
+          - '&fde nivel de forma rápida y eficiente!'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver fuentes de XP!'
+        actions:
+          - '[open] xp'
+      leaderboard:
+        enabled: true
+        slot: 13
+        material: GOLDEN_HELMET
+        glow: true
+        name: '<gradient:#ffd65f:#f0a51b><bold>TOP DE {skill_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&fDescubre quiénes tienen el mayor nivel'
+          - '&fen &b{skill_display}&f, incluyendo desconectados.'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver el ranking!'
+        actions:
+          - '[open] leaderboard'
+      rewards:
+        enabled: true
+        slot: 5
+        material: CHEST
+        glow: true
+        name: '<gradient:#ffd65f:#ffa121><bold>RECOMPENSAS DE {skill_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&fReclama premios gratuitos y dinero en cada &bnivel&f'
+          - '&falcanzado hasta llegar al &emáximo&f.'
+          - ''
+          - '&8» &fProgreso actual:'
+          - '  &8▪ &fNivel: &e{level}'
+          - '  &8▪ &fPrestigio: &b{prestige}'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver las recompensas!'
+        actions:
+          - '[open] rewards'
+      close:
+        enabled: false
+        slot: 26
+        material: BARRIER
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR MENÚ</bold></gradient>'
+        lore:
+          - ''
+          - '&fCierra este menú.'
+        actions:
+          - '[close]'
+
+  leaderboard:
+    # Los niveles y nombres proceden del backend ACTIVO de NewSkills.
+    # La consulta es asíncrona y se comparte entre todos los visitantes.
+    title: '&8TOP &8» &e{skill_display} &8- &7{page}/{max_pages}'
+    size: 54
+    cache-seconds: 60
+    max-entries: 100
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+    entry-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21]
+    entry:
+      material: PLAYER_HEAD
+      skull-owner: '{rank_player}'
+      name: '<gradient:#ffd65f:#ffa121><bold>#{rank} &f{rank_player}</bold></gradient>'
+      lore:
+        - ''
+        - '&8» &fHabilidad: &b{skill_display}'
+        - '&8» &fNivel: &e{rank_level}'
+        - '&8» &fPosición: &6#{rank}'
+    status-item:
+      enabled: true
+      slot: 4
+      material: CLOCK
+      name: '<gradient:#00f2fe:#4facfe><bold>CLASIFICACIÓN</bold></gradient>'
+      lore:
+        - ''
+        - '{leaderboard_status}'
+        - '&8» &fJugadores cargados: &e{leaderboard_count}'
+        - '&8» &fTu posición: {leaderboard_your_rank}'
+    items:
+      back:
+        enabled: true
+        slot: 45
+        material: ARROW
+        name: '&c« Volver a {skill_display}'
+        actions: ['[back]']
+      previous:
+        enabled: true
+        slot: 48
+        material: SPECTRAL_ARROW
+        name: '&e« Página anterior'
+        actions: ['[page] prev']
+      next:
+        enabled: true
+        slot: 50
+        material: SPECTRAL_ARROW
+        name: '&ePágina siguiente »'
+        actions: ['[page] next']
+      refresh:
+        enabled: true
+        slot: 53
+        material: SUNFLOWER
+        name: '&bActualizar top'
+        actions: ['[leaderboard-refresh]']
+
+  rewards:
+    title: '&8Recompensas: &e{skill_display} &8- &7Página {page}/{max_pages}'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&f'
+    level-slots:
+      - 19
+      - 21
+      - 22
+      - 23
+      - 25
+      - 28
+      - 30
+      - 32
+      - 34
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+    use-reward-icon: false
+    # La misma textura Base64 de levels.future se aplica a todas las casillas.
+    # Si deseas volver a cristales separados, pon enabled: false.
+    # Cada estado puede tener un `base64` propio, que tiene prioridad.
+    shared-heads:
+      enabled: true
+      base64: ''
+    status:
+      future: '&cSin desbloquear'
+      completed: '&aNivel alcanzado'
+      locked: '&cRecompensa bloqueada'
+      available: '&e¡Disponible para reclamar!'
+      claimed: '&b¡Ya reclamada!'
+    levels:
+      future:
+        click-sound:
+          enabled: true
+          type: ENTITY_VILLAGER_NO
+          volume: 0.65
+          pitch: 1.15
+        material: PLAYER_HEAD
+        base64: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRhMTUwOGQ0N2VkNzNiNWM1MTVlM2I5MzkyOGI3MjhlNGJjNjI3ODU2OWE3OWIzNzIzYWI2OTcyY2UwNTM1NyJ9fX0='
+        name: '&cNivel {reward_level}'
+        lore:
+          - ''
+          - '&fRecompensa futura disponible al progresar.'
+          - ''
+          - '&8» &fNivel actual: &e{level}'
+          - '&8» &fEstado: &c{reward_status}'
+      completed:
+        material: LIME_STAINED_GLASS_PANE
+        name: '&aNivel {reward_level}'
+        lore:
+          - ''
+          - '&fNivel completado con éxito.'
+          - ''
+          - '&8» &fEstado: &a{reward_status}'
+      locked:
+        click-sound:
+          enabled: true
+          type: ENTITY_VILLAGER_NO
+          volume: 0.65
+          pitch: 1.15
+        material: RED_STAINED_GLASS_PANE
+        name: '&cNivel {reward_level} &8▪ &7{reward_name}'
+        lore:
+          - ''
+          - '&fPremio bloqueado temporalmente.'
+          - ''
+          - '&8» &fRequiere nivel: &e{reward_level}'
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fDinero: &a${reward_money}'
+          - '&8» &fEstado: &c{reward_status}'
+      available:
+        material: YELLOW_STAINED_GLASS_PANE
+        name: '&e¡Premio del Nivel {reward_level}!'
+        lore:
+          - ''
+          - '&f¡Has alcanzado este nivel y puedes reclamar tu premio!'
+          - ''
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fDinero: &a${reward_money}'
+          - ''
+          - '&#00f2fe✔ ¡Click para reclamar premio!'
+        glow: true
+      claimed:
+        material: CYAN_STAINED_GLASS_PANE
+        name: '&bNivel {reward_level} &8▪ &7{reward_name}'
+        lore:
+          - ''
+          - '&fEsta recompensa ya fue entregada a tu cuenta.'
+          - ''
+          - '&8» &fPremio: &f{reward_name}'
+          - '&8» &fEstado: &b{reward_status}'
+    items:
+      info:
+        slot: 2
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>RECOMPENSAS DE {skill_display}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel actual: &a{level}'
+          - '&8» &fPrestigio: &b{prestige}'
+          - '&8» &fÚltima recompensa: &e{max_reward_level}'
+      guide:
+        slot: 4
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#00f2fe:#4facfe><bold>GUÍA DE RECOMPENSAS</bold></gradient>'
+        lore:
+          - ''
+          - '&fSube de nivel para desbloquear premios.'
+          - ''
+          - '&8▪ &eAmarillo: &7Premio pendiente'
+          - '&8▪ &bCeleste: &7Ya reclamado'
+          - '&8▪ &aVerde: &7Nivel completado'
+          - '&8▪ &cRojo: &7Todavía bloqueado'
+      back:
+        slot: 0
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions:
+          - '[open] detail'
+      previous:
+        slot: 45
+        material: ARROW
+        name: '&#00f2fe« Página anterior'
+        actions:
+          - '[page] previous'
+      claim:
+        slot: 8
+        material: CHEST
+        name: '<gradient:#38ef7d:#11998e><bold>RECLAMAR TODO</bold></gradient>'
+        lore:
+          - ''
+          - '&fReclama de forma automática todas las'
+          - '&frecompensas acumuladas de tus niveles.'
+          - ''
+          - '&#00f2fe✔ ¡Click para reclamar todo!'
+        actions:
+          - '[claim-all]'
+      prestige:
+        slot: 6
+        material: NETHER_STAR
+        name: '<gradient:#f2b4ff:#ad6fff><bold>PRESTIGIO {prestige}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel requerido: &e{prestige_required}'
+          - '&8» &fCosto: &a${prestige_cost}'
+          - ''
+          - '&cReinicia nivel y experiencia por beneficios.'
+          - ''
+          - '&#00f2fe✔ ¡Click para revisar prestigio!'
+        actions:
+          - '[open] prestige'
+      next:
+        slot: 53
+        material: ARROW
+        name: '&#00f2fePágina siguiente »'
+        actions:
+          - '[page] next'
+      close:
+        slot: 49
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions:
+          - '[close]'
+
+  prestige:
+    # Acceso protegido por el nivel real del jugador (mínimo 100).
+    title: '&8Confirmar prestigio de {skill_display}'
+    size: 27
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+    items:
+      cancel:
+        slot: 11
+        material: RED_CONCRETE
+        name: '<gradient:#ff4b2b:#ff416c><bold>CANCELAR</bold></gradient>'
+        actions:
+          - '[open] rewards'
+      info:
+        slot: 13
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>PRESTIGIO {prestige_next}</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fHabilidad: &f{skill_display}'
+          - '&8» &fNivel actual: &a{level}'
+          - '&8» &fNivel requerido: &e{prestige_required}'
+          - '&8» &fCosto: &a${prestige_cost}'
+          - ''
+          - '&cReinicia el nivel de esta habilidad.'
+          - '&7No se recuperan los niveles anteriores.'
+      confirm:
+        slot: 15
+        material: LIME_CONCRETE
+        name: '<gradient:#38ef7d:#11998e><bold>CONFIRMAR PRESTIGIO</bold></gradient>'
+        lore:
+          - ''
+          - '&fSe cobrará el costo económico'
+          - '&fy se reiniciará el nivel para el prestigio.'
+          - ''
+          - '&#00f2fe✔ ¡Click para confirmar!'
+        actions:
+          - '[prestige]'
+
+  format:
+    progress-segments: 16
+    progress-character: '■'
+    progress-filled: '&a'
+    progress-empty: '&8'
+    ability-preview-limit: 5
+    ability-preview-unlocked: '&a✔ &f{ability_name} &7(Rango {rank})'
+    ability-preview-locked: '&c✖ &7{ability_name} &8(Desbloqueo Nv. {unlock_level})'
+    ability-preview-more: '&8... clic para ver todas'
+    ability-locked: '&cBloqueada'
+    ability-unlocked: '&aDesbloqueada'
+    variable-xp: 'Depende de la actividad'
+    child-skill-note: '&eHabilidad derivada: sin XP independiente.'
+    normal-skill-note: '&7Entrena para aumentar tu nivel.'
+
+  abilities:
+    title: '&8Habilidades &8» &e{skill_display}'
+    size: 45
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    ability-slots: [19, 20 ,21 , 22, 23, 24, 25]
+    ability-item:
+      material: IRON_SWORD
+      name: '<gradient:#ffd65f:#f0a51b><bold>{ability_name}</bold></gradient> &8(Rango {rank}/{max_rank})'
+      lore:
+        - ''
+        - '&8» &fInformación de habilidad:'
+        - '  &8▪ &fEstado: {status}'
+        - '  &8▪ &fRango: &a{rank}&8/&f{max_rank}'
+        - '  &8▪ &fDesbloqueo: &bNv. {unlock_level}'
+        - '  &8▪ &fSiguiente rango: &bNv. {next_level}'
+        - '  &8▪ &fTipo: &f{ability_type}'
+        - ''
+        - '&8» &fDescripción del efecto:'
+        - '{ability_description}'
+      item-flags: [HIDE_ATTRIBUTES]
+    items:
+      back:
+        slot: 36
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions: ['[open] detail']
+      xp:
+        slot: 2
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#38ef7d:#11998e><bold>¿CÓMO GANO XP?</bold></gradient>'
+        lore: ['&fVer las actividades para subir de nivel.']
+        actions: ['[open] xp']
+      calculations:
+        slot: 6
+        material: EXPERIENCE_BOTTLE
+        name: '<gradient:#ffd65f:#f0a51b><bold>CÁLCULO DE EXPERIENCIA</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fFórmula de XP:'
+          - '{xp_formula_lines}'
+          - ''
+          - '&8» &fProgreso actual: &f{xp}&8/&f{required_xp}'
+          - '&8» &fPorcentaje: &e{progress}% &8| {progress_bar}'
+          - ''
+          - '&#00f2fe✔ ¡Click para ver XP por actividad!'
+        actions: ['[open] xp']
+      main:
+        slot: 4
+        material: COMPASS
+        name: '<gradient:#00f2fe:#4facfe><bold>TODAS LAS HABILIDADES</bold></gradient>'
+        actions: ['[open] overview']
+      close:
+        slot: 40
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions: ['[close]']
+
+  xp:
+    title: '&8Fuentes de XP &8» &a{skill_display}'
+    size: 54
+    fill:
+      enabled: true
+      material: BLACK_STAINED_GLASS_PANE
+      name: '&7'
+      slots: []
+    source-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+    source-item:
+      material: EXPERIENCE_BOTTLE
+      name: '<gradient:#38ef7d:#11998e><bold>{source}</bold></gradient>'
+      lore:
+        - ''
+        - '&8» &fDetalles de la fuente:'
+        - '  &8▪ &fXP base: &e{base_xp}'
+        - '{source_description}'
+        - ''
+        - '&7El valor final depende de multiplicadores'
+        - '&7y tasas activas en el servidor.'
+    items:
+      calculation:
+        slot: 3
+        material: BOOK
+        name: '<gradient:#ffd65f:#f0a51b><bold>CÁLCULO DE EXPERIENCIA</bold></gradient>'
+        lore:
+          - ''
+          - '&8» &fNivel actual: &f{level}'
+          - '&8» &fXP: &f{xp}&8/&f{required_xp}'
+          - '&8» &fProgreso: &a{progress}%'
+          - '  {progress_bar}'
+          - '  {xp_note}'
+          - ''
+          - '&8» &fMultiplicadores activos:'
+          - '  &8▪ &fTasa global: &a{xp_multiplier}'
+          - '  &8▪ &fModificador: &b{skill_multiplier}'
+          - ''
+          - '{xp_formula_lines}'
+      previous:
+        slot: 52
+        material: SPECTRAL_ARROW
+        name: '&#00f2fe« Página anterior &7({page}/{max_pages})'
+        actions: ['[page] previous']
+      back:
+        slot: 45
+        material: ARROW
+        name: '<gradient:#ff4b2b:#ff416c><bold>« VOLVER</bold></gradient>'
+        actions: ['[open] detail']
+      main:
+        slot: 5
+        material: COMPASS
+        name: '<gradient:#00f2fe:#4facfe><bold>TODAS LAS HABILIDADES</bold></gradient>'
+        actions: ['[open] overview']
+      next:
+        slot: 53
+        material: SPECTRAL_ARROW
+        name: '&#00f2fePágina siguiente » &7({page}/{max_pages})'
+        actions: ['[page] next']
+      close:
+        slot: 49
+        material: FIREWORK_STAR
+        name: '<gradient:#ff4b2b:#ff416c><bold>CERRAR</bold></gradient>'
+        actions: ['[close]']
+
+skills:
+  SWORDS:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>ESPADAS</bold></gradient>'
+    slot: 10
+    material: IRON_SWORD
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fDomina el combate cuerpo a cuerpo blandiendo tu &bespada&f'
+      - '&fpara vencer a tus enemigos al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  AXES:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>HACHAS</bold></gradient>'
+    slot: 11
+    material: IRON_AXE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fDesata demoledores golpes cortantes con tu &bhacha de guerra&f'
+      - '&fdestruyendo armaduras rivales al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  ARCHERY:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>ARQUERÍA</bold></gradient>'
+    slot: 12
+    material: BOW
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fPerfecciona tu puntería y precisión con el &barco&f'
+      - '&fpara acertar a distancia al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  ACROBATICS:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>ACROBACIAS</bold></gradient>'
+    slot: 13
+    material: LEATHER_BOOTS
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fAprende a esquivar ataques y amortiguar &bcaídas mortales&f'
+      - '&fmoviéndote con total fluidez al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  TAMING:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>DOMESTICACIÓN</bold></gradient>'
+    slot: 14
+    material: LEAD
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fEntrena compañeros leales y fortalece a tus &bmás fieles bestias&f'
+      - '&fpara que combatan a tu lado al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  UNARMED:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>DESARMADO</bold></gradient>'
+    slot: 15
+    material: CHAINMAIL_CHESTPLATE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fCombate utilizando tus puños limpios con una &bfuerza demoledora&f'
+      - '&fcapaz de desarmar adversarios al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  SPEARS:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>LANZAS</bold></gradient>'
+    slot: 16
+    material: IRON_SHOVEL
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fAtaca a media distancia con la agilidad y alcance de tu &blanza&f'
+      - '&fganando impulso ofensivo al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  TRIDENTS:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>TRIDENTES</bold></gradient>'
+    slot: 19
+    material: TRIDENT
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fCanaliza la fuerza del océano y combate con &btridentes&f'
+      - '&fperforando cualquier defensa al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  CROSSBOWS:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>BALLESTAS</bold></gradient>'
+    slot: 20
+    material: CROSSBOW
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fDispara proyectiles veloces y certeros con tu &bballesta&f'
+      - '&fcargando impactos devastadores al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  MINING:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>MINERÍA</bold></gradient>'
+    slot: 21
+    material: IRON_PICKAXE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fExtrae menas y minerales valiosos en las profundidades de la &bmina&f'
+      - '&fmultiplicando tus ganancias al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  WOODCUTTING:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>LEÑADOR</bold></gradient>'
+    slot: 22
+    material: DIAMOND_AXE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fTala árboles enteros y abastece madera de forma &bóptima&f'
+      - '&felevando tu rendimiento forestal al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  EXCAVATION:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>EXCAVACIÓN</bold></gradient>'
+    slot: 23
+    material: IRON_SHOVEL
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fDesentierra tesoros raros y remueve tierra con tu &bpala&f'
+      - '&faumentando tus hallazgos al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  HERBALISM:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>HERBALISMO</bold></gradient>'
+    slot: 24
+    material: IRON_HOE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fCosecha plantas y multiplica el rendimiento de tus &bcultivos&f'
+      - '&fconvirtiendo tu huerto al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  FISHING:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>PESCA</bold></gradient>'
+    slot: 25
+    material: FISHING_ROD
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fAtrapa peces exóticos y tesoros sumergidos con tu &bcaña&f'
+      - '&fobteniendo botines marinos al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  ALCHEMY:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>ALQUIMIA</bold></gradient>'
+    slot: 28
+    material: BREWING_STAND
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fPrepara brebajes mágicos y pociones poderosas en tu &balambique&f'
+      - '&foptimizando cada receta al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  REPAIR:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>REPARACIÓN</bold></gradient>'
+    slot: 29
+    material: ANVIL
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fRestaura la durabilidad de armaduras y herramientas en el &byunque&f'
+      - '&fconservando encantamientos al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  SALVAGE:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>RECICLAJE</bold></gradient>'
+    slot: 30
+    material: GRINDSTONE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fRecupera lingotes y materiales puros reciclando &bequipo usado&f'
+      - '&foptimizando tus recursos al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  SMELTING:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>FUNDICIÓN</bold></gradient>'
+    slot: 31
+    material: FURNACE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fFunde minerales rápidamente ahorrando combustible en el &bhorno&f'
+      - '&fcon duplicación de lingotes al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+
+  MACES:
+    enabled: true
+    display-name: '<gradient:#00f2fe:#4facfe><bold>MAZAS</bold></gradient>'
+    slot: 32
+    material: MACE
+    name: '{skill_display} &8» &fNv. {level}'
+    lore:
+      - ''
+      - '&fAplastante poder contundente al caer desde alturas con tu &bmaza&f'
+      - '&fgenerando ondas de daño al &emáximo&f.'
+      - ''
+      - '&8» &fEstadísticas de la habilidad:'
+      - '  &8▪ &fNivel actual: &a{level}'
+      - '  &8▪ &fExperiencia: &#ffd65f{xp} &8/ &#ffd65f{required_xp}'
+      - '  &8▪ &fFaltante: &b{remaining_xp} XP'
+      - '  &8▪ &fProgreso: &#00f2fe{progress}%'
+      - ''
+      - '&8» &fBarra de progreso:'
+      - '  {progress_bar}'
+      - ''
+      - '&8» &fHabilidades disponibles:'
+      - '{abilities_preview}'
+      - ''
+      - '&#00f2fe✔ ¡Click izq. para ver detalles!'
+    actions:
+      - '[open] detail'
+    fallback-material: NETHERITE_AXE
+
+sounds:
+  open:
+    enabled: true
+    type: BLOCK_CHEST_OPEN
+    volume: 0.7
+    pitch: 1.2
+  click:
+    enabled: true
+    type: UI_BUTTON_CLICK
+    volume: 0.7
+    pitch: 1.1
+  error:
+    enabled: true
+    type: ENTITY_VILLAGER_NO
+    volume: 0.8
+    pitch: 1.0
+
+messages:
+  prestige-unavailable: '&cEsta habilidad no permite realizar prestigio.'
+  no-permission: '<gradient:#ff4b2b:#ff416c>¡No tienes permiso para hacer eso!</gradient>'
+  only-players: '&cEste comando es solo para jugadores.'
+  player-not-found: '&cJugador no encontrado.'
+  reloaded: '<gradient:#00f2fe:#4facfe><bold>NewSkills</bold></gradient> &8» &aMenús y mensajes recargados con éxito.'
+  reload-error: '&cNo se pudieron cargar los archivos. Revisa la consola.'
+  usage: '&eUsa /skills, /skills reload o /skills open <jugador>.'
+
+abilities:
+  SWORDS:
+    SWORDS_COUNTER_ATTACK:
+      enabled: true
+      material: GOLDEN_SWORD
+      name: 'Counter Attack'
+      type: Pasiva
+      show-chance: true
+      item-name: '<gradient:#ffd65f:#f0a51b><bold>COUNTER ATTACK</bold></gradient> &8(Rango {rank}/{max_rank})'
+      item-lore:
+        - ''
+        - '&8» &fDetalles de la técnica:'
+        - '  &8▪ &fProbabilidad: &a{chance}%'
+        - '  &8▪ &fDaño devuelto: &b{counter_damage}%'
+        - '  &8▪ &fDesbloqueo: &eNv. {unlock_level}'
+        - '  &8▪ &fEstado: {status}'
+        - '  &8▪ &fTipo: &f{ability_type}'
+        - ''
+        - '&8» &fDescripción:'
+        - '{ability_description}'
+      description:
+        - '&7Al recibir daño enemigo, tienes probabilidad de reflejar'
+        - '&7parte del impacto directamente contra el atacante.'
+    SWORDS_RUPTURE:
+      enabled: true
+      material: NETHERITE_SWORD
+      name: 'Rupture'
+      type: Pasiva
+      description:
+        - '&7Aplica daño por sangrado progresivo con cada golpe.'
+    SWORDS_SERRATED_STRIKES:
+      enabled: true
+      material: DIAMOND_SWORD
+      name: 'Serrated Strikes'
+      type: Activa
+      description:
+        - '&7Ataque en área que daña a múltiples enemigos cercanos.'
+    SWORDS_STAB:
+      enabled: true
+      material: IRON_SWORD
+      name: 'Stab'
+      type: Pasiva
+      description:
+        - '&7Aumenta el daño base de tus ataques con espada.'
+    SWORDS_SWORDS_LIMIT_BREAK:
+      enabled: true
+      material: FLINT
+      name: 'Swords Limit Break'
+      type: Pasiva
+      description:
+        - '&7Desbloquea el potencial máximo del combate con espada.'
+  AXES:
+    AXES_ARMOR_IMPACT:
+      enabled: true
+      material: IRON_AXE
+      name: 'Armor Impact'
+      type: Pasiva
+      description:
+        - '&7Destruye la durabilidad de armaduras enemigas rápidamente.'
+    AXES_AXE_MASTERY:
+      enabled: true
+      material: IRON_AXE
+      name: 'Axe Mastery'
+      type: Pasiva
+      description:
+        - '&7Aumenta el daño global infligido al blandir hachas.'
+    AXES_AXES_LIMIT_BREAK:
+      enabled: true
+      material: IRON_AXE
+      name: 'Axes Limit Break'
+      type: Pasiva
+      description:
+        - '&7Potencia todas las características del combate con hachas.'
+    AXES_CRITICAL_STRIKES:
+      enabled: true
+      material: IRON_AXE
+      name: 'Critical Strikes'
+      type: Pasiva
+      description:
+        - '&7Otorga probabilidad de asestar golpes críticos contundentes.'
+    AXES_GREATER_IMPACT:
+      enabled: true
+      material: IRON_AXE
+      name: 'Greater Impact'
+      type: Pasiva
+      description:
+        - '&7Empuja y aturde a los oponentes con impactos pesados.'
+    AXES_SKULL_SPLITTER:
+      enabled: true
+      material: IRON_AXE
+      name: 'Skull Splitter'
+      type: Activa
+      description:
+        - '&7Habilidad activa que desata daño masivo de área.'
+  ARCHERY:
+    ARCHERY_ARROW_RETRIEVAL:
+      enabled: true
+      material: BOW
+      name: 'Arrow Retrieval'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de recuperar flechas clavadas en enemigos.'
+    ARCHERY_DAZE:
+      enabled: true
+      material: BOW
+      name: 'Daze'
+      type: Pasiva
+      description:
+        - '&7Desorienta y ralentiza a los enemigos impactados.'
+    ARCHERY_SKILL_SHOT:
+      enabled: true
+      material: BOW
+      name: 'Skill Shot'
+      type: Pasiva
+      description:
+        - '&7Aumenta el daño según la distancia del proyectil.'
+    ARCHERY_ARCHERY_LIMIT_BREAK:
+      enabled: true
+      material: BOW
+      name: 'Archery Limit Break'
+      type: Pasiva
+      description:
+        - '&7Desata el máximo potencial del tiro con arco.'
+  ACROBATICS:
+    ACROBATICS_DODGE:
+      enabled: true
+      material: FEATHER
+      name: 'Dodge'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de esquivar golpes físicos por completo.'
+    ACROBATICS_ROLL:
+      enabled: true
+      material: FEATHER
+      name: 'Roll'
+      type: Pasiva
+      description:
+        - '&7Rueda al impactar contra el suelo reduciendo el daño.'
+  TAMING:
+    TAMING_BEAST_LORE:
+      enabled: true
+      material: BONE
+      name: 'Beast Lore'
+      type: Pasiva
+      description:
+        - '&7Permite inspeccionar la salud y estado de tus mascotas.'
+    TAMING_CALL_OF_THE_WILD:
+      enabled: true
+      material: BONE
+      name: 'Call Of The Wild'
+      type: Pasiva
+      description:
+        - '&7Llama a animales cercanos para que acudan a ti.'
+    TAMING_ENVIRONMENTALLY_AWARE:
+      enabled: true
+      material: BONE
+      name: 'Environmentally Aware'
+      type: Pasiva
+      description:
+        - '&7Otorga inmunidad ambiental a tus mascotas compañeras.'
+    TAMING_FAST_FOOD_SERVICE:
+      enabled: true
+      material: BONE
+      name: 'Fast Food Service'
+      type: Pasiva
+      description:
+        - '&7Tus lobos recuperan salud al infligir daño.'
+    TAMING_GORE:
+      enabled: true
+      material: BONE
+      name: 'Gore'
+      type: Pasiva
+      description:
+        - '&7Ataques de lobo que provocan sangrado continuo.'
+    TAMING_HOLY_HOUND:
+      enabled: true
+      material: BONE
+      name: 'Holy Hound'
+      type: Pasiva
+      description:
+        - '&7Tus lobos son inmunes a fuego, veneno y magia.'
+    TAMING_PUMMEL:
+      enabled: true
+      material: BONE
+      name: 'Pummel'
+      type: Pasiva
+      description:
+        - '&7Tus mascotas tienen probabilidad de aturdir oponentes.'
+    TAMING_SHARPENED_CLAWS:
+      enabled: true
+      material: BONE
+      name: 'Sharpened Claws'
+      type: Pasiva
+      description:
+        - '&7Aumenta el daño de ataque cuerpo a cuerpo de tus lobos.'
+    TAMING_SHOCK_PROOF:
+      enabled: true
+      material: BONE
+      name: 'Shock Proof'
+      type: Pasiva
+      description:
+        - '&7Reduce drásticamente el daño por explosiones a tus mascotas.'
+    TAMING_THICK_FUR:
+      enabled: true
+      material: BONE
+      name: 'Thick Fur'
+      type: Pasiva
+      description:
+        - '&7Aumenta la defensa y resistencia de tus compañeros.'
+  UNARMED:
+    UNARMED_ARROW_DEFLECT:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Arrow Deflect'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de desviar flechas enemigas con las manos.'
+    UNARMED_BERSERK:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Berserk'
+      type: Pasiva
+      description:
+        - '&7Aumenta tu velocidad de ataque al luchar sin armas.'
+    UNARMED_BLOCK_CRACKER:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Block Cracker'
+      type: Pasiva
+      description:
+        - '&7Permite romper bloques débiles a puñetazos rápidamente.'
+    UNARMED_DISARM:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Disarm'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de desarmar y hacer soltar el arma al oponente.'
+    UNARMED_STEEL_ARM_STYLE:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Steel Arm Style'
+      type: Pasiva
+      description:
+        - '&7Incrementa masivamente el daño físico con los puños.'
+    UNARMED_IRON_GRIP:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Iron Grip'
+      type: Pasiva
+      description:
+        - '&7Evita que otros combatientes desarmados puedan desarmarte.'
+    UNARMED_UNARMED_LIMIT_BREAK:
+      enabled: true
+      material: LEATHER_CHESTPLATE
+      name: 'Unarmed Limit Break'
+      type: Pasiva
+      description:
+        - '&7Potencial supremo para el combate sin armas.'
+  SPEARS:
+    SPEARS_SPEARS_LIMIT_BREAK:
+      enabled: true
+      material: IRON_SHOVEL
+      name: 'Spears Limit Break'
+      type: Pasiva
+      description:
+        - '&7Potencia los ataques a distancia con lanzas.'
+    SPEARS_MOMENTUM:
+      enabled: true
+      material: IRON_SHOVEL
+      name: 'Momentum'
+      type: Pasiva
+      description:
+        - '&7Gana daño adicional al atacar en movimiento continuo.'
+    SPEARS_SPEAR_MASTERY:
+      enabled: true
+      material: IRON_SHOVEL
+      name: 'Spear Mastery'
+      type: Pasiva
+      description:
+        - '&7Incrementa la precisión y alcance de tus estocadas.'
+  TRIDENTS:
+    TRIDENTS_IMPALE:
+      enabled: true
+      material: TRIDENT
+      name: 'Impale'
+      type: Pasiva
+      description:
+        - '&7Empala enemigos infligiendo daño perforante adicional.'
+    TRIDENTS_TRIDENTS_LIMIT_BREAK:
+      enabled: true
+      material: TRIDENT
+      name: 'Tridents Limit Break'
+      type: Pasiva
+      description:
+        - '&7Eleva al límite el dominio de las armas acuáticas.'
+  CROSSBOWS:
+    CROSSBOWS_CROSSBOWS_LIMIT_BREAK:
+      enabled: true
+      material: CROSSBOW
+      name: 'Crossbows Limit Break'
+      type: Pasiva
+      description:
+        - '&7Potencia la velocidad y fuerza de proyectiles de ballesta.'
+    CROSSBOWS_TRICK_SHOT:
+      enabled: true
+      material: CROSSBOW
+      name: 'Trick Shot'
+      type: Pasiva
+      description:
+        - '&7Tiro con rebote que puede impactar en objetivos secundarios.'
+    CROSSBOWS_POWERED_SHOT:
+      enabled: true
+      material: CROSSBOW
+      name: 'Powered Shot'
+      type: Pasiva
+      description:
+        - '&7Disparo cargado con gran penetración de armaduras.'
+  MINING:
+    MINING_BIGGER_BOMBS:
+      enabled: true
+      material: IRON_PICKAXE
+      name: 'Bigger Bombs'
+      type: Pasiva
+      description:
+        - '&7Aumenta el radio de explosión al minar con dinamita.'
+    MINING_BLAST_MINING:
+      enabled: true
+      material: IRON_PICKAXE
+      name: 'Blast Mining'
+      type: Pasiva
+      description:
+        - '&7Permite detonar dinamita a distancia para picar rocas.'
+    MINING_DEMOLITIONS_EXPERTISE:
+      enabled: true
+      material: IRON_PICKAXE
+      name: 'Demolitions Expertise'
+      type: Pasiva
+      description:
+        - '&7Reduce el daño que recibes al usar explosivos mineros.'
+    MINING_DOUBLE_DROPS:
+      enabled: true
+      material: IRON_PICKAXE
+      name: 'Double Drops'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de duplicar minerales obtenidos al picar.'
+    MINING_SUPER_BREAKER:
+      enabled: true
+      material: DIAMOND_PICKAXE
+      name: 'Super Breaker'
+      type: Activa
+      description:
+        - '&7Aumenta masivamente la velocidad de picado por tiempo limitado.'
+    MINING_MOTHER_LODE:
+      enabled: true
+      material: IRON_PICKAXE
+      name: 'Mother Lode'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de extraer vetas minerales completas.'
+  WOODCUTTING:
+    WOODCUTTING_KNOCK_ON_WOOD:
+      enabled: true
+      material: IRON_AXE
+      name: 'Knock On Wood'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de obtener corteza y resinas especiales.'
+    WOODCUTTING_HARVEST_LUMBER:
+      enabled: true
+      material: IRON_AXE
+      name: 'Harvest Lumber'
+      type: Pasiva
+      description:
+        - '&7Multiplica la madera recolectada de árboles talados.'
+    WOODCUTTING_LEAF_BLOWER:
+      enabled: true
+      material: IRON_AXE
+      name: 'Leaf Blower'
+      type: Pasiva
+      description:
+        - '&7Rompe hojas al instante recogiendo retoños de árbol.'
+    WOODCUTTING_TREE_FELLER:
+      enabled: true
+      material: DIAMOND_AXE
+      name: 'Tree Feller'
+      type: Activa
+      description:
+        - '&7Tala el árbol entero de un solo golpe con tu hacha.'
+    WOODCUTTING_CLEAN_CUTS:
+      enabled: true
+      material: IRON_AXE
+      name: 'Clean Cuts'
+      type: Pasiva
+      description:
+        - '&7Cortes limpios que aumentan la experiencia forestal.'
+  EXCAVATION:
+    EXCAVATION_ARCHAEOLOGY:
+      enabled: true
+      material: IRON_SHOVEL
+      name: 'Archaeology'
+      type: Pasiva
+      description:
+        - '&7Descubre tesoros antiguos y minerales al excavar tierra.'
+    EXCAVATION_GIGA_DRILL_BREAKER:
+      enabled: true
+      material: DIAMOND_SHOVEL
+      name: 'Giga Drill Breaker'
+      type: Activa
+      description:
+        - '&7Excava a velocidad extrema con triple experiencia.'
+  HERBALISM:
+    HERBALISM_DOUBLE_DROPS:
+      enabled: true
+      material: WHEAT
+      name: 'Double Drops'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de duplicar cosechas de trigo, papas y zanahorias.'
+    HERBALISM_VERDANT_BOUNTY:
+      enabled: true
+      material: WHEAT
+      name: 'Verdant Bounty'
+      type: Pasiva
+      description:
+        - '&7Bonificación adicional de alimentos al cosechar huertos.'
+    HERBALISM_FARMERS_DIET:
+      enabled: true
+      material: WHEAT
+      name: 'Farmers Diet'
+      type: Pasiva
+      description:
+        - '&7Aumenta la nutrición y comida restaurada por alimentos.'
+    HERBALISM_GREEN_TERRA:
+      enabled: true
+      material: WHEAT
+      name: 'Green Terra'
+      type: Activa
+      description:
+        - '&7Convierte bloques en variantes fértiles con triple drop.'
+    HERBALISM_GREEN_THUMB:
+      enabled: true
+      material: WHEAT
+      name: 'Green Thumb'
+      type: Pasiva
+      description:
+        - '&7Reimplanta cultivos automáticamente al cosechar.'
+    HERBALISM_HYLIAN_LUCK:
+      enabled: true
+      material: WHEAT
+      name: 'Hylian Luck'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de encontrar flores raras y esmeraldas.'
+    HERBALISM_SHROOM_THUMB:
+      enabled: true
+      material: WHEAT
+      name: 'Shroom Thumb'
+      type: Pasiva
+      description:
+        - '&7Permite plantar hongos en cualquier bloque de tierra.'
+  FISHING:
+    FISHING_FISHERMANS_DIET:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Fishermans Diet'
+      type: Pasiva
+      description:
+        - '&7Aumenta los puntos de saturación al consumir pescado.'
+    FISHING_ICE_FISHING:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Ice Fishing'
+      type: Pasiva
+      description:
+        - '&7Permite pescar a través de bloques de hielo.'
+    FISHING_MAGIC_HUNTER:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Magic Hunter'
+      type: Pasiva
+      description:
+        - '&7Mayor probabilidad de pescar libros y armas encantadas.'
+    FISHING_MASTER_ANGLER:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Master Angler'
+      type: Pasiva
+      description:
+        - '&7Acelera la velocidad a la que pican los peces.'
+    FISHING_TREASURE_HUNTER:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Treasure Hunter'
+      type: Pasiva
+      description:
+        - '&7Otorga acceso a las mejores tablas de botines del océano.'
+    FISHING_SHAKE:
+      enabled: true
+      material: FISHING_ROD
+      name: 'Shake'
+      type: Pasiva
+      description:
+        - '&7Arranca objetos y botín de monstruos usando la caña.'
+  ALCHEMY:
+    ALCHEMY_CATALYSIS:
+      enabled: true
+      material: BREWING_STAND
+      name: 'Catalysis'
+      type: Pasiva
+      description:
+        - '&7Acelera la velocidad de destilación en el alambique.'
+    ALCHEMY_CONCOCTIONS:
+      enabled: true
+      material: BREWING_STAND
+      name: 'Concoctions'
+      type: Pasiva
+      description:
+        - '&7Permite elaborar pociones con efectos combinados avanzados.'
+  REPAIR:
+    REPAIR_ARCANE_FORGING:
+      enabled: true
+      material: ANVIL
+      name: 'Arcane Forging'
+      type: Pasiva
+      description:
+        - '&7Conserva los encantamientos de tus piezas al repararlas.'
+    REPAIR_REPAIR_MASTERY:
+      enabled: true
+      material: ANVIL
+      name: 'Repair Mastery'
+      type: Pasiva
+      description:
+        - '&7Restaura más puntos de durabilidad usando menos lingotes.'
+    REPAIR_SUPER_REPAIR:
+      enabled: true
+      material: ANVIL
+      name: 'Super Repair'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de duplicar la efectividad de la reparación.'
+  SALVAGE:
+    SALVAGE_SCRAP_COLLECTOR:
+      enabled: true
+      material: GRINDSTONE
+      name: 'Scrap Collector'
+      type: Pasiva
+      description:
+        - '&7Aumenta la cantidad de lingotes recuperados al reciclar.'
+    SALVAGE_ARCANE_SALVAGE:
+      enabled: true
+      material: GRINDSTONE
+      name: 'Arcane Salvage'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de extraer encantamientos en libros al reciclar.'
+  SMELTING:
+    SMELTING_FUEL_EFFICIENCY:
+      enabled: true
+      material: FURNACE
+      name: 'Fuel Efficiency'
+      type: Pasiva
+      description:
+        - '&7Duplica la duración del carbón y combustible en hornos.'
+    SMELTING_SECOND_SMELT:
+      enabled: true
+      material: FURNACE
+      name: 'Second Smelt'
+      type: Pasiva
+      description:
+        - '&7Probabilidad de obtener dos lingotes de una sola mena.'
+    SMELTING_UNDERSTANDING_THE_ART:
+      enabled: true
+      material: FURNACE
+      name: 'Understanding The Art'
+      type: Pasiva
+      description:
+        - '&7Multiplica la experiencia obtenida al fundir minerales.'
+  MACES:
+    MACES_MACES_LIMIT_BREAK:
+      enabled: true
+      material: NETHERITE_AXE
+      name: 'Maces Limit Break'
+      type: Pasiva
+      description:
+        - '&7Desata el máximo impacto devastador con mazas.'
+    MACES_CRUSH:
+      enabled: true
+      material: NETHERITE_AXE
+      name: 'Crush'
+      type: Pasiva
+      description:
+        - '&7Golpes aplastantes que ralentizan e incapacitan al enemigo.'
+    MACES_CRIPPLE:
+      enabled: true
+      material: NETHERITE_AXE
+      name: 'Cripple'
+      type: Pasiva
+      description:
+        - '&7Reduce la velocidad de ataque del rival impactado.'
+
+xp-sources:
+  SWORDS:
+    formula-lines:
+      - '&7Ataca enemigos con espadas para ganar XP.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  AXES:
+    formula-lines:
+      - '&7Golpea enemigos utilizando hachas.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  ARCHERY:
+    formula-lines:
+      - '&7Golpea enemigos con arco para entrenar.'
+      - '&7La distancia puede modificar el resultado.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  ACROBATICS:
+    formula-lines:
+      - '&7Resiste caídas, rueda o esquiva golpes.'
+      - '&7Los valores base cambian según la acción.'
+    show-block-sources: false
+    entries:
+      fall:
+        material: FEATHER
+        name: 'Resistir caídas'
+        experience-path: Experience_Values.Acrobatics.Fall
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      dodge:
+        material: LEATHER_BOOTS
+        name: 'Esquivar golpes'
+        experience-path: Experience_Values.Acrobatics.Dodge
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      roll:
+        material: SLIME_BALL
+        name: 'Rodar al caer'
+        experience-path: Experience_Values.Acrobatics.Roll
+        description:
+          - '&7XP base; sujeto a modificadores.'
+  TAMING:
+    formula-lines:
+      - '&7Domestica animales para obtener XP.'
+      - '&7Los valores base dependen de la especie.'
+    show-block-sources: false
+    entries:
+      wolf:
+        material: BONE
+        name: 'Domesticar lobos'
+        experience-path: Experience_Values.Taming.Animal_Taming.Wolf
+        description:
+          - '&7XP variable: consulta la acción.'
+      ocelot:
+        material: COD
+        name: 'Domesticar ocelotes'
+        experience-path: Experience_Values.Taming.Animal_Taming.Ocelot
+        description:
+          - '&7XP variable: consulta la acción.'
+  UNARMED:
+    formula-lines:
+      - '&7Golpea enemigos usando tus puños.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  SPEARS:
+    formula-lines:
+      - '&7Combate con lanzas para progresar.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  TRIDENTS:
+    formula-lines:
+      - '&7Golpea enemigos usando tridentes.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  CROSSBOWS:
+    formula-lines:
+      - '&7Golpea enemigos con ballesta.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+  MINING:
+    formula-lines:
+      - '&7Rompe menas y rocas naturales válidas.'
+      - '&7Cada bloque tiene XP base configurable.'
+    show-block-sources: true
+    entries:
+  WOODCUTTING:
+    formula-lines:
+      - '&7Tala troncos naturales válidos.'
+      - '&7Cada tipo de tronco tiene XP propia.'
+    show-block-sources: true
+    entries:
+  EXCAVATION:
+    formula-lines:
+      - '&7Excava bloques naturales válidos.'
+      - '&7Cada bloque tiene una XP base distinta.'
+    show-block-sources: true
+    entries:
+  HERBALISM:
+    formula-lines:
+      - '&7Recolecta cultivos y plantas válidas.'
+      - '&7La XP base depende del bloque.'
+    show-block-sources: true
+    entries:
+  FISHING:
+    formula-lines:
+      - '&7Pesca peces y realiza acciones de pesca.'
+      - '&7Cada pez tiene XP base diferente.'
+    show-block-sources: false
+    entries:
+      cod:
+        material: COD
+        name: 'Pescar bacalao'
+        experience-path: Experience_Values.Fishing.Cod
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      salmon:
+        material: SALMON
+        name: 'Pescar salmón'
+        experience-path: Experience_Values.Fishing.Salmon
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      tropical:
+        material: TROPICAL_FISH
+        name: 'Pescar pez tropical'
+        experience-path: Experience_Values.Fishing.Tropical_Fish
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      puffer:
+        material: PUFFERFISH
+        name: 'Pescar pez globo'
+        experience-path: Experience_Values.Fishing.Pufferfish
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      shake:
+        material: FISHING_ROD
+        name: 'Shake: botín especial'
+        experience-path: Experience_Values.Fishing.Shake
+        description:
+          - '&7XP base; sujeto a modificadores.'
+  ALCHEMY:
+    formula-lines:
+      - '&7Elabora y mejora pociones.'
+      - '&7Cada etapa tiene XP base configurable.'
+    show-block-sources: false
+    entries:
+      potion1:
+        material: POTION
+        name: 'Elaborar poción base'
+        experience-path: Experience_Values.Alchemy.Potion_Brewing.Stage_1
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      potion2:
+        material: BREWING_STAND
+        name: 'Poción mejorada'
+        experience-path: Experience_Values.Alchemy.Potion_Brewing.Stage_2
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      potion3:
+        material: GLOWSTONE_DUST
+        name: 'Poción avanzada'
+        experience-path: Experience_Values.Alchemy.Potion_Brewing.Stage_3
+        description:
+          - '&7XP base; sujeto a modificadores.'
+      potion4:
+        material: REDSTONE
+        name: 'Poción superior'
+        experience-path: Experience_Values.Alchemy.Potion_Brewing.Stage_4
+        description:
+          - '&7XP base; sujeto a modificadores.'
+  REPAIR:
+    formula-lines:
+      - '&7Repara herramientas y armaduras.'
+      - '&7La XP depende del material y daño reparado.'
+    show-block-sources: false
+    entries:
+      anvil:
+        material: ANVIL
+        name: 'Reparar herramientas'
+        experience-path: Experience_Values.Repair.Base
+        description:
+          - '&7XP base; sujeto a modificadores.'
+  SALVAGE:
+    formula-lines:
+      - '&7Habilidad derivada de Reparación y Pesca.'
+      - '&7No tiene XP independiente.'
+    show-block-sources: false
+    entries:
+      salvage:
+        material: GRINDSTONE
+        name: 'Recuperar materiales'
+        description:
+          - '&7XP variable: consulta la acción.'
+  SMELTING:
+    formula-lines:
+      - '&7Habilidad derivada de Minería y Reparación.'
+      - '&7No tiene XP independiente.'
+    show-block-sources: false
+    entries:
+      smelting:
+        material: FURNACE
+        name: 'Fundir minerales'
+        description:
+          - '&7XP variable: consulta la acción.'
+  MACES:
+    formula-lines:
+      - '&7Golpea enemigos usando mazas.'
+      - '&7XP PvE base = multiplicador del mob × 10.'
+    show-block-sources: false
+    entries:
+      zombie:
+        material: ROTTEN_FLESH
+        name: 'Atacar zombi'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Zombie
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      skeleton:
+        material: BONE
+        name: 'Atacar esqueleto'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Skeleton
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      creeper:
+        material: GUNPOWDER
+        name: 'Atacar creeper'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Creeper
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      spider:
+        material: STRING
+        name: 'Atacar araña'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Spider
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      enderman:
+        material: ENDER_PEARL
+        name: 'Atacar enderman'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Enderman
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'
+      animal:
+        material: BEEF
+        name: 'Atacar animales'
+        xp-value-multiplier: 10.0
+        experience-path: Experience_Values.Combat.Multiplier.Animals
+        description:
+          - '&7XP base del mob por golpe (antes de modificadores).'

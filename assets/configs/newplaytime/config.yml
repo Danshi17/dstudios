@@ -1,0 +1,67 @@
+
+# Tipos disponibles: MYSQL, MONGODB, H2, YML
+database:
+  type: "H2"
+
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "nplaytime"
+    username: "root"
+    password: "********"
+    useSSL: false
+
+  mongodb:
+    uri: "mongodb://localhost:27017"
+    database: "nplaytime"
+
+messages:
+  only_players: "&c&l✘ &cEste comando solo puede ser usado por jugadores."
+  no_permission: "&c&l✘ &cNo tienes permiso para usar este comando."
+  reload: "&a&l✔ &aConfiguración recargada correctamente."
+  level_locked: "&c&l✘ &cEste nivel aún está bloqueado. &7Necesitas más tiempo de juego."
+  already_claimed: "&e&l⚠ &eYa has reclamado este nivel anteriormente."
+  level_claimed: "&a&l✔ &a¡Felicidades! Has reclamado el nivel &e%level%&a."
+
+effects:
+  title:
+    enabled: true
+    text: "&6&l¡NIVEL COMPLETADO!"
+    fade_in: 10
+    stay: 70
+    fade_out: 20
+
+  subtitle:
+    enabled: true
+    text: "<gradient:#FFD700:#FFA500>Nivel %level% desbloqueado</gradient>"
+
+  actionbar:
+    enabled: true
+    text: "&e✦ &6Has alcanzado el nivel %level% &e✦"
+
+  sound:
+    enabled: true
+    type: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.0
+
+  particle:
+    enabled: true
+    type: "VILLAGER_HAPPY"
+    amount: 30
+
+settings:
+  auto_save_interval: 300  # 5 minutos
+  time_format: "DETAILED"
+
+  debug: false
+
+
+placeholders:
+  no_data: "&c&l¡No hay data!"
+# %nplaytime_time% - Tiempo de juego formateado
+# %nplaytime_seconds% - Tiempo de juego en segundos
+# %nplaytime_hours% - Tiempo de juego en horas
+# %nplaytime_level% - Nivel actual del jugador
+# %nplaytime_next_level% - Siguiente nivel a desbloquear
+# %nplaytime_progress% - Progreso hacia el siguiente nivel (porcentaje)

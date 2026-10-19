@@ -1,0 +1,31 @@
+id: clan_chest
+title: '<dark_gray>Clan Chest <gray>»</gray> %clan_tag%</dark_gray>'
+rows: 5
+open-sound: BLOCK_CHEST_OPEN
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,36-44'
+  chest:
+    slot: 20
+    material: CHEST
+    name: '<gold>Open Shared Chest</gold>'
+    lore:
+      - '<gray>Pages: <white>%clan_chest_pages%</white></gray>'
+      - ''
+      - '<yellow>Click to open page 1.</yellow>'
+    action: OPEN_CHEST
+  buy:
+    slot: 24
+    material: GOLD_INGOT
+    name: '<green>Buy Chest Page</green>'
+    lore:
+      - '<gray>Uses money from the clan bank.</gray>'
+    action: CHEST_BUY
+  back:
+    slot: 40
+    material: OAK_DOOR
+    name: '<red>Back</red>'
+    action: OPEN:clan_home

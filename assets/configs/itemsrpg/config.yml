@@ -1,0 +1,195 @@
+#
+# ██╗████████╗███████╗███╗   ███╗███████╗██████╗ ██████╗  ██████╗              ██████╗ ███████╗████████╗ █████╗
+# ██║╚══██══╝██╔════╝████╗ ████║██╔════╝██╔══██╗██╔══██╗██╔════╝               ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗
+# ██║   ██║   █████╗  ██╔████╔██║███████╗██████╔╝██████╔╝██║  ███╗    █████╗    ██████╔╝█████╗     ██║   ███████║
+# ██║   ██║   ██╔══╝  ██║╚██╔╝██║╚════██║██╔══██╗██╔═══╝ ██║   ██║    ╚════╝    ██╔══██╗██╔══╝     ██║   ██╔══██║
+# ██║   ██║   ███████╗██║ ╚═╝ ██║███████║██║  ██║██║     ╚██████╔╝              ██████╔╝███████╗   ██║   ██║  ██║
+# ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝               ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝
+#
+# ItemsRPG - config.yml
+#
+
+auto-smelt:
+  smelt-list:
+    RAW_IRON: IRON_INGOT
+    IRON_ORE: IRON_INGOT
+    DIAMOND_ORE: DIAMOND
+    DEEPSLATE_IRON_ORE: IRON_INGOT
+
+    RAW_GOLD: GOLD_INGOT
+    GOLD_ORE: GOLD_INGOT
+    DEEPSLATE_GOLD_ORE: GOLD_INGOT
+    NETHER_GOLD_ORE: GOLD_INGOT
+
+    RAW_COPPER: COPPER_INGOT
+    COPPER_ORE: COPPER_INGOT
+    DEEPSLATE_COPPER_ORE: COPPER_INGOT
+
+    ANCIENT_DEBRIS: NETHERITE_SCRAP
+
+    COBBLESTONE: STONE
+    COBBLED_DEEPSLATE: DEEPSLATE
+
+    NETHERRACK: NETHER_BRICK
+
+regen-zones:
+  debug: true
+  selection-preview:
+    enabled: true
+    interval: 10
+    particle: VILLAGER_HAPPY
+    color: "#00C8FF"
+    size: 1.0
+    step: 1.0
+    debug: false
+  area-select:
+    max-volume: 50000
+
+custom-fortune-pickaxes:
+  enabled: true
+  materials-allowed:
+    - DIAMOND_PICKAXE
+    - NETHERITE_PICKAXE
+  blocks:
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - NETHER_GOLD_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    - REDSTONE_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - LAPIS_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - NETHER_QUARTZ_ORE
+    - ANCIENT_DEBRIS
+
+custom-fortune-axes:
+  enabled: true
+  materials-allowed:
+    - DIAMOND_AXE
+    - NETHERITE_AXE
+  blocks:
+    - MELON
+    - CACTUS
+
+
+custom-fortune-hoes:
+  enabled: true
+  materials-allowed:
+    - DIAMOND_HOE
+    - NETHERITE_HOE
+  blocks:
+    - WHEAT
+    - CARROTS
+    - POTATOES
+    - BEETROOTS
+    - NETHER_WART
+    - SWEET_BERRY_BUSH
+    - CACAO
+    - MELON
+
+custom-fortune-shovels:
+  enabled: false
+  materials-allowed:
+    - DIAMOND_SHOVEL
+    - NETHERITE_SHOVEL
+  blocks:
+    - SAND
+    - RED_SAND
+    - GRAVEL
+    - CLAY
+
+
+enable-vanilla-cooldowns: false
+
+vanilla-cooldowns:
+  GOLDEN_APPLE: 5
+  ENCHANTED_GOLDEN_APPLE: 5
+  ENDER_PEARL: 5
+  CHORUS_FRUIT: 5
+  MILK_BUCKET: 5
+
+###################################
+# Fortaleza enchantment
+###################################
+fortaleza:
+  enabled: true
+  max-level: 5
+  stack-pieces: true
+  max-reduction-percent: 60.0
+  levels:
+    1: 3.0
+    2: 6.0
+    3: 9.0
+    4: 12.0
+    5: 15.0
+
+###################################
+# Desgarrador enchantment
+###################################
+desgarrador:
+  enabled: true
+  max-level: 5
+  levels:
+    1: 1.0
+    2: 1.5
+    3: 2.0
+    4: 2.5
+    5: 3.0
+  resistance:
+    enabled: true
+    max-level: 5
+    levels:
+      1: 0.5
+      2: 1.0
+      3: 1.5
+      4: 2.0
+      5: 2.5
+  critical:
+    enabled: true
+    multiplier: 1.5
+
+
+#   1 → radio 1 (3x3x3 = hasta 26 bloques extra)
+#   2 → radio 2 (5x5x5 = hasta 124 bloques extra)
+#   3 → radio 3 (7x7x7 = hasta 342 bloques extra)
+#   4 → radio 4 (9x9x9)
+#   5 → radio 5 (11x11x11) — máximo permitido
+explosive-mining:
+  enabled: true
+  chance: 10.5
+
+  ore-blocks:
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - LAPIS_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - REDSTONE_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - NETHER_QUARTZ_ORE
+    - NETHER_GOLD_ORE
+    - ANCIENT_DEBRIS
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+
+  particle: "EXPLOSION_NORMAL"
+  particle-count: 10
+  sound: "ENTITY_GENERIC_EXPLODE"
+  sound-volume: 0.6
+  sound-pitch: 1.5

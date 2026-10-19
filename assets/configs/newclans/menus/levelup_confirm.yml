@@ -1,0 +1,26 @@
+id: levelup_confirm
+
+title: '<dark_gray>Confirm Level Up</dark_gray>'
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,18-26'
+
+  confirm:
+    slot: 11
+    material: LIME_WOOL
+    name: '<green>Confirm Upgrade</green>'
+    lore:
+      - '<gray>Current level: <white>%clan_level%</white></gray>'
+      - '<gray>Points: <white>%clan_points%</white></gray>'
+    action: LEVEL_UP
+
+  cancel:
+    slot: 15
+    material: RED_WOOL
+    name: '<red>Cancel</red>'
+    action: OPEN:levelup_home

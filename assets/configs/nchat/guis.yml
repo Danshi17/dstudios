@@ -1,0 +1,109 @@
+settings:
+  enabled: true
+  snapshot-expire-seconds: 300
+
+item:
+  enabled: true
+  triggers:
+    - "[item]"
+    - "[i]"
+  permission: "nchat.chat.item"
+  display: "<gray>[<yellow>%item%</yellow> &fde %player_name%<gray>]</gray>"
+  hover: "<gray>Click para ver el item (<yellow>%item%</yellow> x%amount%) que tiene %player_name% en la mano"
+  title: "<dark_gray>Item de %player_name%"
+  type: DISPENSER
+  rows: 3
+  static-items:
+    held:
+      slot: 4
+      source: HELD
+      empty-material: BARRIER
+      empty-name: "<red>Sin item en mano"
+      empty-lore:
+        - "<gray>El jugador no tiene nada en la mano."
+  filler:
+    enabled: true
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+    lore: []
+    slots: "0,1,2,3,5,6,7,8"
+
+inventory:
+  enabled: true
+  triggers:
+    - "[inv]"
+    - "[inventario]"
+  permission: "nchat.chat.inv"
+  display: "<gray>[<green>Inventario de %player_name%</green>]</gray>"
+  hover: "<gray>Click para ver el inventario de %player_name%"
+  title: "<dark_gray>Inventario de %player_name% <gray>(%page%/%maxpage%)"
+  type: CHEST
+  rows: 5
+  content-slots: [11,12,13,14,15,16, 20,21,22,23,24,25]
+  static-items:
+    helmet:
+      slot: 0
+      source: HELMET
+      empty-material: LEATHER_HELMET
+      empty-name: "<gray>Sin casco"
+    chestplate:
+      slot: 9
+      source: CHESTPLATE
+      empty-material: LEATHER_CHESTPLATE
+      empty-name: "<gray>Sin pechera"
+    leggings:
+      slot: 18
+      source: LEGGINGS
+      empty-material: LEATHER_LEGGINGS
+      empty-name: "<gray>Sin pantalones"
+    boots:
+      slot: 27
+      source: BOOTS
+      empty-material: LEATHER_BOOTS
+      empty-name: "<gray>Sin botas"
+    mainhand:
+      slot: 40
+      source: MAINHAND
+      empty-material: base64-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgzYmRkN2ZjYzZjNDRkZjI5YzYxOWYwMWMxZDc1MjljZGYxOTYwMDE3ZTdkZGRlNmE4ODE4MzVmMGJiMmU1MiJ9fX0=
+      empty-name: "<gray>Sin item en la mano principal"
+    offhand:
+      slot: 42
+      source: OFFHAND
+      empty-material: SHIELD
+      empty-name: "<gray>Sin item en la otra mano"
+    previous_page:
+      slot: 37
+      material: base64-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWYxMzNlOTE5MTlkYjBhY2VmZGMyNzJkNjdmZDg3YjRiZTg4ZGM0NGE5NTg5NTg4MjQ0NzRlMjFlMDZkNTNlNiJ9fX0=
+      name: "<yellow>« Página anterior"
+      action: PREVIOUS_PAGE
+    next_page:
+      slot: 44
+      material: base64-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTNmYzUyMjY0ZDhhZDllNjU0ZjQxNWJlZjAxYTIzOTQ3ZWRiY2NjY2Y2NDkzNzMyODliZWE0ZDE0OTU0MWY3MCJ9fX0=
+      name: "<aqua>Página siguiente »"
+      action: NEXT_PAGE
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+    lore: []
+    slots: "all"
+
+enderchest:
+  enabled: true
+  triggers:
+    - "[enderchest]"
+    - "[ec]"
+  permission: "nchat.chat.enderchest"
+  display: "<gray>[<dark_purple>EnderChest</dark_purple>]</gray>"
+  hover: "<gray>Click para ver el enderchest de %player_name%"
+  title: "<dark_gray>EnderChest de %player_name% <gray>(%page%/%maxpage%)"
+  type: CHEST
+  rows: 3
+  content-slots: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+  static-items: {}
+  filler:
+    enabled: false
+    material: PURPLE_STAINED_GLASS_PANE
+    name: " "
+    lore: []
+    slots: "all"

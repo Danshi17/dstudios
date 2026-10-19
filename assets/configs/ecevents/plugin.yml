@@ -1,0 +1,24 @@
+name: ECEvents
+version: '${version}'
+
+main: me.danshi.eCEvents.ECEvents
+api-version: '1.8'
+softdepend: [ActionBarAPI, TitleAPI  ]
+depend: [ Vault, RevEnchants, RevAutoSell ]
+commands:
+  ece:
+    description: Comandos de ECEvents
+    aliases: [ ecevents, ec-events ]
+    usage: /ece
+  luckyblocks:
+    description: Abre el menu de Lucky Blocks
+    aliases: [ luckyblock, lb ]
+    usage: /luckyblocks
+
+permissions:
+  ecevents.use:
+    description: Uso general del plugin
+    default: true
+  ecevents.admin:
+    description: Comandos de administracion
+    default: op

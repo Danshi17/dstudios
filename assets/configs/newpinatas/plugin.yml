@@ -1,0 +1,23 @@
+name: NewPinatas
+version: 1.0.0
+main: github.dstudio.newPinatas.NewPinatas
+api-version: '1.18'
+author: DStudio
+softdepend: [WorldGuard, PlaceholderAPI, Votifier, NuVotifier, VotifierPlus]
+
+commands:
+  newpinatas:
+    description: Main command for NewPinatas.
+    aliases: [newpinata, npinatas, np]
+    usage: /newpinatas
+
+permissions:
+  newpinatas.admin:
+    description: Access to all NewPinatas admin commands.
+    default: op
+  newpinatas.hit:
+    description: Allows a player to hit active pinatas when hit permission is enabled.
+    default: true
+  newpinatas.bypass.cooldown:
+    description: Bypass pinata hit cooldown.
+    default: op

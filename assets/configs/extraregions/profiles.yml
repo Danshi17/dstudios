@@ -1,0 +1,43 @@
+profiles:
+  vip-zone:
+    title:
+      enabled: true
+      text: "<gradient:#FFD700:#FFAA00>Zona VIP</gradient>"
+      subtitle: "&7Bienvenido a la zona exclusiva"
+      fade-in: 10
+      stay: 60
+      fade-out: 10
+    actionbar:
+      enabled: true
+      persistent: true
+      text: "&6Estas en la &lZona VIP &6| &7Jugador: &f%player_name%"
+    sounds:
+      enter:
+        enabled: true
+        key: "entity.player.levelup"
+        volume: 1.0
+        pitch: 1.2
+      exit:
+        enabled: false
+    particles:
+      enter:
+        enabled: true
+        effects:
+          - type: "TOTEM"
+            count: 30
+            offset-x: 0.5
+            offset-y: 1.0
+            offset-z: 0.5
+            speed: 0.1
+            y-offset: 1.0
+      periodic:
+        enabled: true
+        interval-ticks: 20
+        effects:
+          - type: "END_ROD"
+            count: 3
+            offset-x: 0.3
+            offset-y: 0.1
+            offset-z: 0.3
+            speed: 0.0
+            y-offset: 0.1

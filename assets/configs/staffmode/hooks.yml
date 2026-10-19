@@ -1,0 +1,185 @@
+
+discord:
+  enabled: false
+  webhooks:
+    staff-connect: ""
+    staff-disconnect: ""
+    staff-leaderboard: ""
+
+  staff-connect:
+    enabled: true
+
+    username: "LK INFO | Staff Conectado"
+    avatar-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+    embed:
+      color: 5763719
+
+      title: "🔰 Staff Conectado"
+
+      description: |
+        ➜ **Nombre:** %player%
+        ➜ **Hora:** %time%
+        ➜ **Fecha:** %date%
+
+      thumbnail:
+        enabled: true
+        url: "https://minotar.net/avatar/%uuid%/128"
+
+      image:
+        enabled: false
+        url: ""
+
+      footer:
+        enabled: true
+        text: "Sistema de Staff"
+        icon-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+      timestamp: true
+
+  staff-disconnect:
+    enabled: false
+
+    username: "LK INFO | Staff Desconectado"
+    avatar-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+    embed:
+      color: 15158332
+
+      title: "🔴 Staff Desconectado"
+      description: |
+        ➜ **Nombre:** %player%
+        ➜ **Hora:** %time%
+        ➜ **Fecha:** %date%
+        ➜ **Duración de sesión:** %session_duration%
+
+      thumbnail:
+        enabled: true
+        url: "https://minotar.net/avatar/%uuid%/128"
+
+      image:
+        enabled: false
+        url: ""
+
+      footer:
+        enabled: true
+        text: "Sistema de Staff"
+        icon-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+      timestamp: true
+
+  staff-leaderboard:
+    enabled: false
+
+    auto-send:
+      enabled: true
+      interval: 604800
+
+    username: "LK INFO | Staff"
+    avatar-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+    embed:
+      color: 15844367
+
+      title: "🏆 Actividad de Staff | Top Semanal"
+
+      description: |
+        Hay **%total_players%** jugadores registrados
+        con un total de **%total_staff%** Staffs activos
+        
+        **Tiempo total:** %total_time%
+
+      leaderboard-format:
+        top-1: "🥇 **#%position%** | %player% — `%time%`"
+        top-2: "🥈 **#%position%** | %player% — `%time%`"
+        top-3: "🥉 **#%position%** | %player% — `%time%`"
+        default: "**#%position%** | %player% — `%time%`"
+
+      max-positions: 10
+
+      thumbnail:
+        enabled: true
+        url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+      image:
+        enabled: false
+        url: ""
+
+      footer:
+        enabled: true
+        text: "Actividad de Staff | Gestión LK"
+        icon-url: "https://cdn.discordapp.com/attachments/1455796524935155895/1460683321750065152/ChatGPT_Image_7_ene_2026_01_11_28_p.m..png"
+
+      timestamp: true
+
+notifications:
+  moderation:
+    freeze:
+      enabled: false
+      webhook-url: "********"
+
+    kick:
+      enabled: false
+      webhook-url: "********"
+
+    ban:
+      enabled: false
+      webhook-url: "********"
+
+time-format:
+  time: "HH:mm:ss"
+
+  date: "dd/MM/yyyy"
+
+  duration:
+    days: "%d%d %h%h %m%m %s%s"
+    hours: "%h%h %m%m %s%s"
+    minutes: "%m%m %s%s"
+    seconds: "%s%s"
+
+    units:
+      days: "d"
+      hours: "h"
+      minutes: "m"
+      seconds: "s"
+
+database:
+  type: "h2"
+
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "nstaffmode"
+    username: "root"
+    password: "********"
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+
+  h2:
+    file: "staffdata"
+    options:
+      cache-size: 8192
+      lock-timeout: 10000
+
+auto-reset:
+  enabled: false
+
+  interval-days: 30
+
+  send-summary: true
+
+  notify-ingame: true
+  notify-hours-before: 24
+
+
+advanced:
+  debug-mode: false
+
+  webhook-retries: 3
+  webhook-timeout: 5000
+
+  cache:
+    enabled: true
+    expire-after: 300

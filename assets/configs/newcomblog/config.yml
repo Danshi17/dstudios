@@ -1,0 +1,1340 @@
+####################################################################################################
+#                                                                                                  #
+#                                     NEWCOMBATLOG                                                  #
+#                                DOCUMENTACIÓN COMPLETA                                             #
+#                                                                                                  #
+####################################################################################################
+#
+# COLORES / FORMATOS
+#
+# NewCombatlog soporta simultáneamente:
+#
+# LEGACY:
+# &0 &1 &2 &3 &4 &5 &6 &7 &8 &9
+# &a &b &c &d &e &f
+#
+# Formatos Legacy:
+# &l = Bold
+# &o = Italic
+# &n = Underline
+# &m = Strikethrough
+# &k = Magic
+# &r = Reset
+#
+# Ejemplo:
+# &c&lCOMBATE
+#
+#
+# HEX DIRECTO:
+# &#FF5555
+#
+# Ejemplo:
+# &#57e389Mensaje verde HEX
+#
+#
+# BUNGEE HEX:
+# &x&F&F&5&5&5&5
+#
+#
+# MINIMESSAGE / ADVENTURE:
+#
+# <red>Texto rojo</red>
+# <green>Texto verde</green>
+# <bold>Texto bold</bold>
+# <italic>Texto italic</italic>
+# <underlined>Texto</underlined>
+#
+# HEX MiniMessage:
+# <#FF5555>Texto</#FF5555>
+#
+# GRADIENT:
+# <gradient:#57e389:#26a269>Texto Gradient</gradient>
+#
+# Gradient con más colores:
+# <gradient:#ff5555:#ffaa00:#ffff55>Texto</gradient>
+#
+# RAINBOW:
+# <rainbow>Texto Rainbow</rainbow>
+#
+# También puedes combinar Legacy + HEX + MiniMessage:
+#
+# &8[<gradient:#ff5555:#ffaa00><bold>COMBAT</bold></gradient>&8]
+#
+# Estos formatos se aplican a:
+# - Chat
+# - Titles
+# - Subtitles
+# - ActionBars
+# - BossBars
+# - Rewards
+# - KillStreaks
+# - Logger
+# - Mensajes de WorldGuard
+#
+#
+# DEPENDENCIAS / HOOKS
+#
+# Vault:
+#   Utilizado para economía, bounties y recompensas monetarias.
+#
+# PlaceholderAPI:
+#   Habilita los placeholders %newcombatlog_*%.
+#
+# WorldGuard:
+#   Utilizado para detectar regiones PvP y generar barreras de safezones.
+#
+# Para convertir una región en safezone:
+# /rg flag <region> pvp deny
+#
+#
+# COMANDOS
+#
+# /combatlog
+# /cl
+# /combat
+#   Comando principal.
+#
+# /cl menu
+#   Abre el menú principal/editor.
+#
+# /cl togglepvp
+#   Activa o desactiva el PvP personal.
+#
+# /cl togglepvp <player>
+#   Cambia el estado PvP de otro jugador.
+#
+# /cl grace
+#   Consulta la protección PvP.
+#
+# /cl grace disable
+#   Desactiva voluntariamente la protección.
+#
+# /cl grace give <player> <seconds>
+#   Entrega protección PvP.
+#
+# /cl stats [player]
+#   Consulta estadísticas PvP.
+#
+# /cl points [player]
+#   Consulta puntos.
+#
+# /cl points <player> set <amount>
+# /cl points <player> add <amount>
+# /cl points <player> remove <amount>
+#   Administra puntos PvP.
+#
+# /cl bounty
+# /cl bounty list
+#   Lista recompensas activas.
+#
+# /cl bounty <player>
+#   Consulta la recompensa de un jugador.
+#
+# /cl bounty set <player> <amount>
+#   Coloca una recompensa sobre un jugador.
+#
+# /cl deathback
+#   Regresa a la última ubicación de muerte.
+#
+# /cl killrecaps
+#   Abre los últimos Kill Recaps.
+#
+# /cl killrecaps clear
+#   Elimina los Kill Recaps.
+#
+# /cl status [player]
+#   Consulta el estado de combate.
+#
+# /cl forceend <player>
+#   Finaliza manualmente el CombatTag.
+#
+# /cl itemcooldown <player|*> <item|hand> <seconds>
+#   Aplica un cooldown a un item con la animación visual del cliente.
+#
+# <player|*>
+#   Jugador online o * para todos los jugadores online.
+#
+# <item|hand>
+#   Material Bukkit:
+#   ender_pearl
+#   golden_apple
+#   enchanted_golden_apple
+#   etc.
+#
+#   También puedes usar hand para el item de tu mano principal.
+#
+# <seconds>
+#   Admite números decimales.
+#
+# 0 / clear / off:
+#   Elimina el cooldown.
+#
+# Los cooldowns sobreviven a una reconexión,
+# pero no a un reinicio completo del servidor.
+#
+# /cl reload
+#   Recarga el plugin.
+#
+#
+# PERMISOS
+#
+# combatlog.use
+#   Acceso básico.
+#
+# combatlog.admin
+#   Administración y editor.
+#
+# combatlog.bypass
+#   Ignora restricciones del CombatTag.
+#
+# combatlog.worldguard.bypass
+#   Ignora únicamente los muros de WorldGuard.
+#
+# combatlog.tnt.instantignite
+#   Permite TNT instantánea.
+#
+# combatlog.reward.<grupo>
+#   Permiso configurable para grupos de rewards.
+#
+# En rewards puedes usar:
+#
+# permission: ""
+#
+# para no requerir ningún permiso.
+#
+#
+# PLACEHOLDERS
+#
+# %newcombatlog_in_combat%
+# %newcombatlog_time%
+# %newcombatlog_enemy%
+# %newcombatlog_pvp_enabled%
+# %newcombatlog_has_grace%
+# %newcombatlog_grace_time%
+# %newcombatlog_kills%
+# %newcombatlog_deaths%
+# %newcombatlog_combatlogs%
+# %newcombatlog_points%
+# %newcombatlog_streak%
+# %newcombatlog_max_streak%
+# %newcombatlog_kd%
+# %newcombatlog_bounty%
+#
+#
+# CONSOLE
+#
+# enabled:
+#   Activa el logger personalizado.
+#
+# debug:
+#   Activa mensajes DEBUG adicionales.
+#
+# startup-banner:
+#   Muestra el ASCII completo de NEW COMBATLOG al iniciar.
+#
+# shutdown-banner:
+#   Muestra el ASCII completo de NEW COMBATLOG al apagar.
+#
+# prefix:
+#   Prefijo para log(), logWarn(), logError() y logDebug().
+#
+# support:
+#   Link mostrado en la información de inicio.
+#
+#
+# GENERAL
+#
+# combat-duration:
+#   Duración del CombatTag en segundos.
+#
+# on-disconnect:
+#
+# VILLAGER:
+#   Crea un Villager representando al jugador.
+#
+# KILL:
+#   Mata directamente al jugador al desconectarse.
+#
+# En modo VILLAGER:
+#   Si WorldGuard u otro plugin impide generar el Villager,
+#   NewCombatlog aplica automáticamente el fallback de CombatLog.
+#
+#   El jugador pierde los items/XP correspondientes y recibe
+#   la penalización aunque la región tenga:
+#
+#   mob-spawning deny
+#
+# drop-inventory:
+#   Permite dropear inventario del CombatLogger.
+#
+# drop-experience:
+#   Permite dropear experiencia.
+#
+# block-commands:
+#   Bloquea comandos durante combate.
+#
+# command-whitelist:
+#   Lista de comandos permitidos durante CombatTag.
+#
+# remove-fly:
+#   Deshabilita el fly al entrar en combate.
+#
+# clear-positive-effects:
+#   Elimina efectos positivos.
+#
+# max-distance:
+#   Distancia máxima de combate.
+#
+# 0:
+#   Desactivado.
+#
+# block-teleport:
+#   Bloqueo original de teleports del CombatManager.
+#
+# protected-item-keys:
+#   Keys de items protegidos de otros plugins.
+#
+#
+# DISPLAY
+#
+# title-enabled:
+#   Habilita Titles.
+#
+# title-enter:
+#   Title mostrado al iniciar CombatTag.
+#
+# title-exit:
+#   Title mostrado al finalizar CombatTag.
+#
+# fade-in / stay / fade-out:
+#   Valores en ticks.
+#
+# actionbar-enabled:
+#   Habilita ActionBar.
+#
+# actionbar-format:
+#   Variables:
+#
+# {time}
+# {progressbar}
+#
+# bossbar-enabled:
+#   Habilita BossBar.
+#
+# bossbar-color:
+#
+# PINK
+# BLUE
+# RED
+# GREEN
+# YELLOW
+# PURPLE
+# WHITE
+#
+# bossbar-style:
+#
+# SOLID
+# SEGMENTED_6
+# SEGMENTED_10
+# SEGMENTED_12
+# SEGMENTED_20
+#
+# sound-enabled:
+#   Habilita sonidos.
+#
+# Formato:
+#
+# SOUND-VOLUME-PITCH
+#
+# Ejemplo:
+#
+# ENTITY_PLAYER_LEVELUP-1.0-1.0
+#
+#
+# PROGRESSBAR
+#
+# style:
+#
+# BAR
+# HEARTS
+# ARROWS
+# LINE
+# DOTS
+#
+# size:
+#   Cantidad de caracteres.
+#
+# color-completed:
+#   Color completado.
+#
+# color-remaining:
+#   Color restante.
+#
+#
+# MESSAGES
+#
+# prefix:
+#   Prefijo global.
+#
+# Variables comunes:
+#
+# {time}
+#   Tiempo restante.
+#
+# {enemy}
+#   Enemigo.
+#
+# {player}
+#   Jugador.
+#
+# {chestplate}
+#   Pechera equipada automáticamente al retirar una Elytra.
+#
+#
+# VILLAGER COMBATLOGGER
+#
+# name:
+#   Nombre mostrado en el Villager.
+#
+# show-health:
+#   Muestra vida.
+#
+# invulnerable:
+#   Hace al Villager invulnerable.
+#
+# spawn-sound:
+#   Sonido de aparición.
+#
+# spawn-particles:
+#   Habilita partículas.
+#
+# particle-type:
+#   Tipo de partícula Bukkit.
+#
+#
+# PVP TOGGLE
+#
+# enabled:
+#   Habilita /cl togglepvp.
+#
+# enabled-on-join:
+#   Estado PvP inicial para jugadores nuevos.
+#
+# cooldown-seconds:
+#   Tiempo necesario para volver a cambiar el PvP.
+#
+#
+# GRACE
+#
+# Protección PvP para jugadores nuevos.
+#
+# enabled:
+#   Activa el sistema.
+#
+# duration-seconds:
+#   Duración.
+#
+#
+# ANTI KILL ABUSE
+#
+# Evita farmear:
+#
+# - Kills
+# - Points
+# - Economy
+# - Bounties
+# - Rewards
+# - KillStreak rewards
+#
+# matando repetidamente al mismo jugador.
+#
+# max-kills:
+#   Cantidad máxima de kills válidas.
+#
+# reset-seconds:
+#   Tiempo para reiniciar el contador.
+#
+#
+# KILL RECAPS
+#
+# max-hits:
+#   Golpes máximos almacenados.
+#
+# max-recaps:
+#   Kill Recaps máximos almacenados.
+#
+#
+# DEATHBACK
+#
+# enabled:
+#   Habilita /cl deathback.
+#
+# one-time:
+#   Elimina la ubicación después de utilizarla.
+#
+#
+# RESPAWN PROTECTION
+#
+# enabled:
+#   Habilita protección al respawn.
+#
+# duration-seconds:
+#   Duración.
+#
+#
+# VOID KILL
+#
+# Evita que un jugador en CombatTag se quede bugueando
+# en el vacío esperando ser expulsado por un AntiCheat.
+#
+# enabled:
+#   Activa la detección.
+#
+# only-in-combat:
+#
+# true:
+#   Solo mata instantáneamente en el vacío a jugadores
+#   que tengan CombatTag.
+#
+# false:
+#   Aplica el sistema incluso fuera del CombatTag.
+#
+# respect-bypass:
+#
+# true:
+#   combatlog.bypass ignora Void Kill.
+#
+# false:
+#   Ni siquiera el bypass evita Void Kill.
+#
+# credit-combat-opponent:
+#   Intenta acreditar la muerte al enemigo actual del CombatTag
+#   antes de ejecutar setHealth(0).
+#
+# Esto permite conservar correctamente:
+# - Killer
+# - Kills
+# - Points
+# - Rewards
+# - KillStreak
+# - Bounty
+# - Kill Recap
+#
+# offset-from-min-height:
+#   Cantidad de bloques sobre el minHeight del mundo
+#   donde debe ejecutar la muerte.
+#
+# Ejemplo:
+#
+# Mundo minHeight: -64
+# offset: 0.0
+# kill: Y <= -64
+#
+# Mundo minHeight: -64
+# offset: 3.0
+# kill: Y <= -61
+#
+#
+# RANKING
+#
+# enabled:
+#   Habilita estadísticas/puntos PvP.
+#
+# start-points:
+#   Puntos iniciales.
+#
+# points-kill:
+#   Puntos por kill.
+#
+# points-death:
+#   Puntos al morir.
+#
+# points-combatlog:
+#   Puntos al CombatLog.
+#
+# Se admiten números negativos.
+#
+#
+# BOUNTY
+#
+# enabled:
+#   Habilita bounties.
+#
+# minimum:
+#   Dinero mínimo necesario para crear una bounty.
+#
+#
+# ECONOMY
+#
+# money-per-kill:
+#   Dinero recibido por kill.
+#
+# death-loss-flat:
+#   Dinero fijo perdido al morir.
+#
+# death-loss-percent:
+#   Porcentaje perdido al morir.
+#
+# combatlog-loss-flat:
+#   Dinero fijo perdido por CombatLog.
+#
+# combatlog-loss-percent:
+#   Porcentaje perdido por CombatLog.
+#
+# minimum-balance:
+#   Balance mínimo respetado.
+#
+#
+# RESTRICTIONS
+#
+# block-teleport:
+#   Bloquea teleports en CombatTag.
+#
+# block-building:
+#   Bloquea romper/colocar bloques.
+#
+# block-armor-change:
+#   Bloquea cambios generales de armadura.
+#
+# block-item-drop:
+#   Bloquea dropear items.
+#
+# block-item-interact:
+#   Bloquea interacción con items.
+#
+# instant-tnt:
+#   Permite TNT instantánea.
+#
+# general-disabled:
+#   Deshabilita una mecánica siempre.
+#
+# only-in-combat:
+#   Deshabilita una mecánica solamente durante CombatTag.
+#
+#
+# ENDER PEARLS
+#
+# features.restrictions.enderpearl.general-disabled:
+#
+# true:
+#   No se pueden utilizar Ender Pearls nunca.
+#
+# false:
+#   Funcionamiento normal.
+#
+# features.restrictions.enderpearl.only-in-combat:
+#
+# true:
+#   Bloquea completamente las Pearls durante CombatTag.
+#
+# false:
+#   Permite utilizarlas.
+#
+# Para permitir Pearls dentro de la zona PvP,
+# pero impedir que atraviesen los muros de safezone:
+#
+# general-disabled: false
+# only-in-combat: false
+#
+# y:
+#
+# worldguard.region-borders.block-enderpearls: true
+#
+#
+# ELYTRA
+#
+# features.restrictions.elytra.only-in-combat:
+#   Impide utilizar o equipar Elytras durante PvP.
+#
+# El sistema bloquea:
+#
+# - Click normal
+# - Shift-click
+# - Teclas 1-9
+# - Inventory Drag
+# - Click derecho
+# - Dispensadores
+# - Glide
+# - Equipamiento de otros plugins
+#
+# Si entra al CombatTag con Elytra:
+#
+# 1. Se detiene el Glide.
+# 2. Se remueve la Elytra.
+# 3. Se busca una Chestplate.
+#
+# Prioridad:
+#
+# 1. Netherite Chestplate
+# 2. Diamond Chestplate
+# 3. Iron Chestplate
+# 4. Chainmail Chestplate
+# 5. Golden Chestplate
+# 6. Leather Chestplate
+#
+# Si encuentra una:
+#   La equipa y coloca la Elytra donde estaba la Chestplate.
+#
+# Si no encuentra:
+#   Coloca la Elytra en el inventario.
+#
+# Inventario lleno:
+#   La Elytra se dropea a los pies del jugador.
+#
+#
+# COOLDOWNS
+#
+# Valores en segundos.
+#
+# 0:
+#   Desactivado.
+#
+# Los segundos admiten decimales:
+#
+# 1.5
+# 2.25
+# etc.
+#
+# Todos muestran la animación Vanilla del cliente.
+#
+# enderpearl:
+#   Se aplica al lanzar una Pearl.
+#
+# gold-apple:
+#   Se aplica al terminar de comer una Golden Apple.
+#
+# god-apple:
+#   Se aplica al terminar de comer una Enchanted Golden Apple.
+#
+# features.messages.cooldown acepta:
+#
+# {time}
+# {item}
+#
+#
+# BLACKLISTS
+#
+# potions:
+#   PotionEffectType bloqueados.
+#
+# Ejemplo:
+#
+# potions:
+#   - STRENGTH
+#   - SPEED
+#
+# enchantments:
+#   Encantamientos bloqueados.
+#
+# Ejemplo:
+#
+# enchantments:
+#   - sharpness
+#   - knockback
+#
+#
+# REWARDS
+#
+# enabled:
+#   Activa el sistema completo de rewards.
+#
+# groups:
+#   Puedes crear todos los grupos que quieras.
+#
+#
+# auto-on-kill:
+#
+# true:
+#   El grupo se intenta ejecutar automáticamente
+#   cada vez que el jugador consigue una kill válida.
+#
+# false:
+#   NO se ejecuta en cada kill.
+#   Solo se ejecuta cuando otro sistema lo llama.
+#
+# Esto se usa principalmente para Rewards de KillStreak.
+#
+#
+# permission:
+#
+# "":
+#   No requiere permiso.
+#
+# "combatlog.reward.vip":
+#   Requiere ese permiso.
+#
+#
+# chance:
+#   Probabilidad entre 0 y 100.
+#
+# 100.0 = Siempre.
+# 50.0  = 50%.
+# 10.0  = 10%.
+#
+#
+# ACCIONES DISPONIBLES
+#
+# [CMD]
+#   Ejecuta un comando desde consola.
+#
+# [MSG]
+#   Envía mensaje al killer.
+#
+# [BROADCAST]
+#   Envía mensaje global.
+#
+# [TITLE]
+#   Envía Title al killer.
+#
+# [SUBTITLE]
+#   Envía Subtitle al killer.
+#
+# [ACTIONBAR]
+#   Envía ActionBar al killer.
+#
+# [SOUND]
+#   Reproduce sonido.
+#
+#
+# VARIABLES DE REWARDS / KILLSTREAK
+#
+# {player}
+#   Nombre del killer.
+#
+# {killer}
+#   Nombre del killer.
+#
+# {victim}
+#   Nombre real del jugador muerto.
+#
+# {streak}
+#   KillStreak actual.
+#
+# También funcionan:
+#
+# %player%
+# %killer%
+# %victim%
+# %streak%
+#
+#
+# Ejemplo:
+#
+# - "[MSG] &aMataste a &e{victim}&a."
+#
+# Si Danshi_ mata a Steve:
+#
+# Mataste a Steve.
+#
+#
+# KILL STREAKS
+#
+# Cada número representa la cantidad exacta de kills consecutivas.
+#
+# NUEVO FORMATO:
+#
+# kill-streaks:
+#   "5":
+#     rewards:
+#       - streak_5
+#     actions:
+#       - "[MSG] Has conseguido 5 kills."
+#
+# Esto ejecuta:
+#
+# 1. Las acciones de la racha.
+# 2. El grupo reward "streak_5".
+#
+#
+# Puedes ejecutar múltiples rewards:
+#
+# "10":
+#   rewards:
+#     - streak_10
+#     - money_bonus
+#     - crate_bonus
+#
+#
+# También se permite:
+#
+# reward: streak_5
+#
+# en lugar de:
+#
+# rewards:
+#   - streak_5
+#
+#
+# FORMATO ANTIGUO:
+#
+# "3":
+#   - "[MSG] Tienes {streak} kills."
+#
+# sigue siendo compatible.
+#
+#
+# WORLDGUARD
+#
+# enabled:
+#   Habilita integración con WorldGuard.
+#
+# debug:
+#   Habilita diagnóstico.
+#   También requiere console.debug: true.
+#
+# region-borders.enabled:
+#   Activa los muros de safezones.
+#
+# Safezone:
+#
+# /rg flag <region> pvp deny
+#
+# mode:
+#
+# NONE:
+#   Sin protección.
+#
+# PHYSICAL:
+#   Envía bloques falsos al cliente.
+#
+# INVISIBLE:
+#   Bloquea movimiento y aplica knockback.
+#
+# BOTH:
+#   Muro falso + bloqueo + knockback.
+#
+# material:
+#   Material visual del muro.
+#
+# Los bloques son CLIENT-SIDE.
+# No modifican el mundo.
+#
+# radius:
+#   Radio horizontal para encontrar bordes.
+#
+# vertical-radius:
+#   Altura del muro.
+#
+# blocktype-check:
+#   Evita sustituir visualmente bloques sólidos.
+#
+# knockback-strength:
+#   Fuerza horizontal.
+#
+# knockback-y:
+#   Fuerza vertical.
+#
+# play-effect:
+#   Reproduce efectos al chocar.
+#
+# disabled-worlds:
+#   Mundos ignorados.
+#
+# rescue-player:
+#   Devuelve al jugador a su última posición PvP válida.
+#
+# rescue-after-interactions:
+#   Choques necesarios antes del rescue.
+#
+# rescue-delay-ticks:
+#   Delay antes de comprobar.
+#
+# 20 ticks = 1 segundo.
+#
+# message-cooldown-millis:
+#   Anti-spam.
+#
+# block-enderpearls:
+#
+# true:
+#   Las Ender Pearls chocan contra el límite virtual
+#   entre PvP y pvp deny.
+#
+# false:
+#   El muro no controla Ender Pearls.
+#
+# La Pearl sigue funcionando normalmente dentro del PvP.
+#
+# enderpearl-sample-distance:
+#   Precisión de comprobación del trayecto.
+#
+# 0.20:
+#   Comprueba aproximadamente cada 0.20 bloques.
+#
+# Un valor menor:
+#   Más precisión.
+#
+# Un valor mayor:
+#   Menos comprobaciones.
+#
+# Recomendado:
+#
+# 0.20
+#
+# También existe un segundo bloqueo usando
+# PlayerTeleportEvent con causa ENDER_PEARL.
+#
+#
+# interaction.reset-millis:
+#   Tiempo para resetear choques.
+#
+# interaction.min-count:
+#   Choques antes de ejecutar punishments.
+#
+# Punishments:
+#
+# REFRESH_TAG
+# WARNING
+# SLOWNESS
+# BLINDNESS
+# DAMAGE
+# TELEPORT_TO_ENEMY
+#
+#
+####################################################################################################
+
+console:
+  enabled: true
+  debug: false
+  startup-banner: true
+  shutdown-banner: true
+  prefix: "&#ff4d4d[&4NewCombatlog&#ff4d4d]&r "
+  support: "https://discord.gg/MxTWb5m9xZ"
+
+general:
+  combat-duration: 20
+  on-disconnect: VILLAGER
+  drop-inventory: true
+  drop-experience: true
+  block-commands: true
+  command-whitelist:
+    - "/cl"
+    - "/combatlog"
+    - "/ncl"
+    - "/newcombatlog"
+  # Salida segura: si el jugador usa uno de estos comandos (y el comando
+  # fue permitido) y se desconecta dentro de la ventana, NO se le aplica
+  # Villager, muerte ni penalización de CombatLog.
+  safe-exit:
+    enabled: true
+    commands:
+      - "/hub"
+      - "/lobby"
+    window-seconds: 5
+  remove-fly: true
+  clear-positive-effects: false
+  max-distance: 0
+  block-teleport: false
+  protected-item-keys:
+    - gens_locked_item
+    - otro_key_de_otro_plugin
+
+display:
+  title-enabled: true
+
+  title-enter:
+    title: "<gradient:#ff5555:#ff9f43><bold>⚔ COMBATE</bold></gradient>"
+    subtitle: "&7No puedes desconectarte por &f{time}&7s"
+    fade-in: 5
+    stay: 40
+    fade-out: 10
+
+  title-exit:
+    title: "<gradient:#57e389:#26a269><bold>✓ SEGURO</bold></gradient>"
+    subtitle: "&7Ya puedes desconectarte"
+    fade-in: 5
+    stay: 30
+    fade-out: 10
+
+  actionbar-enabled: true
+  actionbar-format: "&c⚔ &f{time}s &7{progressbar}"
+
+  bossbar-enabled: true
+  bossbar-color: RED
+  bossbar-style: SOLID
+  bossbar-format: "<gradient:#ff5555:#ffaa00>⚔ Combate</gradient> &7» &f{time}s"
+
+  sound-enabled: true
+  sound-enter: "ENTITY_PLAYER_LEVELUP-1.0-0.8"
+  sound-exit: "ENTITY_EXPERIENCE_ORB_PICKUP-1.0-1.2"
+  sound-tick: "UI_BUTTON_CLICK-0.3-2.0"
+
+progressbar:
+  style: BAR
+  size: 20
+  bar-completed: "■"
+  bar-remaining: "□"
+  heart-completed: "❤"
+  heart-remaining: "§7❤"
+  arrow-completed: "►"
+  arrow-remaining: "§7►"
+  line-completed: "━"
+  line-remaining: "─"
+  dot-completed: "●"
+  dot-remaining: "○"
+  color-completed: "&c"
+  color-remaining: "&7"
+
+messages:
+  prefix: "&8[<gradient:#ff5555:#ffaa00><bold>⚔</bold></gradient>&8] &7"
+
+  enter-pvp: "&c¡Has entrado en combate!"
+  exit-pvp: "&a¡Has salido del combate!"
+
+  enemy-enter: "&e{enemy} &cha entrado en combate contigo."
+  enemy-exit: "&e{enemy} &aha salido del combate."
+
+  command-blocked: "&cNo puedes usar comandos durante el combate (&f{time}&cs)."
+  command-bypass: "&aComando permitido por whitelist."
+
+  villager-spawn: "&7Te has desconectado en combate. Un &eVillager &7fue dejado en tu lugar."
+  villager-killed: "&7El villager de &e{player} &7fue eliminado. Loot dropeado."
+  villager-killed-self: "&7Has matado al villager de &e{player}&7."
+  rejoin-loot-cleared: "&cTus items fueron reclamados al re-conectarte."
+
+  no-permission: "&cNo tienes permiso para usar esto."
+  player-not-found: "&cJugador no encontrado."
+  not-in-combat: "&aEl jugador &e{player} &ano está en combate."
+  forceend: "&aHas forzado la salida de &e{player} &adel combate."
+  reloaded: "&aConfiguración recargada en &e{time}ms&a."
+
+  item-cooldown-usage: "&cUso: &f/cl itemcooldown <jugador|*> <item|hand> <segundos|0>"
+  item-cooldown-invalid-item: "&cItem inválido: &f{input}&c."
+  item-cooldown-invalid-time: "&cTiempo inválido. Usa un número entre &f0 &cy &f{max}&c."
+  item-cooldown-hand-player-only: "&cSolo un jugador puede usar &fhand&c. Indica un item por nombre."
+  item-cooldown-empty-hand: "&cDebes sostener un item en la mano principal."
+  item-cooldown-set: "&aCooldown de &e{seconds}s &aaplicado a &e{item} &apara &e{player}&a."
+  item-cooldown-cleared: "&aCooldown de &e{item} &aeliminado para &e{player}&a."
+  item-cooldown-set-all: "&aCooldown de &e{seconds}s &aaplicado a &e{item} &apara &e{count} &ajugadores."
+  item-cooldown-cleared-all: "&aCooldown de &e{item} &aeliminado para &e{count} &ajugadores."
+
+villager:
+  name: "&c{player}"
+  show-health: true
+  invulnerable: false
+  spawn-sound: "ENTITY_VILLAGER_DEATH-1.0-0.7"
+  spawn-particles: true
+  particle-type: "FLAME"
+
+features:
+  pvp-toggle:
+    enabled: true
+    enabled-on-join: true
+    cooldown-seconds: 30
+
+  death-combat-tag:
+    remove-from-dead-player: true
+
+  grace:
+    enabled: false
+    duration-seconds: 3600
+
+  anti-kill-abuse:
+    enabled: true
+    max-kills: 2
+    reset-seconds: 600
+
+  kill-recaps:
+    enabled: true
+    max-hits: 12
+    max-recaps: 10
+
+  deathback:
+    enabled: true
+    one-time: true
+
+  respawn-protection:
+    enabled: true
+    duration-seconds: 10
+
+  void-kill:
+    enabled: true
+    only-in-combat: true
+    respect-bypass: true
+    credit-combat-opponent: true
+    offset-from-min-height: 0.0
+
+  ranking:
+    enabled: true
+    start-points: 0
+    points-kill: 10
+    points-death: -10
+    points-combatlog: -50
+
+  bounty:
+    enabled: true
+    minimum: 100.0
+
+  economy:
+    money-per-kill: 0.0
+    death-loss-flat: 0.0
+    death-loss-percent: 0.0
+    combatlog-loss-flat: 0.0
+    combatlog-loss-percent: 0.0
+    minimum-balance: 0.0
+
+  restrictions:
+    block-teleport: false
+    block-building: false
+    block-armor-change: false
+    block-item-drop: false
+    block-item-interact: false
+    instant-tnt: false
+
+    enderpearl:
+      general-disabled: false
+      only-in-combat: false
+
+    chorus-fruit:
+      general-disabled: false
+      only-in-combat: false
+
+    totem:
+      general-disabled: false
+      only-in-combat: false
+
+    elytra:
+      general-disabled: false
+      only-in-combat: true
+
+  cooldowns:
+    enderpearl: 0
+    gold-apple: 0
+    god-apple: 0
+
+  blacklists:
+    potions: []
+    enchantments: []
+
+  rewards:
+    enabled: true
+
+    groups:
+      normal_kill:
+        auto-on-kill: true
+        permission: "combatlog.reward.normal"
+        chance: 100.0
+        actions:
+          - "[MSG] &aMataste a &e{victim}&a."
+          - "[CMD] give {player} diamond 1"
+
+      streak_5:
+        auto-on-kill: false
+        permission: ""
+        chance: 100.0
+        actions:
+          - "[MSG] <gradient:#57e389:#26a269><bold>¡RECOMPENSA DE RACHA 5!</bold></gradient>"
+          - "[MSG] &7Has conseguido &e5 kills consecutivas&7."
+          - "[CMD] give {player} diamond 5"
+          - "[SOUND] ENTITY_PLAYER_LEVELUP,1.0,1.2"
+
+      streak_10:
+        auto-on-kill: false
+        permission: ""
+        chance: 100.0
+        actions:
+          - "[TITLE] <gradient:#ff5555:#ffaa00><bold>{streak} KILL STREAK</bold></gradient>"
+          - "[SUBTITLE] &7Has eliminado a &f{victim}"
+          - "[MSG] <gradient:#ff5555:#ffaa00>¡Has conseguido la recompensa de 10 kills!</gradient>"
+          - "[CMD] give {player} netherite_ingot 1"
+          - "[SOUND] ENTITY_ENDER_DRAGON_GROWL,1.0,1.0"
+
+      streak_20:
+        auto-on-kill: false
+        permission: ""
+        chance: 100.0
+        actions:
+          - "[TITLE] <rainbow><bold>{streak} KILL STREAK</bold></rainbow>"
+          - "[SUBTITLE] &f¡Racha legendaria!"
+          - "[BROADCAST] <gradient:#ff0000:#ffaa00:#ffff00><bold>⚔ {player} alcanzó una racha de {streak} kills ⚔</bold></gradient>"
+          - "[CMD] give {player} diamond 32"
+          - "[SOUND] ENTITY_ENDER_DRAGON_GROWL,1.0,0.8"
+
+  kill-streaks:
+    "3":
+      actions:
+        - "[MSG] &aLlevas una racha de &e{streak} &akills."
+        - "[ACTIONBAR] <gradient:#57e389:#26a269>⚔ {streak} KILL STREAK ⚔</gradient>"
+
+    "5":
+      rewards:
+        - streak_5
+      actions:
+        - "[BROADCAST] <gradient:#57e389:#26a269>{player} alcanzó una racha de {streak} kills.</gradient>"
+        - "[SOUND] ENTITY_PLAYER_LEVELUP,1.0,1.0"
+
+    "10":
+      rewards:
+        - streak_10
+      actions:
+        - "[BROADCAST] <gradient:#ff5555:#ffaa00><bold>⚔ {player} consiguió {streak} KILLS ⚔</bold></gradient>"
+        - "[ACTIONBAR] <gradient:#ff5555:#ffaa00><bold>{streak} KILL STREAK</bold></gradient>"
+
+    "20":
+      rewards:
+        - streak_20
+      actions:
+        - "[ACTIONBAR] <rainbow><bold>⚔ {streak} KILL STREAK ⚔</bold></rainbow>"
+
+  messages:
+    pvp-disabled: "&cTienes el PvP desactivado."
+    target-pvp-disabled: "&e{player} &ctiene el PvP desactivado."
+
+    you-have-grace: "&cNo puedes atacar mientras tengas protección. Tiempo restante: &f{time}&c."
+    target-has-grace: "&e{player} &ctiene protección PvP durante &f{time}&c."
+
+    teleport-blocked: "&cNo puedes teletransportarte durante el combate."
+
+    blacklisted-enchant: "&cNo puedes usar un objeto con encantamientos bloqueados."
+    potion-blocked: "&cEsta poción está bloqueada."
+
+    item-blocked: "&cNo puedes usar &f{item} &cen este momento."
+    cooldown: "&cDebes esperar &f{time}s &cpara volver a usar este objeto."
+
+    bounty-claimed: "&aHas reclamado &e${amount} &apor eliminar a &e{player}&a."
+
+    elytra-blocked: "&cNo puedes equiparte una Elytra mientras estás en combate."
+    elytra-replaced: "&cTu Elytra fue removida al entrar en combate y se equipó &f{chestplate}&c."
+    elytra-removed: "&cTu Elytra fue removida porque entraste en combate."
+
+worldguard:
+  enabled: true
+  debug: false
+
+  region-borders:
+    enabled: true
+    mode: BOTH
+    material: RED_STAINED_GLASS
+    radius: 3
+    vertical-radius: 3
+    blocktype-check: true
+    knockback-strength: 1.5
+    knockback-y: 0.0
+    play-effect: true
+    disabled-worlds: []
+
+    rescue-player: true
+    rescue-after-interactions: 2
+    rescue-delay-ticks: 20
+
+    message-cooldown-millis: 1000
+
+    block-enderpearls: true
+    enderpearl-sample-distance: 0.20
+
+    message: "&cNo puedes entrar a una zona segura mientras estás en combate."
+    actionbar: "<gradient:#ff5555:#ffaa00>⚠ No puedes entrar a una zona segura</gradient>"
+    rescue-message: "&eFuiste devuelto a tu última ubicación PvP válida."
+
+    interaction:
+      reset-millis: 2000
+      min-count: 2
+
+      punishments:
+        - REFRESH_TAG
+        - WARNING
+
+      warning-title: "<gradient:#ff5555:#ffaa00><bold>⚠ ZONA SEGURA</bold></gradient>"
+      warning-subtitle: "&7No puedes cruzar este límite durante combate."
+      warning-sound: "ENTITY_VILLAGER_NO-1.0-1.0"
+      damage-per-interaction: 0.5

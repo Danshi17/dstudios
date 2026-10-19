@@ -1,0 +1,23 @@
+id: banner_delete
+
+title: '<dark_gray>Delete Clan Banner</dark_gray>'
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+items:
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+    slots: '0-8,18-26'
+
+  confirm:
+    slot: 11
+    material: LIME_WOOL
+    name: '<green>Delete Banner</green>'
+    action: BANNER_CLEAR
+
+  cancel:
+    slot: 15
+    material: RED_WOOL
+    name: '<red>Cancel</red>'
+    action: OPEN:banner_home

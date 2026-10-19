@@ -1,0 +1,431 @@
+economy:
+  default_provider: "VAULT"
+  providers:
+    VAULT:
+      enabled: true
+      display_name: "Money"
+    ECOINS:
+      enabled: false
+      display_name: "Ecoins"
+
+sounds:
+  sound-click: "UI_BUTTON_CLICK"
+
+  coinflip-created: "ENTITY_PLAYER_LEVELUP"
+
+  coinflip-self: "ENTITY_VILLAGER_NO"
+
+  coinflip-tick: "UI_BUTTON_CLICK"
+  coinflip-win: "ENTITY_PLAYER_LEVELUP"
+  coinflip-lose: "ENTITY_VILLAGER_NO"
+
+  reel-1-sound: "ENTITY_ITEM_PICKUP"
+  reel-2-sound: "ENTITY_ITEM_PICKUP"
+  reel-3-sound: "ENTITY_ITEM_PICKUP"
+
+coinflip:
+  min-bet: 100
+  max-bet: 1000000
+  tax-rate: 5.0
+  broadcast-win: true
+  broadcast-create: true
+  minimum-broadcast-winnings: 0
+
+  games-menu:
+    title: "&8&lCoinflip &7— &fGames"
+    rows: 4
+    list-start-slot: 10
+    filler-items:
+      border:
+        material: GRAY_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 27
+          - 28
+          - 29
+          - 30
+          - 31
+          - 32
+          - 33
+          - 34
+          - 35
+      decoration:
+        material: BLACK_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 9
+          - 17
+    create-new-game:
+      enabled: true
+      slot: 31
+      material: NETHER_STAR
+      display_name: "&a&lCreate Coinflip"
+      lore:
+        - "&7Click aquí para crear"
+        - "&7tu propio coinflip."
+    no-games:
+      slot: 22
+      material: BARRIER
+      display_name: "&cNo hay partidas"
+      lore:
+        - "&7Nadie ha creado un coinflip"
+        - "&7todavía. Sé el primero!"
+    game-item:
+      material: PLAYER_HEAD
+      display_name: "&e&l{PLAYER}"
+      lore:
+        - ""
+        - "&7Apuesta: &f{AMOUNT}"
+        - "&7Moneda: &f{CURRENCY}"
+        - "&7Impuesto ({TAX_RATE}%): &c-{TAX_DEDUCTION}"
+        - "&7Premio: &a{WINNINGS}"
+        - ""
+        - "&aClick para aceptar"
+    previous-page:
+      slot: 30
+      material: ARROW
+      display_name: "&e« Página anterior"
+    next-page:
+      slot: 32
+      material: ARROW
+      display_name: "&ePágina siguiente »"
+    error-no-funds:
+      material: RED_STAINED_GLASS_PANE
+      display_name: "&cNo tienes suficiente dinero"
+    stats-item:
+      enabled: true
+      slot: 4
+      material: BOOK
+      display_name: "&6&lTus stats"
+      lore:
+        - ""
+        - "&eJugador: &f{PLAYER}"
+        - "&eWins: &f{WINS}"
+        - "&eLosses: &f{LOSSES}"
+        - "&eWin rate: &f{WIN_PERCENTAGE}%"
+        - "&eProfit: &f{PROFIT}"
+
+  builder-menu:
+    title: "&8&lCoinflip &7— &fBuilder"
+    rows: 4
+    filler-items:
+      border:
+        material: GRAY_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 17
+          - 18
+          - 26
+          - 27
+          - 35
+    currency-select:
+      slot: 13
+      material: OAK_SIGN
+      display_name: "&e&lMoneda"
+      lore:
+        - "&7Apuesta: &f{BET_AMOUNT}"
+        - "&7Moneda: &f{CURRENCY}"
+        - ""
+        - "&7Click para cambiar de moneda"
+    amount-items:
+      plus_100:
+        slot: 14
+        material: LIME_DYE
+        display_name: "&a&l+100"
+        set_amount: "+100"
+      plus_1000:
+        slot: 15
+        material: LIME_DYE
+        display_name: "&a&l+1,000"
+        set_amount: "+1000"
+      plus_10000:
+        slot: 16
+        material: LIME_DYE
+        display_name: "&a&l+10,000"
+        set_amount: "+10000"
+      minus_100:
+        slot: 12
+        material: RED_DYE
+        display_name: "&c&l-100"
+        set_amount: "-100"
+      minus_1000:
+        slot: 11
+        material: RED_DYE
+        display_name: "&c&l-1,000"
+        set_amount: "-1000"
+      minus_10000:
+        slot: 10
+        material: RED_DYE
+        display_name: "&c&l-10,000"
+        set_amount: "-10000"
+    custom-amount:
+      slot: 31
+      material: ANVIL
+      display_name: "&6&lCantidad custom"
+      lore:
+        - "&7Click para escribir"
+        - "&7una cantidad en chat."
+    create:
+      slot: 35
+      material: LIME_CONCRETE
+      display_name: "&a&lCREAR"
+      lore:
+        - "&7Click para crear tu"
+        - "&7coinflip con la cantidad"
+        - "&7y moneda actuales."
+    error-game-exists:
+      material: RED_CONCRETE
+      display_name: "&cYa tienes un coinflip activo"
+    error-limits:
+      material: RED_CONCRETE
+      display_name: "&cCantidad fuera de los límites"
+    error-no-funds:
+      material: RED_CONCRETE
+      display_name: "&cNo tienes suficiente dinero"
+
+  animation:
+    title: "&6&lFLIPPING..."
+    rows: 3
+    ticks: 30
+    interval: 4
+    animation-items:
+      1:
+        material: YELLOW_STAINED_GLASS_PANE
+        display_name: "&r"
+      2:
+        material: GRAY_STAINED_GLASS_PANE
+        display_name: "&r"
+    sounds:
+      tick: "UI_BUTTON_CLICK"
+      win: "ENTITY_PLAYER_LEVELUP"
+      lose: "ENTITY_VILLAGER_NO"
+
+slots:
+  min-bet: 100
+  max-bet: 1000000
+  jackpot-multiplier: 10.0
+  broadcast-win: false
+  broadcast-jackpot: true
+
+  main-menu:
+    title: "&8&lTragaPerras"
+    rows: 4
+    filler-items:
+      border:
+        material: BLACK_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 27
+          - 28
+          - 29
+          - 30
+          - 31
+          - 32
+          - 33
+          - 34
+          - 35
+      deco:
+        material: GRAY_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 9
+          - 17
+          - 18
+          - 26
+    bet-amounts:
+      bet1:
+        slot: 20
+        material: GOLD_NUGGET
+        amount: 100
+        display_name: "&e&l100"
+        lore:
+          - "&7Apuesta: &f{AMOUNT}"
+          - "&7Moneda: &f{CURRENCY}"
+      bet2:
+        slot: 21
+        material: GOLD_INGOT
+        amount: 1000
+        display_name: "&6&l1,000"
+        lore:
+          - "&7Apuesta: &f{AMOUNT}"
+          - "&7Moneda: &f{CURRENCY}"
+      bet3:
+        slot: 22
+        material: GOLD_BLOCK
+        amount: 10000
+        display_name: "&e&l10,000"
+        lore:
+          - "&7Apuesta: &f{AMOUNT}"
+          - "&7Moneda: &f{CURRENCY}"
+      bet4:
+        slot: 23
+        material: DIAMOND
+        amount: 100000
+        display_name: "&b&l100,000"
+        lore:
+          - "&7Apuesta: &f{AMOUNT}"
+          - "&7Moneda: &f{CURRENCY}"
+      bet5:
+        slot: 24
+        material: EMERALD
+        amount: 1000000
+        display_name: "&a&l1,000,000"
+        lore:
+          - "&7Apuesta: &f{AMOUNT}"
+          - "&7Moneda: &f{CURRENCY}"
+    custom-bet:
+      slot: 31
+      material: ANVIL
+      display_name: "&6&lApuesta custom"
+      lore:
+        - "&7Click para escribir"
+        - "&7una cantidad en chat."
+    stats-item:
+      enabled: true
+      slot: 4
+      material: BOOK
+      display_name: "&6&lTus stats"
+      lore:
+        - ""
+        - "&eGanado: &f{WON}"
+        - "&ePerdido: &f{LOST}"
+        - "&eJugador: &f{PLAYER}"
+
+  game-menu:
+    title: "&d&l✦ &6TragaPerras &d&l✦"
+    rows: 4
+    reel-slots:
+      - 11
+      - 13
+      - 15
+      - 29
+      - 31
+      - 33
+    animation-ticks: 60
+    tick-interval: 2
+
+    close-after-animation: true
+    close-delay: 40
+
+    sounds:
+      reel-1-sound: "ENTITY_ITEM_PICKUP"
+      reel-2-sound: "ENTITY_ITEM_PICKUP"
+      reel-3-sound: "ENTITY_ITEM_PICKUP"
+
+    result-sounds:
+      win: "ENTITY_PLAYER_LEVELUP"
+      lose: "ENTITY_VILLAGER_NO"
+      jackpot: "UI_TOAST_CHALLENGE_COMPLETE"
+
+    symbols:
+      - DIAMOND
+      - EMERALD
+      - GOLD_INGOT
+      - IRON_INGOT
+      - REDSTONE
+      - COAL
+      - LAPIS_LAZULI
+    rewards:
+      DIAMOND:
+        multiplier: 25.0
+      EMERALD:
+        multiplier: 15.0
+      GOLD_INGOT:
+        multiplier: 10.0
+      IRON_INGOT:
+        multiplier: 5.0
+      REDSTONE:
+        multiplier: 3.0
+      COAL:
+        multiplier: 2.0
+      LAPIS_LAZULI:
+        multiplier: 2.0
+    filler-items:
+      border:
+        material: BLACK_STAINED_GLASS_PANE
+        display_name: "&r"
+        slots:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 12
+          - 14
+          - 16
+          - 17
+          - 18
+          - 19
+          - 20
+          - 21
+          - 22
+          - 23
+          - 24
+          - 25
+          - 26
+          - 27
+          - 28
+          - 30
+          - 32
+          - 34
+          - 35
+    frame-item:
+      material: GRAY_STAINED_GLASS_PANE
+      display_name: "&r"
+      slots:
+        - 10
+        - 12
+        - 14
+        - 16
+        - 28
+        - 30
+        - 32
+        - 34
+    bet-info:
+      slot: 4
+      material: PAPER
+      display_name: "&e&lTu apuesta"
+      lore:
+        - "&7Cantidad: &f{BET}"
+        - "&7Moneda: &f{CURRENCY}"
+    spin-button:
+      slot: 31
+      material: NETHER_STAR
+      display_name: "&a&lGIRAR"
+      lore:
+        - "&7Click para girar"
+        - "&7(la animación inicia sola)"

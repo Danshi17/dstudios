@@ -1,0 +1,6 @@
+name: NewAutopickup
+version: '${version}'
+
+main: me.danshi.newAutopickup.NewAutopickup
+api-version: '1.18'
+load: POSTWORLD

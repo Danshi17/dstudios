@@ -1,0 +1,126 @@
+# =========================================================
+# NewPets - traits de monedas PinnaPrison
+# Cada boost-currency debe ser un ID registrado en PinnaPrison.
+# =========================================================
+
+traits:
+
+  tokens_boost_i:
+    display-name: "&eTokens I"
+    rarity: COMMON
+    material: "YELLOW_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta los Tokens recibidos."
+    boost-currency: tokens
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.05
+      - 0.10
+      - 0.15
+      - 0.20
+
+  tokens_boost_ii:
+    display-name: "&6Tokens II"
+    rarity: RARE
+    material: "ORANGE_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta aún más los Tokens."
+    boost-currency: tokens
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.10
+      - 0.20
+      - 0.30
+      - 0.40
+
+  gems_boost_i:
+    display-name: "&bGemas I"
+    rarity: COMMON
+    material: "LIGHT_BLUE_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta las Gemas recibidas."
+    boost-currency: gems
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.05
+      - 0.10
+      - 0.15
+      - 0.20
+
+  gems_boost_ii:
+    display-name: "&3Gemas II"
+    rarity: RARE
+    material: "CYAN_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta aún más las Gemas."
+    boost-currency: gems
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.10
+      - 0.20
+      - 0.30
+      - 0.40
+
+  rankupxp_boost_i:
+    display-name: "&dRankup XP"
+    rarity: LEGENDARY
+    material: "MAGENTA_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta Rankup XP recibido."
+    boost-currency: rankupxp
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.10
+      - 0.20
+      - 0.35
+      - 0.50
+
+  pickaxexp_boost_i:
+    display-name: "&aPickaxe XP"
+    rarity: MYTHICAL
+    material: "LIME_STAINED_GLASS_PANE"
+    description:
+      - "&7Aumenta Pickaxe XP recibido."
+    boost-currency: pickaxexp
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.10
+      - 0.20
+      - 0.35
+      - 0.50
+
+  tokens_masterful:
+    display-name: "&cTokens Masterful"
+    rarity: MASTERFUL
+    material: "RED_STAINED_GLASS_PANE"
+    description:
+      - "&7Boost superior de Tokens."
+    boost-currency: tokens
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.25
+      - 0.50
+      - 0.75
+      - 1.00
+
+  gems_divine:
+    display-name: "&bGemas Divine"
+    rarity: DIVINE
+    material: "BLUE_STAINED_GLASS_PANE"
+    description:
+      - "&7Boost superior de Gemas."
+    boost-currency: gems
+    ticket-cost: 1
+    max-level: 4
+    boosts:
+      - 0.25
+      - 0.55
+      - 1.00
+      - 2.00

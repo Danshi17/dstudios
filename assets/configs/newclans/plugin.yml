@@ -1,0 +1,127 @@
+name: NewClans
+version: '${project.version}'
+main: github.dstudio.newClans.NewClans
+api-version: '1.13'
+authors:
+  - dStudio
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+commands:
+  clan:
+    aliases:
+      - c
+      - clans
+    description: Main NewClans command.
+    usage: /clan
+    permission: newclans.player
+
+  clanchat:
+    aliases:
+      - cc
+      - cchat
+    description: Toggle the clan chat or send a single clan message.
+    usage: /clanchat [message]
+    permission: newclans.player
+
+  allychat:
+    aliases:
+      - ac
+    description: Toggle the ally chat or send a single ally message.
+    usage: /allychat [message]
+    permission: newclans.player
+
+  newclans:
+    aliases:
+      - nclans
+      - nc
+    description: Administrative NewClans command.
+    usage: /newclans help
+    permission: newclans.admin
+
+permissions:
+  newclans.player:
+    default: true
+
+  newclans.color.tag:
+    description: Allows color codes, HEX and MiniMessage formatting in clan tags.
+    default: true
+
+  newclans.color.description:
+    description: Allows colors in clan descriptions.
+    default: true
+
+  newclans.color.nickname:
+    description: Allows colors in clan nicknames.
+    default: true
+
+  newclans.tag.color:
+    description: Legacy alias of newclans.color.tag.
+    default: true
+
+  newclans.description.color:
+    description: Legacy alias of newclans.color.description.
+    default: true
+
+  newclans.nickname.color:
+    description: Legacy alias of newclans.color.nickname.
+    default: true
+
+  newclans.chat.spy:
+    description: Allows the clan chat spy player setting.
+    default: op
+
+  newclans.bypass.teleport:
+    description: Bypasses clan home teleport delay.
+    default: op
+
+  newclans.bypass.ff:
+    description: Bypasses clan and ally friendly-fire protection.
+    default: op
+
+  newclans.admin:
+    default: op
+    children:
+      newclans.admin.*: true
+
+  newclans.admin.*:
+    default: op
+    children:
+      newclans.admin.reload: true
+      newclans.admin.delete: true
+      newclans.admin.points: true
+      newclans.admin.slots: true
+      newclans.admin.forcejoin: true
+      newclans.admin.verify: true
+      newclans.admin.bank: true
+      newclans.admin.kick: true
+      newclans.admin.setleader: true
+      newclans.admin.resetkdr: true
+      newclans.admin.souls: true
+      newclans.admin.globalff: true
+
+  newclans.admin.reload:
+    default: op
+  newclans.admin.delete:
+    default: op
+  newclans.admin.points:
+    default: op
+  newclans.admin.slots:
+    default: op
+  newclans.admin.forcejoin:
+    default: op
+  newclans.admin.verify:
+    default: op
+  newclans.admin.bank:
+    default: op
+  newclans.admin.kick:
+    default: op
+  newclans.admin.setleader:
+    default: op
+  newclans.admin.resetkdr:
+    default: op
+  newclans.admin.souls:
+    default: op
+  newclans.admin.globalff:
+    default: op

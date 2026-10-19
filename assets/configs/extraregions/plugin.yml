@@ -1,0 +1,18 @@
+name: ExtraRegions
+version: '${version}'
+
+main: me.danshi.extraRegions.ExtraRegions
+api-version: '1.18'
+load: POSTWORLD
+depend: [WorldGuard, WorldEdit]
+softdepend: [PlaceholderAPI, packetevents, ArmorStandTools]
+
+commands:
+  extraregions:
+    aliases: [er, exregions]
+    description: Comando principal de ExtraRegions
+    permission: extraregions.admin
+
+permissions:
+  extraregions.admin:
+    default: op

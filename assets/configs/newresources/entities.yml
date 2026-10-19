@@ -1,0 +1,25 @@
+entities:
+  example_npc_model:
+    enabled: false
+    material: PAPER
+    custom-model-data: auto
+    name: "&fExample NPC Model"
+    lore: []
+    model: "entities/example_npc_model.bbmodel"
+    glow: false
+    unbreakable: true
+    display:
+      scale: 1.0
+      scale-x: 1.0
+      scale-y: 1.0
+      scale-z: 1.0
+      offset-x: 0.0
+      offset-y: 0.0
+      offset-z: 0.0
+      transform: "FIXED"
+      billboard: "FIXED"
+      view-range: 64.0
+      interpolation-duration: 3
+      teleport-duration: 2
+      glowing: false
+      persistent: false

@@ -1,0 +1,28 @@
+name: NewFriends
+version: '1.0.0'
+main: github.dstudio.newFriends.NewFriends
+author: dStudio
+description: Modular friends system for BungeeCord and Velocity
+softDepends: [RedisBungee]
+
+permissions:
+  newfriends.admin.reload:
+    description: Reload NewFriends
+    default: op
+  newfriends.user.*:
+    description: Access to all NewFriends user commands
+    default: true
+  newfriends.user.add:
+    default: true
+  newfriends.user.accept:
+    default: true
+  newfriends.user.deny:
+    default: true
+  newfriends.user.delete:
+    default: true
+  newfriends.user.list:
+    default: true
+  newfriends.user.msg:
+    default: true
+  newfriends.user.reply:
+    default: true

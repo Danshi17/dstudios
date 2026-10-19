@@ -1,0 +1,42 @@
+name: NewCombatlog
+version: '${version}'
+
+main: me.danshi.newCombatlog.NewCombatlog
+api-version: '1.13'
+load: POSTWORLD
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - WorldGuard
+
+commands:
+  combatlog:
+    aliases: [cl, combat]
+    permission: combatlog.use
+    usage: "&cUsage: /combatlog <menu|togglepvp|grace|stats|points|bounty|deathback|killrecaps|reload|status|forceend|itemcooldown>"
+
+  newcombatlog:
+    aliases: [ncl]
+    permission: combatlog.admin
+    usage: "&cUsage: /newcombatlog <reload|info>"
+
+permissions:
+  combatlog.use:
+    default: true
+    description: Base command access
+
+  combatlog.admin:
+    default: op
+    description: Admin access
+
+  combatlog.bypass:
+    default: false
+    description: Bypass every combat restriction
+
+  combatlog.worldguard.bypass:
+    default: false
+    description: Bypass WorldGuard combat region borders
+
+  combatlog.tnt.instantignite:
+    default: op
+    description: Instant TNT ignition

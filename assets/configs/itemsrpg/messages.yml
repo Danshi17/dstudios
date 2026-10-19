@@ -1,0 +1,60 @@
+
+#
+# ██╗████████╗███████╗███╗   ███╗███████╗██████╗ ██████╗  ██████╗               ██████╗ ███████╗████████╗ █████╗
+# ██║╚══██╔══╝██╔════╝████╗ ████║██╔════╝██╔══██╗██╔══██╗██╔════╝               ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗
+# ██║   ██║   █████╗  ██╔████╔██║███████╗██████╔╝██████╔╝██║  ███╗    █████╗    ██████╔╝█████╗     ██║   ███████║
+# ██║   ██║   ██╔══╝  ██║╚██╔╝██║╚════██║██╔══██╗██╔═══╝ ██║   ██║    ╚════╝    ██╔══██╗██╔══╝     ██║   ██╔══██║
+# ██║   ██║   ███████╗██║ ╚═╝ ██║███████║██║  ██║██║     ╚██████╔╝              ██████╔╝███████╗   ██║   ██║  ██║
+# ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝               ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝
+
+prefix: "&8[&6&lRPG&8] &r"
+
+no-addons-loaded: "%prefix%&7No hay addons cargados en la carpeta &eaddons/&7."
+addon-list-header: "%prefix%&7Addons cargados &8(&e%count%&8)&7:"
+addon-list-entry: "  &8▸ &e%name% &7v%version% &8| &7Autor: &f%author%"
+
+zone-disabled: "%prefix%&cEsta zona está deshabilitada."
+zone-on-cooldown: "%prefix%&cEsta zona se regenera en &e%seconds%s&c."
+zone-wrong-tool: "%prefix%&cNecesitas la herramienta correcta de ItemsRPG para minar aquí."
+
+
+no-permission: "%prefix%&cNo tienes permiso para usar este comando."
+unknown-command: "%prefix%&cSubcomando desconocido. Usa &e/rpg help&c."
+player-only: "%prefix%&cEste comando solo puede ser usado por jugadores."
+invalid-number: "%prefix%&cDebes ingresar un número válido."
+
+reload-success: "%prefix%&aPlugin recargado correctamente."
+
+item-not-found: "%prefix%&cEl item &e%item% &cno existe."
+item-given: "%prefix%&aEntregaste &e%amount%x &7%item% &aa &e%player%&a."
+item-received: "%prefix%&aRecibiste &e%amount%x &7%item%&a."
+
+player-not-found: "%prefix%&cEl jugador &e%player% &cno está conectado."
+
+cooldown-active: "%prefix%&cDebes esperar &e%remaining% &csegundos antes de usar &7%item% &cnuevamente."
+vanilla-cooldown-active: "%prefix%&cDebes esperar &e%remaining% &csegundos antes de usar &7%material% &cnuevamente."
+
+cooldown-added: "%prefix%&aCooldown de &e%seconds%s &aaplicado a &7%material%&a."
+
+usage-itemgive: "%prefix%&cUso: &e/rpg itemgive <item> <jugador> [cantidad]"
+usage-addcooldown: "%prefix%&cUso: &e/rpg addcooldown <MATERIAL> <segundos>"
+
+spider-web-no-target: "%prefix%&cNo hay ninguna entidad cerca para atrapar."
+
+help-lines:
+  - ""
+  - ""
+  - "  <gradient:#ff8c00:#ffd700>&lItemsRPG &7v0.1</gradient>"
+  - ""
+  - "  &e/rpg help &8» &7Muestra esta ayuda"
+  - "  &e/rpg reload &8» &7Recarga el plugin"
+  - "  &e/rpg itemlist &8» &7Abre la GUI de items"
+  - "  &e/rpg itemgive &8<item> <jugador> [cantidad]"
+  - "     &8» &7Da un item RPG a un jugador"
+  - "  &e/rpg addcooldown &8<MATERIAL> <segundos>"
+  - "     &8» &7Aplica cooldown a un item vanilla"
+  - "  &e/rpg damagedebug &8» &7Activa/desactiva el debug de daño"
+  - "  &e/rpg migrate &8[jugador|all]"
+  - "     &8» &7Migra items antiguos al nuevo PDC seguro"
+  - ""
+  - ""

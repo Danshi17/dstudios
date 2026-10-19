@@ -1,0 +1,285 @@
+settings:
+  listen-for-votes: true
+  votes-needed: 20
+  auto-spawn-amount: 1
+  reset-votes-when-goal-is-reached: true
+
+  spawn-locations:
+    - spawn
+
+spawn-locations:
+  spawn:
+    world: world
+    x: 0.5
+    y: 100.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+worldguard:
+  enabled: true
+  flag: newpinatas-pinata
+
+pinata:
+  entity-type: LLAMA
+  llama-color: WHITE
+  baby: false
+  glowing: true
+
+  glow:
+    rainbow: true
+    color: LIGHT_PURPLE
+    interval-ticks: 5
+    colors:
+      - RED
+      - GOLD
+      - YELLOW
+      - GREEN
+      - AQUA
+      - BLUE
+      - LIGHT_PURPLE
+
+  movement: true
+  silent: false
+  remove-when-far-away: false
+
+  health: 20
+  multiply-health-per-online-player: false
+  max-health: -1
+  life-span-seconds: 300
+
+  # 1000 = 1 segundo
+  # 700 = 0.7 segundos
+  hit-cooldown-ms: 1000
+  hit-cooldown-per-player: true
+  max-hits-per-player: -1
+
+  knockback:
+    enabled: true
+    chance: 80.0
+    blocks: 3.0
+    vertical-force: 0.35
+
+  baby-escape:
+    enabled: true
+    chance: 25.0
+    speed: 0.65
+    duration-ticks: 60
+    update-interval-ticks: 2
+    direction-change-ticks: 12
+
+  jump:
+    enabled: true
+    chance: 25.0
+    power: 0.85
+
+    landing:
+      enabled: true
+      radius: 5.0
+      blocks: 4.0
+      vertical-force: 0.45
+
+      particles:
+        enabled: true
+
+        burst:
+          enabled: true
+          particle: POOF
+          amount: 15
+          offset-x: 0.6
+          offset-y: 0.15
+          offset-z: 0.6
+          extra: 0.05
+          force: true
+          y-offset: 0.15
+
+        ring:
+          enabled: true
+          particle: CLOUD
+          amount: 1
+          offset-x: 0.0
+          offset-y: 0.0
+          offset-z: 0.0
+          extra: 0.0
+          force: true
+          rings: 5
+          points-per-ring: 32
+          start-radius: 0.45
+          radius-step: 0.75
+          interval-ticks: 2
+          y-offset: 0.12
+          rotation-step-degrees: 12.0
+
+  hit-permission:
+    enabled: false
+    permission: newpinatas.hit
+
+  material-whitelist:
+    enabled: false
+    materials:
+      - STICK
+      - FISHING_ROD
+
+  name:
+    visible: true
+    height: 1.95
+    text: '&7» &#FF55FF&lPIÑATA &8| &f%health%&c❤ &7«'
+
+  hologram:
+    enabled: true
+    height: 2.35
+    refresh-ticks: 20
+    text: '&d&l%health% &fGOLPES RESTANTES'
+
+  hit-sound:
+    enabled: true
+    sound: BLOCK_SAND_BREAK
+    volume: 1.0
+    pitch: 1.2
+
+  death-sound:
+    enabled: true
+    sound: ENTITY_FIREWORK_ROCKET_BLAST
+    volume: 1.0
+    pitch: 1.0
+
+  particles:
+    hit:
+      enabled: true
+      particle: CRIT
+      amount: 12
+      offset-x: 0.45
+      offset-y: 0.75
+      offset-z: 0.45
+      extra: 0.03
+
+    idle:
+      enabled: true
+      particle: VILLAGER_HAPPY
+      amount: 4
+      offset-x: 0.45
+      offset-y: 0.85
+      offset-z: 0.45
+      extra: 0.01
+      interval-ticks: 10
+
+bossbar:
+  countdown:
+    enabled: true
+    global: true
+    seconds: 5
+    title: '&#FF55FF&lPIÑATA &8» &fAparece en &d%time%s'
+    color: PURPLE
+    style: SEGMENTED_10
+    rainbow: true
+
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_PLING
+      volume: 0.7
+      pitch: 1.2
+
+  health:
+    enabled: true
+    global: true
+    title: '&#FF55FF&lPIÑATA &8» &f%health%/%max_health% golpes'
+    color: RED
+    style: SEGMENTED_20
+    rainbow: true
+    update-ticks: 20
+
+announcements:
+  spawn:
+    enabled: true
+
+    title:
+      enabled: true
+      title: '<gradient:#FF55FF:#AA55FF>&l¡PIÑATA!</gradient>'
+      subtitle: '&f¡Ha aparecido una piñata!'
+      fade-in: 10
+      stay: 60
+      fade-out: 10
+
+    actionbar:
+      enabled: true
+      message: '&#FF55FF&l✦ &f¡Corre a golpear la piñata! &#FF55FF&l✦'
+
+    sound:
+      enabled: true
+      sound: ENTITY_FIREWORK_ROCKET_LAUNCH
+      volume: 1.0
+      pitch: 1.0
+
+  death:
+    enabled: true
+
+    title:
+      enabled: true
+      title: '<gradient:#FF5555:#FF55FF>&l¡PIÑATA DESTRUIDA!</gradient>'
+      subtitle: '&fÚltimo golpe: &#FF55FF%player%'
+      fade-in: 10
+      stay: 60
+      fade-out: 10
+
+    actionbar:
+      enabled: true
+      message: '&a✔ &f%player% &7destruyó la piñata.'
+
+    sound:
+      enabled: true
+      sound: ENTITY_PLAYER_LEVELUP
+      volume: 1.0
+      pitch: 1.0
+
+messages:
+  prefix: '&8[&#FF55FFNewPinatas&8] '
+
+  no-permission: '%prefix%&cNo tienes permiso.'
+  players-only: '%prefix%&cEste comando solo se puede usar como jugador.'
+  invalid-number: '%prefix%&cEse número no es válido.'
+  invalid-zone: '%prefix%&cLa zona &f%zone% &cno existe o su mundo no está cargado.'
+  zone-set: '%prefix%&aZona &f%zone% &aguardada en &f%world% %x% %y% %z% &7(yaw %yaw%, pitch %pitch%).'
+  reload: '%prefix%&aConfiguración recargada.'
+  spawn: '%prefix%&d¡Una piñata apareció en &f%world% %x% %y% %z%&d!'
+
+  death:
+    - ''
+    - '<gradient:#FF55FF:#FFAAFF>&l✦ PIÑATA DESTRUIDA ✦</gradient>'
+    - '&7La piñata fue destruida por &f%player%&7.'
+    - '&7Ubicación: &f%world% %x% %y% %z%'
+    - '&7Votos actuales: &d%votes%&7/&d%votes_needed%'
+    - ''
+
+  hit-cooldown: '%prefix%&cEspera un poco antes de volver a golpear la piñata.'
+  max-hits: '%prefix%&cYa alcanzaste tu máximo de golpes para esta piñata.'
+  wrong-material: '%prefix%&cNo puedes golpear la piñata con ese objeto.'
+  worldguard-deny: '%prefix%&cLa flag de WorldGuard no permite la piñata en esta zona.'
+  test-spawn: '%prefix%&aPrueba iniciada usando la zona &f%zone%&a.'
+  test-vote: '%prefix%&aSe procesaron &f%amount% &avoto(s) de prueba para &f%player%&a.'
+  votes: '%prefix%&fVotos: &d%votes%&7/&d%votes_needed% &8(&f%votes_left% restantes&8).'
+
+  vote-received:
+    enabled: true
+    lines:
+      - ''
+      - '%prefix%&a¡Gracias &f%player%&a por votar!'
+      - '&7Progreso de votos: &d%votes%&7/&d%votes_needed% &8(&f%votes_left% restantes&8)'
+      - ''
+
+  killed: '%prefix%&aSe eliminaron &f%amount% &apiñata(s).'
+
+rewards:
+  vote:
+    - chance: 100.0
+      commands:
+        - 'say %player% ha votado por el servidor!'
+
+  hit:
+    - chance: 20.0
+      commands:
+        - 'give %player% iron_ingot 1'
+
+  death:
+    - chance: 100.0
+      commands:
+        - 'give %player% diamond 3'

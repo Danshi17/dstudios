@@ -1,0 +1,340 @@
+enabled: true
+
+display-name: '__DISPLAY__'
+
+schedule:
+  enabled: true
+
+  # SYSTEM = hora de la máquina del servidor.
+  # También puedes poner una zona, ej: America/Guatemala
+  timezone: SYSTEM
+
+  # Formato 24h. Cada línea puede ser "HH:mm" (aplica a los días de abajo)
+  # o "DIA HH:mm" (solo ese día). Días en inglés o español.
+  times:
+    - '12:00'
+    - '18:30'
+    - 'SABADO 21:00'
+
+  # Días en que aplican los horarios sin día propio.
+  # Vacío = todos los días.
+  days: []
+  # days: [MONDAY, WEDNESDAY, FRIDAY]
+
+location:
+  world: '__WORLD__'
+  x: __X__
+  y: __Y__
+  z: __Z__
+
+blocks:
+  active: SLIME_BLOCK
+  inactive: BEDROCK
+
+health:
+  max: 2000
+  damage-per-break: 1
+  broadcast-every: 50
+
+time:
+  seconds: 20
+
+packets:
+  view-distance-blocks: 128
+  max-break-distance: 8.0
+  hit-cooldown-ms: 100
+  hit-mode:
+    enabled: true
+
+  instant-break:
+    enabled: true
+    hit-cooldown-ms: 35
+
+  cracks:
+    enabled: true
+
+hologram:
+  enabled: true
+  view-distance-blocks: 48
+  height: 3.20
+  line-spacing: 0.28
+  packet-name-offset: 0.25
+  bottom-clearance: 0.35
+
+  inactive:
+    lines:
+      - '&#ff3b30&lDestroy The Core &8((&c&lDTC&8))'
+      - ''
+      - '&fEL TOP 3 QUE ROMPA MÁS VECES EL DTC'
+      - '&fRECIBIRÁ KEYS PARA ABRIR EN EL SPAWN!'
+      - ''
+      - '&8▪ &eESTADO: &cINACTIVO'
+
+  active:
+    lines:
+      - '&#ff3b30&lDestroy The Core &8((&c&lDTC&8))'
+      - ''
+      - '&fEL TOP 3 QUE ROMPA MÁS VECES EL DTC'
+      - '&fRECIBIRÁ KEYS PARA ABRIR EN EL SPAWN!'
+      - ''
+      - '&8▪ &eTIEMPO RESTANTE: &b%time%'
+      - '&8▪ &eVIDA RESTANTE: &c%health% &4❤'
+
+  leaderboard:
+    enabled: true
+
+    active-lines:
+      - ''
+      - '&#ff5555&lTOP 3 DTC'
+      - '&e#1 &f%top_1_name% &8- &e%top_1_points% puntos'
+      - '&e#2 &f%top_2_name% &8- &e%top_2_points% puntos'
+      - '&e#3 &f%top_3_name% &8- &e%top_3_points% puntos'
+
+    inactive-lines:
+      - ''
+      - '&#ff5555&lÚLTIMO TOP 3'
+      - '&e#1 &f%top_1_name% &8- &e%top_1_points% puntos'
+      - '&e#2 &f%top_2_name% &8- &e%top_2_points% puntos'
+      - '&e#3 &f%top_3_name% &8- &e%top_3_points% puntos'
+
+bossbar:
+  enabled: true
+  global: true
+  title: '&aVida del núcleo: &e%health% &fpuntos'
+  color: PURPLE
+  style: SEGMENTED_20
+
+auto-start:
+  enabled: false
+  interval-seconds: 1800
+
+#
+# Fases:
+# - pre-start = cuando está a punto de comenzar
+# - start     = cuando comienza realmente
+# - end       = cuando termina/destruyen/se acaba el tiempo
+#
+# global: true  -> lo reciben todos los jugadores
+# global: false -> solo jugadores del mismo mundo dentro de radius-blocks
+#
+# Placeholders útiles:
+# %core% %core_displayname%
+# %health% %max_health%
+# %time% %time_seconds%
+# %start_in% %start_in_seconds%
+# %top_1_name% %top_1_points%
+# %top_2_name% %top_2_points%
+# %top_3_name% %top_3_points%
+announcements:
+  pre-start:
+    enabled: true
+
+    # Para /dtc start también se espera este tiempo antes de activar el core.
+    # En auto-start y horarios, este aviso comienza X segundos ANTES de la hora.
+    delay-seconds: 10
+
+    global: true
+    radius-blocks: 128.0
+
+    chat:
+      enabled: true
+      lines:
+        - ''
+        - '&c&lDTC &8» &e¡El evento %core_displayname% &eestá por comenzar!'
+        - '&7Comienza en: &f%start_in%'
+        - '&7Prepárate para romper el núcleo y entrar al TOP 3.'
+        - ''
+
+    title:
+      enabled: true
+      title: '&#ffaa00&l¡DTC PRÓXIMAMENTE!'
+      subtitle: '&fComienza en &#55ffff%start_in%'
+      fade-in: 10
+      stay: 50
+      fade-out: 10
+
+    actionbar:
+      enabled: true
+      message: '&e⚠ &f%core_displayname% &7comienza en &e%start_in%'
+
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_PLING
+      volume: 1.0
+      pitch: 1.2
+
+    particles:
+      enabled: true
+      particle: CRIT
+      amount: 18
+      offset-x: 0.45
+      offset-y: 0.45
+      offset-z: 0.45
+      extra: 0.03
+      force: true
+      y-offset: 1.0
+
+  start:
+    enabled: true
+    global: true
+    radius-blocks: 128.0
+
+    chat:
+      enabled: true
+      lines:
+        - ''
+        - '&c&lDTC &8» &a¡El evento %core_displayname% &aha comenzado!'
+        - '&7Rompe el núcleo para sumar puntos.'
+        - '&7Vida del núcleo: &c%health%&7/&c%max_health%'
+        - '&7Tiempo disponible: &b%time%'
+        - ''
+
+    title:
+      enabled: true
+      title: '&#55ff55&l¡DTC INICIADO!'
+      subtitle: '&f¡Rompe el núcleo y entra al &#ffaa00TOP 3&f!'
+      fade-in: 10
+      stay: 60
+      fade-out: 10
+
+    actionbar:
+      enabled: true
+      message: '&a✔ &f%core_displayname% &7ha comenzado. &c%health%❤'
+
+    sound:
+      enabled: true
+      sound: ENTITY_ENDER_DRAGON_GROWL
+      volume: 0.8
+      pitch: 1.2
+
+    particles:
+      enabled: true
+      particle: VILLAGER_HAPPY
+      amount: 25
+      offset-x: 0.65
+      offset-y: 0.65
+      offset-z: 0.65
+      extra: 0.03
+      force: true
+      y-offset: 1.0
+
+  end:
+    enabled: true
+    global: true
+    radius-blocks: 128.0
+
+    chat:
+      enabled: true
+      lines:
+        - ''
+        - '&c&lDTC &8» &c¡El evento %core_displayname% &cha terminado!'
+        - '&7TOP 1: &f%top_1_name% &8- &e%top_1_points% puntos'
+        - '&7TOP 2: &f%top_2_name% &8- &e%top_2_points% puntos'
+        - '&7TOP 3: &f%top_3_name% &8- &e%top_3_points% puntos'
+        - ''
+
+    title:
+      enabled: true
+      title: '&#ff5555&l¡DTC TERMINADO!'
+      subtitle: '&fGanador: &#ffaa00%top_1_name% &7- &e%top_1_points% puntos'
+      fade-in: 10
+      stay: 70
+      fade-out: 15
+
+    actionbar:
+      enabled: true
+      message: '&c✖ &f%core_displayname% &7terminó. &eTOP 1: &f%top_1_name%'
+
+    sound:
+      enabled: true
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+      volume: 1.0
+      pitch: 1.0
+
+    particles:
+      enabled: true
+      particle: EXPLOSION_NORMAL
+      amount: 28
+      offset-x: 0.65
+      offset-y: 0.65
+      offset-z: 0.65
+      extra: 0.04
+      force: true
+      y-offset: 1.0
+
+events:
+  lightning:
+    enabled: true
+    chance: 5.0
+    real: false
+
+    damage-player: true
+    damage: 4.0
+
+    target: PLAYER
+
+  knockback:
+    enabled: true
+    chance: 10.0
+    horizontal: 1.2
+    vertical: 0.45
+
+    particles:
+      enabled: true
+      particle: EXPLOSION_NORMAL
+      amount: 18
+      offset-x: 0.45
+      offset-y: 0.45
+      offset-z: 0.45
+      extra: 0.05
+      force: true
+
+broadcasts:
+  remaining:
+    enabled: true
+    lines:
+      - '&c&lDTC &8» &eQuedan &b%health% &ebloques del núcleo por romper.'
+
+  leaderboard:
+    enabled: true
+    lines:
+      - ''
+      - '&c&lTOP DTC'
+      - ''
+      - '&e1. &f%top_1_name% &7- &e%top_1_points% puntos.'
+      - '&e2. &f%top_2_name% &7- &e%top_2_points% puntos.'
+      - '&e3. &f%top_3_name% &7- &e%top_3_points% puntos.'
+      - ''
+      - '&7(( Top más puntos obtenidos en el DTC ))'
+      - ''
+
+rewards:
+  on-time-expired: true
+
+  # Formato: Editable viejo completamente igual a mi plugin de nKoths :D
+  # placement:
+  #   - '1:eco give %player% 5000'
+  #   - '2:eco give %player% 2500'
+  #   - '3:eco give %player% 1000'
+  placement: []
+
+  winner-1:
+    - 'crate key give %winner_1% epic 3'
+    - 'crate key give %winner_1% super_rara 5'
+    - 'crate key give %winner_1% rare 10'
+
+  winner-2:
+    - 'crate key give %winner_2% epic 1'
+    - 'crate key give %winner_2% super_rara 3'
+    - 'crate key give %winner_2% rare 5'
+
+  winner-3:
+    - 'crate key give %winner_3% super_rara 2'
+    - 'crate key give %winner_3% rare 4'
+
+sounds:
+  hit:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_HAT
+    volume: 0.5
+    pitch: 1.4

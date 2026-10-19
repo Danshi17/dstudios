@@ -1,0 +1,43 @@
+settings:
+  auto-upgrade: true
+
+levels:
+  '1':
+    required-points: 0
+    patent: '<gray>Recruit</gray>'
+    member-limit: 10
+    home-limit: 1
+    ally-limit: 1
+    rival-limit: 2
+
+  '2':
+    required-points: 500
+    patent: '<green>Rising</green>'
+    member-limit: 12
+    home-limit: 2
+    ally-limit: 2
+    rival-limit: 3
+
+  '3':
+    required-points: 1500
+    patent: '<aqua>Veteran</aqua>'
+    member-limit: 15
+    home-limit: 3
+    ally-limit: 3
+    rival-limit: 4
+
+  '4':
+    required-points: 4000
+    patent: '<light_purple>Elite</light_purple>'
+    member-limit: 20
+    home-limit: 4
+    ally-limit: 4
+    rival-limit: 5
+
+  '5':
+    required-points: 10000
+    patent: '<gradient:#ffd700:#ff8800><bold>Legend</bold></gradient>'
+    member-limit: 25
+    home-limit: 5
+    ally-limit: 5
+    rival-limit: 6

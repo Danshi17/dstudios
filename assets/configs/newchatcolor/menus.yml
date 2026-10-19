@@ -1,0 +1,285 @@
+main-menu:
+  title: "<gradient:#00c6ff:#0072ff><bold>NewChatColor</bold></gradient>"
+  rows: 3
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    presets:
+      slot: 11
+      material: PAPER
+      name: "<yellow><bold>Colores Normales"
+      lore:
+        - "<gray>Colores predefinidos por el servidor."
+        - ""
+        - "<green>▶ Click para abrir"
+      action: OPEN_PRESETS
+
+    public_colors:
+      slot: 13
+      material: "hdb-7129"
+      name: "<aqua><bold>Colores Publicos"
+      lore:
+        - "<gray>Colores creados por la comunidad."
+        - "<gray>Click izquierdo: <white>seleccionar</white>"
+        - "<gray>Click derecho: <white>editar</white> <dark_gray>(si es tuyo)</dark_gray>"
+        - ""
+        - "<green>▶ Click para abrir"
+      action: OPEN_PUBLIC
+
+    my_colors:
+      slot: 15
+      material: PLAYER_HEAD
+      name: "<light_purple><bold>Mis Colores"
+      lore:
+        - "<gray>Tus colores personalizados,"
+        - "<gray>publicos y privados."
+        - ""
+        - "<green>▶ Click para abrir"
+      action: OPEN_OWN
+
+    create_color:
+      slot: 22
+      material: NETHER_STAR
+      name: "<green><bold>Crear Color Personalizado"
+      lore:
+        - "<gray>Crea tu propio color de chat."
+        - "<gray>Costo actual: <white>%create_cost%</white>"
+        - "<gray>Limite actual: <white>%create_limit%</white>"
+        - ""
+        - "<green>▶ Click para crear"
+      permission: "newchatcolor.create"
+      action: CREATE_COLOR
+
+    disable_color:
+      slot: 29
+      material: BARRIER
+      name: "<red><bold>Restablecer Color"
+      lore:
+        - "<gray>Vuelve al color de chat por defecto."
+      action: DISABLE_COLOR
+
+    info_item:
+      slot: 31
+      material: BOOK
+      name: "<yellow>¿Como funciona?"
+      lore:
+        - "<gray>Selecciona un color y todo lo"
+        - "<gray>que escribas en el chat saldra"
+        - "<gray>con ese color."
+
+    close:
+      slot: 26
+      material: OAK_DOOR
+      name: "<red>Cerrar"
+      action: CLOSE
+
+presets-menu:
+  title: "<gradient:#00c6ff:#0072ff>Colores Normales (Pag. %page%)"
+  rows: 6
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    color_black:      { page: 1, slot: 0,  material: BLACK_WOOL,       name: "<black>Negro",         lore: ["<gray>Tu chat se vera <black>Negro"], pattern: "<black>" }
+    color_dark_blue:   { page: 1, slot: 1,  material: BLUE_CONCRETE,    name: "<dark_blue>Azul Oscuro", lore: ["<gray>Tu chat se vera <dark_blue>Azul Oscuro"], pattern: "<dark_blue>" }
+    color_dark_green:  { page: 1, slot: 2,  material: GREEN_CONCRETE,   name: "<dark_green>Verde Oscuro", lore: ["<gray>Tu chat se vera <dark_green>Verde Oscuro"], pattern: "<dark_green>" }
+    color_dark_aqua:   { page: 1, slot: 3,  material: CYAN_CONCRETE,    name: "<dark_aqua>Turquesa Oscuro", lore: ["<gray>Tu chat se vera <dark_aqua>Turquesa Oscuro"], pattern: "<dark_aqua>" }
+    color_dark_red:    { page: 1, slot: 4,  material: RED_NETHER_BRICK, name: "<dark_red>Rojo Oscuro", lore: ["<gray>Tu chat se vera <dark_red>Rojo Oscuro"], pattern: "<dark_red>" }
+    color_dark_purple: { page: 1, slot: 5,  material: PURPLE_CONCRETE,  name: "<dark_purple>Morado Oscuro", lore: ["<gray>Tu chat se vera <dark_purple>Morado Oscuro"], pattern: "<dark_purple>" }
+    color_gold:        { page: 1, slot: 6,  material: GOLD_BLOCK,       name: "<gold>Oro",            lore: ["<gray>Tu chat se vera <gold>Oro"], pattern: "<gold>" }
+    color_gray:        { page: 1, slot: 7,  material: LIGHT_GRAY_WOOL,  name: "<gray>Gris",           lore: ["<gray>Tu chat se vera <gray>Gris"], pattern: "<gray>" }
+    color_dark_gray:   { page: 1, slot: 8,  material: GRAY_WOOL,        name: "<dark_gray>Gris Oscuro", lore: ["<gray>Tu chat se vera <dark_gray>Gris Oscuro"], pattern: "<dark_gray>" }
+    color_blue:        { page: 1, slot: 9,  material: BLUE_WOOL,        name: "<blue>Azul",           lore: ["<gray>Tu chat se vera <blue>Azul"], pattern: "<blue>" }
+    color_green:       { page: 1, slot: 10, material: LIME_WOOL,        name: "<green>Verde",         lore: ["<gray>Tu chat se vera <green>Verde"], pattern: "<green>" }
+    color_aqua:        { page: 1, slot: 11, material: LIGHT_BLUE_WOOL,  name: "<aqua>Aqua",           lore: ["<gray>Tu chat se vera <aqua>Aqua"], pattern: "<aqua>" }
+    color_red:         { page: 1, slot: 12, material: RED_WOOL,         name: "<red>Rojo",            lore: ["<gray>Tu chat se vera <red>Rojo"], pattern: "<red>" }
+    color_light_purple: { page: 1, slot: 13, material: MAGENTA_WOOL,     name: "<light_purple>Rosa",   lore: ["<gray>Tu chat se vera <light_purple>Rosa"], pattern: "<light_purple>" }
+    color_yellow:      { page: 1, slot: 14, material: YELLOW_WOOL,      name: "<yellow>Amarillo",     lore: ["<gray>Tu chat se vera <yellow>Amarillo"], pattern: "<yellow>" }
+    color_white:       { page: 1, slot: 15, material: WHITE_WOOL,       name: "<white>Blanco",        lore: ["<gray>Tu chat se vera <white>Blanco"], pattern: "<white>" }
+
+    btn_next:
+      page: 1
+      slot: 53
+      material: ARROW
+      name: "<yellow>Siguiente Pagina ->"
+      lore: ["<gray>Ver gradientes y colores especiales"]
+      action: NEXT_PAGE
+
+    back_1:
+      page: 1
+      slot: 49
+      material: OAK_DOOR
+      name: "<red>Volver"
+      action: BACK
+
+    grad_rainbow:
+      page: 2
+      slot: 10
+      material: NETHER_STAR
+      name: "<rainbow>Arcoiris"
+      lore: ["<gray>¡Chat con colores animados!", "<yellow>Solo para VIP"]
+      pattern: "<rainbow>"
+      permission: "newchatcolor.preset.rainbow"
+
+    grad_fire:
+      page: 2
+      slot: 11
+      material: "hdb-7129"
+      name: "<gradient:#ff512f:#dd2476>Fuego"
+      lore: ["<gray>Gradiente ardiente para tu chat."]
+      pattern: "<gradient:#ff512f:#dd2476>"
+      permission: "newchatcolor.preset.fire"
+
+    grad_ice:
+      page: 2
+      slot: 12
+      material: "hdb-4196"
+      name: "<gradient:#00c6ff:#0072ff>Glacial"
+      lore: ["<gray>Gradiente congelado para tu chat."]
+      pattern: "<gradient:#00c6ff:#0072ff>"
+      permission: "newchatcolor.preset.ice"
+
+    grad_nature:
+      page: 2
+      slot: 13
+      material: "hdb-24796"
+      name: "<gradient:#11998e:#38ef7d>Selvatico"
+      lore: ["<gray>Gradiente de naturaleza."]
+      pattern: "<gradient:#11998e:#38ef7d>"
+      permission: "newchatcolor.preset.nature"
+
+    grad_sunset:
+      page: 2
+      slot: 14
+      material: CLOCK
+      name: "<gradient:#fa709a:#fee140>Atardecer"
+      lore: ["<gray>Colores suaves de atardecer."]
+      pattern: "<gradient:#fa709a:#fee140>"
+      permission: "newchatcolor.preset.sunset"
+
+    btn_prev:
+      page: 2
+      slot: 45
+      material: ARROW
+      name: "<yellow><- Pagina Anterior"
+      action: PREVIOUS_PAGE
+
+    back_2:
+      page: 2
+      slot: 49
+      material: OAK_DOOR
+      name: "<red>Volver"
+      action: BACK
+
+list-menu:
+  title-public: "<aqua>Colores Publicos (Pag. %page%)"
+  title-own: "<light_purple>Mis Colores (Pag. %page%)"
+  rows: 6
+  content-slots-per-page: 45
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  item-template:
+    material: PAPER
+    name: "%color_preview_name%"
+    lore:
+      - "<gray>Autor: <white>%owner%</white>"
+      - "<gray>Formato: <white>%format%</white>"
+      - "<gray>Visibilidad: <white>%visibility%</white>"
+      - ""
+      - "<green>Click izquierdo: <white>seleccionar"
+      - "<yellow>Click derecho: <white>editar</white> <dark_gray>(si es tuyo)"
+  empty-item:
+    material: BARRIER
+    name: "<red>No hay colores para mostrar"
+  nav:
+    prev:
+      slot: 45
+      material: ARROW
+      name: "<yellow>« Anterior"
+    next:
+      slot: 53
+      material: ARROW
+      name: "<yellow>Siguiente »"
+    back:
+      slot: 49
+      material: OAK_DOOR
+      name: "<red>Volver"
+  messages:
+    no-permission-edit: "%prefix%<red>Solo el creador o un administrador puede editar este color."
+
+edit-menu:
+  title: "<gray>Editando: %color_name%"
+  rows: 3
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    rename:
+      slot: 10
+      material: NAME_TAG
+      name: "<yellow>Renombrar"
+      lore: ["<gray>Nombre actual: <white>%color_name%"]
+      action: RENAME
+    change_pattern:
+      slot: 12
+      material: BLAZE_ROD
+      name: "<yellow>Cambiar Color/Patron"
+      lore: ["<gray>Vista previa actual:", "%color_preview%"]
+      action: CHANGE_PATTERN
+    toggle_visibility:
+      slot: 14
+      material: ENDER_EYE
+      name: "<yellow>Cambiar Visibilidad"
+      lore: ["<gray>Actual: <white>%color_visibility%"]
+      action: TOGGLE_VISIBILITY
+    delete:
+      slot: 16
+      material: BARRIER
+      name: "<red>Eliminar Color"
+      lore: ["<gray>Esta accion no se puede deshacer."]
+      action: DELETE
+    back:
+      slot: 22
+      material: OAK_DOOR
+      name: "<gray>Volver"
+      action: BACK
+
+visibility-menu:
+  title: "<gray>¿Publico o Privado?"
+  rows: 3
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    public:
+      slot: 11
+      material: BEACON
+      name: "<green><bold>Publico"
+      lore:
+        - "<gray>Cualquier jugador podra verlo"
+        - "<gray>y seleccionarlo desde el menu"
+        - "<gray>de colores publicos."
+        - ""
+        - "<gray>Costo: <white>%create_cost%"
+      action: SET_PUBLIC
+    private:
+      slot: 15
+      material: CHEST
+      name: "<light_purple><bold>Privado"
+      lore:
+        - "<gray>Solo tu podras verlo y usarlo."
+        - ""
+        - "<gray>Costo: <white>%create_cost%"
+      action: SET_PRIVATE
+    cancel:
+      slot: 22
+      material: BARRIER
+      name: "<red>Cancelar"
+      action: CANCEL

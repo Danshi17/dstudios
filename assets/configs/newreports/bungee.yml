@@ -1,0 +1,28 @@
+name: NewReports
+version: '1.0-SNAPSHOT'
+main: github.dstudio.newReports.NewReports
+commands:
+  report:
+    description: Enviar un reporte a los miembros del Staff.
+    aliases: [reportar,nreport]
+    permission: newreports.use
+    usage: /report <jugador> <razon>
+  newreportsreload:
+    description: Recargar la configuracion y mensajes del plugin.
+    aliases: [nrreload]
+    permission: newreports.admin
+    usage: /newreportsreload
+
+permissions:
+  newreports.use:
+    description: Permite a los usuarios enviar reportes.
+    default: true
+  newreports.staff:
+    description: Permite recibir las alertas de reportes en el chat y usar el boton interactivo.
+    default: op
+  newreports.admin:
+    description: Permite recargar la configuracion (/nrreload).
+    default: op
+  newreports.bypass.cooldown:
+    description: Permite saltarse el tiempo de espera entre cada reporte.
+    default: op

@@ -1,0 +1,131 @@
+name: nStaffMode
+version: '0.1-RC'
+main: org.dev.danshi.nStaffMode.NStaffMode
+api-version: '1.13'
+
+commands:
+  staffmode:
+    description: "Activa o desactiva el modo de staff."
+    usage: "/staffmode"
+    aliases: [sm, mod]
+    permission: nstaffmode.command
+  nstaffmodereload:
+    description: "Recarga la configuración de NStaffMode."
+    usage: "/nstaffmodereload"
+    aliases: [smreload]
+    permission: nstaffmode.reload
+
+  cps:
+    description: "Inicia una prueba de clicks por segundo en un jugador."
+    usage: "/cps <jugador>"
+    permission: nstaffmode.cps.command
+    aliases: [clicktest]
+
+  staffonline:
+    description: "Muestra el menú de staff conectados (todos los servidores)."
+    usage: "/staffonline"
+    aliases: [so, staffconnected]
+    permission: nstaffmode.staffonline
+
+  sc:
+    description: "Envía un mensaje al staff chat o activa/desactiva el modo toggle."
+    usage: "/sc [mensaje]"
+    aliases: [staffchat]
+    permission: nstaffmode.staffchat.command
+
+  oc:
+    description: "Envía un mensaje al owner chat o activa/desactiva el modo toggle."
+    usage: "/oc [mensaje]"
+    aliases: [ownerchat]
+    permission: nstaffmode.ownerchat.command
+
+  smi:
+    description: "Muestra el inventario de un jugador a distancia."
+    usage: "/smi <jugador>"
+    permission: nstaffmode.smi.command
+
+permissions:
+  nstaffmode.staffonline:
+    description: "Permite usar /staffonline para ver el menú de staff."
+    default: op
+  nstaffmode.staffonline.teleport:
+    description: "Permite teleportarse a staff desde /staffonline."
+    default: op
+  nstaffmode.command:
+    description: "Permite usar el comando /staffmode."
+    default: op
+  nstaffmode.reload:
+    description: "Permite recargar la configuración del plugin."
+    default: op
+  nstaffmode.use.teleporter:
+    description: "Permite usar el teletransportador."
+    default: op
+  nstaffmode.use.inspector:
+    description: "Permite usar el inspector de jugadores."
+    default: op
+  nstaffmode.use.invsee:
+    description: "Permite usar el inspector de inventarios."
+    default: op
+  nstaffmode.use.freezer:
+    description: "Permite usar la herramienta de congelación."
+    default: op
+  nstaffmode.use.kicker:
+    description: "Permite usar la espada de kick."
+    default: op
+  nstaffmode.use.banner:
+    description: "Permite usar el hacha de ban."
+    default: op
+  nstaffmode.bypass.freeze:
+    description: "Evita que el jugador pueda ser congelado."
+    default: op
+  nstaffmode.silent.joinleave:
+    description: "Permite unirse y salir del servidor silenciosamente."
+    default: op
+  nstaffmode.use.vanish:
+    description: "Permite usar el ítem para activar/desactivar el modo vanish."
+    default: op
+  nstaffmode.vanish.see:
+    description: "Permite ver a otros staff que están en vanish."
+    default: op
+  nstaffmode.use.randomtp:
+    description: "Permite usar el ítem de teletransporte aleatorio."
+    default: op
+  nstaffmode.use.minedetector:
+    description: "Permite usar el ítem para detectar jugadores en minas."
+    default: op
+  nstaffmode.cps.command:
+    description: "Permite usar el comando /cps."
+    default: op
+  nstaffmode.use.cpschecker:
+    description: "Permite usar el item para revisar los CPS de un jugador."
+    default: op
+  nstaffmode.freeze.notify:
+    description: "Permite ver notificaciones cuando un jugador es congelado/descongelado."
+    default: op
+  nstaffmode.kick.notify:
+    description: "Permite ver notificaciones cuando un jugador es expulsado."
+    default: op
+  nstaffmode.ban.notify:
+    description: "Permite ver notificaciones cuando un jugador es baneado."
+    default: op
+  nstaffmode.staffchat.command:
+    description: "Permite usar el comando /sc para enviar mensajes o activar el toggle del staff chat."
+    default: op
+  nstaffmode.staffchat.see:
+    description: "Permite ver los mensajes enviados en el staff chat."
+    default: op
+  nstaffmode.ownerchat.command:
+    description: "Permite usar el comando /oc para enviar mensajes o activar el toggle del owner chat."
+    default: op
+  nstaffmode.ownerchat.see:
+    description: "Permite ver los mensajes enviados en el owner chat."
+    default: op
+  nstaffmode.orealert.notify:
+    description: "Permite ver las alertas cuando un jugador mina spawners, diamante o netherita."
+    default: op
+  nstaffmode.smi.command:
+    description: "Permite usar el comando /smi para ver el inventario de un jugador a distancia."
+    default: op
+  nstaffmode.use.chestview:
+    description: "Permite ver el contenido de contenedores de jugadores golpeándolos o con click derecho en modo staff."
+    default: op
